@@ -1291,3 +1291,5 @@ namespace os
 #endif /* __cplusplus */
 
 #endif /* MICRO_OS_PLUS_UTILS_LISTS_H_ */
+
+// ----------------------------------------------------------------------------
