@@ -30,7 +30,7 @@
 
 // ----------------------------------------------------------------------------
 
-#ifdef  __cplusplus
+#ifdef __cplusplus
 
 #include <cstdint>
 #include <cstddef>
@@ -52,7 +52,6 @@ namespace os
     class static_double_list_links
     {
     public:
-
       /**
        * @name Constructors & Destructor
        * @{
@@ -70,9 +69,11 @@ namespace os
       static_double_list_links (const static_double_list_links&) = delete;
       static_double_list_links (static_double_list_links&&) = delete;
       static_double_list_links&
-      operator= (const static_double_list_links&) = delete;
+      operator= (const static_double_list_links&)
+          = delete;
       static_double_list_links&
-      operator= (static_double_list_links&&) = delete;
+      operator= (static_double_list_links&&)
+          = delete;
 
       /**
        * @endcond
@@ -125,7 +126,6 @@ namespace os
        */
 
     protected:
-
       /**
        * @name Private Member Variables
        * @{
@@ -144,7 +144,6 @@ namespace os
       /**
        * @}
        */
-
     };
 
     // ========================================================================
@@ -158,7 +157,6 @@ namespace os
     class double_list_links : public static_double_list_links
     {
     public:
-
       /**
        * @name Constructors & Destructor
        * @{
@@ -176,9 +174,11 @@ namespace os
       double_list_links (const double_list_links&) = delete;
       double_list_links (double_list_links&&) = delete;
       double_list_links&
-      operator= (const double_list_links&) = delete;
+      operator= (const double_list_links&)
+          = delete;
       double_list_links&
-      operator= (double_list_links&&) = delete;
+      operator= (double_list_links&&)
+          = delete;
 
       /**
        * @endcond
@@ -192,7 +192,6 @@ namespace os
       /**
        * @}
        */
-
     };
 
     // ========================================================================
@@ -210,138 +209,132 @@ namespace os
      * @details
      * This class provides an interface similar to std::list::iterator.
      */
-    template<typename T, typename N, T* N::* MP, typename U = T>
-      class double_list_iterator
-      {
-      public:
+    template <typename T, typename N, T* N::*MP, typename U = T>
+    class double_list_iterator
+    {
+    public:
+      /**
+       * @name Public Types
+       * @{
+       */
 
-        /**
-         * @name Public Types
-         * @{
-         */
+      /**
+       * @brief Type of value "pointed to" by the iterator.
+       */
+      using value_type = U;
 
-        /**
-         * @brief Type of value "pointed to" by the iterator.
-         */
-        using value_type = U;
+      /**
+       * @brief Type of pointer to object "pointed to" by the iterator.
+       */
+      using pointer = U*;
 
-        /**
-         * @brief Type of pointer to object "pointed to" by the iterator.
-         */
-        using pointer = U*;
+      /**
+       * @brief Type of reference to object "pointed to" by the iterator.
+       */
+      using reference = U&;
 
-        /**
-         * @brief Type of reference to object "pointed to" by the iterator.
-         */
-        using reference = U&;
+      /**
+       * @brief Type of reference to the iterator internal pointer.
+       */
+      using iterator_pointer = N*;
 
-        /**
-         * @brief Type of reference to the iterator internal pointer.
-         */
-        using iterator_pointer = N*;
+      /**
+       * @brief Type of pointer difference.
+       */
+      using difference_type = ptrdiff_t;
 
-        /**
-         * @brief Type of pointer difference.
-         */
-        using difference_type = ptrdiff_t;
+      /**
+       * @brief Category of iterator.
+       */
+      using iterator_category = std::forward_iterator_tag;
 
-        /**
-         * @brief Category of iterator.
-         */
-        using iterator_category = std::forward_iterator_tag;
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+      // ----------------------------------------------------------------------
+      /**
+       * @name Constructors & Destructor
+       * @{
+       */
 
-        // --------------------------------------------------------------------
-        /**
-         * @name Constructors & Destructor
-         * @{
-         */
+      constexpr double_list_iterator ();
 
-        constexpr
-        double_list_iterator ();
+      constexpr explicit double_list_iterator (iterator_pointer const node);
 
-        constexpr explicit
-        double_list_iterator (iterator_pointer const node);
+      constexpr explicit double_list_iterator (reference element);
 
-        constexpr explicit
-        double_list_iterator (reference element);
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+      /**
+       * @name Operators
+       * @{
+       */
 
-        /**
-         * @name Operators
-         * @{
-         */
+      pointer
+      operator-> () const;
 
-        pointer
-        operator-> () const;
+      reference
+      operator* () const;
 
-        reference
-        operator* () const;
+      double_list_iterator&
+      operator++ ();
 
-        double_list_iterator&
-        operator++ ();
+      double_list_iterator
+      operator++ (int);
 
-        double_list_iterator
-        operator++ (int);
+      double_list_iterator&
+      operator-- ();
 
-        double_list_iterator&
-        operator-- ();
+      double_list_iterator
+      operator-- (int);
 
-        double_list_iterator
-        operator-- (int);
+      bool
+      operator== (const double_list_iterator& other) const;
 
-        bool
-        operator== (const double_list_iterator& other) const;
+      bool
+      operator!= (const double_list_iterator& other) const;
 
-        bool
-        operator!= (const double_list_iterator& other) const;
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+      /**
+       * @name Public Member Functions
+       * @{
+       */
 
-        /**
-         * @name Public Member Functions
-         * @{
-         */
+      /**
+       * @brief Get the object node from the intrusive node.
+       * @return Pointer to object node.
+       */
+      pointer
+      get_pointer (void) const;
 
-        /**
-         * @brief Get the object node from the intrusive node.
-         * @return Pointer to object node.
-         */
-        pointer
-        get_pointer (void) const;
+      iterator_pointer
+      get_iterator_pointer () const;
 
-        iterator_pointer
-        get_iterator_pointer () const;
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+    protected:
+      /**
+       * @name Private Member Variables
+       * @{
+       */
 
-      protected:
+      /**
+       * @brief Pointer to intrusive node.
+       */
+      iterator_pointer node_;
 
-        /**
-         * @name Private Member Variables
-         * @{
-         */
-
-        /**
-         * @brief Pointer to intrusive node.
-         */
-        iterator_pointer node_;
-
-        /**
-         * @}
-         */
-
-      };
+      /**
+       * @}
+       */
+    };
 
     // ========================================================================
 
@@ -353,7 +346,6 @@ namespace os
     class static_double_list
     {
     public:
-
       /**
        * @name Constructors & Destructor
        * @{
@@ -371,9 +363,11 @@ namespace os
       static_double_list (const static_double_list&) = delete;
       static_double_list (static_double_list&&) = delete;
       static_double_list&
-      operator= (const static_double_list&) = delete;
+      operator= (const static_double_list&)
+          = delete;
       static_double_list&
-      operator= (static_double_list&&) = delete;
+      operator= (static_double_list&&)
+          = delete;
 
       /**
        * @endcond
@@ -389,7 +383,6 @@ namespace os
        */
 
     public:
-
       /**
        * @name Public Member Functions
        * @{
@@ -450,7 +443,6 @@ namespace os
        */
 
     protected:
-
       /**
        * @name Private Member Functions
        * @{
@@ -472,7 +464,6 @@ namespace os
        */
 
     protected:
-
       /**
        * @name Private Member Variables
        * @{
@@ -500,7 +491,6 @@ namespace os
     class double_list : public static_double_list
     {
     public:
-
       /**
        * @name Constructors & Destructor
        * @{
@@ -518,9 +508,11 @@ namespace os
       double_list (const double_list&) = delete;
       double_list (double_list&&) = delete;
       double_list&
-      operator= (const double_list&) = delete;
+      operator= (const double_list&)
+          = delete;
       double_list&
-      operator= (double_list&&) = delete;
+      operator= (double_list&&)
+          = delete;
 
       /**
        * @endcond
@@ -534,7 +526,6 @@ namespace os
       /**
        * @}
        */
-
     };
 
     // ========================================================================
@@ -552,138 +543,132 @@ namespace os
      * @details
      * This class provides an interface similar to std::list::iterator.
      */
-    template<typename T, typename N, N T::* MP, typename U = T>
-      class intrusive_list_iterator
-      {
-      public:
+    template <typename T, typename N, N T::*MP, typename U = T>
+    class intrusive_list_iterator
+    {
+    public:
+      /**
+       * @name Public Types
+       * @{
+       */
 
-        /**
-         * @name Public Types
-         * @{
-         */
+      /**
+       * @brief Type of value "pointed to" by the iterator.
+       */
+      using value_type = U;
 
-        /**
-         * @brief Type of value "pointed to" by the iterator.
-         */
-        using value_type = U;
+      /**
+       * @brief Type of pointer to object "pointed to" by the iterator.
+       */
+      using pointer = U*;
 
-        /**
-         * @brief Type of pointer to object "pointed to" by the iterator.
-         */
-        using pointer = U*;
+      /**
+       * @brief Type of reference to object "pointed to" by the iterator.
+       */
+      using reference = U&;
 
-        /**
-         * @brief Type of reference to object "pointed to" by the iterator.
-         */
-        using reference = U&;
+      /**
+       * @brief Type of reference to the iterator internal pointer.
+       */
+      using iterator_pointer = N*;
 
-        /**
-         * @brief Type of reference to the iterator internal pointer.
-         */
-        using iterator_pointer = N*;
+      /**
+       * @brief Type of pointer difference.
+       */
+      using difference_type = ptrdiff_t;
 
-        /**
-         * @brief Type of pointer difference.
-         */
-        using difference_type = ptrdiff_t;
+      /**
+       * @brief Category of iterator.
+       */
+      using iterator_category = std::forward_iterator_tag;
 
-        /**
-         * @brief Category of iterator.
-         */
-        using iterator_category = std::forward_iterator_tag;
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+      // ----------------------------------------------------------------------
+      /**
+       * @name Constructors & Destructor
+       * @{
+       */
 
-        // --------------------------------------------------------------------
-        /**
-         * @name Constructors & Destructor
-         * @{
-         */
+      constexpr intrusive_list_iterator ();
 
-        constexpr
-        intrusive_list_iterator ();
+      constexpr explicit intrusive_list_iterator (iterator_pointer const node);
 
-        constexpr explicit
-        intrusive_list_iterator (iterator_pointer const node);
+      constexpr explicit intrusive_list_iterator (reference element);
 
-        constexpr explicit
-        intrusive_list_iterator (reference element);
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+      /**
+       * @name Operators
+       * @{
+       */
 
-        /**
-         * @name Operators
-         * @{
-         */
+      pointer
+      operator-> () const;
 
-        pointer
-        operator-> () const;
+      reference
+      operator* () const;
 
-        reference
-        operator* () const;
+      intrusive_list_iterator&
+      operator++ ();
 
-        intrusive_list_iterator&
-        operator++ ();
+      intrusive_list_iterator
+      operator++ (int);
 
-        intrusive_list_iterator
-        operator++ (int);
+      intrusive_list_iterator&
+      operator-- ();
 
-        intrusive_list_iterator&
-        operator-- ();
+      intrusive_list_iterator
+      operator-- (int);
 
-        intrusive_list_iterator
-        operator-- (int);
+      bool
+      operator== (const intrusive_list_iterator& other) const;
 
-        bool
-        operator== (const intrusive_list_iterator& other) const;
+      bool
+      operator!= (const intrusive_list_iterator& other) const;
 
-        bool
-        operator!= (const intrusive_list_iterator& other) const;
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+      /**
+       * @name Public Member Functions
+       * @{
+       */
 
-        /**
-         * @name Public Member Functions
-         * @{
-         */
+      /**
+       * @brief Get the object node from the intrusive node.
+       * @return Pointer to object node.
+       */
+      pointer
+      get_pointer (void) const;
 
-        /**
-         * @brief Get the object node from the intrusive node.
-         * @return Pointer to object node.
-         */
-        pointer
-        get_pointer (void) const;
+      iterator_pointer
+      get_iterator_pointer () const;
 
-        iterator_pointer
-        get_iterator_pointer () const;
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+    protected:
+      /**
+       * @name Private Member Variables
+       * @{
+       */
 
-      protected:
+      /**
+       * @brief Pointer to intrusive node.
+       */
+      iterator_pointer node_;
 
-        /**
-         * @name Private Member Variables
-         * @{
-         */
-
-        /**
-         * @brief Pointer to intrusive node.
-         */
-        iterator_pointer node_;
-
-        /**
-         * @}
-         */
-
-      };
+      /**
+       * @}
+       */
+    };
 
     // ========================================================================
 
@@ -704,120 +689,119 @@ namespace os
      * thread, utils::double_list_links, &thread::child_links_>;
      * @endcode
      */
-    template<typename T, typename N, N T::* MP, typename U = T>
-      class intrusive_list : public static_double_list
-      {
-      public:
+    template <typename T, typename N, N T::*MP, typename U = T>
+    class intrusive_list : public static_double_list
+    {
+    public:
+      using value_type = U;
+      using pointer = U*;
+      using reference = U&;
+      using difference_type = ptrdiff_t;
 
-        using value_type = U;
-        using pointer = U*;
-        using reference = U&;
-        using difference_type = ptrdiff_t;
+      using iterator = intrusive_list_iterator<T, N, MP, U>;
 
-        using iterator = intrusive_list_iterator<T, N, MP, U>;
+      /**
+       * @brief Type of reference to the iterator internal pointer.
+       */
+      using iterator_pointer = N*;
 
-        /**
-         * @brief Type of reference to the iterator internal pointer.
-         */
-        using iterator_pointer = N*;
+      /**
+       * @name Constructors & Destructor
+       * @{
+       */
 
-        /**
-         * @name Constructors & Destructor
-         * @{
-         */
+      /**
+       * @brief Construct an intrusive list.
+       */
+      intrusive_list ();
 
-        /**
-         * @brief Construct an intrusive list.
-         */
-        intrusive_list ();
+      /**
+       * @brief Construct an intrusive list with controlled inits.
+       * @param clr If true, the list is cleared.
+       */
+      intrusive_list (bool clr);
 
-        /**
-         * @brief Construct an intrusive list with controlled inits.
-         * @param clr If true, the list is cleared.
-         */
-        intrusive_list (bool clr);
+      /**
+       * @cond ignore
+       */
 
-        /**
-         * @cond ignore
-         */
+      intrusive_list (const intrusive_list&) = delete;
+      intrusive_list (intrusive_list&&) = delete;
+      intrusive_list&
+      operator= (const intrusive_list&)
+          = delete;
+      intrusive_list&
+      operator= (intrusive_list&&)
+          = delete;
 
-        intrusive_list (const intrusive_list&) = delete;
-        intrusive_list (intrusive_list&&) = delete;
-        intrusive_list&
-        operator= (const intrusive_list&) = delete;
-        intrusive_list&
-        operator= (intrusive_list&&) = delete;
+      /**
+       * @endcond
+       */
 
-        /**
-         * @endcond
-         */
+      /**
+       * @brief Destruct the list.
+       */
+      ~intrusive_list ();
 
-        /**
-         * @brief Destruct the list.
-         */
-        ~intrusive_list ();
+      /**
+       * @}
+       */
 
-        /**
-         * @}
-         */
+    protected:
+      pointer
+      get_pointer (iterator_pointer node) const;
 
-      protected:
+    public:
+      /**
+       * @name Public Member Functions
+       * @{
+       */
 
-        pointer
-        get_pointer (iterator_pointer node) const;
+      /**
+       * @brief Add a node to the tail of the list.
+       * @param [in] node Reference to a list node.
+       * @par Returns
+       *  Nothing.
+       */
+      void
+      link (reference node);
 
-      public:
+      /**
+       * @brief Iterator begin.
+       * @return An iterator positioned at the first element.
+       */
+      iterator
+      begin ();
 
-        /**
-         * @name Public Member Functions
-         * @{
-         */
+      /**
+       * @brief Iterator begin.
+       * @return An iterator positioned after the last element.
+       */
+      iterator
+      end () const;
 
-        /**
-         * @brief Add a node to the tail of the list.
-         * @param [in] node Reference to a list node.
-         * @par Returns
-         *  Nothing.
-         */
-        void
-        link (reference node);
+      /**
+       * @brief Unlink the first element from the list.
+       * @return Pointer to the first element in the list.
+       */
+      pointer
+      unlink_head (void);
 
-        /**
-         * @brief Iterator begin.
-         * @return An iterator positioned at the first element.
-         */
-        iterator
-        begin ();
+      /**
+       * @brief Unlink the last element from the list.
+       * @return Pointer to the last element in the list.
+       */
+      pointer
+      unlink_tail (void);
 
-        /**
-         * @brief Iterator begin.
-         * @return An iterator positioned after the last element.
-         */
-        iterator
-        end () const;
+      /**
+       * @}
+       */
+    };
 
-        /**
-         * @brief Unlink the first element from the list.
-         * @return Pointer to the first element in the list.
-         */
-        pointer
-        unlink_head (void);
-
-        /**
-         * @brief Unlink the last element from the list.
-         * @return Pointer to the last element in the list.
-         */
-        pointer
-        unlink_tail (void);
-
-        /**
-         * @}
-         */
-      };
-
-  // --------------------------------------------------------------------------
-  } /* namespace utils */
-} /* namespace os */
+    // ------------------------------------------------------------------------
+  } // namespace utils
+} // namespace os
 
 // ----------------------------------------------------------------------------
 
@@ -831,14 +815,12 @@ namespace os
     // "Member 'prev' was not initialized in constructor"
     // "Member 'next' was not initialized in constructor"
 
-    inline
-    static_double_list_links::static_double_list_links ()
+    inline static_double_list_links::static_double_list_links ()
     {
       ;
     }
 
-    inline
-    static_double_list_links::~static_double_list_links ()
+    inline static_double_list_links::~static_double_list_links ()
     {
       ;
     }
@@ -875,127 +857,120 @@ namespace os
 
     // ========================================================================
 
-    inline
-    double_list_links::double_list_links ()
+    inline double_list_links::double_list_links ()
     {
       prev_ = nullptr;
       next_ = nullptr;
     }
 
-    inline
-    double_list_links::~double_list_links ()
+    inline double_list_links::~double_list_links ()
     {
       ;
     }
 
     // ========================================================================
-    template<typename T, typename N, T* N::* MP, typename U>
-      constexpr
-      double_list_iterator<T, N, MP, U>::double_list_iterator () :
-          node_
-            { }
-      {
-        ;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    constexpr double_list_iterator<T, N, MP, U>::double_list_iterator ()
+        : node_{}
+    {
+      ;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      constexpr
-      double_list_iterator<T, N, MP, U>::double_list_iterator (
-          iterator_pointer const node) :
-          node_
-            { node }
-      {
-        ;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    constexpr double_list_iterator<T, N, MP, U>::double_list_iterator (
+        iterator_pointer const node)
+        : node_{ node }
+    {
+      ;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      constexpr
-      double_list_iterator<T, N, MP, U>::double_list_iterator (
-          reference element) :
-          node_
-            { &(element.*MP) }
-      {
-        static_assert(std::is_convertible<U, T>::value == true, "U must be implicitly convertible to T!");
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    constexpr double_list_iterator<T, N, MP, U>::double_list_iterator (
+        reference element)
+        : node_{ &(element.*MP) }
+    {
+      static_assert (std::is_convertible<U, T>::value == true,
+                     "U must be implicitly convertible to T!");
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline typename double_list_iterator<T, N, MP, U>::pointer
-      double_list_iterator<T, N, MP, U>::operator-> () const
-      {
-        return get_pointer ();
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline typename double_list_iterator<T, N, MP, U>::pointer
+    double_list_iterator<T, N, MP, U>::operator-> () const
+    {
+      return get_pointer ();
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline typename double_list_iterator<T, N, MP, U>::reference
-      double_list_iterator<T, N, MP, U>::operator* () const
-      {
-        return *get_pointer ();
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline typename double_list_iterator<T, N, MP, U>::reference
+    double_list_iterator<T, N, MP, U>::operator* () const
+    {
+      return *get_pointer ();
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline double_list_iterator<T, N, MP, U>&
-      double_list_iterator<T, N, MP, U>::operator++ ()
-      {
-        node_ = static_cast<N*> (node_->next ());
-        return *this;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline double_list_iterator<T, N, MP, U>&
+    double_list_iterator<T, N, MP, U>::operator++ ()
+    {
+      node_ = static_cast<N*> (node_->next ());
+      return *this;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline double_list_iterator<T, N, MP, U>
-      double_list_iterator<T, N, MP, U>::operator++ (int)
-      {
-        const auto tmp = *this;
-        node_ = static_cast<iterator_pointer> (node_->next);
-        return tmp;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline double_list_iterator<T, N, MP, U>
+    double_list_iterator<T, N, MP, U>::operator++ (int)
+    {
+      const auto tmp = *this;
+      node_ = static_cast<iterator_pointer> (node_->next);
+      return tmp;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline double_list_iterator<T, N, MP, U>&
-      double_list_iterator<T, N, MP, U>::operator-- ()
-      {
-        node_ = static_cast<iterator_pointer> (node_->prev);
-        return *this;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline double_list_iterator<T, N, MP, U>&
+    double_list_iterator<T, N, MP, U>::operator-- ()
+    {
+      node_ = static_cast<iterator_pointer> (node_->prev);
+      return *this;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      double_list_iterator<T, N, MP, U>
-      double_list_iterator<T, N, MP, U>::operator-- (int)
-      {
-        const auto tmp = *this;
-        node_ = static_cast<iterator_pointer> (node_->prev);
-        return tmp;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    double_list_iterator<T, N, MP, U>
+    double_list_iterator<T, N, MP, U>::operator-- (int)
+    {
+      const auto tmp = *this;
+      node_ = static_cast<iterator_pointer> (node_->prev);
+      return tmp;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline bool
-      double_list_iterator<T, N, MP, U>::operator== (
-          const double_list_iterator& other) const
-      {
-        return node_ == other.node_;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline bool
+    double_list_iterator<T, N, MP, U>::operator== (
+        const double_list_iterator& other) const
+    {
+      return node_ == other.node_;
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline bool
-      double_list_iterator<T, N, MP, U>::operator!= (
-          const double_list_iterator& other) const
-      {
-        return node_ != other.node_;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline bool
+    double_list_iterator<T, N, MP, U>::operator!= (
+        const double_list_iterator& other) const
+    {
+      return node_ != other.node_;
+    }
 
 #if 1
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline typename double_list_iterator<T, N, MP, U>::pointer
-      double_list_iterator<T, N, MP, U>::get_pointer (void) const
-      {
-        return (node_->*MP);
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline typename double_list_iterator<T, N, MP, U>::pointer
+    double_list_iterator<T, N, MP, U>::get_pointer (void) const
+    {
+      return (node_->*MP);
+    }
 
-    template<typename T, typename N, T* N::* MP, typename U>
-      inline typename double_list_iterator<T, N, MP, U>::iterator_pointer
-      double_list_iterator<T, N, MP, U>::get_iterator_pointer () const
-      {
-        return node_;
-      }
+    template <typename T, typename N, T* N::*MP, typename U>
+    inline typename double_list_iterator<T, N, MP, U>::iterator_pointer
+    double_list_iterator<T, N, MP, U>::get_iterator_pointer () const
+    {
+      return node_;
+    }
 #endif
 
     // ========================================================================
@@ -1004,8 +979,7 @@ namespace os
      * @details
      * The initial list status is empty by having the pointers null.
      */
-    inline
-    static_double_list::static_double_list ()
+    inline static_double_list::static_double_list ()
     {
       // By all means, do not add any code here.
       // The constructor was not `default` to benefit from inline.
@@ -1015,8 +989,7 @@ namespace os
      * @details
      * There must be no nodes in the list.
      */
-    inline
-    static_double_list::~static_double_list ()
+    inline static_double_list::~static_double_list ()
     {
       ;
     }
@@ -1049,246 +1022,239 @@ namespace os
 
     // ========================================================================
 
-    template<typename T, typename N, N T::* MP, typename U>
-      constexpr
-      intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator () :
-          node_
-            { }
-      {
-        ;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator ()
+        : node_{}
+    {
+      ;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      constexpr
-      intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator (
-          N* const node) :
-          node_
-            { node }
-      {
-        ;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator (
+        N* const node)
+        : node_{ node }
+    {
+      ;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      constexpr
-      intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator (
-          reference element) :
-          node_
-            { &(element.*MP) }
-      {
-        static_assert(std::is_convertible<U, T>::value == true, "U must be implicitly convertible to T!");
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator (
+        reference element)
+        : node_{ &(element.*MP) }
+    {
+      static_assert (std::is_convertible<U, T>::value == true,
+                     "U must be implicitly convertible to T!");
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list_iterator<T, N, MP, U>::pointer
-      intrusive_list_iterator<T, N, MP, U>::operator-> () const
-      {
-        return get_pointer ();
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list_iterator<T, N, MP, U>::pointer
+    intrusive_list_iterator<T, N, MP, U>::operator-> () const
+    {
+      return get_pointer ();
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list_iterator<T, N, MP, U>::reference
-      intrusive_list_iterator<T, N, MP, U>::operator* () const
-      {
-        return *get_pointer ();
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list_iterator<T, N, MP, U>::reference
+    intrusive_list_iterator<T, N, MP, U>::operator* () const
+    {
+      return *get_pointer ();
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline intrusive_list_iterator<T, N, MP, U>&
-      intrusive_list_iterator<T, N, MP, U>::operator++ ()
-      {
-        node_ = static_cast<iterator_pointer> (node_->next ());
-        return *this;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list_iterator<T, N, MP, U>&
+    intrusive_list_iterator<T, N, MP, U>::operator++ ()
+    {
+      node_ = static_cast<iterator_pointer> (node_->next ());
+      return *this;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline intrusive_list_iterator<T, N, MP, U>
-      intrusive_list_iterator<T, N, MP, U>::operator++ (int)
-      {
-        const auto tmp = *this;
-        node_ = static_cast<iterator_pointer> (node_->next ());
-        return tmp;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list_iterator<T, N, MP, U>
+    intrusive_list_iterator<T, N, MP, U>::operator++ (int)
+    {
+      const auto tmp = *this;
+      node_ = static_cast<iterator_pointer> (node_->next ());
+      return tmp;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline intrusive_list_iterator<T, N, MP, U>&
-      intrusive_list_iterator<T, N, MP, U>::operator-- ()
-      {
-        node_ = static_cast<iterator_pointer> (node_->prev ());
-        return *this;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list_iterator<T, N, MP, U>&
+    intrusive_list_iterator<T, N, MP, U>::operator-- ()
+    {
+      node_ = static_cast<iterator_pointer> (node_->prev ());
+      return *this;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      intrusive_list_iterator<T, N, MP, U>
-      intrusive_list_iterator<T, N, MP, U>::operator-- (int)
-      {
-        const auto tmp = *this;
-        node_ = static_cast<iterator_pointer> (node_->prev ());
-        return tmp;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    intrusive_list_iterator<T, N, MP, U>
+    intrusive_list_iterator<T, N, MP, U>::operator-- (int)
+    {
+      const auto tmp = *this;
+      node_ = static_cast<iterator_pointer> (node_->prev ());
+      return tmp;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline bool
-      intrusive_list_iterator<T, N, MP, U>::operator== (
-          const intrusive_list_iterator& other) const
-      {
-        return node_ == other.node_;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline bool
+    intrusive_list_iterator<T, N, MP, U>::operator== (
+        const intrusive_list_iterator& other) const
+    {
+      return node_ == other.node_;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline bool
-      intrusive_list_iterator<T, N, MP, U>::operator!= (
-          const intrusive_list_iterator& other) const
-      {
-        return node_ != other.node_;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline bool
+    intrusive_list_iterator<T, N, MP, U>::operator!= (
+        const intrusive_list_iterator& other) const
+    {
+      return node_ != other.node_;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list_iterator<T, N, MP, U>::pointer
-      intrusive_list_iterator<T, N, MP, U>::get_pointer (void) const
-      {
-        // static_assert(std::is_convertible<U, T>::value == true, "U must be implicitly convertible to T!");
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list_iterator<T, N, MP, U>::pointer
+    intrusive_list_iterator<T, N, MP, U>::get_pointer (void) const
+    {
+      // static_assert(std::is_convertible<U, T>::value == true, "U must be
+      // implicitly convertible to T!");
 
-        // Compute the distance between the member intrusive link
-        // node and the class begin.
-        const auto offset =
-            reinterpret_cast<difference_type> (&(static_cast<T*> (nullptr)->*MP));
+      // Compute the distance between the member intrusive link
+      // node and the class begin.
+      const auto offset = reinterpret_cast<difference_type> (
+          &(static_cast<T*> (nullptr)->*MP));
 
-        // Compute the address of the object which includes the
-        // intrusive node, by adjusting down the node address.
-        return reinterpret_cast<pointer> (reinterpret_cast<difference_type> (node_)
-            - offset);
-      }
+      // Compute the address of the object which includes the
+      // intrusive node, by adjusting down the node address.
+      return reinterpret_cast<pointer> (
+          reinterpret_cast<difference_type> (node_) - offset);
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list_iterator<T, N, MP, U>::iterator_pointer
-      intrusive_list_iterator<T, N, MP, U>::get_iterator_pointer () const
-      {
-        return node_;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list_iterator<T, N, MP, U>::iterator_pointer
+    intrusive_list_iterator<T, N, MP, U>::get_iterator_pointer () const
+    {
+      return node_;
+    }
 
     // ========================================================================
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline
-      intrusive_list<T, N, MP, U>::intrusive_list ()
-      {
-        ;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list<T, N, MP, U>::intrusive_list ()
+    {
+      ;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline
-      intrusive_list<T, N, MP, U>::intrusive_list (bool clr)
-      {
-        if (clr)
-          {
-            clear ();
-          }
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list<T, N, MP, U>::intrusive_list (bool clr)
+    {
+      if (clr)
+        {
+          clear ();
+        }
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline
-      intrusive_list<T, N, MP, U>::~intrusive_list ()
-      {
-        ;
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list<T, N, MP, U>::~intrusive_list ()
+    {
+      ;
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      void
-      intrusive_list<T, N, MP, U>::link (U& node)
-      {
-        if (uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            clear ();
-          }
+    template <typename T, typename N, N T::*MP, typename U>
+    void
+    intrusive_list<T, N, MP, U>::link (U& node)
+    {
+      if (uninitialized ())
+        {
+          // If this is the first time, initialise the list to empty.
+          clear ();
+        }
 
-        // Compute the distance between the member intrusive link
-        // node and the class begin.
-        const auto offset =
-            reinterpret_cast<difference_type> (&(static_cast<T*> (nullptr)->*MP));
+      // Compute the distance between the member intrusive link
+      // node and the class begin.
+      const auto offset = reinterpret_cast<difference_type> (
+          &(static_cast<T*> (nullptr)->*MP));
 
-        // Add thread intrusive node at the end of the list.
-        insert_after (
-            *reinterpret_cast<static_double_list_links*> (reinterpret_cast<difference_type> (&node)
-                + offset),
-            const_cast<static_double_list_links *> (tail ()));
-      }
+      // Add thread intrusive node at the end of the list.
+      insert_after (*reinterpret_cast<static_double_list_links*> (
+                        reinterpret_cast<difference_type> (&node) + offset),
+                    const_cast<static_double_list_links*> (tail ()));
+    }
 
     /**
      * @details
      * @note It is not `const` because it may initialise on first use.
      */
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list<T, N, MP, U>::iterator
-      intrusive_list<T, N, MP, U>::begin ()
-      {
-        if (uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            clear ();
-          }
-        return iterator
-          { static_cast<iterator_pointer> (head_.next ()) };
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list<T, N, MP, U>::iterator
+    intrusive_list<T, N, MP, U>::begin ()
+    {
+      if (uninitialized ())
+        {
+          // If this is the first time, initialise the list to empty.
+          clear ();
+        }
+      return iterator{ static_cast<iterator_pointer> (head_.next ()) };
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list<T, N, MP, U>::iterator
-      intrusive_list<T, N, MP, U>::end () const
-      {
-        return iterator
-          {
-              static_cast<iterator_pointer> (const_cast<static_double_list_links*> (&head_)) };
-      }
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list<T, N, MP, U>::iterator
+    intrusive_list<T, N, MP, U>::end () const
+    {
+      return iterator{ static_cast<iterator_pointer> (
+          const_cast<static_double_list_links*> (&head_)) };
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      inline typename intrusive_list<T, N, MP, U>::pointer
-      intrusive_list<T, N, MP, U>::get_pointer (iterator_pointer node) const
-      {
-        // static_assert(std::is_convertible<U, T>::value == true, "U must be implicitly convertible to T!");
+    template <typename T, typename N, N T::*MP, typename U>
+    inline typename intrusive_list<T, N, MP, U>::pointer
+    intrusive_list<T, N, MP, U>::get_pointer (iterator_pointer node) const
+    {
+      // static_assert(std::is_convertible<U, T>::value == true, "U must be
+      // implicitly convertible to T!");
 
-        // Compute the distance between the member intrusive link
-        // node and the class begin.
-        const auto offset =
-            reinterpret_cast<difference_type> (&(static_cast<T*> (nullptr)->*MP));
+      // Compute the distance between the member intrusive link
+      // node and the class begin.
+      const auto offset = reinterpret_cast<difference_type> (
+          &(static_cast<T*> (nullptr)->*MP));
 
-        // Compute the address of the object which includes the
-        // intrusive node, by adjusting down the node address.
-        return reinterpret_cast<pointer> (reinterpret_cast<difference_type> (node)
-            - offset);
-      }
+      // Compute the address of the object which includes the
+      // intrusive node, by adjusting down the node address.
+      return reinterpret_cast<pointer> (
+          reinterpret_cast<difference_type> (node) - offset);
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      typename intrusive_list<T, N, MP, U>::pointer
-      intrusive_list<T, N, MP, U>::unlink_head (void)
-      {
-        assert(!empty ());
+    template <typename T, typename N, N T::*MP, typename U>
+    typename intrusive_list<T, N, MP, U>::pointer
+    intrusive_list<T, N, MP, U>::unlink_head (void)
+    {
+      assert (!empty ());
 
-        // The first element in the list.
-        iterator_pointer link = static_cast<iterator_pointer> (head_.next ());
-        link->unlink ();
+      // The first element in the list.
+      iterator_pointer link = static_cast<iterator_pointer> (head_.next ());
+      link->unlink ();
 
-        return get_pointer (link);
-      }
+      return get_pointer (link);
+    }
 
-    template<typename T, typename N, N T::* MP, typename U>
-      typename intrusive_list<T, N, MP, U>::pointer
-      intrusive_list<T, N, MP, U>::unlink_tail (void)
-      {
-        assert(!empty ());
+    template <typename T, typename N, N T::*MP, typename U>
+    typename intrusive_list<T, N, MP, U>::pointer
+    intrusive_list<T, N, MP, U>::unlink_tail (void)
+    {
+      assert (!empty ());
 
-        // The last element in the list.
-        iterator_pointer link = static_cast<iterator_pointer> (head_.prev ());
-        link->unlink ();
+      // The last element in the list.
+      iterator_pointer link = static_cast<iterator_pointer> (head_.prev ());
+      link->unlink ();
 
-        return get_pointer (link);
-      }
+      return get_pointer (link);
+    }
 
-  } /* namespace utils */
-} /* namespace os */
+  } // namespace utils
+} // namespace os
 
 // ----------------------------------------------------------------------------
 
 #endif /* __cplusplus */
+
+// ----------------------------------------------------------------------------
 
 #endif /* MICRO_OS_PLUS_UTILS_LISTS_H_ */
 
