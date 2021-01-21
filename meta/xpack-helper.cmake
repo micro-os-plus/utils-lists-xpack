@@ -11,28 +11,34 @@
 
 message(STATUS "Including micro-os-plus-utils-lists...")
 
+# -----------------------------------------------------------------------------
+
 function(target_sources_micro_os_plus_utils_lists target)
 
-  get_filename_component(PARENT_DIR ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_sources(
     ${target}
 
     PRIVATE
-      ${PARENT_DIR}/src/lists.cpp
+      ${xpack_root_folder}/src/lists.cpp
   )
+
 endfunction()
+
+# -----------------------------------------------------------------------------
 
 function(target_include_directories_micro_os_plus_utils_lists target)
 
-  get_filename_component(PARENT_DIR ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
+  get_filename_component(xpack_root_folder ${CMAKE_CURRENT_FUNCTION_LIST_DIR} DIRECTORY)
 
   target_include_directories(
     ${target}
 
     PUBLIC
-      ${PARENT_DIR}/include
+      ${xpack_root_folder}/include
   )
+
 endfunction()
 
 # -----------------------------------------------------------------------------
