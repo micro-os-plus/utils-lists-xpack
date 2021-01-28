@@ -1,6 +1,6 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/utils-list-xpack)](https://github.com/micro-os-plus/utils-list-xpack/blob/xpack/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/utils-list-xpack.svg)](https://github.com/micro-os-plus/utils-list-xpack/issues)
-[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/utils-list-xpack.svg)](https://github.com/micro-os-plus/utils-list-xpack/pulls)
+[![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/issues)
+[![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/pulls)
 
 # Maintainer info
 
@@ -8,12 +8,12 @@
 
 The project is hosted on GitHub:
 
-- https://github.com/micro-os-plus/utils-list-xpack.git
+- https://github.com/micro-os-plus/utils-lists-xpack.git
 
 To clone it:
 
 ```
-git clone https://github.com/micro-os-plus/utils-list-xpack.git template-xpack.git
+git clone https://github.com/micro-os-plus/utils-lists-xpack.git template-xpack.git
 ```
 
 ## Prerequisites

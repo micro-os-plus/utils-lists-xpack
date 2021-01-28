@@ -1,4 +1,4 @@
-[![license](https://img.shields.io/github/license/micro-os-plus/utils-list-xpack)](https://github.com/micro-os-plus/utils-list-xpack/blob/xpack/LICENSE)
+[![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
 
 # A source xPack with lists utilities
 
@@ -22,10 +22,10 @@ $ xpm install @micro-os-plus/utils-list@latest
 ```
 
 This package is also available from
-[GitHub](https://github.com/micro-os-plus/utils-list-xpack):
+[GitHub](https://github.com/micro-os-plus/utils-lists-xpack):
 
 ```console
-$ git clone https://github.com/micro-os-plus/utils-list-xpack.git utils-list-xpack.git
+$ git clone https://github.com/micro-os-plus/utils-lists-xpack.git utils-lists-xpack.git
 ```
 
 ## Branches
