@@ -38,11 +38,13 @@ if(NOT TARGET micro-os-plus-utils-lists-static)
 
   # ---------------------------------------------------------------------------
 
+  file(GLOB_RECURSE source_files CONFIGURE_DEPENDS "${xpack_current_folder}/src/*.c*")
+
   target_sources(
     micro-os-plus-utils-lists-static
 
     PRIVATE
-      ${xpack_current_folder}/src/lists.cpp
+      ${source_files}
   )
 
   target_include_directories(
