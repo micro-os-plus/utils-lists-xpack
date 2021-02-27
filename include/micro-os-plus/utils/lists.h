@@ -47,7 +47,7 @@ namespace os
      * @brief Statically allocated core of a double linked list,
      * pointers to next, previous.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      */
     class static_double_list_links
     {
@@ -152,7 +152,7 @@ namespace os
      * @brief The core of a double linked list, pointers to next,
      * previous.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      */
     class double_list_links : public static_double_list_links
     {
@@ -199,7 +199,7 @@ namespace os
     /**
      * @brief Template for a double linked list iterator.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      * @tparam T Type of object returned by the iterator.
      * @tparam N Type of intrusive node. Must have the public members
      * **prev** & **next**.
@@ -341,7 +341,7 @@ namespace os
     /**
      * @brief Statically allocated circular double linked list of nodes.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      */
     class static_double_list
     {
@@ -486,7 +486,7 @@ namespace os
     /**
      * @brief Circular double linked list of nodes.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      */
     class double_list : public static_double_list
     {
@@ -533,7 +533,7 @@ namespace os
     /**
      * @brief Template for an intrusive list iterator.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      * @tparam T Type of object that includes the intrusive node.
      * @tparam N Type of intrusive node. Must have the public members
      * **prev** & **next**.
@@ -675,7 +675,7 @@ namespace os
     /**
      * @brief List of intrusive nodes.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup cmsis-plus-utils
+     * @ingroup micro-os-plus-utils
      * @tparam T Type of object that includes the intrusive node.
      * @tparam N Type of intrusive node. Must have the public members
      * **prev** & **next**.
