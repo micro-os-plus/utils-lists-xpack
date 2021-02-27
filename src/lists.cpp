@@ -29,7 +29,7 @@
 
 #include <micro-os-plus/diag/trace.h>
 
-namespace os
+namespace micro_os_plus
 {
   namespace utils
   {
@@ -169,6 +169,6 @@ namespace os
     }
 
   } // namespace utils
-} // namespace os
+} // namespace micro_os_plus
 
 // ----------------------------------------------------------------------------

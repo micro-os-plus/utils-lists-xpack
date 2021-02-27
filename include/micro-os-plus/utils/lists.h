@@ -37,7 +37,7 @@
 #include <cassert>
 #include <iterator>
 
-namespace os
+namespace micro_os_plus
 {
   namespace utils
   {
@@ -801,11 +801,11 @@ namespace os
 
     // ------------------------------------------------------------------------
   } // namespace utils
-} // namespace os
+} // namespace micro_os_plus
 
 // ----------------------------------------------------------------------------
 
-namespace os
+namespace micro_os_plus
 {
   namespace utils
   {
@@ -1248,7 +1248,7 @@ namespace os
     }
 
   } // namespace utils
-} // namespace os
+} // namespace micro_os_plus
 
 // ----------------------------------------------------------------------------
 
