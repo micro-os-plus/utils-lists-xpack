@@ -63,13 +63,13 @@ namespace os
       if (unlinked ())
         {
           assert (prev_ == nullptr);
-#if defined(OS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
           trace::printf ("%s() %p nop\n", __func__, this);
 #endif
           return;
         }
 
-#if defined(OS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() %p \n", __func__, this);
 #endif
 
@@ -115,7 +115,7 @@ namespace os
     static_double_list::insert_after (static_double_list_links& node,
                                       static_double_list_links* after)
     {
-#if defined(OS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() n=%p after %p\n", __func__, &node, after);
 #endif
 
@@ -146,7 +146,7 @@ namespace os
      */
     double_list::double_list ()
     {
-#if defined(OS_TRACE_UTILS_LISTS_CONSTRUCT) || defined(OS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() %p \n", __func__, this);
 #endif
 
@@ -159,7 +159,7 @@ namespace os
      */
     double_list::~double_list ()
     {
-#if defined(OS_TRACE_UTILS_LISTS_CONSTRUCT) || defined(OS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() %p \n", __func__, this);
 #endif
 
