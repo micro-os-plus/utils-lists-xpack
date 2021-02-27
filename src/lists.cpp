@@ -146,7 +146,8 @@ namespace os
      */
     double_list::double_list ()
     {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) \
+    || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() %p \n", __func__, this);
 #endif
 
@@ -159,7 +160,8 @@ namespace os
      */
     double_list::~double_list ()
     {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) \
+    || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() %p \n", __func__, this);
 #endif
 
