@@ -113,13 +113,13 @@ namespace micro_os_plus
       next (void) const;
 
       static_double_list_links*
-      prev (void) const;
+      previous (void) const;
 
       void
       next (static_double_list_links* n);
 
       void
-      prev (static_double_list_links* n);
+      previous (static_double_list_links* n);
 
       /**
        * @}
@@ -134,7 +134,7 @@ namespace micro_os_plus
       /**
        * @brief Pointer to previous node.
        */
-      static_double_list_links* prev_;
+      static_double_list_links* previous_;
 
       /**
        * @brief Pointer to next node.
@@ -202,7 +202,7 @@ namespace micro_os_plus
      * @ingroup micro-os-plus-utils
      * @tparam T Type of object returned by the iterator.
      * @tparam N Type of intrusive node. Must have the public members
-     * **prev** & **next**.
+     * **previous** & **next**.
      * @tparam MP Name of the intrusive node member in object T.
      * @tparam U Type stored in the list, derived from T.
      *
@@ -536,7 +536,7 @@ namespace micro_os_plus
      * @ingroup micro-os-plus-utils
      * @tparam T Type of object that includes the intrusive node.
      * @tparam N Type of intrusive node. Must have the public members
-     * **prev** & **next**.
+     * **previous** & **next**.
      * @tparam MP Name of the intrusive node member in object T.
      * @tparam U Type stored in the list, derived from T.
      *
@@ -678,7 +678,7 @@ namespace micro_os_plus
      * @ingroup micro-os-plus-utils
      * @tparam T Type of object that includes the intrusive node.
      * @tparam N Type of intrusive node. Must have the public members
-     * **prev** & **next**.
+     * **previous** & **next**.
      * @tparam MP Name of the intrusive node member in object T.
      * @tparam U Type stored in the list, derived from T.
      *
@@ -812,7 +812,7 @@ namespace micro_os_plus
     // ========================================================================
 
     // Code analysis may trigger:
-    // "Member 'prev' was not initialized in constructor"
+    // "Member 'previous' was not initialized in constructor"
     // "Member 'next' was not initialized in constructor"
 
     inline static_double_list_links::static_double_list_links ()
@@ -838,9 +838,9 @@ namespace micro_os_plus
     }
 
     inline static_double_list_links*
-    static_double_list_links::prev (void) const
+    static_double_list_links::previous (void) const
     {
-      return prev_;
+      return previous_;
     }
 
     inline void
@@ -850,16 +850,16 @@ namespace micro_os_plus
     }
 
     inline void
-    static_double_list_links::prev (static_double_list_links* n)
+    static_double_list_links::previous (static_double_list_links* n)
     {
-      prev_ = n;
+      previous_ = n;
     }
 
     // ========================================================================
 
     inline double_list_links::double_list_links ()
     {
-      prev_ = nullptr;
+      previous_ = nullptr;
       next_ = nullptr;
     }
 
@@ -928,7 +928,7 @@ namespace micro_os_plus
     inline double_list_iterator<T, N, MP, U>&
     double_list_iterator<T, N, MP, U>::operator-- ()
     {
-      node_ = static_cast<iterator_pointer> (node_->prev);
+      node_ = static_cast<iterator_pointer> (node_->previous);
       return *this;
     }
 
@@ -937,7 +937,7 @@ namespace micro_os_plus
     double_list_iterator<T, N, MP, U>::operator-- (int)
     {
       const auto tmp = *this;
-      node_ = static_cast<iterator_pointer> (node_->prev);
+      node_ = static_cast<iterator_pointer> (node_->previous);
       return tmp;
     }
 
@@ -998,7 +998,7 @@ namespace micro_os_plus
     static_double_list::uninitialized (void) const
     {
       // If it points to nowhere, it is not yet initialised.
-      return (head_.prev () == nullptr);
+      return (head_.previous () == nullptr);
     }
 
     inline bool
@@ -1017,7 +1017,7 @@ namespace micro_os_plus
     inline volatile static_double_list_links*
     static_double_list::tail (void) const
     {
-      return (head_.prev ());
+      return (head_.previous ());
     }
 
     // ========================================================================
@@ -1081,7 +1081,7 @@ namespace micro_os_plus
     inline intrusive_list_iterator<T, N, MP, U>&
     intrusive_list_iterator<T, N, MP, U>::operator-- ()
     {
-      node_ = static_cast<iterator_pointer> (node_->prev ());
+      node_ = static_cast<iterator_pointer> (node_->previous ());
       return *this;
     }
 
@@ -1090,7 +1090,7 @@ namespace micro_os_plus
     intrusive_list_iterator<T, N, MP, U>::operator-- (int)
     {
       const auto tmp = *this;
-      node_ = static_cast<iterator_pointer> (node_->prev ());
+      node_ = static_cast<iterator_pointer> (node_->previous ());
       return tmp;
     }
 
@@ -1241,7 +1241,8 @@ namespace micro_os_plus
       assert (!empty ());
 
       // The last element in the list.
-      iterator_pointer link = static_cast<iterator_pointer> (head_.prev ());
+      iterator_pointer link
+          = static_cast<iterator_pointer> (head_.previous ());
       link->unlink ();
 
       return get_pointer (link);

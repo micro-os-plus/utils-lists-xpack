@@ -62,7 +62,7 @@ namespace micro_os_plus
       // Check if not already unlinked.
       if (unlinked ())
         {
-          assert (prev_ == nullptr);
+          assert (previous_ == nullptr);
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
           trace::printf ("%s() %p nop\n", __func__, this);
 #endif
@@ -74,11 +74,11 @@ namespace micro_os_plus
 #endif
 
       // Make neighbours point to each other.
-      prev_->next_ = next_;
-      next_->prev_ = prev_;
+      previous_->next_ = next_;
+      next_->previous_ = previous_;
 
       // Nullify both pointers in the unlinked node.
-      prev_ = nullptr;
+      previous_ = nullptr;
       next_ = nullptr;
     }
 
@@ -108,7 +108,7 @@ namespace micro_os_plus
     static_double_list::clear (void)
     {
       head_.next (const_cast<static_double_list_links*> (&head_));
-      head_.prev (const_cast<static_double_list_links*> (&head_));
+      head_.previous (const_cast<static_double_list_links*> (&head_));
     }
 
     void
@@ -122,7 +122,7 @@ namespace micro_os_plus
       // Unlinked nodes must have both pointers null.
       // If not, most probably the node was already linked.
       // Or the memory is corrupted.
-      assert (node.prev () == nullptr);
+      assert (node.previous () == nullptr);
       assert (node.next () == nullptr);
 
       // The `after` node must be linked. Only the `next` pointer is
@@ -130,11 +130,11 @@ namespace micro_os_plus
       assert (after->next () != nullptr);
 
       // Make the new node point to its neighbours.
-      node.prev (after);
+      node.previous (after);
       node.next (after->next ());
 
       // Make the neighbours point to the node. The order is important.
-      after->next ()->prev (&node);
+      after->next ()->previous (&node);
       after->next (&node);
     }
 
