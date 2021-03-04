@@ -66,7 +66,7 @@ if(NOT TARGET micro-os-plus-utils-lists-static)
   # Aliases.
 
   add_library(micro-os-plus::utils-lists-static ALIAS micro-os-plus-utils-lists-static)
-  message(STATUS "micro-os-plus::utils-lists-static")
+  message(STATUS "=> micro-os-plus::utils-lists-static")
 
 endif()
 
