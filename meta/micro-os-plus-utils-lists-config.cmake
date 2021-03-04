@@ -59,14 +59,14 @@ if(NOT TARGET micro-os-plus-utils-lists-static)
     micro-os-plus-utils-lists-static
     
     PUBLIC
-      micro-os-plus::diag-trace-static
+      micro-os-plus::diag-trace
   )
 
   # ---------------------------------------------------------------------------
   # Aliases.
 
-  add_library(micro-os-plus::utils-lists-static ALIAS micro-os-plus-utils-lists-static)
-  message(STATUS "=> micro-os-plus::utils-lists-static")
+  add_library(micro-os-plus::utils-lists ALIAS micro-os-plus-utils-lists-static)
+  message(STATUS "=> micro-os-plus::utils-lists")
 
 endif()
 
