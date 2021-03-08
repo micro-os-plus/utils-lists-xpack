@@ -32,10 +32,20 @@
 
 #ifdef __cplusplus
 
+// ----------------------------------------------------------------------------
+
 #include <cstdint>
 #include <cstddef>
 #include <cassert>
 #include <iterator>
+
+// ----------------------------------------------------------------------------
+
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 
 namespace micro_os_plus
 {
@@ -1179,8 +1189,10 @@ namespace micro_os_plus
                     const_cast<static_double_list_links*> (tail ()));
     }
 
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Waggregate-return"
+
     /**
-     * @details
      * @note It is not `const` because it may initialise on first use.
      */
     template <typename T, typename N, N T::*MP, typename U>
@@ -1202,6 +1214,8 @@ namespace micro_os_plus
       return iterator{ static_cast<iterator_pointer> (
           const_cast<static_double_list_links*> (&head_)) };
     }
+
+#pragma GCC diagnostic pop
 
     template <typename T, typename N, N T::*MP, typename U>
     inline typename intrusive_list<T, N, MP, U>::pointer
@@ -1250,6 +1264,8 @@ namespace micro_os_plus
 
   } // namespace utils
 } // namespace micro_os_plus
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
 

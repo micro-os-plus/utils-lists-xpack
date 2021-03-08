@@ -25,9 +25,18 @@
  * OTHER DEALINGS IN THE SOFTWARE.
  */
 
-#include <micro-os-plus/utils/lists.h>
+// ----------------------------------------------------------------------------
 
+#include <micro-os-plus/utils/lists.h>
 #include <micro-os-plus/diag/trace.h>
+
+// ----------------------------------------------------------------------------
+
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
 
 namespace micro_os_plus
 {
@@ -107,8 +116,8 @@ namespace micro_os_plus
     void
     static_double_list::clear (void)
     {
-      head_.next (const_cast<static_double_list_links*> (&head_));
-      head_.previous (const_cast<static_double_list_links*> (&head_));
+      head_.next (&head_);
+      head_.previous (&head_);
     }
 
     void
@@ -170,5 +179,7 @@ namespace micro_os_plus
 
   } // namespace utils
 } // namespace micro_os_plus
+
+#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------
