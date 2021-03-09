@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/utils-lists",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "A source xPack with C++ lists support for µOS++",
   "main": "",
   "scripts": {
@@ -26,7 +26,6 @@
   },
   "license": "MIT",
   "config": {},
-  "dependencies": {},
   "devDependencies": {},
   "xpack": {}
 }
