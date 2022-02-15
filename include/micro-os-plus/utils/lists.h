@@ -43,6 +43,11 @@ namespace micro_os_plus
      * pointers to next, previous.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
      * @ingroup micro-os-plus-utils
+     *
+     * @details A pair of next/prev uninitialised pointers.
+     *
+     * Statically allocated variables are stored in BSS
+     * and are cleared during startup.
      */
     class static_double_list_links
     {
@@ -148,6 +153,8 @@ namespace micro_os_plus
      * previous.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
      * @ingroup micro-os-plus-utils
+     *
+     * @details A pair of next/prev null pointers.
      */
     class double_list_links : public static_double_list_links
     {
@@ -337,6 +344,11 @@ namespace micro_os_plus
      * @brief Statically allocated circular double linked list of nodes.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
      * @ingroup micro-os-plus-utils
+     *
+     * @details An unitialised head of a double linked list.
+     *
+     * Statically allocated variables are stored in BSS
+     * and are cleared during startup.
      */
     class static_double_list
     {
@@ -482,6 +494,8 @@ namespace micro_os_plus
      * @brief Circular double linked list of nodes.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
      * @ingroup micro-os-plus-utils
+     *
+     * @details The head of a double listed list.
      */
     class double_list : public static_double_list
     {
@@ -668,7 +682,8 @@ namespace micro_os_plus
     // ========================================================================
 
     /**
-     * @brief List of intrusive nodes.
+     * @brief Statically allocated list of intrusive nodes,
+     * which store the links inside the linked object.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
      * @ingroup micro-os-plus-utils
      * @tparam T Type of object that includes the intrusive node.
@@ -683,6 +698,15 @@ namespace micro_os_plus
      * using threads_list = utils::static_intrusive_list<
      * thread, utils::double_list_links, &thread::child_links_>;
      * @endcode
+     *
+     * @details A pair of next/prev uninitialised pointers,
+     * maintaining a list of intrusive nodes.
+     *
+     * Intrusive nodes do not need separate allocations
+     * for the links, but store them in the linked
+     * objects, in the MP member. The main thing this class
+     * does is to compute the address of the object by subtracting
+     * the offset from the address of the member storing the pointers.
      */
     template <typename T, typename N, N T::*MP, typename U = T>
     class static_intrusive_list : public static_double_list
@@ -797,7 +821,8 @@ namespace micro_os_plus
     // ========================================================================
 
     /**
-     * @brief List of intrusive nodes.
+     * @brief List of intrusive nodes,
+     * which store the links inside the linked object.
      * @headerfile lists.h <micro-os-plus/utils/lists.h>
      * @ingroup micro-os-plus-utils
      * @tparam T Type of object that includes the intrusive node.
@@ -812,6 +837,9 @@ namespace micro_os_plus
      * using threads_list = utils::static_intrusive_list<
      * thread, utils::double_list_links, &thread::child_links_>;
      * @endcode
+     *
+     * @details A pair of next/prev null pointers,
+     * maintaining a list of intrusive nodes.
      */
     template <typename T, typename N, N T::*MP, typename U = T>
     class intrusive_list : public static_intrusive_list<T, N, MP, U>
@@ -880,12 +908,12 @@ namespace micro_os_plus
 
     inline static_double_list_links::static_double_list_links ()
     {
-      ;
+      // Pointers are not explicitly initialised on purpose,
+      // since it is assumed that BSS was cleared at startup.
     }
 
     inline static_double_list_links::~static_double_list_links ()
     {
-      ;
     }
 
     inline bool
@@ -922,13 +950,13 @@ namespace micro_os_plus
 
     inline double_list_links::double_list_links ()
     {
+      // This time the mebers are explicitly initialised.
       previous_ = nullptr;
       next_ = nullptr;
     }
 
     inline double_list_links::~double_list_links ()
     {
-      ;
     }
 
     // ========================================================================
@@ -936,7 +964,6 @@ namespace micro_os_plus
     constexpr double_list_iterator<T, N, MP, U>::double_list_iterator ()
         : node_{}
     {
-      ;
     }
 
     template <typename T, typename N, T* N::*MP, typename U>
@@ -944,7 +971,6 @@ namespace micro_os_plus
         iterator_pointer const node)
         : node_{ node }
     {
-      ;
     }
 
     template <typename T, typename N, T* N::*MP, typename U>
@@ -1054,7 +1080,6 @@ namespace micro_os_plus
      */
     inline static_double_list::~static_double_list ()
     {
-      ;
     }
 
     inline bool
@@ -1089,7 +1114,6 @@ namespace micro_os_plus
     constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator ()
         : node_{}
     {
-      ;
     }
 
     template <typename T, typename N, N T::*MP, typename U>
@@ -1097,7 +1121,6 @@ namespace micro_os_plus
         N* const node)
         : node_{ node }
     {
-      ;
     }
 
     template <typename T, typename N, N T::*MP, typename U>
@@ -1203,7 +1226,6 @@ namespace micro_os_plus
     template <typename T, typename N, N T::*MP, typename U>
     inline static_intrusive_list<T, N, MP, U>::static_intrusive_list ()
     {
-      ;
     }
 
     template <typename T, typename N, N T::*MP, typename U>
@@ -1218,7 +1240,6 @@ namespace micro_os_plus
     template <typename T, typename N, N T::*MP, typename U>
     inline static_intrusive_list<T, N, MP, U>::~static_intrusive_list ()
     {
-      ;
     }
 
     template <typename T, typename N, N T::*MP, typename U>
@@ -1320,14 +1341,14 @@ namespace micro_os_plus
 
     template <typename T, typename N, N T::*MP, typename U>
     inline intrusive_list<T, N, MP, U>::intrusive_list ()
-        : static_intrusive_list<T, N, MP, U> (true)
+        : static_intrusive_list<T, N, MP, U>{ true }
     {
+      // The parent contructor is instructed to clear the pointers.
     }
 
     template <typename T, typename N, N T::*MP, typename U>
     inline intrusive_list<T, N, MP, U>::~intrusive_list ()
     {
-      ;
     }
 
   } // namespace utils
