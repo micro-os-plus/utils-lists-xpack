@@ -680,12 +680,12 @@ namespace micro_os_plus
      * @par Examples
      *
      * @code{.cpp}
-     * using threads_list = utils::intrusive_list<
+     * using threads_list = utils::static_intrusive_list<
      * thread, utils::double_list_links, &thread::child_links_>;
      * @endcode
      */
     template <typename T, typename N, N T::*MP, typename U = T>
-    class intrusive_list : public static_double_list
+    class static_intrusive_list : public static_double_list
     {
     public:
       using value_type = U;
@@ -708,25 +708,25 @@ namespace micro_os_plus
       /**
        * @brief Construct an intrusive list.
        */
-      intrusive_list ();
+      static_intrusive_list ();
 
       /**
        * @brief Construct an intrusive list with controlled inits.
        * @param clr If true, the list is cleared.
        */
-      intrusive_list (bool clr);
+      static_intrusive_list (bool clr);
 
       /**
        * @cond ignore
        */
 
-      intrusive_list (const intrusive_list&) = delete;
-      intrusive_list (intrusive_list&&) = delete;
-      intrusive_list&
-      operator= (const intrusive_list&)
+      static_intrusive_list (const static_intrusive_list&) = delete;
+      static_intrusive_list (static_intrusive_list&&) = delete;
+      static_intrusive_list&
+      operator= (const static_intrusive_list&)
           = delete;
-      intrusive_list&
-      operator= (intrusive_list&&)
+      static_intrusive_list&
+      operator= (static_intrusive_list&&)
           = delete;
 
       /**
@@ -736,7 +736,7 @@ namespace micro_os_plus
       /**
        * @brief Destruct the list.
        */
-      ~intrusive_list ();
+      ~static_intrusive_list ();
 
       /**
        * @}
@@ -1133,13 +1133,13 @@ namespace micro_os_plus
     // ========================================================================
 
     template <typename T, typename N, N T::*MP, typename U>
-    inline intrusive_list<T, N, MP, U>::intrusive_list ()
+    inline static_intrusive_list<T, N, MP, U>::static_intrusive_list ()
     {
       ;
     }
 
     template <typename T, typename N, N T::*MP, typename U>
-    inline intrusive_list<T, N, MP, U>::intrusive_list (bool clr)
+    inline static_intrusive_list<T, N, MP, U>::static_intrusive_list (bool clr)
     {
       if (clr)
         {
@@ -1148,14 +1148,14 @@ namespace micro_os_plus
     }
 
     template <typename T, typename N, N T::*MP, typename U>
-    inline intrusive_list<T, N, MP, U>::~intrusive_list ()
+    inline static_intrusive_list<T, N, MP, U>::~static_intrusive_list ()
     {
       ;
     }
 
     template <typename T, typename N, N T::*MP, typename U>
     void
-    intrusive_list<T, N, MP, U>::link (U& node)
+    static_intrusive_list<T, N, MP, U>::link (U& node)
     {
       if (uninitialized ())
         {
@@ -1181,8 +1181,8 @@ namespace micro_os_plus
      * @note It is not `const` because it may initialise on first use.
      */
     template <typename T, typename N, N T::*MP, typename U>
-    inline typename intrusive_list<T, N, MP, U>::iterator
-    intrusive_list<T, N, MP, U>::begin ()
+    inline typename static_intrusive_list<T, N, MP, U>::iterator
+    static_intrusive_list<T, N, MP, U>::begin ()
     {
       if (uninitialized ())
         {
@@ -1193,8 +1193,8 @@ namespace micro_os_plus
     }
 
     template <typename T, typename N, N T::*MP, typename U>
-    inline typename intrusive_list<T, N, MP, U>::iterator
-    intrusive_list<T, N, MP, U>::end () const
+    inline typename static_intrusive_list<T, N, MP, U>::iterator
+    static_intrusive_list<T, N, MP, U>::end () const
     {
       return iterator{ static_cast<iterator_pointer> (
           const_cast<static_double_list_links*> (&head_)) };
@@ -1203,8 +1203,8 @@ namespace micro_os_plus
 #pragma GCC diagnostic pop
 
     template <typename T, typename N, N T::*MP, typename U>
-    inline typename intrusive_list<T, N, MP, U>::pointer
-    intrusive_list<T, N, MP, U>::get_pointer (iterator_pointer node) const
+    inline typename static_intrusive_list<T, N, MP, U>::pointer
+    static_intrusive_list<T, N, MP, U>::get_pointer (iterator_pointer node) const
     {
       // static_assert(std::is_convertible<U, T>::value == true, "U must be
       // implicitly convertible to T!");
@@ -1221,8 +1221,8 @@ namespace micro_os_plus
     }
 
     template <typename T, typename N, N T::*MP, typename U>
-    typename intrusive_list<T, N, MP, U>::pointer
-    intrusive_list<T, N, MP, U>::unlink_head (void)
+    typename static_intrusive_list<T, N, MP, U>::pointer
+    static_intrusive_list<T, N, MP, U>::unlink_head (void)
     {
       assert (!empty ());
 
@@ -1234,8 +1234,8 @@ namespace micro_os_plus
     }
 
     template <typename T, typename N, N T::*MP, typename U>
-    typename intrusive_list<T, N, MP, U>::pointer
-    intrusive_list<T, N, MP, U>::unlink_tail (void)
+    typename static_intrusive_list<T, N, MP, U>::pointer
+    static_intrusive_list<T, N, MP, U>::unlink_tail (void)
     {
       assert (!empty ());
 
