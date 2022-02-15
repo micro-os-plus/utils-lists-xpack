@@ -12,7 +12,11 @@
 
 // ----------------------------------------------------------------------------
 
-// ...
+#if defined(MICRO_OS_PLUS_TRACE)
+#define MICRO_OS_PLUS_USE_TRACE_POSIX_STDOUT
+#define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
+#define MICRO_OS_PLUS_TRACE_UTILS_LISTS
+#endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
