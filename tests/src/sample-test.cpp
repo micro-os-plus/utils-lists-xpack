@@ -19,7 +19,7 @@
 #include <micro-os-plus/utils/lists.h>
 #include <unistd.h>
 
-#include <iostream>
+#include <stdio.h>
 
 using namespace micro_os_plus;
 
@@ -34,27 +34,28 @@ using namespace micro_os_plus;
 
 class child
 {
-  public:
-      child (const char* name) {
-        name_ = name;
-      }
+public:
+  child (const char* name)
+  {
+    name_ = name;
+  }
 
-      const char* name() {
-        return name_;
-      }
+  const char*
+  name ()
+  {
+    return name_;
+  }
 
-  public:
-    const char* name_;
+public:
+  const char* name_;
 
-    // Intrusive node used to link this child to the registry list.
-    // Must be public.
-    utils::double_list_links registry_links_;
+  // Intrusive node used to link this child to the registry list.
+  // Must be public.
+  utils::double_list_links registry_links_;
 };
 
-using children_list
-    = utils::intrusive_list<child, utils::double_list_links,
-                            &child::registry_links_>;
-
+using children_list = utils::intrusive_list<child, utils::double_list_links,
+                                            &child::registry_links_>;
 
 int
 main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
@@ -63,29 +64,31 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   children_list children_registry;
 
   // Add several members.
-  child* marry = new child("Marry");
-  children_registry.link(*marry);
+  child* marry = new child ("Marry");
+  children_registry.link (*marry);
 
-  child* bob = new child("Bob");
-  children_registry.link(*bob);
+  child* bob = new child ("Bob");
+  children_registry.link (*bob);
 
-  child* sally = new child("Sally");
-  children_registry.link(*sally);
+  child* sally = new child ("Sally");
+  children_registry.link (*sally);
 
   // List them.
-  for  (auto&& p : children_registry) {
-    std::cout << p.name() << std::endl;
-  }
+  for (auto&& p : children_registry)
+    {
+      printf ("%s\n", p.name ());
+    }
 
-  std::cout << std::endl;
+  printf ("\n");
 
   // Remove one of them.
-  bob->registry_links_.unlink();
+  bob->registry_links_.unlink ();
 
   // List the remaining ones.
-  for  (auto&& p : children_registry) {
-    std::cout << p.name() << std::endl;
-  }
+  for (auto&& p : children_registry)
+    {
+      printf ("%s\n", p.name ());
+    }
 
   return 0;
 }
