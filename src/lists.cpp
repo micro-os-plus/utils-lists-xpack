@@ -105,6 +105,9 @@ namespace micro_os_plus
     void
     static_double_list::clear (void)
     {
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+      trace::printf ("%s() @%p\n", __func__, this);
+#endif
       head_.next (&head_);
       head_.previous (&head_);
     }
