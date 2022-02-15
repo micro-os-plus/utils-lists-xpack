@@ -28,6 +28,7 @@
 #include <micro-os-plus/diag/trace.h>
 #include <cstddef>
 #include <unistd.h>
+#include <cstring>
 
 // ----------------------------------------------------------------------------
 
