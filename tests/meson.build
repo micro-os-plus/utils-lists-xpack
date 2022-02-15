@@ -12,7 +12,7 @@
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual.html#project
-project('xxx-yyy',
+project('utils-lists',
   ['c', 'cpp'],
   default_options: [
     'c_std=c11',

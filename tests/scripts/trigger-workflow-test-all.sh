@@ -49,7 +49,7 @@ source "${script_folder_path}/helper.sh"
 # Script to trigger a set of tests via GitHub Actions.
 
 GITHUB_ORG="micro-os-plus"
-GITHUB_REPO="xxx-yyy-xpack"
+GITHUB_REPO="utils-lists-xpack"
 # GITHUB_API_DISPATCH_TOKEN must be present in the environment.
 
 branch="xpack-develop"

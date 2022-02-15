@@ -18,8 +18,8 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(
-  micro-os-plus-xxx-yyy-plus
-  DESCRIPTION "xxx-yyy"
+  micro-os-plus-utils-lists-plus
+  DESCRIPTION "utils-lists"
 )
 
 # Must be called from the project root folder.
