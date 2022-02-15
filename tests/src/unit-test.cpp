@@ -38,7 +38,6 @@ using namespace micro_os_plus;
 void
 test_case_xxx (micro_test_plus::session& t);
 
-
 // ----------------------------------------------------------------------------
 
 int

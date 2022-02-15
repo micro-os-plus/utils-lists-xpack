@@ -860,7 +860,6 @@ namespace micro_os_plus
        * @brief Destruct the list.
        */
       ~intrusive_list ();
-
     };
 
     // ------------------------------------------------------------------------
@@ -1273,7 +1272,8 @@ namespace micro_os_plus
 
     template <typename T, typename N, N T::*MP, typename U>
     inline typename static_intrusive_list<T, N, MP, U>::pointer
-    static_intrusive_list<T, N, MP, U>::get_pointer (iterator_pointer node) const
+    static_intrusive_list<T, N, MP, U>::get_pointer (
+        iterator_pointer node) const
     {
       // static_assert(std::is_convertible<U, T>::value == true, "U must be
       // implicitly convertible to T!");
@@ -1319,10 +1319,9 @@ namespace micro_os_plus
     // ========================================================================
 
     template <typename T, typename N, N T::*MP, typename U>
-    inline intrusive_list<T, N, MP, U>::intrusive_list () :
-      static_intrusive_list<T, N, MP, U>(true)
+    inline intrusive_list<T, N, MP, U>::intrusive_list ()
+        : static_intrusive_list<T, N, MP, U> (true)
     {
-
     }
 
     template <typename T, typename N, N T::*MP, typename U>
