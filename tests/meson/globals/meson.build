@@ -21,9 +21,6 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   includes += [ '-I../../tests/platform-' + xpack_platform_name + '/include-config' ]
   message('G+ -I tests/platform-' + xpack_platform_name + '/include-config')
 
-  includes += [ '-I../../tests/platform-' + xpack_platform_name + '/include-platform' ]
-  message('G+ -I tests/platform-' + xpack_platform_name + '/include-platform')
-
   # Global compiler preprocessor definitions.
   # Native builds may not use them.
   compiler_definitions = []

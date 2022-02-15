@@ -22,7 +22,6 @@ message(VERBOSE "Including global definitions...")
 include_directories(
   # Folders are relative to `tests`.
   "platform-${PLATFORM_NAME}/include-config"
-  "platform-${PLATFORM_NAME}/include-platform"
 )
 
 # https://cmake.org/cmake/help/v3.20/command/add_compile_definitions.html
