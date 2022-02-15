@@ -794,6 +794,75 @@ namespace micro_os_plus
        */
     };
 
+    // ========================================================================
+
+    /**
+     * @brief List of intrusive nodes.
+     * @headerfile lists.h <micro-os-plus/utils/lists.h>
+     * @ingroup micro-os-plus-utils
+     * @tparam T Type of object that includes the intrusive node.
+     * @tparam N Type of intrusive node. Must have the public members
+     * **previous** & **next**.
+     * @tparam MP Name of the intrusive node member in object T.
+     * @tparam U Type stored in the list, derived from T.
+     *
+     * @par Examples
+     *
+     * @code{.cpp}
+     * using threads_list = utils::static_intrusive_list<
+     * thread, utils::double_list_links, &thread::child_links_>;
+     * @endcode
+     */
+    template <typename T, typename N, N T::*MP, typename U = T>
+    class intrusive_list : public static_intrusive_list<T, N, MP, U>
+    {
+    public:
+      using value_type = U;
+      using pointer = U*;
+      using reference = U&;
+      using difference_type = ptrdiff_t;
+
+      using iterator = intrusive_list_iterator<T, N, MP, U>;
+
+      /**
+       * @brief Type of reference to the iterator internal pointer.
+       */
+      using iterator_pointer = N*;
+
+      /**
+       * @name Constructors & Destructor
+       * @{
+       */
+
+      /**
+       * @brief Construct an intrusive list.
+       */
+      intrusive_list ();
+
+      /**
+       * @cond ignore
+       */
+
+      intrusive_list (const intrusive_list&) = delete;
+      intrusive_list (intrusive_list&&) = delete;
+      intrusive_list&
+      operator= (const intrusive_list&)
+          = delete;
+      intrusive_list&
+      operator= (intrusive_list&&)
+          = delete;
+
+      /**
+       * @endcond
+       */
+
+      /**
+       * @brief Destruct the list.
+       */
+      ~intrusive_list ();
+
+    };
+
     // ------------------------------------------------------------------------
   } // namespace utils
 } // namespace micro_os_plus
@@ -1245,6 +1314,21 @@ namespace micro_os_plus
       link->unlink ();
 
       return get_pointer (link);
+    }
+
+    // ========================================================================
+
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list<T, N, MP, U>::intrusive_list () :
+      static_intrusive_list<T, N, MP, U>(true)
+    {
+
+    }
+
+    template <typename T, typename N, N T::*MP, typename U>
+    inline intrusive_list<T, N, MP, U>::~intrusive_list ()
+    {
+      ;
     }
 
   } // namespace utils
