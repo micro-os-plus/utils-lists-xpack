@@ -16,9 +16,41 @@
 message(VERBOSE "Processing 'tests/platform-native'...")
 
 # -----------------------------------------------------------------------------
+# Define the platform library.
 
-# For native tests, a `micro-os-plus::platform` would be empty and it
-# is not created.
+add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
+
+# -----------------------------------------------------------------------------
+
+target_include_directories(platform-native-interface INTERFACE
+  "include-platform"
+)
+
+target_sources(platform-native-interface INTERFACE
+  "src/trace-posix.cpp"
+)
+
+target_compile_definitions(platform-native-interface INTERFACE
+  # None.
+)
+
+target_compile_options(platform-native-interface INTERFACE
+  # None.
+)
+
+target_link_libraries(platform-native-interface INTERFACE
+  # None.
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists(platform-native-interface)
+endif()
+
+# -----------------------------------------------------------------------------
+# Aliases.
+
+add_library(micro-os-plus::platform ALIAS platform-native-interface)
+message(VERBOSE "> micro-os-plus::platform -> platform-native-interface")
 
 # =============================================================================
 
@@ -64,7 +96,11 @@ function(add_test_executable name)
     # Tested library.
     micro-os-plus::utils-lists
 
+    # Portable dependencies.
     micro-os-plus::diag-trace
+
+    # Platform specific dependencies.
+    micro-os-plus::platform
   )
 
   message(VERBOSE "A> ${name}")

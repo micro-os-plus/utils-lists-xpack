@@ -16,6 +16,27 @@
 message('Processing platform-native...')
 
 # -----------------------------------------------------------------------------
+# Define the platform library.
+
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+platform_native_dependency = declare_dependency(
+  include_directories: include_directories(
+    'include-platform',
+  ),
+  sources: files(
+    'src/trace-posix.cpp',
+  ),
+  compile_args: [
+  ],
+  dependencies: [
+  ]
+)
+
+message('+ -I tests/platform-native/include-platform')
+message('+ tests/platform-native/src/trace-posix.cpp')
+message('> platform_native_dependency')
+
+# =============================================================================
 
 linker_options = []
 
@@ -69,7 +90,11 @@ sample_test = executable(
     # Tested library.
     micro_os_plus_utils_lists_dependency,
 
+    # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
+
+    # Platform specific dependencies.
+    platform_native_dependency,
   ],
   link_args: linker_options
 )
@@ -103,8 +128,12 @@ unit_test = executable(
     # Tested library.
     micro_os_plus_utils_lists_dependency,
 
-    micro_os_plus_micro_test_plus_dependency,
+    # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
+    micro_os_plus_micro_test_plus_dependency,
+ 
+    # Platform specific dependencies.
+    platform_native_dependency,
   ],
   link_args: linker_options
 )
