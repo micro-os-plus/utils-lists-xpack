@@ -1,5 +1,5 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/workflows/CI%20on%20Push/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions?query=workflow%3A%22CI+on+Push%22)
+[![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
 
 # A source xPack with the µOS++ lists utilities
 
