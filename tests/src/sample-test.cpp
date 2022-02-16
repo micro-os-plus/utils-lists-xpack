@@ -16,9 +16,9 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#include <micro-os-plus/platform.h>
 #include <micro-os-plus/utils/lists.h>
 #include <unistd.h>
-
 #include <stdio.h>
 
 using namespace micro_os_plus;

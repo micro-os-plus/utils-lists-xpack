@@ -36,7 +36,7 @@
 
 void __attribute__ ((section (".after_vectors"))) SysTick_Handler (void)
 {
-  ; // Currently nothing to do.
+  // Currently nothing to do.
 }
 
 // ----------------------------------------------------------------------------
