@@ -187,6 +187,9 @@
           "platformName": "native"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepare }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -194,6 +197,9 @@
           ],
           "test": "{{ properties.commandCMakePerformTests }}",
           "clean": "{{ properties.commandCMakeClean }}"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-release": {
@@ -202,6 +208,9 @@
           "platformName": "native"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepare }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -209,6 +218,9 @@
           ],
           "test": "{{ properties.commandCMakePerformTests }}",
           "clean": "{{ properties.commandCMakeClean }}"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-gcc8-debug": {
@@ -218,6 +230,9 @@
           "toolchainFileName": "gcc.cmake"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -227,7 +242,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "8.5.0-1.1"
+          "@xpack-dev-tools/gcc": "8.5.0-1.1",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-gcc8-release": {
@@ -237,6 +253,9 @@
           "toolchainFileName": "gcc.cmake"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -246,7 +265,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "8.5.0-1.1"
+          "@xpack-dev-tools/gcc": "8.5.0-1.1",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-gcc11-debug": {
@@ -256,6 +276,9 @@
           "toolchainFileName": "gcc.cmake"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -265,7 +288,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-3.3"
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-gcc11-release": {
@@ -275,6 +299,9 @@
           "toolchainFileName": "gcc.cmake"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -284,7 +311,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-3.3"
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-clang12-debug": {
@@ -294,6 +322,9 @@
           "toolchainFileName": "clang.cmake"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -303,7 +334,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-cmake-clang12-release": {
@@ -313,6 +345,9 @@
           "toolchainFileName": "clang.cmake"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
           "build": [
             "{{ properties.commandCMakeReconfigure }}",
@@ -322,7 +357,8 @@
           "clean": "{{ properties.commandCMakeClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-meson-debug": {
@@ -331,6 +367,9 @@
           "platformName": "native"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandMesonPrepare }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
@@ -338,6 +377,9 @@
           ],
           "test": "{{ properties.commandMesonPerformTests }}",
           "clean": "{{ properties.commandMesonClean }}"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-meson-release": {
@@ -346,6 +388,9 @@
           "platformName": "native"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandMesonPrepare }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
@@ -353,6 +398,9 @@
           ],
           "test": "{{ properties.commandMesonPerformTests }}",
           "clean": "{{ properties.commandMesonClean }}"
+        },
+        "devDependencies": {
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-meson-gcc11-debug": {
@@ -363,6 +411,9 @@
           "toolchainWindowsFileName": "gcc-cmd.ini"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
@@ -372,7 +423,8 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-3.3"
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-meson-gcc11-release": {
@@ -383,6 +435,9 @@
           "toolchainWindowsFileName": "gcc-cmd.ini"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
@@ -392,7 +447,8 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.2.0-3.3"
+          "@xpack-dev-tools/gcc": "11.2.0-3.3",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-meson-clang12-debug": {
@@ -403,6 +459,9 @@
           "toolchainWindowsFileName": "clang-cmd.ini"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
@@ -412,7 +471,8 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "native-meson-clang12-release": {
@@ -423,6 +483,9 @@
           "toolchainWindowsFileName": "clang-cmd.ini"
         },
         "actions": {
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
+          ],
           "prepare": "{{ properties.commandMesonPrepareWithToolchain }}",
           "build": [
             "{{ properties.commandMesonReconfigure }}",
@@ -432,7 +495,8 @@
           "clean": "{{ properties.commandMesonClean }}"
         },
         "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
+          "@xpack-dev-tools/clang": "12.0.1-2.2",
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.0"
         }
       },
       "qemu-mps2-an386-cmake-debug": {

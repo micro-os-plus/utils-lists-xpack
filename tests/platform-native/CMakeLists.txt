@@ -27,7 +27,7 @@ target_include_directories(platform-native-interface INTERFACE
 )
 
 target_sources(platform-native-interface INTERFACE
-  "src/trace-posix.cpp"
+  # None.
 )
 
 target_compile_definitions(platform-native-interface INTERFACE
@@ -39,7 +39,7 @@ target_compile_options(platform-native-interface INTERFACE
 )
 
 target_link_libraries(platform-native-interface INTERFACE
-  # None.
+  micro-os-plus::architecture-synthetic-posix
 )
 
 if (COMMAND xpack_display_target_lists)

@@ -24,11 +24,11 @@ platform_native_dependency = declare_dependency(
     'include-platform',
   ),
   sources: files(
-    'src/trace-posix.cpp',
   ),
   compile_args: [
   ],
   dependencies: [
+    micro_os_plus_architecture_synthetic_posix_dependency
   ]
 )
 
@@ -131,7 +131,7 @@ unit_test = executable(
     # Portable dependencies.
     micro_os_plus_diag_trace_dependency,
     micro_os_plus_micro_test_plus_dependency,
- 
+
     # Platform specific dependencies.
     platform_native_dependency,
   ],
