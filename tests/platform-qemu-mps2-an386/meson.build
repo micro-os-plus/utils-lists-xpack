@@ -30,10 +30,10 @@ platform_qemu_mps2_an386_dependency = declare_dependency(
     'include-platform',
   ),
   sources: files(
-    'src/initialize-hardware.cpp',
-    'src/interrupts-handlers.cpp',
+    # None.
   ),
   compile_args: [
+    # None.
   ],
   dependencies: [
     micro_os_plus_devices_qemu_cortexm_dependency,

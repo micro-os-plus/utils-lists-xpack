@@ -30,8 +30,7 @@ target_include_directories(platform-qemu-mps2-an386-interface INTERFACE
 )
 
 target_sources(platform-qemu-mps2-an386-interface INTERFACE
-  "src/initialize-hardware.cpp"
-  "src/interrupts-handlers.cpp"
+  # None.
 )
 
 target_compile_definitions(platform-qemu-mps2-an386-interface INTERFACE
