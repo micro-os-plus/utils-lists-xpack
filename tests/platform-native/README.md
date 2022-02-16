@@ -1,4 +1,8 @@
 # platform-native
 
-This folder includes the CMake and meson build configuration
-to build the tests on native platforms.
+Support files for building application to run as native processes.
+
+A few files, with minimal content, are added:
+
+- `include/micro-os-plus/config.h`
+- `include/micro-os-plus/platform.h`

@@ -7,5 +7,3 @@ A few files, with minimal content, are added:
 
 - `include/micro-os-plus/config.h`
 - `include/micro-os-plus/platform.h`
-- `src/initialize-hardware.cpp`
-- `src/interrupt-handlers.cpp`
