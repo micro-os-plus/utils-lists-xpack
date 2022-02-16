@@ -19,8 +19,8 @@ The supported platforms are:
 
 - `platform-native` - run the test applications as native process
   on the development machine
-- `platform-qemu-mps2-an386` - run the test as fully semihosted applications
-  on a QEMU mps2-an386 emulated board, an Arm Cortex-M4 development board
+- `platform-qemu-mps2-an386` - run the tests as fully semihosted applications
+  on a QEMU mps2-an386 emulated board (an Arm Cortex-M4 development board)
 
 The tests are performed on GNU/Linux, macOS and Windows.
 
