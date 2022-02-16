@@ -27,7 +27,8 @@ The tests are performed on GNU/Linux, macOS and Windows.
 Exactly the same source files are used on all platforms, without
 changes.
 
-It is planned to add more platforms, like RISC-V
+It is planned to add more platforms, like RISC-V, but no dates are set.
+
 ## Toolchains
 
 For a better portability, the builds are repeated with multiple toolchains,
