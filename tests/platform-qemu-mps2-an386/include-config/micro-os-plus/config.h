@@ -15,7 +15,11 @@
 // On bare-metal platforms, tests are semihosted applications.
 #define MICRO_OS_PLUS_USE_SEMIHOSTING_SYSCALLS
 
-#define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG
+#if defined(MICRO_OS_PLUS_TRACE)
+#define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT
+#define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
+#define MICRO_OS_PLUS_TRACE_UTILS_LISTS
+#endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
