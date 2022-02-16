@@ -71,7 +71,7 @@ xpack_linker_scripts = [
   '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
 ]
 
-# The current folder is tests, we must include folders from the build folder.
+# The base folder is root, via the `top` link.
 xpack_dependencies = [
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version', # -
   'xpacks/micro-os-plus-diag-trace', # -
@@ -83,6 +83,7 @@ xpack_dependencies = [
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c', # diag-trace, startup, architecture
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp', # diag-trace
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-qemu-cortexm', # device, diag-trace | (device) arm-cmsis-core-m, architecture-cortexm-device
+
   'xpacks/micro-os-plus-micro-test-plus', # -
 ]
 
