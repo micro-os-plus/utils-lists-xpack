@@ -3,7 +3,7 @@
 # https://github.com/actions
 
 # https://github.com/micro-os-plus/micro-test-plus-xpack/actions/workflows/CI.yml
-name: CI utils-lists on Push
+name: CI on Push
 
 on:
   push:
