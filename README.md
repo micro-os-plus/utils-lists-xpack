@@ -1,7 +1,7 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
 
-# A source xPack with the µOS++ lists utilities
+# A source library xPack with the µOS++ lists utilities
 
 This project includes files that implement C++ lists, also used in the
 µOS++ RTOS.
@@ -19,8 +19,8 @@ For maintainer infos, please see the
 
 ## Install
 
-As a source xPacks, the easiest way to add it to a project is via **xpm**,
-but it can also be used as any Git project, for example as a submodule.
+As a source library xPacks, the easiest way to add it to a project is via
+**xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
 
