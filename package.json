@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/utils-lists",
   "version": "2.0.1",
-  "description": "A source xPack with µOS++ C++ lists utilities",
+  "description": "A source library xPack with µOS++ C++ lists utilities",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
