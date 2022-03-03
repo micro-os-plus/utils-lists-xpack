@@ -66,7 +66,8 @@
       ],
       "link-deps": [
         "xpm link @micro-os-plus/build-helper",
-        "xpm link @micro-os-plus/micro-test-plus"
+        "xpm link @micro-os-plus/micro-test-plus",
+        "xpm link @micro-os-plus/diag-trace"
       ],
       "test-all": [
         "xpm run test-native",
