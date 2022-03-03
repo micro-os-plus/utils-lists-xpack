@@ -43,6 +43,8 @@ set(global_common_options
   # These are used in conjunction with linker `--gc-sections`.
   -ffunction-sections
   -fdata-sections
+
+  -fdiagnostics-color=always
 )
 
 add_compile_options(

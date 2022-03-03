@@ -95,6 +95,8 @@ foreach name : test_names
     dependencies: libs_dependencies,
     link_args: [
       '-nostartfiles',
+      # Ensure the linker will keep the interrupt vectors which otherwise
+      # are not refered from anywhere.
       '-u_interrupt_vectors',
       '-Wl,--gc-sections',
       '-Wl,-Map,'+ name + '-map.txt',

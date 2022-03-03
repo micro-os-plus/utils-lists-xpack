@@ -24,7 +24,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Processing xPack @micro-os-plus/diag-trace...')
+message('Processing xPack @micro-os-plus/utils-lists...')
 
 # https://mesonbuild.com/Reference-manual.html#declare_dependency
 micro_os_plus_utils_lists_dependency = declare_dependency(
