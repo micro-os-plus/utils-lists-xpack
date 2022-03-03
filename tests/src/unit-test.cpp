@@ -37,7 +37,7 @@ using namespace micro_os_plus;
 // ----------------------------------------------------------------------------
 
 void
-test_case_xxx (micro_test_plus::session& t);
+test_case_double_list_links (micro_test_plus::session& t);
 
 // ----------------------------------------------------------------------------
 
@@ -46,19 +46,26 @@ main (int argc, char* argv[])
 {
   micro_test_plus::session t (argc, argv);
 
-  t.start_suite ("xxx::yyy test");
+  t.start_suite ("utils_lists test");
 
-  t.run_test_case (test_case_xxx, "Check xxx");
+  t.run_test_case (test_case_double_list_links, "Check static_double_list_links");
 
   return t.result ();
 }
 
 // ----------------------------------------------------------------------------
 
+static utils::static_double_list_links slinks;
+
 void
-test_case_xxx (micro_test_plus::session& t)
+test_case_double_list_links (micro_test_plus::session& t)
 {
-  MTP_PASS (t, "ok");
+  MTP_EXPECT_EQ(t, slinks.previous(), static_cast<utils::static_double_list_links*>(nullptr), "prev is null");
+
+  // MTP_EXPECT_EQ(t, static_cast<void*>(slinks.previous()), nullptr, "prev is null");
+  // MTP_EXPECT_EQ(t, static_cast<void*>(slinks.next()), nullptr, "next is null");
+
+  MTP_EXPECT_TRUE(t, slinks.unlinked(), "unlinked");
 }
 
 // ----------------------------------------------------------------------------
