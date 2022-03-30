@@ -30,42 +30,33 @@ using namespace micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wexit-time-destructors"
+#pragma clang diagnostic ignored "-Wglobal-constructors"
 #endif
-
-// ----------------------------------------------------------------------------
-
-void
-test_case_double_list_links (micro_test_plus::session& t);
-
-// ----------------------------------------------------------------------------
-
-int
-main (int argc, char* argv[])
-{
-  micro_test_plus::session t (argc, argv);
-
-  t.start_suite ("utils_lists test");
-
-  t.run_test_case (test_case_double_list_links, "Check static_double_list_links");
-
-  return t.result ();
-}
 
 // ----------------------------------------------------------------------------
 
 static utils::static_double_list_links slinks;
 
-void
-test_case_double_list_links (micro_test_plus::session& t)
+int
+main (int argc, char* argv[])
 {
-  MTP_EXPECT_EQ(t, slinks.previous(), static_cast<utils::static_double_list_links*>(nullptr), "prev is null");
+  using namespace micro_os_plus::micro_test_plus;
 
-  // MTP_EXPECT_EQ(t, static_cast<void*>(slinks.previous()), nullptr, "prev is null");
-  // MTP_EXPECT_EQ(t, static_cast<void*>(slinks.next()), nullptr, "next is null");
+  initialize (argc, argv, "utils-lists");
 
-  MTP_EXPECT_TRUE(t, slinks.unlinked(), "unlinked");
+  test_case ("Check static_double_list_links", [] {
+    expect (eq (slinks.previous (), nullptr)) << "prev is null";
+    // MTP_EXPECT_EQ(t, static_cast<void*>(slinks.previous()), nullptr, "prev
+    // is null"); MTP_EXPECT_EQ(t, static_cast<void*>(slinks.next()), nullptr,
+    // "next is null");
+    expect (slinks.unlinked ()) << "unlinked";
+  });
+
+  return exit_code ();
 }
 
 // ----------------------------------------------------------------------------

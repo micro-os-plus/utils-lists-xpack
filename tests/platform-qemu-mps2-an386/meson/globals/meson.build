@@ -2,7 +2,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus/)
-# Copyright (c) 2021 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -20,83 +20,104 @@ message('Including platform-qemu-mps2-an386 globals...')
 
 # -----------------------------------------------------------------------------
 
-platform_common_flags = [
+# Required in devices-qemu-cortexm.
+xpack_device_compile_definition='DEVICE_QEMU_CORTEX_M4'
+
+# -----------------------------------------------------------------------------
+
+xpack_platform_common_args = []
+xpack_platform_common_c_args = []
+xpack_platform_common_cpp_args = []
+xpack_platform_compile_definitions = []
+
+# -----------------------------------------------------------------------------
+
+# Compiler definitions must passed as options.
+xpack_platform_compile_definitions += [
+  '-D_POSIX_C_SOURCE=200809L',
+]
+
+xpack_platform_common_args += [
   '-mcpu=cortex-m4',
   '-mthumb',
   '-mfloat-abi=hard',
+  # '-mfloat-abi=soft',
 
   # '-flto' # fails with undefined __assert_func, _write, etc.
 
   '-fno-move-loop-invariants',
-]
 
-platform_common_c_extra_flags = [
-]
-
-platform_common_cpp_extra_flags = [
-  '-fno-rtti',
-  '-fno-use-cxa-atexit',
-  '-fno-threadsafe-statics',
+  # Embedded builds must be warning free.
+  '-Werror',
 ]
 
 if get_option('buildtype').contains('debug')
-  platform_common_flags += [
+  xpack_platform_common_args += [
     '-fno-omit-frame-pointer'
   ]
 endif
 
-add_global_arguments(
-  platform_common_flags,
+xpack_platform_common_cpp_args += [
+  # '-fno-exceptions',
+  # '-fno-rtti',
+  '-fno-use-cxa-atexit',
+  '-fno-threadsafe-statics',
+]
 
-  language: [ 'c', 'cpp' ]
-)
-
 add_global_arguments(
-  platform_common_c_extra_flags,
+  xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_compile_definitions,
 
   language: [ 'c' ]
 )
 
 add_global_arguments(
-  platform_common_cpp_extra_flags,
+  xpack_platform_common_args + xpack_platform_common_cpp_args + xpack_platform_compile_definitions,
 
   language: [ 'cpp' ]
 )
 
-add_global_link_arguments(
-  platform_common_flags,
+foreach xn : xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_common_cpp_args + xpack_platform_compile_definitions
+  message('G+ ' + xn)
+endforeach
 
-  language: [ 'c', 'cpp' ]
+add_global_link_arguments(
+  xpack_platform_common_args + xpack_platform_common_c_args,
+
+  language: [ 'c' ]
 )
 
 add_global_link_arguments(
-  platform_common_cpp_extra_flags,
+  xpack_platform_common_args + xpack_platform_common_cpp_args,
 
   language: [ 'cpp' ]
 )
-
-xpack_linker_scripts = [
-    # Path are relative to the build folder.
-  '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
-  '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections.ld',
-]
 
 # The base folder is root, via the `top` link.
 xpack_dependencies = [
   'xpacks/micro-os-plus-diag-trace', # -
   'xpacks/micro-os-plus-micro-test-plus', # -
 
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version', # -
-  xpack_build_folder_relative_path + '/xpacks/xpack-3rd-party-arm-cmsis-core-m', # -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexm', # (architecture) -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting', # diag-trace, architecture
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm', # semihosting
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup', # version, diag-trace, architecture
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c', # diag-trace, startup, architecture
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp', # diag-trace
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-qemu-cortexm', # device, diag-trace | (device) arm-cmsis-core-m, architecture-cortexm-device
-]
+  # -
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version',
+  # -
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-arm-cmsis-core-m',
+  # (architecture) -
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexm',
 
-xpack_device_compile_definition='DEVICE_QEMU_CORTEX_M4'
+  # +(version, diag_trace, architecture) >startup
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup',
+  # +(diag_trace, startup, architecture) >libs_c
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c',
+  # +(diag_trace) >libs_cpp
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp',
+
+  # +(diag_trace, architecture) >semihosting
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting',
+  # +(semihosting) >devices_cortexm
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm',
+
+  # +(arm_cmsis_core_m, devices_cortexm, startup) >devices_qemu_cortexm
+  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-qemu-cortexm',
+]
 
 # -----------------------------------------------------------------------------

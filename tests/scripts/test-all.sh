@@ -3,7 +3,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus/)
-# Copyright (c) 2020 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -129,7 +129,7 @@ fi
 # runners the build folders are presistent.
 xpm run deep-clean
 
-xpm run install-all
+xpm run install-all --quiet
 xpm run test-all
 
 # -----------------------------------------------------------------------------

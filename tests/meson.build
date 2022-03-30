@@ -13,11 +13,11 @@
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual.html#project
-project('utils-lists',
+project('micro-os-plus-utils-lists',
   ['c', 'cpp'],
   default_options: [
     'c_std=c11',
-    'cpp_std=c++17',
+    'cpp_std=c++20',
     'b_staticpic=false', # Mandatory, startup fails otherwise.
   ],
   meson_version: '>= 0.59'
@@ -69,6 +69,9 @@ message('Platform name: ' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------
 ## Global definitions ##
+
+enable_sample_test = true
+enable_unit_test = true
 
 # https://mesonbuild.com/Reference-manual.html#subdir
 subdir('meson/globals')

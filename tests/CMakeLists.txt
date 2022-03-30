@@ -2,7 +2,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus/)
-# Copyright (c) 2021 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -19,7 +19,7 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(
-  micro-os-plus-utils-lists-plus
+  micro-os-plus-utils-lists
   DESCRIPTION "utils-lists"
 )
 
@@ -37,7 +37,7 @@ enable_language(ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_C_STANDARD_REQUIRED ON)
 set(CMAKE_C_EXTENSIONS OFF)
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -67,6 +67,9 @@ message(VERBOSE "CMAKE_SYSTEM_PROCESSOR: ${CMAKE_SYSTEM_PROCESSOR}")
 # -----------------------------------------------------------------------------
 
 # CMAKE_BUILD_TYPE: Debug, Release, RelWithDebInfo, MinSizeRel
+
+set(ENABLE_SAMPLE_TEST true)
+set(ENABLE_UNIT_TEST true)
 
 # -----------------------------------------------------------------------------
 
