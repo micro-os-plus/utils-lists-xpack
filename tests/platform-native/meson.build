@@ -222,11 +222,11 @@ if enable_unit_test
 
   xpack_link_with += [
     # Tested library.
-    micro_os_plus_utils_lists_static,
+    # micro_os_plus_utils_lists_static,
   ]
 
   # https://mesonbuild.com/Reference-manual.html#executable
-  sample_test = executable(
+  unit_test = executable(
     'unit-test',
     include_directories: include_directories(xpack_include_directories),
     sources: files(xpack_sources),
