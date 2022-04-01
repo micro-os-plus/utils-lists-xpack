@@ -1,0 +1,38 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "(lldb) native-cmake-debug sample-test",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/sample-test",
+      "args": [
+        "one",
+        "two",
+        "--verbose"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    },
+    {
+      "name": "(lldb) native-cmake-debug unit-test",
+      "type": "cppdbg",
+      "request": "launch",
+      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/unit-test",
+      "args": [
+        "--verbose"
+      ],
+      "stopAtEntry": true,
+      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
+      "environment": [],
+      "externalConsole": false,
+      "MIMode": "lldb"
+    }
+  ]
+}
