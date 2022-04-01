@@ -136,8 +136,7 @@ namespace micro_os_plus
     {
       // return iterator{ static_cast<iterator_pointer> (
       //     const_cast<static_double_list_links*> (&head_)) };
-      return iterator{
-          const_cast<static_double_list_links*> (&head_) };
+      return iterator{ const_cast<static_double_list_links*> (&head_) };
     }
 
     void
@@ -154,8 +153,7 @@ namespace micro_os_plus
     }
 
     void
-    static_double_list::insert_after (static_double_list_links& node,
-                                      static_double_list_links* after)
+    static_double_list::insert_after (reference node, pointer after)
     {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
       trace::printf ("%s() n=%p after %p\n", __func__, &node, after);

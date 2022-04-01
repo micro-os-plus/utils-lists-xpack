@@ -495,7 +495,7 @@ namespace micro_os_plus
        *  None.
        * @return Pointer to head node.
        */
-      volatile static_double_list_links*
+      pointer
       head (void) const;
 
       /**
@@ -504,7 +504,7 @@ namespace micro_os_plus
        *  None.
        * @return Pointer to tail node.
        */
-      volatile static_double_list_links*
+      pointer
       tail (void) const;
 
       /**
@@ -531,8 +531,7 @@ namespace micro_os_plus
        *  Nothing.
        */
       void
-      insert_after (static_double_list_links& node,
-                    static_double_list_links* after);
+      insert_after (reference node, pointer after);
 
       /**
        * @}
@@ -549,7 +548,7 @@ namespace micro_os_plus
        * @details
        * To simplify processing, the list always has a node.
        */
-      static_double_list_links head_;
+      value_type head_;
 
       /**
        * @}
