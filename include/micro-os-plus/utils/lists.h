@@ -1003,7 +1003,7 @@ namespace micro_os_plus
     inline bool
     static_double_list_links::unlinked (void)
     {
-      return (next_ == nullptr);
+      return (next_ == nullptr) && (previous_ == nullptr);
     }
 
     inline static_double_list_links*
@@ -1170,20 +1170,19 @@ namespace micro_os_plus
     static_double_list::uninitialized (void) const
     {
       // If it points to nowhere, it is not yet initialised.
-      return (head_.previous () == nullptr);
+      return (head_.previous () == nullptr || head_.next () == nullptr);
     }
 
-    inline bool
-    static_double_list::empty (void) const
-    {
-      // If it points to itself, it is empty.
-      return (head_.next () == &head_) || (head_.next () == nullptr);
-    }
-
-    inline volatile static_double_list_links*
+    inline static_double_list_links*
     static_double_list::head (void) const
     {
-      return static_cast<volatile static_double_list_links*> (head_.next ());
+      return head_.next ();
+    }
+
+    inline static_double_list_links*
+    static_double_list::tail (void) const
+    {
+      return head_.previous ();
     }
 
     // ========================================================================
