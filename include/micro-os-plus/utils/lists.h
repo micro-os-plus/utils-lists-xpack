@@ -80,6 +80,8 @@ namespace micro_os_plus
     class static_double_list_links
     {
     public:
+      using is_statically_allocated = std::true_type;
+
       /**
        * @name Constructors & Destructor
        * @{
@@ -187,6 +189,8 @@ namespace micro_os_plus
     class double_list_links : public static_double_list_links
     {
     public:
+      using is_statically_allocated = std::false_type;
+
       /**
        * @name Constructors & Destructor
        * @{
@@ -381,6 +385,8 @@ namespace micro_os_plus
     class static_double_list
     {
     public:
+      using is_statically_allocated = std::true_type;
+
       /**
        * @name Constructors & Destructor
        * @{
@@ -528,6 +534,8 @@ namespace micro_os_plus
     class double_list : public static_double_list
     {
     public:
+      using is_statically_allocated = std::false_type;
+
       /**
        * @name Constructors & Destructor
        * @{
@@ -873,17 +881,7 @@ namespace micro_os_plus
     class intrusive_list : public static_intrusive_list<T, N, MP, U>
     {
     public:
-      using value_type = U;
-      using pointer = U*;
-      using reference = U&;
-      using difference_type = ptrdiff_t;
-
-      using iterator = intrusive_list_iterator<T, N, MP, U>;
-
-      /**
-       * @brief Type of reference to the iterator internal pointer.
-       */
-      using iterator_pointer = N*;
+      using is_statically_allocated = std::false_type;
 
       /**
        * @name Constructors & Destructor
