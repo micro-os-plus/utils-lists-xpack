@@ -112,6 +112,27 @@ namespace micro_os_plus
       head_.previous (&head_);
     }
 
+    static_double_list::iterator
+    static_double_list::begin ()
+    {
+      if (uninitialized ())
+        {
+          // If this is the first time, initialise the list to empty.
+          clear ();
+        }
+      // return iterator{ static_cast<iterator_pointer> (head_.next ()) };
+      return iterator{ head_.next () };
+    }
+
+    static_double_list::iterator
+    static_double_list::end () const
+    {
+      // return iterator{ static_cast<iterator_pointer> (
+      //     const_cast<static_double_list_links*> (&head_)) };
+      return iterator{
+          const_cast<static_double_list_links*> (&head_) };
+    }
+
     void
     static_double_list::insert_after (static_double_list_links& node,
                                       static_double_list_links* after)

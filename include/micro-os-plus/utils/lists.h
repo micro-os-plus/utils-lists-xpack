@@ -475,7 +475,19 @@ namespace micro_os_plus
       bool
       empty (void) const;
 
-      // TODO add iterator begin(), end()
+      /**
+       * @brief Iterator begin.
+       * @return An iterator positioned at the first element.
+       */
+      iterator
+      begin ();
+
+      /**
+       * @brief Iterator end.
+       * @return An iterator positioned after the last element.
+       */
+      iterator
+      end () const;
 
       /**
        * @brief Get the list head.
