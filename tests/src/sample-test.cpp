@@ -27,10 +27,10 @@ using namespace micro_os_plus;
 
 #pragma GCC diagnostic push
 
+#pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
-#pragma GCC diagnostic ignored "-Waggregate-return"
 
 class child
 {
@@ -46,9 +46,16 @@ public:
     return name_;
   }
 
-public:
+  void
+  unlink (void)
+  {
+    registry_links_.unlink ();
+  }
+
+protected:
   const char* name_;
 
+public:
   // Intrusive node used to link this child to the registry list.
   // Must be public.
   utils::double_list_links registry_links_;
@@ -64,14 +71,14 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   children_list children_registry;
 
   // Add several members.
-  child* marry = new child ("Marry");
-  children_registry.link (*marry);
+  child marry{ "Marry" };
+  children_registry.link (marry);
 
-  child* bob = new child ("Bob");
-  children_registry.link (*bob);
+  child bob{ "Bob" };
+  children_registry.link (bob);
 
-  child* sally = new child ("Sally");
-  children_registry.link (*sally);
+  child sally{ "Sally" };
+  children_registry.link (sally);
 
   // List them.
   for (auto&& p : children_registry)
@@ -82,7 +89,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   printf ("\n");
 
   // Remove one of them.
-  bob->registry_links_.unlink ();
+  bob.unlink ();
 
   // List the remaining ones.
   for (auto&& p : children_registry)
