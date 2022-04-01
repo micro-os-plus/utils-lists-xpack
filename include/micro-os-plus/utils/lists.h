@@ -90,7 +90,7 @@ namespace micro_os_plus
       /**
        * @brief Construct a list node (BSS initialised).
        */
-      static_double_list_links ();
+      constexpr static_double_list_links ();
 
       /**
        * @cond ignore
@@ -112,7 +112,7 @@ namespace micro_os_plus
       /**
        * @brief Destruct the node.
        */
-      ~static_double_list_links ();
+      constexpr ~static_double_list_links ();
 
       /**
        * @}
@@ -130,7 +130,7 @@ namespace micro_os_plus
        * @par Returns
        *  Nothing.
        */
-      void
+      constexpr void
       clear (void);
 
       /**
@@ -142,25 +142,25 @@ namespace micro_os_plus
       unlink (void);
 
       /**
-       * @brief Check if the node is unlinked.
-       * @retval true The node is not linked.
-       * @retval false The node is linked to a list.
+       * @brief Check if the node is linked to a double list.
+       * @retval true The node is linked with both pointers.
+       * @retval false The node is not linked.
        */
       bool
-      unlinked (void);
+      linked (void);
 
       /**
        * @brief Return the link to the next node.
        * @retval Pointer to the next node.
        */
-      static_double_list_links*
+      constexpr static_double_list_links*
       next (void) const;
 
       /**
        * @brief Return the link to the previous node.
        * @retval Pointer to the previous node.
        */
-      static_double_list_links*
+      constexpr static_double_list_links*
       previous (void) const;
 
       /**
@@ -168,7 +168,7 @@ namespace micro_os_plus
        * @par Returns
        *  Nothing.
        */
-      void
+      constexpr void
       next (static_double_list_links* n);
 
       /**
@@ -176,7 +176,7 @@ namespace micro_os_plus
        * @par Returns
        *  Nothing.
        */
-      void
+      constexpr void
       previous (static_double_list_links* n);
 
       /**
@@ -227,7 +227,7 @@ namespace micro_os_plus
       /**
        * @brief Construct a list node (explicitly set the pointers to nullptr).
        */
-      double_list_links ();
+      constexpr double_list_links ();
 
       /**
        * @cond ignore
@@ -249,7 +249,7 @@ namespace micro_os_plus
       /**
        * @brief Destruct the node.
        */
-      ~double_list_links ();
+      constexpr ~double_list_links ();
 
       /**
        * @}
@@ -1004,7 +1004,7 @@ namespace micro_os_plus
     // "Member 'previous' was not initialized in constructor"
     // "Member 'next' was not initialized in constructor"
 
-    inline static_double_list_links::static_double_list_links ()
+    constexpr static_double_list_links::static_double_list_links ()
     {
       // Must be empty! No members must be changed by this constructor!
 
@@ -1015,42 +1015,36 @@ namespace micro_os_plus
       // This is equivalent to setting the pointers to `nullptr`.
     }
 
-    inline static_double_list_links::~static_double_list_links ()
+    constexpr static_double_list_links::~static_double_list_links ()
     {
     }
 
-    inline void
+    constexpr void
     static_double_list_links::clear (void)
     {
       previous_ = nullptr;
       next_ = nullptr;
     }
 
-    inline bool
-    static_double_list_links::unlinked (void)
-    {
-      return (next_ == nullptr) && (previous_ == nullptr);
-    }
-
-    inline static_double_list_links*
+    constexpr static_double_list_links*
     static_double_list_links::next (void) const
     {
       return next_;
     }
 
-    inline static_double_list_links*
+    constexpr static_double_list_links*
     static_double_list_links::previous (void) const
     {
       return previous_;
     }
 
-    inline void
+    constexpr void
     static_double_list_links::next (static_double_list_links* n)
     {
       next_ = n;
     }
 
-    inline void
+    constexpr void
     static_double_list_links::previous (static_double_list_links* n)
     {
       previous_ = n;
@@ -1058,13 +1052,13 @@ namespace micro_os_plus
 
     // ========================================================================
 
-    inline double_list_links::double_list_links ()
+    constexpr double_list_links::double_list_links ()
     {
       // This time the members are explicitly initialised.
-      clear();
+      clear ();
     }
 
-    inline double_list_links::~double_list_links ()
+    constexpr double_list_links::~double_list_links ()
     {
     }
 

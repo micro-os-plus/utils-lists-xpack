@@ -49,6 +49,22 @@ namespace micro_os_plus
 
     /**
      * @details
+     * To be fully linked, both pointers must be non null.
+     */
+    bool
+    static_double_list_links::linked (void)
+    {
+      if (next_ != nullptr && previous_ != nullptr)
+        {
+          return true;
+        }
+      assert (next_ == nullptr);
+      assert (previous_ == nullptr);
+      return false;
+    }
+
+    /**
+     * @details
      * Update the neighbours to
      * point to each other, skipping the node.
      *
@@ -59,8 +75,9 @@ namespace micro_os_plus
     static_double_list_links::unlink (void)
     {
       // Check if not already unlinked.
-      if (unlinked ())
+      if (!linked ())
         {
+          assert (next_ == nullptr);
           assert (previous_ == nullptr);
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
           trace::printf ("%s() %p nop\n", __func__, this);
@@ -77,8 +94,7 @@ namespace micro_os_plus
       next_->previous_ = previous_;
 
       // Nullify both pointers in the unlinked node.
-      previous_ = nullptr;
-      next_ = nullptr;
+      clear ();
     }
 
     // ========================================================================
