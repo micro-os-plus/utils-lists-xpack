@@ -603,6 +603,16 @@ namespace micro_os_plus
       ~double_list ();
 
       /**
+       * @brief Check if the list is empty.
+       * @par Parameters
+       *  None.
+       * @retval true The list has no nodes.
+       * @retval false The list has at least one node.
+       */
+      bool
+      empty (void) const;
+
+      /**
        * @brief Add a node to the tail of the list.
        */
       void
@@ -1177,10 +1187,13 @@ namespace micro_os_plus
       return static_cast<volatile static_double_list_links*> (head_.next ());
     }
 
-    inline volatile static_double_list_links*
-    static_double_list::tail (void) const
+    // ========================================================================
+
+    inline bool
+    double_list::empty (void) const
     {
-      return (head_.previous ());
+      // If it points to itself, it is empty.
+      return (head_.next () == &head_);
     }
 
     // ========================================================================
