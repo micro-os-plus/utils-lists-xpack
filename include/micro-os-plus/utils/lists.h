@@ -829,6 +829,9 @@ namespace micro_os_plus
        */
       using iterator_pointer = N*;
 
+      // From base class.
+      // using is_statically_allocated = std::true_type;
+
       /**
        * @name Constructors & Destructor
        * @{
