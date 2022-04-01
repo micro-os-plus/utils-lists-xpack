@@ -68,10 +68,10 @@ check_double_list_links (void)
     // Check if the node is cleared.
     expect (eq (links.previous (), nullptr)) << "prev is null";
     expect (eq (links.next (), nullptr)) << "next is null";
-    expect (links.unlinked ()) << "unlinked";
+    expect (!links.linked ()) << "unlinked";
 
-    expect (left_links.unlinked ()) << "left unlinked";
-    expect (right_links.unlinked ()) << "right unlinked";
+    expect (!left_links.linked ()) << "left unlinked";
+    expect (!right_links.linked ()) << "right unlinked";
   });
 
   test_case ("Link", [&] {
@@ -84,21 +84,16 @@ check_double_list_links (void)
     right_links.previous (&links);
 
     // The node must appear as linked now.
-    expect (!links.unlinked ()) << "linked";
+    expect (links.linked ()) << "linked";
 
-    expect (!left_links.unlinked ()) << "left linked";
-    expect (!right_links.unlinked ()) << "right linked";
+    expect (ne (left_links.next (), nullptr)) << "left linked";
+    expect (ne (right_links.previous (), nullptr)) << "right linked";
   });
 
   test_case ("Unlink", [&] {
     // Unlink the central node.
     links.unlink ();
-    expect (links.unlinked ()) << "unlinked";
-
-    // The left and right should be still linked,
-    // since they point to eachother.
-    expect (!left_links.unlinked ()) << "left still linked";
-    expect (!right_links.unlinked ()) << "right still linked";
+    expect (!links.linked ()) << "unlinked";
 
     // Left and right must indeed point to each other.
     expect (eq (left_links.next (), &right_links)) << "left -> right";
@@ -111,7 +106,7 @@ check_double_list_links (void)
         T stack_links;
         expect (eq (stack_links.previous (), nullptr)) << "prev is null";
         expect (eq (stack_links.next (), nullptr)) << "next is null";
-        expect (stack_links.unlinked ()) << "unlinked";
+        expect (!stack_links.linked ()) << "unlinked";
       });
     }
 }
@@ -191,8 +186,9 @@ check_double_list (void)
   });
 
   test_case ("Link One", [&] {
-    expect (one.unlinked ()) << "one unlinked";
+    expect (!one.linked ()) << "one unlinked";
     list.link (one);
+    expect (one.linked ()) << "one linked";
     expect (!list.empty ()) << "list not empty";
 
     expect (eq (list.head (), &one)) << "head is one";
@@ -205,8 +201,9 @@ check_double_list (void)
   });
 
   test_case ("Link Two", [&] {
-    expect (two.unlinked ()) << "two unlinked";
+    expect (!two.linked ()) << "two unlinked";
     list.link (two);
+    expect (two.linked ()) << "two linked";
     expect (!list.empty ()) << "list not empty";
 
     expect (eq (list.head (), &one)) << "head is one";
@@ -222,7 +219,7 @@ check_double_list (void)
 
   test_case ("Unlink One", [&] {
     one.unlink ();
-    expect (one.unlinked ()) << "one unlinked";
+    expect (!one.linked ()) << "one unlinked";
     expect (!list.empty ()) << "list not empty";
 
     expect (eq (list.head (), &two)) << "head is two";
@@ -236,7 +233,7 @@ check_double_list (void)
 
   test_case ("Unlink Two", [&] {
     two.unlink ();
-    expect (two.unlinked ()) << "two unlinked";
+    expect (!two.linked ()) << "two unlinked";
     expect (list.empty ()) << "list is empty";
 
     auto it = list.begin ();
@@ -244,7 +241,7 @@ check_double_list (void)
   });
 
   test_case ("Link One again", [&] {
-    expect (one.unlinked ()) << "one unlinked";
+    expect (!one.linked ()) << "one unlinked";
     list.link (one);
     expect (!list.empty ()) << "list not empty";
   });
