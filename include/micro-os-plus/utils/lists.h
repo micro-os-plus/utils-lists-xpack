@@ -395,6 +395,13 @@ namespace micro_os_plus
     class static_double_list
     {
     public:
+      using value_type = static_double_list_links;
+      using reference = value_type&;
+      using pointer = value_type*;
+
+      using iterator = double_list_iterator<value_type>;
+      using iterator_pointer = value_type*;
+
       using is_statically_allocated = std::true_type;
 
       /**
