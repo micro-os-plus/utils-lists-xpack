@@ -124,6 +124,16 @@ namespace micro_os_plus
        */
 
       /**
+       * @brief Clear the links.
+       * @par Parameters
+       *  None.
+       * @par Returns
+       *  Nothing.
+       */
+      void
+      clear (void);
+
+      /**
        * @brief Remove the node from the list.
        * @par Returns
        *  Nothing.
@@ -942,6 +952,13 @@ namespace micro_os_plus
     {
     }
 
+    inline void
+    static_double_list_links::clear (void)
+    {
+      previous_ = nullptr;
+      next_ = nullptr;
+    }
+
     inline bool
     static_double_list_links::unlinked (void)
     {
@@ -976,9 +993,8 @@ namespace micro_os_plus
 
     inline double_list_links::double_list_links ()
     {
-      // This time the mebers are explicitly initialised.
-      previous_ = nullptr;
-      next_ = nullptr;
+      // This time the members are explicitly initialised.
+      clear();
     }
 
     inline double_list_links::~double_list_links ()
