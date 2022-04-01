@@ -508,6 +508,12 @@ namespace micro_os_plus
       tail (void) const;
 
       /**
+       * @brief Add a node to the tail of the list.
+       */
+      void
+      link (reference node);
+
+      /**
        * @}
        */
 
@@ -595,6 +601,14 @@ namespace micro_os_plus
        * @brief Destruct the list.
        */
       ~double_list ();
+
+      /**
+       * @brief Add a node to the tail of the list.
+       */
+      void
+      link (reference node);
+
+      // TODO: add iterator.
 
       /**
        * @}

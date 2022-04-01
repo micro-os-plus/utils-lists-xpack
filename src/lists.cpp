@@ -112,6 +112,13 @@ namespace micro_os_plus
       head_.previous (&head_);
     }
 
+    bool
+    static_double_list::empty (void) const
+    {
+      // If it points to itself, it is empty.
+      return (head_.next () == &head_) || uninitialized ();
+    }
+
     static_double_list::iterator
     static_double_list::begin ()
     {
@@ -131,6 +138,19 @@ namespace micro_os_plus
       //     const_cast<static_double_list_links*> (&head_)) };
       return iterator{
           const_cast<static_double_list_links*> (&head_) };
+    }
+
+    void
+    static_double_list::link (reference node)
+    {
+      if (uninitialized ())
+        {
+          // If this is the first time, initialise the list to empty.
+          clear ();
+        }
+
+      // Add node at the end of the list.
+      insert_after (node, tail ());
     }
 
     void
@@ -188,6 +208,13 @@ namespace micro_os_plus
 #endif
 
       assert (empty ());
+    }
+
+    void
+    double_list::link (reference node)
+    {
+      // Add node at the end of the list.
+      insert_after (node, tail ());
     }
 
   } // namespace utils
