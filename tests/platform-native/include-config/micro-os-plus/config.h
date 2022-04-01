@@ -21,8 +21,8 @@
 
 // #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_TMP_ARRAY_SIZE 500
 
-#define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
-#define MICRO_OS_PLUS_TRACE_UTILS_LISTS
+// #define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
+// #define MICRO_OS_PLUS_TRACE_UTILS_LISTS
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
