@@ -985,8 +985,13 @@ namespace micro_os_plus
 
     inline static_double_list_links::static_double_list_links ()
     {
-      // Pointers are not explicitly initialised on purpose,
-      // since it is assumed that BSS was cleared at startup.
+      // Must be empty! No members must be changed by this constructor!
+
+      // As the name implies, it is assumed that the object are
+      // allocated statically and the entire content was set to
+      // zero during startup (via BSS init).
+
+      // This is equivalent to setting the pointers to `nullptr`.
     }
 
     inline static_double_list_links::~static_double_list_links ()
