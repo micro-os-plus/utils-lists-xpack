@@ -149,15 +149,33 @@ namespace micro_os_plus
       bool
       unlinked (void);
 
+      /**
+       * @brief Return the link to the next node.
+       * @retval Pointer to the next node.
+       */
       static_double_list_links*
       next (void) const;
 
+      /**
+       * @brief Return the link to the previous node.
+       * @retval Pointer to the previous node.
+       */
       static_double_list_links*
       previous (void) const;
 
+      /**
+       * @brief Link the next node.
+       * @par Returns
+       *  Nothing.
+       */
       void
       next (static_double_list_links* n);
 
+      /**
+       * @brief Link the previous node.
+       * @par Returns
+       *  Nothing.
+       */
       void
       previous (static_double_list_links* n);
 
@@ -172,12 +190,12 @@ namespace micro_os_plus
        */
 
       /**
-       * @brief Pointer to previous node.
+       * @brief Pointer to the previous node.
        */
       static_double_list_links* previous_;
 
       /**
-       * @brief Pointer to next node.
+       * @brief Pointer to the next node.
        */
       static_double_list_links* next_;
 
@@ -207,7 +225,7 @@ namespace micro_os_plus
        */
 
       /**
-       * @brief Construct a list node (explicitly set to nullptr).
+       * @brief Construct a list node (explicitly set the pointers to nullptr).
        */
       double_list_links ();
 
@@ -469,7 +487,7 @@ namespace micro_os_plus
        * @brief Check if the list is empty.
        * @par Parameters
        *  None.
-       * @retval true The list has no nodes.
+       * @retval true The list has no nodes; may be also unitialised.
        * @retval false The list has at least one node.
        */
       bool
