@@ -247,13 +247,12 @@ namespace micro_os_plus
      * @tparam T Type of object returned by the iterator.
      * @tparam N Type of intrusive node. Must have the public members
      * **previous** & **next**.
-     * @tparam MP Name of the intrusive node member in object T.
      * @tparam U Type stored in the list, derived from T.
      *
      * @details
      * This class provides an interface similar to std::list::iterator.
      */
-    template <typename T, typename N, T* N::*MP, typename U = T>
+    template <typename T, typename N = T, typename U = T>
     class double_list_iterator
     {
     public:
@@ -1009,107 +1008,108 @@ namespace micro_os_plus
     }
 
     // ========================================================================
-    template <typename T, typename N, T* N::*MP, typename U>
-    constexpr double_list_iterator<T, N, MP, U>::double_list_iterator ()
-        : node_{}
+    template <typename T, typename N, typename U>
+    constexpr double_list_iterator<T, N, U>::double_list_iterator () : node_{}
     {
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    constexpr double_list_iterator<T, N, MP, U>::double_list_iterator (
+    template <typename T, typename N, typename U>
+    constexpr double_list_iterator<T, N, U>::double_list_iterator (
         iterator_pointer const node)
         : node_{ node }
     {
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    constexpr double_list_iterator<T, N, MP, U>::double_list_iterator (
+#if 0
+    template <typename T, typename N, typename U>
+    constexpr double_list_iterator<T, N, U>::double_list_iterator (
         reference element)
         : node_{ &(element.*MP) }
     {
       static_assert (std::is_convertible<U, T>::value == true,
                      "U must be implicitly convertible to T!");
     }
+#endif
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline typename double_list_iterator<T, N, MP, U>::pointer
-    double_list_iterator<T, N, MP, U>::operator-> () const
+    template <typename T, typename N, typename U>
+    inline typename double_list_iterator<T, N, U>::pointer
+    double_list_iterator<T, N, U>::operator-> () const
     {
       return get_pointer ();
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline typename double_list_iterator<T, N, MP, U>::reference
-    double_list_iterator<T, N, MP, U>::operator* () const
+    template <typename T, typename N, typename U>
+    inline typename double_list_iterator<T, N, U>::reference
+    double_list_iterator<T, N, U>::operator* () const
     {
       return *get_pointer ();
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline double_list_iterator<T, N, MP, U>&
-    double_list_iterator<T, N, MP, U>::operator++ ()
+    template <typename T, typename N, typename U>
+    inline double_list_iterator<T, N, U>&
+    double_list_iterator<T, N, U>::operator++ ()
     {
       node_ = static_cast<N*> (node_->next ());
       return *this;
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline double_list_iterator<T, N, MP, U>
-    double_list_iterator<T, N, MP, U>::operator++ (int)
+    template <typename T, typename N, typename U>
+    inline double_list_iterator<T, N, U>
+    double_list_iterator<T, N, U>::operator++ (int)
     {
       const auto tmp = *this;
       node_ = static_cast<iterator_pointer> (node_->next);
       return tmp;
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline double_list_iterator<T, N, MP, U>&
-    double_list_iterator<T, N, MP, U>::operator-- ()
+    template <typename T, typename N, typename U>
+    inline double_list_iterator<T, N, U>&
+    double_list_iterator<T, N, U>::operator-- ()
     {
       node_ = static_cast<iterator_pointer> (node_->previous);
       return *this;
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    double_list_iterator<T, N, MP, U>
-    double_list_iterator<T, N, MP, U>::operator-- (int)
+    template <typename T, typename N, typename U>
+    double_list_iterator<T, N, U>
+    double_list_iterator<T, N, U>::operator-- (int)
     {
       const auto tmp = *this;
       node_ = static_cast<iterator_pointer> (node_->previous);
       return tmp;
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
+    template <typename T, typename N, typename U>
     inline bool
-    double_list_iterator<T, N, MP, U>::operator== (
+    double_list_iterator<T, N, U>::operator== (
         const double_list_iterator& other) const
     {
       return node_ == other.node_;
     }
 
-    template <typename T, typename N, T* N::*MP, typename U>
+    template <typename T, typename N, typename U>
     inline bool
-    double_list_iterator<T, N, MP, U>::operator!= (
+    double_list_iterator<T, N, U>::operator!= (
         const double_list_iterator& other) const
     {
       return node_ != other.node_;
     }
 
-#if 1
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline typename double_list_iterator<T, N, MP, U>::pointer
-    double_list_iterator<T, N, MP, U>::get_pointer (void) const
+#if 0
+    template <typename T, typename N, typename U>
+    inline typename double_list_iterator<T, N, U>::pointer
+    double_list_iterator<T, N, U>::get_pointer (void) const
     {
       return (node_->*MP);
     }
+#endif
 
-    template <typename T, typename N, T* N::*MP, typename U>
-    inline typename double_list_iterator<T, N, MP, U>::iterator_pointer
-    double_list_iterator<T, N, MP, U>::get_iterator_pointer () const
+    template <typename T, typename N, typename U>
+    inline typename double_list_iterator<T, N, U>::iterator_pointer
+    double_list_iterator<T, N, U>::get_iterator_pointer () const
     {
       return node_;
     }
-#endif
 
     // ========================================================================
 
