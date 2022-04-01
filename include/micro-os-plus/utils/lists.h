@@ -10,6 +10,34 @@
  * be obtained from https://opensource.org/licenses/MIT/.
  */
 
+/*
+ * This library implements several double linked lists, used by several
+ * µOS++ components to keep track of internal objects; however it is
+ * generic enough to be useful in other applications too, thus packing
+ * it as a separate library.
+ *
+ * The main differentiator from `std::list` is that the implementation
+ * does not require dynamic memory allocation for the list links,
+ * hence it does not need an allocator.
+ *
+ * Instead, it uses intrusive lists, which store the links inside the
+ * list elements.
+ *
+ * Another specific feature is statically initialised lists.
+ *
+ * These are lists created in the global scope which do not change the
+ * content of any of their members in the constructors; instead,
+ * they are fully initialized by setting the entire content to zero
+ * during startup (via BSS init).
+ *
+ * This allows other static objects to auto-register themselves to
+ * static registrar objects. This requires the registrar to be
+ * initialised before the clients need to registrer; since the order
+ * of static constructors is not defined, the only solution that
+ * guarantees this is to initialize the registrar during startup
+ * (via BSS init) before the static constructors.
+ */
+
 #ifndef MICRO_OS_PLUS_UTILS_LISTS_H_
 #define MICRO_OS_PLUS_UTILS_LISTS_H_
 
