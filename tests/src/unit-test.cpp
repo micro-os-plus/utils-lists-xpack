@@ -123,11 +123,13 @@ static micro_os_plus::micro_test_plus::test_suite ts_double_list_links
 
 // ----------------------------------------------------------------------------
 
-template <class T>
+// T must be one of static_double_list_links or double_list_links.
+template <class T = utils::double_list_links>
 class child
 {
 public:
-  using value_type = T;
+  // using value_type = T;
+  using links_type = T;
 
   child (const char* name)
   {
@@ -151,7 +153,7 @@ public:
 
   // Intrusive node used to link this child to the registry list.
   // Must be public.
-  T registry_links_;
+  links_type registry_links_;
 };
 
 // ----------------------------------------------------------------------------
@@ -266,10 +268,26 @@ check_double_list (void)
 
 static micro_os_plus::micro_test_plus::test_suite ts_static_double_list
     = { "Static double list",
-        check_double_list<micro_os_plus::utils::static_double_list> };
+        check_double_list<micro_os_plus::utils::double_list<
+            micro_os_plus::utils::static_double_list_links,
+            micro_os_plus::utils::double_list_links>> };
+
+static micro_os_plus::micro_test_plus::test_suite ts_static_double_list2
+    = { "Static double list with static elements",
+        check_double_list<micro_os_plus::utils::double_list<
+            micro_os_plus::utils::static_double_list_links,
+            micro_os_plus::utils::static_double_list_links>> };
 
 static micro_os_plus::micro_test_plus::test_suite ts_double_list
-    = { "Double list", check_double_list<micro_os_plus::utils::double_list> };
+    = { "Double list", check_double_list<micro_os_plus::utils::double_list<
+                           micro_os_plus::utils::double_list_links,
+                           micro_os_plus::utils::double_list_links>> };
+
+static micro_os_plus::micro_test_plus::test_suite ts_double_list2
+    = { "Double list with static elements",
+        check_double_list<micro_os_plus::utils::double_list<
+            micro_os_plus::utils::double_list_links,
+            micro_os_plus::utils::static_double_list_links>> };
 
 // ----------------------------------------------------------------------------
 
@@ -424,18 +442,34 @@ check_intrusive_list ()
 using static_kid = child<utils::static_double_list_links>;
 using kid = child<utils::double_list_links>;
 
+// ---
+
 using static_kids_list
-    = utils::static_intrusive_list<static_kid, static_kid::value_type,
-                                   &static_kid::registry_links_>;
+    = utils::intrusive_list<kid, kid::links_type, &kid::registry_links_,
+                            utils::static_double_list_links>;
 
 static micro_os_plus::micro_test_plus::test_suite ts_static_intrusive_list
-    = { "Static intrusive list", check_intrusive_list<static_kids_list> };
+    = { "Static intrusive list2", check_intrusive_list<static_kids_list> };
 
-// Test the non-static intrusive list.
+using static_kids_list2
+    = utils::intrusive_list<static_kid, static_kid::links_type,
+                            &static_kid::registry_links_,
+                            utils::static_double_list_links>;
+
+static micro_os_plus::micro_test_plus::test_suite ts_static_intrusive_list2
+    = { "Static intrusive list static nodes",
+        check_intrusive_list<static_kids_list2> };
+
 using kids_list
-    = utils::intrusive_list<kid, kid::value_type, &kid::registry_links_>;
+    = utils::intrusive_list<kid, kid::links_type, &kid::registry_links_>;
 
 static micro_os_plus::micro_test_plus::test_suite ts_intrusive_list
-    = { "Intrusive list", check_intrusive_list<kids_list> };
+    = { "Intrusive list2", check_intrusive_list<kids_list> };
+
+using kids_list2 = utils::intrusive_list<static_kid, static_kid::links_type,
+                                         &static_kid::registry_links_>;
+
+static micro_os_plus::micro_test_plus::test_suite ts_intrusive_list2
+    = { "Intrusive list static nodes", check_intrusive_list<kids_list2> };
 
 // ----------------------------------------------------------------------------
