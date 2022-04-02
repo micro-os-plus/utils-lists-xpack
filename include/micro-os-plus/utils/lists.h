@@ -97,6 +97,7 @@ namespace micro_os_plus
        * @cond ignore
        */
 
+      // The rule of five.
       static_double_list_links (const static_double_list_links&) = delete;
       static_double_list_links (static_double_list_links&&) = delete;
       static_double_list_links&
@@ -239,6 +240,7 @@ namespace micro_os_plus
        * @cond ignore
        */
 
+      // The rule of five.
       double_list_links (const double_list_links&) = delete;
       double_list_links (double_list_links&&) = delete;
       double_list_links&
