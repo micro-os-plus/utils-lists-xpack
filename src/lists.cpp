@@ -63,6 +63,22 @@ namespace micro_os_plus
       return false;
     }
 
+    void
+    static_double_list_links::link (static_double_list_links* after)
+    {
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+      trace::printf ("%s() link %p after %p\n", __func__, this, after);
+#endif
+      assert (after->next_ != nullptr);
+
+      previous_ = after;
+      next_ = after->next_;
+
+      // Make the neighbours point to the node. The order is important.
+      after->next_->previous_ = this;
+      after->next_ = this;
+    }
+
     /**
      * @details
      * Update the neighbours to
@@ -98,140 +114,6 @@ namespace micro_os_plus
     }
 
     // ========================================================================
-
-    /**
-     * @class static_double_list
-     * @details
-     * This is the simplest list, used as base class for scheduler
-     * lists that must be available for any statically constructed
-     * thread while still avoiding the 'static initialisation order fiasco'.
-     *
-     * The idea is to design the object in such a way as to benefit
-     * from the standard BSS initialisation, in other words take `nullptr`
-     * as starting values.
-     *
-     * This has the downside of requiring additional tests before
-     * adding new nodes to the list, to create the initial self
-     * links, and when checking if the list is empty.
-     */
-
-    /**
-     * @details
-     * Initialise the mandatory node with links to itself.
-     */
-    void
-    static_double_list::clear (void)
-    {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-      trace::printf ("%s() @%p\n", __func__, this);
-#endif
-      head_.next (&head_);
-      head_.previous (&head_);
-    }
-
-    bool
-    static_double_list::empty (void) const
-    {
-      // If it points to itself, it is empty.
-      return (head_.next () == &head_) || uninitialized ();
-    }
-
-    static_double_list::iterator
-    static_double_list::begin ()
-    {
-      if (uninitialized ())
-        {
-          // If this is the first time, initialise the list to empty.
-          clear ();
-        }
-      // return iterator{ static_cast<iterator_pointer> (head_.next ()) };
-      return iterator{ head_.next () };
-    }
-
-    static_double_list::iterator
-    static_double_list::end () const
-    {
-      // return iterator{ static_cast<iterator_pointer> (
-      //     const_cast<static_double_list_links*> (&head_)) };
-      return iterator{ const_cast<static_double_list_links*> (&head_) };
-    }
-
-    void
-    static_double_list::link (reference node)
-    {
-      if (uninitialized ())
-        {
-          // If this is the first time, initialise the list to empty.
-          clear ();
-        }
-
-      // Add node at the end of the list.
-      insert_after (node, tail ());
-    }
-
-    void
-    static_double_list::insert_after (reference node, pointer after)
-    {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-      trace::printf ("%s() n=%p after %p\n", __func__, &node, after);
-#endif
-
-      // Unlinked nodes must have both pointers null.
-      // If not, most probably the node was already linked.
-      // Or the memory is corrupted.
-      assert (node.previous () == nullptr);
-      assert (node.next () == nullptr);
-
-      // The `after` node must be linked. Only the `next` pointer is
-      // tested, since only it is used.
-      assert (after->next () != nullptr);
-
-      // Make the new node point to its neighbours.
-      node.previous (after);
-      node.next (after->next ());
-
-      // Make the neighbours point to the node. The order is important.
-      after->next ()->previous (&node);
-      after->next (&node);
-    }
-
-    // ========================================================================
-
-    /**
-     * @details
-     * The initial list status is empty.
-     */
-    double_list::double_list ()
-    {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) \
-    || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-      trace::printf ("%s() @%p \n", __func__, this);
-#endif
-
-      clear ();
-    }
-
-    /**
-     * @details
-     * There must be no nodes in the list.
-     */
-    double_list::~double_list ()
-    {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT) \
-    || defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-      trace::printf ("%s() @%p \n", __func__, this);
-#endif
-
-      assert (empty ());
-    }
-
-    void
-    double_list::link (reference node)
-    {
-      // Add node at the end of the list.
-      insert_after (node, tail ());
-    }
-
   } // namespace utils
 } // namespace micro_os_plus
 
