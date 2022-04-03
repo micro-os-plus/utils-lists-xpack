@@ -92,7 +92,7 @@ multiple pointers, one pair for each list.
 In order to support objects that auto-register themselves to
 static registrar objects, which are lists created in the global scope,
 via the static constructors mechanism, it is necessary to guarantee
-that the registrar is initialsed before before the clients need to
+that the registrar is initialsed before the clients need to
 registrer. Since the order
 of static constructors is not defined, the only solution that
 guarantees this is to initialize the registrar during startup
@@ -100,9 +100,9 @@ guarantees this is to initialize the registrar during startup
 
 These statically allocated lists must not change the
 content of any of their members in the constructors, since this
-may happen after clients already registered.
+may happen after clients have already registered.
 
-Additional logic checks that the lists are unitialised and initialise
+Additional logic must checks that the lists are unitialised and initialise
 them before any action.
 
 ### Status
