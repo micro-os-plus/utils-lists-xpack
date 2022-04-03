@@ -67,844 +67,841 @@
 #endif
 #endif
 
-namespace micro_os_plus
+namespace micro_os_plus::utils
 {
-  namespace utils
+  // ==========================================================================
+
+  /**
+   * @brief Statically allocated core of a double linked list,
+   * pointers to next, previous.
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @ingroup micro-os-plus-utils
+   *
+   * @details A pair of next/prev uninitialised pointers.
+   *
+   * Statically allocated variables are stored in BSS
+   * and are cleared during startup.
+   */
+  class static_double_list_links
   {
-    // ========================================================================
+  public:
+    using is_statically_allocated = std::true_type;
 
     /**
-     * @brief Statically allocated core of a double linked list,
-     * pointers to next, previous.
-     * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup micro-os-plus-utils
-     *
-     * @details A pair of next/prev uninitialised pointers.
-     *
-     * Statically allocated variables are stored in BSS
-     * and are cleared during startup.
+     * @name Constructors & Destructor
+     * @{
      */
-    class static_double_list_links
-    {
-    public:
-      using is_statically_allocated = std::true_type;
-
-      /**
-       * @name Constructors & Destructor
-       * @{
-       */
-
-      /**
-       * @brief Construct a list node (BSS initialised).
-       */
-      constexpr static_double_list_links ();
-
-      /**
-       * @cond ignore
-       */
-
-      // The rule of five.
-      static_double_list_links (const static_double_list_links&) = delete;
-      static_double_list_links (static_double_list_links&&) = delete;
-      static_double_list_links&
-      operator= (const static_double_list_links&)
-          = delete;
-      static_double_list_links&
-      operator= (static_double_list_links&&)
-          = delete;
-
-      /**
-       * @endcond
-       */
-
-      /**
-       * @brief Destruct the node.
-       */
-      constexpr ~static_double_list_links ();
-
-      /**
-       * @}
-       */
-
-      /**
-       * @name Public Member Functions
-       * @{
-       */
-
-      /**
-       * @brief Clear the links.
-       * @par Parameters
-       *  None.
-       * @par Returns
-       *  Nothing.
-       */
-      constexpr void
-      clear (void);
-
-      void
-      link (static_double_list_links* after);
-
-      /**
-       * @brief Remove the node from the list.
-       * @par Returns
-       *  Nothing.
-       */
-      void
-      unlink (void);
-
-      /**
-       * @brief Check if the node is linked to a double list.
-       * @retval true The node is linked with both pointers.
-       * @retval false The node is not linked.
-       */
-      bool
-      linked (void);
-
-      /**
-       * @brief Return the link to the next node.
-       * @retval Pointer to the next node.
-       */
-      constexpr static_double_list_links*
-      next (void) const;
-
-      /**
-       * @brief Return the link to the previous node.
-       * @retval Pointer to the previous node.
-       */
-      constexpr static_double_list_links*
-      previous (void) const;
-
-      /**
-       * @brief Link the next node.
-       * @par Returns
-       *  Nothing.
-       */
-      constexpr void
-      next (static_double_list_links* n);
-
-      /**
-       * @brief Link the previous node.
-       * @par Returns
-       *  Nothing.
-       */
-      constexpr void
-      previous (static_double_list_links* n);
-
-      /**
-       * @}
-       */
-
-    protected:
-      /**
-       * @name Private Member Variables
-       * @{
-       */
-
-      /**
-       * @brief Pointer to the previous node.
-       */
-      static_double_list_links* previous_;
-
-      /**
-       * @brief Pointer to the next node.
-       */
-      static_double_list_links* next_;
-
-      /**
-       * @}
-       */
-    };
-
-    // ========================================================================
 
     /**
-     * @brief The core of a double linked list, pointers to next,
-     * previous.
-     * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup micro-os-plus-utils
-     *
-     * @details A pair of next/prev null pointers.
-     * Identical with `static_double_list_links` except the
-     * constructor that clears the pointers.
+     * @brief Construct a list node (BSS initialised).
      */
-    class double_list_links : public static_double_list_links
-    {
-    public:
-      using is_statically_allocated = std::false_type;
-
-      /**
-       * @name Constructors & Destructor
-       * @{
-       */
-
-      /**
-       * @brief Construct a list node (explicitly set the pointers to nullptr).
-       */
-      constexpr double_list_links ();
-
-      /**
-       * @cond ignore
-       */
-
-      // The rule of five.
-      double_list_links (const double_list_links&) = delete;
-      double_list_links (double_list_links&&) = delete;
-      double_list_links&
-      operator= (const double_list_links&)
-          = delete;
-      double_list_links&
-      operator= (double_list_links&&)
-          = delete;
-
-      /**
-       * @endcond
-       */
-
-      /**
-       * @brief Destruct the node.
-       */
-      constexpr ~double_list_links ();
-
-      /**
-       * @}
-       */
-    };
-
-    // ========================================================================
+    constexpr static_double_list_links ();
 
     /**
-     * @brief Template for a double linked list iterator.
-     * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup micro-os-plus-utils
-     * @tparam T Type of object returned by the iterator.
-     * @tparam N Type of intrusive node. Must have the public members
-     * **previous** & **next**.
-     * @tparam U Type stored in the list, derived from T.
-     *
-     * @details
-     * This class provides an interface similar to std::list::iterator.
+     * @cond ignore
      */
-    template <class T, class N = T, class U = T>
-    class double_list_iterator
-    {
-    public:
-      /**
-       * @name Public Types
-       * @{
-       */
 
-      /**
-       * @brief Type of value "pointed to" by the iterator.
-       */
-      using value_type = U;
-
-      /**
-       * @brief Type of pointer to object "pointed to" by the iterator.
-       */
-      using pointer = U*;
-
-      /**
-       * @brief Type of reference to object "pointed to" by the iterator.
-       */
-      using reference = U&;
-
-      /**
-       * @brief Type of reference to the iterator internal pointer.
-       */
-      using iterator_pointer = N*;
-
-      /**
-       * @brief Type of pointer difference.
-       */
-      using difference_type = ptrdiff_t;
-
-      /**
-       * @brief Category of iterator.
-       */
-      using iterator_category = std::forward_iterator_tag;
-
-      /**
-       * @}
-       */
-
-      // ----------------------------------------------------------------------
-      /**
-       * @name Constructors & Destructor
-       * @{
-       */
-
-      constexpr double_list_iterator ();
-
-      constexpr explicit double_list_iterator (iterator_pointer const node);
-
-      constexpr explicit double_list_iterator (reference element);
-
-      /**
-       * @}
-       */
-
-      /**
-       * @name Operators
-       * @{
-       */
-
-      constexpr pointer
-      operator-> () const;
-
-      constexpr reference
-      operator* () const;
-
-      constexpr double_list_iterator&
-      operator++ ();
-
-      constexpr double_list_iterator
-      operator++ (int);
-
-      constexpr double_list_iterator&
-      operator-- ();
-
-      constexpr double_list_iterator
-      operator-- (int);
-
-      constexpr bool
-      operator== (const double_list_iterator& other) const;
-
-      constexpr bool
-      operator!= (const double_list_iterator& other) const;
-
-      /**
-       * @}
-       */
-
-      /**
-       * @name Public Member Functions
-       * @{
-       */
-
-      constexpr pointer
-      get_pointer () const;
-
-      constexpr iterator_pointer
-      get_iterator_pointer () const;
-
-      /**
-       * @}
-       */
-
-    protected:
-      /**
-       * @name Private Member Variables
-       * @{
-       */
-
-      /**
-       * @brief Pointer to intrusive node.
-       */
-      iterator_pointer node_;
-
-      /**
-       * @}
-       */
-    };
-
-    // ========================================================================
-
-    // HeadT must be one of static_double_list_links or double_list_links.
-    // ElementT must be derived from class static_double_list_links.
+    // The rule of five.
+    static_double_list_links (const static_double_list_links&) = delete;
+    static_double_list_links (static_double_list_links&&) = delete;
+    static_double_list_links&
+    operator= (const static_double_list_links&)
+        = delete;
+    static_double_list_links&
+    operator= (static_double_list_links&&)
+        = delete;
 
     /**
-     * @brief Circular double linked list of nodes.
-     * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup micro-os-plus-utils
-     *
-     * @details The head of a double listed list.
-     *
-     * This is the simplest list, used as base class for scheduler
-     * lists that must be available for any statically constructed
-     * thread while still avoiding the 'static initialisation order fiasco'.
-     *
-     * The idea is to design the object in such a way as to benefit
-     * from the standard BSS initialisation, in other words take `nullptr`
-     * as starting values.
-     *
-     * This has the downside of requiring additional tests before
-     * adding new nodes to the list, to create the initial self
-     * links, and when checking if the list is empty.
+     * @endcond
      */
-    template <class HeadT = double_list_links,
-              class ElementT = double_list_links>
-    class double_list
-    {
-    public:
-      using head_type = HeadT;
-
-      using value_type = ElementT;
-      using reference = value_type&;
-      using pointer = value_type*;
-
-      using iterator = double_list_iterator<value_type>;
-      using iterator_pointer = value_type*;
-
-      using is_statically_allocated = typename HeadT::is_statically_allocated;
-
-      /**
-       * @name Constructors & Destructor
-       * @{
-       */
-
-      /**
-       * @brief Construct a list.
-       */
-      double_list ();
-
-      /**
-       * @cond ignore
-       */
-
-      // The rule of five.
-      double_list (const double_list&) = delete;
-      double_list (double_list&&) = delete;
-      double_list&
-      operator= (const double_list&)
-          = delete;
-      double_list&
-      operator= (double_list&&)
-          = delete;
-
-      /**
-       * @endcond
-       */
-
-      /**
-       * @brief Destruct the list.
-       */
-      constexpr ~double_list ();
-
-      /**
-       * @}
-       */
-
-    public:
-      /**
-       * @name Public Member Functions
-       * @{
-       */
-
-      /**
-       * @brief Check if the list is unitialised.
-       * @par Parameters
-       *  None.
-       * @retval true The list was not initialised.
-       * @retval false The list was initialised.
-       */
-      bool
-      uninitialized (void) const;
-
-      /**
-       * @brief Check if the list is empty.
-       * @par Parameters
-       *  None.
-       * @retval true The list has no nodes.
-       * @retval false The list has at least one node.
-       */
-      bool
-      empty (void) const;
-
-      /**
-       * @brief Clear the list.
-       * @par Parameters
-       *  None.
-       * @par Returns
-       *  Nothing.
-       */
-      void
-      clear (void);
-
-      /**
-       * @brief Get the list head.
-       * @par Parameters
-       *  None.
-       * @return Pointer to head node.
-       */
-      constexpr pointer
-      head (void) const;
-
-      /**
-       * @brief Get the list tail.
-       * @par Parameters
-       *  None.
-       * @return Pointer to tail node.
-       */
-      constexpr pointer
-      tail (void) const;
-
-      /**
-       * @brief Add a node to the tail of the list.
-       */
-      void
-      link (reference node);
-
-      // ----------------------------------------------------------------------
-
-      /**
-       * @brief Iterator begin.
-       * @return An iterator positioned at the first element.
-       */
-      iterator
-      begin ();
-
-      /**
-       * @brief Iterator end.
-       * @return An iterator positioned after the last element.
-       */
-      iterator
-      end () const;
-
-      // Required in derived class iterator end(), where direct
-      // access to member fails.
-      constexpr const head_type*
-      head_pointer () const
-      {
-        return &head_;
-      }
-
-      // ----------------------------------------------------------------------
-
-    protected:
-      /**
-       * @name Private Member Functions
-       * @{
-       */
-
-      /**
-       * @brief Insert a new node after existing node.
-       * @param node Reference to node to insert.
-       * @param after Reference to existing node.
-       * @par Returns
-       *  Nothing.
-       */
-      void
-      insert_after (reference node, pointer after);
-
-      /**
-       * @}
-       */
-
-    protected:
-      /**
-       * @name Private Member Variables
-       * @{
-       */
-
-      /**
-       * @brief A list node used to point to head and tail.
-       * @details
-       * To simplify processing, the list always has a node.
-       */
-      head_type head_;
-
-      /**
-       * @}
-       */
-    };
-
-    // ========================================================================
 
     /**
-     * @brief Template for an intrusive list iterator.
-     * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup micro-os-plus-utils
-     * @tparam T Type of object that includes the intrusive node.
-     * @tparam N Type of intrusive node. Must have the public members
-     * **previous** & **next**.
-     * @tparam MP Name of the intrusive node member in object T.
-     * @tparam U Type stored in the list, derived from T.
-     *
-     * @details
-     * This class provides an interface similar to std::list::iterator.
+     * @brief Destruct the node.
      */
-    template <class T, class N, N T::*MP, class U = T>
-    class intrusive_list_iterator
-    {
-    public:
-      /**
-       * @name Public Types
-       * @{
-       */
-
-      /**
-       * @brief Type of value "pointed to" by the iterator.
-       */
-      using value_type = U;
-
-      /**
-       * @brief Type of pointer to object "pointed to" by the iterator.
-       */
-      using pointer = U*;
-
-      /**
-       * @brief Type of reference to object "pointed to" by the iterator.
-       */
-      using reference = U&;
-
-      /**
-       * @brief Type of reference to the iterator internal pointer.
-       */
-      using iterator_pointer = N*;
-
-      /**
-       * @brief Type of pointer difference.
-       */
-      using difference_type = ptrdiff_t;
-
-      /**
-       * @brief Category of iterator.
-       */
-      using iterator_category = std::forward_iterator_tag;
-
-      /**
-       * @}
-       */
-
-      // ----------------------------------------------------------------------
-      /**
-       * @name Constructors & Destructor
-       * @{
-       */
-
-      constexpr intrusive_list_iterator ();
-
-      constexpr explicit intrusive_list_iterator (iterator_pointer const node);
-
-      constexpr explicit intrusive_list_iterator (reference element);
-
-      /**
-       * @}
-       */
-
-      /**
-       * @name Operators
-       * @{
-       */
-
-      pointer
-      operator-> () const;
-
-      reference
-      operator* () const;
-
-      intrusive_list_iterator&
-      operator++ ();
-
-      intrusive_list_iterator
-      operator++ (int);
-
-      intrusive_list_iterator&
-      operator-- ();
-
-      intrusive_list_iterator
-      operator-- (int);
-
-      bool
-      operator== (const intrusive_list_iterator& other) const;
-
-      bool
-      operator!= (const intrusive_list_iterator& other) const;
-
-      /**
-       * @}
-       */
-
-      /**
-       * @name Public Member Functions
-       * @{
-       */
-
-      /**
-       * @brief Get the object node from the intrusive node.
-       * @return Pointer to object node.
-       */
-      pointer
-      get_pointer (void) const;
-
-      iterator_pointer
-      get_iterator_pointer () const;
-
-      /**
-       * @}
-       */
-
-    protected:
-      /**
-       * @name Private Member Variables
-       * @{
-       */
-
-      /**
-       * @brief Pointer to intrusive node.
-       */
-      iterator_pointer node_;
-
-      /**
-       * @}
-       */
-    };
-
-    // ========================================================================
+    constexpr ~static_double_list_links ();
 
     /**
-     * @brief A list of intrusive nodes,
-     * which store the links inside the linked object.
-     * @headerfile lists.h <micro-os-plus/utils/lists.h>
-     * @ingroup micro-os-plus-utils
-     * @tparam T Type of object that includes the intrusive node.
-     * @tparam N Type of intrusive node. Must have the public members
-     * **previous** & **next**.
-     * @tparam MP Name of the intrusive node member in object T.
-     * @tparam B Type of the head links.
-     * @tparam U Type stored in the list, derived from T.
-     *
-     * @par Examples
-     *
-     * @code{.cpp}
-     * using threads_list = utils::intrusive_list<
-     * thread, utils::double_list_links, &thread::child_links_>;
-     * @endcode
-     *
-     * @details A pair of next/prev pointers,
-     * maintaining a list of intrusive nodes.
-     *
-     * Intrusive nodes do not need separate allocations
-     * for the links, but store them in the linked
-     * objects, in the MP member. The main thing this class
-     * does is to compute the address of the object by subtracting
-     * the offset from the address of the member storing the pointers.
-     *
-     * For statically allocated lists, set B=static_double_list_links.
+     * @}
      */
 
-    template <class T, class N, N T::*MP, class B = double_list_links,
-              class U = T>
-    class intrusive_list : public double_list<B, N>
-    {
-    public:
-      using value_type = U;
-      using pointer = U*;
-      using reference = U&;
-      using difference_type = ptrdiff_t;
+    /**
+     * @name Public Member Functions
+     * @{
+     */
 
-      using iterator = intrusive_list_iterator<T, N, MP, U>;
+    /**
+     * @brief Clear the links.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
+    constexpr void
+    clear (void);
 
-      using is_statically_allocated = typename B::is_statically_allocated;
+    void
+    link (static_double_list_links* after);
 
-      /**
-       * @brief Type of reference to the iterator internal pointer.
-       */
-      using iterator_pointer = N*;
+    /**
+     * @brief Remove the node from the list.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    unlink (void);
 
-      // From base class.
-      // using is_statically_allocated = std::true_type;
+    /**
+     * @brief Check if the node is linked to a double list.
+     * @retval true The node is linked with both pointers.
+     * @retval false The node is not linked.
+     */
+    bool
+    linked (void);
 
-      /**
-       * @name Constructors & Destructor
-       * @{
-       */
+    /**
+     * @brief Return the link to the next node.
+     * @retval Pointer to the next node.
+     */
+    constexpr static_double_list_links*
+    next (void) const;
 
-      /**
-       * @brief Construct an intrusive list.
-       */
-      constexpr intrusive_list ();
+    /**
+     * @brief Return the link to the previous node.
+     * @retval Pointer to the previous node.
+     */
+    constexpr static_double_list_links*
+    previous (void) const;
 
-      /**
-       * @cond ignore
-       */
+    /**
+     * @brief Link the next node.
+     * @par Returns
+     *  Nothing.
+     */
+    constexpr void
+    next (static_double_list_links* n);
 
-      // The rule of five.
-      intrusive_list (const intrusive_list&) = delete;
-      intrusive_list (intrusive_list&&) = delete;
-      intrusive_list&
-      operator= (const intrusive_list&)
-          = delete;
-      intrusive_list&
-      operator= (intrusive_list&&)
-          = delete;
+    /**
+     * @brief Link the previous node.
+     * @par Returns
+     *  Nothing.
+     */
+    constexpr void
+    previous (static_double_list_links* n);
 
-      /**
-       * @endcond
-       */
+    /**
+     * @}
+     */
 
-      /**
-       * @brief Destruct the list.
-       */
-      constexpr ~intrusive_list ();
+  protected:
+    /**
+     * @name Private Member Variables
+     * @{
+     */
 
-      /**
-       * @}
-       */
+    /**
+     * @brief Pointer to the previous node.
+     */
+    static_double_list_links* previous_;
 
-    public:
-      /**
-       * @name Public Member Functions
-       * @{
-       */
+    /**
+     * @brief Pointer to the next node.
+     */
+    static_double_list_links* next_;
 
-      constexpr bool
-      empty (void) const;
+    /**
+     * @}
+     */
+  };
 
-      /**
-       * @brief Add a node to the tail of the list.
-       * @param [in] node Reference to a list node.
-       * @par Returns
-       *  Nothing.
-       */
-      void
-      link (reference node);
+  // ==========================================================================
 
-      /**
-       * @brief Unlink the first element from the list.
-       * @return Pointer to the first element in the list.
-       */
-      pointer
-      unlink_head (void);
+  /**
+   * @brief The core of a double linked list, pointers to next,
+   * previous.
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @ingroup micro-os-plus-utils
+   *
+   * @details A pair of next/prev null pointers.
+   * Identical with `static_double_list_links` except the
+   * constructor that clears the pointers.
+   */
+  class double_list_links : public static_double_list_links
+  {
+  public:
+    using is_statically_allocated = std::false_type;
 
-      /**
-       * @brief Unlink the last element from the list.
-       * @return Pointer to the last element in the list.
-       */
-      pointer
-      unlink_tail (void);
+    /**
+     * @name Constructors & Destructor
+     * @{
+     */
 
-      /**
-       * @brief Iterator begin.
-       * @return An iterator positioned at the first element.
-       */
-      iterator
-      begin ();
+    /**
+     * @brief Construct a list node (explicitly set the pointers to nullptr).
+     */
+    constexpr double_list_links ();
 
-      /**
-       * @brief Iterator begin.
-       * @return An iterator positioned after the last element.
-       *
-       * It cannot be const for static cases, since it must call clear().
-       */
-      iterator
-      end ();
+    /**
+     * @cond ignore
+     */
 
-      /**
-       * @}
-       */
-    protected:
-      /**
-       * @brief Get the address of the node.
-       * @return A pointer with the address of the node.
-       */
-      pointer
-      get_pointer (iterator_pointer node) const;
-    };
+    // The rule of five.
+    double_list_links (const double_list_links&) = delete;
+    double_list_links (double_list_links&&) = delete;
+    double_list_links&
+    operator= (const double_list_links&)
+        = delete;
+    double_list_links&
+    operator= (double_list_links&&)
+        = delete;
+
+    /**
+     * @endcond
+     */
+
+    /**
+     * @brief Destruct the node.
+     */
+    constexpr ~double_list_links ();
+
+    /**
+     * @}
+     */
+  };
+
+  // ==========================================================================
+
+  /**
+   * @brief Template for a double linked list iterator.
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @ingroup micro-os-plus-utils
+   * @tparam T Type of object returned by the iterator.
+   * @tparam N Type of intrusive node. Must have the public members
+   * **previous** & **next**.
+   * @tparam U Type stored in the list, derived from T.
+   *
+   * @details
+   * This class provides an interface similar to std::list::iterator.
+   */
+  template <class T, class N = T, class U = T>
+  class double_list_iterator
+  {
+  public:
+    /**
+     * @name Public Types
+     * @{
+     */
+
+    /**
+     * @brief Type of value "pointed to" by the iterator.
+     */
+    using value_type = U;
+
+    /**
+     * @brief Type of pointer to object "pointed to" by the iterator.
+     */
+    using pointer = U*;
+
+    /**
+     * @brief Type of reference to object "pointed to" by the iterator.
+     */
+    using reference = U&;
+
+    /**
+     * @brief Type of reference to the iterator internal pointer.
+     */
+    using iterator_pointer = N*;
+
+    /**
+     * @brief Type of pointer difference.
+     */
+    using difference_type = ptrdiff_t;
+
+    /**
+     * @brief Category of iterator.
+     */
+    using iterator_category = std::forward_iterator_tag;
+
+    /**
+     * @}
+     */
 
     // ------------------------------------------------------------------------
-  } // namespace utils
-} // namespace micro_os_plus
+    /**
+     * @name Constructors & Destructor
+     * @{
+     */
+
+    constexpr double_list_iterator ();
+
+    constexpr explicit double_list_iterator (iterator_pointer const node);
+
+    constexpr explicit double_list_iterator (reference element);
+
+    /**
+     * @}
+     */
+
+    /**
+     * @name Operators
+     * @{
+     */
+
+    constexpr pointer
+    operator-> () const;
+
+    constexpr reference
+    operator* () const;
+
+    constexpr double_list_iterator&
+    operator++ ();
+
+    constexpr double_list_iterator
+    operator++ (int);
+
+    constexpr double_list_iterator&
+    operator-- ();
+
+    constexpr double_list_iterator
+    operator-- (int);
+
+    constexpr bool
+    operator== (const double_list_iterator& other) const;
+
+    constexpr bool
+    operator!= (const double_list_iterator& other) const;
+
+    /**
+     * @}
+     */
+
+    /**
+     * @name Public Member Functions
+     * @{
+     */
+
+    constexpr pointer
+    get_pointer () const;
+
+    constexpr iterator_pointer
+    get_iterator_pointer () const;
+
+    /**
+     * @}
+     */
+
+  protected:
+    /**
+     * @name Private Member Variables
+     * @{
+     */
+
+    /**
+     * @brief Pointer to intrusive node.
+     */
+    iterator_pointer node_;
+
+    /**
+     * @}
+     */
+  };
+
+  // ==========================================================================
+
+  // HeadT must be one of static_double_list_links or double_list_links.
+  // ElementT must be derived from class static_double_list_links.
+
+  /**
+   * @brief Circular double linked list of nodes.
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @ingroup micro-os-plus-utils
+   *
+   * @details The head of a double listed list.
+   *
+   * This is the simplest list, used as base class for scheduler
+   * lists that must be available for any statically constructed
+   * thread while still avoiding the 'static initialisation order fiasco'.
+   *
+   * The idea is to design the object in such a way as to benefit
+   * from the standard BSS initialisation, in other words take `nullptr`
+   * as starting values.
+   *
+   * This has the downside of requiring additional tests before
+   * adding new nodes to the list, to create the initial self
+   * links, and when checking if the list is empty.
+   */
+  template <class HeadT = double_list_links,
+            class ElementT = double_list_links>
+  class double_list
+  {
+  public:
+    using head_type = HeadT;
+
+    using value_type = ElementT;
+    using reference = value_type&;
+    using pointer = value_type*;
+
+    using iterator = double_list_iterator<value_type>;
+    using iterator_pointer = value_type*;
+
+    using is_statically_allocated = typename HeadT::is_statically_allocated;
+
+    /**
+     * @name Constructors & Destructor
+     * @{
+     */
+
+    /**
+     * @brief Construct a list.
+     */
+    double_list ();
+
+    /**
+     * @cond ignore
+     */
+
+    // The rule of five.
+    double_list (const double_list&) = delete;
+    double_list (double_list&&) = delete;
+    double_list&
+    operator= (const double_list&)
+        = delete;
+    double_list&
+    operator= (double_list&&)
+        = delete;
+
+    /**
+     * @endcond
+     */
+
+    /**
+     * @brief Destruct the list.
+     */
+    constexpr ~double_list ();
+
+    /**
+     * @}
+     */
+
+  public:
+    /**
+     * @name Public Member Functions
+     * @{
+     */
+
+    /**
+     * @brief Check if the list is unitialised.
+     * @par Parameters
+     *  None.
+     * @retval true The list was not initialised.
+     * @retval false The list was initialised.
+     */
+    bool
+    uninitialized (void) const;
+
+    /**
+     * @brief Check if the list is empty.
+     * @par Parameters
+     *  None.
+     * @retval true The list has no nodes.
+     * @retval false The list has at least one node.
+     */
+    bool
+    empty (void) const;
+
+    /**
+     * @brief Clear the list.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    clear (void);
+
+    /**
+     * @brief Get the list head.
+     * @par Parameters
+     *  None.
+     * @return Pointer to head node.
+     */
+    constexpr pointer
+    head (void) const;
+
+    /**
+     * @brief Get the list tail.
+     * @par Parameters
+     *  None.
+     * @return Pointer to tail node.
+     */
+    constexpr pointer
+    tail (void) const;
+
+    /**
+     * @brief Add a node to the tail of the list.
+     */
+    void
+    link (reference node);
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Iterator begin.
+     * @return An iterator positioned at the first element.
+     */
+    iterator
+    begin ();
+
+    /**
+     * @brief Iterator end.
+     * @return An iterator positioned after the last element.
+     */
+    iterator
+    end () const;
+
+    // Required in derived class iterator end(), where direct
+    // access to member fails.
+    constexpr const head_type*
+    head_pointer () const
+    {
+      return &head_;
+    }
+
+    // ------------------------------------------------------------------------
+
+  protected:
+    /**
+     * @name Private Member Functions
+     * @{
+     */
+
+    /**
+     * @brief Insert a new node after existing node.
+     * @param node Reference to node to insert.
+     * @param after Reference to existing node.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    insert_after (reference node, pointer after);
+
+    /**
+     * @}
+     */
+
+  protected:
+    /**
+     * @name Private Member Variables
+     * @{
+     */
+
+    /**
+     * @brief A list node used to point to head and tail.
+     * @details
+     * To simplify processing, the list always has a node.
+     */
+    head_type head_;
+
+    /**
+     * @}
+     */
+  };
+
+  // ==========================================================================
+
+  /**
+   * @brief Template for an intrusive list iterator.
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @ingroup micro-os-plus-utils
+   * @tparam T Type of object that includes the intrusive node.
+   * @tparam N Type of intrusive node. Must have the public members
+   * **previous** & **next**.
+   * @tparam MP Name of the intrusive node member in object T.
+   * @tparam U Type stored in the list, derived from T.
+   *
+   * @details
+   * This class provides an interface similar to std::list::iterator.
+   */
+  template <class T, class N, N T::*MP, class U = T>
+  class intrusive_list_iterator
+  {
+  public:
+    /**
+     * @name Public Types
+     * @{
+     */
+
+    /**
+     * @brief Type of value "pointed to" by the iterator.
+     */
+    using value_type = U;
+
+    /**
+     * @brief Type of pointer to object "pointed to" by the iterator.
+     */
+    using pointer = U*;
+
+    /**
+     * @brief Type of reference to object "pointed to" by the iterator.
+     */
+    using reference = U&;
+
+    /**
+     * @brief Type of reference to the iterator internal pointer.
+     */
+    using iterator_pointer = N*;
+
+    /**
+     * @brief Type of pointer difference.
+     */
+    using difference_type = ptrdiff_t;
+
+    /**
+     * @brief Category of iterator.
+     */
+    using iterator_category = std::forward_iterator_tag;
+
+    /**
+     * @}
+     */
+
+    // ------------------------------------------------------------------------
+    /**
+     * @name Constructors & Destructor
+     * @{
+     */
+
+    constexpr intrusive_list_iterator ();
+
+    constexpr explicit intrusive_list_iterator (iterator_pointer const node);
+
+    constexpr explicit intrusive_list_iterator (reference element);
+
+    /**
+     * @}
+     */
+
+    /**
+     * @name Operators
+     * @{
+     */
+
+    pointer
+    operator-> () const;
+
+    reference
+    operator* () const;
+
+    intrusive_list_iterator&
+    operator++ ();
+
+    intrusive_list_iterator
+    operator++ (int);
+
+    intrusive_list_iterator&
+    operator-- ();
+
+    intrusive_list_iterator
+    operator-- (int);
+
+    bool
+    operator== (const intrusive_list_iterator& other) const;
+
+    bool
+    operator!= (const intrusive_list_iterator& other) const;
+
+    /**
+     * @}
+     */
+
+    /**
+     * @name Public Member Functions
+     * @{
+     */
+
+    /**
+     * @brief Get the object node from the intrusive node.
+     * @return Pointer to object node.
+     */
+    pointer
+    get_pointer (void) const;
+
+    iterator_pointer
+    get_iterator_pointer () const;
+
+    /**
+     * @}
+     */
+
+  protected:
+    /**
+     * @name Private Member Variables
+     * @{
+     */
+
+    /**
+     * @brief Pointer to intrusive node.
+     */
+    iterator_pointer node_;
+
+    /**
+     * @}
+     */
+  };
+
+  // ==========================================================================
+
+  /**
+   * @brief A list of intrusive nodes,
+   * which store the links inside the linked object.
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @ingroup micro-os-plus-utils
+   * @tparam T Type of object that includes the intrusive node.
+   * @tparam N Type of intrusive node. Must have the public members
+   * **previous** & **next**.
+   * @tparam MP Name of the intrusive node member in object T.
+   * @tparam B Type of the head links.
+   * @tparam U Type stored in the list, derived from T.
+   *
+   * @par Examples
+   *
+   * @code{.cpp}
+   * using threads_list = utils::intrusive_list<
+   * thread, utils::double_list_links, &thread::child_links_>;
+   * @endcode
+   *
+   * @details A pair of next/prev pointers,
+   * maintaining a list of intrusive nodes.
+   *
+   * Intrusive nodes do not need separate allocations
+   * for the links, but store them in the linked
+   * objects, in the MP member. The main thing this class
+   * does is to compute the address of the object by subtracting
+   * the offset from the address of the member storing the pointers.
+   *
+   * For statically allocated lists, set B=static_double_list_links.
+   */
+
+  template <class T, class N, N T::*MP, class B = double_list_links,
+            class U = T>
+  class intrusive_list : public double_list<B, N>
+  {
+  public:
+    using value_type = U;
+    using pointer = U*;
+    using reference = U&;
+    using difference_type = ptrdiff_t;
+
+    using iterator = intrusive_list_iterator<T, N, MP, U>;
+
+    using is_statically_allocated = typename B::is_statically_allocated;
+
+    /**
+     * @brief Type of reference to the iterator internal pointer.
+     */
+    using iterator_pointer = N*;
+
+    // From base class.
+    // using is_statically_allocated = std::true_type;
+
+    /**
+     * @name Constructors & Destructor
+     * @{
+     */
+
+    /**
+     * @brief Construct an intrusive list.
+     */
+    constexpr intrusive_list ();
+
+    /**
+     * @cond ignore
+     */
+
+    // The rule of five.
+    intrusive_list (const intrusive_list&) = delete;
+    intrusive_list (intrusive_list&&) = delete;
+    intrusive_list&
+    operator= (const intrusive_list&)
+        = delete;
+    intrusive_list&
+    operator= (intrusive_list&&)
+        = delete;
+
+    /**
+     * @endcond
+     */
+
+    /**
+     * @brief Destruct the list.
+     */
+    constexpr ~intrusive_list ();
+
+    /**
+     * @}
+     */
+
+  public:
+    /**
+     * @name Public Member Functions
+     * @{
+     */
+
+    constexpr bool
+    empty (void) const;
+
+    /**
+     * @brief Add a node to the tail of the list.
+     * @param [in] node Reference to a list node.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    link (reference node);
+
+    /**
+     * @brief Unlink the first element from the list.
+     * @return Pointer to the first element in the list.
+     */
+    pointer
+    unlink_head (void);
+
+    /**
+     * @brief Unlink the last element from the list.
+     * @return Pointer to the last element in the list.
+     */
+    pointer
+    unlink_tail (void);
+
+    /**
+     * @brief Iterator begin.
+     * @return An iterator positioned at the first element.
+     */
+    iterator
+    begin ();
+
+    /**
+     * @brief Iterator begin.
+     * @return An iterator positioned after the last element.
+     *
+     * It cannot be const for static cases, since it must call clear().
+     */
+    iterator
+    end ();
+
+    /**
+     * @}
+     */
+  protected:
+    /**
+     * @brief Get the address of the node.
+     * @return A pointer with the address of the node.
+     */
+    pointer
+    get_pointer (iterator_pointer node) const;
+  };
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::utils
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
