@@ -83,48 +83,131 @@ Pull Requests should be directed to this branch.
 When new releases are published, the `xpack-develop` branch is merged
 into `xpack`.
 
-## User info
+## Developer info
 
-TBD
+The C++ standard libraries provide extensive support for maintaining lists;
+however, most of them require dynamic memory allocations for the links,
+which, on embedded systems, may be very problematic, and, when possible,
+should be avoided.
+
+One possible alternative to dynamically allocated list nodes is to include
+the list links in the allocated objects; thus the current implementation
+of the _intrusive_ lists, which are double linked lists which store pairs
+of pointers in the linked objects. Objects linked in multiple lists use
+multiple pointers, one pair for each list.
 
 ### Status
 
-The lists classes are fully functional.
+The lists classes are fully functional and are used to manage several
+lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
+
+### C++ API
+
+The .
+
 
 ### Build & integration info
 
-To include this package in a project, consider the following details.
+The project is written in C++, and it is expected to be used in C++ projects.
+The source code was compiled with GCC 11, clang 12, clang 12
+and arm-none-eabi-gcc 10, and should be warning free.
 
-#### Source folders
+To ease the integration of this package into user projects, there
+are already made CMake and meson configuration files (see below).
 
-- `src`
+For other build systems, consider the following details:
 
 #### Include folders
 
+The following folder should be used during the build:
+
 - `include`
 
-TODO: list the available headeres
+The header file to be included is:
+
+```c++
+#include <micro-os-plus/utils/lists.h>
+```
+
+#### Source files
+
+The source files to be added are:
+
+- `src/lists.cpp`
 
 #### Preprocessor definitions
 
-TBD
+- `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
+  `insert()`, `link()`, `unlink()`
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT` - to trace constructors and
+  destructors
 
 #### Compiler options
 
-- `-std=c++17` or higher for C++ sources
-- `-std=c11` for C sources
+- `-std=c++20` or higher for C++ sources
 
 #### C++ Namespaces
 
-TBD
+- `micro_os_plus::utils`
 
 #### C++ Classes
 
-TBD
+```
+```
+
+#### Dependencies
+
+- none
+
+#### CMake
+
+To integrate the utils-lists source library into a CMake application, add this
+folder to the build:
+
+```cmake
+add_subdirectory("xpacks/micro-os-plus-utils-lists")`
+```
+
+The result is an interface library that can be added as an application
+dependency with:
+
+```cmake
+target_link_libraries(your-target PRIVATE
+
+  micro-os-plus::utils-lists
+)
+```
+
+#### meson
+
+To integrate the µTest++ source library into a meson application, add this
+folder to the build:
+
+```meson
+subdir('xpacks/micro-os-plus-utils-lists')
+```
+
+The result is a dependency object that can be added
+to an application with:
+
+```meson
+exe = executable(
+  your-target,
+  link_with: [
+    # Nothing, not static.
+  ],
+  dependencies: [
+    micro_os_plus_utils_lists_dependency,
+  ]
+)
+```
 
 ### Examples
 
-TBD
+An example showing how to use the µTest++ framework is
+available in
+[tests/src/sample-test.cpp](tests/src/sample-test.cpp).
 
 ### Known problems
 
@@ -132,7 +215,41 @@ TBD
 
 ### Tests
 
-TBD
+The project is fully tested via GitHub
+[Actions](https://github.com/micro-os-plus/utils-lists-xpack/actions/)
+on each push.
+
+The test platforms are GNU/Linux, macOS and Windows; native tests are
+compiled with GCC and clang; tests for embedded platforms are compiled
+with arm-none-eabi-gcc and run via QEMU.
+
+There are two set of tests, one that runs on every push, with a
+limited number of tests, and a set that is triggered manually,
+usually before releases, and runs all tests on all supported
+platforms.
+
+The full set can be run manually with the following commands:
+
+```sh
+cd ~Work/utils-lists-xpack.git
+
+xpm run install-all
+xpm run test-all
+```
+
+## Change log - incompatible changes
+
+According to [semver](https://semver.org) rules:
+
+> Major version X (X.y.z | X > 0) MUST be incremented if any
+backwards incompatible changes are introduced to the public API.
+
+The incompatible changes, in reverse chronological order,
+are:
+
+- v3.x: rework, with templates instead of separate static classes;
+- v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
+- v1.x: the code was extracted from the mono-repo µOS++ project.
 
 ## License
 
