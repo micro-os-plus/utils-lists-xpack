@@ -1,7 +1,7 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
 
-# A source library xPack with the µOS++ lists utilities
+# A source library xPack with the µOS++ intrusive lists utilities
 
 This project includes files that implement C++ lists, also used in the
 µOS++ RTOS.
@@ -90,11 +90,27 @@ however, most of them require dynamic memory allocations for the links,
 which, on embedded systems, may be very problematic, and, when possible,
 should be avoided.
 
+### Intrusive lists
+
 One possible alternative to dynamically allocated list nodes is to include
 the list links in the allocated objects; thus the current implementation
 of the _intrusive_ lists, which are double linked lists which store pairs
 of pointers in the linked objects. Objects linked in multiple lists use
 multiple pointers, one pair for each list.
+
+### Statically initialised lists
+
+These are lists created in the global scope which do not change the
+content of any of their members in the constructors; instead,
+they are fully initialized by setting the entire content to zero
+during startup (via BSS init).
+
+This allows other static objects to auto-register themselves to
+static registrar objects. This requires the registrar to be
+initialised before the clients need to registrer; since the order
+of static constructors is not defined, the only solution that
+guarantees this is to initialize the registrar during startup
+(via BSS init) before the static constructors.
 
 ### Status
 
@@ -103,8 +119,46 @@ lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 
 ### C++ API
 
-The .
+The methods available for the intrusive list are:
 
+```c++
+pointer head (void);
+pointer tail (void);
+
+void link_tail (reference node);
+void link_head (reference node);
+
+pointer unlink_tail (void);
+pointer unlink_head (void);
+
+bool empty (void);
+```
+
+Forward iterators are as usual:
+
+```c++
+iterator begin ();
+iterator end ();
+```
+
+Individual nodes (derived from `static_double_list_links`) provide
+the following methods:
+
+```c++
+void link_next (static_double_list_links* node);
+void link_previous (static_double_list_links* node);
+
+void unlink (void);
+void clear (void);
+
+bool linked (void);
+
+// Accessors and mutators.
+static_double_list_links* next (void);
+static_double_list_links* previous (void);
+void next (static_double_list_links* n);
+void previous (static_double_list_links* n);
+```
 
 ### Build & integration info
 
@@ -153,7 +207,20 @@ The source files to be added are:
 
 #### C++ Classes
 
-```
+```c++
+/**
+* @tparam T Type of object that includes the intrusive node.
+* @tparam N Type of intrusive node with the next & previous links.
+* @tparam MP Name of the intrusive node member in object T.
+* @tparam B Type of the head links.
+* @tparam U Type stored in the list, derived from T.
+*/
+template <class T, class N, N T::*MP, class B = double_list_links,
+          class U = T>
+class intrusive_list;
+
+class static_double_list_links;
+class double_list_links;
 ```
 
 #### Dependencies
@@ -205,9 +272,38 @@ exe = executable(
 
 ### Examples
 
-An example showing how to use the µTest++ framework is
+An example showing how to use the intrusive lists is
 available in
 [tests/src/sample-test.cpp](tests/src/sample-test.cpp).
+
+Here are some excerpts:
+
+```c++
+#include <micro-os-plus/utils/lists.h>
+
+class child
+{
+public:
+  child (const char* name)
+  // ...
+protected:
+  const char* name_;
+
+public:
+  // Intrusive node used to link this child to the registry list.
+  // Must be public.
+  utils::double_list_links registry_links_;
+};
+
+using static_children_list = utils::intrusive_list<
+        child, // type of nodes in the list
+        utils::double_list_links, // type of registry_links_
+        &child::registry_links_, // name of member
+        static_double_list_links>; // type of head node
+
+// The head is statically allocated.
+static_children_list kids_registry;
+```
 
 ### Known problems
 
@@ -250,6 +346,11 @@ are:
 - v3.x: rework, with templates instead of separate static classes;
 - v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
 - v1.x: the code was extracted from the mono-repo µOS++ project.
+
+## Credits
+
+Many thanks to [distortos](https://distortos.org) wher I saw for the first
+time such lists used in a RTOS.
 
 ## License
 
