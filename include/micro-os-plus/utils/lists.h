@@ -756,10 +756,9 @@ namespace micro_os_plus::utils
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
    * @tparam T Type of object that includes the intrusive node.
-   * @tparam N Type of intrusive node. Must have the public members
-   * **previous** & **next**.
+   * @tparam N Type of intrusive with the next & previous links.
    * @tparam MP Name of the intrusive node member in object T.
-   * @tparam B Type of the head links.
+   * @tparam H Type of the node storing the head links.
    * @tparam U Type stored in the list, derived from T.
    *
    * @par Examples
@@ -778,12 +777,12 @@ namespace micro_os_plus::utils
    * does is to compute the address of the object by subtracting
    * the offset from the address of the member storing the pointers.
    *
-   * For statically allocated lists, set B=static_double_list_links.
+   * For statically allocated lists, set H=static_double_list_links.
    */
 
-  template <class T, class N, N T::*MP, class B = double_list_links,
+  template <class T, class N, N T::*MP, class H = double_list_links,
             class U = T>
-  class intrusive_list : public double_list<B, N>
+  class intrusive_list : public double_list<H, N>
   {
   public:
     using value_type = U;
@@ -793,7 +792,7 @@ namespace micro_os_plus::utils
 
     using iterator = intrusive_list_iterator<T, N, MP, U>;
 
-    using is_statically_allocated = typename B::is_statically_allocated;
+    using is_statically_allocated = typename H::is_statically_allocated;
 
     /**
      * @brief Type of reference to the iterator internal pointer.

@@ -468,33 +468,33 @@ namespace micro_os_plus::utils
 
   // ==========================================================================
 
-  template <class T, class N, N T::*MP, class B, class U>
-  constexpr intrusive_list<T, N, MP, B, U>::intrusive_list ()
+  template <class T, class N, N T::*MP, class H, class U>
+  constexpr intrusive_list<T, N, MP, H, U>::intrusive_list ()
   {
   }
 
-  template <class T, class N, N T::*MP, class B, class U>
-  constexpr intrusive_list<T, N, MP, B, U>::~intrusive_list ()
+  template <class T, class N, N T::*MP, class H, class U>
+  constexpr intrusive_list<T, N, MP, H, U>::~intrusive_list ()
   {
   }
 
-  template <class T, class N, N T::*MP, class B, class U>
+  template <class T, class N, N T::*MP, class H, class U>
   constexpr bool
-  intrusive_list<T, N, MP, B, U>::empty (void) const
+  intrusive_list<T, N, MP, H, U>::empty (void) const
   {
-    return double_list<B, N>::empty ();
+    return double_list<H, N>::empty ();
   }
 
-  template <class T, class N, N T::*MP, class B, class U>
+  template <class T, class N, N T::*MP, class H, class U>
   void
-  intrusive_list<T, N, MP, B, U>::link (U& node)
+  intrusive_list<T, N, MP, H, U>::link (U& node)
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<B, N>::uninitialized ())
+        if (double_list<H, N>::uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<B, N>::clear ();
+            double_list<H, N>::clear ();
           }
       }
 
@@ -504,10 +504,10 @@ namespace micro_os_plus::utils
         &(static_cast<T*> (nullptr)->*MP));
 
     // Add thread intrusive node at the end of the list.
-    double_list<B, N>::insert_after (
+    double_list<H, N>::insert_after (
         *reinterpret_cast<N*> (reinterpret_cast<difference_type> (&node)
                                + offset),
-        const_cast<N*> (double_list<B, N>::tail ()));
+        const_cast<N*> (double_list<H, N>::tail ()));
   }
 
 #if defined(__GNUC__)
@@ -518,51 +518,51 @@ namespace micro_os_plus::utils
   /**
    * @note It is not `const` because it may initialise on first use.
    */
-  template <class T, class N, N T::*MP, class B, class U>
-  inline typename intrusive_list<T, N, MP, B, U>::iterator
-  intrusive_list<T, N, MP, B, U>::begin ()
+  template <class T, class N, N T::*MP, class H, class U>
+  inline typename intrusive_list<T, N, MP, H, U>::iterator
+  intrusive_list<T, N, MP, H, U>::begin ()
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<B, N>::uninitialized ())
+        if (double_list<H, N>::uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<B, N>::clear ();
+            double_list<H, N>::clear ();
           }
       }
 
     return iterator{ static_cast<iterator_pointer> (
-        double_list<B, N>::head_.next ()) };
+        double_list<H, N>::head_.next ()) };
   }
 
   /**
    * @note It is not `const` because it may initialise on first use.
    */
-  template <class T, class N, N T::*MP, class B, class U>
-  inline typename intrusive_list<T, N, MP, B, U>::iterator
-  intrusive_list<T, N, MP, B, U>::end ()
+  template <class T, class N, N T::*MP, class H, class U>
+  inline typename intrusive_list<T, N, MP, H, U>::iterator
+  intrusive_list<T, N, MP, H, U>::end ()
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<B, N>::uninitialized ())
+        if (double_list<H, N>::uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<B, N>::clear ();
+            double_list<H, N>::clear ();
           }
       }
 
-    using head_type_ = typename double_list<B, N>::head_type;
+    using head_type_ = typename double_list<H, N>::head_type;
     return iterator{ static_cast<iterator_pointer> (
-        const_cast<head_type_*> (double_list<B, N>::head_pointer ())) };
+        const_cast<head_type_*> (double_list<H, N>::head_pointer ())) };
   }
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 
-  template <class T, class N, N T::*MP, class B, class U>
-  inline typename intrusive_list<T, N, MP, B, U>::pointer
-  intrusive_list<T, N, MP, B, U>::get_pointer (iterator_pointer node) const
+  template <class T, class N, N T::*MP, class H, class U>
+  inline typename intrusive_list<T, N, MP, H, U>::pointer
+  intrusive_list<T, N, MP, H, U>::get_pointer (iterator_pointer node) const
   {
     // static_assert(std::is_convertible<U, T>::value == true, "U must be
     // implicitly convertible to T!");
@@ -578,29 +578,29 @@ namespace micro_os_plus::utils
                                       - offset);
   }
 
-  template <class T, class N, N T::*MP, class B, class U>
-  typename intrusive_list<T, N, MP, B, U>::pointer
-  intrusive_list<T, N, MP, B, U>::unlink_head (void)
+  template <class T, class N, N T::*MP, class H, class U>
+  typename intrusive_list<T, N, MP, H, U>::pointer
+  intrusive_list<T, N, MP, H, U>::unlink_head (void)
   {
     assert (!empty ());
 
     // The first element in the list.
     iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<B, N>::head_.next ());
+        = static_cast<iterator_pointer> (double_list<H, N>::head_.next ());
     it->unlink ();
 
     return get_pointer (it);
   }
 
-  template <class T, class N, N T::*MP, class B, class U>
-  typename intrusive_list<T, N, MP, B, U>::pointer
-  intrusive_list<T, N, MP, B, U>::unlink_tail (void)
+  template <class T, class N, N T::*MP, class H, class U>
+  typename intrusive_list<T, N, MP, H, U>::pointer
+  intrusive_list<T, N, MP, H, U>::unlink_tail (void)
   {
     assert (!empty ());
 
     // The last element in the list.
     iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<B, N>::head_.previous ());
+        = static_cast<iterator_pointer> (double_list<H, N>::head_.previous ());
     it->unlink ();
 
     return get_pointer (it);
