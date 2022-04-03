@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/utils-lists",
-  "version": "3.0.0-pre",
+  "version": "3.0.0",
   "description": "A source library xPack with µOS++ C++ lists utilities",
   "main": "",
   "scripts": {
