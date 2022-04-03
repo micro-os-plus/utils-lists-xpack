@@ -36,6 +36,7 @@ using namespace micro_os_plus;
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #pragma clang diagnostic ignored "-Wexit-time-destructors"
 #pragma clang diagnostic ignored "-Wglobal-constructors"
+#pragma clang diagnostic ignored "-Wctad-maybe-unsupported"
 #endif
 
 // ----------------------------------------------------------------------------
