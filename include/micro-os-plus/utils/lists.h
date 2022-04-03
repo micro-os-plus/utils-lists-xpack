@@ -139,11 +139,28 @@ namespace micro_os_plus::utils
     constexpr void
     clear (void);
 
+    /**
+     * @brief Add new node as next.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
     void
-    link (static_double_list_links* after);
+    link_next (static_double_list_links* node);
 
     /**
-     * @brief Remove the node from the list.
+     * @brief Add new node as previous.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    link_previous (static_double_list_links* node);
+
+    /**
+     * @brief Remove this node from the list.
      * @par Returns
      *  Nothing.
      */
@@ -540,7 +557,13 @@ namespace micro_os_plus::utils
      * @brief Add a node to the tail of the list.
      */
     void
-    link (reference node);
+    link_tail (reference node);
+
+    /**
+     * @brief Add a node to the head of the list.
+     */
+    void
+    link_head (reference node);
 
     // ------------------------------------------------------------------------
 
@@ -567,26 +590,6 @@ namespace micro_os_plus::utils
     }
 
     // ------------------------------------------------------------------------
-
-  protected:
-    /**
-     * @name Private Member Functions
-     * @{
-     */
-
-    /**
-     * @brief Insert a new node after existing node.
-     * @param node Reference to node to insert.
-     * @param after Reference to existing node.
-     * @par Returns
-     *  Nothing.
-     */
-    void
-    insert_after (reference node, pointer after);
-
-    /**
-     * @}
-     */
 
   protected:
     /**
@@ -855,7 +858,23 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    link (reference node);
+    link_tail (reference node);
+
+    /**
+     * @brief Add a node to the head of the list.
+     * @param [in] node Reference to a list node.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    link_head (reference node);
+
+    /**
+     * @brief Unlink the last element from the list.
+     * @return Pointer to the last element in the list.
+     */
+    pointer
+    unlink_tail (void);
 
     /**
      * @brief Unlink the first element from the list.
@@ -864,12 +883,7 @@ namespace micro_os_plus::utils
     pointer
     unlink_head (void);
 
-    /**
-     * @brief Unlink the last element from the list.
-     * @return Pointer to the last element in the list.
-     */
-    pointer
-    unlink_tail (void);
+    // ------------------------------------------------------------------------
 
     /**
      * @brief Iterator begin.
@@ -886,6 +900,8 @@ namespace micro_os_plus::utils
      */
     iterator
     end ();
+
+    // ------------------------------------------------------------------------
 
     /**
      * @}

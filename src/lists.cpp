@@ -64,19 +64,37 @@ namespace micro_os_plus::utils
   }
 
   void
-  static_double_list_links::link (static_double_list_links* after)
+  static_double_list_links::link_next (static_double_list_links* node)
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-    trace::printf ("%s() link %p after %p\n", __func__, this, after);
+    trace::printf ("%s() link %p after %p\n", __func__, node, this);
 #endif
-    assert (after->next_ != nullptr);
+    assert (next_ != nullptr);
+    assert (next_->previous_ != nullptr);
 
-    previous_ = after;
-    next_ = after->next_;
+    // Make the new node point to its new neigbours.
+    node->previous_ = this;
+    node->next_ = next_;
 
-    // Make the neighbours point to the node. The order is important.
-    after->next_->previous_ = this;
-    after->next_ = this;
+    next_->previous_ = node;
+    next_ = node;
+  }
+
+  void
+  static_double_list_links::link_previous (static_double_list_links* node)
+  {
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() link %p before %p\n", __func__, node, this);
+#endif
+    assert (next_ != nullptr);
+    assert (next_->previous_ != nullptr);
+
+    // Make the new node point to its new neigbours.
+    node->next_ = this;
+    node->previous_ = previous_;
+
+    previous_->next_ = node;
+    previous_ = node;
   }
 
   /**

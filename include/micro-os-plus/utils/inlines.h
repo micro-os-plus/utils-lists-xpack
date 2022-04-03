@@ -287,7 +287,7 @@ namespace micro_os_plus::utils
 
   template <class HeadT, class ElementT>
   void
-  double_list<HeadT, ElementT>::link (reference node)
+  double_list<HeadT, ElementT>::link_tail (reference node)
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -298,35 +298,25 @@ namespace micro_os_plus::utils
           }
       }
 
-    // Add node at the end of the list.
-    insert_after (node, tail ());
+    // Add new node at the end of the list.
+    tail ()->link_next (&node);
   }
 
   template <class HeadT, class ElementT>
   void
-  double_list<HeadT, ElementT>::insert_after (reference node, pointer after)
+  double_list<HeadT, ElementT>::link_head (reference node)
   {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-    trace::printf ("%s() n=%p after %p\n", __func__, &node, after);
-#endif
+    if constexpr (is_statically_allocated::value)
+      {
+        if (uninitialized ())
+          {
+            // If this is the first time, initialise the list to empty.
+            clear ();
+          }
+      }
 
-    // Unlinked nodes must have both pointers null.
-    // If not, most probably the node was already linked.
-    // Or the memory is corrupted.
-    assert (node.previous () == nullptr);
-    assert (node.next () == nullptr);
-
-    // The `after` node must be linked. Only the `next` pointer is
-    // tested, since only it is used.
-    assert (after->next () != nullptr);
-
-    // Make the new node point to its neighbours.
-    node.previous (after);
-    node.next (after->next ());
-
-    // Make the neighbours point to the node. The order is important.
-    after->next ()->previous (&node);
-    after->next (&node);
+    // Add new node at the head of the list.
+    head ()->link_previous (&node);
   }
 
   template <class HeadT, class ElementT>
@@ -487,7 +477,7 @@ namespace micro_os_plus::utils
 
   template <class T, class N, N T::*MP, class H, class U>
   void
-  intrusive_list<T, N, MP, H, U>::link (U& node)
+  intrusive_list<T, N, MP, H, U>::link_tail (U& node)
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -504,10 +494,33 @@ namespace micro_os_plus::utils
         &(static_cast<T*> (nullptr)->*MP));
 
     // Add thread intrusive node at the end of the list.
-    double_list<H, N>::insert_after (
-        *reinterpret_cast<N*> (reinterpret_cast<difference_type> (&node)
-                               + offset),
-        const_cast<N*> (double_list<H, N>::tail ()));
+    (const_cast<N*> (double_list<H, N>::tail ()))
+        ->link_next (reinterpret_cast<N*> (
+            reinterpret_cast<difference_type> (&node) + offset));
+  }
+
+  template <class T, class N, N T::*MP, class H, class U>
+  void
+  intrusive_list<T, N, MP, H, U>::link_head (U& node)
+  {
+    if constexpr (is_statically_allocated::value)
+      {
+        if (double_list<H, N>::uninitialized ())
+          {
+            // If this is the first time, initialise the list to empty.
+            double_list<H, N>::clear ();
+          }
+      }
+
+    // Compute the distance between the member intrusive link
+    // node and the class begin.
+    const auto offset = reinterpret_cast<difference_type> (
+        &(static_cast<T*> (nullptr)->*MP));
+
+    // Add thread intrusive node at the end of the list.
+    (const_cast<N*> (double_list<H, N>::head ()))
+        ->link_previous (reinterpret_cast<N*> (
+            reinterpret_cast<difference_type> (&node) + offset));
   }
 
 #if defined(__GNUC__)

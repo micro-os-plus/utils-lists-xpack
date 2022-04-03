@@ -190,7 +190,7 @@ check_double_list (void)
 
   test_case ("Link One", [&] {
     expect (!one.linked ()) << "one unlinked";
-    list.link (one);
+    list.link_tail (one);
     expect (one.linked ()) << "one linked";
     expect (!list.empty ()) << "list not empty";
 
@@ -205,7 +205,7 @@ check_double_list (void)
 
   test_case ("Link Two", [&] {
     expect (!two.linked ()) << "two unlinked";
-    list.link (two);
+    list.link_tail (two);
     expect (two.linked ()) << "two linked";
     expect (!list.empty ()) << "list not empty";
 
@@ -245,7 +245,7 @@ check_double_list (void)
 
   test_case ("Link One again", [&] {
     expect (!one.linked ()) << "one unlinked";
-    list.link (one);
+    list.link_tail (one);
     expect (!list.empty ()) << "list not empty";
   });
 
@@ -329,7 +329,7 @@ check_intrusive_list ()
   });
 
   test_case ("Link Marry", [&] {
-    kids.link (marry);
+    kids.link_tail (marry);
     expect (!kids.empty ()) << "list not empty";
 
     // auto x = kids.tail();
@@ -345,7 +345,7 @@ check_intrusive_list ()
   });
 
   test_case ("Link Bob", [&] {
-    kids.link (bob);
+    kids.link_tail (bob);
     auto it = kids.begin ();
     expect (!kids.empty ()) << "list not empty";
     expect (it != kids.end ()) << "first iteration";
@@ -360,7 +360,7 @@ check_intrusive_list ()
   });
 
   test_case ("Link Sally", [&] {
-    kids.link (sally);
+    kids.link_tail (sally);
     expect (!kids.empty ()) << "list not empty";
 
     auto it = kids.begin ();
@@ -407,6 +407,34 @@ check_intrusive_list ()
     expect (it == kids.end ()) << "iterator at end";
   });
 
+  test_case ("Link Marry at head", [&] {
+    kids.link_head (marry);
+    expect (!kids.empty ()) << "list not empty";
+
+    auto it = kids.begin ();
+    expect (it != kids.end ()) << "first iteration";
+    expect (eq (std::string_view{ it->name () }, "Marry"sv))
+        << "first iteration is Marry";
+    ++it;
+    expect (it != kids.end ()) << "second iteration";
+    expect (eq (std::string_view{ it->name () }, "Sally"sv))
+        << "second iteration is Sally";
+    ++it;
+    expect (it == kids.end ()) << "iterator at end";
+  });
+
+  test_case ("Unlink Marry", [&] {
+    marry.unlink ();
+    expect (!kids.empty ()) << "list not empty";
+
+    auto it = kids.begin ();
+    expect (it != kids.end ()) << "first iteration";
+    expect (eq (std::string_view{ it->name () }, "Sally"sv))
+        << "second iteration is Sally";
+    ++it;
+    expect (it == kids.end ()) << "iterator at end";
+  });
+
   test_case ("Unlink Sally", [&] {
     sally.unlink ();
     expect (kids.empty ()) << "list is empty";
@@ -415,7 +443,7 @@ check_intrusive_list ()
   });
 
   test_case ("Link Marry again", [&] {
-    kids.link (marry);
+    kids.link_tail (marry);
     expect (!kids.empty ()) << "list not empty";
 
     auto it = kids.begin ();

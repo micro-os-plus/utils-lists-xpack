@@ -72,13 +72,13 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 
   // Add several members.
   child marry{ "Marry" };
-  children_registry.link (marry);
+  children_registry.link_tail (marry);
 
   child bob{ "Bob" };
-  children_registry.link (bob);
+  children_registry.link_tail (bob);
 
   child sally{ "Sally" };
-  children_registry.link (sally);
+  children_registry.link_tail (sally);
 
   // List them.
   for (auto&& p : children_registry)
