@@ -9,6 +9,9 @@ and close existing issues and pull requests.
 ## 2022-04-03
 
 - v3.0.0
+- 5f004e1 README add documentation
+- 59fcbed rework link next/previous
+- de78fee rename typename H for head
 - a49167b join namespaces
 - 5a052b3 lists.cpp: include conditional #pragma
 - 82cced8 lists.h: include config.h
