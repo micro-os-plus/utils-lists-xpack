@@ -312,7 +312,7 @@ The test platforms are GNU/Linux, macOS and Windows; native tests are
 compiled with GCC and clang; tests for embedded platforms are compiled
 with arm-none-eabi-gcc and run via QEMU.
 
-There are two set of tests, one that runs on every push, with a
+There are two sets of tests, one that runs on every push, with a
 limited number of tests, and a set that is triggered manually,
 usually before releases, and runs all tests on all supported
 platforms.
