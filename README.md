@@ -102,7 +102,7 @@ These statically allocated lists must not change the
 content of any of their members in the constructors, since this
 may happen after clients have already registered.
 
-Additional logic must checks that the lists are unitialised and initialise
+Additional logic must check that the lists are unitialised and initialise
 them before any action.
 
 ### Status
@@ -343,7 +343,7 @@ are:
 
 ## Credits
 
-Many thanks to [distortos](https://distortos.org) wher I saw for the first
+Many thanks to [distortos](https://distortos.org) where I saw for the first
 time such lists used in a RTOS.
 
 ## License
