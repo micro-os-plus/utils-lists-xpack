@@ -1,8 +1,16 @@
 {
   "cSpell.ignoreWords": [
+    "Wctad",
+    "Wglobal",
+    "buildtype",
     "cmake",
+    "cmsis",
+    "cortexm",
+    "ctest",
+    "diag",
     "distortos",
     "eabi",
+    "minsize",
     "mkdir",
     "npmignore",
     "npmjs",
