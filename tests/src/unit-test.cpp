@@ -176,7 +176,7 @@ check_double_list (void)
   test_case ("Empty", [&] {
     if constexpr (T::is_statically_allocated::value)
       {
-        expect (list.uninitialized ()) << "unitialized";
+        expect (list.uninitialized ()) << "uninitialized";
       }
     else
       {

@@ -32,7 +32,7 @@
  *
  * This allows other static objects to auto-register themselves to
  * static registrar objects. This requires the registrar to be
- * initialised before the clients need to registrer; since the order
+ * initialised before the clients need to register; since the order
  * of static constructors is not defined, the only solution that
  * guarantees this is to initialize the registrar during startup
  * (via BSS init) before the static constructors.
@@ -506,7 +506,7 @@ namespace micro_os_plus::utils
      */
 
     /**
-     * @brief Check if the list is unitialised.
+     * @brief Check if the list is uninitialised.
      * @par Parameters
      *  None.
      * @retval true The list was not initialised.

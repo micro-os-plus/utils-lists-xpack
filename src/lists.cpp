@@ -72,7 +72,7 @@ namespace micro_os_plus::utils
     assert (next_ != nullptr);
     assert (next_->previous_ != nullptr);
 
-    // Make the new node point to its new neigbours.
+    // Make the new node point to its new neighbours.
     node->previous_ = this;
     node->next_ = next_;
 
@@ -89,7 +89,7 @@ namespace micro_os_plus::utils
     assert (next_ != nullptr);
     assert (next_->previous_ != nullptr);
 
-    // Make the new node point to its new neigbours.
+    // Make the new node point to its new neighbours.
     node->next_ = this;
     node->previous_ = previous_;
 
