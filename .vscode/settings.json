@@ -1,21 +1,51 @@
 {
+  "editor.rulers": [
+    80
+  ],
+  "mesonbuild.configureOnOpen": true,
   "cSpell.ignoreWords": [
+    "Ionescu",
+    "Liviu",
+    "OBJCOPY",
+    "OBJDUMP",
+    "POSIX",
+    "STREQUAL",
     "Wctad",
+    "Werror",
     "Wglobal",
+    "atexit",
     "buildtype",
     "cmake",
     "cmsis",
     "cortexm",
     "ctest",
+    "demangle",
     "diag",
     "distortos",
     "eabi",
+    "endfunction",
+    "flto",
+    "fxxx",
+    "ihex",
+    "mcpu",
+    "mfloat",
     "minsize",
     "mkdir",
+    "mthumb",
+    "newlib",
+    "nographic",
+    "nostartfiles",
     "npmignore",
     "npmjs",
     "postversion",
+    "rtti",
+    "semihosting",
+    "stdlib",
     "subdir",
-    "tparam"
-  ]
+    "tparam",
+    "unimp",
+    "xpack",
+    "xpacks"
+  ],
+  "cmake.configureOnOpen": false
 }
