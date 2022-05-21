@@ -85,7 +85,9 @@
       ],
       "test-cortexm": [
         "xpm run test-qemu-mps2-an386-cmake",
-        "xpm run test-qemu-mps2-an386-meson"
+        "xpm run test-qemu-mps2-an386-meson",
+        "xpm run test-qemu-mps2-an386-cm0-cmake",
+        "xpm run test-qemu-mps2-an386-cm0-meson"
       ],
       "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
@@ -159,6 +161,14 @@
         "xpm run build --config qemu-mps2-an386-cmake-release",
         "xpm run test --config qemu-mps2-an386-cmake-release"
       ],
+      "test-qemu-mps2-an386-cm0-cmake": [
+        "xpm run prepare --config qemu-mps2-an386-cm0-cmake-debug",
+        "xpm run build --config qemu-mps2-an386-cm0-cmake-debug",
+        "xpm run test --config qemu-mps2-an386-cm0-cmake-debug",
+        "xpm run prepare --config qemu-mps2-an386-cm0-cmake-release",
+        "xpm run build --config qemu-mps2-an386-cm0-cmake-release",
+        "xpm run test --config qemu-mps2-an386-cm0-cmake-release"
+      ],
       "test-qemu-mps2-an386-meson": [
         "xpm run prepare --config qemu-mps2-an386-meson-debug",
         "xpm run build --config qemu-mps2-an386-meson-debug",
@@ -166,6 +176,14 @@
         "xpm run prepare --config qemu-mps2-an386-meson-release",
         "xpm run build --config qemu-mps2-an386-meson-release",
         "xpm run test --config qemu-mps2-an386-meson-release"
+      ],
+      "test-qemu-mps2-an386-cm0-meson": [
+        "xpm run prepare --config qemu-mps2-an386-cm0-meson-debug",
+        "xpm run build --config qemu-mps2-an386-cm0-meson-debug",
+        "xpm run test --config qemu-mps2-an386-cm0-meson-debug",
+        "xpm run prepare --config qemu-mps2-an386-cm0-meson-release",
+        "xpm run build --config qemu-mps2-an386-cm0-meson-release",
+        "xpm run test --config qemu-mps2-an386-cm0-meson-release"
       ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug --ignore-errors",
@@ -186,8 +204,12 @@
         "xpm run clean --config native-meson-clang13-release --ignore-errors",
         "xpm run clean --config qemu-mps2-an386-cmake-debug --ignore-errors",
         "xpm run clean --config qemu-mps2-an386-cmake-release --ignore-errors",
+        "xpm run clean --config qemu-mps2-an386-cm0-cmake-debug --ignore-errors",
+        "xpm run clean --config qemu-mps2-an386-cm0-cmake-release --ignore-errors",
         "xpm run clean --config qemu-mps2-an386-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-meson-release --ignore-errors"
+        "xpm run clean --config qemu-mps2-an386-meson-release --ignore-errors",
+        "xpm run clean --config qemu-mps2-an386-cm0-meson-debug --ignore-errors",
+        "xpm run clean --config qemu-mps2-an386-cm0-meson-release --ignore-errors"
       ],
       "deep-clean": "rm -rf build node_modules xpacks",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
@@ -497,6 +519,38 @@
           "shortConfigurationName": "q1r"
         }
       },
+      "qemu-mps2-an386-cm0-cmake-debug": {
+        "inherit": [
+          "qemu-mps2-an386-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-mps2-an386-cm0",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "qemuBoardName": "QEMU mps2-an386",
+          "shortConfigurationName": "q2d",
+          "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
+          "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
+          ],
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
+        }
+      },
+      "qemu-mps2-an386-cm0-cmake-release": {
+        "inherit": [
+          "qemu-mps2-an386-cm0-cmake-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "q2r"
+        }
+      },
       "qemu-mps2-an386-meson-debug": {
         "inherit": [
           "qemu-mps2-an386-dependencies"
@@ -518,6 +572,34 @@
         }
       },
       "qemu-mps2-an386-meson-release": {
+        "inherit": [
+          "qemu-mps2-an386-meson-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-mps2-an386-cm0-meson-debug": {
+        "inherit": [
+          "qemu-mps2-an386-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-mps2-an386-cm0",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini",
+          "qemuBoardName": "QEMU mps2-an386"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandMesonPrepareCross }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
+        }
+      },
+      "qemu-mps2-an386-cm0-meson-release": {
         "inherit": [
           "qemu-mps2-an386-meson-debug"
         ],
