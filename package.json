@@ -224,7 +224,7 @@
           "@xpack-dev-tools/qemu-arm": "6.2.0-1.1",
           "@micro-os-plus/architecture-cortexm": "5.0.0",
           "@micro-os-plus/devices-cortexm": "3.0.0",
-          "@micro-os-plus/devices-qemu-cortexm": "3.0.0",
+          "@micro-os-plus/devices-qemu-cortexm": "3.1.0",
           "@micro-os-plus/libs-c": "3.0.0",
           "@micro-os-plus/libs-cpp": "3.0.0",
           "@micro-os-plus/semihosting": "4.0.0",
