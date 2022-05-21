@@ -16,7 +16,7 @@
 #
 # `subdir('xpacks/micro-os-plus-utils-lists')`
 #
-# The result is a dependency that can be refered as:
+# The result is a dependency that can be referred as:
 #
 # `dependencies: [micro_os_plus_utils_lists_dependency],`
 
