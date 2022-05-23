@@ -39,6 +39,7 @@
     "npmjs",
     "postversion",
     "rtti",
+    "semihosted",
     "semihosting",
     "stdlib",
     "subdir",
