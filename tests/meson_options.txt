@@ -12,6 +12,6 @@
 #
 # -----------------------------------------------------------------------------
 
-option('platform-name', type : 'string', value : '', description : '[native, qemu-mps2-an386, stm32f4discovery]' )
+option('platform-name', type : 'string', value : '', description : '[native, qemu-cortex-m7f, stm32f4discovery]' )
 
 # -----------------------------------------------------------------------------

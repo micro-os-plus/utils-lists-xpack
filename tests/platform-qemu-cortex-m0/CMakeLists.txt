@@ -12,11 +12,11 @@
 #
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/platform-qemu-mps2-an386'...")
+message(VERBOSE "Processing 'tests/platform-qemu-cortex-m0'...")
 
 # -----------------------------------------------------------------------------
 
-set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
+set(xpack_platform_compile_definition "PLATFORM_QEMU_CORTEX_M0")
 
 # set(xpack_create_listing true)
 # set(xpack_create_hex true)
@@ -24,39 +24,39 @@ set(xpack_platform_compile_definition "PLATFORM_QEMU_MPS2_AN386")
 # -----------------------------------------------------------------------------
 # Define the platform library.
 
-add_library(platform-qemu-mps2-an386-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library(platform-qemu-cortex-m0-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_include_directories(platform-qemu-mps2-an386-interface INTERFACE
+target_include_directories(platform-qemu-cortex-m0-interface INTERFACE
   "include-platform"
 )
 
-target_sources(platform-qemu-mps2-an386-interface INTERFACE
+target_sources(platform-qemu-cortex-m0-interface INTERFACE
   # None.
 )
 
-target_compile_definitions(platform-qemu-mps2-an386-interface INTERFACE
+target_compile_definitions(platform-qemu-cortex-m0-interface INTERFACE
   "${xpack_platform_compile_definition}"
 )
 
-target_compile_options(platform-qemu-mps2-an386-interface INTERFACE
+target_compile_options(platform-qemu-cortex-m0-interface INTERFACE
   # None.
 )
 
-target_link_libraries(platform-qemu-mps2-an386-interface INTERFACE
+target_link_libraries(platform-qemu-cortex-m0-interface INTERFACE
   micro-os-plus::devices-qemu-cortexm
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(platform-qemu-mps2-an386-interface)
+  xpack_display_target_lists(platform-qemu-cortex-m0-interface)
 endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::platform ALIAS platform-qemu-mps2-an386-interface)
-message(VERBOSE "> micro-os-plus::platform -> platform-qemu-mps2-an386-interface")
+add_library(micro-os-plus::platform ALIAS platform-qemu-cortex-m0-interface)
+message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortex-m0-interface")
 
 # =============================================================================
 # Define the tests executables.
@@ -76,7 +76,7 @@ function(add_test_executable name)
   )
 
   # Include folders.
-  # `tests/platform-qemu-mps2-an386/include` was added globally.
+  # `tests/platform-qemu-cortex-m0/include` was added globally.
   target_include_directories(${name} PRIVATE
       "../include"
   )
@@ -168,8 +168,8 @@ if (ENABLE_SAMPLE_TEST)
     NAME "sample-test"
 
     COMMAND qemu-system-arm${extension}
-      --machine mps2-an386
-      --cpu cortex-m4
+      --machine mps2-an385
+      --cpu cortex-m3
       --kernel sample-test.elf
       --nographic
       -d unimp,guest_errors
@@ -193,8 +193,8 @@ if (ENABLE_UNIT_TEST)
     NAME "unit-test"
 
     COMMAND qemu-system-arm${extension}
-      --machine mps2-an386
-      --cpu cortex-m4
+      --machine mps2-an385
+      --cpu cortex-m3
       --kernel unit-test.elf
       --nographic
       -d unimp,guest_errors

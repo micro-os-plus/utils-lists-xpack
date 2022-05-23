@@ -14,11 +14,11 @@
 
 # Create the test applications.
 
-message('Processing tests/platform-qemu-mps2-an386-cm0...')
+message('Processing tests/platform-qemu-cortex-m0...')
 
 # -----------------------------------------------------------------------------
 
-xpack_platform_compile_definition = 'PLATFORM_QEMU_MPS2_AN386_CM0'
+xpack_platform_compile_definition = 'PLATFORM_QEMU_CORTEX_M0'
 
 # Enable them only when needed.
 xpack_create_listing = false
@@ -46,7 +46,7 @@ xpack_compile_definitions += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-platform_qemu_mps2_an386_dependency = declare_dependency(
+platform_qemu_cortex_m0_dependency = declare_dependency(
   include_directories: include_directories(xpack_include_directories),
   sources: files(xpack_sources),
   compile_args: xpack_common_args + xpack_compile_definitions,
@@ -62,7 +62,7 @@ endforeach
 foreach xn : xpack_sources + xpack_common_args + xpack_compile_definitions
   message('+ ' + xn)
 endforeach
-message('> platform_qemu_mps2_an386_dependency')
+message('> platform_qemu_cortex_m0_dependency')
 
 # =============================================================================
 # Define the tests executables.
@@ -137,7 +137,7 @@ foreach name : test_names
 
   xpack_dependencies += [
     # Platform specific dependencies.
-    platform_qemu_mps2_an386_dependency, # bring device & architecture too.
+    platform_qemu_cortex_m0_dependency, # bring device & architecture too.
 
     micro_os_plus_libs_c_dependency,
     micro_os_plus_libs_cpp_dependency,
@@ -243,8 +243,8 @@ if enable_sample_test
     'sample-test',
     qemu,
     args: [
-      '--machine', 'mps2-an386',
-      '--cpu', 'cortex-m4',
+      '--machine', 'mps2-an385',
+      '--cpu', 'cortex-m3',
       '--kernel', sample_test,
       '--nographic',
       '-d', 'unimp,guest_errors',
@@ -265,8 +265,8 @@ if enable_unit_test
     'unit-test',
     qemu,
     args: [
-      '--machine', 'mps2-an386',
-      '--cpu', 'cortex-m4',
+      '--machine', 'mps2-an385',
+      '--cpu', 'cortex-m3',
       '--kernel', unit_test,
       '--nographic',
       '-d', 'unimp,guest_errors',

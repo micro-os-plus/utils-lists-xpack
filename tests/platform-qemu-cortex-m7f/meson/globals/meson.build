@@ -16,7 +16,7 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-qemu-mps2-an386 globals...')
+message('Including platform-qemu-cortex-m7f globals...')
 
 # -----------------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ xpack_platform_compile_definitions += [
 ]
 
 xpack_platform_common_args += [
-  '-mcpu=cortex-m4',
+  '-mcpu=cortex-m7',
   '-mthumb',
   '-mfloat-abi=hard',
   # '-mfloat-abi=soft',

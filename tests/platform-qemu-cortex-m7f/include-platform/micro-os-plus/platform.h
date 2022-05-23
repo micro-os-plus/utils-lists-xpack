@@ -10,8 +10,11 @@
  * be obtained from https://opensource.org/licenses/MIT/.
  */
 
-#ifndef MICRO_OS_PLUS_PLATFORM_QEMU_MPS2_AN386_CM0_DEFINES_H_
-#define MICRO_OS_PLUS_PLATFORM_QEMU_MPS2_AN386_CM0_DEFINES_H_
+#ifndef MICRO_OS_PLUS_PLATFORM_H_
+#define MICRO_OS_PLUS_PLATFORM_H_
+
+#include <micro-os-plus/device.h>
+#include <micro-os-plus/platform-qemu-cortex-m7f/defines.h>
 
 // ----------------------------------------------------------------------------
 
@@ -19,6 +22,6 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_PLATFORM_QEMU_MPS2_AN386_CM0_DEFINES_H_ */
+#endif /* MICRO_OS_PLUS_PLATFORM_H_ */
 
 // ----------------------------------------------------------------------------

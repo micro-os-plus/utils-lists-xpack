@@ -15,7 +15,7 @@
 # This file defines the global compiler settings that apply to all targets.
 # Must be included with include() in the `tests` scope.
 
-message(VERBOSE "Including platform-qemu-mps2-an386 globals...")
+message(VERBOSE "Including platform-qemu-cortex-m7f globals...")
 
 # -----------------------------------------------------------------------------
 
@@ -28,7 +28,7 @@ set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M4")
 
 set(xpack_platform_common_args
 
-  -mcpu=cortex-m4
+  -mcpu=cortex-m7
   -mthumb
   # -mfloat-abi=soft
   -mfloat-abi=hard

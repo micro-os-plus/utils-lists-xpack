@@ -14,7 +14,7 @@
 #define MICRO_OS_PLUS_PLATFORM_H_
 
 #include <micro-os-plus/device.h>
-#include <micro-os-plus/platform-qemu-mps2-an386/defines.h>
+#include <micro-os-plus/platform-qemu-cortex-m0/defines.h>
 
 // ----------------------------------------------------------------------------
 

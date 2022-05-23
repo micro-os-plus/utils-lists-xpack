@@ -84,10 +84,10 @@
         "xpm run test-native-meson-clang13"
       ],
       "test-cortexm": [
-        "xpm run test-qemu-mps2-an386-cmake",
-        "xpm run test-qemu-mps2-an386-meson",
-        "xpm run test-qemu-mps2-an386-cm0-cmake",
-        "xpm run test-qemu-mps2-an386-cm0-meson"
+        "xpm run test-qemu-cortex-m7f-cmake",
+        "xpm run test-qemu-cortex-m7f-meson",
+        "xpm run test-qemu-cortex-m0-cmake",
+        "xpm run test-qemu-cortex-m0-meson"
       ],
       "test-native-cmake": [
         "xpm run prepare --config native-cmake-debug",
@@ -153,37 +153,37 @@
         "xpm run build --config native-meson-clang13-release",
         "xpm run test --config native-meson-clang13-release"
       ],
-      "test-qemu-mps2-an386-cmake": [
-        "xpm run prepare --config qemu-mps2-an386-cmake-debug",
-        "xpm run build --config qemu-mps2-an386-cmake-debug",
-        "xpm run test --config qemu-mps2-an386-cmake-debug",
-        "xpm run prepare --config qemu-mps2-an386-cmake-release",
-        "xpm run build --config qemu-mps2-an386-cmake-release",
-        "xpm run test --config qemu-mps2-an386-cmake-release"
+      "test-qemu-cortex-m7f-cmake": [
+        "xpm run prepare --config qemu-cortex-m7f-cmake-debug",
+        "xpm run build --config qemu-cortex-m7f-cmake-debug",
+        "xpm run test --config qemu-cortex-m7f-cmake-debug",
+        "xpm run prepare --config qemu-cortex-m7f-cmake-release",
+        "xpm run build --config qemu-cortex-m7f-cmake-release",
+        "xpm run test --config qemu-cortex-m7f-cmake-release"
       ],
-      "test-qemu-mps2-an386-cm0-cmake": [
-        "xpm run prepare --config qemu-mps2-an386-cm0-cmake-debug",
-        "xpm run build --config qemu-mps2-an386-cm0-cmake-debug",
-        "xpm run test --config qemu-mps2-an386-cm0-cmake-debug",
-        "xpm run prepare --config qemu-mps2-an386-cm0-cmake-release",
-        "xpm run build --config qemu-mps2-an386-cm0-cmake-release",
-        "xpm run test --config qemu-mps2-an386-cm0-cmake-release"
+      "test-qemu-cortex-m0-cmake": [
+        "xpm run prepare --config qemu-cortex-m0-cmake-debug",
+        "xpm run build --config qemu-cortex-m0-cmake-debug",
+        "xpm run test --config qemu-cortex-m0-cmake-debug",
+        "xpm run prepare --config qemu-cortex-m0-cmake-release",
+        "xpm run build --config qemu-cortex-m0-cmake-release",
+        "xpm run test --config qemu-cortex-m0-cmake-release"
       ],
-      "test-qemu-mps2-an386-meson": [
-        "xpm run prepare --config qemu-mps2-an386-meson-debug",
-        "xpm run build --config qemu-mps2-an386-meson-debug",
-        "xpm run test --config qemu-mps2-an386-meson-debug",
-        "xpm run prepare --config qemu-mps2-an386-meson-release",
-        "xpm run build --config qemu-mps2-an386-meson-release",
-        "xpm run test --config qemu-mps2-an386-meson-release"
+      "test-qemu-cortex-m7f-meson": [
+        "xpm run prepare --config qemu-cortex-m7f-meson-debug",
+        "xpm run build --config qemu-cortex-m7f-meson-debug",
+        "xpm run test --config qemu-cortex-m7f-meson-debug",
+        "xpm run prepare --config qemu-cortex-m7f-meson-release",
+        "xpm run build --config qemu-cortex-m7f-meson-release",
+        "xpm run test --config qemu-cortex-m7f-meson-release"
       ],
-      "test-qemu-mps2-an386-cm0-meson": [
-        "xpm run prepare --config qemu-mps2-an386-cm0-meson-debug",
-        "xpm run build --config qemu-mps2-an386-cm0-meson-debug",
-        "xpm run test --config qemu-mps2-an386-cm0-meson-debug",
-        "xpm run prepare --config qemu-mps2-an386-cm0-meson-release",
-        "xpm run build --config qemu-mps2-an386-cm0-meson-release",
-        "xpm run test --config qemu-mps2-an386-cm0-meson-release"
+      "test-qemu-cortex-m0-meson": [
+        "xpm run prepare --config qemu-cortex-m0-meson-debug",
+        "xpm run build --config qemu-cortex-m0-meson-debug",
+        "xpm run test --config qemu-cortex-m0-meson-debug",
+        "xpm run prepare --config qemu-cortex-m0-meson-release",
+        "xpm run build --config qemu-cortex-m0-meson-release",
+        "xpm run test --config qemu-cortex-m0-meson-release"
       ],
       "clean-all": [
         "xpm run clean --config native-cmake-debug --ignore-errors",
@@ -202,14 +202,14 @@
         "xpm run clean --config native-meson-clang12-release --ignore-errors",
         "xpm run clean --config native-meson-clang13-debug --ignore-errors",
         "xpm run clean --config native-meson-clang13-release --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-cmake-release --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-cm0-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-cm0-cmake-release --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-meson-release --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-cm0-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-mps2-an386-cm0-meson-release --ignore-errors"
+        "xpm run clean --config qemu-cortex-m7f-cmake-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m7f-cmake-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m0-cmake-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m0-cmake-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m7f-meson-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m7f-meson-release --ignore-errors",
+        "xpm run clean --config qemu-cortex-m0-meson-debug --ignore-errors",
+        "xpm run clean --config qemu-cortex-m0-meson-release --ignore-errors"
       ],
       "deep-clean": "rm -rf build node_modules xpacks",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
@@ -226,7 +226,7 @@
           "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
       },
-      "qemu-mps2-an386-dependencies": {
+      "qemu-cortexm-dependencies": {
         "hidden": true,
         "actions": {
           "link-deps": [
@@ -487,15 +487,14 @@
           "buildType": "release"
         }
       },
-      "qemu-mps2-an386-cmake-debug": {
+      "qemu-cortex-m7f-cmake-debug": {
         "inherit": [
-          "qemu-mps2-an386-dependencies"
+          "qemu-cortexm-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
-          "platformName": "qemu-mps2-an386",
+          "platformName": "qemu-cortex-m7f",
           "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "qemuBoardName": "QEMU mps2-an386",
           "shortConfigurationName": "q1d",
           "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
           "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
@@ -510,24 +509,23 @@
           "clean": "{{ properties.commandCMakeClean }}"
         }
       },
-      "qemu-mps2-an386-cmake-release": {
+      "qemu-cortex-m7f-cmake-release": {
         "inherit": [
-          "qemu-mps2-an386-cmake-debug"
+          "qemu-cortex-m7f-cmake-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
           "shortConfigurationName": "q1r"
         }
       },
-      "qemu-mps2-an386-cm0-cmake-debug": {
+      "qemu-cortex-m0-cmake-debug": {
         "inherit": [
-          "qemu-mps2-an386-dependencies"
+          "qemu-cortexm-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
-          "platformName": "qemu-mps2-an386-cm0",
+          "platformName": "qemu-cortex-m0",
           "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "qemuBoardName": "QEMU mps2-an386",
           "shortConfigurationName": "q2d",
           "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
           "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
@@ -542,24 +540,23 @@
           "clean": "{{ properties.commandCMakeClean }}"
         }
       },
-      "qemu-mps2-an386-cm0-cmake-release": {
+      "qemu-cortex-m0-cmake-release": {
         "inherit": [
-          "qemu-mps2-an386-cm0-cmake-debug"
+          "qemu-cortex-m0-cmake-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
           "shortConfigurationName": "q2r"
         }
       },
-      "qemu-mps2-an386-meson-debug": {
+      "qemu-cortex-m7f-meson-debug": {
         "inherit": [
-          "qemu-mps2-an386-dependencies"
+          "qemu-cortexm-dependencies"
         ],
         "properties": {
           "buildType": "debug",
-          "platformName": "qemu-mps2-an386",
-          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini",
-          "qemuBoardName": "QEMU mps2-an386"
+          "platformName": "qemu-cortex-m7f",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
         },
         "actions": {
           "prepare": "{{ properties.commandMesonPrepareCross }}",
@@ -571,23 +568,22 @@
           "clean": "{{ properties.commandMesonClean }}"
         }
       },
-      "qemu-mps2-an386-meson-release": {
+      "qemu-cortex-m7f-meson-release": {
         "inherit": [
-          "qemu-mps2-an386-meson-debug"
+          "qemu-cortex-m7f-meson-debug"
         ],
         "properties": {
           "buildType": "minsize"
         }
       },
-      "qemu-mps2-an386-cm0-meson-debug": {
+      "qemu-cortex-m0-meson-debug": {
         "inherit": [
-          "qemu-mps2-an386-dependencies"
+          "qemu-cortexm-dependencies"
         ],
         "properties": {
           "buildType": "debug",
-          "platformName": "qemu-mps2-an386-cm0",
-          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini",
-          "qemuBoardName": "QEMU mps2-an386"
+          "platformName": "qemu-cortex-m0",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
         },
         "actions": {
           "prepare": "{{ properties.commandMesonPrepareCross }}",
@@ -599,9 +595,9 @@
           "clean": "{{ properties.commandMesonClean }}"
         }
       },
-      "qemu-mps2-an386-cm0-meson-release": {
+      "qemu-cortex-m0-meson-release": {
         "inherit": [
-          "qemu-mps2-an386-meson-debug"
+          "qemu-cortex-m0-meson-debug"
         ],
         "properties": {
           "buildType": "minsize"

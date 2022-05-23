@@ -16,7 +16,7 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-qemu-mps2-an386-cm0 globals...')
+message('Including platform-qemu-cortex-m0 globals...')
 
 # -----------------------------------------------------------------------------
 
