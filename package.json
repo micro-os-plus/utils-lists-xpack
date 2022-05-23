@@ -71,7 +71,7 @@
       ],
       "test-all": [
         "xpm run test-native",
-        "xpm run test-cortexm"
+        "xpm run test-cortex"
       ],
       "test-native": [
         "{% if os.platform == 'darwin' %}xpm run test-native-cmake{% endif %}",
@@ -83,7 +83,7 @@
         "xpm run test-native-meson-clang12",
         "xpm run test-native-meson-clang13"
       ],
-      "test-cortexm": [
+      "test-cortex": [
         "xpm run test-qemu-cortex-m7f-cmake",
         "xpm run test-qemu-cortex-m7f-meson",
         "xpm run test-qemu-cortex-m0-cmake",
@@ -186,6 +186,10 @@
         "xpm run test --config qemu-cortex-m0-meson-release"
       ],
       "clean-all": [
+        "xpm run clean-native",
+        "xpm run clean-cortex"
+      ],
+      "clean-native": [
         "xpm run clean --config native-cmake-debug --ignore-errors",
         "xpm run clean --config native-cmake-release --ignore-errors",
         "xpm run clean --config native-cmake-gcc11-debug --ignore-errors",
@@ -201,7 +205,9 @@
         "xpm run clean --config native-meson-clang12-debug --ignore-errors",
         "xpm run clean --config native-meson-clang12-release --ignore-errors",
         "xpm run clean --config native-meson-clang13-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang13-release --ignore-errors",
+        "xpm run clean --config native-meson-clang13-release --ignore-errors"
+      ],
+      "clean-cortex": [
         "xpm run clean --config qemu-cortex-m7f-cmake-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m7f-cmake-release --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-cmake-debug --ignore-errors",
