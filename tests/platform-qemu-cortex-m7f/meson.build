@@ -248,8 +248,7 @@ if enable_sample_test
       '--kernel', sample_test,
       '--nographic',
       '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native',
-      '--semihosting-config', 'arg=sample-test,arg=one,arg=two',
+      '--semihosting-config', 'enable=on,target=native,arg=sample-test,arg=one,arg=two',
     ],
     env: nomalloc
   )
@@ -270,8 +269,7 @@ if enable_unit_test
       '--kernel', unit_test,
       '--nographic',
       '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native',
-      '--semihosting-config', 'arg=unit-test',
+      '--semihosting-config', 'enable=on,target=native,arg=unit-test',
     ],
     env: nomalloc
   )

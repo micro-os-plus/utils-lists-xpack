@@ -173,8 +173,7 @@ if (ENABLE_SAMPLE_TEST)
       --kernel sample-test.elf
       --nographic
       -d unimp,guest_errors
-      --semihosting-config enable=on,target=native
-      --semihosting-config arg=sample-test,arg=one,arg=two
+      --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
 
 endif()
@@ -198,8 +197,7 @@ if (ENABLE_UNIT_TEST)
       --kernel unit-test.elf
       --nographic
       -d unimp,guest_errors
-      --semihosting-config enable=on,target=native
-      --semihosting-config arg=unit-test
+      --semihosting-config enable=on,target=native,arg=unit-test
       # --semihosting-config arg=--verbose
   )
 
