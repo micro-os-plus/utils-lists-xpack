@@ -118,7 +118,7 @@ foreach name : test_names
 
     # Path are relative to the build folder.
     '-Txpacks/micro-os-plus-devices-qemu-cortexa/linker-scripts/mem-cortex-a72.ld',
-    '-Txpacks/micro-os-plus-architecture-cortexa/linker-scripts/sections.ld',
+    '-Txpacks/micro-os-plus-architecture-cortexa/linker-scripts/sections-ram.ld',
   ]
 
   xpack_dependencies += [
