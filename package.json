@@ -96,12 +96,16 @@
         "xpm run --config qemu-cortex-m0-cmake-release link-deps --quiet",
         "xpm run --config qemu-aarch64-cmake-debug link-deps --quiet",
         "xpm run --config qemu-aarch64-cmake-release link-deps --quiet",
+        "xpm run --config qemu-aarch32-cmake-debug link-deps --quiet",
+        "xpm run --config qemu-aarch32-cmake-release link-deps --quiet",
         "xpm run --config qemu-cortex-m7f-meson-debug link-deps --quiet",
         "xpm run --config qemu-cortex-m7f-meson-release link-deps --quiet",
         "xpm run --config qemu-cortex-m0-meson-debug link-deps --quiet",
         "xpm run --config qemu-cortex-m0-meson-release link-deps --quiet",
         "xpm run --config qemu-aarch64-meson-debug link-deps --quiet",
-        "xpm run --config qemu-aarch64-meson-release link-deps --quiet"
+        "xpm run --config qemu-aarch64-meson-release link-deps --quiet",
+        "xpm run --config qemu-aarch32-meson-debug link-deps --quiet",
+        "xpm run --config qemu-aarch32-meson-release link-deps --quiet"
       ],
       "test-all": [
         "xpm run test-native",
@@ -130,12 +134,14 @@
       "test-cortex-cmake": [
         "xpm run test-qemu-cortex-m7f-cmake",
         "xpm run test-qemu-cortex-m0-cmake",
-        "xpm run test-qemu-aarch64-cmake"
+        "xpm run test-qemu-aarch64-cmake",
+        "xpm run test-qemu-aarch32-cmake"
       ],
       "test-cortex-meson": [
         "xpm run test-qemu-cortex-m7f-meson",
         "xpm run test-qemu-cortex-m0-meson",
-        "xpm run test-qemu-aarch64-meson"
+        "xpm run test-qemu-aarch64-meson",
+        "xpm run test-qemu-aarch32-meson"
       ],
       "test-native-cmake-sys": [
         "xpm run prepare --config native-cmake-sys-debug",
@@ -225,6 +231,14 @@
         "xpm run build --config qemu-aarch64-cmake-release",
         "xpm run test --config qemu-aarch64-cmake-release"
       ],
+      "test-qemu-aarch32-cmake": [
+        "xpm run prepare --config qemu-aarch32-cmake-debug",
+        "xpm run build --config qemu-aarch32-cmake-debug",
+        "xpm run test --config qemu-aarch32-cmake-debug",
+        "xpm run prepare --config qemu-aarch32-cmake-release",
+        "xpm run build --config qemu-aarch32-cmake-release",
+        "xpm run test --config qemu-aarch32-cmake-release"
+      ],
       "test-qemu-cortex-m7f-meson": [
         "xpm run prepare --config qemu-cortex-m7f-meson-debug",
         "xpm run build --config qemu-cortex-m7f-meson-debug",
@@ -248,6 +262,14 @@
         "xpm run prepare --config qemu-aarch64-meson-release",
         "xpm run build --config qemu-aarch64-meson-release",
         "xpm run test --config qemu-aarch64-meson-release"
+      ],
+      "test-qemu-aarch32-meson": [
+        "xpm run prepare --config qemu-aarch32-meson-debug",
+        "xpm run build --config qemu-aarch32-meson-debug",
+        "xpm run test --config qemu-aarch32-meson-debug",
+        "xpm run prepare --config qemu-aarch32-meson-release",
+        "xpm run build --config qemu-aarch32-meson-release",
+        "xpm run test --config qemu-aarch32-meson-release"
       ],
       "clean-all": [
         "xpm run clean-native",
@@ -287,7 +309,9 @@
         "xpm run clean --config qemu-cortex-m0-cmake-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-cmake-release --ignore-errors",
         "xpm run clean --config qemu-aarch64-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-aarch64-cmake-release --ignore-errors"
+        "xpm run clean --config qemu-aarch64-cmake-release --ignore-errors",
+        "xpm run clean --config qemu-aarch32-cmake-debug --ignore-errors",
+        "xpm run clean --config qemu-aarch32-cmake-release --ignore-errors"
       ],
       "clean-cortex-meson": [
         "xpm run clean --config qemu-cortex-m7f-meson-debug --ignore-errors",
@@ -295,7 +319,9 @@
         "xpm run clean --config qemu-cortex-m0-meson-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-m0-meson-release --ignore-errors",
         "xpm run clean --config qemu-aarch64-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-aarch64-meson-release --ignore-errors"
+        "xpm run clean --config qemu-aarch64-meson-release --ignore-errors",
+        "xpm run clean --config qemu-aarch32-meson-debug --ignore-errors",
+        "xpm run clean --config qemu-aarch32-meson-release --ignore-errors"
       ],
       "deep-clean": "rm -rf build node_modules xpacks",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
@@ -324,7 +350,7 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/version --quiet",
-            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m --quiet"
+            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
           ]
         },
         "devDependencies": {
@@ -352,7 +378,7 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/version --quiet",
-            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core-m --quiet"
+            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
           ]
         },
         "TODO": "add architecture-cortexa...",
@@ -706,6 +732,38 @@
           "shortConfigurationName": "q3r"
         }
       },
+      "qemu-aarch32-cmake-debug": {
+        "inherit": [
+          "qemu-cortexa-dependencies",
+          "arm-none-eabi-gcc-dependency"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-aarch32",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake",
+          "shortConfigurationName": "q4d",
+          "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
+          "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
+          ],
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
+        }
+      },
+      "qemu-aarch32-cmake-release": {
+        "inherit": [
+          "qemu-aarch32-cmake-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "q4r"
+        }
+      },
       "qemu-cortex-m7f-meson-debug": {
         "inherit": [
           "qemu-cortexm-dependencies",
@@ -785,6 +843,34 @@
       "qemu-aarch64-meson-release": {
         "inherit": [
           "qemu-aarch64-meson-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-aarch32-meson-debug": {
+        "inherit": [
+          "qemu-cortexa-dependencies",
+          "arm-none-eabi-gcc-dependency"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-aarch32",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandMesonPrepareCross }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
+        }
+      },
+      "qemu-aarch32-meson-release": {
+        "inherit": [
+          "qemu-aarch32-meson-debug"
         ],
         "properties": {
           "buildType": "minsize"
