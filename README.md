@@ -166,11 +166,11 @@ For other build systems, consider the following details:
 
 #### Include folders
 
-The following folder should be used during the build:
+The following folders should be passed to the compiler during the build:
 
 - `include`
 
-The header file to be included is:
+The header files to be included in user projects are:
 
 ```c++
 #include <micro-os-plus/utils/lists.h>
@@ -178,7 +178,7 @@ The header file to be included is:
 
 #### Source files
 
-The source files to be added are:
+The source files to be added to user projects are:
 
 - `src/lists.cpp`
 
