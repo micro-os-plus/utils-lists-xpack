@@ -172,6 +172,7 @@ if (ENABLE_SAMPLE_TEST)
       --cpu cortex-a15
       --kernel sample-test.elf
       --nographic
+      -m 16M
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
@@ -196,6 +197,7 @@ if (ENABLE_UNIT_TEST)
       --cpu cortex-a15
       --kernel unit-test.elf
       --nographic
+      -m 16M
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=unit-test
   )
