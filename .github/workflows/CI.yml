@@ -80,12 +80,14 @@ jobs:
         xpm run test-native-meson-gcc11
 
     - name: Run test-qemu-cortex-m7f-cmake
+      if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-m7f-cmake-debug --quiet
         xpm install --config qemu-cortex-m7f-cmake-release --quiet
         xpm run test-qemu-cortex-m7f-cmake
 
     - name: Run test-qemu-cortex-m7f-meson
+      if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-m7f-meson-debug --quiet
         xpm install --config qemu-cortex-m7f-meson-release --quiet
