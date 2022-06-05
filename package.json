@@ -334,6 +334,7 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix --quiet"
           ]
         },
+        "$url": "https://github.com/micro-os-plus/",
         "devDependencies": {
           "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
         }
@@ -353,6 +354,7 @@
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
           ]
         },
+        "$url": "https://github.com/micro-os-plus/",
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
           "@micro-os-plus/architecture-cortexm": "6.0.0",
@@ -381,9 +383,12 @@
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
           ]
         },
-        "TODO": "add architecture-cortexa...",
+        "$url": "https://github.com/micro-os-plus/",
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
+          "@micro-os-plus/architecture-cortexa": "1.0.0",
+          "@micro-os-plus/devices-cortexa": "1.0.0",
+          "@micro-os-plus/devices-qemu-cortexa": "1.0.0",
           "@micro-os-plus/libs-c": "3.0.1",
           "@micro-os-plus/libs-cpp": "3.0.1",
           "@micro-os-plus/semihosting": "5.0.0",
