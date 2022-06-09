@@ -346,25 +346,17 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/version --quiet",
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
           ]
         },
         "$url": "https://github.com/micro-os-plus/",
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
-          "@micro-os-plus/architecture-cortexm": "6.0.0",
-          "@micro-os-plus/devices-cortexm": "4.0.0",
-          "@micro-os-plus/devices-qemu-cortexm": "3.2.0",
-          "@micro-os-plus/libs-c": "3.0.1",
-          "@micro-os-plus/libs-cpp": "3.0.1",
+          "@micro-os-plus/architecture-cortexm": "6.1.0",
+          "@micro-os-plus/devices-cortexm": "4.1.0",
+          "@micro-os-plus/devices-qemu-cortexm": "4.0.0",
           "@micro-os-plus/semihosting": "5.0.0",
-          "@micro-os-plus/startup": "3.1.1",
-          "@micro-os-plus/version": "7.1.2",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
       },
@@ -375,26 +367,16 @@
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexa --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexa --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexa --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-c --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/libs-cpp --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/version --quiet",
-            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet"
           ]
         },
         "$url": "https://github.com/micro-os-plus/",
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
-          "@micro-os-plus/architecture-cortexa": "1.0.0",
-          "@micro-os-plus/devices-cortexa": "1.0.0",
-          "@micro-os-plus/devices-qemu-cortexa": "1.0.0",
-          "@micro-os-plus/libs-c": "3.0.1",
-          "@micro-os-plus/libs-cpp": "3.0.1",
-          "@micro-os-plus/semihosting": "5.0.0",
-          "@micro-os-plus/startup": "3.1.1",
-          "@micro-os-plus/version": "7.1.2",
-          "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
+          "@micro-os-plus/architecture-cortexa": "2.0.0",
+          "@micro-os-plus/devices-cortexa": "2.0.0",
+          "@micro-os-plus/devices-qemu-cortexa": "2.0.0",
+          "@micro-os-plus/semihosting": "5.0.0"
         }
       },
       "arm-none-eabi-gcc-dependency": {
