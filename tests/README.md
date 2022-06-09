@@ -17,33 +17,37 @@ on all supported platforms; for details see
 
 The supported platforms are:
 
-- `platform-native` - run the test applications as native process
+- `platform-native` - run the test applications as native processes
   on the development machine
-- `platform-qemu-cortex-m7f` - run the tests as fully semihosted Cortex-M0
-  applications on a QEMU mps2-an500 emulated board
+- `platform-qemu-cortex-m7f` - run the tests as fully semihosted Cortex-M7
+  applications on a QEMU `mps2-an500` emulated board
   (an Arm Cortex-M7 development board)
-- `platform-qemu-cortex-m0` - run the tests as fully semihosted Cortex-M7
-  applications on a QEMU mps2-an500 emulated board
-  (an Arm Cortex-M7 development board)
+- `platform-qemu-cortex-m0` - run the tests as fully semihosted Cortex-M0
+  applications on a QEMU `mps2-an385` emulated board
+  (an Arm Cortex-M3 development board)
+- `platform-qemu-aarch64` - run the tests as fully semihosted Cortex-A72
+  applications on a QEMU `virt` emulated board
+- `platform-qemu-aarch32` - run the tests as fully semihosted Cortex-A15
+  applications on a QEMU `virt` emulated board
 
 The tests are performed on GNU/Linux, macOS and Windows.
 
 Exactly the same source files are used on all platforms, without
 changes.
 
-It is planned to add more platforms, like RISC-V, but no dates are set.
+It is planned to add RISC-V platforms, but no dates are set.
 
 ## Toolchains
 
 For a better portability, the builds are repeated with multiple toolchains,
 even with multiple versions of the same toolchain.
 
-For native tests, the toolchains used are:
+The following toolchains are used:
 
-- GCC 11
-- clang 12
-
-For Cortex-M tests, the toolchain is arm-none-eabi-gcc 11.
+- gcc 11 (native)
+- clang 12, 13 (native)
+- arm-none-eabi-gcc 11 (Cortex-M, AArch32)
+- aarch64-none-elf-gcc 11 (AArch64)
 
 ## Tests details
 
