@@ -98,18 +98,11 @@ xpack_dependencies = [
   'xpacks/micro-os-plus-micro-test-plus', # -
 
   # -
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version',
+  # xpack_build_folder_relative_path + '/xpacks/micro-os-plus-version',
   # -
-  xpack_build_folder_relative_path + '/xpacks/xpack-3rd-party-arm-cmsis-core',
+  # xpack_build_folder_relative_path + '/xpacks/xpack-3rd-party-arm-cmsis-core',
   # (architecture) -
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-architecture-cortexa',
-
-  # +(version, diag_trace, architecture) >startup
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-startup',
-  # +(diag_trace, startup, architecture) >libs_c
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-c',
-  # +(diag_trace) >libs_cpp
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-libs-cpp',
 
   # +(diag_trace, architecture) >semihosting
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting',
