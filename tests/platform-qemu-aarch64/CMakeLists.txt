@@ -18,7 +18,7 @@ message(VERBOSE "Processing 'tests/platform-qemu-aarch64'...")
 
 set(xpack_platform_compile_definition "PLATFORM_QEMU_AARCH64")
 
-set(xpack_create_listing true)
+# set(xpack_create_listing true)
 # set(xpack_create_hex true)
 
 # -----------------------------------------------------------------------------
@@ -99,11 +99,12 @@ function(add_test_executable name)
   )
 
   target_link_options(${name} PRIVATE
-    -nostartfiles
+    # -nostartfiles
+    --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group
 
     # Force the linker to keep the interrupt vectors which otherwise
     # are not referred from anywhere.
-    -u_interrupt_vectors
+    # -u_interrupt_vectors
 
     # nano has no exceptions.
     # -specs=nano.specs
@@ -127,12 +128,9 @@ function(add_test_executable name)
     micro-os-plus::diag-trace
 
     # Platform specific dependencies.
-    micro-os-plus::platform # bring device & architecture too.
+    micro-os-plus::platform # bring device & architecture too
 
-    micro-os-plus::libs-c
-    micro-os-plus::libs-cpp
-    micro-os-plus::semihosting
-    micro-os-plus::startup
+    micro-os-plus::semihosting # for the trace implementation
   )
 
   # TODO use add_custom_target()
@@ -171,7 +169,7 @@ if (ENABLE_SAMPLE_TEST)
       --machine virt
       --cpu cortex-a72
       --kernel sample-test.elf
-      -m 16M
+      -smp 1
       --nographic
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
@@ -197,7 +195,7 @@ if (ENABLE_UNIT_TEST)
       --cpu cortex-a72
       --kernel unit-test.elf
       --nographic
-      -m 16M
+      -smp 1
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=unit-test
   )

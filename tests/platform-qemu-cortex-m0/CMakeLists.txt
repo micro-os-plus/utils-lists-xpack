@@ -99,11 +99,12 @@ function(add_test_executable name)
   )
 
   target_link_options(${name} PRIVATE
-    -nostartfiles
+    # -nostartfiles
+    --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group
 
     # Force the linker to keep the interrupt vectors which otherwise
     # are not referred from anywhere.
-    -u_interrupt_vectors
+    # -u_interrupt_vectors
 
     # nano has no exceptions.
     # -specs=nano.specs
@@ -115,7 +116,7 @@ function(add_test_executable name)
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld
+    -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
     -T${CMAKE_BINARY_DIR}/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld
   )
 
@@ -127,12 +128,9 @@ function(add_test_executable name)
     micro-os-plus::diag-trace
 
     # Platform specific dependencies.
-    micro-os-plus::platform # bring device & architecture too.
+    micro-os-plus::platform # bring device & architecture too
 
-    micro-os-plus::libs-c
-    micro-os-plus::libs-cpp
     micro-os-plus::semihosting
-    micro-os-plus::startup
   )
 
   # TODO use add_custom_target()
@@ -172,7 +170,6 @@ if (ENABLE_SAMPLE_TEST)
       --cpu cortex-m3
       --kernel sample-test.elf
       --nographic
-      -m 16M
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
@@ -197,7 +194,6 @@ if (ENABLE_UNIT_TEST)
       --cpu cortex-m3
       --kernel unit-test.elf
       --nographic
-      -m 16M
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=unit-test
       # --semihosting-config arg=--verbose

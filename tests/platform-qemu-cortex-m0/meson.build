@@ -102,11 +102,12 @@ foreach name : test_names
   # xpack_cpp_args += micro_os_plus_utils_lists_dependency_cpp_args
 
   xpack_link_args += [
-    '-nostartfiles',
+    # '-nostartfiles',
+    '--specs=rdimon.specs', '-Wl,--start-group', '-lgcc', '-lc', '-lc', '-lm', '-lrdimon', '-Wl,--end-group',
 
     # Ensure the linker will keep the interrupt vectors which otherwise
     # are not referred from anywhere.
-    '-u_interrupt_vectors',
+    # '-u_interrupt_vectors',
 
     # nano has no exceptions.
     # '-specs=nano.specs'
@@ -117,7 +118,7 @@ foreach name : test_names
     # '-v',
 
     # Path are relative to the build folder.
-    '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem.ld',
+    '-Txpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld',
     '-Txpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld',
   ]
 
@@ -137,12 +138,9 @@ foreach name : test_names
 
   xpack_dependencies += [
     # Platform specific dependencies.
-    platform_qemu_cortex_m0_dependency, # bring device & architecture too.
+    platform_qemu_cortex_m0_dependency, # bring device & architecture too
 
-    micro_os_plus_libs_c_dependency,
-    micro_os_plus_libs_cpp_dependency,
     micro_os_plus_semihosting_dependency,
-    micro_os_plus_startup_dependency,
   ]
 
   xpack_link_with += [
@@ -247,7 +245,6 @@ if enable_sample_test
       '--cpu', 'cortex-m3',
       '--kernel', sample_test,
       '--nographic',
-      '-m', '16M',
       '-d', 'unimp,guest_errors',
       '--semihosting-config', 'enable=on,target=native,arg=sample-test,arg=one,arg=two',
     ],
@@ -269,7 +266,6 @@ if enable_unit_test
       '--cpu', 'cortex-m3',
       '--kernel', unit_test,
       '--nographic',
-      '-m', '16M',
       '-d', 'unimp,guest_errors',
       '--semihosting-config', 'enable=on,target=native,arg=unit-test',
     ],
