@@ -355,7 +355,7 @@
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
           "@micro-os-plus/architecture-cortexm": "6.1.0",
           "@micro-os-plus/devices-cortexm": "4.1.0",
-          "@micro-os-plus/devices-qemu-cortexm": "4.0.0",
+          "@micro-os-plus/devices-qemu-cortexm": "4.0.1",
           "@micro-os-plus/semihosting": "5.0.0",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
