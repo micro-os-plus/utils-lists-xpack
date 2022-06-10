@@ -107,7 +107,7 @@ xpack_dependencies = [
   # +(diag_trace, architecture) >semihosting
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-semihosting',
   # +(semihosting) >devices_cortexm
-  xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm',
+  # xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-cortexm',
 
   # +(arm_cmsis_core_m, devices_cortexm, startup) >devices_qemu_cortexm
   xpack_build_folder_relative_path + '/xpacks/micro-os-plus-devices-qemu-cortexm',

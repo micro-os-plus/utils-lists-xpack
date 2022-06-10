@@ -344,7 +344,6 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexm --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet",
             "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core --quiet"
@@ -354,8 +353,7 @@
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
           "@micro-os-plus/architecture-cortexm": "6.1.0",
-          "@micro-os-plus/devices-cortexm": "4.1.0",
-          "@micro-os-plus/devices-qemu-cortexm": "4.0.1",
+          "@micro-os-plus/devices-qemu-cortexm": "4.1.1",
           "@micro-os-plus/semihosting": "5.0.0",
           "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
         }
@@ -365,7 +363,6 @@
         "actions": {
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexa --quiet",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-cortexa --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexa --quiet",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting --quiet"
           ]
@@ -374,8 +371,7 @@
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1",
           "@micro-os-plus/architecture-cortexa": "2.0.0",
-          "@micro-os-plus/devices-cortexa": "2.0.0",
-          "@micro-os-plus/devices-qemu-cortexa": "2.0.0",
+          "@micro-os-plus/devices-qemu-cortexa": "2.1.0",
           "@micro-os-plus/semihosting": "5.0.0"
         }
       },
