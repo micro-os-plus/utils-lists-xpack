@@ -81,6 +81,8 @@ subdir('platform-'+ xpack_platform_name + '/meson/globals')
 # -----------------------------------------------------------------------------
 ## Dependencies ##
 
+subdir('platform-'+ xpack_platform_name + '/meson/dependencies')
+
 # xpack_dependencies[] must be set in the platform native globals.
 foreach dep: xpack_dependencies
   message('Adding ' + dep + '...')

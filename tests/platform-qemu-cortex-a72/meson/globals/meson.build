@@ -16,7 +16,12 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-native global definitions...')
+message('Including platform-qemu-cortex-a72 globals...')
+
+# -----------------------------------------------------------------------------
+
+# Required in devices-qemu-cortexa.
+xpack_device_compile_definition='DEVICE_QEMU_CORTEX_A72'
 
 # -----------------------------------------------------------------------------
 
@@ -25,45 +30,39 @@ xpack_platform_common_c_args = []
 xpack_platform_common_cpp_args = []
 xpack_platform_compile_definitions = []
 
-if c_compiler.get_id().contains('clang') and build_machine.system() == 'darwin'
-  # On macOS enabling the macro fails with:
-  # error: unknown type name 'u_int'
-else
-  xpack_platform_compile_definitions += [
-    '-D_POSIX_C_SOURCE=200809L',
-  ]
-endif
+# -----------------------------------------------------------------------------
 
-if c_compiler.get_id().contains('clang') and build_machine.system() == 'windows'
-  xpack_platform_common_args += [
-    '-Wno-used-but-marked-unused',
-  ]
-endif
-
-if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' or get_option('buildtype') == 'debugoptimized'
-  # https://mesonbuild.com/Reference-tables.html#operating-system-names
-  # message(build_machine.cpu())
-  # Match armv[78]l.
-  if c_compiler.get_id().contains('clang') and build_machine.system() == 'linux' and build_machine.cpu().contains('armv')
-    # clang-12: error: unable to execute command: Segmentation fault
-    # clang-12: error: linker command failed due to signal (use -v to see invocation)
-  else
-    # meson-out/sample-test.p/.._src_sample-test.cpp.o: file not recognized: file format not recognized
-    xpack_platform_common_args += [
-      '-flto',
-    ]
-  endif
-endif
+# Compiler definitions must passed as options.
+xpack_platform_compile_definitions += [
+  # Full POSIX conformance:
+  # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
+  '-D_POSIX_C_SOURCE=200809L',
+]
 
 xpack_platform_common_args += [
+  '-mcpu=cortex-a72',
+  '-mabi=lp64',
+
+  # '-flto' # fails with undefined __assert_func, _write, etc.
+
+  '-fno-move-loop-invariants',
+
+  # Embedded builds must be warning free.
   '-Werror',
 ]
 
-if build_machine.system() == 'darwin'
+if get_option('buildtype').contains('debug')
   xpack_platform_common_args += [
-    '-Wno-missing-include-dirs',
+    '-fno-omit-frame-pointer'
   ]
 endif
+
+xpack_platform_common_cpp_args += [
+  # '-fno-exceptions',
+  # '-fno-rtti',
+  '-fno-use-cxa-atexit',
+  '-fno-threadsafe-statics',
+]
 
 add_global_arguments(
   xpack_platform_common_args + xpack_platform_common_c_args + xpack_platform_compile_definitions,
@@ -81,14 +80,12 @@ foreach xn : xpack_platform_common_args + xpack_platform_common_c_args + xpack_p
   message('G+ ' + xn)
 endforeach
 
-# When `-flto` is used, the compile options must be passed to the linker too.
 add_global_link_arguments(
   xpack_platform_common_args + xpack_platform_common_c_args,
 
   language: [ 'c' ]
 )
 
-# When `-flto` is used, the compile options must be passed to the linker too.
 add_global_link_arguments(
   xpack_platform_common_args + xpack_platform_common_cpp_args,
 

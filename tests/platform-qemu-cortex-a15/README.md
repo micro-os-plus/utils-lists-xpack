@@ -1,7 +1,7 @@
-# platform-qemu-cortex-m7f
+# platform-qemu-cortex-a15
 
-Support files for building application to run on the QEMU "mps2-an500"
-emulated board.
+Support files for building application to run on the QEMU "virt"
+emulated board with "cortex-a15" CPU.
 
 ## Include folders
 
@@ -27,10 +27,9 @@ The source files to be added to user projects are:
 
 The applications are built for the following memory range:
 
-- FLASH: 0x0000_0000-0x007F_FFFF (8 MB)
-- RAM: 0x2000_0000-0x207F_FFFF (8 MB)
-- HEAP: 0x6000_0000-0x60FF_FFFF (16 MB)
-- stack: 0x6100_0000
+- RAM: 0x4000_0000-0x43FF_FFFF (64 MB)
+- HEAP: 0x4400_0000-0x47FF_FFFF (64 MB)
+- stack: 0x4800_0000
 
 The heap and stack are set automatically in `_startup()` to the values
 returned by `SEMIHOSTING_SYS_HEAPINFO`.
@@ -40,13 +39,13 @@ returned by `SEMIHOSTING_SYS_HEAPINFO`.
 To run tests, pass the ELF file and the arguments:
 
 ```sh
-qemu-system-arm --machine mps2-an500 --cpu cortex-m7 --nographic -d unimp,guest_errors --kernel "unit-test.elf" --semihosting-config enable=on,target=native,arg=test
+qemu-system-arm --machine virt --cpu cortex-a15 --nographic -smp 1 -d unimp,guest_errors --kernel "unit-test.elf" --semihosting-config enable=on,target=native,arg=unit-test
 ```
 
 For debug sessions start QEMU in GDB server mode by passing both `-s -S`:
 
 ```sh
-qemu-system-aarch64 --machine mps2-an500 --cpu cortex-m7 --nographic -d unimp,guest_errors -s -S --semihosting-config enable=on,target=native,arg=test
+qemu-system-arm --machine virt --cpu cortex-a15 --nographic -smp 1 -d unimp,guest_errors -s -S --semihosting-config enable=on,target=native,arg=test
 ```
 
 ## Links

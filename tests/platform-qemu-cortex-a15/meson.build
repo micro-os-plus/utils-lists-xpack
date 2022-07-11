@@ -14,11 +14,11 @@
 
 # Create the test applications.
 
-message('Processing tests/platform-qemu-cortex-m7f...')
+message('Processing tests/platform-qemu-cortex-a15...')
 
 # -----------------------------------------------------------------------------
 
-xpack_platform_compile_definition = 'PLATFORM_QEMU_CORTEX_M7F'
+xpack_platform_compile_definition = 'PLATFORM_QEMU_CORTEX_A15'
 
 # Enable them only when needed.
 xpack_create_listing = false
@@ -46,12 +46,12 @@ xpack_compile_definitions += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-platform_qemu_cortex_m7f_dependency = declare_dependency(
+platform_qemu_cortex_a15_dependency = declare_dependency(
   include_directories: include_directories(xpack_include_directories),
   sources: files(xpack_sources),
   compile_args: xpack_common_args + xpack_compile_definitions,
   dependencies: [
-    micro_os_plus_devices_qemu_cortexm_dependency,
+    micro_os_plus_devices_qemu_aarch32_dependency,
   ]
 )
 
@@ -62,7 +62,7 @@ endforeach
 foreach xn : xpack_sources + xpack_common_args + xpack_compile_definitions
   message('+ ' + xn)
 endforeach
-message('> platform_qemu_cortex_m7f_dependency')
+message('> platform_qemu_cortex_a15_dependency')
 
 # =============================================================================
 # Define the tests executables.
@@ -118,8 +118,8 @@ foreach name : test_names
     # '-v',
 
     # Path are relative to the build folder.
-    '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an500.ld',
-    '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld',
+    '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld',
+    '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-architecture-cortexa/linker-scripts/sections-ram.ld',
   ]
 
   xpack_dependencies += [
@@ -138,7 +138,7 @@ foreach name : test_names
 
   xpack_dependencies += [
     # Platform specific dependencies.
-    platform_qemu_cortex_m7f_dependency, # bring device & architecture too
+    platform_qemu_cortex_a15_dependency, # bring device & architecture too
 
     micro_os_plus_semihosting_dependency,
   ]
@@ -241,10 +241,11 @@ if enable_sample_test
     'sample-test',
     qemu,
     args: [
-      '--machine', 'mps2-an500',
-      '--cpu', 'cortex-m7',
+      '--machine', 'virt',
+      '--cpu', 'cortex-a15',
       '--kernel', sample_test,
       '--nographic',
+      '-smp', '1',
       '-d', 'unimp,guest_errors',
       '--semihosting-config', 'enable=on,target=native,arg=sample-test,arg=one,arg=two',
     ],
@@ -262,10 +263,11 @@ if enable_unit_test
     'unit-test',
     qemu,
     args: [
-      '--machine', 'mps2-an500',
-      '--cpu', 'cortex-m7',
+      '--machine', 'virt',
+      '--cpu', 'cortex-a15',
       '--kernel', unit_test,
       '--nographic',
+      '-smp', '1',
       '-d', 'unimp,guest_errors',
       '--semihosting-config', 'enable=on,target=native,arg=unit-test',
     ],

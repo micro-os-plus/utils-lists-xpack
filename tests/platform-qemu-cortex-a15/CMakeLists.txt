@@ -12,11 +12,11 @@
 #
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/platform-qemu-cortex-m0'...")
+message(VERBOSE "Processing 'tests/platform-qemu-cortex-a15'...")
 
 # -----------------------------------------------------------------------------
 
-set(xpack_platform_compile_definition "PLATFORM_QEMU_CORTEX_M0")
+set(xpack_platform_compile_definition "PLATFORM_QEMU_CORTEX_A15")
 
 # set(xpack_create_listing true)
 # set(xpack_create_hex true)
@@ -24,39 +24,39 @@ set(xpack_platform_compile_definition "PLATFORM_QEMU_CORTEX_M0")
 # -----------------------------------------------------------------------------
 # Define the platform library.
 
-add_library(platform-qemu-cortex-m0-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library(platform-qemu-cortex-a15-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_include_directories(platform-qemu-cortex-m0-interface INTERFACE
+target_include_directories(platform-qemu-cortex-a15-interface INTERFACE
   "include-platform"
 )
 
-target_sources(platform-qemu-cortex-m0-interface INTERFACE
+target_sources(platform-qemu-cortex-a15-interface INTERFACE
   # None.
 )
 
-target_compile_definitions(platform-qemu-cortex-m0-interface INTERFACE
+target_compile_definitions(platform-qemu-cortex-a15-interface INTERFACE
   "${xpack_platform_compile_definition}"
 )
 
-target_compile_options(platform-qemu-cortex-m0-interface INTERFACE
+target_compile_options(platform-qemu-cortex-a15-interface INTERFACE
   # None.
 )
 
-target_link_libraries(platform-qemu-cortex-m0-interface INTERFACE
-  micro-os-plus::devices-qemu-cortexm
+target_link_libraries(platform-qemu-cortex-a15-interface INTERFACE
+  micro-os-plus::devices-qemu-aarch32
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(platform-qemu-cortex-m0-interface)
+  xpack_display_target_lists(platform-qemu-cortex-a15-interface)
 endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::platform ALIAS platform-qemu-cortex-m0-interface)
-message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortex-m0-interface")
+add_library(micro-os-plus::platform ALIAS platform-qemu-cortex-a15-interface)
+message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortex-a15-interface")
 
 # =============================================================================
 # Define the tests executables.
@@ -76,7 +76,7 @@ function(add_test_executable name)
   )
 
   # Include folders.
-  # `tests/platform-qemu-cortex-m0/include` was added globally.
+  # `tests/platform-qemu-aarch32/include` was added globally.
   target_include_directories(${name} PRIVATE
       "../include"
   )
@@ -116,8 +116,8 @@ function(add_test_executable name)
 
     # Including files from other packages is not very nice, but functional.
     # Use absolute paths, otherwise set -L.
-    -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
-    -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld
+    -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld
+    -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexa/linker-scripts/sections-ram.ld
   )
 
   target_link_libraries(${name}  PRIVATE
@@ -130,7 +130,7 @@ function(add_test_executable name)
     # Platform specific dependencies.
     micro-os-plus::platform # bring device & architecture too
 
-    micro-os-plus::semihosting
+    micro-os-plus::semihosting # for the trace implementation
   )
 
   # TODO use add_custom_target()
@@ -166,10 +166,11 @@ if (ENABLE_SAMPLE_TEST)
     NAME "sample-test"
 
     COMMAND qemu-system-arm${extension}
-      --machine mps2-an385
-      --cpu cortex-m3
+      --machine virt
+      --cpu cortex-a15
       --kernel sample-test.elf
       --nographic
+      -smp 1
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
@@ -190,13 +191,13 @@ if (ENABLE_UNIT_TEST)
     NAME "unit-test"
 
     COMMAND qemu-system-arm${extension}
-      --machine mps2-an385
-      --cpu cortex-m3
+      --machine virt
+      --cpu cortex-a15
       --kernel unit-test.elf
       --nographic
+      -smp 1
       -d unimp,guest_errors
       --semihosting-config enable=on,target=native,arg=unit-test
-      # --semihosting-config arg=--verbose
   )
 
 endif()
