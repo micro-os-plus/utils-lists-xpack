@@ -29,8 +29,8 @@ jobs:
       matrix:
         # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
         os: [ubuntu-20.04, macos-11, windows-2022]
-        node-version: [14]
-        xpm-version: ['0.13.1']
+        node-version: [16]
+        xpm-version: ['0.13.6']
 
     steps:
     - name: Checkout
@@ -39,7 +39,7 @@ jobs:
         fetch-depth: 3
 
     - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -92,3 +92,45 @@ jobs:
         xpm install --config qemu-cortex-m7f-meson-debug --quiet
         xpm install --config qemu-cortex-m7f-meson-release --quiet
         xpm run test-qemu-cortex-m7f-meson
+
+    - name: Run test-qemu-cortex-m0-cmake
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-cortex-m0-cmake-debug --quiet
+        xpm install --config qemu-cortex-m0-cmake-release --quiet
+        xpm run test-qemu-cortex-m0-cmake
+
+    - name: Run test-qemu-cortex-m0-meson
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-cortex-m0-meson-debug --quiet
+        xpm install --config qemu-cortex-m0-meson-release --quiet
+        xpm run test-qemu-cortex-m0-meson
+
+    - name: Run test-qemu-cortex-a15-cmake
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-cortex-a15-cmake-debug --quiet
+        xpm install --config qemu-cortex-a15-cmake-release --quiet
+        xpm run test-qemu-cortex-a15-cmake
+
+    - name: Run test-qemu-cortex-a15-meson
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-cortex-a15-meson-debug --quiet
+        xpm install --config qemu-cortex-a15-meson-release --quiet
+        xpm run test-qemu-cortex-a15-meson
+
+    - name: Run test-qemu-cortex-a72-cmake
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-cortex-a72-cmake-debug --quiet
+        xpm install --config qemu-cortex-a72-cmake-release --quiet
+        xpm run test-qemu-cortex-a72-cmake
+
+    - name: Run test-qemu-cortex-a72-meson
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-cortex-a72-meson-debug --quiet
+        xpm install --config qemu-cortex-a72-meson-release --quiet
+        xpm run test-qemu-cortex-a72-meson

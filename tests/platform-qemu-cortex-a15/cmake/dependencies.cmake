@@ -17,7 +17,7 @@
 set(xpack_dependencies_folders
   # Project dependencies.
   # "${CMAKE_SOURCE_DIR}/../xpacks/xpack-3rd-party-arm-cmsis-core"
-  "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexa"
+  "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-aarch32"
   "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-devices-qemu-aarch32"
   "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-diag-trace"
   "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-micro-test-plus"

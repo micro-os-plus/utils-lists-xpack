@@ -35,19 +35,18 @@
     "https://github.com/xpack-dev-tools/",
     "https://github.com/micro-os-plus/"
   ],
-  "_": {
-    "@micro-os-plus/devices-qemu-aarch32": "2.1.0",
-    "@micro-os-plus/devices-qemu-aarch64": "2.1.0"
-  },
   "devDependencies": {
     "@xpack-dev-tools/cmake": "3.21.6-1.1",
     "@xpack-dev-tools/meson-build": "0.60.3-1.1",
     "@xpack-dev-tools/ninja-build": "1.11.0-1.1",
 
-    "@micro-os-plus/architecture-cortexa": "^2.0.0",
+    "@micro-os-plus/architecture-aarch32": "^3.0.0",
+    "@micro-os-plus/architecture-aarch64": "^3.0.0",
     "@micro-os-plus/architecture-cortexm": "^6.1.0",
     "@micro-os-plus/architecture-synthetic-posix": "^4.0.2",
-    "@micro-os-plus/build-helper": "^2.9.0",
+    "@micro-os-plus/build-helper": "^2.10.1",
+    "@micro-os-plus/devices-qemu-aarch32": "3.0.1",
+    "@micro-os-plus/devices-qemu-aarch64": "3.0.0",
     "@micro-os-plus/devices-qemu-cortexm": "^4.1.1",
     "@micro-os-plus/diag-trace": "^4.0.0",
     "@micro-os-plus/micro-test-plus": "^3.1.0",
@@ -80,7 +79,8 @@
         "xpm install --all-configs --quiet"
       ],
       "link-deps-all": [
-        "xpm link @micro-os-plus/architecture-cortexa --quiet",
+        "xpm link @micro-os-plus/architecture-aarch32 --quiet",
+        "xpm link @micro-os-plus/architecture-aarch64 --quiet",
         "xpm link @micro-os-plus/architecture-cortexm --quiet",
         "xpm link @micro-os-plus/architecture-synthetic-posix --quiet",
         "xpm link @micro-os-plus/build-helper --quiet",
