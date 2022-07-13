@@ -93,7 +93,7 @@ To run them, run:
 ```sh
 cd utils-lists-xpack.git
 xpm run install-all
-xpm run test
+xpm run test-all
 ```
 
 ## Continuous Integration
