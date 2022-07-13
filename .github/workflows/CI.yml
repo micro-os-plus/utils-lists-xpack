@@ -30,7 +30,7 @@ jobs:
         # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
         os: ['ubuntu-20.04', 'macos-11', 'windows-2022']
         node-version: ['16']
-        xpm-version: ['0.13.6']
+        xpm-version: ['0.13.7']
 
     steps:
     - name: Checkout
