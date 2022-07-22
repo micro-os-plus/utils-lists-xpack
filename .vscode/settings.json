@@ -23,6 +23,7 @@
     "Wctad",
     "Werror",
     "Wglobal",
+    "Xpmake",
     "aarch",
     "atexit",
     "buildtype",
