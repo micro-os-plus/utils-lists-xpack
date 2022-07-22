@@ -29,9 +29,8 @@ include_directories(
 add_compile_definitions(
   # NDEBUG is provided by the toolchain definitions on release.
 
-  # TODO: remove DEBUG
-  $<$<CONFIG:Debug>:DEBUG>
-  
+  # $<$<CONFIG:Debug>:DEBUG>
+
   $<$<CONFIG:Debug>:MICRO_OS_PLUS_DEBUG>
   $<$<CONFIG:Debug>:MICRO_OS_PLUS_TRACE>
   MICRO_OS_PLUS_INCLUDE_CONFIG_H
