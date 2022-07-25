@@ -57,6 +57,7 @@
     "npmignore",
     "npmjs",
     "postversion",
+    "riscv",
     "rtti",
     "semihosted",
     "semihosting",
@@ -71,5 +72,6 @@
     "xpack",
     "xpacks"
   ],
-  "cmake.configureOnOpen": false
+  "cmake.configureOnOpen": false,
+  "editor.wordWrap": "on"
 }
