@@ -1,0 +1,31 @@
+{
+  "minimumXpmakeRequired": "0.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022 Liviu Ionescu",
+  "description": "Top utils-lists components",
+  "cdlComponents": {
+    "utils-lists": {
+      "description": "C++ lists, including intrusive lists.",
+      "parent": "micro-os-plus",
+      "compilerIncludeFolders": [
+        "include"
+      ],
+      "compilerSourceFiles": [
+        "src/lists.cpp"
+      ],
+      "compilerDefinitions": [],
+      "compilerOptions": [],
+      "dependencies": [],
+      "generatedDefinition": "MICRO_OS_PLUS_INCLUDE_UTILS_LISTS",
+      "cdlOptions": {
+        "trace-utils-lists": {
+          "generatedDefinition": "MICRO_OS_PLUS_TRACE_UTILS_LISTS"
+        },
+        "trace-utils-lists-construct": {
+          "generatedDefinition": "MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT"
+        }
+      }
+    }
+  }
+}
+
