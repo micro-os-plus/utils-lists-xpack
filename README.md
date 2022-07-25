@@ -3,7 +3,8 @@
 
 # A source library xPack with the µOS++ intrusive lists utilities
 
-This project includes files that implement C++ lists, also used in the
+This project provides the **utils-lists** source libraries as an xPack
+dependency and includes the files that implement C++ lists, also used in the
 µOS++ RTOS.
 
 The project is hosted on GitHub as
@@ -19,7 +20,7 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPacks, the easiest way to add it to a project is via
+As a source library xPack, the easiest way to add it to a project is via
 **xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
@@ -32,7 +33,7 @@ For details please follow the instructions in the
 
 ### xpm
 
-This package is available as
+This package is available from npmjs.com as
 [`@micro-os-plus/utils-lists`](https://www.npmjs.com/package/@micro-os-plus/utils-lists)
 from the `npmjs.com` registry:
 
@@ -74,6 +75,8 @@ into `xpack`.
 
 ## Developer info
 
+### Overview
+
 The C++ standard libraries provide extensive support for maintaining lists;
 however, most of them require dynamic memory allocations for the links,
 which, on embedded systems, may be problematic; thus, when possible,
@@ -81,11 +84,11 @@ it should be avoided.
 
 ### Intrusive lists
 
-One possible alternative to dynamically allocated list nodes is to include
-the list links in the allocated objects; hence the current implementation
-of the _intrusive_ lists, which are double linked lists which store pairs
-of pointers in the linked objects. Objects linked in multiple lists use
-multiple pointers, one pair for each list.
+One possible alternate solution to dynamically allocated list nodes is
+to include the list links in the allocated objects; hence the current
+implementation of the _intrusive_ lists, which are double linked lists
+which store pairs of pointers in the linked objects. Objects linked in
+multiple lists use multiple pointers, one pair for each list.
 
 ### Statically initialised lists
 
@@ -107,12 +110,14 @@ them before any action.
 
 ### Status
 
-The lists classes are fully functional and are used to manage several
+The **utils-lists** source library is fully functional.
+
+The lists classes are used to manage several
 lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 
 ### C++ API
 
-The methods available for the intrusive list are:
+The C++ methods available for the intrusive list are:
 
 ```c++
 pointer head (void);
@@ -153,11 +158,15 @@ void next (static_double_list_links* n);
 void previous (static_double_list_links* n);
 ```
 
+### C API
+
+There are no C equivalents for the C++ methods.
+
 ### Build & integration info
 
 The project is written in C++, and it is expected to be used in C++ projects.
-The source code was compiled with GCC 11, clang 12, clang 12
-and arm-none-eabi-gcc 10, and should be warning free.
+The source code was compiled with GCC 11, clang 12, clang 13
+and arm-none-eabi-gcc 11, riscv-none-elf-gcc 12 and should be warning free.
 
 To ease the integration of this package into user projects, there
 are already made CMake and meson configuration files (see below).
@@ -183,6 +192,8 @@ The source files to be added to user projects are:
 - `src/lists.cpp`
 
 #### Preprocessor definitions
+
+There are several preprocessor definitions used to configure the build.
 
 - `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
 - `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
@@ -222,8 +233,8 @@ class double_list_links;
 
 #### CMake
 
-To integrate the utils-lists source library into a CMake application, add this
-folder to the build:
+To integrate the utils-lists source library into a CMake application,
+add this folder to the build:
 
 ```cmake
 add_subdirectory("xpacks/micro-os-plus-utils-lists")`
@@ -241,8 +252,8 @@ target_link_libraries(your-target PRIVATE
 
 #### meson
 
-To integrate the µTest++ source library into a meson application, add this
-folder to the build:
+To integrate the utils-lists source library into a meson application,
+add this folder to the build:
 
 ```meson
 subdir('xpacks/micro-os-plus-utils-lists')
@@ -333,8 +344,7 @@ According to [semver](https://semver.org) rules:
 > Major version X (X.y.z | X > 0) MUST be incremented if any
 backwards incompatible changes are introduced to the public API.
 
-The incompatible changes, in reverse chronological order,
-are:
+The incompatible changes, in reverse chronological order, are:
 
 - v3.x: rework, with templates instead of separate static classes and
   a cleaner API;
