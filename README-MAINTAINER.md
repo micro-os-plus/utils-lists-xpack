@@ -83,7 +83,7 @@ related to the new version.
 
 - open the `CHANGELOG.md` file
 - check if all previous fixed issues are in
-- add a new entry like _- v3.0.0 prepared_
+- add a new entry like _* v3.0.0_
 - commit with a message like _prepare v3.0.0_
 
 ### Push changes
