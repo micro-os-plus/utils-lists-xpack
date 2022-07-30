@@ -99,8 +99,8 @@ function(add_test_executable name)
   )
 
   target_link_options(${name} PRIVATE
-    # -nostartfiles
-    --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group
+    -nostartfiles
+    # --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group
 
     # Force the linker to keep the interrupt vectors which otherwise
     # are not referred from anywhere.
@@ -131,6 +131,7 @@ function(add_test_executable name)
     micro-os-plus::platform # bring device & architecture too
 
     micro-os-plus::semihosting
+    micro-os-plus::startup
   )
 
   # TODO use add_custom_target()

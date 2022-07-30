@@ -31,7 +31,7 @@ set(xpack_platform_common_args
   # https://gcc.gnu.org/onlinedocs/gcc-11.3.0/gcc/ARM-Options.html#ARM-Options
   -mcpu=cortex-a15
 
-  -fno-move-loop-invariants
+  # -fno-move-loop-invariants
 
   # Embedded builds must be warning free.
   -Werror
@@ -50,7 +50,7 @@ set(xpack_platform_common_args
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html?highlight=compile_language#genex:COMPILE_LANGUAGE
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-exceptions>
   # $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>
-  $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
+  # $<$<COMPILE_LANGUAGE:CXX>:-fno-use-cxa-atexit>
   $<$<COMPILE_LANGUAGE:CXX>:-fno-threadsafe-statics>
 )
 

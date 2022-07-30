@@ -44,7 +44,7 @@ xpack_platform_common_args += [
 
   # '-flto' # fails with undefined __assert_func, _write, etc.
 
-  '-fno-move-loop-invariants',
+  # '-fno-move-loop-invariants',
 
   # Embedded builds must be warning free.
   '-Werror',
@@ -59,7 +59,8 @@ endif
 xpack_platform_common_cpp_args += [
   # '-fno-exceptions',
   # '-fno-rtti',
-  '-fno-use-cxa-atexit',
+  # '-fno-use-cxa-atexit',
+
   '-fno-threadsafe-statics',
 ]
 

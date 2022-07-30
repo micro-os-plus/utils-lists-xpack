@@ -22,6 +22,7 @@ set(xpack_dependencies_folders
   "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-diag-trace"
   "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-micro-test-plus"
   "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-semihosting"
+  "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-startup"
 
   # Build configuration dependencies.
   # None.
