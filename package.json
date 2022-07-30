@@ -40,21 +40,24 @@
     "@xpack-dev-tools/meson-build": "0.60.3-1.1",
     "@xpack-dev-tools/ninja-build": "1.11.0-1.1",
 
-    "@micro-os-plus/architecture-aarch32": "^3.0.0",
-    "@micro-os-plus/architecture-aarch64": "^3.0.0",
-    "@micro-os-plus/architecture-cortexm": "^6.1.0",
+    "@micro-os-plus/architecture-aarch32": "^3.1.0",
+    "@micro-os-plus/architecture-aarch64": "^3.1.0",
+    "@micro-os-plus/architecture-cortexm": "^6.2.0",
+    "@micro-os-plus/architecture-riscv": "^4.1.0",
     "@micro-os-plus/architecture-synthetic-posix": "^4.0.2",
-    "@micro-os-plus/build-helper": "^2.10.1",
+    "@micro-os-plus/build-helper": "^2.11.0",
     "@micro-os-plus/devices-qemu-aarch32": "3.0.1",
     "@micro-os-plus/devices-qemu-aarch64": "3.0.0",
     "@micro-os-plus/devices-qemu-cortexm": "^4.1.1",
-    "@micro-os-plus/diag-trace": "^4.0.0",
-    "@micro-os-plus/micro-test-plus": "^3.1.0",
-    "@micro-os-plus/semihosting": "^5.0.0",
+    "@micro-os-plus/devices-qemu-riscv": "^1.0.0",
+    "@micro-os-plus/diag-trace": "^4.1.1",
+    "@micro-os-plus/micro-test-plus": "^3.1.1",
+    "@micro-os-plus/semihosting": "^7.1.0",
+    "@micro-os-plus/startup": "^5.1.0",
     "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6"
   },
   "xpack": {
-    "minimumXpmRequired": "0.12.10",
+    "minimumXpmRequired": "0.13.7",
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
@@ -90,6 +93,7 @@
         "xpm link @micro-os-plus/diag-trace --quiet",
         "xpm link @micro-os-plus/micro-test-plus --quiet",
         "xpm link @micro-os-plus/semihosting --quiet",
+        "xpm link @micro-os-plus/startup --quiet",
         "xpm link @xpack-3rd-party/arm-cmsis-core --quiet"
       ],
       "test-all": [
