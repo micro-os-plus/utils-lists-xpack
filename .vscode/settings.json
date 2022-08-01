@@ -45,6 +45,8 @@
     "fxxx",
     "globl",
     "ihex",
+    "imac",
+    "imafdc",
     "mabi",
     "mcpu",
     "mfloat",
