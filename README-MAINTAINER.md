@@ -115,12 +115,6 @@ xpm run test-all
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
   (<https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml>)
-- `npm publish --tag next` (use `npm publish --access public` when
-  publishing for the first time)
-
-The version is visible at:
-
-- <https://www.npmjs.com/package/@micro-os-plus/utils-lists?activeTab=versions>
 
 ### Test on all platforms
 
@@ -128,10 +122,22 @@ In addition, it is possible to manually trigger a **test-all** job, that
 runs all available builds, on all supported platforms, including Linux Arm
 and macOS Apple Silicon.
 
-For this, run the `trigger-workflow-test-all` action before publishing.
+For this:
 
-Wait for the **test-all** job to complete
+- start the `~/actions-runners/micro-os-plus/run.sh &` runner on `xbbma` and `xbbla`
+- ensure that the `xpack-develop` branch is pushed
+- run the `trigger-workflow-test-all` action
+- wait for the **test-all** job to complete
   (<https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml>)
+
+### Publish
+
+- `npm publish --tag next` (use `npm publish --access public` when
+  publishing for the first time)
+
+The version is visible at:
+
+- <https://www.npmjs.com/package/@micro-os-plus/utils-lists?activeTab=versions>
 
 ### Update the repo
 
