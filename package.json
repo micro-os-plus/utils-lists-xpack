@@ -90,6 +90,7 @@
         "xpm link @micro-os-plus/devices-qemu-aarch32 --quiet",
         "xpm link @micro-os-plus/devices-qemu-aarch64 --quiet",
         "xpm link @micro-os-plus/devices-qemu-cortexm --quiet",
+        "xpm link @micro-os-plus/devices-qemu-riscv --quiet",
         "xpm link @micro-os-plus/diag-trace --quiet",
         "xpm link @micro-os-plus/micro-test-plus --quiet",
         "xpm link @micro-os-plus/semihosting --quiet",
@@ -98,7 +99,8 @@
       ],
       "test-all": [
         "xpm run test-native",
-        "xpm run test-cortex"
+        "xpm run test-cortex",
+        "xpm run test-riscv"
       ],
       "test-native": [
         "xpm run test-native-cmake",
@@ -131,6 +133,18 @@
         "xpm run test-qemu-cortex-m0-meson",
         "xpm run test-qemu-cortex-a72-meson",
         "xpm run test-qemu-cortex-a15-meson"
+      ],
+      "test-riscv": [
+        "xpm run test-riscv-cmake",
+        "xpm run test-riscv-meson"
+      ],
+      "test-riscv-cmake": [
+        "xpm run test-qemu-riscv-rv32imac-cmake",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake"
+      ],
+      "test-riscv-meson": [
+        "xpm run test-qemu-riscv-rv32imac-meson",
+        "xpm run test-qemu-riscv-rv64imafdc-meson"
       ],
       "test-native-cmake-sys": [
         "xpm run prepare --config native-cmake-sys-debug",
@@ -228,6 +242,22 @@
         "xpm run build --config qemu-cortex-a15-cmake-release",
         "xpm run test --config qemu-cortex-a15-cmake-release"
       ],
+      "test-qemu-riscv-rv32imac-cmake": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-debug",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-debug",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-release",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-release",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-cmake": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-release"
+      ],
       "test-qemu-cortex-m7f-meson": [
         "xpm run prepare --config qemu-cortex-m7f-meson-debug",
         "xpm run build --config qemu-cortex-m7f-meson-debug",
@@ -259,6 +289,22 @@
         "xpm run prepare --config qemu-cortex-a15-meson-release",
         "xpm run build --config qemu-cortex-a15-meson-release",
         "xpm run test --config qemu-cortex-a15-meson-release"
+      ],
+      "test-qemu-riscv-rv32imac-meson": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-debug",
+        "xpm run build --config qemu-riscv-rv32imac-meson-debug",
+        "xpm run test --config qemu-riscv-rv32imac-meson-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-release",
+        "xpm run build --config qemu-riscv-rv32imac-meson-release",
+        "xpm run test --config qemu-riscv-rv32imac-meson-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-meson": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-release"
       ],
       "clean-all": [
         "xpm run clean-native",
@@ -330,11 +376,25 @@
           "@xpack-dev-tools/aarch64-none-elf-gcc": "11.2.1-1.2.2"
         }
       },
+      "riscv-none-elf-gcc-dependencies": {
+        "hidden": true,
+        "$url": "https://github.com/xpack-dev-tools/",
+        "devDependencies": {
+          "@xpack-dev-tools/riscv-none-elf-gcc": "12.1.0-2.1"
+        }
+      },
       "qemu-arm-dependencies": {
         "hidden": true,
         "$url": "https://github.com/xpack-dev-tools/",
         "devDependencies": {
           "@xpack-dev-tools/qemu-arm": "7.0.0-1.1"
+        }
+      },
+      "qemu-riscv-dependencies": {
+        "hidden": true,
+        "$url": "https://github.com/xpack-dev-tools/",
+        "devDependencies": {
+          "@xpack-dev-tools/qemu-riscv": "7.0.0-1.1"
         }
       },
       "native-cmake-sys-debug": {
@@ -673,6 +733,70 @@
           "shortConfigurationName": "q4r"
         }
       },
+      "qemu-riscv-rv32imac-cmake-debug": {
+        "inherit": [
+          "riscv-none-elf-gcc-dependencies",
+          "qemu-riscv-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-riscv-rv32imac",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "q5d",
+          "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
+          "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
+          ],
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "q5r"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-debug": {
+        "inherit": [
+          "riscv-none-elf-gcc-dependencies",
+          "qemu-riscv-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-riscv-rv64imafdc",
+          "toolchainFileName": "riscv-none-elf-gcc.cmake",
+          "shortConfigurationName": "q6d",
+          "buildFolderRelativePath": "{% if os.platform != 'win32' %}{{ 'build' | path_join: configuration.name | to_filename | downcase }}{% else %}{{ 'build' | path_join: properties.shortConfigurationName | to_filename | downcase }}{% endif %}",
+          "buildFolderRelativePathPosix": "{% if os.platform != 'win32' %}{{ 'build' | path_posix_join: configuration.name | downcase }}{% else %}{{ 'build' | path_posix_join: properties.shortConfigurationName | downcase }}{% endif %}"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandCMakePrepareWithToolchain }}",
+          "build": [
+            "{{ properties.commandCMakeReconfigure }}",
+            "{{ properties.commandCMakeBuild }}"
+          ],
+          "test": "{{ properties.commandCMakePerformTests }}",
+          "clean": "{{ properties.commandCMakeClean }}"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "q6r"
+        }
+      },
       "qemu-cortex-m7f-meson-debug": {
         "inherit": [
           "arm-none-eabi-gcc-dependencies",
@@ -780,6 +904,62 @@
       "qemu-cortex-a15-meson-release": {
         "inherit": [
           "qemu-cortex-a15-meson-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-debug": {
+        "inherit": [
+          "riscv-none-elf-gcc-dependencies",
+          "qemu-riscv-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-riscv-rv32imac",
+          "toolchainFileName": "riscv-none-elf-gcc-{{ os.platform }}.ini"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandMesonPrepareCross }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-debug": {
+        "inherit": [
+          "riscv-none-elf-gcc-dependencies",
+          "qemu-riscv-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-riscv-rv64imafdc",
+          "toolchainFileName": "riscv-none-elf-gcc-{{ os.platform }}.ini"
+        },
+        "actions": {
+          "prepare": "{{ properties.commandMesonPrepareCross }}",
+          "build": [
+            "{{ properties.commandMesonReconfigure }}",
+            "{{ properties.commandMesonBuild }}"
+          ],
+          "test": "{{ properties.commandMesonPerformTests }}",
+          "clean": "{{ properties.commandMesonClean }}"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-debug"
         ],
         "properties": {
           "buildType": "minsize"
