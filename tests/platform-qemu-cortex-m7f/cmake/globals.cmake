@@ -20,7 +20,7 @@ message(VERBOSE "Including platform-qemu-cortex-m7f globals...")
 # -----------------------------------------------------------------------------
 
 # Required in devices-qemu-cortexm.
-set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M4")
+set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_M7")
 
 # Global definitions.
 # add_compile_definitions()
@@ -38,7 +38,7 @@ set(xpack_platform_common_args
   # Embedded builds must be warning free.
   -Werror
 
-  # -flto fails with undefined reference to `__assert_func'...
+  # -flto fails to run on QEMU.
   # $<$<CONFIG:Release>:-flto>
   # $<$<CONFIG:MinSizeRel>:-flto>
 

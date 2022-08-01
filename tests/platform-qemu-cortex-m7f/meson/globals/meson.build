@@ -21,7 +21,7 @@ message('Including platform-qemu-cortex-m7f globals...')
 # -----------------------------------------------------------------------------
 
 # Required in devices-qemu-cortexm.
-xpack_device_compile_definition='DEVICE_QEMU_CORTEX_M4'
+xpack_device_compile_definition='DEVICE_QEMU_CORTEX_M7'
 
 # -----------------------------------------------------------------------------
 
@@ -43,8 +43,6 @@ xpack_platform_common_args += [
   '-mfloat-abi=hard',
   # '-mfloat-abi=soft',
 
-  # '-flto' # fails with undefined __assert_func, _write, etc.
-
   # '-fno-move-loop-invariants',
 
   # Embedded builds must be warning free.
@@ -54,6 +52,11 @@ xpack_platform_common_args += [
 if get_option('buildtype').contains('debug')
   xpack_platform_common_args += [
     '-fno-omit-frame-pointer'
+  ]
+else
+  xpack_platform_common_args += [
+    # -flto fails to run on QEMU.
+    # '-flto'
   ]
 endif
 
