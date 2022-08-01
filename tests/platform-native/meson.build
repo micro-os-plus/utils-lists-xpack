@@ -14,7 +14,11 @@
 
 # This file creates the platform specific test executables.
 
-message('Processing platform-native...')
+message('Processing tests/platform-native...')
+
+# -----------------------------------------------------------------------------
+
+xpack_platform_compile_definition = 'PLATFORM_NATIVE'
 
 # -----------------------------------------------------------------------------
 # Define the platform library.
@@ -26,6 +30,13 @@ xpack_compile_definitions = []
 
 xpack_include_directories += [
   'include-platform',
+]
+
+xpack_sources += [
+]
+
+xpack_compile_definitions += [
+  '-D' + xpack_platform_compile_definition,
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency

@@ -17,6 +17,10 @@
 message(VERBOSE "Processing 'tests/platform-native'...")
 
 # -----------------------------------------------------------------------------
+
+set(xpack_platform_compile_definition "PLATFORM_NATIVE")
+
+# -----------------------------------------------------------------------------
 # Define the platform library.
 
 add_library(platform-native-interface INTERFACE EXCLUDE_FROM_ALL)
@@ -32,7 +36,7 @@ target_sources(platform-native-interface INTERFACE
 )
 
 target_compile_definitions(platform-native-interface INTERFACE
-  # None.
+  "${xpack_platform_compile_definition}"
 )
 
 target_compile_options(platform-native-interface INTERFACE
