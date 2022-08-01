@@ -14,26 +14,18 @@
 #define MICRO_OS_PLUS_CONFIG_H_
 
 // ----------------------------------------------------------------------------
-
-// On bare-metal platforms, tests are semihosted applications.
-#define MICRO_OS_PLUS_USE_SEMIHOSTING
-
-#define MICRO_OS_PLUS_INCLUDE_SEMIHOSTING_SYSCALLS
-#define MICRO_OS_PLUS_INCLUDE_SEMIHOSTING_STARTUP
-
-#define MICRO_OS_PLUS_INCLUDE_STARTUP
-#define MICRO_OS_PLUS_INCLUDE_SBRK
-#define MICRO_OS_PLUS_INCLUDE_EXIT
+// Portable configuration definitions.
+// Assembly files should define `#define __ASSEMBLY__ 1` before including
+// this file. If so, this file should define only preprocessor macros.
 
 #if defined(MICRO_OS_PLUS_TRACE)
-// #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG
-#define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT
-// #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDERR
 // #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 500
 
 // #define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
 // #define MICRO_OS_PLUS_TRACE_UTILS_LISTS
 #endif // MICRO_OS_PLUS_TRACE
+
+#include <micro-os-plus/platform/config.h>
 
 // ----------------------------------------------------------------------------
 

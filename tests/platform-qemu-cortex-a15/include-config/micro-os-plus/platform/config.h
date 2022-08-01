@@ -10,8 +10,8 @@
  * be obtained from https://opensource.org/licenses/MIT/.
  */
 
-#ifndef MICRO_OS_PLUS_CONFIG_H_
-#define MICRO_OS_PLUS_CONFIG_H_
+#ifndef MICRO_OS_PLUS_PLATFORM_CONFIG_H_
+#define MICRO_OS_PLUS_PLATFORM_CONFIG_H_
 
 // ----------------------------------------------------------------------------
 
@@ -29,14 +29,10 @@
 // #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG
 #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT
 // #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDERR
-// #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 500
-
-// #define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
-// #define MICRO_OS_PLUS_TRACE_UTILS_LISTS
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_CONFIG_H_ */
+#endif /* MICRO_OS_PLUS_PLATFORM_CONFIG_H_ */
 
 // ----------------------------------------------------------------------------
