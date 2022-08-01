@@ -110,7 +110,10 @@ them before any action.
 
 ### Status
 
-The **utils-lists** source library is fully functional.
+The **utils-lists** source library is fully functional, and is
+CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
+Cortex-M7F, Cortex-A15, Cortex-A72, RISC-V RV32IMAC, RV64IMAFDC),
+and natively, with GCC & clang.
 
 The lists classes are used to manage several
 lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
@@ -321,7 +324,8 @@ on each push.
 
 The test platforms are GNU/Linux, macOS and Windows; native tests are
 compiled with GCC and clang; tests for embedded platforms are compiled
-with arm-none-eabi-gcc and run via QEMU.
+with arm-none-eabi-gcc, aarch64-none-elf-gcc, riscv-none-elf-gcc and
+run via QEMU.
 
 There are two sets of tests, one that runs on every push, with a
 limited number of tests, and a set that is triggered manually,
