@@ -5,6 +5,7 @@
   "mesonbuild.configureOnOpen": true,
   "cSpell.ignoreWords": [
     "BKPT",
+    "DDEBUG",
     "GETCMDLINE",
     "HEAPINFO",
     "ISERROR",
@@ -27,6 +28,7 @@
     "aarch",
     "atexit",
     "buildtype",
+    "cleanup",
     "cmake",
     "cmsis",
     "cortexa",
@@ -69,8 +71,10 @@
     "stdlib",
     "subdir",
     "tparam",
+    "undefine",
     "unimp",
     "virt",
+    "xbbla",
     "xpack",
     "xpacks"
   ],
