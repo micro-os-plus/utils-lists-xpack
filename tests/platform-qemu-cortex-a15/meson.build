@@ -2,7 +2,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus/)
-# Copyright (c) 2022 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -119,6 +119,7 @@ foreach name : test_names
 
     # Path are relative to the build folder.
     '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-devices-qemu-aarch32/linker-scripts/mem-cortex-a15.ld',
+    # '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-architecture-aarch32/linker-scripts/sections-flash.ld',
     '-T'+ xpack_project_folder_path + '/xpacks/micro-os-plus-architecture-aarch32/linker-scripts/sections-ram.ld',
   ]
 

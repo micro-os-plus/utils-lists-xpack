@@ -2,7 +2,7 @@
 #
 # This file is part of the µOS++ distribution.
 #   (https://github.com/micro-os-plus/)
-# Copyright (c) 2022 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -118,6 +118,7 @@ function(add_test_executable name)
     # Use absolute paths, otherwise set -L.
     -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an500.ld
     -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld
+    # -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-ram.ld
   )
 
   target_link_libraries(${name}  PRIVATE
