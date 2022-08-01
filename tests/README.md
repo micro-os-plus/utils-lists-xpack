@@ -25,17 +25,19 @@ The supported platforms are:
 - `platform-qemu-cortex-m0` - run the tests as fully semihosted Cortex-M0
   applications on a QEMU `mps2-an385` emulated board
   (an Arm Cortex-M3 development board)
-- `platform-qemu-aarch64` - run the tests as fully semihosted Cortex-A72
+- `platform-qemu-cortex-a72` - run the tests as fully semihosted Cortex-A72
+  (64-bit) applications on a QEMU `virt` emulated board
+- `platform-qemu-cortex-a15` - run the tests as fully semihosted Cortex-A15
   applications on a QEMU `virt` emulated board
-- `platform-qemu-aarch32` - run the tests as fully semihosted Cortex-A15
-  applications on a QEMU `virt` emulated board
+- `platform-qemu-riscv-rv32imac` - run the tests as fully semihosted RISC-V
+  RV32IMAC applications on a QEMU `virt` emulated board
+- `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted RISC-V
+  RV32IMAFDC applications on a QEMU `virt` emulated board
 
 The tests are performed on GNU/Linux, macOS and Windows.
 
 Exactly the same source files are used on all platforms, without
 changes.
-
-It is planned to add RISC-V platforms, but no dates are set.
 
 ## Toolchains
 
@@ -48,6 +50,7 @@ The following toolchains are used:
 - clang 12, 13 (native)
 - arm-none-eabi-gcc 11 (Cortex-M, AArch32)
 - aarch64-none-elf-gcc 11 (AArch64)
+- risc-none-elf-gcc 11 (RISC-V 32/64)
 
 ## Tests details
 

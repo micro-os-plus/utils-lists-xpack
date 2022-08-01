@@ -4,8 +4,8 @@
 # A source library xPack with the µOS++ intrusive lists utilities
 
 This project provides the **utils-lists** source libraries as an xPack
-dependency and includes the files that implement C++ lists, also used in the
-µOS++ RTOS.
+dependency and includes the files that implement C++ intrusive lists,
+also used in the µOS++ RTOS.
 
 The project is hosted on GitHub as
 [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
