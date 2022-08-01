@@ -18,7 +18,7 @@
 xpack_dependencies = [
   # (architecture) -
   'xpacks/micro-os-plus-architecture-synthetic-posix',
-  
+
   'xpacks/micro-os-plus-diag-trace', # -
   'xpacks/micro-os-plus-micro-test-plus', # -
 

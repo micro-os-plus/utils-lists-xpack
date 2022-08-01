@@ -19,7 +19,7 @@ message(VERBOSE "Including platform-qemu-cortex-a15 globals...")
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-cortexa.
+# Required in devices-qemu-aarch32.
 set(xpack_device_compile_definition "DEVICE_QEMU_CORTEX_A15")
 
 # Global definitions.
@@ -36,7 +36,7 @@ set(xpack_platform_common_args
   # Embedded builds must be warning free.
   -Werror
 
-  # -flto fails with undefined reference to `__assert_func'...
+  # -flto fails with undefined reference to `_write', `_fstat`...
   # $<$<CONFIG:Release>:-flto>
   # $<$<CONFIG:MinSizeRel>:-flto>
 

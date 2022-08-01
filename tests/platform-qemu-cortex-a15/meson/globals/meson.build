@@ -16,7 +16,7 @@
 # add_global_*() functions.
 # Must be added with subdir() before creating any library or executable.
 
-message('Including platform-qemu-aarch32 globals...')
+message('Including platform-qemu-cortex-a15 globals...')
 
 # -----------------------------------------------------------------------------
 
@@ -43,8 +43,6 @@ xpack_platform_common_args += [
   # https://gcc.gnu.org/onlinedocs/gcc-11.3.0/gcc/ARM-Options.html#ARM-Options
   '-mcpu=cortex-a15',
 
-  # '-flto' # fails with undefined __assert_func, _write, etc.
-
   # '-fno-move-loop-invariants',
 
   # Embedded builds must be warning free.
@@ -54,6 +52,11 @@ xpack_platform_common_args += [
 if get_option('buildtype').contains('debug')
   xpack_platform_common_args += [
     '-fno-omit-frame-pointer'
+  ]
+else
+  xpack_platform_common_args += [
+    # -flto fails with undefined reference to `_write', `_fstat`...
+    # '-flto'
   ]
 endif
 

@@ -20,7 +20,7 @@ message('Including platform-qemu-cortex-a72 globals...')
 
 # -----------------------------------------------------------------------------
 
-# Required in devices-qemu-cortexa.
+# Required in devices-qemu-aarch64.
 xpack_device_compile_definition='DEVICE_QEMU_CORTEX_A72'
 
 # -----------------------------------------------------------------------------
@@ -43,8 +43,6 @@ xpack_platform_common_args += [
   '-mcpu=cortex-a72',
   '-mabi=lp64',
 
-  # '-flto' # fails with undefined __assert_func, _write, etc.
-
   # '-fno-move-loop-invariants',
 
   # Embedded builds must be warning free.
@@ -54,6 +52,11 @@ xpack_platform_common_args += [
 if get_option('buildtype').contains('debug')
   xpack_platform_common_args += [
     '-fno-omit-frame-pointer'
+  ]
+else
+  xpack_platform_common_args += [
+    # -flto fails with undefined reference to `_write', `_fstat`...
+    # '-flto'
   ]
 endif
 

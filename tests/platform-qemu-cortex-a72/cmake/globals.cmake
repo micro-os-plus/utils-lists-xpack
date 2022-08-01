@@ -37,7 +37,7 @@ set(xpack_platform_common_args
   # Embedded builds must be warning free.
   -Werror
 
-  # -flto fails with undefined reference to `__assert_func'...
+  # -flto fails with undefined reference to `_write', `_fstat`...
   # $<$<CONFIG:Release>:-flto>
   # $<$<CONFIG:MinSizeRel>:-flto>
 

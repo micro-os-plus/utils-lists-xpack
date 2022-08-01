@@ -27,6 +27,7 @@ The source files to be added to user projects are:
 
 The applications are built for the following memory range:
 
+- FLASH: 0x0000_0000-0x007F_FFFF (8 MB)
 - RAM: 0x2000_0000-0x207F_FFFF (8 MB)
 - HEAP: 0x2100_0000-0x21FF_FFFF (16 MB)
 - stack: 0x2200_0000
@@ -45,7 +46,7 @@ qemu-system-arm --machine mps2-an365 --cpu cortex-m3 --nographic -d unimp,guest_
 For debug sessions start QEMU in GDB server mode by passing both `-s -S`:
 
 ```sh
-qemu-system-aarch64 --machine mps2-an5365 --cpu cortex-m3 --nographic -d unimp,guest_errors -s -S --semihosting-config enable=on,target=native,arg=test
+qemu-system-arm --machine mps2-an5365 --cpu cortex-m3 --nographic -d unimp,guest_errors -s -S --semihosting-config enable=on,target=native,arg=test
 ```
 
 ## Links

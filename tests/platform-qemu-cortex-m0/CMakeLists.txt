@@ -118,6 +118,7 @@ function(add_test_executable name)
     # Use absolute paths, otherwise set -L.
     -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld
     -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-flash.ld
+    # -T${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-cortexm/linker-scripts/sections-ram.ld
   )
 
   target_link_libraries(${name}  PRIVATE
