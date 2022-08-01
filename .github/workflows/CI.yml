@@ -137,3 +137,31 @@ jobs:
         xpm install --config qemu-cortex-a72-meson-debug --quiet
         xpm install --config qemu-cortex-a72-meson-release --quiet
         xpm run test-qemu-cortex-a72-meson
+
+    - name: Run test-qemu-riscv-rv32imac-cmake
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-riscv-rv32imac-cmake-debug --quiet
+        xpm install --config qemu-riscv-rv32imac-cmake-release --quiet
+        xpm run test-qemu-riscv-rv32imac-cmake
+
+    - name: Run test-qemu-riscv-rv32imac-meson
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-riscv-rv32imac-meson-debug --quiet
+        xpm install --config qemu-riscv-rv32imac-meson-release --quiet
+        xpm run test-qemu-riscv-rv32imac-meson
+
+    - name: Run test-qemu-riscv-rv64imafdc-cmake
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-riscv-rv64imafdc-cmake-debug --quiet
+        xpm install --config qemu-riscv-rv64imafdc-cmake-release --quiet
+        xpm run test-qemu-riscv-rv64imafdc-cmake
+
+    - name: Run test-qemu-riscv-rv64imafdc-meson
+      if: runner.os != 'Windows'
+      run: |
+        xpm install --config qemu-riscv-rv64imafdc-meson-debug --quiet
+        xpm install --config qemu-riscv-rv64imafdc-meson-release --quiet
+        xpm run test-qemu-riscv-rv64imafdc-meson
