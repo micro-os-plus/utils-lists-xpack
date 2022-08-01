@@ -24,39 +24,39 @@ set(xpack_platform_compile_definition "PLATFORM_QEMU_CORTEX_A72")
 # -----------------------------------------------------------------------------
 # Define the platform library.
 
-add_library(CORTplatform-qemu-cortex-a72-interfaceEX_A15 INTERFACE EXCLUDE_FROM_ALL)
+add_library(platform-qemu-cortex-a72-interface INTERFACE EXCLUDE_FROM_ALL)
 
 # -----------------------------------------------------------------------------
 
-target_include_directories(CORTplatform-qemu-cortex-a72-interfaceEX_A15 INTERFACE
+target_include_directories(platform-qemu-cortex-a72-interface INTERFACE
   "include-platform"
 )
 
-target_sources(CORTplatform-qemu-cortex-a72-interfaceEX_A15 INTERFACE
+target_sources(platform-qemu-cortex-a72-interface INTERFACE
   # None.
 )
 
-target_compile_definitions(CORTplatform-qemu-cortex-a72-interfaceEX_A15 INTERFACE
+target_compile_definitions(platform-qemu-cortex-a72-interface INTERFACE
   "${xpack_platform_compile_definition}"
 )
 
-target_compile_options(CORTplatform-qemu-cortex-a72-interfaceEX_A15 INTERFACE
+target_compile_options(platform-qemu-cortex-a72-interface INTERFACE
   # None.
 )
 
-target_link_libraries(CORTplatform-qemu-cortex-a72-interfaceEX_A15 INTERFACE
+target_link_libraries(platform-qemu-cortex-a72-interface INTERFACE
   micro-os-plus::devices-qemu-aarch64
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(CORTplatform-qemu-cortex-a72-interfaceEX_A15)
+  xpack_display_target_lists(platform-qemu-cortex-a72-interface)
 endif()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
-add_library(micro-os-plus::platform ALIAS CORTplatform-qemu-cortex-a72-interfaceEX_A15)
-message(VERBOSE "> micro-os-plus::platform -> CORTplatform-qemu-cortex-a72-interfaceEX_A15")
+add_library(micro-os-plus::platform ALIAS platform-qemu-cortex-a72-interface)
+message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortex-a72-interface")
 
 # =============================================================================
 # Define the tests executables.
