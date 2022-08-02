@@ -63,8 +63,8 @@ No need to add a tag here, it'll be added when the release is created.
 
 ### Increase the version
 
-Determine the upstream version (like `3.0.1`) and update the `package.json`
-file; the format is `3.0.1-pre`.
+Determine the upstream version (like `3.0.1`) and eventually update the
+`package.json` file; the format is `3.0.1-pre`.
 
 ### Fix possible open issues
 
