@@ -6,9 +6,12 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues/)
 and close existing issues and pull requests.
 
-## 2022-08-01
+## 2022-08-03
 
 * v3.0.1
+
+## 2022-08-01
+
 * 8037baa #5: define PLATFORM_NATIVE
 * e661703 #4: split config.h into portable and platform
 * e96b927 CI.yml: add RISC-V tests
