@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/utils-lists",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A source library xPack with the µOS++ C++ lists utilities",
   "main": "",
   "scripts": {
@@ -39,7 +39,6 @@
     "@xpack-dev-tools/cmake": "3.21.6-1.1",
     "@xpack-dev-tools/meson-build": "0.60.3-1.1",
     "@xpack-dev-tools/ninja-build": "1.11.0-1.1",
-
     "@micro-os-plus/architecture-aarch32": "^3.1.0",
     "@micro-os-plus/architecture-aarch64": "^3.1.0",
     "@micro-os-plus/architecture-cortexm": "^6.2.0",
