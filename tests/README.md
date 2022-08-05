@@ -34,14 +34,15 @@ The supported test platforms are:
 - `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted RISC-V
   RV32IMAFDC applications on a QEMU `virt` emulated board
 
-The tests are performed on GNU/Linux, macOS and Windows.
+The tests are performed on GNU/Linux (Intel and Arm), macOS (Intel and
+Apple Silicon) and Windows.
 
-Exactly the same source files are used on all platforms, without
-changes.
+The build configurations use exactly the same source files on all platforms,
+without changes.
 
 ## Toolchains
 
-To check source code portability, the builds are repeated with multiple
+To improve source code portability, the builds are repeated with multiple
 toolchains, even with multiple versions of the same toolchain.
 
 The following toolchains are used:

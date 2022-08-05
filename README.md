@@ -366,8 +366,8 @@ The incompatible changes, in reverse chronological order, are:
 
 ## Credits
 
-Many thanks to [distortos](https://distortos.org) where I saw for the first
-time such lists used in a RTOS.
+Many thanks to [distortos](https://distortos.org) where such lists
+were used in a RTOS.
 
 ## License
 
