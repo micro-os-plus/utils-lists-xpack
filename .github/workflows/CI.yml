@@ -84,84 +84,84 @@ jobs:
         xpm run test-native-meson-gcc11
 
     - name: Run test-qemu-cortex-m7f-cmake
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-m7f-cmake-debug --quiet
         xpm install --config qemu-cortex-m7f-cmake-release --quiet
         xpm run test-qemu-cortex-m7f-cmake
 
     - name: Run test-qemu-cortex-m7f-meson
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-m7f-meson-debug --quiet
         xpm install --config qemu-cortex-m7f-meson-release --quiet
         xpm run test-qemu-cortex-m7f-meson
 
     - name: Run test-qemu-cortex-m0-cmake
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-m0-cmake-debug --quiet
         xpm install --config qemu-cortex-m0-cmake-release --quiet
         xpm run test-qemu-cortex-m0-cmake
 
     - name: Run test-qemu-cortex-m0-meson
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-m0-meson-debug --quiet
         xpm install --config qemu-cortex-m0-meson-release --quiet
         xpm run test-qemu-cortex-m0-meson
 
     - name: Run test-qemu-cortex-a15-cmake
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-a15-cmake-debug --quiet
         xpm install --config qemu-cortex-a15-cmake-release --quiet
         xpm run test-qemu-cortex-a15-cmake
 
     - name: Run test-qemu-cortex-a15-meson
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-a15-meson-debug --quiet
         xpm install --config qemu-cortex-a15-meson-release --quiet
         xpm run test-qemu-cortex-a15-meson
 
     - name: Run test-qemu-cortex-a72-cmake
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-a72-cmake-debug --quiet
         xpm install --config qemu-cortex-a72-cmake-release --quiet
         xpm run test-qemu-cortex-a72-cmake
 
     - name: Run test-qemu-cortex-a72-meson
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-cortex-a72-meson-debug --quiet
         xpm install --config qemu-cortex-a72-meson-release --quiet
         xpm run test-qemu-cortex-a72-meson
 
     - name: Run test-qemu-riscv-rv32imac-cmake
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-riscv-rv32imac-cmake-debug --quiet
         xpm install --config qemu-riscv-rv32imac-cmake-release --quiet
         xpm run test-qemu-riscv-rv32imac-cmake
 
     - name: Run test-qemu-riscv-rv32imac-meson
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-riscv-rv32imac-meson-debug --quiet
         xpm install --config qemu-riscv-rv32imac-meson-release --quiet
         xpm run test-qemu-riscv-rv32imac-meson
 
     - name: Run test-qemu-riscv-rv64imafdc-cmake
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-riscv-rv64imafdc-cmake-debug --quiet
         xpm install --config qemu-riscv-rv64imafdc-cmake-release --quiet
         xpm run test-qemu-riscv-rv64imafdc-cmake
 
     - name: Run test-qemu-riscv-rv64imafdc-meson
-      if: runner.os != 'Windows'
+      # if: runner.os != 'Windows'
       run: |
         xpm install --config qemu-riscv-rv64imafdc-meson-debug --quiet
         xpm install --config qemu-riscv-rv64imafdc-meson-release --quiet
