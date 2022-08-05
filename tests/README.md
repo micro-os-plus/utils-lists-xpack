@@ -15,7 +15,7 @@ on all supported platforms; for details see
 
 ## Platforms
 
-The supported platforms are:
+The supported test platforms are:
 
 - `platform-native` - run the test applications as native processes
   on the development machine
@@ -41,8 +41,8 @@ changes.
 
 ## Toolchains
 
-For a better portability, the builds are repeated with multiple toolchains,
-even with multiple versions of the same toolchain.
+To check source code portability, the builds are repeated with multiple
+toolchains, even with multiple versions of the same toolchain.
 
 The following toolchains are used:
 
@@ -56,10 +56,12 @@ The following toolchains are used:
 
 ### sample-test
 
-Show a simple application exercising the
+This is a simple application to demonstrate how to call the
 few primitives available in the library.
 
 ### unit-test
 
-Test if all functions in the library
-work as expected. Use the µTest++ framework.
+This is an exhaustive test trying to validate that all the library
+functions work as expected. It uses the
+[µTest++](https://github.com/micro-os-plus/micro-test-plus-xpack)
+framework.
