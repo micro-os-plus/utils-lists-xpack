@@ -550,7 +550,7 @@ namespace micro_os_plus::utils
    * @tparam T Type of the elements linked into the list,
    * derived from class `double_list_links_base`.
    * @tparam H Type of the list head (one of
-   * `static_double_list_links` or `double_list_links`).
+   * `double_list_links` or `static_double_list_links`).
    *
    * @details
    * This template is used to instantiate classes for the µOS++ internal
