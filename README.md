@@ -151,7 +151,7 @@ iterator begin ();
 iterator end ();
 ```
 
-Individual nodes (derived from `static_double_list_links`) provide
+Individual nodes (derived from `double_list_links`) provide
 the following methods:
 
 ```c++
@@ -164,10 +164,10 @@ void clear (void);
 bool linked (void);
 
 // Accessors and mutators.
-static_double_list_links* next (void);
-static_double_list_links* previous (void);
-void next (static_double_list_links* n);
-void previous (static_double_list_links* n);
+double_list_links* next (void);
+double_list_links* previous (void);
+void next (double_list_links* n);
+void previous (double_list_links* n);
 ```
 
 ### C API
@@ -235,8 +235,14 @@ template <class T, class N, N T::*MP, class B = double_list_links,
           class U = T>
 class intrusive_list;
 
-class static_double_list_links;
-class double_list_links;
+/**
+  * @tparam T Type of the elements linked into the list,
+  * derived from class `double_list_links_base`.
+  * @tparam H Type of the list head (one of
+  * `double_list_links` or `static_double_list_links`).
+ */
+template <class T, class H = double_list_links>
+class double_list;
 ```
 
 #### Dependencies
@@ -323,7 +329,9 @@ static_children_list kids_registry;
 
 ### Known problems
 
-- none
+- for statically allocated lists, the destructor cannot return the
+object to the initial zero state; in case the objects are reused it is
+mandatory to clear the memory (via a `memset()`, for example).
 
 ### Tests
 
@@ -344,10 +352,8 @@ platforms.
 The full set can be run manually with the following commands:
 
 ```sh
-cd ~Work/utils-lists-xpack.git
-
-xpm run install-all
-xpm run test-all
+xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
+xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
 
 ## Change log - incompatible changes

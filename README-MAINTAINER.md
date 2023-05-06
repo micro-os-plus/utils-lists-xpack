@@ -15,22 +15,22 @@ To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
 
 ```sh
-rm -rf ~/Work/utils-lists-xpack.git && \
-mkdir -p ~/Work && \
+rm -rf ~/Work/micro-os-plus/utils-lists-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
 git clone \
   https://github.com/micro-os-plus/utils-lists-xpack.git \
-  ~/Work/utils-lists-xpack.git
+  ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
 
 For development purposes, clone the `xpack-develop` branch:
 
 ```sh
-rm -rf ~/Work/utils-lists-xpack.git && \
-mkdir -p ~/Work && \
+rm -rf ~/Work/micro-os-plus/utils-lists-xpack.git && \
+mkdir -p ~/Work/micro-os-plus && \
 git clone \
   --branch xpack-develop \
   https://github.com/micro-os-plus/utils-lists-xpack.git \
-  ~/Work/utils-lists-xpack.git
+  ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
 
 ## Prerequisites
@@ -96,10 +96,8 @@ related to the new version.
 To run the tests manually on the local machine:
 
 ```sh
-cd ~Work/utils-lists-xpack.git
-
-xpm run install-all
-xpm run test-all
+xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
+xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
 
 ### Publish on the npmjs.com server
@@ -158,4 +156,4 @@ When the release is considered stable, promote it as `latest`:
 
 ## TODO
 
-- Arm toolchains newer than 11.2.1-1.2.2 tail to build; update
+- Arm toolchains newer than 11.2.1-1.2.2 fail to build; update
