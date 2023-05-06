@@ -77,18 +77,17 @@ check_static_double_list_links (void)
 
     // GCC optimizes out the destructor code (dead store elimination);
     // The workaround is to do it manually.
-    p->nullify();
+    p->nullify ();
 
     p->~static_double_list_links ();
     expect (p->uninitialized ()) << "uninitialized";
   });
 }
 
-static micro_os_plus::micro_test_plus::test_suite ts_check_static_double_list_links
-    = {
-        "Static double list links destructor",
-        check_static_double_list_links
-      };
+static micro_os_plus::micro_test_plus::test_suite
+    ts_check_static_double_list_links
+    = { "Static double list links destructor",
+        check_static_double_list_links };
 
 // ----------------------------------------------------------------------------
 
@@ -309,8 +308,8 @@ check_double_list (void)
 static micro_os_plus::micro_test_plus::test_suite ts_static_double_list
     = { "Static double list",
         check_double_list<micro_os_plus::utils::double_list<
-            micro_os_plus::utils::static_double_list_links,
-            micro_os_plus::utils::double_list_links>> };
+            micro_os_plus::utils::double_list_links,
+            micro_os_plus::utils::static_double_list_links>> };
 
 static micro_os_plus::micro_test_plus::test_suite ts_static_double_list2
     = { "Static double list with static elements",
@@ -326,8 +325,8 @@ static micro_os_plus::micro_test_plus::test_suite ts_double_list
 static micro_os_plus::micro_test_plus::test_suite ts_double_list2
     = { "Double list with static elements",
         check_double_list<micro_os_plus::utils::double_list<
-            micro_os_plus::utils::double_list_links,
-            micro_os_plus::utils::static_double_list_links>> };
+            micro_os_plus::utils::static_double_list_links,
+            micro_os_plus::utils::double_list_links>> };
 
 // ----------------------------------------------------------------------------
 

@@ -547,10 +547,10 @@ namespace micro_os_plus::utils
    * @brief Circular double linked list of nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
-   * @tparam HeadT Type of the list head (one of
-   * `static_double_list_links` or `double_list_links`).
-   * @tparam ElementT Type of the elements linked into the list,
+   * @tparam T Type of the elements linked into the list,
    * derived from class `double_list_links_base`.
+   * @tparam H Type of the list head (one of
+   * `static_double_list_links` or `double_list_links`).
    *
    * @details
    * This template is used to instantiate classes for the µOS++ internal
@@ -564,18 +564,14 @@ namespace micro_os_plus::utils
    *
    * The iterators return pointers to elements.
    */
-  template <class HeadT, class ElementT>
+  template <class T, class H = double_list_links>
   class double_list
   {
   public:
-    static_assert (
-      std::is_base_of<double_list_links_base, HeadT>::value == true,
-      "HeadT must be derived from double_list_links_base!"
-    );
-    static_assert (
-      std::is_base_of<double_list_links_base, ElementT>::value == true,
-      "ElementT must be derived from double_list_links_base!"
-    );
+    static_assert (std::is_base_of<double_list_links_base, H>::value == true,
+                   "H must be derived from double_list_links_base!");
+    static_assert (std::is_base_of<double_list_links_base, T>::value == true,
+                   "T must be derived from double_list_links_base!");
 
     /**
      * @name Public Types
@@ -586,12 +582,12 @@ namespace micro_os_plus::utils
      * @brief Type of the list head object where the pointers to the
      * list head and tail are stored.
      */
-    using head_type = HeadT;
+    using head_type = H;
 
     /**
      * @brief Type of value "pointed to" by the iterator.
      */
-    using value_type = ElementT;
+    using value_type = T;
 
     /**
      * @brief Type of pointer to object "pointed to" by the iterator.
@@ -615,8 +611,8 @@ namespace micro_os_plus::utils
 
     /**
      * @brief Type indicating that the head is statically allocated.
-    */
-    using is_statically_allocated = typename HeadT::is_statically_allocated;
+     */
+    using is_statically_allocated = typename H::is_statically_allocated;
 
     /**
      * @}
@@ -948,7 +944,7 @@ namespace micro_os_plus::utils
 
   template <class T, class N, N T::*MP, class H = double_list_links,
             class U = T>
-  class intrusive_list : public double_list<H, N>
+  class intrusive_list : public double_list<N, H>
   {
   public:
     using value_type = U;
