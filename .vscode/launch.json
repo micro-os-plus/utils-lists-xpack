@@ -5,31 +5,31 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "(lldb) native-cmake-debug sample-test",
+      "name": "(lldb) native-cmake-sys-debug sample-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/sample-test",
+      "program": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/sample-test",
       "args": [
         "one",
         "two",
         "--verbose"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
     },
     {
-      "name": "(lldb) native-cmake-debug unit-test",
+      "name": "(lldb) native-cmake-sys-debug unit-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-debug/platform-bin/unit-test",
+      "program": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/unit-test",
       "args": [
         "--verbose"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
