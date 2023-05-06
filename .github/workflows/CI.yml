@@ -70,19 +70,19 @@ jobs:
       run: |
         xpm install --config native-cmake-gcc-debug --quiet
         xpm install --config native-cmake-gcc-release --quiet
-        xpm run test-native-cmake-gcc11
+        xpm run test-native-cmake-gcc
 
     - name: Run test-native-cmake-clang
       run: |
         xpm install --config native-cmake-clang-debug --quiet
         xpm install --config native-cmake-clang-release --quiet
-        xpm run test-native-cmake-clang13
+        xpm run test-native-cmake-clang
 
     - name: Run test-native-meson-gcc
       run: |
         xpm install --config native-meson-gcc-debug --quiet
         xpm install --config native-meson-gcc-release --quiet
-        xpm run test-native-meson-gcc11
+        xpm run test-native-meson-gcc
 
     - name: Run test-qemu-cortex-m7f-cmake
       run: |
