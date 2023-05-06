@@ -38,6 +38,61 @@ namespace micro_os_plus::utils
   // "Member 'previous' was not initialized in constructor"
   // "Member 'next' was not initialized in constructor"
 
+  constexpr double_list_links_base::double_list_links_base ()
+  {
+    // Must be empty! No members must be changed by this constructor!
+  }
+
+  constexpr double_list_links_base::~double_list_links_base ()
+  {
+    // Must be empty! No members must be changed by this constructor!
+  }
+
+  constexpr void
+  double_list_links_base::initialize (void)
+  {
+    previous_ = this;
+    next_ = this;
+  }
+
+#pragma GCC diagnostic push
+
+#if defined(__GNUC__) && !defined(__clang__)
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+#endif
+
+  constexpr double_list_links_base*
+  double_list_links_base::next (void) const
+  {
+    return next_;
+  }
+
+  constexpr double_list_links_base*
+  double_list_links_base::previous (void) const
+  {
+    return previous_;
+  }
+
+#pragma GCC diagnostic pop
+
+  constexpr void
+  double_list_links_base::next (double_list_links_base* node)
+  {
+    next_ = node;
+  }
+
+  constexpr void
+  double_list_links_base::previous (double_list_links_base* node)
+  {
+    previous_ = node;
+  }
+
+  // ==========================================================================
+
+  // Code analysis may trigger:
+  // "Member 'previous' was not initialized in constructor"
+  // "Member 'next' was not initialized in constructor"
+
   constexpr static_double_list_links::static_double_list_links ()
   {
     // Must be empty! No members must be changed by this constructor!
@@ -49,39 +104,16 @@ namespace micro_os_plus::utils
     // This is equivalent to setting the pointers to `nullptr`.
   }
 
+  // GCC optimizes out the content (dead store elimination).
+  // __attribute__((optimize("no-lifetime-dse,no-dse,no-inline"))) did not
+  // help. The workaround is to use `nullify()` explicitly.
   constexpr static_double_list_links::~static_double_list_links ()
   {
-  }
-
-  constexpr void
-  static_double_list_links::clear (void)
-  {
-    previous_ = nullptr;
+    // The goal is to revert the content to a state similar to the
+    // statically initialised state (BSS zero).
+    // Unfortunately GCC does not honour this.
     next_ = nullptr;
-  }
-
-  constexpr static_double_list_links*
-  static_double_list_links::next (void) const
-  {
-    return next_;
-  }
-
-  constexpr static_double_list_links*
-  static_double_list_links::previous (void) const
-  {
-    return previous_;
-  }
-
-  constexpr void
-  static_double_list_links::next (static_double_list_links* n)
-  {
-    next_ = n;
-  }
-
-  constexpr void
-  static_double_list_links::previous (static_double_list_links* n)
-  {
-    previous_ = n;
+    previous_ = nullptr;
   }
 
   // ==========================================================================
@@ -89,7 +121,7 @@ namespace micro_os_plus::utils
   constexpr double_list_links::double_list_links ()
   {
     // This time the members are explicitly initialised.
-    clear ();
+    initialize ();
   }
 
   constexpr double_list_links::~double_list_links ()
@@ -123,7 +155,7 @@ namespace micro_os_plus::utils
 
   template <class T, class N, class U>
   constexpr typename double_list_iterator<T, N, U>::pointer
-  double_list_iterator<T, N, U>::operator-> () const
+  double_list_iterator<T, N, U>::operator->() const
   {
     return get_pointer ();
   }
@@ -237,8 +269,14 @@ namespace micro_os_plus::utils
   bool
   double_list<HeadT, ElementT>::uninitialized (void) const
   {
-    // If it points to nowhere, it is not yet initialised.
-    return (head_.previous () == nullptr || head_.next () == nullptr);
+    if constexpr (is_statically_allocated::value)
+      {
+        return head_.uninitialized ();
+      }
+    else
+      {
+        return false;
+      }
   }
 
   template <class HeadT, class ElementT>
@@ -248,7 +286,7 @@ namespace micro_os_plus::utils
     // If it points to itself, it is empty.
     if constexpr (is_statically_allocated::value)
       {
-        return (head_.next () == &head_) || uninitialized ();
+        return (head_.next () == &head_) || head_.uninitialized ();
       }
     else
       {
@@ -267,8 +305,7 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
-    head_.next (&head_);
-    head_.previous (&head_);
+    head_.initialize();
   }
 
   template <class HeadT, class ElementT>
@@ -291,10 +328,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (uninitialized ())
+        if (head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            clear ();
+            head_.initialize();
           }
       }
 
@@ -308,10 +345,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (uninitialized ())
+        if (head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            clear ();
+            head_.initialize();
           }
       }
 
@@ -325,10 +362,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (uninitialized ())
+        if (head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            clear ();
+            head_.initialize();
           }
       }
 
@@ -339,7 +376,7 @@ namespace micro_os_plus::utils
   typename double_list<HeadT, ElementT>::iterator
   double_list<HeadT, ElementT>::end () const
   {
-    return iterator{ static_cast<iterator_pointer> (
+    return iterator{ reinterpret_cast<iterator_pointer> (
         const_cast<HeadT*> (&head_)) };
   }
 
@@ -369,7 +406,7 @@ namespace micro_os_plus::utils
 
   template <class T, class N, N T::*MP, class U>
   inline typename intrusive_list_iterator<T, N, MP, U>::pointer
-  intrusive_list_iterator<T, N, MP, U>::operator-> () const
+  intrusive_list_iterator<T, N, MP, U>::operator->() const
   {
     return get_pointer ();
   }
@@ -481,10 +518,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<H, N>::uninitialized ())
+        if (double_list<H, N>::head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<H, N>::clear ();
+            double_list<H, N>::head_.initialize ();
           }
       }
 
@@ -505,10 +542,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<H, N>::uninitialized ())
+        if (double_list<H, N>::head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<H, N>::clear ();
+            double_list<H, N>::head_.initialize ();
           }
       }
 
@@ -537,10 +574,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<H, N>::uninitialized ())
+        if (double_list<H, N>::head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<H, N>::clear ();
+            double_list<H, N>::head_.initialize ();
           }
       }
 
@@ -557,15 +594,15 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (double_list<H, N>::uninitialized ())
+        if (double_list<H, N>::head_.uninitialized ())
           {
             // If this is the first time, initialise the list to empty.
-            double_list<H, N>::clear ();
+            double_list<H, N>::head_.initialize ();
           }
       }
 
     using head_type_ = typename double_list<H, N>::head_type;
-    return iterator{ static_cast<iterator_pointer> (
+    return iterator{ reinterpret_cast<iterator_pointer> (
         const_cast<head_type_*> (double_list<H, N>::head_pointer ())) };
   }
 

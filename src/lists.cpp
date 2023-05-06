@@ -34,37 +34,8 @@ namespace micro_os_plus::utils
 {
   // ==========================================================================
 
-  /**
-   * @class static_double_list_links
-   * @details
-   * This is the simplest list node, used as base class for other
-   * list nodes and as storage for static_double_list,
-   * that must be available for any statically constructed
-   * objects while still avoiding the 'static initialisation order fiasco'.
-   *
-   * The idea is to design the object in such a way as to benefit
-   * from the standard BSS initialisation, in other words take `nullptr`
-   * as starting values.
-   */
-
-  /**
-   * @details
-   * To be fully linked, both pointers must be non null.
-   */
-  bool
-  static_double_list_links::linked (void)
-  {
-    if (next_ != nullptr && previous_ != nullptr)
-      {
-        return true;
-      }
-    assert (next_ == nullptr);
-    assert (previous_ == nullptr);
-    return false;
-  }
-
   void
-  static_double_list_links::link_next (static_double_list_links* node)
+  double_list_links_base::link_next (double_list_links_base* node)
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p after %p\n", __func__, node, this);
@@ -81,7 +52,7 @@ namespace micro_os_plus::utils
   }
 
   void
-  static_double_list_links::link_previous (static_double_list_links* node)
+  double_list_links_base::link_previous (double_list_links_base* node)
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p before %p\n", __func__, node, this);
@@ -101,34 +72,106 @@ namespace micro_os_plus::utils
    * @details
    * Update the neighbours to
    * point to each other, skipping the node.
-   *
-   * For more robustness, to prevent unexpected accesses,
-   * the links in the removed node are nullified.
    */
   void
-  static_double_list_links::unlink (void)
+  double_list_links_base::unlink (void)
   {
-    // Check if not already unlinked.
-    if (!linked ())
-      {
-        assert (next_ == nullptr);
-        assert (previous_ == nullptr);
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
-        trace::printf ("%s() %p nop\n", __func__, this);
-#endif
-        return;
-      }
-
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() %p \n", __func__, this);
 #endif
 
     // Make neighbours point to each other.
+    // This works even if the node is already unlinked.
     previous_->next_ = next_;
     next_->previous_ = previous_;
 
-    // Nullify both pointers in the unlinked node.
-    clear ();
+    // Make both pointers point to this node.
+    initialize ();
+  }
+
+  /**
+   * @details
+   * To be fully linked, both pointers must point to different nodes
+   * than itself.
+   */
+  bool
+  double_list_links_base::linked (void)
+  {
+    if (next_ != this)
+      {
+        assert (previous_ != this);
+        return true;
+      }
+    else
+      {
+        assert (previous_ == this);
+        return false;
+      }
+  }
+
+  // ==========================================================================
+
+  /**
+   * @class static_double_list_links
+   * @details
+   * This is the simplest list node, used as base class for other
+   * list nodes and as storage for static_double_list,
+   * that must be available for any statically constructed
+   * objects while still avoiding the 'static initialisation order fiasco'.
+   *
+   * The idea is to design the object in such a way as to benefit
+   * from the standard BSS initialisation, in other words take `nullptr`
+   * as starting values.
+   */
+
+  /**
+   * @details
+   * The pointers must be either both non null or both not null.
+   */
+  bool
+  static_double_list_links::uninitialized (void) const
+  {
+#pragma GCC diagnostic push
+
+#if defined(__GNUC__) && !defined(__clang__)
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+#endif
+    if (next_ == nullptr)
+      {
+        assert (previous_ == nullptr);
+        return true;
+      }
+    else
+      {
+        assert (previous_ != nullptr);
+        return false;
+      }
+#pragma GCC diagnostic pop
+  }
+
+  /**
+   * @details
+   * To be fully linked, both pointers must be non null and point to
+   * somewhere else.
+   */
+  bool
+  static_double_list_links::linked (void)
+  {
+    if (uninitialized ())
+      {
+        return false;
+      }
+    else
+      {
+        return double_list_links_base::linked ();
+      }
+  }
+
+  __attribute__ ((noinline)) void
+  static_double_list_links::nullify ()
+  {
+    next_ = nullptr;
+    previous_ = nullptr;
   }
 
   // ==========================================================================
