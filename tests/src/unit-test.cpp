@@ -25,6 +25,8 @@
 #include <string_view>
 #include <stdio.h>
 
+// #include <iostream>
+
 // ----------------------------------------------------------------------------
 
 using namespace micro_os_plus;
@@ -78,6 +80,8 @@ check_static_double_list_links (void)
     // GCC optimizes out the destructor code (dead store elimination);
     // The workaround is to do it manually.
     p->nullify ();
+    // std::cout << p->next();
+    // std::cout << p->previous();
 
     p->~static_double_list_links ();
     expect (p->uninitialized ()) << "uninitialized";
