@@ -66,22 +66,22 @@ jobs:
     - name: Satisfy project dependencies
       run: xpm install --quiet
 
-    - name: Run test-native-cmake-gcc11
+    - name: Run test-native-cmake-gcc
       run: |
-        xpm install --config native-cmake-gcc11-debug --quiet
-        xpm install --config native-cmake-gcc11-release --quiet
+        xpm install --config native-cmake-gcc-debug --quiet
+        xpm install --config native-cmake-gcc-release --quiet
         xpm run test-native-cmake-gcc11
 
-    - name: Run test-native-cmake-clang13
+    - name: Run test-native-cmake-clang
       run: |
-        xpm install --config native-cmake-clang13-debug --quiet
-        xpm install --config native-cmake-clang13-release --quiet
+        xpm install --config native-cmake-clang-debug --quiet
+        xpm install --config native-cmake-clang-release --quiet
         xpm run test-native-cmake-clang13
 
-    - name: Run test-native-meson-gcc11
+    - name: Run test-native-meson-gcc
       run: |
-        xpm install --config native-meson-gcc11-debug --quiet
-        xpm install --config native-meson-gcc11-release --quiet
+        xpm install --config native-meson-gcc-debug --quiet
+        xpm install --config native-meson-gcc-release --quiet
         xpm run test-native-meson-gcc11
 
     - name: Run test-qemu-cortex-m7f-cmake
