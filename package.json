@@ -42,9 +42,9 @@
       "https://github.com/micro-os-plus/"
     ],
     "devDependencies": {
-      "@xpack-dev-tools/cmake": "3.21.6-1.1",
-      "@xpack-dev-tools/meson-build": "0.60.3-1.1",
-      "@xpack-dev-tools/ninja-build": "1.11.0-1.1",
+      "@xpack-dev-tools/cmake": "3.23.5-1.1",
+      "@xpack-dev-tools/meson-build": "0.63.3-1.1",
+      "@xpack-dev-tools/ninja-build": "1.11.1-2.1",
       "@micro-os-plus/architecture-aarch32": "^3.1.0",
       "@micro-os-plus/architecture-aarch64": "^3.1.0",
       "@micro-os-plus/architecture-cortexm": "^6.2.0",
@@ -406,34 +406,93 @@
           "prepare": "{{ properties.commandMesonPrepareCross }}"
         }
       },
+      "gcc-latest-dependencies": {
+        "hidden": true,
+        "inherit": [
+          "gcc12-dependencies"
+        ]
+      },
+      "gcc11-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/gcc": "11.3.0-1.1"
+        }
+      },
+      "gcc12-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/gcc": "12.2.0-2.1"
+        }
+      },
+      "clang-latest-dependencies": {
+        "hidden": true,
+        "inherit": [
+          "clang15-dependencies"
+        ]
+      },
+      "clang12-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "12.0.1-2.2"
+        }
+      },
+      "clang13-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "13.0.1-1.1"
+        }
+      },
+      "clang14-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "14.0.6-2.1"
+        }
+      },
+      "clang15-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "15.0.7-2.1"
+        }
+      },
       "arm-none-eabi-gcc-dependencies": {
         "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "11.2.1-1.2.2"
         }
       },
       "aarch64-none-elf-gcc-dependencies": {
         "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/aarch64-none-elf-gcc": "11.2.1-1.2.2"
         }
       },
       "riscv-none-elf-gcc-dependencies": {
         "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
-          "@xpack-dev-tools/riscv-none-elf-gcc": "12.1.0-2.1"
+          "@xpack-dev-tools/riscv-none-elf-gcc": "12.2.0-3.1"
         }
       },
       "qemu-arm-dependencies": {
         "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/qemu-arm",
         "devDependencies": {
-          "@xpack-dev-tools/qemu-arm": "7.0.0-1.1"
+          "@xpack-dev-tools/qemu-arm": "7.2.0-1.1"
         }
       },
       "qemu-riscv-dependencies": {
         "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/qemu-riscv",
         "devDependencies": {
-          "@xpack-dev-tools/qemu-riscv": "7.0.0-1.1"
+          "@xpack-dev-tools/qemu-riscv": "7.2.0-1.1"
         }
       },
       "native-cmake-sys-debug": {
@@ -458,15 +517,13 @@
       },
       "native-cmake-gcc11-debug": {
         "inherit": [
-          "cmake-actions"
+          "cmake-actions",
+          "gcc11-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
           "platformName": "native",
           "toolchainFileName": "gcc.cmake"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.3.0-1.1"
         }
       },
       "native-cmake-gcc11-release": {
@@ -477,17 +534,53 @@
           "buildType": "Release"
         }
       },
-      "native-cmake-clang12-debug": {
+      "native-cmake-gcc12-debug": {
         "inherit": [
+          "gcc12-dependencies",
+          "cmake-actions"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "native",
+          "toolchainFileName": "gcc.cmake"
+        }
+      },
+      "native-cmake-gcc12-release": {
+        "inherit": [
+          "native-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "Release"
+        }
+      },
+      "native-cmake-clang-debug": {
+        "inherit": [
+          "clang-latest-dependencies",
           "cmake-actions"
         ],
         "properties": {
           "buildType": "Debug",
           "platformName": "native",
           "toolchainFileName": "clang.cmake"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
+        }
+      },
+      "native-cmake-clang-release": {
+        "inherit": [
+          "native-cmake-clang-debug"
+        ],
+        "properties": {
+          "buildType": "Release"
+        }
+      },
+      "native-cmake-clang12-debug": {
+        "inherit": [
+          "clang12-dependencies",
+          "cmake-actions"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "native",
+          "toolchainFileName": "clang.cmake"
         }
       },
       "native-cmake-clang12-release": {
@@ -500,15 +593,13 @@
       },
       "native-cmake-clang13-debug": {
         "inherit": [
+          "clang13-dependencies",
           "cmake-actions"
         ],
         "properties": {
           "buildType": "Debug",
           "platformName": "native",
           "toolchainFileName": "clang.cmake"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/clang": "13.0.1-1.1"
         }
       },
       "native-cmake-clang13-release": {
@@ -541,15 +632,13 @@
       },
       "native-meson-gcc11-debug": {
         "inherit": [
+          "gcc11-dependencies",
           "meson-native-actions"
         ],
         "properties": {
           "buildType": "debug",
           "platformName": "native",
           "toolchainFileName": "gcc-{{ os.platform }}.ini"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/gcc": "11.3.0-1.1"
         }
       },
       "native-meson-gcc11-release": {
@@ -562,15 +651,13 @@
       },
       "native-meson-clang12-debug": {
         "inherit": [
+          "clang12-dependencies",
           "meson-native-actions"
         ],
         "properties": {
           "buildType": "debug",
           "platformName": "native",
           "toolchainFileName": "clang-{{ os.platform }}.ini"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
         }
       },
       "native-meson-clang12-release": {
@@ -583,15 +670,13 @@
       },
       "native-meson-clang13-debug": {
         "inherit": [
+          "clang13-dependencies",
           "meson-native-actions"
         ],
         "properties": {
           "buildType": "debug",
           "platformName": "native",
           "toolchainFileName": "clang-{{ os.platform }}.ini"
-        },
-        "devDependencies": {
-          "@xpack-dev-tools/clang": "13.0.1-1.1"
         }
       },
       "native-meson-clang13-release": {
