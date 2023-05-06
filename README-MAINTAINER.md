@@ -156,4 +156,8 @@ When the release is considered stable, promote it as `latest`:
 
 ## TODO
 
-- Arm toolchains newer than 11.2.1-1.2.2 fail to build; update
+Fix the following issues:
+
+- Arm toolchains newer than 11.2.1-1.2.2 fail to build
+- the binaries created by clang 15 on Raspberry fail to start,
+they complain about missing c++ libraries
