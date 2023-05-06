@@ -55,21 +55,62 @@ main (int argc, char* argv[])
 
 // ----------------------------------------------------------------------------
 
+static micro_os_plus::utils::static_double_list_links static_links;
+
+void
+check_static_double_list_links (void);
+
+void
+check_static_double_list_links (void)
+{
+  micro_os_plus::micro_test_plus::test_case ("Static", [] {
+    using namespace micro_os_plus::micro_test_plus;
+    using namespace micro_os_plus::micro_test_plus::operators;
+    using namespace micro_os_plus::micro_test_plus::literals;
+    using namespace micro_os_plus::utils;
+
+    static_double_list_links* p = new (&static_links) static_double_list_links;
+    expect (p->uninitialized ()) << "uninitialized";
+    static_links.initialize ();
+    expect (!p->uninitialized ()) << "initialized";
+    expect (!p->linked ()) << "unlinked";
+
+    // GCC optimizes out the destructor code (dead store elimination);
+    // The workaround is to do it manually.
+    p->nullify();
+
+    p->~static_double_list_links ();
+    expect (p->uninitialized ()) << "uninitialized";
+  });
+}
+
+static micro_os_plus::micro_test_plus::test_suite ts_check_static_double_list_links
+    = {
+        "Static double list links destructor",
+        check_static_double_list_links
+      };
+
+// ----------------------------------------------------------------------------
+
 template <class T>
 void
 check_double_list_links (void)
 {
   using namespace micro_os_plus::micro_test_plus;
 
-  static T links;
   static T left_links;
+  static T links;
   static T right_links;
 
   test_case ("Initial", [&] {
-    // Check if the node is cleared.
-    expect (eq (links.previous (), nullptr)) << "prev is null";
-    expect (eq (links.next (), nullptr)) << "next is null";
     expect (!links.linked ()) << "unlinked";
+
+    if constexpr (T::is_statically_allocated::value)
+      {
+        // Check if the node is cleared.
+        expect (eq (links.previous (), nullptr)) << "prev is null";
+        expect (eq (links.next (), nullptr)) << "next is null";
+      }
 
     expect (!left_links.linked ()) << "left unlinked";
     expect (!right_links.linked ()) << "right unlinked";
@@ -105,8 +146,6 @@ check_double_list_links (void)
     {
       test_case ("Allocated on stack", [] {
         T stack_links;
-        expect (eq (stack_links.previous (), nullptr)) << "prev is null";
-        expect (eq (stack_links.next (), nullptr)) << "next is null";
         expect (!stack_links.linked ()) << "unlinked";
       });
     }
