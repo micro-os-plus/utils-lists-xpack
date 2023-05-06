@@ -169,7 +169,10 @@ namespace micro_os_plus::utils
 
   // Prevent LTO to optimize out the code.
   // https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html
-  __attribute__ ((noinline,noipa)) void
+#if defined(__GNUC__) && !defined(__clang__)
+  __attribute__ ((noinline, noipa))
+#endif
+  void
   static_double_list_links::nullify ()
   {
     next_ = nullptr;
