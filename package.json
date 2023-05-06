@@ -163,6 +163,14 @@
         "xpm run build --config native-cmake-sys-release",
         "xpm run test --config native-cmake-sys-release"
       ],
+      "test-native-cmake-gcc": [
+        "xpm run prepare --config native-cmake-gcc-debug",
+        "xpm run build --config native-cmake-gcc-debug",
+        "xpm run test --config native-cmake-gcc-debug",
+        "xpm run prepare --config native-cmake-gcc-release",
+        "xpm run build --config native-cmake-gcc-release",
+        "xpm run test --config native-cmake-gcc-release"
+      ],
       "test-native-cmake-gcc11": [
         "xpm run prepare --config native-cmake-gcc11-debug",
         "xpm run build --config native-cmake-gcc11-debug",
@@ -178,6 +186,14 @@
         "xpm run prepare --config native-cmake-gcc12-release",
         "xpm run build --config native-cmake-gcc12-release",
         "xpm run test --config native-cmake-gcc12-release"
+      ],
+      "test-native-cmake-clang": [
+        "xpm run prepare --config native-cmake-clang-debug",
+        "xpm run build --config native-cmake-clang-debug",
+        "xpm run test --config native-cmake-clang-debug",
+        "xpm run prepare --config native-cmake-clang-release",
+        "xpm run build --config native-cmake-clang-release",
+        "xpm run test --config native-cmake-clang-release"
       ],
       "test-native-cmake-clang12": [
         "xpm run prepare --config native-cmake-clang12-debug",
@@ -219,6 +235,14 @@
         "xpm run build --config native-meson-sys-release",
         "xpm run test --config native-meson-sys-release"
       ],
+      "test-native-meson-gcc": [
+        "xpm run prepare --config native-meson-gcc-debug",
+        "xpm run build --config native-meson-gcc-debug",
+        "xpm run test --config native-meson-gcc-debug",
+        "xpm run prepare --config native-meson-gcc-release",
+        "xpm run build --config native-meson-gcc-release",
+        "xpm run test --config native-meson-gcc-release"
+      ],
       "test-native-meson-gcc11": [
         "xpm run prepare --config native-meson-gcc11-debug",
         "xpm run build --config native-meson-gcc11-debug",
@@ -234,6 +258,14 @@
         "xpm run prepare --config native-meson-gcc12-release",
         "xpm run build --config native-meson-gcc12-release",
         "xpm run test --config native-meson-gcc12-release"
+      ],
+      "test-native-meson-clang": [
+        "xpm run prepare --config native-meson-clang-debug",
+        "xpm run build --config native-meson-clang-debug",
+        "xpm run test --config native-meson-clang-debug",
+        "xpm run prepare --config native-meson-clang-release",
+        "xpm run build --config native-meson-clang-release",
+        "xpm run test --config native-meson-clang-release"
       ],
       "test-native-meson-clang12": [
         "xpm run prepare --config native-meson-clang12-debug",
@@ -581,6 +613,25 @@
           "buildType": "Release"
         }
       },
+      "native-cmake-gcc-debug": {
+        "inherit": [
+          "cmake-actions",
+          "gcc-latest-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "native",
+          "toolchainFileName": "gcc.cmake"
+        }
+      },
+      "native-cmake-gcc-release": {
+        "inherit": [
+          "native-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "Release"
+        }
+      },
       "native-cmake-gcc11-debug": {
         "inherit": [
           "cmake-actions",
@@ -734,6 +785,25 @@
           "buildType": "release"
         }
       },
+      "native-meson-gcc-debug": {
+        "inherit": [
+          "gcc-latest-dependencies",
+          "meson-native-actions"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "native",
+          "toolchainFileName": "gcc-{{ os.platform }}.ini"
+        }
+      },
+      "native-meson-gcc-release": {
+        "inherit": [
+          "native-meson-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "release"
+        }
+      },
       "native-meson-gcc11-debug": {
         "inherit": [
           "gcc11-dependencies",
@@ -767,6 +837,25 @@
       "native-meson-gcc12-release": {
         "inherit": [
           "native-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "release"
+        }
+      },
+      "native-meson-clang-debug": {
+        "inherit": [
+          "clang-latest-dependencies",
+          "meson-native-actions"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "native",
+          "toolchainFileName": "clang-{{ os.platform }}.ini"
+        }
+      },
+      "native-meson-clang-release": {
+        "inherit": [
+          "native-meson-clang-debug"
         ],
         "properties": {
           "buildType": "release"
