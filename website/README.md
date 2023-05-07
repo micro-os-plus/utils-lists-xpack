@@ -34,7 +34,6 @@ Examples:
 ## TODO
 
 - move common content to the helper and add code to copy it here
-- remove the absolute part of paths
 
 ## Legacy config
 
@@ -46,3 +45,4 @@ HTML_COLORSTYLE_GAMMA = 50
 LAYOUT_FILE = DoxygenLayout.xml
 HTML_HEADER = header.html
 HTML_EXTRA_STYLESHEET = custom.css
+INPUT_FILTER = "perl -p -e 's/__attribute__\s*[(]\s*[(].*?[)]\s*[)]//g'"
