@@ -19,7 +19,7 @@ This page is addressed to developers who plan to include this source
 library into their own projects.
 
 For maintainer info, please see the
-[README-MAINTAINER](README-MAINTAINER.md) file.
+[README-MAINTAINER](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/README-MAINTAINER.md) file.
 
 ## Install
 
