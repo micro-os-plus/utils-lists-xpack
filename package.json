@@ -83,6 +83,7 @@
     },
     "actions": {
       "install-all": [
+        "npm install --quiet",
         "xpm install --all-configs --quiet"
       ],
       "link-deps-all": [
