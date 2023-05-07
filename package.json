@@ -31,9 +31,10 @@
   },
   "license": "MIT",
   "config": {},
-  "dependencies": {},
   "bundleDependencies": [],
-  "devDependencies": {},
+  "devDependencies": {
+    "del-cli": "^5.0.0"
+  },
   "xpack": {
     "minimumXpmRequired": "0.14.0",
     "dependencies": {},
@@ -459,7 +460,7 @@
         "xpm run clean --config qemu-cortex-a15-meson-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-a15-meson-release --ignore-errors"
       ],
-      "deep-clean": "rm -rf build node_modules xpacks",
+      "deep-clean": "del-cli build node_modules xpacks website/html",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
     },
     "$devDependenciesUrl": "https://github.com/xpack-dev-tools/",
