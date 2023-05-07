@@ -22,6 +22,16 @@ The input folders are:
 - `website/pages`
 - `README.md` <- the home page
 
+## GitHub Pages
+
+The web site is published by the `publish-github-pages.yml` GitHub Actions workflow:
+
+- <https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml>
+
+The project GitHub Pages address is:
+
+- <https://micro-os-plus.github.io/utils-lists-xpack/>
+
 ## Theme
 
 Add the <https://jothepro.github.io/doxygen-awesome-css/> theme
