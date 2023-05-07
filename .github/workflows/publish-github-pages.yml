@@ -1,6 +1,11 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: GitHub Pages
 
+# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml
+# https://micro-os-plus.github.io/utils-lists-xpack/
+
+# TODO: remove xpack-develop
+
 on:
   # Runs on pushes, if all conditions are met:
   push:
