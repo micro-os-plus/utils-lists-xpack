@@ -397,6 +397,11 @@
         "xpm run build --config qemu-riscv-rv64imafdc-meson-release",
         "xpm run test --config qemu-riscv-rv64imafdc-meson-release"
       ],
+      "doxygen": [
+        "del-cli website/html",
+        "doxygen website/config.doxyfile"
+      ],
+      "safari": "open -a Safari website/html/index.html",
       "clean-all": [
         "xpm run clean-native",
         "xpm run clean-cortex"
