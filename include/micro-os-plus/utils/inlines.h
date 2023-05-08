@@ -512,6 +512,9 @@ namespace micro_os_plus::utils
     return double_list<N, H>::empty ();
   }
 
+  /**
+   * @note The list head is initialised on first use.
+   */
   template <class T, class N, N T::*MP, class H, class U>
   void
   intrusive_list<T, N, MP, H, U>::link_tail (U& node)
@@ -536,6 +539,9 @@ namespace micro_os_plus::utils
             reinterpret_cast<difference_type> (&node) + offset));
   }
 
+  /**
+   * @note The list head is initialised on first use.
+   */
   template <class T, class N, N T::*MP, class H, class U>
   void
   intrusive_list<T, N, MP, H, U>::link_head (U& node)

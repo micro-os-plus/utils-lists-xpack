@@ -81,11 +81,13 @@ namespace micro_os_plus::utils
 #endif
 
     // Make neighbours point to each other.
-    // This works even if the node is already unlinked.
+    // This works even if the node is already unlinked,
+    // so no need for an extra test.
     previous_->next_ = next_;
     next_->previous_ = previous_;
 
-    // Make both pointers point to this node.
+    // Reset the unlinked node to the initial state,
+    // with both pointers pointing to itself.
     initialize ();
   }
 

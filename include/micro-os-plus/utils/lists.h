@@ -405,7 +405,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
-   * @brief Template for a double linked list iterator.
+   * @brief Template for a double linked list forward iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
    * @tparam T Type of object returned by the iterator.
@@ -544,7 +544,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
-   * @brief Circular double linked list of nodes.
+   * @brief A double linked list of nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
    * @tparam T Type of the elements linked into the list,
@@ -553,16 +553,18 @@ namespace micro_os_plus::utils
    * `double_list_links` or `static_double_list_links`).
    *
    * @details
-   * This template is used to instantiate classes for the µOS++ internal
-   * lists.
+   * A double linked list is a pair of head/tail pointers,
+   * allowing to iterate over the nodes. Currently only forward
+   * iterators are provided, but there is no problem to add reverse
+   * iterators, if needed.
    *
-   * It stores the head of a circular double linked list.
+   * The list elements (of type T) should be derived from the
+   * `double_list_links_base` class, (usually from `double_list_links`)
+   * extended with the payload, that may be either the actual content
+   * or a pointer to the content.
    *
-   * The list elements should be derived from the base class,
-   * extended with the payload, either the actual content or a pointer
-   * to the content.
-   *
-   * The iterators return pointers to elements.
+   * The iterators return pointers to the list elements, i.e. to the
+   * beginning of the objects of type T.
    */
   template <class T, class H = double_list_links>
   class double_list
@@ -755,8 +757,13 @@ namespace micro_os_plus::utils
 
     /**
      * @brief A list node used to point to head and tail.
+     *
      * @details
-     * To simplify processing, the list always has a node.
+     * The node next pointer points to the list head, and the
+     * previous pointer points to the list tail.
+     *
+     * To simplify processing, the list always has these pointers,
+     * with an empty list node pointing to itself.
      */
     head_type head_;
 
@@ -917,7 +924,7 @@ namespace micro_os_plus::utils
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
    * @tparam T Type of object that includes the intrusive node.
-   * @tparam N Type of intrusive with the next & previous links.
+   * @tparam N Type of intrusive node with the next & previous links.
    * @tparam MP Name of the intrusive node member in object T.
    * @tparam H Type of the node storing the head links.
    * @tparam U Type stored in the list, derived from T.
@@ -930,7 +937,7 @@ namespace micro_os_plus::utils
    * @endcode
    *
    * @details
-   * A pair of next/prev pointers,
+   * A pair of head/tail pointers,
    * maintaining a list of intrusive nodes.
    *
    * Intrusive nodes do not need separate allocations
