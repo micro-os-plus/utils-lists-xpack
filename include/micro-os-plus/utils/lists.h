@@ -435,12 +435,12 @@ namespace micro_os_plus::utils
     /**
      * @brief Type of pointer to object "pointed to" by the iterator.
      */
-    using pointer = U*;
+    using pointer = value_type*;
 
     /**
      * @brief Type of reference to object "pointed to" by the iterator.
      */
-    using reference = U&;
+    using reference = value_type&;
 
     /**
      * @brief Type of reference to the iterator internal pointer.
@@ -799,12 +799,12 @@ namespace micro_os_plus::utils
     /**
      * @brief Type of pointer to object "pointed to" by the iterator.
      */
-    using pointer = U*;
+    using pointer = value_type*;
 
     /**
      * @brief Type of reference to object "pointed to" by the iterator.
      */
-    using reference = U&;
+    using reference = value_type&;
 
     /**
      * @brief Type of reference to the iterator internal pointer.
@@ -948,8 +948,9 @@ namespace micro_os_plus::utils
   {
   public:
     using value_type = U;
-    using pointer = U*;
-    using reference = U&;
+    using pointer = value_type*;
+    using reference = value_type&;
+
     using difference_type = ptrdiff_t;
 
     using iterator = intrusive_list_iterator<T, N, MP, U>;
