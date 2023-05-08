@@ -33,7 +33,8 @@
   "config": {},
   "bundleDependencies": [],
   "devDependencies": {
-    "del-cli": "^5.0.0"
+    "del-cli": "^5.0.0",
+    "open-cli": "^7.2.0"
   },
   "xpack": {
     "minimumXpmRequired": "0.14.0",
@@ -402,7 +403,7 @@
         "del-cli website/html",
         "doxygen website/config.doxyfile"
       ],
-      "safari": "open -a Safari website/html/index.html",
+      "browser": "open-cli website/html/index.html",
       "clean-all": [
         "xpm run clean-native",
         "xpm run clean-cortex"
