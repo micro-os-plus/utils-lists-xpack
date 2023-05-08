@@ -102,7 +102,8 @@
         "xpm link @micro-os-plus/micro-test-plus --quiet",
         "xpm link @micro-os-plus/semihosting --quiet",
         "xpm link @micro-os-plus/startup --quiet",
-        "xpm link @xpack-3rd-party/arm-cmsis-core --quiet"
+        "xpm link @xpack-3rd-party/arm-cmsis-core --quiet",
+        "xpm link @xpack-3rd-party/doxygen-awesome-css --quiet"
       ],
       "test-all": [
         "xpm run test-native",
