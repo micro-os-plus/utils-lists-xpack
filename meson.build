@@ -35,6 +35,12 @@ micro_os_plus_utils_lists_dependency = declare_dependency(
   sources: files(
     'src/lists.cpp',
   ),
+  compile_args: [
+    # None.
+  ],
+  dependencies: [
+    # None.
+  ]
 )
 
 message('+ -I include')

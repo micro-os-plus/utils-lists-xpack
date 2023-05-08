@@ -85,13 +85,13 @@ foreach xn : xpack_platform_common_args + xpack_platform_common_c_args + xpack_p
 endforeach
 
 add_global_link_arguments(
-  xpack_platform_common_args + xpack_platform_common_c_args,
+  xpack_platform_common_args + xpack_platform_common_c_args + '-Wl,--no-warn-rwx-segment',
 
   language: [ 'c' ]
 )
 
 add_global_link_arguments(
-  xpack_platform_common_args + xpack_platform_common_cpp_args,
+  xpack_platform_common_args + xpack_platform_common_cpp_args + '-Wl,--no-warn-rwx-segment',
 
   language: [ 'cpp' ]
 )
