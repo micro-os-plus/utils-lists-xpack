@@ -86,10 +86,10 @@ namespace micro_os_plus::utils
   class double_list_links_base
   {
   public:
-    /**
-     * @name Constructors & Destructor
-     * @{
-     */
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     /**
      * @brief Construct an uninitialised list node
@@ -120,14 +120,14 @@ namespace micro_os_plus::utils
      */
     constexpr ~double_list_links_base ();
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Public Member Functions
-     * @{
-     */
+    // /**
+    //  * @name Public Member Functions
+    //  * @{
+    //  */
 
     /**
      * @brief Check if the links are initialised (statically allocated are
@@ -203,15 +203,15 @@ namespace micro_os_plus::utils
     constexpr double_list_links_base*
     previous (void) const;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
   protected:
-    /**
-     * @name Private Member Variables
-     * @{
-     */
+    // /**
+    //  * @name Private Member Variables
+    //  * @{
+    //  */
 
     /**
      * @brief Pointer to the previous node.
@@ -223,9 +223,9 @@ namespace micro_os_plus::utils
      */
     double_list_links_base* next_;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   };
 
   // ==========================================================================
@@ -247,10 +247,10 @@ namespace micro_os_plus::utils
   public:
     using is_statically_allocated = std::false_type;
 
-    /**
-     * @name Constructors & Destructor
-     * @{
-     */
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     /**
      * @brief Construct a list node (initialises the pointers).
@@ -280,9 +280,9 @@ namespace micro_os_plus::utils
      */
     constexpr ~double_list_links ();
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   };
 
   // ==========================================================================
@@ -325,10 +325,10 @@ namespace micro_os_plus::utils
   public:
     using is_statically_allocated = std::true_type;
 
-    /**
-     * @name Constructors & Destructor
-     * @{
-     */
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     /**
      * @brief Construct a list node (BSS initialised).
@@ -358,14 +358,14 @@ namespace micro_os_plus::utils
      */
     constexpr ~static_double_list_links ();
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Public Member Functions
-     * @{
-     */
+    // /**
+    //  * @name Public Member Functions
+    //  * @{
+    //  */
 
     /**
      * @brief Reset the two pointers to null.
@@ -377,9 +377,9 @@ namespace micro_os_plus::utils
     void
     nullify (void);
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   };
 
   // ==========================================================================
@@ -402,10 +402,10 @@ namespace micro_os_plus::utils
   class double_list_iterator
   {
   public:
-    /**
-     * @name Public Types
-     * @{
-     */
+    // /**
+    //  * @name Public Types
+    //  * @{
+    //  */
 
     /**
      * @brief Type of value "pointed to" by the iterator.
@@ -437,15 +437,15 @@ namespace micro_os_plus::utils
      */
     using iterator_category = std::forward_iterator_tag;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
     // ------------------------------------------------------------------------
-    /**
-     * @name Constructors & Destructor
-     * @{
-     */
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     constexpr double_list_iterator ();
 
@@ -453,14 +453,14 @@ namespace micro_os_plus::utils
 
     constexpr explicit double_list_iterator (reference element);
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Operators
-     * @{
-     */
+    // /**
+    //  * @name Operators
+    //  * @{
+    //  */
 
     constexpr pointer
     operator->() const;
@@ -486,14 +486,14 @@ namespace micro_os_plus::utils
     constexpr bool
     operator!= (const double_list_iterator& other) const;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Public Member Functions
-     * @{
-     */
+    // /**
+    //  * @name Public Member Functions
+    //  * @{
+    //  */
 
     constexpr pointer
     get_pointer () const;
@@ -501,24 +501,24 @@ namespace micro_os_plus::utils
     constexpr iterator_pointer
     get_iterator_pointer () const;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
   protected:
-    /**
-     * @name Private Member Variables
-     * @{
-     */
+    // /**
+    //  * @name Private Member Variables
+    //  * @{
+    //  */
 
     /**
      * @brief Pointer to intrusive node.
      */
     iterator_pointer node_;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   };
 
   // ==========================================================================
@@ -558,10 +558,10 @@ namespace micro_os_plus::utils
     static_assert (std::is_base_of<double_list_links_base, T>::value == true,
                    "T must be derived from double_list_links_base!");
 
-    /**
-     * @name Public Types
-     * @{
-     */
+    // /**
+    //  * @name Public Types
+    //  * @{
+    //  */
 
     /**
      * @brief Type of the list head object where the pointers to the
@@ -599,14 +599,14 @@ namespace micro_os_plus::utils
      */
     using is_statically_allocated = typename head_type::is_statically_allocated;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Constructors & Destructor
-     * @{
-     */
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     /**
      * @brief Construct a list.
@@ -636,15 +636,15 @@ namespace micro_os_plus::utils
      */
     constexpr ~double_list ();
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
   public:
-    /**
-     * @name Public Member Functions
-     * @{
-     */
+    // /**
+    //  * @name Public Member Functions
+    //  * @{
+    //  */
 
     /**
      * @brief Check if the list is initialised (statically allocated are not).
@@ -736,10 +736,10 @@ namespace micro_os_plus::utils
     // ------------------------------------------------------------------------
 
   protected:
-    /**
-     * @name Private Member Variables
-     * @{
-     */
+    // /**
+    //  * @name Private Member Variables
+    //  * @{
+    //  */
 
     /**
      * @brief A list node used to point to head and tail.
@@ -753,9 +753,9 @@ namespace micro_os_plus::utils
      */
     head_type head_;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   };
 
   // ==========================================================================
@@ -779,10 +779,10 @@ namespace micro_os_plus::utils
   class intrusive_list_iterator
   {
   public:
-    /**
-     * @name Public Types
-     * @{
-     */
+    // /**
+    //  * @name Public Types
+    //  * @{
+    //  */
 
     /**
      * @brief Type of value "pointed to" by the iterator.
@@ -814,15 +814,15 @@ namespace micro_os_plus::utils
      */
     using iterator_category = std::forward_iterator_tag;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
     // ------------------------------------------------------------------------
-    /**
-     * @name Constructors & Destructor
-     * @{
-     */
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     constexpr intrusive_list_iterator ();
 
@@ -830,14 +830,14 @@ namespace micro_os_plus::utils
 
     constexpr explicit intrusive_list_iterator (reference element);
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Operators
-     * @{
-     */
+    // /**
+    //  * @name Operators
+    //  * @{
+    //  */
 
     pointer
     operator->() const;
@@ -863,14 +863,14 @@ namespace micro_os_plus::utils
     bool
     operator!= (const intrusive_list_iterator& other) const;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
-    /**
-     * @name Public Member Functions
-     * @{
-     */
+    // /**
+    //  * @name Public Member Functions
+    //  * @{
+    //  */
 
     /**
      * @brief Get the object node from the intrusive node.
@@ -882,24 +882,24 @@ namespace micro_os_plus::utils
     iterator_pointer
     get_iterator_pointer () const;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
   protected:
-    /**
-     * @name Private Member Variables
-     * @{
-     */
+    // /**
+    //  * @name Private Member Variables
+    //  * @{
+    //  */
 
     /**
      * @brief Pointer to intrusive node.
      */
     iterator_pointer node_;
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   };
 
   // ==========================================================================
@@ -945,6 +945,10 @@ namespace micro_os_plus::utils
     static_assert (std::is_base_of<double_list_links_base, N>::value == true,
                    "N must be derived from double_list_links_base!");
 
+    // /**
+    //  * @name Public Types
+    //  * @{
+    //  */
     using head_type = H;
     using value_type = U;
     using pointer = value_type*;
@@ -968,6 +972,14 @@ namespace micro_os_plus::utils
      * @name Constructors & Destructor
      * @{
      */
+    // /**
+    //  * @}
+    //  */
+
+    // /**
+    //  * @name Constructors & Destructor
+    //  * @{
+    //  */
 
     /**
      * @brief Construct an intrusive list.
@@ -997,11 +1009,16 @@ namespace micro_os_plus::utils
      */
     constexpr ~intrusive_list ();
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
 
   public:
+    // /**
+    //  * @name Public Member Functions
+    //  * @{
+    //  */
+
     /**
      * @name Public Member Functions
      * @{
@@ -1063,9 +1080,9 @@ namespace micro_os_plus::utils
 
     // ------------------------------------------------------------------------
 
-    /**
-     * @}
-     */
+    // /**
+    //  * @}
+    //  */
   protected:
     /**
      * @brief Get the address of the node.
