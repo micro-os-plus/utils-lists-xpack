@@ -260,7 +260,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        return head_.uninitialized ();
+        return links_.uninitialized ();
       }
     else
       {
@@ -274,7 +274,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        head_.initialize_once ();
+        links_.initialize_once ();
       }
   }
 
@@ -283,7 +283,7 @@ namespace micro_os_plus::utils
   double_list<T, H>::empty (void) const
   {
     // If the head is not linked, the list is empty.
-    return !head_.linked ();
+    return !links_.linked ();
   }
 
   /**
@@ -297,21 +297,21 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
-    head_.initialize ();
+    links_.initialize ();
   }
 
   template <class T, class H>
   constexpr typename double_list<T, H>::pointer
   double_list<T, H>::head (void) const
   {
-    return reinterpret_cast<pointer> (head_.next ());
+    return reinterpret_cast<pointer> (links_.next ());
   }
 
   template <class T, class H>
   constexpr typename double_list<T, H>::pointer
   double_list<T, H>::tail (void) const
   {
-    return reinterpret_cast<pointer> (head_.previous ());
+    return reinterpret_cast<pointer> (links_.previous ());
   }
 
   template <class T, class H>
@@ -320,7 +320,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        assert (!head_.uninitialized ());
+        assert (!links_.uninitialized ());
       }
 
     // Add new node at the end of the list.
@@ -333,7 +333,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        assert (!head_.uninitialized ());
+        assert (!links_.uninitialized ());
       }
 
     // Add new node at the head of the list.
@@ -346,10 +346,10 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        assert (!head_.uninitialized ());
+        assert (!links_.uninitialized ());
       }
 
-    return iterator{ static_cast<iterator_pointer> (head_.next ()) };
+    return iterator{ static_cast<iterator_pointer> (links_.next ()) };
   }
 
   template <class T, class H>
@@ -360,7 +360,7 @@ namespace micro_os_plus::utils
     // already tested in `begin()`.
 
     return iterator{ reinterpret_cast<iterator_pointer> (
-        const_cast<H*> (&head_)) };
+        const_cast<H*> (&links_)) };
   }
 
   // ==========================================================================
@@ -506,7 +506,7 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, H, U>::link_tail (U& node)
   {
-    // The assert(head_.initialised()) is checked by the H class.
+    // The assert(links_.initialised()) is checked by the H class.
 
     // Compute the distance between the member intrusive link
     // node and the class begin.
@@ -523,7 +523,7 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, H, U>::link_head (U& node)
   {
-    // The assert(head_.initialised()) is checked by the H class.
+    // The assert(links_.initialised()) is checked by the H class.
 
     // Compute the distance between the member intrusive link
     // node and the class begin.
@@ -545,10 +545,10 @@ namespace micro_os_plus::utils
   inline typename intrusive_list<T, N, MP, H, U>::iterator
   intrusive_list<T, N, MP, H, U>::begin () const
   {
-    // The assert(head_.initialised()) is checked by the H class.
+    // The assert(links_.initialised()) is checked by the H class.
 
     return iterator{ static_cast<iterator_pointer> (
-        double_list<N, H>::head_.next ()) };
+        double_list<N, H>::links_.next ()) };
   }
 
   template <class T, class N, N T::*MP, class H, class U>
@@ -560,7 +560,7 @@ namespace micro_os_plus::utils
 
     using head_type_ = typename double_list<N, H>::head_type;
     return iterator{ reinterpret_cast<iterator_pointer> (
-        const_cast<head_type_*> (double_list<N, H>::head_pointer ())) };
+        const_cast<head_type_*> (double_list<N, H>::links_pointer ())) };
   }
 
 #if defined(__GNUC__)
@@ -593,7 +593,7 @@ namespace micro_os_plus::utils
 
     // The first element in the list.
     iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<N, H>::head_.next ());
+        = static_cast<iterator_pointer> (double_list<N, H>::links_.next ());
     it->unlink ();
 
     return get_pointer (it);
@@ -607,7 +607,7 @@ namespace micro_os_plus::utils
 
     // The last element in the list.
     iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<N, H>::head_.previous ());
+        = static_cast<iterator_pointer> (double_list<N, H>::links_.previous ());
     it->unlink ();
 
     return get_pointer (it);

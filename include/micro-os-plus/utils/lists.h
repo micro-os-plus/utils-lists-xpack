@@ -746,9 +746,9 @@ namespace micro_os_plus::utils
      * @return A pointer to the list head object.
      */
     constexpr const head_type*
-    head_pointer () const
+    links_pointer () const
     {
-      return &head_;
+      return &links_;
     }
 
     // ------------------------------------------------------------------------
@@ -769,7 +769,7 @@ namespace micro_os_plus::utils
      * To simplify processing, the list always has these pointers,
      * with an empty list node pointing to itself.
      */
-    head_type head_;
+    head_type links_;
 
     // /**
     //  * @}
