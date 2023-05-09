@@ -940,6 +940,11 @@ namespace micro_os_plus::utils
   class intrusive_list : public double_list<N, H>
   {
   public:
+    static_assert (std::is_base_of<double_list_links_base, H>::value == true,
+                   "H must be derived from double_list_links_base!");
+    static_assert (std::is_base_of<double_list_links_base, N>::value == true,
+                   "N must be derived from double_list_links_base!");
+
     using value_type = U;
     using pointer = value_type*;
     using reference = value_type&;
