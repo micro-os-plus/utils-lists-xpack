@@ -112,8 +112,8 @@ namespace micro_os_plus::utils
     // The goal is to revert the content to a state similar to the
     // statically initialised state (BSS zero).
     // Unfortunately GCC does not honour this.
-    next_ = nullptr;
-    previous_ = nullptr;
+    // next_ = nullptr;
+    // previous_ = nullptr;
   }
 
   // ==========================================================================
