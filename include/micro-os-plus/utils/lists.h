@@ -574,7 +574,7 @@ namespace micro_os_plus::utils
      * @brief Type of the list head object where the pointers to the
      * list head and tail are stored.
      */
-    using head_type = H;
+    using links_type = H;
 
     /**
      * @brief Type of value "pointed to" by the iterator.
@@ -604,7 +604,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Type indicating that the head is statically allocated.
      */
-    using is_statically_allocated = typename head_type::is_statically_allocated;
+    using is_statically_allocated = typename links_type::is_statically_allocated;
 
     // /**
     //  * @}
@@ -745,7 +745,7 @@ namespace micro_os_plus::utils
      * @brief Get the address of the head.
      * @return A pointer to the list head object.
      */
-    constexpr const head_type*
+    constexpr const links_type*
     links_pointer () const
     {
       return &links_;
@@ -769,7 +769,7 @@ namespace micro_os_plus::utils
      * To simplify processing, the list always has these pointers,
      * with an empty list node pointing to itself.
      */
-    head_type links_;
+    links_type links_;
 
     // /**
     //  * @}
@@ -972,7 +972,7 @@ namespace micro_os_plus::utils
      * @brief Type of the list head object where the pointers to the
      * list head and tail are stored.
      */
-    using head_type = H;
+    using links_type = H;
 
     /**
      * @brief Type of value "pointed to" by the iterator.
@@ -997,7 +997,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Type of reference to the iterator internal pointer.
      */
-    using is_statically_allocated = typename head_type::is_statically_allocated;
+    using is_statically_allocated = typename links_type::is_statically_allocated;
 
     /**
      * @brief Type of reference to the iterator internal pointer.
