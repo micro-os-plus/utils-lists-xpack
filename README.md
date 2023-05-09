@@ -228,20 +228,20 @@ There are several preprocessor definitions used to configure the build.
 * @tparam T Type of object that includes the intrusive node.
 * @tparam N Type of intrusive node with the next & previous links.
 * @tparam MP Name of the intrusive node member in object T.
-* @tparam B Type of the head links.
+* @tparam L Type of the links node.
 * @tparam U Type stored in the list, derived from T.
 */
-template <class T, class N, N T::*MP, class B = double_list_links,
+template <class T, class N, N T::*MP, class L = double_list_links,
           class U = T>
 class intrusive_list;
 
 /**
   * @tparam T Type of the elements linked into the list,
   * derived from class `double_list_links_base`.
-  * @tparam H Type of the list head (one of
+  * @tparam L Type of the links node (one of
   * `double_list_links` or `static_double_list_links`).
  */
-template <class T, class H = double_list_links>
+template <class T, class L = double_list_links>
 class double_list;
 ```
 
@@ -321,9 +321,9 @@ using static_children_list = utils::intrusive_list<
         child, // type of nodes in the list
         utils::double_list_links, // type of registry_links_
         &child::registry_links_, // name of member
-        static_double_list_links>; // type of head node
+        static_double_list_links>; // type of the links node
 
-// The head is statically allocated.
+// The list head is statically allocated.
 static_children_list kids_registry;
 ```
 

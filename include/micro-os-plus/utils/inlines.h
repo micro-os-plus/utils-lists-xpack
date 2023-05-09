@@ -219,8 +219,8 @@ namespace micro_os_plus::utils
    * @details
    * The initial list status is empty.
    */
-  template <class T, class H>
-  double_list<T, H>::double_list ()
+  template <class T, class L>
+  double_list<T, L>::double_list ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT)
     trace::printf ("%s() @%p \n", __func__, this);
@@ -229,7 +229,7 @@ namespace micro_os_plus::utils
     if constexpr (is_statically_allocated::value)
       {
         // By all means, do not add any code to clear the pointers, since
-        // the head was statically initialised.
+        // the links node was statically initialised.
       }
     else
       {
@@ -243,8 +243,8 @@ namespace micro_os_plus::utils
    * However, for statically auto-registered lists, this
    * complicates things artificially.
    */
-  template <class T, class H>
-  constexpr double_list<T, H>::~double_list ()
+  template <class T, class L>
+  constexpr double_list<T, L>::~double_list ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT)
     trace::printf ("%s() @%p \n", __func__, this);
@@ -254,9 +254,9 @@ namespace micro_os_plus::utils
     // assert (empty ());
   }
 
-  template <class T, class H>
+  template <class T, class L>
   bool
-  double_list<T, H>::uninitialized (void) const
+  double_list<T, L>::uninitialized (void) const
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -268,9 +268,9 @@ namespace micro_os_plus::utils
       }
   }
 
-  template <class T, class H>
+  template <class T, class L>
   void
-  double_list<T, H>::initialize_once (void)
+  double_list<T, L>::initialize_once (void)
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -278,11 +278,11 @@ namespace micro_os_plus::utils
       }
   }
 
-  template <class T, class H>
+  template <class T, class L>
   bool
-  double_list<T, H>::empty (void) const
+  double_list<T, L>::empty (void) const
   {
-    // If the head is not linked, the list is empty.
+    // If the links node is not linked, the list is empty.
     return !links_.linked ();
   }
 
@@ -290,9 +290,9 @@ namespace micro_os_plus::utils
    * @details
    * Initialise the mandatory node with links to itself.
    */
-  template <class T, class H>
+  template <class T, class L>
   void
-  double_list<T, H>::clear (void)
+  double_list<T, L>::clear (void)
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
@@ -300,23 +300,23 @@ namespace micro_os_plus::utils
     links_.initialize ();
   }
 
-  template <class T, class H>
-  constexpr typename double_list<T, H>::pointer
-  double_list<T, H>::head (void) const
+  template <class T, class L>
+  constexpr typename double_list<T, L>::pointer
+  double_list<T, L>::head (void) const
   {
     return reinterpret_cast<pointer> (links_.next ());
   }
 
-  template <class T, class H>
-  constexpr typename double_list<T, H>::pointer
-  double_list<T, H>::tail (void) const
+  template <class T, class L>
+  constexpr typename double_list<T, L>::pointer
+  double_list<T, L>::tail (void) const
   {
     return reinterpret_cast<pointer> (links_.previous ());
   }
 
-  template <class T, class H>
+  template <class T, class L>
   void
-  double_list<T, H>::link_tail (reference node)
+  double_list<T, L>::link_tail (reference node)
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -327,22 +327,22 @@ namespace micro_os_plus::utils
     tail ()->link_next (&node);
   }
 
-  template <class T, class H>
+  template <class T, class L>
   void
-  double_list<T, H>::link_head (reference node)
+  double_list<T, L>::link_head (reference node)
   {
     if constexpr (is_statically_allocated::value)
       {
         assert (!links_.uninitialized ());
       }
 
-    // Add new node at the head of the list.
+    // Add the new node at the head of the list.
     head ()->link_previous (&node);
   }
 
-  template <class T, class H>
-  typename double_list<T, H>::iterator
-  double_list<T, H>::begin () const
+  template <class T, class L>
+  typename double_list<T, L>::iterator
+  double_list<T, L>::begin () const
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -352,15 +352,15 @@ namespace micro_os_plus::utils
     return iterator{ static_cast<iterator_pointer> (links_.next ()) };
   }
 
-  template <class T, class H>
-  typename double_list<T, H>::iterator
-  double_list<T, H>::end () const
+  template <class T, class L>
+  typename double_list<T, L>::iterator
+  double_list<T, L>::end () const
   {
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
 
     return iterator{ reinterpret_cast<iterator_pointer> (
-        const_cast<H*> (&links_)) };
+        const_cast<links_type*> (&links_)) };
   }
 
   // ==========================================================================
@@ -478,35 +478,35 @@ namespace micro_os_plus::utils
 
   // ==========================================================================
 
-  template <class T, class N, N T::*MP, class H, class U>
-  constexpr intrusive_list<T, N, MP, H, U>::intrusive_list ()
+  template <class T, class N, N T::*MP, class L, class U>
+  constexpr intrusive_list<T, N, MP, L, U>::intrusive_list ()
   {
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
-  constexpr intrusive_list<T, N, MP, H, U>::~intrusive_list ()
+  template <class T, class N, N T::*MP, class L, class U>
+  constexpr intrusive_list<T, N, MP, L, U>::~intrusive_list ()
   {
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
+  template <class T, class N, N T::*MP, class L, class U>
   void
-  intrusive_list<T, N, MP, H, U>::initialize_once (void)
+  intrusive_list<T, N, MP, L, U>::initialize_once (void)
   {
-    return double_list<N, H>::initialize_once ();
+    return double_list<N, L>::initialize_once ();
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
+  template <class T, class N, N T::*MP, class L, class U>
   constexpr bool
-  intrusive_list<T, N, MP, H, U>::empty (void) const
+  intrusive_list<T, N, MP, L, U>::empty (void) const
   {
-    return double_list<N, H>::empty ();
+    return double_list<N, L>::empty ();
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
+  template <class T, class N, N T::*MP, class L, class U>
   void
-  intrusive_list<T, N, MP, H, U>::link_tail (U& node)
+  intrusive_list<T, N, MP, L, U>::link_tail (U& node)
   {
-    // The assert(links_.initialised()) is checked by the H class.
+    // The assert(links_.initialised()) is checked by the L class.
 
     // Compute the distance between the member intrusive link
     // node and the class begin.
@@ -514,16 +514,16 @@ namespace micro_os_plus::utils
         &(static_cast<T*> (nullptr)->*MP));
 
     // Add thread intrusive node at the end of the list.
-    (const_cast<N*> (double_list<N, H>::tail ()))
+    (const_cast<N*> (double_list<N, L>::tail ()))
         ->link_next (reinterpret_cast<N*> (
             reinterpret_cast<difference_type> (&node) + offset));
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
+  template <class T, class N, N T::*MP, class L, class U>
   void
-  intrusive_list<T, N, MP, H, U>::link_head (U& node)
+  intrusive_list<T, N, MP, L, U>::link_head (U& node)
   {
-    // The assert(links_.initialised()) is checked by the H class.
+    // The assert(links_.initialised()) is checked by the L class.
 
     // Compute the distance between the member intrusive link
     // node and the class begin.
@@ -531,7 +531,7 @@ namespace micro_os_plus::utils
         &(static_cast<T*> (nullptr)->*MP));
 
     // Add thread intrusive node at the end of the list.
-    (const_cast<N*> (double_list<N, H>::head ()))
+    (const_cast<N*> (double_list<N, L>::head ()))
         ->link_previous (reinterpret_cast<N*> (
             reinterpret_cast<difference_type> (&node) + offset));
   }
@@ -541,35 +541,35 @@ namespace micro_os_plus::utils
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #endif
 
-  template <class T, class N, N T::*MP, class H, class U>
-  inline typename intrusive_list<T, N, MP, H, U>::iterator
-  intrusive_list<T, N, MP, H, U>::begin () const
+  template <class T, class N, N T::*MP, class L, class U>
+  inline typename intrusive_list<T, N, MP, L, U>::iterator
+  intrusive_list<T, N, MP, L, U>::begin () const
   {
-    // The assert(links_.initialised()) is checked by the H class.
+    // The assert(links_.initialised()) is checked by the L class.
 
     return iterator{ static_cast<iterator_pointer> (
-        double_list<N, H>::links_.next ()) };
+        double_list<N, L>::links_.next ()) };
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
-  inline typename intrusive_list<T, N, MP, H, U>::iterator
-  intrusive_list<T, N, MP, H, U>::end () const
+  template <class T, class N, N T::*MP, class L, class U>
+  inline typename intrusive_list<T, N, MP, L, U>::iterator
+  intrusive_list<T, N, MP, L, U>::end () const
   {
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
 
-    using head_type_ = typename double_list<N, H>::links_type;
+    using head_type_ = typename double_list<N, L>::links_type;
     return iterator{ reinterpret_cast<iterator_pointer> (
-        const_cast<head_type_*> (double_list<N, H>::links_pointer ())) };
+        const_cast<head_type_*> (double_list<N, L>::links_pointer ())) };
   }
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif
 
-  template <class T, class N, N T::*MP, class H, class U>
-  inline typename intrusive_list<T, N, MP, H, U>::pointer
-  intrusive_list<T, N, MP, H, U>::get_pointer (iterator_pointer node) const
+  template <class T, class N, N T::*MP, class L, class U>
+  inline typename intrusive_list<T, N, MP, L, U>::pointer
+  intrusive_list<T, N, MP, L, U>::get_pointer (iterator_pointer node) const
   {
     // static_assert(std::is_convertible<U, T>::value == true, "U must be
     // implicitly convertible to T!");
@@ -585,29 +585,29 @@ namespace micro_os_plus::utils
                                       - offset);
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
-  typename intrusive_list<T, N, MP, H, U>::pointer
-  intrusive_list<T, N, MP, H, U>::unlink_head (void)
+  template <class T, class N, N T::*MP, class L, class U>
+  typename intrusive_list<T, N, MP, L, U>::pointer
+  intrusive_list<T, N, MP, L, U>::unlink_head (void)
   {
     // No assert here, treat empty link unlinks as nop.
 
     // The first element in the list.
     iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<N, H>::links_.next ());
+        = static_cast<iterator_pointer> (double_list<N, L>::links_.next ());
     it->unlink ();
 
     return get_pointer (it);
   }
 
-  template <class T, class N, N T::*MP, class H, class U>
-  typename intrusive_list<T, N, MP, H, U>::pointer
-  intrusive_list<T, N, MP, H, U>::unlink_tail (void)
+  template <class T, class N, N T::*MP, class L, class U>
+  typename intrusive_list<T, N, MP, L, U>::pointer
+  intrusive_list<T, N, MP, L, U>::unlink_tail (void)
   {
     // No assert here, treat empty link unlinks as nop.
 
     // The last element in the list.
-    iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<N, H>::links_.previous ());
+    iterator_pointer it = static_cast<iterator_pointer> (
+        double_list<N, L>::links_.previous ());
     it->unlink ();
 
     return get_pointer (it);

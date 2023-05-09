@@ -130,12 +130,12 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Check if the links are initialised (statically allocated are
-     * not).
+     * @brief Check if the links are initialised (statically
+     * allocated nodes start as null).
      * @par Parameters
      *  None.
-     * @retval true The links were not initialised.
-     * @retval false The links were initialised.
+     * @retval true The links are not initialised.
+     * @retval false The links are initialised.
      */
     bool
     uninitialized (void) const;
@@ -536,7 +536,7 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils
    * @tparam T Type of the elements linked into the list,
    * derived from class `double_list_links_base`.
-   * @tparam H Type of the list head (one of
+   * @tparam L Type of the links node (one of
    * `double_list_links` or `static_double_list_links`).
    *
    * @details
@@ -554,14 +554,14 @@ namespace micro_os_plus::utils
    * beginning of the objects of type T.
    *
    * @note The class does not use inheritance, but composition for
-   * the head, to avoid inheriting unwanted methods from it.
+   * the links node, to avoid inheriting unwanted methods from it.
    */
-  template <class T, class H = double_list_links>
+  template <class T, class L = double_list_links>
   class double_list
   {
   public:
-    static_assert (std::is_base_of<double_list_links_base, H>::value == true,
-                   "H must be derived from double_list_links_base!");
+    static_assert (std::is_base_of<double_list_links_base, L>::value == true,
+                   "L must be derived from double_list_links_base!");
     static_assert (std::is_base_of<double_list_links_base, T>::value == true,
                    "T must be derived from double_list_links_base!");
 
@@ -571,10 +571,10 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Type of the list head object where the pointers to the
+     * @brief Type of the links node object where the pointers to the
      * list head and tail are stored.
      */
-    using links_type = H;
+    using links_type = L;
 
     /**
      * @brief Type of value "pointed to" by the iterator.
@@ -602,9 +602,10 @@ namespace micro_os_plus::utils
     using iterator_pointer = value_type*;
 
     /**
-     * @brief Type indicating that the head is statically allocated.
+     * @brief Type indicating that the links node is statically allocated.
      */
-    using is_statically_allocated = typename links_type::is_statically_allocated;
+    using is_statically_allocated =
+        typename links_type::is_statically_allocated;
 
     // /**
     //  * @}
@@ -742,7 +743,7 @@ namespace micro_os_plus::utils
     // Required in derived class iterator end(), where direct
     // access to member fails.
     /**
-     * @brief Get the address of the head.
+     * @brief Get the address of the links node.
      * @return A pointer to the list head object.
      */
     constexpr const links_type*
@@ -930,7 +931,8 @@ namespace micro_os_plus::utils
    * @tparam T Type of object that includes the intrusive node.
    * @tparam N Type of intrusive node with the next & previous links.
    * @tparam MP Name of the intrusive node member in object T.
-   * @tparam H Type of the node storing the head links.
+   * @tparam L Type of the links node (one of
+   * `double_list_links` or `static_double_list_links`).
    * @tparam U Type stored in the list, derived from T.
    *
    * @par Examples
@@ -950,16 +952,16 @@ namespace micro_os_plus::utils
    * does is to compute the address of the object by subtracting
    * the offset from the address of the member storing the pointers.
    *
-   * For statically allocated lists, set H=static_double_list_links.
+   * For statically allocated lists, set L=static_double_list_links.
    */
 
-  template <class T, class N, N T::*MP, class H = double_list_links,
+  template <class T, class N, N T::*MP, class L = double_list_links,
             class U = T>
-  class intrusive_list : public double_list<N, H>
+  class intrusive_list : public double_list<N, L>
   {
   public:
-    static_assert (std::is_base_of<double_list_links_base, H>::value == true,
-                   "H must be derived from double_list_links_base!");
+    static_assert (std::is_base_of<double_list_links_base, L>::value == true,
+                   "L must be derived from double_list_links_base!");
     static_assert (std::is_base_of<double_list_links_base, N>::value == true,
                    "N must be derived from double_list_links_base!");
 
@@ -969,10 +971,10 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Type of the list head object where the pointers to the
+     * @brief Type of the list links node object where the pointers to the
      * list head and tail are stored.
      */
-    using links_type = H;
+    using links_type = L;
 
     /**
      * @brief Type of value "pointed to" by the iterator.
@@ -997,7 +999,8 @@ namespace micro_os_plus::utils
     /**
      * @brief Type of reference to the iterator internal pointer.
      */
-    using is_statically_allocated = typename links_type::is_statically_allocated;
+    using is_statically_allocated =
+        typename links_type::is_statically_allocated;
 
     /**
      * @brief Type of reference to the iterator internal pointer.
