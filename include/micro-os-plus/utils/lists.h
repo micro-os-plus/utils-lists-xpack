@@ -597,7 +597,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Type indicating that the head is statically allocated.
      */
-    using is_statically_allocated = typename H::is_statically_allocated;
+    using is_statically_allocated = typename head_type::is_statically_allocated;
 
     /**
      * @}
@@ -945,6 +945,7 @@ namespace micro_os_plus::utils
     static_assert (std::is_base_of<double_list_links_base, N>::value == true,
                    "N must be derived from double_list_links_base!");
 
+    using head_type = H;
     using value_type = U;
     using pointer = value_type*;
     using reference = value_type&;
@@ -953,7 +954,7 @@ namespace micro_os_plus::utils
 
     using iterator = intrusive_list_iterator<T, N, MP, U>;
 
-    using is_statically_allocated = typename H::is_statically_allocated;
+    using is_statically_allocated = typename head_type::is_statically_allocated;
 
     /**
      * @brief Type of reference to the iterator internal pointer.
