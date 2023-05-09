@@ -342,7 +342,7 @@ namespace micro_os_plus::utils
 
   template <class T, class H>
   typename double_list<T, H>::iterator
-  double_list<T, H>::begin ()
+  double_list<T, H>::begin () const
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -552,7 +552,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::*MP, class H, class U>
   inline typename intrusive_list<T, N, MP, H, U>::iterator
-  intrusive_list<T, N, MP, H, U>::begin ()
+  intrusive_list<T, N, MP, H, U>::begin () const
   {
     // The assert(head_.initialised()) is checked by the H class.
 
@@ -565,7 +565,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::*MP, class H, class U>
   inline typename intrusive_list<T, N, MP, H, U>::iterator
-  intrusive_list<T, N, MP, H, U>::end ()
+  intrusive_list<T, N, MP, H, U>::end () const
   {
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.

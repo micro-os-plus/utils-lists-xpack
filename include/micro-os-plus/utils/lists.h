@@ -716,7 +716,7 @@ namespace micro_os_plus::utils
      * @return An iterator positioned at the first element.
      */
     iterator
-    begin ();
+    begin () const;
 
     /**
      * @brief Iterator end.
@@ -1046,16 +1046,14 @@ namespace micro_os_plus::utils
      * @return An iterator positioned at the first element.
      */
     iterator
-    begin ();
+    begin () const;
 
     /**
      * @brief Iterator begin.
      * @return An iterator positioned after the last element.
-     *
-     * It cannot be const for static cases, since it must call clear().
      */
     iterator
-    end ();
+    end () const;
 
     // ------------------------------------------------------------------------
 
