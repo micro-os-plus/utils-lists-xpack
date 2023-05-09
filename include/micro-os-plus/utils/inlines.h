@@ -75,18 +75,6 @@ namespace micro_os_plus::utils
 
 #pragma GCC diagnostic pop
 
-  constexpr void
-  double_list_links_base::next (double_list_links_base* node)
-  {
-    next_ = node;
-  }
-
-  constexpr void
-  double_list_links_base::previous (double_list_links_base* node)
-  {
-    previous_ = node;
-  }
-
   // ==========================================================================
 
   // Code analysis may trigger:
@@ -120,7 +108,8 @@ namespace micro_os_plus::utils
 
   constexpr double_list_links::double_list_links ()
   {
-    // This time the members are explicitly initialised.
+    // For regular (non static) classes the members
+    // must be explicitly initialised.
     initialize ();
   }
 
@@ -280,18 +269,21 @@ namespace micro_os_plus::utils
   }
 
   template <class T, class H>
+  void
+  double_list<T, H>::initialize_once (void)
+  {
+    if constexpr (is_statically_allocated::value)
+      {
+        head_.initialize_once ();
+      }
+  }
+
+  template <class T, class H>
   bool
   double_list<T, H>::empty (void) const
   {
-    // If it points to itself, it is empty.
-    if constexpr (is_statically_allocated::value)
-      {
-        return (head_.next () == &head_) || head_.uninitialized ();
-      }
-    else
-      {
-        return (head_.next () == &head_);
-      }
+    // If the head is not linked, the list is empty.
+    return !head_.linked ();
   }
 
   /**
@@ -328,11 +320,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            head_.initialize ();
-          }
+        assert (!head_.uninitialized ());
       }
 
     // Add new node at the end of the list.
@@ -345,11 +333,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            head_.initialize ();
-          }
+        assert (!head_.uninitialized ());
       }
 
     // Add new node at the head of the list.
@@ -362,11 +346,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        if (head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            head_.initialize ();
-          }
+        assert (!head_.uninitialized ());
       }
 
     return iterator{ static_cast<iterator_pointer> (head_.next ()) };
@@ -376,6 +356,9 @@ namespace micro_os_plus::utils
   typename double_list<T, H>::iterator
   double_list<T, H>::end () const
   {
+    // The assert would probably be redundant, since it was
+    // already tested in `begin()`.
+
     return iterator{ reinterpret_cast<iterator_pointer> (
         const_cast<H*> (&head_)) };
   }
@@ -506,6 +489,13 @@ namespace micro_os_plus::utils
   }
 
   template <class T, class N, N T::*MP, class H, class U>
+  void
+  intrusive_list<T, N, MP, H, U>::initialize_once (void)
+  {
+    return double_list<N, H>::initialize_once ();
+  }
+
+  template <class T, class N, N T::*MP, class H, class U>
   constexpr bool
   intrusive_list<T, N, MP, H, U>::empty (void) const
   {
@@ -519,14 +509,7 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, H, U>::link_tail (U& node)
   {
-    if constexpr (is_statically_allocated::value)
-      {
-        if (double_list<N, H>::head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            double_list<N, H>::head_.initialize ();
-          }
-      }
+    // The assert(head_.initialised()) is checked by the H class.
 
     // Compute the distance between the member intrusive link
     // node and the class begin.
@@ -546,14 +529,7 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, H, U>::link_head (U& node)
   {
-    if constexpr (is_statically_allocated::value)
-      {
-        if (double_list<N, H>::head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            double_list<N, H>::head_.initialize ();
-          }
-      }
+    // The assert(head_.initialised()) is checked by the H class.
 
     // Compute the distance between the member intrusive link
     // node and the class begin.
@@ -578,14 +554,7 @@ namespace micro_os_plus::utils
   inline typename intrusive_list<T, N, MP, H, U>::iterator
   intrusive_list<T, N, MP, H, U>::begin ()
   {
-    if constexpr (is_statically_allocated::value)
-      {
-        if (double_list<N, H>::head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            double_list<N, H>::head_.initialize ();
-          }
-      }
+    // The assert(head_.initialised()) is checked by the H class.
 
     return iterator{ static_cast<iterator_pointer> (
         double_list<N, H>::head_.next ()) };
@@ -598,14 +567,8 @@ namespace micro_os_plus::utils
   inline typename intrusive_list<T, N, MP, H, U>::iterator
   intrusive_list<T, N, MP, H, U>::end ()
   {
-    if constexpr (is_statically_allocated::value)
-      {
-        if (double_list<N, H>::head_.uninitialized ())
-          {
-            // If this is the first time, initialise the list to empty.
-            double_list<N, H>::head_.initialize ();
-          }
-      }
+    // The assert would probably be redundant, since it was
+    // already tested in `begin()`.
 
     using head_type_ = typename double_list<N, H>::head_type;
     return iterator{ reinterpret_cast<iterator_pointer> (
@@ -638,7 +601,7 @@ namespace micro_os_plus::utils
   typename intrusive_list<T, N, MP, H, U>::pointer
   intrusive_list<T, N, MP, H, U>::unlink_head (void)
   {
-    assert (!empty ());
+    // No assert here, treat empty link unlinks as nop.
 
     // The first element in the list.
     iterator_pointer it
@@ -652,7 +615,7 @@ namespace micro_os_plus::utils
   typename intrusive_list<T, N, MP, H, U>::pointer
   intrusive_list<T, N, MP, H, U>::unlink_tail (void)
   {
-    assert (!empty ());
+    // No assert here, treat empty link unlinks as nop.
 
     // The last element in the list.
     iterator_pointer it

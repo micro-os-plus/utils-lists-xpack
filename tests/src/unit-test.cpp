@@ -106,33 +106,35 @@ check_double_list_links (void)
   static T right_links;
 
   test_case ("Initial", [&] {
-    expect (!links.linked ()) << "unlinked";
-
     if constexpr (T::is_statically_allocated::value)
       {
         // Check if the node is cleared.
         expect (eq (links.previous (), nullptr)) << "prev is null";
         expect (eq (links.next (), nullptr)) << "next is null";
+        expect (links.uninitialized ()) << "uninitialized";
+
+        left_links.initialize ();
+        links.initialize ();
+        right_links.initialize ();
       }
 
     expect (!left_links.linked ()) << "left unlinked";
+    expect (!links.linked ()) << "unlinked";
     expect (!right_links.linked ()) << "right unlinked";
   });
 
   test_case ("Link", [&] {
     // Link left as previous.
-    links.previous (&left_links);
-    left_links.next (&links);
+    links.link_previous (&left_links);
 
     // Link right as next.
-    links.next (&right_links);
-    right_links.previous (&links);
+    links.link_next (&right_links);
 
     // The node must appear as linked now.
     expect (links.linked ()) << "linked";
 
-    expect (ne (left_links.next (), nullptr)) << "left linked";
-    expect (ne (right_links.previous (), nullptr)) << "right linked";
+    expect (eq (left_links.next (), &links)) << "left linked";
+    expect (eq (right_links.previous (), &links)) << "right linked";
   });
 
   test_case ("Unlink", [&] {
@@ -215,15 +217,39 @@ check_double_list (void)
   static element one;
   static element two;
 
-  test_case ("Empty", [&] {
+  test_case ("Uninitialized", [&] {
     if constexpr (T::is_statically_allocated::value)
       {
         expect (list.uninitialized ()) << "uninitialized";
+        list.initialize_once ();
       }
     else
       {
         expect (!list.uninitialized ()) << "initialized";
       }
+
+    if constexpr (element::is_statically_allocated::value)
+      {
+        expect (one.uninitialized ()) << "one uninitialized";
+        one.initialize_once ();
+      }
+    else
+      {
+        expect (!one.uninitialized ()) << "one initialized";
+      }
+
+    if constexpr (element::is_statically_allocated::value)
+      {
+        expect (two.uninitialized ()) << "two uninitialized";
+        two.initialize_once ();
+      }
+    else
+      {
+        expect (!two.uninitialized ()) << "two initialized";
+      }
+  });
+
+  test_case ("Empty", [&] {
     expect (list.empty ()) << "list is empty";
 
     auto it = list.begin ();
@@ -232,6 +258,7 @@ check_double_list (void)
 
   test_case ("Link One", [&] {
     expect (!one.linked ()) << "one unlinked";
+
     list.link_tail (one);
     expect (one.linked ()) << "one linked";
     expect (!list.empty ()) << "list not empty";
@@ -247,6 +274,7 @@ check_double_list (void)
 
   test_case ("Link Two", [&] {
     expect (!two.linked ()) << "two unlinked";
+
     list.link_tail (two);
     expect (two.linked ()) << "two linked";
     expect (!list.empty ()) << "list not empty";
@@ -359,6 +387,7 @@ check_intrusive_list ()
     if constexpr (T::is_statically_allocated::value)
       {
         expect (kids.uninitialized ()) << "uninitialized";
+        kids.initialize_once ();
       }
     else
       {

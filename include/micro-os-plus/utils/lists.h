@@ -130,6 +130,17 @@ namespace micro_os_plus::utils
      */
 
     /**
+     * @brief Check if the links are initialised (statically allocated are
+     * not).
+     * @par Parameters
+     *  None.
+     * @retval true The links were not initialised.
+     * @retval false The links were initialised.
+     */
+    bool
+    uninitialized (void) const;
+
+    /**
      * @brief Initialise the links.
      * @par Parameters
      *  None.
@@ -139,8 +150,11 @@ namespace micro_os_plus::utils
     constexpr void
     initialize (void);
 
+    void
+    initialize_once (void);
+
     /**
-     * @brief Add new node as next.
+     * @brief Link new node as next.
      * @par Parameters
      *  None.
      * @par Returns
@@ -150,7 +164,7 @@ namespace micro_os_plus::utils
     link_next (double_list_links_base* node);
 
     /**
-     * @brief Add new node as previous.
+     * @brief Link new node as previous.
      * @par Parameters
      *  None.
      * @par Returns
@@ -173,7 +187,7 @@ namespace micro_os_plus::utils
      * @retval false The node is not linked.
      */
     bool
-    linked (void);
+    linked (void) const;
 
     /**
      * @brief Return the link to the next node.
@@ -188,22 +202,6 @@ namespace micro_os_plus::utils
      */
     constexpr double_list_links_base*
     previous (void) const;
-
-    /**
-     * @brief Link the next node.
-     * @par Returns
-     *  Nothing.
-     */
-    constexpr void
-    next (double_list_links_base* n);
-
-    /**
-     * @brief Link the previous node.
-     * @par Returns
-     *  Nothing.
-     */
-    constexpr void
-    previous (double_list_links_base* n);
 
     /**
      * @}
@@ -368,24 +366,6 @@ namespace micro_os_plus::utils
      * @name Public Member Functions
      * @{
      */
-
-    /**
-     * @brief Check if the list is uninitialised.
-     * @par Parameters
-     *  None.
-     * @retval true The list was not initialised.
-     * @retval false The list was initialised.
-     */
-    bool
-    uninitialized (void) const;
-
-    /**
-     * @brief Check if the node is linked to a double list.
-     * @retval true The node is linked with both pointers.
-     * @retval false The node is not linked.
-     */
-    bool
-    linked (void);
 
     /**
      * @brief Reset the two pointers to null.
@@ -565,6 +545,9 @@ namespace micro_os_plus::utils
    *
    * The iterators return pointers to the list elements, i.e. to the
    * beginning of the objects of type T.
+   *
+   * @note The class does not use inheritance, but composition for
+   * the head, to avoid inheriting unwanted methods from it.
    */
   template <class T, class H = double_list_links>
   class double_list
@@ -664,7 +647,7 @@ namespace micro_os_plus::utils
      */
 
     /**
-     * @brief Check if the (static) list is uninitialised.
+     * @brief Check if the list is initialised (statically allocated are not).
      * @par Parameters
      *  None.
      * @retval true The list was not initialised.
@@ -672,6 +655,9 @@ namespace micro_os_plus::utils
      */
     bool
     uninitialized (void) const;
+
+    void
+    initialize_once (void);
 
     /**
      * @brief Check if the list is empty.
@@ -1014,6 +1000,9 @@ namespace micro_os_plus::utils
      * @name Public Member Functions
      * @{
      */
+
+    void
+    initialize_once (void);
 
     constexpr bool
     empty (void) const;

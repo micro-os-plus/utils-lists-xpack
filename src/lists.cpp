@@ -34,6 +34,27 @@ namespace micro_os_plus::utils
 {
   // ==========================================================================
 
+  bool
+  double_list_links_base::uninitialized (void) const
+  {
+    if (previous_ == nullptr || next_ == nullptr)
+      {
+        assert (previous_ == nullptr);
+        assert (next_ == nullptr);
+        return true;
+      }
+    return false;
+  }
+
+  void
+  double_list_links_base::initialize_once (void)
+  {
+    if (uninitialized ())
+      {
+        initialize ();
+      }
+  }
+
   void
   double_list_links_base::link_next (double_list_links_base* node)
   {
@@ -94,21 +115,18 @@ namespace micro_os_plus::utils
   /**
    * @details
    * To be fully linked, both pointers must point to different nodes
-   * than itself.
+   * than itself (double list requirement).
    */
   bool
-  double_list_links_base::linked (void)
+  double_list_links_base::linked (void) const
   {
-    if (next_ != this)
+    if (next_ == this || previous_ == this)
       {
-        assert (previous_ != this);
-        return true;
-      }
-    else
-      {
+        assert (next_ == this);
         assert (previous_ == this);
         return false;
       }
+    return true;
   }
 
   // ==========================================================================
@@ -126,48 +144,48 @@ namespace micro_os_plus::utils
    * as starting values.
    */
 
-  /**
-   * @details
-   * The pointers must be either both non null or both not null.
-   */
-  bool
-  static_double_list_links::uninitialized (void) const
-  {
-#pragma GCC diagnostic push
+  //   /**
+  //    * @details
+  //    * The pointers must be either both non null or both not null.
+  //    */
+  //   bool
+  //   static_double_list_links::uninitialized (void) const
+  //   {
+  // #pragma GCC diagnostic push
 
-#if defined(__GNUC__) && !defined(__clang__)
-#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
-#endif
-    if (next_ == nullptr)
-      {
-        assert (previous_ == nullptr);
-        return true;
-      }
-    else
-      {
-        assert (previous_ != nullptr);
-        return false;
-      }
-#pragma GCC diagnostic pop
-  }
+  // #if defined(__GNUC__) && !defined(__clang__)
+  // #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+  // #endif
+  //     if (next_ == nullptr)
+  //       {
+  //         assert (previous_ == nullptr);
+  //         return true;
+  //       }
+  //     else
+  //       {
+  //         assert (previous_ != nullptr);
+  //         return false;
+  //       }
+  // #pragma GCC diagnostic pop
+  //   }
 
-  /**
-   * @details
-   * To be fully linked, both pointers must be non null and point to
-   * somewhere else.
-   */
-  bool
-  static_double_list_links::linked (void)
-  {
-    if (uninitialized ())
-      {
-        return false;
-      }
-    else
-      {
-        return double_list_links_base::linked ();
-      }
-  }
+  // /**
+  //  * @details
+  //  * To be fully linked, both pointers must be non null and point to
+  //  * somewhere else.
+  //  */
+  // bool
+  // static_double_list_links::linked (void)
+  // {
+  //   if (uninitialized ())
+  //     {
+  //       return false;
+  //     }
+  //   else
+  //     {
+  //       return double_list_links_base::linked ();
+  //     }
+  // }
 
   // Prevent LTO to optimize out the code.
   // https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html
