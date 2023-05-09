@@ -502,9 +502,6 @@ namespace micro_os_plus::utils
     return double_list<N, H>::empty ();
   }
 
-  /**
-   * @note The list head is initialised on first use.
-   */
   template <class T, class N, N T::*MP, class H, class U>
   void
   intrusive_list<T, N, MP, H, U>::link_tail (U& node)
@@ -522,9 +519,6 @@ namespace micro_os_plus::utils
             reinterpret_cast<difference_type> (&node) + offset));
   }
 
-  /**
-   * @note The list head is initialised on first use.
-   */
   template <class T, class N, N T::*MP, class H, class U>
   void
   intrusive_list<T, N, MP, H, U>::link_head (U& node)
@@ -547,9 +541,6 @@ namespace micro_os_plus::utils
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #endif
 
-  /**
-   * @note It is not `const` because it may initialise on first use.
-   */
   template <class T, class N, N T::*MP, class H, class U>
   inline typename intrusive_list<T, N, MP, H, U>::iterator
   intrusive_list<T, N, MP, H, U>::begin () const
@@ -560,9 +551,6 @@ namespace micro_os_plus::utils
         double_list<N, H>::head_.next ()) };
   }
 
-  /**
-   * @note It is not `const` because it may initialise on first use.
-   */
   template <class T, class N, N T::*MP, class H, class U>
   inline typename intrusive_list<T, N, MP, H, U>::iterator
   intrusive_list<T, N, MP, H, U>::end () const

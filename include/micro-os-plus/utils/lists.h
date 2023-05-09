@@ -150,6 +150,13 @@ namespace micro_os_plus::utils
     constexpr void
     initialize (void);
 
+    /**
+     * @brief Initialize the list only at first run.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
     void
     initialize_once (void);
 
@@ -253,7 +260,7 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Construct a list node (initialises the pointers).
+     * @brief Construct a list node (initialise the pointers).
      */
     constexpr double_list_links ();
 
@@ -394,7 +401,7 @@ namespace micro_os_plus::utils
    * @tparam U Type stored in the list, derived from T.
    *
    * @details
-   * This class provides an interface similar to std::list::iterator.
+   * This class provides an interface similar to `std::list::iterator`.
    *
    * In a common double linked list, all types are `double_list_links`.
    */
@@ -656,6 +663,13 @@ namespace micro_os_plus::utils
     bool
     uninitialized (void) const;
 
+    /**
+     * @brief Initialize the list only at first run.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
     void
     initialize_once (void);
 
@@ -727,6 +741,10 @@ namespace micro_os_plus::utils
 
     // Required in derived class iterator end(), where direct
     // access to member fails.
+    /**
+     * @brief Get the address of the head.
+     * @return A pointer to the list head object.
+     */
     constexpr const head_type*
     head_pointer () const
     {
@@ -771,7 +789,7 @@ namespace micro_os_plus::utils
    * @tparam U Type stored in the list, derived from T.
    *
    * @details
-   * This class provides an interface similar to std::list::iterator,
+   * This class provides an interface similar to `std::list::iterator`,
    * except that it keeps track of the offset where the intrusive
    * list element is located in the parent object.
    */
@@ -949,15 +967,36 @@ namespace micro_os_plus::utils
     //  * @name Public Types
     //  * @{
     //  */
+
+    /**
+     * @brief Type of the list head object where the pointers to the
+     * list head and tail are stored.
+     */
     using head_type = H;
+
+    /**
+     * @brief Type of value "pointed to" by the iterator.
+     */
     using value_type = U;
+
+    /**
+     * @brief Type of pointer to object "pointed to" by the iterator.
+     */
     using pointer = value_type*;
+
+    /**
+     * @brief Type of reference to object "pointed to" by the iterator.
+     */
     using reference = value_type&;
 
-    using difference_type = ptrdiff_t;
-
+    /**
+     * @brief Type of iterator over the values.
+     */
     using iterator = intrusive_list_iterator<T, N, MP, U>;
 
+    /**
+     * @brief Type of reference to the iterator internal pointer.
+     */
     using is_statically_allocated = typename head_type::is_statically_allocated;
 
     /**
@@ -965,13 +1004,11 @@ namespace micro_os_plus::utils
      */
     using iterator_pointer = N*;
 
-    // From base class.
-    // using is_statically_allocated = std::true_type;
-
     /**
-     * @name Constructors & Destructor
-     * @{
+     * @brief Type of pointer difference.
      */
+    using difference_type = ptrdiff_t;
+
     // /**
     //  * @}
     //  */
@@ -1020,13 +1057,22 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @name Public Member Functions
-     * @{
+     * @brief Initialize the list only at first run.
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
      */
-
     void
     initialize_once (void);
 
+    /**
+     * @brief Check if the list is empty.
+     * @par Parameters
+     *  None.
+     * @retval true The list has no nodes.
+     * @retval false The list has at least one node.
+     */
     constexpr bool
     empty (void) const;
 
