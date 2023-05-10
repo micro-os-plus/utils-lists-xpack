@@ -12,7 +12,7 @@ The following folders should be passed to the compiler during the build:
 
 The header files to be included in user projects are:
 
-```c++
+```cpp
 #include <micro-os-plus/config.h>
 #include <micro-os-plus/platform.h>
 ```
