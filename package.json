@@ -84,8 +84,12 @@
       "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose"
     },
     "actions": {
+      "install": [
+        "npm install --silent",
+        "xpm install --quiet"
+      ],
       "install-all": [
-        "npm install --quiet",
+        "npm install --silent",
         "xpm install --all-configs --quiet"
       ],
       "link-deps-all": [
