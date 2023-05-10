@@ -52,7 +52,7 @@
       "@micro-os-plus/architecture-cortexm": "^6.3.0",
       "@micro-os-plus/architecture-riscv": "^4.1.0",
       "@micro-os-plus/architecture-synthetic-posix": "^4.0.2",
-      "@micro-os-plus/build-helper": "^2.11.0",
+      "@micro-os-plus/build-helper": "^2.12.0",
       "@micro-os-plus/devices-qemu-aarch32": "3.0.1",
       "@micro-os-plus/devices-qemu-aarch64": "3.0.0",
       "@micro-os-plus/devices-qemu-cortexm": "^4.1.1",
@@ -62,7 +62,7 @@
       "@micro-os-plus/semihosting": "^7.1.0",
       "@micro-os-plus/startup": "^5.1.0",
       "@xpack-3rd-party/arm-cmsis-core": "5.4.0-6",
-      "@xpack-3rd-party/doxygen-awesome-css": "github:xpack-3rd-party/doxygen-awesome-css-xpack"
+      "@xpack-3rd-party/doxygen-awesome-css": "^2.2.0-1"
     },
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
