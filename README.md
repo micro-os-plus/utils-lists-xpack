@@ -131,7 +131,7 @@ lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 
 The C++ methods available for the intrusive list are:
 
-```c++
+```cpp
 pointer head (void);
 pointer tail (void);
 
@@ -146,7 +146,7 @@ bool empty (void);
 
 Forward iterators are as usual:
 
-```c++
+```cpp
 iterator begin ();
 iterator end ();
 ```
@@ -154,7 +154,7 @@ iterator end ();
 Individual nodes (derived from `double_list_links`) provide
 the following methods:
 
-```c++
+```cpp
 void link_next (static_double_list_links* node);
 void link_previous (static_double_list_links* node);
 
@@ -193,7 +193,7 @@ The following folders should be passed to the compiler during the build:
 
 The header files to be included in user projects are:
 
-```c++
+```cpp
 #include <micro-os-plus/utils/lists.h>
 ```
 
@@ -223,7 +223,7 @@ There are several preprocessor definitions used to configure the build.
 
 #### C++ Classes
 
-```c++
+```cpp
 /**
 * @tparam T Type of object that includes the intrusive node.
 * @tparam N Type of intrusive node with the next & previous links.
@@ -300,7 +300,7 @@ available in
 
 Here are some excerpts:
 
-```c++
+```cpp
 #include <micro-os-plus/utils/lists.h>
 
 class child
