@@ -4,8 +4,6 @@
 [![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
 
-[TOC]
-
 # A source library xPack with C++ intrusive lists utilities
 
 This project provides the **utils-lists** source libraries as an xPack
