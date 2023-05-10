@@ -61,7 +61,7 @@ jobs:
           node-version: 16.x
 
       - name: Install dependencies
-        run: npm install
+        run: xpm install
 
       - name: Install Doxygen
         run: |
