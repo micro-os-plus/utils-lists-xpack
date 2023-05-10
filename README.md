@@ -361,10 +361,14 @@ xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 According to [semver](https://semver.org) rules:
 
 > Major version X (X.y.z | X > 0) MUST be incremented if any
-backwards incompatible changes are introduced to the public API.
+> backwards incompatible changes are introduced to the public API.
 
 The incompatible changes, in reverse chronological order, are:
 
+- v4.x: major rework, add `double_list_links_base`,
+  remove `next()` & `previous()` setters, 
+  add `initialize_once()`, reorder `double_list`
+  template parameter, rename `links_pointer()`
 - v3.x: rework, with templates instead of separate static classes and
   a cleaner API;
 - v2.x: the C++ namespace was renamed from `os` to `micro_os_plus`;
@@ -372,8 +376,8 @@ The incompatible changes, in reverse chronological order, are:
 
 ## Credits
 
-Many thanks to [distortos](https://distortos.org) where such lists
-were used in a RTOS.
+Many thanks for the inspiration to [distortos](https://distortos.org)
+where such lists were used in a RTOS.
 
 ## License
 

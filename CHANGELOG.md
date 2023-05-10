@@ -6,8 +6,117 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues/)
 and close existing issues and pull requests.
 
+* v4.0.0
+
+## 2023-05-10
+
+* 7dbeb57 publish-github-pages.yml: remove workflow_dispatch
+* 0e0f73a publish-github-pages.yml: workflow_dispatch
+* c7ce863 publish-github-pages.yml: npm i -g xpm
+* 16f2a9f publish-github-pages.yml: xpm install
+* e5ad165 package.json: add action 'install'
+* 31b9117 .vscode/settings.json: ignoreWords
+* dbc1eb3 website: use helper common & theme
+* 47e012a tests: ```cpp
+* 3e5eea0 package.json: bump helper & awesome
+* 9724572 package.json: del package-lock.json
+* 922e31e README: use ```cpp
+* 0fd1cfc Revert "README.md: try [TOC]"
+* ecaefd7 README.md: try [TOC]
+* 51c706a .npmignore website inspiration
+
+## 2023-05-09
+
+* 4597603 README update
+* 6b5cf95 rename template parameter L
+* 91dc020 rename links_type
+* 45482cd rename links_ & links_pointer()
+* 1a20c60 add the inspiration folder with clang excerpts
+* 0511114 common-config.doxyfile: WARN_AS_ERROR = YES
+* 8feff71 doxygen updates
+* 4d7b31d lists.h: comment out doxygen type grouping
+* 965c006 lists.h: use more explicit head_type
+* d16c0c3 lists.h: add static_assert to intrusive_list
+* bbfeb7e const begin() end()
+* c7cfad0 #8: add initialize_once()
+* 0022391 inlines.h: remove destructor zeroing members
+
+## 2023-05-08
+
+* 330f899 package-lock.json update
+* db3b9a8 package.json: add xpm link doxygen-awesome-css
+* 7dc2985 package.json: bump architecture-*
+* 05ce65b package.json: bump arm toolchain 12.2.1-1.2.1
+* 7f44beb package.json: add open-cli as devDep
+* 0fb3d85 .vscode/settings.json: ignoreWords
+* 171b2eb cmake & meson: -Wl,--no-warn-rwx-segment
+* 9215618 doxygen comments updates
+* 21900e0 lists.h: explicit long names for template types
+* 41780eb .npmignore update
+
+## 2023-05-07
+
+* bc7596e publish-github-pages.yml: add links in comments
+* 7c48a35 package-lock.json
+* 2e67f44 package.json: add doxygen-awesome-css devDep
+* 141acf3 package.json: add doxygen & safari
+* 64cad03 package.json: install-all does npm install
+* 45bd2fc package.json: add del-cli devDep
+* 3802646 website: split common config
+* 7ef81b3 CI.yml: ignore website/**
+* 7309f81 publish-github-pages.yml update
+* 68ff3a6 CI.yml: ignore website
+* e81542e add publish-github-pages.yml
+* 3e5c583 website update
+* 5e416ee README update
+* 9cf1036 add doxygen config; content not yet updated
+
+## 2023-05-06
+
+* d85ed0f CI.yml: bump macos-12, node 18
+* ca6fb03 README update
+* 61b2828 CI.yml: temporarily disable windows
+* 4302a3d list.h: cosmetics
+* a28f442 CI.yml: fix xpm run
+* c55ba1c CI.yml: native gcc & clang latest
+* 197fadd CI.yml: bump ubuntu 22, xpm 0.15
+* 4ce6bc5 list.cpp: use noipa only for GCC
+* 68ab415 package.json: add gcc & clang latest
+* c2bc247 package.json: add gcc12, clang14, clang15
+* 4d17e43 package.json: bump devDeps, use inheritance
+* 1d1b1da package: add inherited cmake/meson actions
+* 0610e79 lists.cpp: add attribute noipa to nullify
+* 9aa6822 unit-test.cpp: include commented out iostream
+* 4b9e614 #7: rework double_list template parameters
+* 5b4907f package.json: cosmetics
+* 5f3b09f unit-test.cpp: add a test of static nullify
+* af1dd2c #6: rework with a double_list_links_base class
+* 35b8843 .vscode/settings.json: ignoreWords
+* 70a080c .vscode/launch.json: update
+* 43f7827 platform-native: add xpack_create_listing to cmake
+
+## 2022-08-16
+
+* 382d517 package.json min 0.14.0 & defaults
+
+## 2022-08-15
+
+* a1cd3df package.json: bump xpm to 0.14.0
+* 2a92ee5 CI: bump xpm 0.14
+
+## 2022-08-05
+
+* d316598 CI.yml cleanups
+* 061146c CI try to enable bare-metal on windows
+* 04b280f CI.yml: ignore all READMEs
+
+## 2022-08-04
+
+* 4373a58 tests/cross.ini: add link to cpu-families
+
 ## 2022-08-03
 
+* 98afca1 meson: update riscv32/riscv64 cpu families
 * v3.0.1
 
 ## 2022-08-01
