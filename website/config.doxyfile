@@ -25,7 +25,7 @@
 
 #---------------------------------------------------------------------------
 
-@INCLUDE = website/common-config.doxyfile
+@INCLUDE = xpacks/micro-os-plus-build-helper/doxygen/common-config.doxyfile
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -80,6 +80,32 @@ INPUT                  = src \
 
 USE_MDFILE_AS_MAINPAGE = README.md
 
+# The INPUT_FILTER tag can be used to specify a program that doxygen should
+# invoke to filter for each input file. Doxygen will invoke the filter program
+# by executing (via popen()) the command:
+#
+# <filter> <input-file>
+#
+# where <filter> is the value of the INPUT_FILTER tag, and <input-file> is the
+# name of an input file. Doxygen will then use the output that the filter
+# program writes to standard output. If FILTER_PATTERNS is specified, this tag
+# will be ignored.
+#
+# Note that the filter must not add or remove lines; it is applied before the
+# code is scanned, but not when the output code is generated. If lines are added
+# or removed, the anchors will not be placed correctly.
+#
+# Note that doxygen will use the data processed and written to standard output
+# for further processing, therefore nothing else, like debug statements or used
+# commands (so in case of a Windows batch file always use @echo OFF), should be
+# written to standard output.
+#
+# Note that for custom extensions or not directly supported extensions you also
+# need to set EXTENSION_MAPPING for the extension otherwise the files are not
+# properly processed by doxygen.
+
+## -e 's|```.*|```|'
+INPUT_FILTER           = "sed -e 's|__attribute__\s*[(]\s*[(].*?[)]\s*[)]||g'"
 
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
@@ -95,5 +121,27 @@ USE_MDFILE_AS_MAINPAGE = README.md
 
 PREDEFINED             = __DOXYGEN__ \
                          __cplusplus
+
+#---------------------------------------------------------------------------
+# Configuration options related to the HTML output
+#---------------------------------------------------------------------------
+
+HTML_HEADER            = xpacks/micro-os-plus-build-helper/doxygen/common-header.html
+
+HTML_EXTRA_FILES       = \
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-tabs.js
+
+HTML_EXTRA_STYLESHEET  = \
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome.css \
+xpacks/micro-os-plus-build-helper/doxygen/common-custom.css
+
+HTML_COLORSTYLE        = LIGHT
+HTML_COLORSTYLE_HUE    = 209
+HTML_COLORSTYLE_SAT    = 255
+HTML_COLORSTYLE_GAMMA  = 113
 
 #---------------------------------------------------------------------------
