@@ -85,29 +85,29 @@
     },
     "actions": {
       "install": [
-        "npm install --silent",
-        "xpm install --quiet"
+        "npm install",
+        "xpm install"
       ],
       "install-all": [
-        "npm install --silent",
-        "xpm install --all-configs --quiet"
+        "npm install",
+        "xpm install --all-configs"
       ],
       "link-deps-all": [
-        "xpm link @micro-os-plus/architecture-aarch32 --quiet",
-        "xpm link @micro-os-plus/architecture-aarch64 --quiet",
-        "xpm link @micro-os-plus/architecture-cortexm --quiet",
-        "xpm link @micro-os-plus/architecture-synthetic-posix --quiet",
-        "xpm link @micro-os-plus/build-helper --quiet",
-        "xpm link @micro-os-plus/devices-qemu-aarch32 --quiet",
-        "xpm link @micro-os-plus/devices-qemu-aarch64 --quiet",
-        "xpm link @micro-os-plus/devices-qemu-cortexm --quiet",
-        "xpm link @micro-os-plus/devices-qemu-riscv --quiet",
-        "xpm link @micro-os-plus/diag-trace --quiet",
-        "xpm link @micro-os-plus/micro-test-plus --quiet",
-        "xpm link @micro-os-plus/semihosting --quiet",
-        "xpm link @micro-os-plus/startup --quiet",
-        "xpm link @xpack-3rd-party/arm-cmsis-core --quiet",
-        "xpm link @xpack-3rd-party/doxygen-awesome-css --quiet"
+        "xpm link @micro-os-plus/architecture-aarch32",
+        "xpm link @micro-os-plus/architecture-aarch64",
+        "xpm link @micro-os-plus/architecture-cortexm",
+        "xpm link @micro-os-plus/architecture-synthetic-posix",
+        "xpm link @micro-os-plus/build-helper",
+        "xpm link @micro-os-plus/devices-qemu-aarch32",
+        "xpm link @micro-os-plus/devices-qemu-aarch64",
+        "xpm link @micro-os-plus/devices-qemu-cortexm",
+        "xpm link @micro-os-plus/devices-qemu-riscv",
+        "xpm link @micro-os-plus/diag-trace",
+        "xpm link @micro-os-plus/micro-test-plus",
+        "xpm link @micro-os-plus/semihosting",
+        "xpm link @micro-os-plus/startup",
+        "xpm link @xpack-3rd-party/arm-cmsis-core",
+        "xpm link @xpack-3rd-party/doxygen-awesome-css"
       ],
       "test-all": [
         "xpm run test-native",
