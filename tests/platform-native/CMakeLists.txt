@@ -187,7 +187,7 @@ if (ENABLE_UNIT_TEST)
 
   add_custom_command(
     TARGET "unit-test" POST_BUILD
-    COMMAND ${CMAKE_OBJDUMP} -h "$<TARGET_FILE:${name}>"
+    COMMAND ${CMAKE_OBJDUMP} -h "$<TARGET_FILE:unit-test"
     VERBATIM
   )
 
