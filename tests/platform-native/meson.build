@@ -75,7 +75,11 @@ xpack_common_link_args += [
 ]
 
 # On Windows, both gcc & clang accept the statics.
-if c_compiler.get_id() == 'gcc' or build_machine.system() == 'windows'
+if build_machine.system() == 'windows'
+  xpack_common_link_args += [
+    '-static',
+  ]
+elif c_compiler.get_id() == 'gcc'
   xpack_common_link_args += [
     '-static-libgcc',
     '-static-libstdc++',
