@@ -30,10 +30,7 @@ the C++ compiler, for example with `-print-file-name=<library>.dll`.
 This path can be later used to adjust the environment PATH to include
 the libraries.
 
-Windows CMake builds adjust the path to the folder where the
-C++ library is located.
-
-To simplify thing, the Windows meson builds use `-static`.
+However, in order to simplify thing, the Windows builds use `-static`.
 
 ### macOS & GNU/Linux
 
