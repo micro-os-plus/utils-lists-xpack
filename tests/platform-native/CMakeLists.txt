@@ -185,6 +185,12 @@ if (ENABLE_UNIT_TEST)
     COMMAND unit-test # --verbose
   )
 
+  add_custom_command(
+    TARGET "unit-test" POST_BUILD
+    COMMAND ${CMAKE_OBJDUMP} -h "$<TARGET_FILE:${name}>"
+    VERBATIM
+  )
+
   if(COMPILER_LIBS_PATH)
     set_property(
       TEST "unit-test"
