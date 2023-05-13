@@ -126,6 +126,32 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
+if(WIN32)
+
+  # Ask the compiler if the C++ DLL is present, and possibly adjust
+  # the test path. Assumes the platform bit size (-m64).
+  # A simpler alternate solution would be -static.
+  if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
+    set(LIBCPP_NAME "libc++.dll")
+  elseif (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+    set(LIBCPP_NAME "libstdc++-6.dll")
+  endif()
+
+  execute_process(
+    COMMAND ${CMAKE_CXX_COMPILER} -print-file-name=${LIBCPP_NAME}
+    OUTPUT_VARIABLE COMPILER_OUTPUT
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+  # message(VERBOSE ${COMPILER_OUTPUT})
+
+  # If not available, the compiler returns the library name.
+  if (NOT "${COMPILER_OUTPUT}" STREQUAL "${LIBCPP_NAME}")
+    string(REPLACE "${LIBCPP_NAME}" "" COMPILER_LIBS_PATH ${COMPILER_OUTPUT})
+    message(VERBOSE "${LIBCPP_NAME} path: ${COMPILER_LIBS_PATH}")
+  endif()
+
+endif()
+
 if (ENABLE_SAMPLE_TEST)
 
   add_test_executable(sample-test)
@@ -134,6 +160,13 @@ if (ENABLE_SAMPLE_TEST)
     NAME "sample-test"
     COMMAND sample-test one two
   )
+
+  if(COMPILER_LIBS_PATH)
+    set_property(
+      TEST "sample-test"
+      PROPERTY ENVIRONMENT_MODIFICATION "PATH=path_list_append:${COMPILER_LIBS_PATH}"
+    )
+  endif()
 
 endif()
 
@@ -151,6 +184,13 @@ if (ENABLE_UNIT_TEST)
     NAME "unit-test"
     COMMAND unit-test # --verbose
   )
+
+  if(COMPILER_LIBS_PATH)
+    set_property(
+      TEST "unit-test"
+      PROPERTY ENVIRONMENT_MODIFICATION "PATH=path_list_append:${COMPILER_LIBS_PATH}"
+    )
+  endif()
 
 endif()
 
