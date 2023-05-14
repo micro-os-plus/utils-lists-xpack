@@ -94,8 +94,8 @@ function(add_test_executable name)
   # https://cmake.org/cmake/help/v3.20/manual/cmake-generator-expressions.7.html
   target_link_options(${name} PRIVATE
     $<$<PLATFORM_ID:Windows>:-static>
-    $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Linux,Darwin>>:-static-libgcc>
-    $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Linux,Darwin>>:-static-libstdc++>
+    $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libgcc>
+    $<$<AND:$<C_COMPILER_ID:GNU>,$<PLATFORM_ID:Darwin>>:-static-libstdc++>
     $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
@@ -128,6 +128,18 @@ endfunction()
 
 # -----------------------------------------------------------------------------
 
+if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
+
+  # On Lnux, get the actual libraries paths by asking the compiler.
+  execute_process(
+    COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/scripts/get-libraries-paths.sh" ${CMAKE_CXX_COMPILER}
+    OUTPUT_VARIABLE LD_LIBRARY_PATH
+    OUTPUT_STRIP_TRAILING_WHITESPACE
+  )
+  # message(VERBOSE ${LD_LIBRARY_PATH})
+
+endif()
+
 if (ENABLE_SAMPLE_TEST)
 
   add_test_executable(sample-test)
@@ -136,6 +148,13 @@ if (ENABLE_SAMPLE_TEST)
     NAME "sample-test"
     COMMAND sample-test one two
   )
+
+  if(LD_LIBRARY_PATH)
+    set_property(
+      TEST "sample-test"
+      PROPERTY ENVIRONMENT "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}"
+    )
+  endif()
 
 endif()
 
@@ -153,6 +172,13 @@ if (ENABLE_UNIT_TEST)
     NAME "unit-test"
     COMMAND unit-test # --verbose
   )
+
+  if(LD_LIBRARY_PATH)
+    set_property(
+      TEST "unit-test"
+      PROPERTY ENVIRONMENT "LD_LIBRARY_PATH=${LD_LIBRARY_PATH}"
+    )
+  endif()
 
   # add_custom_command(
   #   TARGET "unit-test" POST_BUILD
