@@ -232,8 +232,8 @@ endforeach
 qemu = find_program('qemu-system-arm')
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
-nomalloc = environment()
-nomalloc.set('MALLOC_PERTURB_', '0')
+xpack_environment = environment()
+xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 
@@ -252,7 +252,7 @@ if enable_sample_test
       '-d', 'unimp,guest_errors',
       '--semihosting-config', 'enable=on,target=native,arg=sample-test,arg=one,arg=two',
     ],
-    env: nomalloc
+    env: xpack_environment
   )
 
 endif
@@ -274,7 +274,7 @@ if enable_unit_test
       '-d', 'unimp,guest_errors',
       '--semihosting-config', 'enable=on,target=native,arg=unit-test',
     ],
-    env: nomalloc
+    env: xpack_environment
   )
 
 endif

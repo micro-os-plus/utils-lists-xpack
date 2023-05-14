@@ -61,7 +61,8 @@ message('> platform_native_dependency')
 # =============================================================================
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
-nomalloc = environment({'MALLOC_PERTURB_': '0'})
+xpack_environment = environment()
+xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 
@@ -122,7 +123,7 @@ commands = cpp_compiler.cmd_array()
 r = run_command('scripts/get-libraries-paths.sh', commands[0], check: true)
 ld_library_path = r.stdout().strip()
 
-nomalloc.set('LD_LIBRARY_PATH', ld_library_path)
+xpack_environment.set('LD_LIBRARY_PATH', ld_library_path)
 
 if enable_sample_test
 
@@ -198,7 +199,7 @@ if enable_sample_test
       'one',
       'two'
     ],
-    env: nomalloc
+    env: xpack_environment
   )
 
 endif
@@ -275,7 +276,7 @@ if enable_unit_test
     'unit-test',
     unit_test,
     args: [],
-    env: nomalloc
+    env: xpack_environment
   )
 
 endif
