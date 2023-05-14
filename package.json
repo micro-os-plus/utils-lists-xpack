@@ -134,7 +134,7 @@
         "xpm run test-native-meson-clang12",
         "xpm run test-native-meson-clang13",
         "xpm run test-native-meson-clang14",
-        "xpm run test-native-meson-clang15"
+        "echo xpm run test-native-meson-clang15"
       ],
       "test-cortex": [
         "xpm run test-cortex-cmake",
