@@ -99,6 +99,7 @@ function(add_test_executable name)
     $<$<PLATFORM_ID:Darwin>:-Wl,-dead_strip>
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,--gc-sections>
     $<$<PLATFORM_ID:Linux,Windows>:-Wl,-Map,platform-bin/${name}-map.txt>
+    $<$<AND:$<C_COMPILER_ID:Clang>,$<PLATFORM_ID:Linux>>:-fuse-ld=lld>
     # -v
   )
 
