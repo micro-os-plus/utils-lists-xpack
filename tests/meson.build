@@ -35,7 +35,9 @@ project('micro-os-plus-utils-lists',
 # -----------------------------------------------------------------------------
 
 fs = import('fs')
+# https://mesonbuild.com/Reference-tables.html#language-arguments-parameter-names
 c_compiler = meson.get_compiler('c')
+cpp_compiler = meson.get_compiler('cpp')
 # message('Compiler ID: ' + c_compiler.get_id())
 
 # -----------------------------------------------------------------------------

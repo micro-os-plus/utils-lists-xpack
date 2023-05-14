@@ -232,7 +232,8 @@ endforeach
 qemu = find_program('qemu-system-arm')
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
-nomalloc = environment({'MALLOC_PERTURB_': '0'})
+nomalloc = environment()
+nomalloc.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 

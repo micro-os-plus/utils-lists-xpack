@@ -116,6 +116,14 @@ endif
 
 # -----------------------------------------------------------------------------
 
+commands = cpp_compiler.cmd_array()
+# message(commands)
+
+r = run_command('scripts/get-libraries-paths.sh', commands[0], check: true)
+ld_library_path = r.stdout().strip()
+
+nomalloc.set('LD_LIBRARY_PATH', ld_library_path)
+
 if enable_sample_test
 
   xpack_common_args = []
