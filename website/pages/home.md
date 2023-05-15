@@ -1,4 +1,4 @@
-# A source code library with C++ intrusive lists utilities  {#mainpage}
+# A source code library with the µOS++ C++ intrusive lists  {#mainpage}
 
 @tableofcontents
 
@@ -11,16 +11,13 @@
 ## Overview
 
 This project provides the **source code** for a library
-that implements **C++ intrusive double linked lists**,
+that implements the **µOS++ C++ intrusive double linked lists**,
 a special class of lists that store the links inside the listed objects,
 in order to avoid dynamic memory allocations, a useful feature in embedded
 systems.
 
 The **open source** project is hosted on GitHub as
 [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
-
-This page is addressed to those who plan to include this
-library into their own projects.
 
 ### Developer info
 
@@ -29,7 +26,7 @@ For details on how to use this library, please see the
 
 ### Maintainer info
 
-For maintenance and release checklists, please see the
+For maintenance and release operations, please see the
 [Maintainer Info](website/pages/maintainer.md) page.
 
 ## Install
