@@ -47,11 +47,11 @@ toolchains, even with multiple versions of the same toolchain.
 
 The following toolchains are used:
 
-- gcc 11 (native)
-- clang 12, 13 (native)
+- gcc 11, 12 (native)
+- clang 12, 13, 14, 15 (native)
 - arm-none-eabi-gcc 11 (Cortex-M, AArch32)
 - aarch64-none-elf-gcc 11 (AArch64)
-- risc-none-elf-gcc 11 (RISC-V 32/64)
+- risc-none-elf-gcc 12 (RISC-V 32/64)
 
 ## Tests details
 

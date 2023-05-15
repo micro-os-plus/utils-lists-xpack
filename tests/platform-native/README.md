@@ -32,6 +32,18 @@ the libraries.
 
 However, in order to simplify thing, the Windows builds use `-static`.
 
-### macOS & GNU/Linux
+### GNU/Linux
 
-macOS & GNU/Linux GCC builds also use `-static-libgcc -static-libstdc++`.
+For GNU/Linux builds, the compiler is asked the locations of the libraries,
+and this list of paths is temporarily set as `LD_LIBRARY_PATH` for each
+test.
+
+Although CMake can directly define sequences of piped commands, meson
+can not, and requires an external script, available as
+`scripts/get-libraries-path.sh`.
+
+It requires the name of the compiler (clang++ or g++).
+
+### macOS
+
+macOS GCC builds use `-static-libgcc -static-libstdc++`.
