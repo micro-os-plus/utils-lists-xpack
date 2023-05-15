@@ -166,11 +166,11 @@ class double_list;
 
 ### CMake
 
-To integrate the utils-lists library into a CMake application,
+To integrate the **utils-lists** library into a CMake application,
 add this folder to the build:
 
 ```cmake
-add_subdirectory("xpacks/micro-os-plus-utils-lists")`
+add_subdirectory("xpacks/micro-os-plus-utils-lists")
 ```
 
 The result is an interface library that can be added as an application
@@ -185,7 +185,7 @@ target_link_libraries(your-target PRIVATE
 
 ### meson
 
-To integrate the utils-lists library into a meson application,
+To integrate the **utils-lists** library into a meson application,
 add this folder to the build:
 
 ```meson
@@ -209,8 +209,7 @@ exe = executable(
 
 ## Examples
 
-An example showing how to use the intrusive lists is
-available in
+An example showing how to use the intrusive lists is available in
 [tests/src/sample-test.cpp](tests/src/sample-test.cpp).
 
 Here are some excerpts:
