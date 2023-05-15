@@ -4,7 +4,7 @@
 
 ## Breaking changes
 
-According to [semver](https://semver.org) rules:
+According to the [semver](https://semver.org) rules:
 
 > Major version X (X.y.z | X > 0) MUST be incremented if any
 > backwards incompatible changes are introduced to the public API.
