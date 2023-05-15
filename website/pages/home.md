@@ -40,7 +40,7 @@ project via **xpm**.
 ### xpm/npm
 
 In addition to the source files, this project also includes a
-`package.json` file with the metadata allowing it to be identified as an
+`package.json` file with the metadata that allows it to be identified as an
 **xpm/npm** package that can be directly installed from GitHub or
 from the [npmjs.com](https://www.npmjs.com) registry as
 [`@micro-os-plus/utils-lists`](https://www.npmjs.com/package/@micro-os-plus/utils-lists).
@@ -75,8 +75,8 @@ ls -l xpacks/micro-os-plus-utils-lists
 
 #### npm
 
-The package can also be installed with **npm** or compatible, but
-the extra features required by C/C++ projects will not be available;
+The package can also be installed with **npm** or related, but
+the extra features specific to C/C++ projects will not be available;
 thus, for consistency reasons, it is recommended to use **xpm**.
 
 ### Git submodule
@@ -115,13 +115,13 @@ Pull Requests should be directed to this branch.
 When new releases are published, the `xpack-develop` branch is merged
 into the `xpack` branch.
 
-## Status
-
+@note
 The **utils-lists** library is fully functional, and is
 CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
 Cortex-M7F, Cortex-A15, Cortex-A72, RISC-V RV32IMAC, RV64IMAFDC),
 and natively, with GCC & clang.
-
+@n
+@n
 The lists classes are used to manage several
 lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 
@@ -132,7 +132,8 @@ According to [semver](https://semver.org) rules:
 > Major version X (X.y.z | X > 0) MUST be incremented if any
 > backwards incompatible changes are introduced to the public API.
 
-The incompatible changes, in reverse chronological order, are:
+The breaking changes introduced by each major release,
+in reverse chronological order, are:
 
 - v4.x: major rework, add `double_list_links_base`,
   remove `next()` & `previous()` setters,
@@ -148,7 +149,7 @@ The incompatible changes, in reverse chronological order, are:
 Many thanks to:
 
 - [distortos](https://distortos.org) - for the inspiration on how these lists
-  can be used in a RTOS
+  can be used in an RTOS
 - [doxygen-awesome-css](https://jothepro.github.io/doxygen-awesome-css/) -
 for the Doxygen theme
 
