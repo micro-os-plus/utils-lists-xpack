@@ -5,6 +5,7 @@
 [![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/utils-lists.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/utils-lists/)
 [![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Futils-lists-xpack%2F)](https://micro-os-plus.github.io/utils-lists-xpack/)
 
 ## Overview
 
@@ -15,7 +16,10 @@ in order to avoid dynamic memory allocations, a useful feature in embedded
 systems.
 
 The **open source** project is hosted on GitHub as
-[micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
+[micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack)
+and has its own
+[documentation](https://micro-os-plus.github.io/utils-lists-xpack/)
+site.
 
 ## Install
 
