@@ -18,9 +18,9 @@ on:
       - '**'
     # ... any of these files changes ...
     paths:
-      - 'website'
-      - 'src'
-      - 'include'
+      - 'website/**'
+      - 'src/**'
+      - 'include/**'
       - '.github/workflows/publish-github-pages.yml'
       - 'package.json'
 
