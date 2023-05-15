@@ -14,25 +14,28 @@ toolchains as possible, and run them on as many platforms as possible.
 
 The supported test platforms are:
 
-- `platform-native` - run the test applications as native processes
+- `platform-native` - run the test applications as **native processes**
   on the development machine
-- `platform-qemu-cortex-m7f` - run the tests as fully semihosted Cortex-M7
-  applications on a QEMU `mps2-an500` emulated board
+- `platform-qemu-cortex-m7f` - run the tests as fully semihosted
+  **Cortex-M7** applications on a QEMU `mps2-an500` emulated board
   (an Arm Cortex-M7 development board)
-- `platform-qemu-cortex-m0` - run the tests as fully semihosted Cortex-M0
-  applications on a QEMU `mps2-an385` emulated board
+- `platform-qemu-cortex-m0` - run the tests as fully semihosted
+  **Cortex-M0** applications on a QEMU `mps2-an385` emulated board
   (an Arm Cortex-M3 development board)
-- `platform-qemu-cortex-a72` - run the tests as fully semihosted Cortex-A72
-  (64-bit) applications on a QEMU `virt` emulated board
-- `platform-qemu-cortex-a15` - run the tests as fully semihosted Cortex-A15
-  applications on a QEMU `virt` emulated board
-- `platform-qemu-riscv-rv32imac` - run the tests as fully semihosted RISC-V
-  RV32IMAC applications on a QEMU `virt` emulated board
-- `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted RISC-V
-  RV32IMAFDC applications on a QEMU `virt` emulated board
+- `platform-qemu-cortex-a72` - run the tests as fully semihosted
+  **Cortex-A72** (64-bit) applications on a QEMU `virt` emulated board
+- `platform-qemu-cortex-a15` - run the tests as fully semihosted
+  **Cortex-A15** applications on a QEMU `virt` emulated board
+- `platform-qemu-riscv-rv32imac` - run the tests as fully semihosted
+  **RISC-V RV32IMAC** applications on a QEMU `virt` emulated board
+- `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted
+  **RISC-V RV32IMAFDC** applications on a QEMU `virt` emulated board
 
-The tests are performed on GNU/Linux (Intel and Arm), macOS (Intel and
-Apple Silicon) and Windows.
+The tests are built and executed on:
+
+- GNU/Linux (Intel and Arm)
+- macOS (Intel and Apple Silicon)
+- Windows
 
 The build configurations use exactly the same source files on all platforms,
 without changes.
@@ -54,7 +57,8 @@ The following toolchains are used:
 
 ### sample-test
 
-This is a simple application to demonstrate how to call the
+The [sample-test.cpp](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/tests/src/sample-test.cpp)
+file is a simple application to demonstrate how to call the
 few primitives available in the library.
 
 A typical run looks like:
@@ -77,7 +81,8 @@ test 1
 
 ### unit-test
 
-This is an exhaustive test trying to validate that all the library
+The [unit-test.cpp](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/tests/src/unit-test.cpp)
+file is an exhaustive test trying to validate that all the library
 functions work as expected. It uses the
 [µTest++](https://github.com/micro-os-plus/micro-test-plus-xpack)
 framework.
@@ -276,3 +281,7 @@ git clone \
 xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
+
+@note On the first run, the install step might take quite some time,
+since it has to download the toolchain archives, which are relatively
+large.
