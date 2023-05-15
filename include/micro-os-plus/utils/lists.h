@@ -11,7 +11,7 @@
  */
 
 /*
- * This library implements several double linked lists, used by several
+ * This library implements several double linked lists, used by some
  * µOS++ components to keep track of internal objects; however it is
  * generic enough to be useful in other applications too, thus packing
  * it as a separate library.
