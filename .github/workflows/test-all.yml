@@ -21,7 +21,7 @@
 
 # -----------------------------------------------------------------------------
 
-name: 'Test utils-lists on all platforms'
+name: 'Test on all platforms'
 
 on:
   workflow_dispatch:
