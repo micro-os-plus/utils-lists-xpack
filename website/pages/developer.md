@@ -14,27 +14,32 @@ it should be avoided.
 
 One possible alternate solution to dynamically allocated list nodes is
 to include the list links in the allocated objects; hence the current
-implementation of the _intrusive_ lists, which are double linked lists
+implementation of the **intrusive** lists, which are double linked lists
 which store pairs of pointers in the linked objects. Objects linked in
 multiple lists use multiple pointers, one pair for each list.
 
 ## Statically initialised lists
 
-In order to support objects that auto-register themselves to
-static registrar objects, which are lists created in the global scope,
+In order to support **objects that auto-register themselves** to
+**static registrar objects**, which are lists created in the global scope,
 via the static constructors mechanism, it is necessary to guarantee
 that the registrar is initialised before the clients need to
 register. Since the order
 of static constructors is not defined, the only solution that
 guarantees this is to initialize the registrar during startup
-(via BSS init) before the static constructors.
+before the static constructors.
 
-These statically allocated lists must not change the
-content of any of their members in the constructors, since this
+@note
+This initialization is performed during startup,
+when the **bss** section is set to zero.
+
+These statically allocated lists **must not change the
+content of any of their members in the constructors**, since this
 may happen after clients have already registered.
 
-Additional logic must check that the lists are uninitialised and initialise
-them before any action.
+Before inserting into this list, the user must call `initialize_once()`,
+the will check the list, and, if in initial zero state, will initialise
+it to empty state (both pointers pointing to itself).
 
 ## C++ API
 
@@ -86,8 +91,9 @@ There are no C equivalents for the C++ methods.
 ## Build & integration info
 
 The project is written in C++, and it is expected to be used in C++ projects.
-The source code was compiled natively with GCC and clang and cross
-compiled on embedded Arm and RISC-V targets, and should be warning free.
+The source code was compiled natively with **GCC** and **clang** and cross
+compiled on embedded **Arm** and **RISC-V** targets,
+and should be warning free.
 
 To ease the integration of this package into user projects, there
 are already made **CMake** and **meson** configuration files (see below).
