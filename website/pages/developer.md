@@ -173,7 +173,7 @@ add this folder to the build:
 add_subdirectory("xpacks/micro-os-plus-utils-lists")
 ```
 
-The result is an interface library that can be added as an application
+The result is **an interface library** that can be added as an application
 dependency with:
 
 ```cmake
@@ -192,7 +192,7 @@ add this folder to the build:
 subdir('xpacks/micro-os-plus-utils-lists')
 ```
 
-The result is a dependency object that can be added
+The result is **a dependency object** that can be added
 to an application with:
 
 ```meson
