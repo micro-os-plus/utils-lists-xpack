@@ -81,6 +81,10 @@ and fix them; assign them to a milestone (like `4.0.0`).
 Update the `maintainer.md` file to reflect the changes
 related to the new version.
 
+### Update 'website/config.doxyfile'
+
+Update the `PROJECT_NUMBER` variable to the new version.
+
 ### Update 'CHANGELOG.md'
 
 - open the `CHANGELOG.md` file
