@@ -43,7 +43,8 @@ from the [npmjs.com](https://www.npmjs.com) registry as
 
 A recent [xpm](https://xpack.github.io/xpm/),
 which is a portable [Node.js](https://nodejs.org/) command line application
-that complements **npm** with extra features required by **C/C++ projects**.
+that complements **npm** with several extra features required by
+**C/C++ projects**.
 
 It is recommended to update to the latest version with:
 
@@ -118,7 +119,7 @@ lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 @n
 The project is CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
 Cortex-M7F, Cortex-A15, Cortex-A72, RISC-V RV32IMAC, RV64IMAFDC),
-and natively, with GCC & clang.
+and natively, with GCC and clang.
 
 ## Credits
 
