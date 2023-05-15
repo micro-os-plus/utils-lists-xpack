@@ -17,19 +17,19 @@ The supported test platforms are:
 - `platform-native` - run the test applications as **native processes**
   on the development machine
 - `platform-qemu-cortex-m7f` - run the tests as fully semihosted
-  **Cortex-M7** applications on a QEMU `mps2-an500` emulated board
+  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
   (an Arm Cortex-M7 development board)
 - `platform-qemu-cortex-m0` - run the tests as fully semihosted
-  **Cortex-M0** applications on a QEMU `mps2-an385` emulated board
+  **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
   (an Arm Cortex-M3 development board)
 - `platform-qemu-cortex-a72` - run the tests as fully semihosted
-  **Cortex-A72** (64-bit) applications on a QEMU `virt` emulated board
+  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
 - `platform-qemu-cortex-a15` - run the tests as fully semihosted
-  **Cortex-A15** applications on a QEMU `virt` emulated board
+  **Cortex-A15** applications on a QEMU **virt** emulated board
 - `platform-qemu-riscv-rv32imac` - run the tests as fully semihosted
-  **RISC-V RV32IMAC** applications on a QEMU `virt` emulated board
+  **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
 - `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted
-  **RISC-V RV32IMAFDC** applications on a QEMU `virt` emulated board
+  **RISC-V RV32IMAFDC** applications on a QEMU **virt** emulated board
 
 The tests are built and executed on:
 
