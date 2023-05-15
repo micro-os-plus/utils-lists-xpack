@@ -14,14 +14,13 @@ a special class of lists that store the links inside the listed objects,
 in order to avoid dynamic memory allocations, a useful feature in embedded
 systems.
 
-## Git repo
-
 The **open source** project is hosted on GitHub as
 [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
 
-## Web site
+## More info
 
-The project documentation is available online via GitHub
+For more info, please refer to the project documentation web site,
+available via GitHub
 [Pages](https://micro-os-plus.github.io/utils-lists-xpack/).
 
 ## License
