@@ -86,11 +86,11 @@ There are no C equivalents for the C++ methods.
 ## Build & integration info
 
 The project is written in C++, and it is expected to be used in C++ projects.
-The source code was compiled with GCC 11/12, clang 12/13/14/15
-and arm-none-eabi-gcc 11, riscv-none-elf-gcc 12 and should be warning free.
+The source code was compiled natively with GCC and clang and cross
+compiled on embedded Arm and RISC-V targets, and should be warning free.
 
 To ease the integration of this package into user projects, there
-are already made CMake and meson configuration files (see below).
+are already made **CMake** and **meson** configuration files (see below).
 
 For other build systems, consider the following details:
 
@@ -238,6 +238,7 @@ static_children_list kids_registry;
 
 ## Known problems
 
-- for statically allocated lists, the destructor cannot return the
-object to the initial zero state; in case the objects are reused it is
-mandatory to clear the memory (via a `memset()`, for example).
+- for statically allocated lists, the destructor cannot revert the
+object to the initial zero state; in case the objects are reused, it is
+mandatory to clear the memory (via a `memset()`, for example),
+before invoking the constructor via placement `new`.
