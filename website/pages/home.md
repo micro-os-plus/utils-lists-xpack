@@ -17,16 +17,6 @@ systems.
 The **open source** project is hosted on GitHub as
 [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
 
-### Developer info
-
-For details on how to use this library, please see the
-[Developer Info](website/pages/developer.md) page.
-
-### Maintainer info
-
-For maintenance and release operations, please see the
-[Maintainer Info](website/pages/maintainer.md) page.
-
 ## Install
 
 As a source code library, this project can be used in the traditional way,
