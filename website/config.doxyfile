@@ -68,9 +68,14 @@ PROJECT_LOGO           = website/assets/wall-e-icon-64.png
 # spaces. See also FILE_PATTERNS and EXTENSION_MAPPING
 # Note: If this tag is empty the current directory is searched.
 
+# The order is preserved in the side bar.
+
 INPUT                  = src \
                          include \
-                         website/pages
+                         website/pages/home.md \
+                         website/pages/developer.md \
+                         website/pages/maintainer.md \
+                         website/pages/testing.md \
 
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
