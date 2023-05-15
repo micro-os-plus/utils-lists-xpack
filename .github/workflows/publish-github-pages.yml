@@ -21,7 +21,6 @@ on:
       - 'website'
       - 'src'
       - 'include'
-      - 'README.md'
       - '.github/workflows/publish-github-pages.yml'
       - 'package.json'
 
