@@ -7,7 +7,7 @@ set -o nounset # Exit if variable not set.
 # Remove the initial space and instead use '\n'.
 IFS=$'\n\t'
 
-if [$# -lt 1]
+if [ $# -lt 1 ]
 then
   echo "Usage: get-libraries-paths.sh clang++|g++"
   exit 1
