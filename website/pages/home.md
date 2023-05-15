@@ -19,17 +19,19 @@ The **open source** project is hosted on GitHub as
 
 ## Install
 
-As a source code library, this project can be used in the traditional way,
+As a source code library, this project can be added to a project
+in the traditional way,
 by copying the relevant files into the target project, or by linking
-the entire project as a Git submodule,
-but the most convenient way is to add it as a dependency to a
-project via **xpm**.
+the entire project as a Git submodule.
+
+However, more automation is available and the most convenient way is
+to use it as a dependency to a project via **xpm**.
 
 ### xpm/npm
 
 In addition to the source files, this project also includes a
 `package.json` file with the metadata that allows it to be identified as an
-**xpm/npm** package that can be directly installed from GitHub or
+**xpm/npm** package such that it be directly installed from GitHub or
 from the [npmjs.com](https://www.npmjs.com) registry as
 [`@micro-os-plus/utils-lists`](https://www.npmjs.com/package/@micro-os-plus/utils-lists).
 
@@ -65,7 +67,7 @@ ls -l xpacks/micro-os-plus-utils-lists
 
 The package can also be installed with **npm** or related, but
 the extra features specific to C/C++ projects will not be available;
-thus, for consistency reasons, it is recommended to use **xpm**.
+thus, at least for consistency reasons, it is recommended to use **xpm**.
 
 ### Git submodule
 
