@@ -117,13 +117,17 @@ endif
 
 # -----------------------------------------------------------------------------
 
-commands = cpp_compiler.cmd_array()
-# message(commands)
+if build_machine.system() == 'linux'
+  # Get the list of commands supported by the compiler.
+  commands = cpp_compiler.cmd_array()
+  # message(commands)
 
-r = run_command('scripts/get-libraries-paths.sh', commands[0], check: true)
-ld_library_path = r.stdout().strip()
+  # Get the list of paths to libraries from the compiler.
+  result = run_command('scripts/get-libraries-paths.sh', commands[0], check: true)
+  ld_library_path = result.stdout().strip()
 
-xpack_environment.set('LD_LIBRARY_PATH', ld_library_path)
+  xpack_environment.set('LD_LIBRARY_PATH', ld_library_path)
+endif
 
 if enable_sample_test
 
