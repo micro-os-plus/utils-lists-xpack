@@ -43,7 +43,7 @@ from the [npmjs.com](https://www.npmjs.com) registry as
 
 A recent [xpm](https://xpack.github.io/xpm/),
 which is a portable [Node.js](https://nodejs.org/) command line application
-that complements **npm** with extra features required by C/C++ projects.
+that complements **npm** with extra features required by **C/C++ projects**.
 
 It is recommended to update to the latest version with:
 
