@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/utils-lists",
   "version": "4.0.0-pre",
-  "description": "A source code library with C++ lists utilities",
+  "description": "A source code library with the µOS++ C++ lists utilities",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
