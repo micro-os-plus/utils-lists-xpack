@@ -16,7 +16,7 @@ systems.
 
 ## More info
 
-For more info, please refer to the
+For information on how to install and use this library, please refer to the
 [project documentation](https://micro-os-plus.github.io/utils-lists-xpack/) web site.
 
 ## License
