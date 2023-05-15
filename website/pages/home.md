@@ -96,9 +96,8 @@ git submodule add https://github.com/micro-os-plus/utils-lists-xpack.git \
 
 ## Project repository
 
-The project is hosted on GitHub:
-
-- <https://github.com/micro-os-plus/utils-lists-xpack.git>
+The project uses Git and is hosted on GitHub as
+<https://github.com/micro-os-plus/utils-lists-xpack.git>.
 
 ### Branches
 
@@ -116,15 +115,14 @@ into the `xpack` branch.
 ## Status
 
 @note
-The **utils-lists** library is fully functional, and is
-CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
+The **utils-lists** library is fully functional, and
+the lists classes are used to manage several
+lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
+@n
+@n
+The project is CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
 Cortex-M7F, Cortex-A15, Cortex-A72, RISC-V RV32IMAC, RV64IMAFDC),
 and natively, with GCC & clang.
-@n
-@n
-The lists classes are used to manage several
-lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
-
 
 ## Credits
 
