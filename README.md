@@ -8,20 +8,16 @@
 
 ## Overview
 
-This project provides the **source code** for a library
+This **open source** project provides the **source code** for a library
 that implements **C++ intrusive double linked lists**,
 a special class of lists that store the links inside the listed objects,
 in order to avoid dynamic memory allocations, a useful feature in embedded
 systems.
 
-The **open source** project is hosted on GitHub as
-[micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
-
 ## More info
 
-For more info, please refer to the project documentation web site,
-available via GitHub
-[Pages](https://micro-os-plus.github.io/utils-lists-xpack/).
+For more info, please refer to the
+[project documentation](https://micro-os-plus.github.io/utils-lists-xpack/) web site.
 
 ## License
 
