@@ -3,7 +3,7 @@
 Releases in reverse chronological order.
 
 Please check
-[GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues/)
+[GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
 * v4.0.0
