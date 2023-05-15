@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/utils-lists",
   "version": "4.0.0-pre",
-  "description": "A source library xPack with the µOS++ C++ lists utilities",
+  "description": "A source code library with C++ lists utilities",
   "main": "",
   "scripts": {
     "npm-install": "npm install",
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/micro-os-plus/utils-lists-xpack/",
   "bugs": {
-    "url": "https://github.com/micro-os-plus/utils-lists-xpack/issues/"
+    "url": "https://github.com/micro-os-plus/utils-lists-xpack/issues"
   },
   "keywords": [
     "xpack",
@@ -52,7 +52,7 @@
       "@micro-os-plus/architecture-cortexm": "^6.3.0",
       "@micro-os-plus/architecture-riscv": "^4.1.0",
       "@micro-os-plus/architecture-synthetic-posix": "^4.0.2",
-      "@micro-os-plus/build-helper": "^2.12.0",
+      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
       "@micro-os-plus/devices-qemu-aarch32": "3.0.1",
       "@micro-os-plus/devices-qemu-aarch64": "3.0.0",
       "@micro-os-plus/devices-qemu-cortexm": "^4.1.1",
