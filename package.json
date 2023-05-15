@@ -134,7 +134,7 @@
         "xpm run test-native-meson-clang12",
         "xpm run test-native-meson-clang13",
         "xpm run test-native-meson-clang14",
-        "echo xpm run test-native-meson-clang15"
+        "{% if os.platform != 'linux' %}xpm run test-native-meson-clang15{% endif %}"
       ],
       "test-cortex": [
         "xpm run test-cortex-cmake",
