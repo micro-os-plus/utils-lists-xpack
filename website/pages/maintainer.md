@@ -9,9 +9,8 @@
 
 ## Project repository
 
-The project is hosted on GitHub:
-
-- <https://github.com/micro-os-plus/utils-lists-xpack.git>
+The project uses Git and is hosted on GitHub as
+<https://github.com/micro-os-plus/utils-lists-xpack.git>.
 
 To clone the stable branch (`xpack`), run the following commands in a
 terminal (on Windows use the _Git Bash_ console):
@@ -46,7 +45,9 @@ Code formatting is done using `clang-format --style=file`, either manually
 from a script, or automatically from Visual Studio Code, or the Eclipse
 CppStyle plug-in.
 
-Always reformat the source files that were changed.
+@note
+Always reformat the source files that were changed before committing
+them to the repository.
 
 ## How to make new releases
 
@@ -74,7 +75,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/micro-os-plus/utils-lists-xpack/issues>
 
-and fix them; assign them to a milestone (like `4.0.0`).
+and fix them; assign them to a milestone (like `4.0.0`, without **v**).
 
 ### Update 'website/pages/maintainer.md'
 
