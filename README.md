@@ -14,7 +14,7 @@ a special class of lists that store the links inside the listed objects,
 in order to avoid dynamic memory allocations, a useful feature in embedded
 systems.
 
-## More info
+## [Project documentation](https://micro-os-plus.github.io/utils-lists-xpack/)
 
 For information on how to install and use this library, please refer to the
 [project documentation](https://micro-os-plus.github.io/utils-lists-xpack/) web site.
