@@ -157,7 +157,7 @@ There are several preprocessor definitions used to configure the build.
 
 ### Dependencies
 
-- `@micro-os-plus::diag-trace`
+- `@micro-os-plus/diag-trace` - the µOS++ `trace::printf()` tracing infrastructure
 
 ### CMake
 
