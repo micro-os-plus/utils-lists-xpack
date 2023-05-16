@@ -113,6 +113,15 @@ USE_MDFILE_AS_MAINPAGE = website/pages/home.md
 ## -e 's|```.*|```|'
 INPUT_FILTER           = "sed -e 's|__attribute__\s*[(]\s*[(].*?[)]\s*[)]||g'"
 
+# The IMAGE_PATH tag can be used to specify one or more files or directories
+# that contain images that are to be included in the documentation (see the
+# \image command).
+
+IMAGE_PATH             = \
+                         website/assets/regular.png \
+                         website/assets/intrusive.png \
+
+
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
 #---------------------------------------------------------------------------

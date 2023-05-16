@@ -8,7 +8,9 @@
 The C++ standard libraries offer comprehensive support for various lists;
 however, most of them demand dynamic memory allocations for the links,
 which, on embedded systems, may be challenging; thus, when possible,
-it is preferred to avoid them, particularly at the system level.
+it is preferred to avoid them, particularly at system level.
+
+![Regular list](regular.png)
 
 ## Intrusive lists
 
@@ -18,6 +20,8 @@ used by the **intrusive** lists. They are double linked lists
 that keep two pointers for each linked object. Objects
 that belong to multiple lists have multiple pairs of pointers, one
 for each list.
+
+![Intrusive list](intrusive.png)
 
 ## Statically initialised lists
 
