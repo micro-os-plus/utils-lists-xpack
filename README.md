@@ -12,8 +12,8 @@
 This project provides the **source code** for a library
 that implements the **µOS++ C++ intrusive double linked lists**.
 These are special lists that avoid dynamic memory allocations by
-storing the links inside the list elements. This is beneficial in
-embedded systems.
+storing the links inside the list elements. This is particularly
+useful in embedded systems.
 
 ## [Project documentation](https://micro-os-plus.github.io/utils-lists-xpack/)
 
