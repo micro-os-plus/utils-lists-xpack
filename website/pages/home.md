@@ -57,7 +57,8 @@ Be sure **xpm** is not installed with administrative rights.
 
 #### xpm
 
-This project can be installed as a package from the `npmjs.com` registry with:
+This xPack project can be installed as a package from the
+`npmjs.com` registry with:
 
 ```sh
 cd my-project
