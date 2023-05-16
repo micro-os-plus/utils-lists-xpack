@@ -21,7 +21,7 @@ and has its own
 [documentation](https://micro-os-plus.github.io/utils-lists-xpack/)
 site.
 
-## Install
+## Getting Started
 
 As a source code library, this project can be added to a project
 in the traditional way,
@@ -113,7 +113,7 @@ into the `xpack` branch.
 
 @note
 The **utils-lists** library is fully functional, and
-the lists classes are used to manage several
+the intrusive lists class templates are used to manage several
 lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 @n
 @n
