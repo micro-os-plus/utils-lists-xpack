@@ -16,8 +16,10 @@ The input folders are:
 
 - `src`
 - `include`
-- `website/pages`
-- `README.md` <- the home page
+- `website/pages/...`
+
+The order of listing the `pages` is also the order of rendering the
+entries in the sidebar.
 
 ## GitHub Pages
 
