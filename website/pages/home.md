@@ -28,7 +28,7 @@ the entire project as a Git submodule.
 However, things can be further automated and the most convenient way is
 to **add it as a dependency** to the project via **xpm**.
 
-### xpm/npm
+### Install with xpm/npm
 
 In addition to the source files, this project also includes a
 `package.json` file with the metadata that allows it to be identified as an
@@ -72,7 +72,7 @@ the features specific to C/C++ projects will not be available;
 therefore, at least for consistency reasons, it is recommended
 to use **xpm**.
 
-### Git submodule
+### Add as Git submodule
 
 Besides manually copying the relevant files to the target
 project, which will later require extra maintenance efforts to keep the
