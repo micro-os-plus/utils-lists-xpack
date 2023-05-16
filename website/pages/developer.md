@@ -8,7 +8,7 @@
 The C++ standard libraries provide extensive support for maintaining lists;
 however, most of them require dynamic memory allocations for the links,
 which, on embedded systems, may be problematic; thus, when possible,
-it should be avoided.
+they should be avoided, especially at the system level.
 
 ## Intrusive lists
 
