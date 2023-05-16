@@ -260,7 +260,8 @@ can be triggered manually before releases, and runs all available tests
 on all supported platforms; for details see
 [test-all.yml](../.github/workflows/test-all.yml)
 
-@note Running these tests on Apple Silicon macOS and Arm GNU/Linux
+@note
+Running these tests on Apple Silicon macOS and Arm GNU/Linux
 require the self-hosted runners for the `micro-os-plus` GitHub
 organisation to be up and running.
 
@@ -282,6 +283,7 @@ xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
 
-@note On the first run, the install step might take quite some time,
+@note
+On the first run, the install step might take quite some time,
 since it has to download the toolchain archives, which are relatively
 large, up to hundreds of MB.

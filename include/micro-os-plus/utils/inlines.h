@@ -34,20 +34,47 @@ namespace micro_os_plus::utils
 {
   // ==========================================================================
 
-  // Code analysis may trigger:
-  // "Member 'previous' was not initialized in constructor"
-  // "Member 'next' was not initialized in constructor"
-
+  /**
+   * @details
+   * This must be an empty constructor, that does not touch
+   * the pointers, but leaves them unchanged.
+   *
+   * For statically initialised lists, this means a pair of `nullptr`
+   * pointers.
+   *
+   * For regular lists, the constructor of the derived class will handle
+   * the initialisations.
+   *
+   * @warning
+   * Code analysis may trigger:
+   * - Member 'previous_' was not initialized in constructor
+   * - Member 'next_' was not initialized in constructor
+   */
   constexpr double_list_links_base::double_list_links_base ()
   {
     // Must be empty! No members must be changed by this constructor!
   }
 
+  /**
+   * @details
+   * This must be an empty destructor, that does not touch
+   * the pointers, but leaves them unchanged.
+   */
   constexpr double_list_links_base::~double_list_links_base ()
   {
     // Must be empty! No members must be changed by this constructor!
   }
 
+  /**
+   * @details
+   * Set both pointers to point to this node.
+   *
+   * This is the definition of an **unlinked** node.
+   *
+   * @note
+   * After unlinking the node from a list, it must be returned to
+   * this state.
+   */
   constexpr void
   double_list_links_base::initialize (void)
   {
@@ -77,24 +104,33 @@ namespace micro_os_plus::utils
 
   // ==========================================================================
 
-  // Code analysis may trigger:
-  // "Member 'previous' was not initialized in constructor"
-  // "Member 'next' was not initialized in constructor"
-
+  /**
+   * @details
+   * As the name implies, it is assumed that the instance of the
+   * object is allocated statically and the entire content was set
+   * to zero during startup (via BSS init).
+   *
+   * This is equivalent to setting the pointers to `nullptr`.
+   *
+   * @warning
+   * Code analysis may trigger:
+   * - Member 'previous_' was not initialized in constructor
+   * - Member 'next_' was not initialized in constructor
+   */
   constexpr static_double_list_links::static_double_list_links ()
   {
     // Must be empty! No members must be changed by this constructor!
-
-    // As the name implies, it is assumed that the instance of the
-    // object is allocated statically and the entire content was set
-    // to zero during startup (via BSS init).
-
-    // This is equivalent to setting the pointers to `nullptr`.
   }
 
-  // GCC optimizes out the content (dead store elimination).
-  // __attribute__((optimize("no-lifetime-dse,no-dse,no-inline"))) did not
-  // help. The workaround is to use `nullify()` explicitly.
+  /**
+   * @warning
+   * GCC optimizes out the content (dead store elimination).
+   * @n
+   * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
+   * help. The workaround is to use `nullify()` explicitly,
+   * or, even better, to clear the memory before invoking the placement
+   * `new` constructor again.
+   */
   constexpr static_double_list_links::~static_double_list_links ()
   {
     // The goal is to revert the content to a state similar to the
@@ -217,7 +253,10 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * The initial list status is empty.
+   * For non-statically allocate lists, the initial list status is
+   * _empty_.
+   *
+   * Statically allocated remain _uninitialised_.
    */
   template <class T, class L>
   double_list<T, L>::double_list ()
@@ -239,9 +278,13 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * Normally there must be no nodes in the list.
-   * However, for statically auto-registered lists, this
-   * complicates things artificially.
+   * Normally at this point there must be no nodes in the list.
+   * However, for statically allocated lists, this
+   * might not be always true.
+   *
+   * @note
+   * In debug mode, the code warns if the list is not empty
+   * when destroyed.
    */
   template <class T, class L>
   constexpr double_list<T, L>::~double_list ()
@@ -252,8 +295,22 @@ namespace micro_os_plus::utils
 
     // Perhaps enable it for non statically allocated lists.
     // assert (empty ());
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    if (!empty ())
+      {
+        trace::printf ("%s() @%p list not empty\n", __func__, this);
+      }
+#endif
   }
 
+  /**
+   * @details
+   * An uninitialized node is a node with any of the pointers
+   * set to `nullptr`.
+   *
+   * Only statically allocated nodes in the initial state are
+   * _uninitialized_.
+   */
   template <class T, class L>
   bool
   double_list<T, L>::uninitialized (void) const
@@ -268,6 +325,19 @@ namespace micro_os_plus::utils
       }
   }
 
+  /**
+   * @details
+   * If the statically allocated list is still in the initial
+   * _uninitialised_ state (with both
+   * pointers null), initialise the list to the empty state,
+   * with both pointers pointing to itself.
+   *
+   * For non-statically initialised lists, this method is ineffective.
+   *
+   * @note
+   * Must be manually called for statically allocated list before
+   * inserting elements, or any other operations.
+   */
   template <class T, class L>
   void
   double_list<T, L>::initialize_once (void)
@@ -488,6 +558,19 @@ namespace micro_os_plus::utils
   {
   }
 
+  /**
+   * @details
+   * If the statically allocated list is still in the initial
+   * _uninitialised_ state (with both
+   * pointers null), initialise the list to the empty state,
+   * with both pointers pointing to itself.
+   *
+   * For non-statically initialised lists, this method is ineffective.
+   *
+   * @note
+   * Must be manually called for statically allocated list before
+   * inserting elements, or any other operations.
+   */
   template <class T, class N, N T::*MP, class L, class U>
   void
   intrusive_list<T, N, MP, L, U>::initialize_once (void)

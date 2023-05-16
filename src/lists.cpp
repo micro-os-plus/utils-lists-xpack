@@ -34,6 +34,14 @@ namespace micro_os_plus::utils
 {
   // ==========================================================================
 
+  /**
+   * @details
+   * An _uninitialized_ node is a node with the pointers
+   * set to `nullptr`.
+   *
+   * Only statically allocated nodes in the initial state are uninitialized.
+   * Regular nodes are always initialised.
+   */
   bool
   double_list_links_base::uninitialized (void) const
   {
@@ -46,6 +54,21 @@ namespace micro_os_plus::utils
     return false;
   }
 
+  /**
+   * @details
+   * If the statically allocated list is still in the initial
+   * _uninitialised_ state (with both
+   * pointers `nullptr`), initialise the list to the empty state,
+   * with both pointers pointing to itself.
+   *
+   * For non-statically initialised lists, this method is ineffective,
+   * since the node is always initialised at construct time.
+   *
+   * @note
+   * This method must be manually called for statically
+   * allocated list before
+   * inserting elements, or performing any other operations.
+   */
   void
   double_list_links_base::initialize_once (void)
   {
@@ -55,6 +78,13 @@ namespace micro_os_plus::utils
       }
   }
 
+  /**
+   * @details
+   * Insert the new node between the **next** pointer and the node
+   * pointed by it.
+   *
+   * Used by lists to link new nodes to the list head.
+   */
   void
   double_list_links_base::link_next (double_list_links_base* node)
   {
@@ -72,6 +102,13 @@ namespace micro_os_plus::utils
     next_ = node;
   }
 
+  /**
+   * @details
+   * Insert the new node between the **previous** pointer and the node
+   * pointed by it.
+   *
+   * Used by lists to link new nodes to the list tail.
+   */
   void
   double_list_links_base::link_previous (double_list_links_base* node)
   {
@@ -91,8 +128,11 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * Update the neighbours to
-   * point to each other, skipping the node.
+   * Update both neighbours to
+   * point to each other, practically removing the node from the list.
+   *
+   * The node is returned to the initial state (empty), with both
+   * pointers pointing to itself.
    */
   void
   double_list_links_base::unlink (void)
@@ -114,7 +154,7 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * To be fully linked, both pointers must point to different nodes
+   * To be _linked_, both pointers must point to different nodes
    * than itself (double list requirement).
    */
   bool
@@ -132,64 +172,12 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
-   * @class static_double_list_links
-   * @details
-   * This is the simplest list node, used as base class for other
-   * list nodes and as storage for static_double_list,
-   * that must be available for any statically constructed
-   * objects while still avoiding the 'static initialisation order fiasco'.
-   *
-   * The idea is to design the object in such a way as to benefit
-   * from the standard BSS initialisation, in other words take `nullptr`
-   * as starting values.
+   * @warning
+   * Not very safe, since the compiler may optimise out the code.
    */
-
-  //   /**
-  //    * @details
-  //    * The pointers must be either both non null or both not null.
-  //    */
-  //   bool
-  //   static_double_list_links::uninitialized (void) const
-  //   {
-  // #pragma GCC diagnostic push
-
-  // #if defined(__GNUC__) && !defined(__clang__)
-  // #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
-  // #endif
-  //     if (next_ == nullptr)
-  //       {
-  //         assert (previous_ == nullptr);
-  //         return true;
-  //       }
-  //     else
-  //       {
-  //         assert (previous_ != nullptr);
-  //         return false;
-  //       }
-  // #pragma GCC diagnostic pop
-  //   }
-
-  // /**
-  //  * @details
-  //  * To be fully linked, both pointers must be non null and point to
-  //  * somewhere else.
-  //  */
-  // bool
-  // static_double_list_links::linked (void)
-  // {
-  //   if (uninitialized ())
-  //     {
-  //       return false;
-  //     }
-  //   else
-  //     {
-  //       return double_list_links_base::linked ();
-  //     }
-  // }
-
+#if defined(__GNUC__) && !defined(__clang__)
   // Prevent LTO to optimize out the code.
   // https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html
-#if defined(__GNUC__) && !defined(__clang__)
   __attribute__ ((noinline, noipa))
 #endif
   void

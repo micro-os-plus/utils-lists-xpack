@@ -77,10 +77,12 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils
    *
    * @details
-   * A pair of uninitialised pointers to the next and previous list
-   * elements, plus a set of simple inlined methods to access the pointers.
+   * A pair of uninitialised pointers to the **next** and **previous** list
+   * elements, plus a set of simple (some inlined) methods to access the
+   * pointers.
    *
-   * Both the regular lists and the statically allocated lists
+   * @note
+   * Both the regular and the statically allocated list elements
    * are derived from this class.
    */
   class double_list_links_base
@@ -92,8 +94,7 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Construct an uninitialised list node
-     * (does not touch the pointers).
+     * @brief Construct an uninitialised list node.
      */
     constexpr double_list_links_base ();
 
@@ -130,18 +131,17 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Check if the links are initialised (statically
-     * allocated nodes start as null).
+     * @brief Check if the node is uninitialised.
      * @par Parameters
      *  None.
-     * @retval true The links are not initialised.
+     * @retval true The links are **not** initialised.
      * @retval false The links are initialised.
      */
     bool
     uninitialized (void) const;
 
     /**
-     * @brief Initialise the links.
+     * @brief Initialise the node links.
      * @par Parameters
      *  None.
      * @par Returns
@@ -161,7 +161,7 @@ namespace micro_os_plus::utils
     initialize_once (void);
 
     /**
-     * @brief Link new node as next.
+     * @brief Link the new node as **next**.
      * @par Parameters
      *  None.
      * @par Returns
@@ -171,7 +171,7 @@ namespace micro_os_plus::utils
     link_next (double_list_links_base* node);
 
     /**
-     * @brief Link new node as previous.
+     * @brief Link the new node as **previous**.
      * @par Parameters
      *  None.
      * @par Returns
@@ -197,14 +197,14 @@ namespace micro_os_plus::utils
     linked (void) const;
 
     /**
-     * @brief Return the link to the next node.
+     * @brief Get the link to the **next** node.
      * @retval Pointer to the next node.
      */
     constexpr double_list_links_base*
     next (void) const;
 
     /**
-     * @brief Return the link to the previous node.
+     * @brief Get the link to the **previous** node.
      * @retval Pointer to the previous node.
      */
     constexpr double_list_links_base*
@@ -221,12 +221,12 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Pointer to the previous node.
+     * @brief Pointer to the **previous** node.
      */
     double_list_links_base* previous_;
 
     /**
-     * @brief Pointer to the next node.
+     * @brief Pointer to the **next** node.
      */
     double_list_links_base* next_;
 
@@ -243,15 +243,20 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils
    *
    * @details
-   * The pair of pointers to the next and previous list
-   * elements and the inlined methods to access the pointers are
+   * The pair of pointers to the **next** and **previous** list
+   * elements and the methods to access the pointers are
    * inherited from the base class.
    *
-   * The constructor initialises the pointer to an empty list.
+   * The constructor initialises the pointers to an empty list
+   * (both pointers point to the node).
    */
   class double_list_links : public double_list_links_base
   {
   public:
+    /**
+     * @brief Type indicating that the links node is **not**
+     * statically allocated.
+     */
     using is_statically_allocated = std::false_type;
 
     // /**
@@ -301,12 +306,12 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils
    *
    * @details
-   * The pair of uninitialised pointers to the next and previous list
-   * elements and the inlined methods to access the pointers are
+   * The pair of uninitialised pointers to the **next** and **previous** list
+   * elements and the methods to access the pointers are
    * inherited from the base class.
    *
    * It is expected that instances of this class to be statically
-   * allocated in BSS and cleared during startup.
+   * allocated in the **bss** section and cleared (set to zero) during startup.
    *
    * These peculiar types of lists are used by registrars, to automate the
    * self-registration of other statically allocated objects, like drivers,
@@ -320,16 +325,19 @@ namespace micro_os_plus::utils
    * constructors.
    *
    * The solution is to design the object in such a way as to benefit
-   * from the standard BSS initialisation, in other words take `nullptr`
+   * from the standard **bss** initialisation, in other words take `nullptr`
    * as starting values.
    *
    * In practical terms, the list initialisation cannot be done in the
-   * constructor, but in each method that adds elements to the list,
-   * if the list is still uninitialised.
+   * constructor, but must be manually done before any method that
+   * adds elements to the list is called.
    */
   class static_double_list_links : public double_list_links_base
   {
   public:
+    /**
+     * @brief Type indicating that the links node is statically allocated.
+     */
     using is_statically_allocated = std::true_type;
 
     // /**
@@ -338,7 +346,8 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Construct a list node (BSS initialised).
+     * @brief Construct a statically allocated list node
+     * (**bss** initialised).
      */
     constexpr static_double_list_links ();
 
@@ -375,7 +384,7 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Reset the two pointers to null.
+     * @brief Reset the two pointers to `nullptr`.
      * @par Parameters
      *  None.
      * @par Returns
@@ -460,6 +469,9 @@ namespace micro_os_plus::utils
 
     constexpr explicit double_list_iterator (reference element);
 
+    // DO NOT delete the copy constructors, since the default one are
+    // used.
+
     // /**
     //  * @}
     //  */
@@ -519,7 +531,7 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Pointer to intrusive node.
+     * @brief Pointer to the node.
      */
     iterator_pointer node_;
 
@@ -541,7 +553,10 @@ namespace micro_os_plus::utils
    *
    * @details
    * A double linked list is a pair of head/tail pointers,
-   * allowing to iterate over the nodes. Currently only forward
+   * allowing to iterate over the nodes.
+   *
+   * @note
+   * Currently only forward
    * iterators are provided, but there is no problem to add reverse
    * iterators, if needed.
    *
@@ -553,7 +568,8 @@ namespace micro_os_plus::utils
    * The iterators return pointers to the list elements, i.e. to the
    * beginning of the objects of type T.
    *
-   * @note The class does not use inheritance, but composition for
+   * @note
+   * The class does not use inheritance, but composition for
    * the links node, to avoid inheriting unwanted methods from it.
    */
   template <class T, class L = double_list_links>
@@ -617,7 +633,7 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Construct a list.
+     * @brief Construct a double linked list.
      */
     double_list ();
 
@@ -655,10 +671,11 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Check if the list is initialised (statically allocated are not).
+     * @brief Check if the list is uninitialised
+     * (only statically allocated can be).
      * @par Parameters
      *  None.
-     * @retval true The list was not initialised.
+     * @retval true The list was **not** initialised.
      * @retval false The list was initialised.
      */
     bool
@@ -678,7 +695,7 @@ namespace micro_os_plus::utils
      * @brief Check if the list is empty.
      * @par Parameters
      *  None.
-     * @retval true The list has no nodes.
+     * @retval true The list has **no** nodes.
      * @retval false The list has at least one node.
      */
     bool
@@ -695,19 +712,19 @@ namespace micro_os_plus::utils
     clear (void);
 
     /**
-     * @brief Get the list head.
+     * @brief Get the list **head**.
      * @par Parameters
      *  None.
-     * @return Pointer to head node.
+     * @return Pointer to the head node.
      */
     constexpr pointer
     head (void) const;
 
     /**
-     * @brief Get the list tail.
+     * @brief Get the list **tail**.
      * @par Parameters
      *  None.
-     * @return Pointer to tail node.
+     * @return Pointer to the tail node.
      */
     constexpr pointer
     tail (void) const;
@@ -743,7 +760,7 @@ namespace micro_os_plus::utils
     // Required in derived class iterator end(), where direct
     // access to member fails.
     /**
-     * @brief Get the address of the links node.
+     * @brief Get the address of the node storing the list links.
      * @return A pointer to the list head object.
      */
     constexpr const links_type*
@@ -761,13 +778,14 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief A list node used to point to head and tail.
+     * @brief The list top node used to point to **head**
+     * and **tail** nodes.
      *
      * @details
-     * The node next pointer points to the list head, and the
-     * previous pointer points to the list tail.
+     * The node **next** pointer points to the list head, and the
+     * **previous** pointer points to the list tail.
      *
-     * To simplify processing, the list always has these pointers,
+     * To simplify processing, the list always has these pointers set,
      * with an empty list node pointing to itself.
      */
     links_type links_;
@@ -848,6 +866,9 @@ namespace micro_os_plus::utils
     constexpr explicit intrusive_list_iterator (iterator_pointer const node);
 
     constexpr explicit intrusive_list_iterator (reference element);
+
+    // DO NOT delete the copy constructors, since the default one are
+    // used.
 
     // /**
     //  * @}
@@ -1022,7 +1043,7 @@ namespace micro_os_plus::utils
     //  */
 
     /**
-     * @brief Construct an intrusive list.
+     * @brief Construct an intrusive double linked list.
      */
     constexpr intrusive_list ();
 
