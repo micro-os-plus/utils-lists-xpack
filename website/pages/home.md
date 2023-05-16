@@ -143,7 +143,7 @@ The source files to be added to user projects are:
 
 ### Preprocessor definitions
 
-There are several preprocessor definitions used to configure the build.
+There are several preprocessor definitions used to configure the build:
 
 - `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
 - `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
@@ -153,11 +153,16 @@ There are several preprocessor definitions used to configure the build.
 
 ### Compiler options
 
+Pass the following options to the compiler and linker:
+
 - `-std=c++20` or higher for C++ sources
 
 ### Dependencies
 
-- `@micro-os-plus/diag-trace` - the µOS++ `trace::printf()` tracing infrastructure
+The library requires the following libraries:
+
+- `@micro-os-plus/diag-trace` - the µOS++ `trace::printf()` tracing
+  infrastructure (optional)
 
 ### CMake
 
