@@ -6,6 +6,7 @@
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
 [![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/pulls)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Futils-lists-xpack%2F)](https://micro-os-plus.github.io/utils-lists-xpack/)
 
 ## Project repository
 
@@ -48,6 +49,23 @@ CppStyle plug-in.
 @note
 Always reformat the source files that were changed before committing
 them to the repository.
+
+## How to update the website
+
+The project [website](https://micro-os-plus.github.io/utils-lists-xpack/)
+is automatically generated and published by the
+`publish-github-pages.yml` workflow on Git push. The GitHub Action that
+runs the workflow is
+<https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml>.
+
+@todo When ready, restrict the workflow to run only on pushes to the
+`xpack` branch.
+
+For development, there are two xPack actions that can be used
+to automate the workflow:
+
+- `doxygen` - to build the site with Doxygen locally
+- `browser` - to start the default browser with the `website/html` folder
 
 ## How to make new releases
 
@@ -100,7 +118,7 @@ Update the `PROJECT_NUMBER` variable to the new version.
 
 ### Manual tests
 
-To run the tests manually on the local machine:
+To run the tests manually on the local development machine:
 
 ```sh
 xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
