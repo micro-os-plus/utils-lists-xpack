@@ -1,5 +1,5 @@
 
-# Developer Info
+# How to Use
 
 @tableofcontents
 
@@ -136,7 +136,7 @@ There are several preprocessor definitions used to configure the build.
 
 - `micro_os_plus::utils`
 
-### C++ Classes
+### C++ Classes and Class Templates
 
 ```cpp
  /*
@@ -183,9 +183,10 @@ target_link_libraries(your-target PRIVATE
 )
 ```
 
-### meson
+### Meson Build
 
-To integrate the **utils-lists** library into a meson application,
+To integrate the **utils-lists** library into a
+[meson](https://mesonbuild.com) application,
 add this folder to the build:
 
 ```meson
@@ -220,7 +221,7 @@ Here are some excerpts:
 class child
 {
 public:
-  child (const char* name)
+  child (const char* name);
   // ...
 protected:
   const char* name_;
@@ -233,9 +234,9 @@ public:
 
 using static_children_list = utils::intrusive_list<
         child, // type of nodes in the list
-        utils::double_list_links, // type of registry_links_
+        decltype (child::registry_links_), // type of the `registry_links_` member
         &child::registry_links_, // name of member
-        static_double_list_links>; // type of the links node
+        static_double_list_links>; // type of the head links node
 
 // The list head is statically allocated.
 static_children_list kids_registry;
