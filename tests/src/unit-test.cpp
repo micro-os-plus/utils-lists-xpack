@@ -545,14 +545,15 @@ using kid = child<utils::double_list_links>;
 // ---
 
 using static_kids_list
-    = utils::intrusive_list<kid, kid::links_type, &kid::registry_links_,
+    = utils::intrusive_list<kid, decltype (kid::registry_links_),
+                            &kid::registry_links_,
                             utils::static_double_list_links>;
 
 static micro_os_plus::micro_test_plus::test_suite ts_static_intrusive_list
     = { "Static intrusive list2", check_intrusive_list<static_kids_list> };
 
 using static_kids_list2
-    = utils::intrusive_list<static_kid, static_kid::links_type,
+    = utils::intrusive_list<static_kid, decltype (static_kid::registry_links_),
                             &static_kid::registry_links_,
                             utils::static_double_list_links>;
 
@@ -560,14 +561,15 @@ static micro_os_plus::micro_test_plus::test_suite ts_static_intrusive_list2
     = { "Static intrusive list static nodes",
         check_intrusive_list<static_kids_list2> };
 
-using kids_list
-    = utils::intrusive_list<kid, kid::links_type, &kid::registry_links_>;
+using kids_list = utils::intrusive_list<kid, decltype (kid::registry_links_),
+                                        &kid::registry_links_>;
 
 static micro_os_plus::micro_test_plus::test_suite ts_intrusive_list
     = { "Intrusive list2", check_intrusive_list<kids_list> };
 
-using kids_list2 = utils::intrusive_list<static_kid, static_kid::links_type,
-                                         &static_kid::registry_links_>;
+using kids_list2
+    = utils::intrusive_list<static_kid, decltype (static_kid::registry_links_),
+                            &static_kid::registry_links_>;
 
 static micro_os_plus::micro_test_plus::test_suite ts_intrusive_list2
     = { "Intrusive list static nodes", check_intrusive_list<kids_list2> };

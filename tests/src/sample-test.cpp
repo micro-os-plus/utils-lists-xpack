@@ -61,8 +61,9 @@ public:
   utils::double_list_links registry_links_;
 };
 
-using children_list = utils::intrusive_list<child, utils::double_list_links,
-                                            &child::registry_links_>;
+using children_list
+    = utils::intrusive_list<child, decltype (child::registry_links_),
+                            &child::registry_links_>;
 
 int
 main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
