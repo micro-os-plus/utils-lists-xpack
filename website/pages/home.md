@@ -9,7 +9,7 @@
 
 ## Overview
 
-This project provides the **source code** for a library
+The **utils-lists** project provides the **source code** for a library
 that implements the **µOS++ C++ intrusive double linked lists**.
 These are special lists that avoid dynamic memory allocations by
 storing the links inside the list elements. This is particularly
@@ -30,7 +30,7 @@ to **add it as a dependency** to the project via **xpm**.
 
 ### Install with xpm/npm
 
-In addition to the source files, this project also includes a
+Along with the source files, this project also includes a
 `package.json` file with the metadata that allows it to be identified as an
 **xpm/npm** package so that it can be directly installed from GitHub or
 from the [npmjs.com](https://www.npmjs.com) registry as
@@ -51,6 +51,9 @@ npm install --global xpm@latest
 
 For details please follow the instructions in the
 [xPack install](https://xpack.github.io/install/) page.
+
+@warning
+Be sure **xpm** is not installed with administrative rights.
 
 #### xpm
 
@@ -106,6 +109,99 @@ Pull Requests should be directed to this branch.
 
 When new releases are published, the `xpack-develop` branch is merged
 into the `xpack` branch.
+
+## Build & integration info
+
+The project is written in C++, and it is expected to be used in C++ projects.
+
+The source code was compiled natively with **GCC** and **clang** and cross
+compiled on embedded **Arm** and **RISC-V** targets,
+and is expected to be warnings free.
+
+To ease the integration of this library into user projects, there
+are already made **CMake** and **meson** configuration files (see below).
+
+For other build systems, consider the following details:
+
+### Include folders
+
+The following folders should be passed to the compiler during the build:
+
+- `include`
+
+The header files to be included in user projects are:
+
+```cpp
+#include <micro-os-plus/utils/lists.h>
+```
+
+### Source files
+
+The source files to be added to user projects are:
+
+- `src/lists.cpp`
+
+### Preprocessor definitions
+
+There are several preprocessor definitions used to configure the build.
+
+- `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
+  `insert()`, `link()`, `unlink()`
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT` - to trace constructors and
+  destructors
+
+### Compiler options
+
+- `-std=c++20` or higher for C++ sources
+
+### Dependencies
+
+- `@micro-os-plus::diag-trace`
+
+### CMake
+
+To integrate the **utils-lists** library into a CMake application,
+add this folder to the build:
+
+```cmake
+add_subdirectory("xpacks/micro-os-plus-utils-lists")
+```
+
+The result is **an interface library** that can be added as an application
+dependency with:
+
+```cmake
+target_link_libraries(your-target PRIVATE
+
+  micro-os-plus::utils-lists
+)
+```
+
+### Meson Build
+
+To integrate the **utils-lists** library into a
+[meson](https://mesonbuild.com) application,
+add this folder to the build:
+
+```meson
+subdir('xpacks/micro-os-plus-utils-lists')
+```
+
+The result is **a dependency object** that can be added
+to an application with:
+
+```meson
+exe = executable(
+  your-target,
+  link_with: [
+    # Nothing, not static.
+  ],
+  dependencies: [
+    micro_os_plus_utils_lists_dependency,
+  ]
+)
+```
 
 ## Status
 
