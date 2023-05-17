@@ -253,7 +253,7 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * For non-statically allocate lists, the initial list status is
+   * For non-statically allocated lists, the initial list status is
    * _empty_.
    *
    * Statically allocated remain _uninitialised_.
