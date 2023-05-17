@@ -154,21 +154,22 @@ There are several preprocessor definitions used to configure the build:
 
 ### Compiler options
 
-Pass the following options to the compiler and linker:
+The following options must be passed to the compiler and linker:
 
 - `-std=c++20` or higher for C++ sources
 
 ### Dependencies
 
-The library requires the following libraries:
+The library has the following dependencies:
 
 - `@micro-os-plus/diag-trace` - the µOS++ `trace::printf()` tracing
-  infrastructure (optional)
+  infrastructure (optional, used only if `MICRO_OS_PLUS_TRACE_UTILS_LISTS*`
+  are defined)
 
 ### CMake
 
 To integrate the **utils-lists** library into a CMake application,
-add this folder to the build:
+add the folder where this project is located to the build:
 
 ```cmake
 add_subdirectory("xpacks/micro-os-plus-utils-lists")
@@ -188,7 +189,7 @@ target_link_libraries(your-target PRIVATE
 
 To integrate the **utils-lists** library into a
 [meson](https://mesonbuild.com) application,
-add this folder to the build:
+add the folder where this project is located to the build:
 
 ```meson
 subdir('xpacks/micro-os-plus-utils-lists')
