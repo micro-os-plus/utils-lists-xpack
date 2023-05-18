@@ -23,6 +23,11 @@ for each list.
 
 ![Intrusive list](intrusive.png)
 
+For lists that are known to be linked only in a single list, there is a
+simpler variant:
+
+![Low Intrusive list](low-intrusive.png)
+
 ## Statically initialised lists
 
 In order to support **objects that auto-register themselves** to

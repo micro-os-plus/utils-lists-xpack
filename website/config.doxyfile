@@ -120,6 +120,7 @@ INPUT_FILTER           = "sed -e 's|__attribute__\s*[(]\s*[(].*?[)]\s*[)]||g'"
 IMAGE_PATH             = \
                          website/assets/regular.png \
                          website/assets/intrusive.png \
+                         website/assets/low-intrusive.png \
 
 
 #---------------------------------------------------------------------------
