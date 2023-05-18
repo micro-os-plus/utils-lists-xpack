@@ -32,7 +32,7 @@ The **open source** project is hosted on GitHub as
   </div>
 
   <div class="card">
-    <a href="md_website_pages_install.html">
+    <a href="md_website_pages_developer.html">
     <div class="card_container">
       <h2>How to Use</h2>
       <p>Learn what the intrusive lists are and how to use them.</p>
