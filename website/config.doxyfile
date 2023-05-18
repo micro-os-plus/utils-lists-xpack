@@ -73,6 +73,7 @@ PROJECT_LOGO           = website/assets/wall-e-icon-64.png
 INPUT                  = src \
                          include \
                          website/pages/home.md \
+                         website/pages/install.md \
                          website/pages/developer.md \
                          website/pages/maintainer.md \
                          website/pages/testing.md \
@@ -149,11 +150,13 @@ xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-tabs.js
+xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-tabs.js \
+
 
 HTML_EXTRA_STYLESHEET  = \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome.css \
-xpacks/micro-os-plus-build-helper/doxygen/common-custom.css
+xpacks/micro-os-plus-build-helper/doxygen/common-custom.css \
+website/pages/cards.css \
 
 HTML_COLORSTYLE        = LIGHT
 HTML_COLORSTYLE_HUE    = 209

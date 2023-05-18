@@ -1,0 +1,51 @@
+/* https://www.w3schools.com/howto/howto_css_cards.asp */
+/* https://www.w3schools.com/howto/howto_css_two_columns.asp */
+
+.cards {
+  display: flex;
+  grid-gap: 2rem;
+  margin-top: 50px;
+  margin-bottom: 50px
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  border-radius: 20px;
+  /* rounded corners */
+  flex: 50%;
+  padding: 16px;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Add some padding inside the card container */
+.card_container {
+  padding: 2px 16px;
+}
+
+
+
+/* Clear floats after the columns */
+.cards:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+div.card a {
+  text-decoration: none;
+}
+
+div.card h2 {
+  color: var(--page-foreground-color);
+}
+
+div.card p {
+  font-size: 0.9rem;
+  color: var(--page-foreground-color);
+  line-height: 160%;
+}
