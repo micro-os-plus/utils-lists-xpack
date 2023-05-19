@@ -4,14 +4,14 @@
 .cards {
   display: flex;
   grid-gap: 2rem;
-  margin-top: 50px;
-  margin-bottom: 50px
+  margin-top: 40px;
+  margin-bottom: 40px
 }
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
-  border-radius: 20px;
+  border-radius: 10px;
   /* rounded corners */
   flex: 50%;
   padding: 16px;
@@ -48,4 +48,19 @@ div.card p {
   font-size: 0.9rem;
   color: var(--page-foreground-color);
   line-height: 160%;
+}
+
+div.command {
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+div.fragment {
+  padding-left: 3em;
+  padding-right: 3em;
+}
+
+div.command div.fragment div.line {
+  text-align: center;
 }
