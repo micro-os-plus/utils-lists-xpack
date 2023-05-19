@@ -61,7 +61,7 @@ to use **xpm**.
 Besides manually copying the relevant files to the target
 project, which will later require extra maintenance efforts to keep the
 project up to date, a more convenient
-solution is to link the entire project as a Git submodule,
+solution is to link the entire project as a **Git submodule**,
 for example below an `xpacks` folder:
 
 ```sh
@@ -142,7 +142,7 @@ The following options must be passed to the compiler and linker:
 
 The library has the following dependencies:
 
-- `@micro-os-plus/diag-trace` - the µOS++ `trace::printf()` tracing
+- `@micro-os-plus/diag-trace` - the **µOS++** `trace::printf()` tracing
   infrastructure (optional, used only if `MICRO_OS_PLUS_TRACE_UTILS_LISTS*`
   are defined)
 
@@ -200,4 +200,4 @@ lists in the µOS++ RTOS scheduler (like threads, mutexes, devices, etc).
 @n
 The project is CI tested on 32 and 64-bit bare-metal platforms (Arm Cortex-M0,
 Cortex-M7F, Cortex-A15, Cortex-A72, RISC-V RV32IMAC, RV64IMAFDC),
-and natively, with GCC and clang.
+and natively, with GCC and LLVM/clang.
