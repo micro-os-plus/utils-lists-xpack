@@ -50,7 +50,7 @@ The **open source** project is hosted on GitHub as
 
 @endhtmlonly
 
-### Credits
+## Credits
 
 Many thanks to:
 
@@ -66,7 +66,7 @@ Many thanks to:
 for the nice Doxygen theme
 - [MacStadium](https://www.macstadium.com) - for providing the Apple Silicon development infrastructure as part of their [Open Source Program](https://www.macstadium.com/opensource/members).
 
-### License
+## License
 
 The original content is released under the
 [MIT License](https://opensource.org/licenses/MIT/),
