@@ -95,7 +95,7 @@ into the `xpack` branch.
 
 The project is written in C++, and it is expected to be used in C++ projects.
 
-The source code was compiled natively with **GCC** and **clang** and cross
+The source code was compiled natively with **GCC** and **LLVM/clang** and cross
 compiled on embedded **Arm** and **RISC-V** targets,
 and is expected to be warnings free.
 
