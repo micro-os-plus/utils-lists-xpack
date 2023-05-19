@@ -16,7 +16,7 @@ storing the links inside the list elements. This is particularly
 useful in embedded systems.
 
 The **open source** project is hosted on GitHub as
-[micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack).
+[micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack), and can be installed as an xPack dependency.
 
 @htmlonly
 
@@ -54,10 +54,17 @@ The **open source** project is hosted on GitHub as
 
 Many thanks to:
 
+@htmlonly
+<a href="https://www.macstadium.com">
+  <img src="https://uploads-ssl.webflow.com/5ac3c046c82724970fc60918/5c019d917bba312af7553b49_MacStadium-developerlogo.png" alt="MacStadium" style="float: right; width: 200px; margin-right: 10px;">
+</a>
+@endhtmlonly
+
 - [distortos](https://distortos.org) - for the inspiration on how these lists
   can be used in an RTOS
 - [doxygen-awesome-css](https://jothepro.github.io/doxygen-awesome-css/) -
 for the nice Doxygen theme
+- [MacStadium](https://www.macstadium.com) - for providing the Apple Silicon development infrastructure as part of their [Open Source Program](https://www.macstadium.com/opensource/members).
 
 ### License
 
