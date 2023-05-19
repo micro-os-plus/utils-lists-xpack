@@ -122,6 +122,11 @@ namespace micro_os_plus::utils
     // Must be empty! No members must be changed by this constructor!
   }
 
+#pragma GCC diagnostic push
+
+#if defined(__clang__)
+#pragma GCC diagnostic ignored "-Wdocumentation-unknown-command"
+#endif
   /**
    * @warning
    * GCC optimizes out the content (dead store elimination).
@@ -131,6 +136,7 @@ namespace micro_os_plus::utils
    * or, even better, to clear the memory before invoking the placement
    * `new` constructor again.
    */
+#pragma GCC diagnostic pop
   constexpr static_double_list_links::~static_double_list_links ()
   {
     // The goal is to revert the content to a state similar to the
