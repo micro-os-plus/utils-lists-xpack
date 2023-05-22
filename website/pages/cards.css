@@ -56,7 +56,7 @@ div.command {
   justify-content: center;
 }
 
-div.fragment {
+div.command div.fragment {
   padding-left: 3em;
   padding-right: 3em;
 }
