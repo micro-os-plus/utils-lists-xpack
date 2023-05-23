@@ -59,6 +59,7 @@ div.command {
 div.command div.fragment {
   padding-left: 3em;
   padding-right: 3em;
+  margin: 0;
 }
 
 div.command div.fragment div.line {
