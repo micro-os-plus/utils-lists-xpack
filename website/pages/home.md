@@ -21,9 +21,7 @@ The **open source** project is hosted on GitHub as
 @htmlonly
 
 <div class="command">
-  <div class="fragment">
-    <div class="line">xpm install @micro-os-plus/utils-lists@latest --verbose</div>
-  </div>
+  <div class="fragment"><div class="line">xpm install @micro-os-plus/utils-lists@latest --verbose</div></div>
 </div>
 
 <div class="cards">
