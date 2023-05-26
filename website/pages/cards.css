@@ -24,7 +24,7 @@
 
 /* Add some padding inside the card container */
 .card_container {
-  padding: 2px 16px;
+  padding: 20px 16px 16px 16px;
 }
 
 
@@ -48,6 +48,7 @@ div.card p {
   font-size: 0.9rem;
   color: var(--page-foreground-color);
   line-height: 160%;
+  margin: 1em 0 0 0;
 }
 
 div.command {
@@ -64,4 +65,14 @@ div.command div.fragment {
 
 div.command div.fragment div.line {
   text-align: center;
+}
+
+.card_svg {
+  height: 48px;
+  width: 48px;
+}
+
+.card_svg path {
+  stroke: var(--page-foreground-color);
+  fill: var(--page-background-color);
 }
