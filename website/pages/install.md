@@ -1,5 +1,7 @@
 # Getting Started
 
+@tableofcontents
+
 As a source code library, this project can be integrated into another project
 in the traditional way,
 by either copying the relevant files into the target project, or by linking
