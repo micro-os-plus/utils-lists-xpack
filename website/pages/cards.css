@@ -76,3 +76,11 @@ div.command div.fragment div.line {
   stroke: var(--page-foreground-color);
   fill: var(--page-background-color);
 }
+
+div.footer {
+  text-align: center;
+}
+
+div.footer p {
+  font-size: 0.8rem;
+}

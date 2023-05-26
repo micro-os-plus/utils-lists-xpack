@@ -78,6 +78,8 @@ INPUT                  = src \
                          website/pages/maintainer.md \
                          website/pages/testing.md \
                          website/pages/change-log.md \
+                         website/pages/credits.md \
+                         website/pages/license.md \
 
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
