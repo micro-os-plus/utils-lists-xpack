@@ -77,6 +77,7 @@ Many thanks to:
   can be used in an RTOS
 - [doxygen-awesome-css](https://jothepro.github.io/doxygen-awesome-css/) -
 for the nice Doxygen theme
+- [SVG REPO](https://www.svgrepo.com/) - for the SVG icons
 - [MacStadium](https://www.macstadium.com) - for providing the Apple Silicon development infrastructure as part of their [Open Source Program](https://www.macstadium.com/opensource/members).
 
 ## License
