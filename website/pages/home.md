@@ -1,4 +1,3 @@
-# A source code library with the µOS++ C++ intrusive lists  {#mainpage}
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/package.json)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/tags/)
@@ -7,7 +6,7 @@
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Futils-lists-xpack%2F)](https://micro-os-plus.github.io/utils-lists-xpack/)
 
-## Overview
+## A source code library with the µOS++ C++ intrusive lists
 
 The **utils-lists** project provides the **source code** for a library
 that implements the **µOS++ C++ intrusive double linked lists**.
