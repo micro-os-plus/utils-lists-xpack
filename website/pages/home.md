@@ -16,7 +16,8 @@ useful in embedded systems.
 
 The **open source** project is hosted on GitHub as
 [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack),
-and can be installed as an **xpm/npm** dependency.
+and can be installed as an
+[xpm](https://xpack.github.io/xpm/)/[npm](https://docs.npmjs.com) dependency.
 
 @htmlonly
 

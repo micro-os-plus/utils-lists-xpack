@@ -20,7 +20,8 @@ from the [npmjs.com](https://www.npmjs.com) registry as
 
 A recent [xpm](https://xpack.github.io/xpm/),
 which is a portable [Node.js](https://nodejs.org/) command line application
-that complements **npm** with several extra features specific to
+that complements [npm](https://docs.npmjs.com)
+with several extra features specific to
 **C/C++ projects**.
 
 It is recommended to install/update to the latest version with:
@@ -51,7 +52,8 @@ ls -l xpacks/micro-os-plus-utils-lists
 
 ### npm
 
-The package can also be installed with **npm** or related, but
+The package can also be installed with [npm](https://docs.npmjs.com)
+or related, but
 the features specific to C/C++ projects will not be available;
 therefore, at least for consistency reasons, it is recommended
 to use **xpm**.
