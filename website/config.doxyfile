@@ -37,26 +37,26 @@
 # title of most generated pages and in a few other places.
 # The default value is: My Project.
 
-PROJECT_NAME           = utils-lists
+PROJECT_NAME = utils-lists
 
 # The PROJECT_NUMBER tag can be used to enter a project or revision number. This
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER         = 4.0.0
+PROJECT_NUMBER = 4.0.0
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF          = "µOS++ C++ intrusive lists utilities"
+PROJECT_BRIEF = "µOS++ C++ intrusive lists utilities"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = website/assets/wall-e-icon-64.png
+PROJECT_LOGO = website/assets/wall-e-icon-64.png
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
@@ -70,16 +70,17 @@ PROJECT_LOGO           = website/assets/wall-e-icon-64.png
 
 # The order is preserved in the side bar.
 
-INPUT                  = src \
-                         include \
-                         website/pages/home.md \
-                         website/pages/install.md \
-                         website/pages/developer.md \
-                         website/pages/maintainer.md \
-                         website/pages/testing.md \
-                         website/pages/change-log.md \
-                         website/pages/credits.md \
-                         website/pages/license.md \
+INPUT = \
+src \
+include \
+website/pages/home.md \
+website/pages/install.md \
+website/pages/developer.md \
+website/pages/maintainer.md \
+website/pages/testing.md \
+website/pages/change-log.md \
+website/pages/credits.md \
+website/pages/license.md \
 
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
@@ -114,16 +115,16 @@ USE_MDFILE_AS_MAINPAGE = website/pages/home.md
 # properly processed by doxygen.
 
 ## -e 's|```.*|```|'
-INPUT_FILTER           = "sed -e 's|__attribute__\s*[(]\s*[(].*?[)]\s*[)]||g'"
+INPUT_FILTER = "sed -e 's|__attribute__\s*[(]\s*[(].*[)]\s*[)]||g'"
 
 # The IMAGE_PATH tag can be used to specify one or more files or directories
 # that contain images that are to be included in the documentation (see the
 # \image command).
 
-IMAGE_PATH             = \
-                         website/assets/regular.png \
-                         website/assets/intrusive.png \
-                         website/assets/low-intrusive.png \
+IMAGE_PATH = \
+website/assets/regular.png \
+website/assets/intrusive.png \
+website/assets/low-intrusive.png \
 
 
 #---------------------------------------------------------------------------
@@ -138,17 +139,19 @@ IMAGE_PATH             = \
 # recursively expanded use the := operator instead of the = operator.
 # This tag requires that the tag ENABLE_PREPROCESSING is set to YES.
 
-PREDEFINED             = __DOXYGEN__ \
-                         __cplusplus
+PREDEFINED = \
+__DOXYGEN__ \
+__cplusplus \
+
 
 #---------------------------------------------------------------------------
 # Configuration options related to the HTML output
 #---------------------------------------------------------------------------
 
-HTML_HEADER            = \
+HTML_HEADER = \
 xpacks/micro-os-plus-build-helper/doxygen/common-header-micro-os-plus.html
 
-HTML_EXTRA_FILES       = \
+HTML_EXTRA_FILES = \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
@@ -156,14 +159,15 @@ xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-tabs.js \
 
 
-HTML_EXTRA_STYLESHEET  = \
+HTML_EXTRA_STYLESHEET = \
 xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome.css \
 xpacks/micro-os-plus-build-helper/doxygen/common-custom.css \
-website/pages/cards.css \
+xpacks/micro-os-plus-build-helper/doxygen/cards.css \
 
-HTML_COLORSTYLE        = LIGHT
-HTML_COLORSTYLE_HUE    = 209
-HTML_COLORSTYLE_SAT    = 255
-HTML_COLORSTYLE_GAMMA  = 113
+
+HTML_COLORSTYLE = LIGHT
+HTML_COLORSTYLE_HUE = 209
+HTML_COLORSTYLE_SAT = 255
+HTML_COLORSTYLE_GAMMA = 113
 
 #---------------------------------------------------------------------------
