@@ -27,6 +27,7 @@ on:
       - 'package.json'
 
 # Allow one concurrent deployment
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
 concurrency:
   group: "pages"
   cancel-in-progress: true
@@ -38,8 +39,9 @@ permissions:
   id-token: write
 
 jobs:
+
   build:
-    name: Build the Jekyll & Doxygen pages
+    name: Build the Doxygen pages
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
@@ -51,7 +53,7 @@ jobs:
         with:
           fetch-depth: 3
 
-      - name: Use Nodejs
+      - name: Use Node.js
         # https://github.com/actions/setup-node
         uses: actions/setup-node@v3
         with:
@@ -78,11 +80,11 @@ jobs:
       - name: Build site with Doxygen
         run: .local/bin/doxygen website/config.doxyfile
 
-      - name: Setup Pages
+      - name: Configure Pages
         # https://github.com/actions/configure-pages
         uses: actions/configure-pages@v3
 
-      - name: Upload artifact
+      - name: Upload Pages artifact
         # https://github.com/actions/upload-pages-artifact
         uses: actions/upload-pages-artifact@v1
         with:
@@ -103,7 +105,7 @@ jobs:
 
     steps:
       - name: Deploy to GitHub Pages
-        id: deployment
+        id: deployment # referred by environment above, to get the URL.
         # https://github.com/actions/deploy-pages
         uses: actions/deploy-pages@v2
         with:
