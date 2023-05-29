@@ -69,7 +69,7 @@ jobs:
       - name: Install Doxygen
         # https://www.doxygen.nl/download.html
         env:
-          DOXYGEN_VERSION: "1.9.6"
+          DOXYGEN_VERSION: "1.9.7"
         run: |
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
