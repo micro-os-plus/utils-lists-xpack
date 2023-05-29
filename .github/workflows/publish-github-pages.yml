@@ -31,9 +31,15 @@ concurrency:
   group: "pages"
   cancel-in-progress: true
 
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build:
-    name: Build the Jekyll & Doxygen html code
+    name: Build the Jekyll & Doxygen pages
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
@@ -83,11 +89,6 @@ jobs:
           # Upload entire repository
           path: './website/html'
 
-      - name: Deploy to GitHub Pages
-        id: deployment
-        # https://github.com/actions/deploy-pages
-        uses: actions/deploy-pages@v2
-
   deploy:
     name: Deploy to GitHub Pages
 
@@ -95,12 +96,6 @@ jobs:
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
-
-    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
 
     environment:
       name: github-pages
