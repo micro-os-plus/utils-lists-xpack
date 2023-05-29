@@ -1,6 +1,8 @@
 # Simple workflow for deploying static content to GitHub Pages
 name: GitHub Pages
 
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
 # https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml
 # https://micro-os-plus.github.io/utils-lists-xpack/
 
@@ -24,28 +26,17 @@ on:
       - '.github/workflows/publish-github-pages.yml'
       - 'package.json'
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 # Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Single deploy job since we're just deploying
-  deploy:
-    name: Build & deploy to GitHub Pages
+  build:
+    name: Build the Jekyll & Doxygen html code
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout
@@ -60,12 +51,6 @@ jobs:
         with:
           node-version: 18.x
 
-      - name: Install dependencies
-        # For the build helper and the Doxygen theme.
-        run: |
-          npm install --global xpm@latest
-          xpm install
-
       - name: Install Doxygen
         # https://www.doxygen.nl/download.html
         env:
@@ -77,6 +62,12 @@ jobs:
           mkdir -pv .local/bin
           ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen .local/bin/doxygen
           ls -l
+
+      - name: Install dependencies
+        # For the build helper and the Doxygen theme.
+        run: |
+          npm install --global xpm@latest
+          xpm install
 
       - name: Build site with Doxygen
         run: .local/bin/doxygen website/config.doxyfile
@@ -95,4 +86,30 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         # https://github.com/actions/deploy-pages
-        uses: actions/deploy-pages@v1
+        uses: actions/deploy-pages@v2
+
+  deploy:
+    name: Deploy to GitHub Pages
+
+    needs: build
+
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    runs-on: ubuntu-22.04
+
+    # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        # https://github.com/actions/deploy-pages
+        uses: actions/deploy-pages@v2
+        with:
+          artifact_name: github-pages
