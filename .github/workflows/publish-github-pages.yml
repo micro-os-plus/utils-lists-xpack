@@ -38,10 +38,17 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
+    name: Deploy to GitHub Pages
+
+    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
+    runs-on: ubuntu-22.04
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+
+    env:
+      DOXYGEN_VERSION: "1.9.6"
 
     steps:
       - name: Checkout
@@ -54,7 +61,7 @@ jobs:
         # https://github.com/actions/setup-node
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install dependencies
         run: |
@@ -62,13 +69,16 @@ jobs:
           xpm install
 
       - name: Install Doxygen
+        # https://www.doxygen.nl/download.html
         run: |
-          curl https://www.doxygen.nl/files/doxygen-1.9.6.linux.bin.tar.gz --output doxygen-1.9.6.linux.bin.tar.gz
-          tar xf doxygen-1.9.6.linux.bin.tar.gz
+          curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
+          tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
+          mkdir .local/bin
+          ln -s $(pwd)/doxygen-$DOXYGEN_VERSION/doxygen .local/bin/doxygen
           ls -l
 
       - name: Build site
-        run: doxygen-1.9.6/bin/doxygen website/config.doxyfile
+        run: .local/bin/doxygen website/config.doxyfile
 
       - name: Setup Pages
         # https://github.com/actions/configure-pages
