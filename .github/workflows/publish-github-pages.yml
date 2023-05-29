@@ -38,7 +38,7 @@ concurrency:
 jobs:
   # Single deploy job since we're just deploying
   deploy:
-    name: Deploy to GitHub Pages
+    name: Build & deploy to GitHub Pages
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
@@ -73,7 +73,7 @@ jobs:
         run: |
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
-          mkdir .local/bin
+          mkdir -pv .local/bin
           ln -s $(pwd)/doxygen-$DOXYGEN_VERSION/doxygen .local/bin/doxygen
           ls -l
 
