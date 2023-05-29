@@ -72,7 +72,7 @@ it to the empty state (with both pointers pointing to itself).
 
 ### C++ Namespaces
 
-The definitions are grouped below a namespace below `micro_os_plus`:
+The definitions are grouped in a namespace below `micro_os_plus`:
 
 - `micro_os_plus::utils`
 
