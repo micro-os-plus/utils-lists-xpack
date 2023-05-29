@@ -6,7 +6,8 @@
 ## Overview
 
 The C++ standard libraries offer comprehensive support for various lists;
-however, most of them demand dynamic memory allocations for the links,
+however, most of them demand dynamic memory allocations for list nodes
+(the objects to store the pairs of links),
 which, on embedded systems, may be challenging; thus, when possible,
 it is preferred to avoid them, particularly at system level.
 
@@ -17,14 +18,27 @@ it is preferred to avoid them, particularly at system level.
 One possible way to avoid the dynamically allocated list nodes is
 to embed the list links into the payload objects. This is the method
 used by the **intrusive** lists. They are double linked lists
-that keep two pointers for each linked object. Objects
+that keep two pointers **inside** each linked object. Objects
 that belong to multiple lists have multiple pairs of pointers, one
 for each list.
 
+At the implementation level, this can be achieved by using composition,
+with the objects storing the pairs of links being members of the
+payload objects.
+
+@note
+The iterators must keep track of the offset from
+the object beginning to the location of the pairs of links.
+
 ![Intrusive list](intrusive.png)
 
-For lists that are known to be linked only in a single list, there is a
-simpler variant:
+For lists that are known to be linked into a single list, there is a
+simpler variant, with the payload object being derived from the object
+storing the pairs of links.
+
+@note
+This saves some computations in the iterators, since the
+offset to the pair of links is zero.
 
 ![Low Intrusive list](low-intrusive.png)
 
@@ -79,7 +93,8 @@ template <class T, class N, N T::*MP, class L = double_list_links,
 class intrusive_list;
 ```
 
-For simpler use cases, there is also a traditional list:
+For simpler use cases, like traditional list or low intrusive lists,
+there is a simpler template:
 
 ```cpp
  /*
