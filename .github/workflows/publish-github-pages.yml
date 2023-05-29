@@ -61,6 +61,7 @@ jobs:
           node-version: 18.x
 
       - name: Install dependencies
+        # For the build helper and the Doxygen theme.
         run: |
           npm install --global xpm@latest
           xpm install
