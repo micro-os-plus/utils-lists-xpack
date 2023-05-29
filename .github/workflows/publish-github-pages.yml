@@ -47,9 +47,6 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
-    env:
-      DOXYGEN_VERSION: "1.9.6"
-
     steps:
       - name: Checkout
         # https://github.com/actions/checkout
@@ -70,6 +67,8 @@ jobs:
 
       - name: Install Doxygen
         # https://www.doxygen.nl/download.html
+        env:
+          DOXYGEN_VERSION: "1.9.6"
         run: |
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
@@ -78,7 +77,7 @@ jobs:
           ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen .local/bin/doxygen
           ls -l
 
-      - name: Build site
+      - name: Build site with Doxygen
         run: .local/bin/doxygen website/config.doxyfile
 
       - name: Setup Pages
