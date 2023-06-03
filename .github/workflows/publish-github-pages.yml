@@ -43,6 +43,11 @@ jobs:
   build:
     name: Build the Doxygen pages
 
+    strategy:
+      matrix:
+        # https://www.npmjs.com/package/xpm
+        xpm-version: ['0.16.1']
+
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
 
@@ -71,10 +76,13 @@ jobs:
           ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen .local/bin/doxygen
           ls -l
 
+      - name: Install xpm@${{ matrix.xpm-version }} on Unix
+        if: runner.os != 'Windows'
+        run: sudo npm install -g xpm@${{ matrix.xpm-version }}
+
       - name: Install dependencies
         # For the build helper and the Doxygen theme.
         run: |
-          npm install --global xpm@latest
           xpm install
 
       - name: Build site with Doxygen
