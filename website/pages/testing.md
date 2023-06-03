@@ -2,7 +2,7 @@
 
 @tableofcontents
 
-[![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
+[![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
 [![Test on all platforms](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
 
 ## Overview
@@ -247,10 +247,10 @@ test 2
 ## Continuous Integration
 
 There is a GitHub Actions CI
-[workflow](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
+[workflow](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
 that runs a selection of the
 tests on every push; for details see
-[CI.yml](../.github/workflows/CI.yml).
+[ci.yml](../.github/workflows/ci.yml).
 
 ## Extensive testing
 

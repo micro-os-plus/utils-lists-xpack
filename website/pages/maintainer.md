@@ -3,7 +3,7 @@
 @tableofcontents
 
 [![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
-[![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml)
+[![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
 [![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/pulls)
 [![Website](https://img.shields.io/website?url=https%3A%2F%2Fmicro-os-plus.github.io%2Futils-lists-xpack%2F)](https://micro-os-plus.github.io/utils-lists-xpack/)
@@ -137,7 +137,7 @@ xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 - push the `xpack-develop` branch to GitHub
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
-  (<https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/CI.yml>)
+  (<https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml>)
 
 ### Test on all platforms
 
