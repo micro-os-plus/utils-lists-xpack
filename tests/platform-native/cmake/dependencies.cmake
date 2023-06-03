@@ -16,9 +16,9 @@
 
 set(xpack_dependencies_folders
   # Project dependencies.
-  "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-architecture-synthetic-posix"
-  "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-diag-trace"
-  "${CMAKE_SOURCE_DIR}/../xpacks/micro-os-plus-micro-test-plus"
+  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/architecture-synthetic-posix"
+  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/diag-trace"
+  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/micro-test-plus"
 
   # Build configuration dependencies.
   # None

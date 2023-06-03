@@ -25,8 +25,8 @@
 
 #---------------------------------------------------------------------------
 
-@INCLUDE = xpacks/micro-os-plus-build-helper/doxygen/original-config.doxyfile
-@INCLUDE = xpacks/micro-os-plus-build-helper/doxygen/common-config.doxyfile
+@INCLUDE = xpacks/@micro-os-plus/build-helper/doxygen/original-config.doxyfile
+@INCLUDE = xpacks/@micro-os-plus/build-helper/doxygen/common-config.doxyfile
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -191,7 +191,7 @@ HTML_OUTPUT            = website/html
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_HEADER = \
-xpacks/micro-os-plus-build-helper/doxygen/common-header-micro-os-plus.html
+xpacks/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -210,9 +210,9 @@ xpacks/micro-os-plus-build-helper/doxygen/common-header-micro-os-plus.html
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_STYLESHEET = \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome.css \
-xpacks/micro-os-plus-build-helper/doxygen/common-custom.css \
-xpacks/micro-os-plus-build-helper/doxygen/cards.css \
+xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
+xpacks/@micro-os-plus/build-helper/doxygen/common-custom.css \
+xpacks/@micro-os-plus/build-helper/doxygen/cards.css \
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -223,11 +223,11 @@ xpacks/micro-os-plus-build-helper/doxygen/cards.css \
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_FILES = \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
-xpacks/xpack-3rd-party-doxygen-awesome-css/doxygen-awesome-tabs.js \
+xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
 
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor

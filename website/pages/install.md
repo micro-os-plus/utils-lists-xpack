@@ -54,7 +54,7 @@ xpm init # Unless a package.json is already present
 
 xpm install @micro-os-plus/utils-lists@latest
 
-ls -l xpacks/micro-os-plus-utils-lists
+ls -l xpacks/@micro-os-plus/utils-lists
 ```
 
 ### npm
@@ -79,7 +79,7 @@ git init # Unless already a Git project
 mkdir -p xpacks
 
 git submodule add https://github.com/micro-os-plus/utils-lists-xpack.git \
-  xpacks/micro-os-plus-utils-lists
+  xpacks/@micro-os-plus/utils-lists
 ```
 
 ## Project repository
@@ -161,7 +161,7 @@ To integrate the **utils-lists** library into a CMake application,
 add the folder where this project is located to the build:
 
 ```cmake
-add_subdirectory("xpacks/micro-os-plus-utils-lists")
+add_subdirectory("xpacks/@micro-os-plus/utils-lists")
 ```
 
 The result is **an interface library** that can be added as an application
@@ -181,7 +181,7 @@ To integrate the **utils-lists** library into a
 add the folder where this project is located to the build:
 
 ```meson
-subdir('xpacks/micro-os-plus-utils-lists')
+subdir('xpacks/@micro-os-plus/utils-lists')
 ```
 
 The result is **a dependency object** that can be added

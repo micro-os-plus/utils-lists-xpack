@@ -14,7 +14,7 @@
 
 # This file is intended to be consumed by applications with:
 #
-# `subdir('xpacks/micro-os-plus-utils-lists')`
+# `subdir('xpacks/@micro-os-plus/utils-lists')`
 #
 # The result is a dependency that can be referred as:
 #
