@@ -45,7 +45,7 @@ Be sure **xpm** is not installed with administrative rights.
 
 ### xpm
 
-This xPack project can be installed as a package from the
+This project can be installed as a package from the
 `npmjs.com` registry with:
 
 ```sh
@@ -65,7 +65,7 @@ the features specific to C/C++ projects will not be available;
 therefore, at least for consistency reasons, it is recommended
 to use **xpm**.
 
-## Add as Git submodule
+## Add as a Git submodule
 
 Besides manually copying the relevant files to the target
 project, which will later require extra maintenance efforts to keep the
