@@ -13,9 +13,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/micro-os-plus/utils-lists-xpack.git/"
+    "url": "https://github.com/micro-os-plus/utils-lists-xpack.git"
   },
-  "homepage": "https://github.com/micro-os-plus/utils-lists-xpack/",
+  "homepage": "https://github.com/micro-os-plus/utils-lists-xpack",
   "bugs": {
     "url": "https://github.com/micro-os-plus/utils-lists-xpack/issues"
   },
@@ -27,7 +27,7 @@
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
-    "url": "https://github.com/ilg-ul/"
+    "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
   "config": {},
@@ -40,8 +40,9 @@
     "minimumXpmRequired": "0.16.2",
     "dependencies": {},
     "$dependenciesUrls": [
-      "https://github.com/xpack-dev-tools/",
-      "https://github.com/micro-os-plus/"
+      "https://github.com/micro-os-plus",
+      "https://github.com/xpack-3rd-party",
+      "https://github.com/xpack-dev-tools"
     ],
     "devDependencies": {
       "@jothepro/doxygen-awesome-css": "github:jothepro/doxygen-awesome-css#v2.2.1",
@@ -492,7 +493,6 @@
       "deep-clean": "del-cli build node_modules xpacks website/html package-lock.json",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
     },
-    "$devDependenciesUrl": "https://github.com/xpack-dev-tools/",
     "buildConfigurations": {
       "short-win-paths-properties": {
         "hidden": true,
