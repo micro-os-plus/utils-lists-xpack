@@ -19,8 +19,8 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(
-  micro-os-plus-utils-lists
-  DESCRIPTION "utils-lists"
+  micro-os-plus-utils-lists-tests
+  DESCRIPTION "utils-lists tests"
 )
 
 # Must be called from the project root folder.
@@ -51,7 +51,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # -----------------------------------------------------------------------------
 
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
-  message(FATAL_ERROR "In-source builds are not supported. Please use separate folder for build.")
+  message(FATAL_ERROR "In-source builds are not supported. Please use a separate folder for build.")
 endif()
 
 # The build-helper is a devDependency, available only after `xpm install`.
