@@ -473,6 +473,22 @@
         "xpm run clean --config qemu-cortex-a15-meson-debug --ignore-errors",
         "xpm run clean --config qemu-cortex-a15-meson-release --ignore-errors"
       ],
+      "clean-riscv": [
+        "xpm run clean-riscv-cmake",
+        "xpm run clean-riscv-meson"
+      ],
+      "clean-riscv-cmake": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-release",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-release"
+      ],
+      "clean-riscv-meson": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-release",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-release"
+      ],
       "deep-clean": "del-cli build node_modules xpacks website/html package-lock.json",
       "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
     },
