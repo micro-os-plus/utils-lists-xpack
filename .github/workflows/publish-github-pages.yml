@@ -46,7 +46,7 @@ jobs:
     strategy:
       matrix:
         # https://www.npmjs.com/package/xpm
-        xpm-version: ['0.16.1']
+        xpm-version: ['0.16.2']
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
