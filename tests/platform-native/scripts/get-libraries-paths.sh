@@ -13,6 +13,6 @@ then
   exit 1
 fi
 
-$1 "$@" -print-search-dirs | grep 'libraries: =' | sed -e 's|libraries: =||'
+"$@" -print-search-dirs | grep 'libraries: =' | sed -e 's|libraries: =||'
 
 # -----------------------------------------------------------------------------
