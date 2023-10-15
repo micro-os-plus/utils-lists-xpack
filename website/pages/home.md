@@ -14,7 +14,7 @@ These are special lists that avoid dynamic memory allocations by
 storing the links inside the list elements. This is particularly
 useful in embedded systems.
 
-The **open source** project is hosted on GitHub as
+The **open-source** project is hosted on GitHub as
 [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack),
 and can be installed as an
 [xpm](https://xpack.github.io/xpm/)/[npm](https://docs.npmjs.com) dependency.
