@@ -46,7 +46,9 @@ jobs:
     strategy:
       matrix:
         # https://www.npmjs.com/package/xpm
-        xpm-version: ['0.16.2']
+        xpm-version: [ '0.17.0' ]
+        # https://nodejs.org/en - use LTS
+        node-version: [ '18' ]
 
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-22.04
@@ -62,12 +64,12 @@ jobs:
         # https://github.com/actions/setup-node
         uses: actions/setup-node@v3
         with:
-          node-version: 18.x
+          node-version: ${{ matrix.node-version }}
 
       - name: Install Doxygen
         # https://www.doxygen.nl/download.html
         env:
-          DOXYGEN_VERSION: "1.9.7"
+          DOXYGEN_VERSION: "1.9.8"
         run: |
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
@@ -76,9 +78,9 @@ jobs:
           ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen .local/bin/doxygen
           ls -l
 
-      - name: Install xpm@${{ matrix.xpm-version }} on Unix
-        if: runner.os != 'Windows'
-        run: sudo npm install -g xpm@${{ matrix.xpm-version }}
+      - name: Install xpm@${{ matrix.xpm-version }}
+        run: |
+          npm install -g xpm@${{ matrix.xpm-version }}
 
       - name: Install dependencies
         # For the build helper and the Doxygen theme.
