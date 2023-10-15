@@ -130,7 +130,7 @@ endfunction()
 
 if (CMAKE_SYSTEM_NAME STREQUAL "Linux")
 
-  # On Lnux, get the actual libraries paths by asking the compiler.
+  # On Linux, get the actual libraries paths by asking the compiler.
   execute_process(
     COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/scripts/get-libraries-paths.sh" ${CMAKE_CXX_COMPILER}
     OUTPUT_VARIABLE LD_LIBRARY_PATH
