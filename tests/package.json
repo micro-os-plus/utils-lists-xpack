@@ -30,7 +30,7 @@
     ],
     "devDependencies": {
       "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
-      "@micro-os-plus/diag-trace": "^4.2.0",
+      "@micro-os-plus/diag-trace": "^4.2.1",
       "@micro-os-plus/micro-test-plus": "^3.1.1",
       "@xpack-dev-tools/cmake": "3.26.5-1.1",
       "@xpack-dev-tools/meson-build": "1.0.2-1.1",
