@@ -34,20 +34,20 @@ jobs:
     strategy:
       matrix:
         # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
-        os: ['ubuntu-22.04', 'macos-12', 'windows-2022']
+        os: [ 'ubuntu-22.04', 'macos-12', 'windows-2022' ]
         # https://nodejs.org/en - use LTS
-        node-version: ['18']
+        node-version: [ '18' ]
         # https://www.npmjs.com/package/xpm
-        xpm-version: ['0.16.2']
+        xpm-version: [ '0.17.0' ]
 
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
       with:
         fetch-depth: 3
 
     - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-      uses: actions/setup-node@v2
+      uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
 
@@ -56,101 +56,102 @@ jobs:
 
     - name: Show environment
       run: |
+        id
         uname -a
         node --version
         npm --version
         xpm --version
-        env
+        env | sort
 
     - name: Satisfy project dependencies
-      run: xpm install
+      run: xpm install -C tests
 
     - name: Run test-native-cmake-gcc
       run: |
-        xpm install --config native-cmake-gcc-debug
-        xpm install --config native-cmake-gcc-release
-        xpm run test-native-cmake-gcc
+        xpm install --config native-cmake-gcc-debug -C tests
+        xpm install --config native-cmake-gcc-release -C tests
+        xpm run test-native-cmake-gcc -C tests
 
     - name: Run test-native-cmake-clang
       run: |
-        xpm install --config native-cmake-clang-debug
-        xpm install --config native-cmake-clang-release
-        xpm run test-native-cmake-clang
+        xpm install --config native-cmake-clang-debug -C tests
+        xpm install --config native-cmake-clang-release -C tests
+        xpm run test-native-cmake-clang -C tests
 
     - name: Run test-native-meson-gcc
       run: |
-        xpm install --config native-meson-gcc-debug
-        xpm install --config native-meson-gcc-release
-        xpm run test-native-meson-gcc
-
-    - name: Run test-qemu-cortex-m7f-cmake
-      run: |
-        xpm install --config qemu-cortex-m7f-cmake-debug
-        xpm install --config qemu-cortex-m7f-cmake-release
-        xpm run test-qemu-cortex-m7f-cmake
-
-    - name: Run test-qemu-cortex-m7f-meson
-      run: |
-        xpm install --config qemu-cortex-m7f-meson-debug
-        xpm install --config qemu-cortex-m7f-meson-release
-        xpm run test-qemu-cortex-m7f-meson
+        xpm install --config native-meson-gcc-debug -C tests
+        xpm install --config native-meson-gcc-release -C tests
+        xpm run test-native-meson-gcc -C tests
 
     - name: Run test-qemu-cortex-m0-cmake
       run: |
-        xpm install --config qemu-cortex-m0-cmake-debug
-        xpm install --config qemu-cortex-m0-cmake-release
-        xpm run test-qemu-cortex-m0-cmake
+        xpm install --config qemu-cortex-m0-cmake-debug -C tests
+        xpm install --config qemu-cortex-m0-cmake-release -C tests
+        xpm run test-qemu-cortex-m0-cmake -C tests
 
     - name: Run test-qemu-cortex-m0-meson
       run: |
-        xpm install --config qemu-cortex-m0-meson-debug
-        xpm install --config qemu-cortex-m0-meson-release
-        xpm run test-qemu-cortex-m0-meson
+        xpm install --config qemu-cortex-m0-meson-debug -C tests
+        xpm install --config qemu-cortex-m0-meson-release -C tests
+        xpm run test-qemu-cortex-m0-meson -C tests
+
+    - name: Run test-qemu-cortex-m7f-cmake
+      run: |
+        xpm install --config qemu-cortex-m7f-cmake-debug -C tests
+        xpm install --config qemu-cortex-m7f-cmake-release -C tests
+        xpm run test-qemu-cortex-m7f-cmake -C tests
+
+    - name: Run test-qemu-cortex-m7f-meson
+      run: |
+        xpm install --config qemu-cortex-m7f-meson-debug -C tests
+        xpm install --config qemu-cortex-m7f-meson-release -C tests
+        xpm run test-qemu-cortex-m7f-meson -C tests
 
     - name: Run test-qemu-cortex-a15-cmake
       run: |
-        xpm install --config qemu-cortex-a15-cmake-debug
-        xpm install --config qemu-cortex-a15-cmake-release
-        xpm run test-qemu-cortex-a15-cmake
+        xpm install --config qemu-cortex-a15-cmake-debug -C tests
+        xpm install --config qemu-cortex-a15-cmake-release -C tests
+        xpm run test-qemu-cortex-a15-cmake -C tests
 
     - name: Run test-qemu-cortex-a15-meson
       run: |
-        xpm install --config qemu-cortex-a15-meson-debug
-        xpm install --config qemu-cortex-a15-meson-release
-        xpm run test-qemu-cortex-a15-meson
+        xpm install --config qemu-cortex-a15-meson-debug -C tests
+        xpm install --config qemu-cortex-a15-meson-release -C tests
+        xpm run test-qemu-cortex-a15-meson -C tests
 
     - name: Run test-qemu-cortex-a72-cmake
       run: |
-        xpm install --config qemu-cortex-a72-cmake-debug
-        xpm install --config qemu-cortex-a72-cmake-release
-        xpm run test-qemu-cortex-a72-cmake
+        xpm install --config qemu-cortex-a72-cmake-debug -C tests
+        xpm install --config qemu-cortex-a72-cmake-release -C tests
+        xpm run test-qemu-cortex-a72-cmake -C tests
 
     - name: Run test-qemu-cortex-a72-meson
       run: |
-        xpm install --config qemu-cortex-a72-meson-debug
-        xpm install --config qemu-cortex-a72-meson-release
-        xpm run test-qemu-cortex-a72-meson
+        xpm install --config qemu-cortex-a72-meson-debug -C tests
+        xpm install --config qemu-cortex-a72-meson-release -C tests
+        xpm run test-qemu-cortex-a72-meson -C tests
 
     - name: Run test-qemu-riscv-rv32imac-cmake
       run: |
-        xpm install --config qemu-riscv-rv32imac-cmake-debug
-        xpm install --config qemu-riscv-rv32imac-cmake-release
-        xpm run test-qemu-riscv-rv32imac-cmake
+        xpm install --config qemu-riscv-rv32imac-cmake-debug -C tests
+        xpm install --config qemu-riscv-rv32imac-cmake-release -C tests
+        xpm run test-qemu-riscv-rv32imac-cmake -C tests
 
     - name: Run test-qemu-riscv-rv32imac-meson
       run: |
-        xpm install --config qemu-riscv-rv32imac-meson-debug
-        xpm install --config qemu-riscv-rv32imac-meson-release
-        xpm run test-qemu-riscv-rv32imac-meson
+        xpm install --config qemu-riscv-rv32imac-meson-debug -C tests
+        xpm install --config qemu-riscv-rv32imac-meson-release -C tests
+        xpm run test-qemu-riscv-rv32imac-meson -C tests
 
     - name: Run test-qemu-riscv-rv64imafdc-cmake
       run: |
-        xpm install --config qemu-riscv-rv64imafdc-cmake-debug
-        xpm install --config qemu-riscv-rv64imafdc-cmake-release
-        xpm run test-qemu-riscv-rv64imafdc-cmake
+        xpm install --config qemu-riscv-rv64imafdc-cmake-debug -C tests
+        xpm install --config qemu-riscv-rv64imafdc-cmake-release -C tests
+        xpm run test-qemu-riscv-rv64imafdc-cmake -C tests
 
     - name: Run test-qemu-riscv-rv64imafdc-meson
       run: |
-        xpm install --config qemu-riscv-rv64imafdc-meson-debug
-        xpm install --config qemu-riscv-rv64imafdc-meson-release
-        xpm run test-qemu-riscv-rv64imafdc-meson
+        xpm install --config qemu-riscv-rv64imafdc-meson-debug -C tests
+        xpm install --config qemu-riscv-rv64imafdc-meson-release -C tests
+        xpm run test-qemu-riscv-rv64imafdc-meson -C tests
