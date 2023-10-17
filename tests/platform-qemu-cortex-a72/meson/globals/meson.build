@@ -87,11 +87,17 @@ endforeach
 add_global_link_arguments(
   xpack_platform_common_args + xpack_platform_common_c_args,
 
+  # .elf has a LOAD segment with RWX permissions (GCC 12)
+  '-Wl,--no-warn-rwx-segments',
+
   language: [ 'c' ]
 )
 
 add_global_link_arguments(
   xpack_platform_common_args + xpack_platform_common_cpp_args,
+
+  # .elf has a LOAD segment with RWX permissions (GCC 12)
+  '-Wl,--no-warn-rwx-segments',
 
   language: [ 'cpp' ]
 )

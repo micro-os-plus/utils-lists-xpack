@@ -13,7 +13,7 @@
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual.html#project
-project('micro-os-plus-utils-lists',
+project('micro-os-plus-utils-lists-tests',
   ['c', 'cpp'],
   default_options: [
     'c_std=c11',
@@ -43,7 +43,8 @@ cpp_compiler = meson.get_compiler('cpp')
 # -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Reference-manual_builtin_meson.html#mesoncurrent_source_dir
-xpack_project_folder_path = fs.parent(meson.current_source_dir())
+xpack_tests_folder_path = meson.current_source_dir()
+xpack_project_folder_path = fs.parent(xpack_tests_folder_path)
 # https://mesonbuild.com/Reference-manual_builtin_meson.html#mesonproject_build_root
 xpack_build_folder_path = meson.project_build_root()
 
@@ -60,7 +61,7 @@ else
 endif
 
 # Hack to compute the build folder relative path.
-xpack_build_folder_relative_path = xpack_build_folder_path.replace(xpack_project_folder_path + xpack_path_separator, '')
+xpack_build_folder_relative_path = xpack_build_folder_path.replace(xpack_tests_folder_path + xpack_path_separator, '')
 # message('Build relative folder: ' + xpack_build_folder_relative_path)
 
 # -----------------------------------------------------------------------------
@@ -77,7 +78,7 @@ enable_unit_test = true
 
 # https://mesonbuild.com/Reference-manual.html#subdir
 subdir('meson/globals')
-subdir('top/xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
+subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
 subdir('platform-'+ xpack_platform_name + '/meson/globals')
 
 # -----------------------------------------------------------------------------
@@ -88,7 +89,7 @@ subdir('platform-'+ xpack_platform_name + '/meson/dependencies')
 # xpack_dependencies[] must be set in the platform native globals.
 foreach dep: xpack_dependencies
   message('Adding ' + dep + '...')
-  subdir('top/' + dep)
+  subdir(dep)
 endforeach
 
 # -----------------------------------------------------------------------------

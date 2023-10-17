@@ -14,14 +14,14 @@
 
 # This file adds the platform dependencies.
 
-# The base folder is root, via the `top` link.
+# The base folder is tests. The order is significative.
 xpack_dependencies = [
-  # (architecture) -
-  'xpacks/@micro-os-plus/architecture-synthetic-posix',
 
   'xpacks/@micro-os-plus/diag-trace', # -
   'xpacks/@micro-os-plus/micro-test-plus', # -
 
+  # (architecture) -
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix',
 ]
 
 # -----------------------------------------------------------------------------

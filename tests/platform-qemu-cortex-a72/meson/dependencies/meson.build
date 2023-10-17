@@ -14,26 +14,27 @@
 
 # This file adds the platform dependencies.
 
-# The base folder is root, via the `top` link.
+# The base folder is tests. The order is significative.
 xpack_dependencies = [
+
   'xpacks/@micro-os-plus/diag-trace', # -
   'xpacks/@micro-os-plus/micro-test-plus', # -
-
   # -
   # 'xpacks/@micro-os-plus/version',
+
   # -
-  # 'xpacks/@xpack-3rd-party/arm-cmsis-core',
+  # xpack_build_folder_relative_path + '/xpacks/@xpack-3rd-party/arm-cmsis-core',
   # (architecture) -
-  'xpacks/@micro-os-plus/architecture-aarch64',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-aarch64',
 
   # +(diag_trace, architecture) >semihosting
-  'xpacks/@micro-os-plus/semihosting',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
 
   # -
-  'xpacks/@micro-os-plus/startup',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
 
   # +(arm_cmsis_core_m, devices_cortexa, startup) >devices_qemu_aarch64
-  'xpacks/@micro-os-plus/devices-qemu-aarch64',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-aarch64',
 ]
 
 # -----------------------------------------------------------------------------

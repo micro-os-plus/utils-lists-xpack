@@ -14,25 +14,25 @@
 
 # This file adds the platform dependencies.
 
-# The base folder is root, via the `top` link.
+# The base folder is tests. The order is significative.
 xpack_dependencies = [
+
   'xpacks/@micro-os-plus/diag-trace', # -
   'xpacks/@micro-os-plus/micro-test-plus', # -
-
   # -
   # 'xpacks/@micro-os-plus/version',
 
   # (architecture) -
-  'xpacks/@micro-os-plus/architecture-riscv',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-riscv',
 
   # +(diag_trace, architecture) >semihosting
-  'xpacks/@micro-os-plus/semihosting',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
 
   # -
-  'xpacks/@micro-os-plus/startup',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
 
   # -
-  'xpacks/@micro-os-plus/devices-qemu-riscv',
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
 ]
 
 # -----------------------------------------------------------------------------

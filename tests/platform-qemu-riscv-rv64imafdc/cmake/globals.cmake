@@ -73,6 +73,9 @@ add_compile_options(
 # When `-flto` is used, the compile options must be passed to the linker too.
 add_link_options(
   ${xpack_platform_common_args}
+
+  # .elf has a LOAD segment with RWX permissions (GCC 12)
+  -Wl,--no-warn-rwx-segments
 )
 
 # -----------------------------------------------------------------------------

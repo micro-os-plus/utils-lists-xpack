@@ -16,13 +16,18 @@
 
 set(xpack_dependencies_folders
   # Project dependencies.
-  # "${CMAKE_SOURCE_DIR}/xpacks/@xpack-3rd-party/arm-cmsis-core"
-  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/architecture-aarch64"
-  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/devices-qemu-aarch64"
-  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/diag-trace"
-  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/micro-test-plus"
-  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/semihosting"
-  "${CMAKE_SOURCE_DIR}/../xpacks/@micro-os-plus/startup"
+
+  # The BINARY_DIR is the `build/<config>` folder.
+
+  # "${CMAKE_BINARY_DIR}/xpacks/@xpack-3rd-party/arm-cmsis-core"
+  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-aarch64"
+  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-aarch64"
+  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/semihosting"
+  "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup"
+
+  # The SOURCE_DIR is the `tests` folder.
+  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
+  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/micro-test-plus"
 
   # Build configuration dependencies.
   # None.

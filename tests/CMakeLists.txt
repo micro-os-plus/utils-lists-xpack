@@ -55,7 +55,7 @@ if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
 endif()
 
 # The build-helper is a devDependency, available only after `xpm install`.
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../xpacks/@micro-os-plus/build-helper/cmake")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/xpacks/@micro-os-plus/build-helper/cmake")
 include("micro-os-plus-build-helper")
 
 xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")
@@ -80,7 +80,11 @@ endif()
 # The globals must be included in this scope, before creating any targets.
 # The compile options, symbols and include folders apply to all
 # compiled sources, from all libraries.
+
+# Top global definitions, common to all platforms.
 include("cmake/globals.cmake")
+
+# Platform global definitions.
 include("platform-${PLATFORM_NAME}/cmake/globals.cmake")
 
 xpack_display_global_lists()
@@ -88,6 +92,7 @@ xpack_display_global_lists()
 # -----------------------------------------------------------------------------
 ## Dependencies ##
 
+# Platform specific dependencies.
 include("platform-${PLATFORM_NAME}/cmake/dependencies.cmake")
 
 # Add the main library from the root folder.
@@ -95,7 +100,7 @@ message(VERBOSE "Adding top library...")
 add_subdirectory(".." "top-bin")
 
 # -----------------------------------------------------------------------------
-## The platform specific tests ##
+## Platform specifics ##
 
 # Add the platform specific configuration.
 # The result will be in the `platform-bin` folder.

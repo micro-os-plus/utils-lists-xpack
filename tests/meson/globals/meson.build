@@ -24,7 +24,7 @@ xpack_global_compile_definitions = []
 if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
 
   # Always add the `include-config` folder.
-  xpack_global_include_directories += [ '-I../../tests/platform-' + xpack_platform_name + '/include-config' ]
+  xpack_global_include_directories += [ '-I../../platform-' + xpack_platform_name + '/include-config' ]
 
   # Global compiler preprocessor definitions.
   # Native builds may not use them.
