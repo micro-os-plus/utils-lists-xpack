@@ -70,13 +70,13 @@ it to the empty state (with both pointers pointing to itself).
 
 ## C++ API
 
-### C++ Namespaces
+### Namespaces
 
 The definitions are grouped in a namespace below `micro_os_plus`:
 
 - `micro_os_plus::utils`
 
-### C++ Classes and Class Templates
+### Classes and Class Templates
 
 The intrusive lists can be defined by instantiating a class template:
 
