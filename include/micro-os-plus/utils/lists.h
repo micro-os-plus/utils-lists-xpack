@@ -67,11 +67,15 @@
 #endif
 #endif
 
+/**
+ * @brief µOS++ utility definitions.
+*/
 namespace micro_os_plus::utils
 {
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A base class for a double linked list.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
@@ -211,6 +215,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A class for the core of a double linked list (pointers to
    * neighbours).
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
@@ -265,6 +270,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A class for the core of a statically allocated double linked list
    * (pointers to neighbours).
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
@@ -348,6 +354,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A class template for a double linked list forward iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
@@ -445,6 +452,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A class template for a double linked list of nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
@@ -668,6 +676,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-intrusive-lists
    * @brief A class template for an intrusive list iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @ingroup micro-os-plus-utils
@@ -770,6 +779,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
+   * @ingroup micro-os-plus-utils-lists-intrusive-lists
    * @brief A class template for a list of nodes which store the links inside
    * themselves as intrusive nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>

@@ -43,3 +43,59 @@ for the C++ definitions.
 
 */
 -------------------------------------------------------------------------------
+
+/**
+
+@defgroup micro-os-plus-utils-lists-intrusive-lists Intrusive double linked lists
+@ingroup micro-os-plus-utils-lists-cpp-api
+@details
+
+Intrusive lists are double linked lists that keep the two pointers inside
+each linked object.
+
+The intrusive lists can be defined by instantiating the
+`utils::intrusive_list` class template.
+
+@par Example
+
+```cpp
+#include <micro-os-plus/utils/lists.h>
+
+class child
+{
+public:
+  child (const char* name);
+  // ...
+protected:
+  const char* name_;
+
+public:
+  // Intrusive node used to link this child to the registry list.
+  // Must be public.
+  utils::double_list_links registry_links_;
+};
+
+using static_children_list = utils::intrusive_list<
+        child, // type of nodes in the list
+        decltype (child::registry_links_), // type of the `registry_links_` member
+        &child::registry_links_, // name of member
+        static_double_list_links>; // type of the head links node
+
+// The list head is statically allocated.
+static_children_list kids_registry;
+```
+
+*/
+-------------------------------------------------------------------------------
+
+/**
+
+@defgroup micro-os-plus-utils-lists-double-lists Double linked lists
+@ingroup micro-os-plus-utils-lists-cpp-api
+@details
+
+For simpler use cases, like traditional list or low intrusive lists,
+there are several simpler classes and templates.
+
+*/
+-------------------------------------------------------------------------------
