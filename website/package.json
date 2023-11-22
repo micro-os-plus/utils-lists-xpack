@@ -1,0 +1,48 @@
+{
+  "name": "website",
+  "version": "0.0.0",
+  "description": "website",
+  "main": "",
+  "scripts": {},
+  "author": {
+    "name": "Liviu Ionescu",
+    "email": "ilg@livius.net",
+    "url": "https://github.com/ilg-ul"
+  },
+  "license": "MIT",
+  "config": {},
+  "bundleDependencies": [],
+  "$devDependenciesUrls": [
+    "https://www.npmjs.com/package/del-cli",
+    "https://www.npmjs.com/package/open-cli"
+  ],
+  "devDependencies": {
+    "del-cli": "^5.0.0",
+    "open-cli": "^7.2.0"
+  },
+  "xpack": {
+    "minimumXpmRequired": "0.17.0",
+    "actions": {
+      "deep-clean": "del-cli node_modules html package-lock.json",
+      "install": [
+        "npm install",
+        "xpm install"
+      ],
+      "link-deps": [
+        "xpm link @micro-os-plus/build-helper"
+      ],
+      "doxygen": [
+        "del-cli html",
+        "doxygen config.doxyfile"
+      ],
+      "browser": "open-cli html/index.html"
+    },
+    "dependencies": {},
+    "devDependencies": {
+      "@jothepro/doxygen-awesome-css": "github:jothepro/doxygen-awesome-css#v2.2.1",
+      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop"
+    },
+    "properties": {},
+    "buildConfigurations": {}
+  }
+}

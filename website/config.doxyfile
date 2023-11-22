@@ -57,7 +57,7 @@ PROJECT_BRIEF = "µOS++ C++ intrusive lists utilities"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO = website/assets/wall-e-icon-64.png
+PROJECT_LOGO = assets/wall-e-icon-64.png
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
@@ -85,16 +85,17 @@ WARN_AS_ERROR = YES
 # The order is preserved in the side bar.
 
 INPUT = \
-src \
-include \
-website/pages/home.md \
-website/pages/install.md \
-website/pages/developer.md \
-website/pages/maintainer.md \
-website/pages/testing.md \
-website/pages/change-log.md \
-website/pages/credits.md \
-website/pages/license.md \
+../include \
+../src \
+pages/home.md \
+pages/install.md \
+pages/developer.md \
+pages/maintainer.md \
+pages/testing.md \
+pages/change-log.md \
+pages/credits.md \
+pages/license.md \
+topics.doxyfile \
 
 
 # If the USE_MDFILE_AS_MAINPAGE tag refers to the name of a markdown file that
@@ -102,7 +103,7 @@ website/pages/license.md \
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = website/pages/home.md
+USE_MDFILE_AS_MAINPAGE = pages/home.md
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -136,9 +137,9 @@ INPUT_FILTER = "sed -e 's|__attribute__\s*[(]\s*[(].*[)]\s*[)]||g'"
 # \image command).
 
 IMAGE_PATH = \
-website/assets/regular.png \
-website/assets/intrusive.png \
-website/assets/low-intrusive.png \
+assets/regular.png \
+assets/intrusive.png \
+assets/low-intrusive.png \
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
@@ -170,7 +171,7 @@ WARN_AS_ERROR          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = website/html
+HTML_OUTPUT            = html
 
 # The HTML_HEADER tag can be used to specify a user-defined HTML header file for
 # each generated HTML page. If the tag is left blank doxygen will generate a
@@ -244,5 +245,6 @@ xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
 PREDEFINED = \
 __DOXYGEN__ \
 __cplusplus \
+__cpp_exceptions \
 
 #---------------------------------------------------------------------------

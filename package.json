@@ -33,33 +33,21 @@
     "https://www.npmjs.com/package/del-cli"
   ],
   "devDependencies": {
-    "del-cli": "^5.0.0",
-    "open-cli": "^7.2.0"
+    "del-cli": "^5.1.0"
   },
   "xpack": {
     "minimumXpmRequired": "0.16.2",
     "actions": {
-      "deep-clean": "del-cli node_modules xpacks website/html package-lock.json",
-      "install": [
-        "npm install",
-        "xpm install"
-      ],
+      "deep-clean": "del-cli node_modules package-lock.json",
+      "npm-install": "npm install",
       "git-log": "git log --pretty='%cd * %h %s' --date=short",
       "npm-pack": "npm pack",
-      "version-patch": "npm version patch",
-      "version-minor": "npm version minor",
-      "npm-version": "echo $(which node) $(node --version) && echo $(which npm) $(npm --version)",
-      "doxygen": [
-        "del-cli website/html",
-        "doxygen website/config.doxyfile"
-      ],
-      "browser": "open-cli website/html/index.html"
+      "npm-version-patch": "npm version patch",
+      "npm-version-minor": "npm version minor",
+      "npm-version": "echo $(which node) $(node --version) && echo $(which npm) $(npm --version)"
     },
     "dependencies": {},
-    "devDependencies": {
-      "@jothepro/doxygen-awesome-css": "github:jothepro/doxygen-awesome-css#v2.2.1",
-      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop"
-    },
+    "devDependencies": {},
     "properties": {},
     "buildConfigurations": {}
   }

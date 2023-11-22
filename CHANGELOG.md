@@ -6,7 +6,226 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
-* v4.0.0
+## 2023-10-18
+
+* 8f67085 tests/package.json: bump deps
+* cb7e7e0 workflows update
+* 4cc5785 .vscode/settings.json: ignoreWords
+* 897990b move package.json to tests
+
+## 2023-10-15
+
+* e75357a scripts/get-libraries-paths.sh: update
+* 3332b19 publish-* bump deps
+* 55ceceb cmake cosmetics
+* 354d424 README update
+* 2e92f68 website cosmetics
+
+## 2023-10-12
+
+* 514d1e4 ci.yml: non-sudo npm install
+
+## 2023-07-30
+
+* ec6aa61 maintainer.md: add xpm link
+
+## 2023-07-14
+
+* 1177ffb publish-*.yml: xpm 0.16.2
+* c83c754 ci.yml: xpm 0.16.2
+* 03c1b9c README updates
+* c74a28c website updates
+* 84ecf9a tests/CMakeLists.txt cosmetics
+* f9d417f package.json: cosmetise urls
+* ba8f351 package.json: clean-riscv
+* 61f992a package.json: minXpm 0.16.2
+
+## 2023-06-04
+
+* 6cb8be7 remove --quiet
+
+## 2023-06-03
+
+* 21aa85f lower case ci.yml
+* 6514016 lower case ci.yml
+* cfc96cb package.json: use @jothepro/doxygen-awesome-css
+* f4ce81e publish-github-pages.yml: xpm 0.16.1
+* bfefdee update xpack multi-level folders
+
+## 2023-05-29
+
+* 005b9bc home.md: update top links
+* e822e22 config.doxyfile: update for 1.9.7
+* 605c418 publish-github-pages.yml: cosmetics
+* 41ea3d3 publish-github-pages.yml: global permissions
+* 527b7a2 publish-github-pages.yml: separate deploy
+* 4d56759 publish-github-pages.yml: 1.9.7
+* b1147f4 publish-github-pages.yml: cosmetics
+* f450178 publish-github-pages.yml: local           DOXYGEN_VERSION
+* eeb8ace publish-github-pages.yml: fix ln -s path
+* 51a7def workflows update
+* 7659f07 publish-github-pages.yml: mkdir -pv
+* 809698a publish-github-pages.yml: DOXYGEN_VERSION
+* bc75c84 developer.md: rephrase
+* 809051c developer.md: more details about low intrusive
+
+## 2023-05-28
+
+* 2dc3da2 credits.md: update svg repo link
+* 4153cf0 config.doxyfile cosmetics
+* c317b67 cards.css: move to helper
+
+## 2023-05-27
+
+* 9f886c9 home.md: move H1 title up
+* 00446b5 install.md: add badges
+* a114191 install.md: add toc
+* c0d3e9a website: add links to npm
+* c716a33 home.md: remove Overview
+* e232d00 home.md: fix markdown
+* d987bd1 home.md: rename xpm/npm dependency
+* f1d833b move Credits and License to separate pages
+
+## 2023-05-26
+
+* 50f0226 home.md: add link to svgrepo.com
+* fd95e02 website: add svg icons
+
+## 2023-05-23
+
+* 187d6a0 package-lock.json: update
+* 9c9eeea home.md: workaround the extra new lines copied
+* 14d2691 cards.css: fix copy/paste icon align
+
+## 2023-05-22
+
+* e2121a0 cards.css: update command padding
+* b2aecb1 .gitignore ppt
+* a2159da assets: consistent corners
+* a7a15d2 assets: use ppt with macros
+
+## 2023-05-19
+
+* a47318d install.md: rephrase LLVM/clang
+* 78e1971 inlines.h: silence documentation warning
+* 00b3e13 lists.h: cleanups deprecated doxy comments
+* 3040dca lists.h: make class descriptions more consistent
+* 5d45fc6 install.md: updates
+* 07cdcf9 home.md: back to H2 in home.md
+* db36c5e package-link.json : v2
+* fe97b9d config.doxyfile: use micro-os-plus header
+* b34847d home.md: add MacStadium link
+* 6b0255b website: add centered command
+
+## 2023-05-18
+
+* 5a3295c home.md: fix link
+* 2700d00 package-lock.json update
+* 1e15fdb CI.yml: bump 0.15.1
+* ed8279b add cards support
+* 5836f37 add low-intrusive image
+
+## 2023-05-17
+
+* d2629d5 home.md: update
+* b6a41ff update images
+* 80df87b inlines.h: fix typo
+
+## 2023-05-16
+
+* 7059d73 home.md: mention xPack
+* db43771 images update
+* af8366c make images transparent
+* 4ab01b9 home.md: update
+* 2d57103 home.md: update
+* ccd0f06 move build info to home
+* 424d219 home.md: longer install titles
+* e26e7ad add images
+* 3cf2ab3 doxygen metadata updates
+* a464c05 home.md: update overview
+* 674ff6e website updates
+* 1185ec3 developer.md: update
+* 551dcb7 website/README update
+* 91ac9f5 maintainer.md: add website section
+* d41ce00 developer.md: rename How to Use
+* a2858aa home.md: rename Getting Started
+* 21b3d4c tests: use decltype()
+* 765ea83 developer.md: updates
+* e41c85c testing.md: shorten urls to source files
+* b7aae9f developer.md: updates
+* 4a3d670 developer.md: updates
+* 769b3f8 developer.md: updates
+* f32a3f8 maintainer.md: updates
+* 59caee5 change-log.md: updates
+* c4c7f89 change-log.md: updates
+* 3463fc8 testing.md: updates
+* 65a9c44 testing.md: updates
+* f83f84a home.md: update
+* 0d7dcb9 home.md: update
+* e54d382 README: update the project description
+* 6260259 maintainer.md: update
+* 0587708 PROJECT_NUMBER = 4.0.0
+* 1e0bc9f home.md: add web badge
+* 99d42ce home.md: updates
+* 3093872 home.md: remove developer/maintainer sections
+* 2ae5d6b home.md: updates
+* 7e1cd99 home.md: remove toc
+* b907d1f website: extract change-log.md
+
+## 2023-05-15
+
+* 306aca4 publish-github-pages.yml: add /** to folders
+* 0167144 home.md: update
+* a8fc618 lists.h: cosmetics in comments
+* 70f004d config.doxyfile: explicit order
+* 1216d77 README update
+* b882980 package.json: update description
+* 93e95e3 website update
+* 5ce8589 README update
+* 7e6e6be README update
+* a7ba43e README update
+* e054577 README update
+* 5919e39 publish-github-pages.yml: update
+* 0d9125d READMEs updates: refer to web
+* 12fc276 package.json: refer to github build-helper
+* d2cc4f9 website: add pages; README.md no longer used
+* 8ad8d98 test-all.yml: rename
+* abb7be3 .vscode/settings.json: ignoreWords
+* 7cd43c6 READMEs updates
+* 68e9eee get-libraries-paths.sh: fix syntax
+* 4fdd565 meson: set LD_LIBRARY_PATH only for linux
+* 64b2c60 package.json: disable meson clang15 on linux
+* d6dc400 meson: rename xpack_environment
+* f170cf7 package.json: disable meson for clang 15
+* c67abe9 meson: set LD_LIBRARY_PATH for linux
+* 4e1d60c cmake: use LD_LIBRARY_PATH for linux
+* 108903a cmake: use lld for clang
+* 9360f63 add scripts/get-libraries-paths.sh
+
+## 2023-05-14
+
+* 3925682 CI.yml: re-enable linux & mac
+* 79f848f cmake use only -static for windows
+
+## 2023-05-13
+
+* b27355b native CMake: fix objdump -x
+* 0b8375f native CMake: fix objdump -h
+* d3c3536 native CMake: fix objdump -h
+* 47b86dc native CMake: try objdump -h
+* b64675c CI.yml: try windows
+* 14e940d Merge branch 'xpack-develop' of https://github.com/micro-os-plus/utils-lists-xpack into xpack-develop
+* 2438710 platform-native/meson use -static on Windows
+* 68a860c native CMake on Windows: no statics
+* b743d1f platform-native/meson.build: all windows static
+* 6b333fc platform-native/CMakeLists.txt: fix win32 dll path
+* 1b7f431 package.json: remove --quiet --silent
+
+## 2023-05-11
+
+* 55a024b Update README.md
+* d70e988 .vscode/settings.json: ignoreWords
+* e430e77 prepare v4.0.0
 
 ## 2023-05-10
 

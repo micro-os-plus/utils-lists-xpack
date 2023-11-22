@@ -1,5 +1,5 @@
 
-# A source code library with the µOS++ C++ intrusive lists
+# The µOS++ C++ intrusive lists
 
 [![GitHub package.json version](https://img.shields.io/github/package-json/v/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/package.json)
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/tags/)
@@ -37,8 +37,8 @@ and can be installed as an
         <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="#323232" stroke-width="1"/>
         <path d="M10.9 8.8L10.6577 8.66152C10.1418 8.36676 9.5 8.73922 9.5 9.33333L9.5 14.6667C9.5 15.2608 10.1418 15.6332 10.6577 15.3385L10.9 15.2L15.1 12.8C15.719 12.4463 15.719 11.5537 15.1 11.2L10.9 8.8Z" stroke="#323232" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      <h2>Getting Started</h2>
-      <p>Instructions to install and integrate the <b>utils-lists</b> library into a project.</p>
+      <h2>Integration Guide</h2>
+      <p>Learn how to integrate the <b>utils-lists</b> library into a project.</p>
     </div>
     </a>
   </div>
@@ -56,7 +56,7 @@ and can be installed as an
         <path d="M10 17H14" stroke="#000000" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/>
         <path opacity="0.1" d="M7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 13.3613 16.456 14.5955 15.5735 15.4972C15.2297 15.8484 14.9472 16.2663 14.8508 16.7482L14.8004 17H9.19961L9.14923 16.7482C9.05281 16.2663 8.77025 15.8484 8.42651 15.4972C7.54402 14.5955 7 13.3613 7 12Z" fill="#000000"/>
       </svg>
-      <h2>How to Use</h2>
+      <h2>Getting Started</h2>
       <p>Learn what the intrusive lists are and how to use them.</p>
     </div>
     </a>

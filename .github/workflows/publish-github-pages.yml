@@ -24,7 +24,6 @@ on:
       - 'src/**'
       - 'include/**'
       - '.github/workflows/publish-github-pages.yml'
-      - 'package.json'
 
 # Allow one concurrent deployment
 # https://docs.github.com/en/actions/using-jobs/using-concurrency
@@ -46,7 +45,7 @@ jobs:
     strategy:
       matrix:
         # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.17.0' ]
+        xpm-version: [ '0.18.0' ]
         # https://nodejs.org/en - use LTS
         node-version: [ '18' ]
 
@@ -74,9 +73,9 @@ jobs:
           curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
           ls -l doxygen-$DOXYGEN_VERSION
-          mkdir -pv .local/bin
-          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen .local/bin/doxygen
-          ls -l
+          mkdir -pv website/.local/bin
+          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/.local/bin/doxygen
+          ls -l website
 
       - name: Install xpm@${{ matrix.xpm-version }}
         run: |
@@ -85,10 +84,10 @@ jobs:
       - name: Install dependencies
         # For the build helper and the Doxygen theme.
         run: |
-          xpm install
+          xpm install -C website
 
       - name: Build site with Doxygen
-        run: .local/bin/doxygen website/config.doxyfile
+        run: (cd website; .local/bin/doxygen config.doxyfile)
 
       - name: Configure Pages
         # https://github.com/actions/configure-pages
@@ -120,3 +119,6 @@ jobs:
         uses: actions/deploy-pages@v2
         with:
           artifact_name: github-pages
+
+# Branch "xpack-develop" is not allowed to deploy to github-pages due to environment protection rules.
+# https://github.com/micro-os-plus/micro-test-plus-xpack/settings/environments/1692678824/edit

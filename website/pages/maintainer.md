@@ -46,6 +46,9 @@ xpm link -C ~/Work/micro-os-plus/utils-lists-xpack.git
 A recent [xpm](https://xpack.github.io/xpm/), which is a portable
 [Node.js](https://nodejs.org/) command line application.
 
+To run the native tests, a C++ development environment is required.
+On macOS install Command Line Tools, on Ubuntu `build-essential`.
+
 ## Code formatting
 
 Code formatting is done using `clang-format --style=file`, either manually

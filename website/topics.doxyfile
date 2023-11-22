@@ -1,0 +1,45 @@
+/*
+ * This file is part of the µOS++ distribution.
+ *   (https://github.com/micro-os-plus/)
+ * Copyright (c) 2021 Liviu Ionescu.
+ *
+ * Permission to use, copy, modify, and/or distribute this software
+ * for any purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can
+ * be obtained from <https://opensource.org/licenses/MIT/>.
+ */
+
+// Not really a .doxyfile, since it does not define variables.
+// But also it cannot be .md, since Doxygen renders markdown files
+// as extra entries in the sidebar. Suggestions welcomed!
+
+-------------------------------------------------------------------------------
+/**
+
+@defgroup micro-os-plus-utils-lists µOS++ utils-list
+
+*/
+-------------------------------------------------------------------------------
+/**
+
+@defgroup micro-os-plus-utils-lists-cpp-api C++ API
+@ingroup micro-os-plus-utils-lists
+@details
+
+The µOS++ **utils-list** implementation uses C++ templates,
+and thus the main API is C++.
+
+*/
+-------------------------------------------------------------------------------
+/**
+
+@defgroup micro-os-plus-utils-lists-c-api C API
+@ingroup micro-os-plus-utils-lists
+@details
+
+The µOS++ **utils-list** is C++ specific, and there are no C equivalents
+for the C++ definitions.
+
+*/
+-------------------------------------------------------------------------------
