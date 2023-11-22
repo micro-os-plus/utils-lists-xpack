@@ -57,7 +57,7 @@ and can be installed as an
         <path opacity="0.1" d="M7 12C7 9.23858 9.23858 7 12 7C14.7614 7 17 9.23858 17 12C17 13.3613 16.456 14.5955 15.5735 15.4972C15.2297 15.8484 14.9472 16.2663 14.8508 16.7482L14.8004 17H9.19961L9.14923 16.7482C9.05281 16.2663 8.77025 15.8484 8.42651 15.4972C7.54402 14.5955 7 13.3613 7 12Z" fill="#000000"/>
       </svg>
       <h2>Getting Started</h2>
-      <p>Learn what the intrusive lists are and how to use them.</p>
+      <p>Learn what the intrusive lists are and how to use the **utils-list** library.</p>
     </div>
     </a>
   </div>
