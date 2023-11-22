@@ -89,7 +89,7 @@ INPUT = \
 ../src \
 pages/home.md \
 pages/install.md \
-pages/developer.md \
+pages/user-guide.md \
 pages/maintainer.md \
 pages/testing.md \
 pages/change-log.md \
