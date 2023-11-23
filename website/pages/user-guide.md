@@ -76,7 +76,7 @@ The definitions are grouped in a namespace below `micro_os_plus`:
 
 - `micro_os_plus::utils`
 
-### Classes and Class Templates
+### Intrusive double linked lists class
 
 The intrusive lists can be defined by instantiating a class template:
 
@@ -93,6 +93,10 @@ template <class T, class N, N T::*MP, class L = double_list_links,
 class intrusive_list;
 ```
 
+See the reference [Intrusive double linked lists](group__micro-os-plus-utils-lists-intrusive-lists.html) page.
+
+### Double linked lists class
+
 For simpler use cases, like traditional list or low intrusive lists,
 there is a simpler template:
 
@@ -106,6 +110,8 @@ there is a simpler template:
 template <class T, class L = double_list_links>
 class double_list;
 ```
+
+See the reference [Double linked lists](group__micro-os-plus-utils-lists-double-lists.html) page.
 
 ### Methods
 
