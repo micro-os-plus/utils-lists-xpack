@@ -642,20 +642,6 @@
           ]
         }
       },
-      "riscv-actions": {
-        "hidden": true,
-        "actions": {
-          "install": [
-            "xpm install --config {{ configuration.name }}"
-          ],
-          "link-deps": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-riscv",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
-          ]
-        }
-      },
       "aarch32-actions": {
         "hidden": true,
         "actions": {
@@ -679,6 +665,20 @@
           "link-deps": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch64",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch64",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+          ]
+        }
+      },
+      "riscv-actions": {
+        "hidden": true,
+        "actions": {
+          "install": [
+            "xpm install --config {{ configuration.name }}"
+          ],
+          "link-deps": [
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv",
+            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-riscv",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
             "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
           ]
@@ -811,7 +811,7 @@
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
-          "@xpack-dev-tools/clang": "15.0.7-2.1"
+          "@xpack-dev-tools/clang": "15.0.7-4.1"
         }
       },
       "clang16-dependencies": {
