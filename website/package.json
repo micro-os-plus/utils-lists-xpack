@@ -11,6 +11,7 @@
   },
   "license": "MIT",
   "config": {},
+  "dependencies": {},
   "bundleDependencies": [],
   "$devDependenciesUrls": [
     "https://www.npmjs.com/package/del-cli",
@@ -18,7 +19,8 @@
   ],
   "devDependencies": {
     "del-cli": "^5.0.0",
-    "open-cli": "^7.2.0"
+    "open-cli": "^7.2.0",
+    "broken-link-checker": "^0.7.8"
   },
   "xpack": {
     "minimumXpmRequired": "0.17.0",
@@ -35,7 +37,8 @@
         "del-cli html",
         "doxygen config.doxyfile"
       ],
-      "browser": "open-cli html/index.html"
+      "browser": "open-cli html/index.html",
+      "check-urls": "blc https://micro-os-plus.github.io/utils-lists-xpack/ --recursive --ordered --filter-level 2"
     },
     "dependencies": {},
     "devDependencies": {
