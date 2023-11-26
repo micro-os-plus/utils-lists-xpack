@@ -4,7 +4,6 @@
 [![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/tags/)
 [![npm (scoped)](https://img.shields.io/npm/v/@micro-os-plus/utils-lists.svg?color=blue)](https://www.npmjs.com/package/@micro-os-plus/utils-lists/)
 
-
 @tableofcontents
 
 As a source code library, this project can be integrated into another project
@@ -51,10 +50,38 @@ This project can be installed as a package from the
 ```sh
 cd my-project
 xpm init # Unless a package.json is already present
+```
 
+```sh
 xpm install @micro-os-plus/utils-lists@latest
+```
 
-ls -l xpacks/@micro-os-plus/utils-lists
+After following the links, the result is a structure like this:
+
+```console
+ % tree -l
+.
+├── LICENSE
+├── package.json
+└── xpacks
+    └── @micro-os-plus
+        └── utils-lists -> /Users/ilg/Library/xPacks/@micro-os-plus/utils-lists/4.0.0-pre
+            ├── CHANGELOG.md
+            ├── CMakeLists.txt
+            ├── LICENSE
+            ├── README.md
+            ├── include
+            │   └── micro-os-plus
+            │       └── utils
+            │           ├── inlines.h
+            │           └── lists.h
+            ├── meson.build
+            ├── package.json
+            ├── src
+            │   └── lists.cpp
+            └── xpack.json
+
+8 directories, 12 files
 ```
 
 ### npm
