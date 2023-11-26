@@ -31,7 +31,7 @@ and can be installed as an
 <div class="cards">
 
   <div class="card">
-    <a href="md_website_2pages_2install.html">
+    <a href="md_pages_2install.html">
     <div class="card_container">
       <svg width="800px" height="800px" viewBox="0 0 24 24" fill="none"  class="card_svg" xmlns="http://www.w3.org/2000/svg">
         <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd" d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21ZM15.224 13.0171C16.011 12.5674 16.011 11.4326 15.224 10.9829L10.7817 8.44446C10.0992 8.05446 9.25 8.54727 9.25 9.33333L9.25 14.6667C9.25 15.4527 10.0992 15.9455 10.7817 15.5555L15.224 13.0171Z" fill="#323232"/>
