@@ -163,7 +163,7 @@ There are no C equivalents for the C++ definitions.
 ## Examples
 
 An example showing how to use the intrusive lists is available in
-[tests/src/sample-test.cpp](tests/src/sample-test.cpp).
+[tests/src/sample-test.cpp](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/tests/src/sample-test.cpp).
 
 Here are some excerpts:
 
