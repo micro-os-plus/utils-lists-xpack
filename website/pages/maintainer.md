@@ -1,4 +1,4 @@
-# Maintainer Info
+@page maintainer Maintainer Info
 
 @tableofcontents
 

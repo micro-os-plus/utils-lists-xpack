@@ -1,4 +1,4 @@
-# Credits
+@page credits Credits
 
 Many thanks to:
 

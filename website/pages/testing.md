@@ -1,4 +1,4 @@
-# Testing
+@page testing Testing
 
 @tableofcontents
 

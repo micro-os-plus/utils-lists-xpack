@@ -1,4 +1,4 @@
-# Change log
+@page change-log Change log
 
 @tableofcontents
 

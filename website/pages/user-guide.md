@@ -1,5 +1,5 @@
 
-# User Guide
+@page user-guide User Guide
 
 @tableofcontents
 
