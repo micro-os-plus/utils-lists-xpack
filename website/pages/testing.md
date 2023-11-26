@@ -57,7 +57,7 @@ The following toolchains are used:
 
 ### sample-test
 
-The [sample-test.cpp](tests/src/sample-test.cpp)
+The [sample-test.cpp](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/tests/src/sample-test.cpp)
 file is a simple application to demonstrate how to call the
 few primitives available in the library.
 
@@ -81,7 +81,7 @@ test 1
 
 ### unit-test
 
-The [unit-test.cpp](tests/src/unit-test.cpp)
+The [unit-test.cpp](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/tests/src/unit-test.cpp)
 file is an exhaustive test trying to validate that all the library
 functions work as expected. It uses the
 [µTest++](https://github.com/micro-os-plus/micro-test-plus-xpack)
@@ -250,7 +250,7 @@ There is a GitHub Actions CI
 [workflow](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
 that runs a selection of the
 tests on every push; for details see
-[ci.yml](../.github/workflows/ci.yml).
+[ci.yml](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml).
 
 ## Extensive testing
 
@@ -258,7 +258,7 @@ A second
 [workflow](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
 can be triggered manually before releases, and runs all available tests
 on all supported platforms; for details see
-[test-all.yml](../.github/workflows/test-all.yml)
+[test-all.yml](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
 
 @note
 Running these tests on Apple Silicon macOS and Arm GNU/Linux
