@@ -11,16 +11,16 @@
   },
   "license": "MIT",
   "config": {},
-  "dependencies": {},
   "bundleDependencies": [],
   "$devDependenciesUrls": [
     "https://www.npmjs.com/package/del-cli",
-    "https://www.npmjs.com/package/open-cli"
+    "https://www.npmjs.com/package/open-cli",
+    "https://www.npmjs.com/package/broken-link-checker"
   ],
   "devDependencies": {
+    "broken-link-checker": "^0.7.8",
     "del-cli": "^5.0.0",
-    "open-cli": "^7.2.0",
-    "broken-link-checker": "^0.7.8"
+    "open-cli": "^7.2.0"
   },
   "xpack": {
     "minimumXpmRequired": "0.17.0",
