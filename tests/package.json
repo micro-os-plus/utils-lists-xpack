@@ -1130,7 +1130,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-aarch32": "^3.2.0",
-          "@micro-os-plus/devices-qemu-aarch32": "3.0.1"
+          "@micro-os-plus/devices-qemu-aarch32": "4.0.0"
         }
       },
       "aarch64-dependencies": {
@@ -1141,7 +1141,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-aarch64": "^3.2.0",
-          "@micro-os-plus/devices-qemu-aarch64": "3.0.0"
+          "@micro-os-plus/devices-qemu-aarch64": "4.0.0"
         }
       },
       "bare-metal-dependencies": {
