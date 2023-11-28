@@ -42,7 +42,7 @@
     },
     "dependencies": {},
     "devDependencies": {
-      "@jothepro/doxygen-awesome-css": "github:jothepro/doxygen-awesome-css#v2.2.1",
+      "@jothepro/doxygen-awesome-css": "github:jothepro/doxygen-awesome-css",
       "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop"
     },
     "properties": {},
