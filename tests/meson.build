@@ -20,7 +20,7 @@ project('micro-os-plus-utils-lists-tests',
     'cpp_std=c++20',
     'b_staticpic=false', # Mandatory, startup fails otherwise.
   ],
-  meson_version: '>= 0.59'
+  meson_version: '>= 1.3'
 )
 
 # languages: {c, cpp}
@@ -31,6 +31,12 @@ project('micro-os-plus-utils-lists-tests',
 # cpp_std: none, c++98, c++03, c++11, c++14, c++17, c++20
 # c++2a, c++1z, gnu++03, gnu++11, gnu++14, gnu++17, gnu++1z,
 # gnu++2a, gnu++20, vc++14, vc++17, vc++latest
+
+# -----------------------------------------------------------------------------
+# Global definitions #
+
+enable_sample_test = true
+enable_unit_test = true
 
 # -----------------------------------------------------------------------------
 
@@ -71,23 +77,21 @@ message('Build type: ' + get_option('buildtype'))
 message('Platform name: ' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------
-## Global definitions ##
-
-enable_sample_test = true
-enable_unit_test = true
 
 # https://mesonbuild.com/Reference-manual.html#subdir
-subdir('meson/globals')
+subdir('meson/common-options')
 subdir('xpacks/@micro-os-plus/build-helper/meson/enable-all-warnings')
-subdir('platform-'+ xpack_platform_name + '/meson/globals')
+
+# Since the order of processing is significative, include it in dependencies.
+# subdir('platform-'+ xpack_platform_name + '/meson/platform-options')
 
 # -----------------------------------------------------------------------------
-## Dependencies ##
+# Dependencies #
 
-subdir('platform-'+ xpack_platform_name + '/meson/dependencies')
+# Set `xpack_dependencies_folders` with the platform specific dependencies.
+subdir('platform-'+ xpack_platform_name + '/meson/dependencies-folders')
 
-# xpack_dependencies[] must be set in the platform native globals.
-foreach dep: xpack_dependencies
+foreach dep: xpack_dependencies_folders
   message('Adding ' + dep + '...')
   subdir(dep)
 endforeach
@@ -95,9 +99,13 @@ endforeach
 # -----------------------------------------------------------------------------
 
 # Include the project library, defined one level above.
+message('Adding top library...')
 subdir('top')
 
-# Include the platform specific code.
+# -----------------------------------------------------------------------------
+# Platform specifics #
+
+# Include the platform specific targets and tests.
 subdir('platform-' + xpack_platform_name)
 
 # -----------------------------------------------------------------------------

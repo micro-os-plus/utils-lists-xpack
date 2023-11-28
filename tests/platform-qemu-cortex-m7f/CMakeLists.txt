@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 #
 # This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# (https://github.com/micro-os-plus/)
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
@@ -16,112 +16,55 @@ message(VERBOSE "Processing 'tests/platform-qemu-cortex-m7f'...")
 
 # -----------------------------------------------------------------------------
 
-set(xpack_platform_compile_definition "PLATFORM_QEMU_CORTEX_M7F")
-
 # set(xpack_create_listing true)
 # set(xpack_create_hex true)
 
 # -----------------------------------------------------------------------------
-# Define the platform library.
 
-add_library(platform-qemu-cortex-m7f-interface INTERFACE EXCLUDE_FROM_ALL)
-
-# -----------------------------------------------------------------------------
-
-target_include_directories(platform-qemu-cortex-m7f-interface INTERFACE
-  "include-platform"
-)
-
-target_sources(platform-qemu-cortex-m7f-interface INTERFACE
-  # None.
-)
-
-target_compile_definitions(platform-qemu-cortex-m7f-interface INTERFACE
-  "${xpack_platform_compile_definition}"
-)
-
-target_compile_options(platform-qemu-cortex-m7f-interface INTERFACE
-  # None.
-)
-
-target_link_libraries(platform-qemu-cortex-m7f-interface INTERFACE
-  micro-os-plus::devices-qemu-cortexm
-)
-
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(platform-qemu-cortex-m7f-interface)
-endif()
-
-# -----------------------------------------------------------------------------
-# Aliases.
-
-add_library(micro-os-plus::platform ALIAS platform-qemu-cortex-m7f-interface)
-message(VERBOSE "> micro-os-plus::platform -> platform-qemu-cortex-m7f-interface")
-
-# =============================================================================
 # Define the tests executables.
-
-if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
-  set(extension ".cmd")
-endif()
-
 function(add_test_executable name)
-
   add_executable(${name})
 
   set_target_properties(${name}
 
     PROPERTIES
-      OUTPUT_NAME "${name}"
+    OUTPUT_NAME "${name}"
   )
 
   # Include folders.
   # `tests/platform-qemu-cortex-m7f/include` was added globally.
   target_include_directories(${name} PRIVATE
-      "../include"
+    "../include"
   )
 
   message(VERBOSE "A+ -I tests/include")
 
   # Application sources.
   target_sources(${name} PRIVATE
-      "../src/${name}.cpp"
+    "../src/${name}.cpp"
   )
 
   message(VERBOSE "A+ tests/src/${name}.cpp")
 
   target_compile_definitions(${name} PRIVATE
+
     # None
   )
 
   target_compile_options(${name} PRIVATE
+
     # None
   )
 
   target_link_options(${name} PRIVATE
-    -nostartfiles
-    # --specs=rdimon.specs -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group
-
-    # Force the linker to keep the interrupt vectors which otherwise
-    # are not referred from anywhere.
-    # -u_interrupt_vectors
-
-    # nano has no exceptions.
-    # -specs=nano.specs
-
-    -Wl,--gc-sections
 
     -Wl,-Map,platform-bin/${name}-map.txt
-    # -v
 
-    # Including files from other packages is not very nice, but functional.
-    # Use absolute paths, otherwise set -L.
-    -T ${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an500.ld
-    -T ${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-flash.ld
-    # -T ${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-ram.ld
+    # -v
   )
 
-  target_link_libraries(${name}  PRIVATE
+  target_link_libraries(${name} PRIVATE
+
     # Tested library.
     micro-os-plus::utils-lists
 
@@ -141,7 +84,7 @@ function(add_test_executable name)
     COMMAND ${CMAKE_SIZE} --format=berkeley "$<TARGET_FILE:${name}>"
   )
 
-  if (xpack_create_hex)
+  if(xpack_create_hex)
     add_custom_command(TARGET ${name} POST_BUILD
       COMMAND ${CMAKE_OBJCOPY} -O ihex "$<TARGET_FILE:${name}>" "$<TARGET_FILE:${name}>.hex"
     )
@@ -155,36 +98,30 @@ function(add_test_executable name)
   endif()
 
   message(VERBOSE "A> ${name}")
-
 endfunction()
 
 # -----------------------------------------------------------------------------
-
-if (ENABLE_SAMPLE_TEST)
-
+if(ENABLE_SAMPLE_TEST)
   add_test_executable(sample-test)
 
   add_test(
     NAME "sample-test"
 
     COMMAND qemu-system-arm${extension}
-      --machine mps2-an500
-      --cpu cortex-m7
-      --kernel sample-test.elf
-      --nographic
-      -d unimp,guest_errors
-      --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
+    --machine mps2-an500
+    --cpu cortex-m7
+    --kernel sample-test.elf
+    --nographic
+    -d unimp,guest_errors
+    --semihosting-config enable=on,target=native,arg=sample-test,arg=one,arg=two
   )
-
 endif()
 
 # -----------------------------------------------------------------------------
-
-if (ENABLE_UNIT_TEST)
-
+if(ENABLE_UNIT_TEST)
   add_test_executable(unit-test)
 
-  target_link_libraries(unit-test  PRIVATE
+  target_link_libraries(unit-test PRIVATE
     micro-os-plus::micro-test-plus
   )
 
@@ -192,16 +129,15 @@ if (ENABLE_UNIT_TEST)
     NAME "unit-test"
 
     COMMAND qemu-system-arm${extension}
-      --machine mps2-an500
-      --cpu cortex-m7
-      --kernel unit-test.elf
-      --nographic
-      -d unimp,guest_errors
-      --semihosting-config enable=on,target=native,arg=unit-test
-      # --semihosting-config arg=--verbose
-  )
+    --machine mps2-an500
+    --cpu cortex-m7
+    --kernel unit-test.elf
+    --nographic
+    -d unimp,guest_errors
+    --semihosting-config enable=on,target=native,arg=unit-test
 
+    # --semihosting-config arg=--verbose
+  )
 endif()
 
 # -----------------------------------------------------------------------------
-

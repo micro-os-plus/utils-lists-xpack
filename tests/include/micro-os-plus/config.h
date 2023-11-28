@@ -19,10 +19,16 @@
 // this file. If so, this file should define only preprocessor macros.
 
 #if defined(MICRO_OS_PLUS_TRACE)
+
+// Defined in platform-native.
 // #define MICRO_OS_PLUS_INTEGER_TRACE_PRINTF_BUFFER_ARRAY_SIZE 500
 
 // #define MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT
 // #define MICRO_OS_PLUS_TRACE_UTILS_LISTS
+
+// Propagate TRACE to the library.
+#define MICRO_TEST_PLUS_TRACE
+
 #endif // MICRO_OS_PLUS_TRACE
 
 #include <micro-os-plus/platform/config.h>

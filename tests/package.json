@@ -20,20 +20,14 @@
     "dependencies": {},
     "$dependenciesUrls": [
       "https://github.com/micro-os-plus",
-      "https://www.npmjs.com/package/@micro-os-plus/build-helper",
-      "https://www.npmjs.com/package/@micro-os-plus/diag-trace",
-      "https://www.npmjs.com/package/@micro-os-plus/micro-test-plus",
-      "https://github.com/xpack-dev-tools",
-      "https://www.npmjs.com/package/@xpack-dev-tools/cmake",
-      "https://www.npmjs.com/package/@xpack-dev-tools/meson-build",
-      "https://www.npmjs.com/package/@xpack-dev-tools/ninja-build"
+      "https://github.com/xpack-dev-tools"
     ],
     "devDependencies": {
       "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-develop",
       "@micro-os-plus/diag-trace": "^4.2.1",
       "@micro-os-plus/micro-test-plus": "^3.1.1",
       "@xpack-dev-tools/cmake": "3.26.5-1.1",
-      "@xpack-dev-tools/meson-build": "1.0.2-1.1",
+      "@xpack-dev-tools/meson-build": "1.3.0-1.1",
       "@xpack-dev-tools/ninja-build": "1.11.1-2.1"
     },
     "properties": {
@@ -56,94 +50,139 @@
       "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose"
     },
     "actions": {
-      "deep-clean": "del-cli build node_modules xpacks website/html package-lock.json",
+      "deep-clean": "del-cli build node_modules xpacks package-lock.json",
       "install": [
         "npm install",
-        "xpm install"
+        "xpm install",
+        "xpm install --config native-cmake-sys-debug",
+        "xpm install --config native-cmake-sys-release"
+      ],
+      "install-selected": [
+        "npm install",
+        "xpm install",
+        "xpm install --config native-cmake-gcc-debug",
+        "xpm install --config native-cmake-gcc-release",
+        "xpm install --config native-meson-gcc-debug",
+        "xpm install --config native-meson-gcc-release",
+        "xpm install --config native-cmake-clang-debug",
+        "xpm install --config native-cmake-clang-release",
+        "xpm install --config native-meson-clang-debug",
+        "xpm install --config native-meson-clang-release",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m0-meson-gcc-release",
+        "xpm install --config qemu-cortex-m4f-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m4f-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m4f-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m4f-meson-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
+      ],
+      "install-latest": [
+        "npm install",
+        "xpm install",
+        "xpm install --config native-cmake-gcc-debug",
+        "xpm install --config native-cmake-gcc-release",
+        "xpm install --config native-meson-gcc-debug",
+        "xpm install --config native-meson-gcc-release",
+        "xpm install --config native-cmake-clang-debug",
+        "xpm install --config native-cmake-clang-release",
+        "xpm install --config native-meson-clang-debug",
+        "xpm install --config native-meson-clang-release",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m0-meson-gcc-release",
+        "xpm install --config qemu-cortex-m3-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m3-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m3-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m3-meson-gcc-release",
+        "xpm install --config qemu-cortex-m4f-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m4f-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m4f-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m4f-meson-gcc-release",
+        "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m7f-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m7f-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m7f-meson-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release",
+        "xpm install --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
+        "xpm install --config qemu-riscv-rv64imafdc-cmake-gcc-release",
+        "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-debug",
+        "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-release"
       ],
       "install-all": [
         "npm install",
+        "xpm install",
         "xpm install --all-configs"
       ],
       "link-deps": [
         "xpm link @micro-os-plus/build-helper",
-        "xpm link @micro-os-plus/diag-trace",
-        "xpm link @micro-os-plus/micro-test-plus"
+        "xpm link @micro-os-plus/diag-trace"
       ],
       "link-deps-all": [
         "xpm run link-deps",
-        "xpm run link-deps-native-cmake",
-        "xpm run link-deps-native-meson",
-        "xpm run link-deps-cortex-cmake",
-        "xpm run link-deps-cortex-meson",
-        "xpm run link-deps-riscv-cmake",
-        "xpm run link-deps-riscv-meson"
+        "xpm run link-deps --all-configs"
       ],
       "clean-all": [
-        "xpm run clean-native-cmake",
-        "xpm run clean-native-meson",
-        "xpm run clean-cortex-cmake",
-        "xpm run clean-cortex-meson",
-        "xpm run clean-riscv-cmake",
-        "xpm run clean-riscv-meson"
+        "xpm run clean --all-configs --ignore-errors"
       ],
       "test": [
+        "xpm run test-native-cmake-sys"
+      ],
+      "test-selected": [
         "xpm run test-native-cmake-gcc",
+        "xpm run test-native-meson-gcc",
+        "xpm run test-native-cmake-clang",
         "xpm run test-native-meson-clang",
-        "xpm run test-cortex-cmake",
-        "xpm run test-cortex-meson",
-        "xpm run test-riscv-cmake",
-        "xpm run test-riscv-meson"
+        "xpm run test-qemu-cortex-m0-cmake-gcc",
+        "xpm run test-qemu-cortex-m0-meson-gcc",
+        "xpm run test-qemu-cortex-m4f-cmake-gcc",
+        "xpm run test-qemu-cortex-m4f-meson-gcc",
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc"
+      ],
+      "test-latest": [
+        "xpm run test-native-cmake-gcc",
+        "xpm run test-native-meson-gcc",
+        "xpm run test-native-cmake-clang",
+        "xpm run test-native-meson-clang",
+        "xpm run test-qemu-cortex-m0-cmake-gcc",
+        "xpm run test-qemu-cortex-m0-meson-gcc",
+        "xpm run test-qemu-cortex-m3-cmake-gcc",
+        "xpm run test-qemu-cortex-m3-meson-gcc",
+        "xpm run test-qemu-cortex-m4f-cmake-gcc",
+        "xpm run test-qemu-cortex-m4f-meson-gcc",
+        "xpm run test-qemu-cortex-m7f-cmake-gcc",
+        "xpm run test-qemu-cortex-m7f-meson-gcc",
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc"
       ],
       "test-all": [
-        "xpm run test-native-cmake",
-        "xpm run test-native-meson",
-        "xpm run test-cortex-cmake",
-        "xpm run test-cortex-meson",
-        "xpm run test-riscv-cmake",
-        "xpm run test-riscv-meson"
+        "xpm run test-native-cmake-all",
+        "xpm run test-native-meson-all",
+        "xpm run test-cortex-cmake-all",
+        "xpm run test-cortex-meson-all",
+        "xpm run test-riscv-cmake-all",
+        "xpm run test-riscv-meson-all"
       ],
-      "test-native-cmake": [
-        "{% if os.platform == 'darwin' %}xpm run test-native-cmake-sys{% endif %}",
+      "test-native-cmake-all": [
+        "xpm run test-native-cmake-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
         "xpm run test-native-cmake-gcc13",
         "xpm run test-native-cmake-gcc12",
         "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-cmake-gcc11",
         "xpm run test-native-cmake-clang16",
         "xpm run test-native-cmake-clang15",
         "xpm run test-native-cmake-clang14",
-        "xpm run test-native-cmake-clang13",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-cmake-clang12"
-      ],
-      "test-native-meson": [
-        "{% if os.platform == 'darwin' %}xpm run test-native-meson-sys{% endif %}",
-        "xpm run test-native-meson-gcc13",
-        "xpm run test-native-meson-gcc12",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc11",
-        "xpm run test-native-meson-clang16",
-        "xpm run test-native-meson-clang15",
-        "xpm run test-native-meson-clang14",
-        "xpm run test-native-meson-clang13",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-clang12"
-      ],
-      "test-cortex-cmake": [
-        "xpm run test-qemu-cortex-m0-cmake",
-        "xpm run test-qemu-cortex-m7f-cmake",
-        "xpm run test-qemu-cortex-a15-cmake",
-        "xpm run test-qemu-cortex-a72-cmake"
-      ],
-      "test-cortex-meson": [
-        "xpm run test-qemu-cortex-m0-meson",
-        "xpm run test-qemu-cortex-m7f-meson",
-        "xpm run test-qemu-cortex-a15-meson",
-        "xpm run test-qemu-cortex-a72-meson"
-      ],
-      "test-riscv-cmake": [
-        "xpm run test-qemu-riscv-rv32imac-cmake",
-        "xpm run test-qemu-riscv-rv64imafdc-cmake"
-      ],
-      "test-riscv-meson": [
-        "xpm run test-qemu-riscv-rv32imac-meson",
-        "xpm run test-qemu-riscv-rv64imafdc-meson"
+        "xpm run test-native-cmake-clang13"
       ],
       "test-native-cmake-sys": [
         "xpm run prepare --config native-cmake-sys-debug",
@@ -193,14 +232,6 @@
         "xpm run build --config native-cmake-clang-release",
         "xpm run test --config native-cmake-clang-release"
       ],
-      "test-native-cmake-clang12": [
-        "xpm run prepare --config native-cmake-clang12-debug",
-        "xpm run build --config native-cmake-clang12-debug",
-        "xpm run test --config native-cmake-clang12-debug",
-        "xpm run prepare --config native-cmake-clang12-release",
-        "xpm run build --config native-cmake-clang12-release",
-        "xpm run test --config native-cmake-clang12-release"
-      ],
       "test-native-cmake-clang13": [
         "xpm run prepare --config native-cmake-clang13-debug",
         "xpm run build --config native-cmake-clang13-debug",
@@ -232,6 +263,16 @@
         "xpm run prepare --config native-cmake-clang16-release",
         "xpm run build --config native-cmake-clang16-release",
         "xpm run test --config native-cmake-clang16-release"
+      ],
+      "test-native-meson-all": [
+        "xpm run test-native-meson-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
+        "xpm run test-native-meson-gcc13",
+        "xpm run test-native-meson-gcc12",
+        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc11",
+        "xpm run test-native-meson-clang16",
+        "xpm run test-native-meson-clang15",
+        "xpm run test-native-meson-clang14",
+        "xpm run test-native-meson-clang13"
       ],
       "test-native-meson-sys": [
         "xpm run prepare --config native-meson-sys-debug",
@@ -281,14 +322,6 @@
         "xpm run build --config native-meson-clang-release",
         "xpm run test --config native-meson-clang-release"
       ],
-      "test-native-meson-clang12": [
-        "xpm run prepare --config native-meson-clang12-debug",
-        "xpm run build --config native-meson-clang12-debug",
-        "xpm run test --config native-meson-clang12-debug",
-        "xpm run prepare --config native-meson-clang12-release",
-        "xpm run build --config native-meson-clang12-release",
-        "xpm run test --config native-meson-clang12-release"
-      ],
       "test-native-meson-clang13": [
         "xpm run prepare --config native-meson-clang13-debug",
         "xpm run build --config native-meson-clang13-debug",
@@ -321,259 +354,635 @@
         "xpm run build --config native-meson-clang16-release",
         "xpm run test --config native-meson-clang16-release"
       ],
-      "test-qemu-cortex-m0-cmake": [
-        "xpm run prepare --config qemu-cortex-m0-cmake-debug",
-        "xpm run build --config qemu-cortex-m0-cmake-debug",
-        "xpm run test --config qemu-cortex-m0-cmake-debug",
-        "xpm run prepare --config qemu-cortex-m0-cmake-release",
-        "xpm run build --config qemu-cortex-m0-cmake-release",
-        "xpm run test --config qemu-cortex-m0-cmake-release"
+      "test-cortex-cmake-all": [
+        "xpm run test-cortex-cmake-gcc13",
+        "xpm run test-cortex-cmake-gcc12",
+        "xpm run test-cortex-cmake-gcc11"
       ],
-      "test-qemu-cortex-m7f-cmake": [
-        "xpm run prepare --config qemu-cortex-m7f-cmake-debug",
-        "xpm run build --config qemu-cortex-m7f-cmake-debug",
-        "xpm run test --config qemu-cortex-m7f-cmake-debug",
-        "xpm run prepare --config qemu-cortex-m7f-cmake-release",
-        "xpm run build --config qemu-cortex-m7f-cmake-release",
-        "xpm run test --config qemu-cortex-m7f-cmake-release"
+      "test-cortex-cmake-gcc": [
+        "xpm run test-qemu-cortex-m0-cmake-gcc",
+        "xpm run test-qemu-cortex-m3-cmake-gcc",
+        "xpm run test-qemu-cortex-m4f-cmake-gcc",
+        "xpm run test-qemu-cortex-m7f-cmake-gcc",
+        "xpm run test-qemu-cortex-a15-cmake-gcc",
+        "xpm run test-qemu-cortex-a72-cmake-gcc"
       ],
-      "test-qemu-cortex-a15-cmake": [
-        "xpm run prepare --config qemu-cortex-a15-cmake-debug",
-        "xpm run build --config qemu-cortex-a15-cmake-debug",
-        "xpm run test --config qemu-cortex-a15-cmake-debug",
-        "xpm run prepare --config qemu-cortex-a15-cmake-release",
-        "xpm run build --config qemu-cortex-a15-cmake-release",
-        "xpm run test --config qemu-cortex-a15-cmake-release"
+      "test-cortex-cmake-gcc11": [
+        "xpm run test-qemu-cortex-m0-cmake-gcc11",
+        "xpm run test-qemu-cortex-m3-cmake-gcc11",
+        "xpm run test-qemu-cortex-m4f-cmake-gcc11",
+        "xpm run test-qemu-cortex-m7f-cmake-gcc11",
+        "xpm run test-qemu-cortex-a15-cmake-gcc11",
+        "xpm run test-qemu-cortex-a72-cmake-gcc11"
       ],
-      "test-qemu-cortex-a72-cmake": [
-        "xpm run prepare --config qemu-cortex-a72-cmake-debug",
-        "xpm run build --config qemu-cortex-a72-cmake-debug",
-        "xpm run test --config qemu-cortex-a72-cmake-debug",
-        "xpm run prepare --config qemu-cortex-a72-cmake-release",
-        "xpm run build --config qemu-cortex-a72-cmake-release",
-        "xpm run test --config qemu-cortex-a72-cmake-release"
+      "test-cortex-cmake-gcc12": [
+        "xpm run test-qemu-cortex-m0-cmake-gcc12",
+        "xpm run test-qemu-cortex-m3-cmake-gcc12",
+        "xpm run test-qemu-cortex-m4f-cmake-gcc12",
+        "xpm run test-qemu-cortex-m7f-cmake-gcc12",
+        "xpm run test-qemu-cortex-a15-cmake-gcc12",
+        "xpm run test-qemu-cortex-a72-cmake-gcc12"
       ],
-      "test-qemu-riscv-rv32imac-cmake": [
-        "xpm run prepare --config qemu-riscv-rv32imac-cmake-debug",
-        "xpm run build --config qemu-riscv-rv32imac-cmake-debug",
-        "xpm run test --config qemu-riscv-rv32imac-cmake-debug",
-        "xpm run prepare --config qemu-riscv-rv32imac-cmake-release",
-        "xpm run build --config qemu-riscv-rv32imac-cmake-release",
-        "xpm run test --config qemu-riscv-rv32imac-cmake-release"
+      "test-cortex-cmake-gcc13": [
+        "xpm run test-qemu-cortex-m0-cmake-gcc13",
+        "xpm run test-qemu-cortex-m3-cmake-gcc13",
+        "xpm run test-qemu-cortex-m4f-cmake-gcc13",
+        "xpm run test-qemu-cortex-m7f-cmake-gcc13",
+        "xpm run test-qemu-cortex-a15-cmake-gcc13",
+        "xpm run test-qemu-cortex-a72-cmake-gcc13"
       ],
-      "test-qemu-riscv-rv64imafdc-cmake": [
-        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-debug",
-        "xpm run build --config qemu-riscv-rv64imafdc-cmake-debug",
-        "xpm run test --config qemu-riscv-rv64imafdc-cmake-debug",
-        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-release",
-        "xpm run build --config qemu-riscv-rv64imafdc-cmake-release",
-        "xpm run test --config qemu-riscv-rv64imafdc-cmake-release"
+      "test-cortex-meson-all": [
+        "xpm run test-cortex-meson-gcc13",
+        "xpm run test-cortex-meson-gcc12",
+        "xpm run test-cortex-meson-gcc11"
       ],
-      "test-qemu-cortex-m7f-meson": [
-        "xpm run prepare --config qemu-cortex-m7f-meson-debug",
-        "xpm run build --config qemu-cortex-m7f-meson-debug",
-        "xpm run test --config qemu-cortex-m7f-meson-debug",
-        "xpm run prepare --config qemu-cortex-m7f-meson-release",
-        "xpm run build --config qemu-cortex-m7f-meson-release",
-        "xpm run test --config qemu-cortex-m7f-meson-release"
+      "test-cortex-meson-gcc": [
+        "xpm run test-qemu-cortex-m0-meson-gcc",
+        "xpm run test-qemu-cortex-m3-meson-gcc",
+        "xpm run test-qemu-cortex-m4f-meson-gcc",
+        "xpm run test-qemu-cortex-m7f-meson-gcc",
+        "xpm run test-qemu-cortex-a15-meson-gcc",
+        "xpm run test-qemu-cortex-a72-meson-gcc"
       ],
-      "test-qemu-cortex-m0-meson": [
-        "xpm run prepare --config qemu-cortex-m0-meson-debug",
-        "xpm run build --config qemu-cortex-m0-meson-debug",
-        "xpm run test --config qemu-cortex-m0-meson-debug",
-        "xpm run prepare --config qemu-cortex-m0-meson-release",
-        "xpm run build --config qemu-cortex-m0-meson-release",
-        "xpm run test --config qemu-cortex-m0-meson-release"
+      "test-cortex-meson-gcc11": [
+        "xpm run test-qemu-cortex-m0-meson-gcc11",
+        "xpm run test-qemu-cortex-m3-meson-gcc11",
+        "xpm run test-qemu-cortex-m4f-meson-gcc11",
+        "xpm run test-qemu-cortex-m7f-meson-gcc11",
+        "xpm run test-qemu-cortex-a15-meson-gcc11",
+        "xpm run test-qemu-cortex-a72-meson-gcc11"
       ],
-      "test-qemu-cortex-a72-meson": [
-        "xpm run prepare --config qemu-cortex-a72-meson-debug",
-        "xpm run build --config qemu-cortex-a72-meson-debug",
-        "xpm run test --config qemu-cortex-a72-meson-debug",
-        "xpm run prepare --config qemu-cortex-a72-meson-release",
-        "xpm run build --config qemu-cortex-a72-meson-release",
-        "xpm run test --config qemu-cortex-a72-meson-release"
+      "test-cortex-meson-gcc12": [
+        "xpm run test-qemu-cortex-m0-meson-gcc12",
+        "xpm run test-qemu-cortex-m3-meson-gcc12",
+        "xpm run test-qemu-cortex-m4f-meson-gcc12",
+        "xpm run test-qemu-cortex-m7f-meson-gcc12",
+        "xpm run test-qemu-cortex-a15-meson-gcc12",
+        "xpm run test-qemu-cortex-a72-meson-gcc12"
       ],
-      "test-qemu-cortex-a15-meson": [
-        "xpm run prepare --config qemu-cortex-a15-meson-debug",
-        "xpm run build --config qemu-cortex-a15-meson-debug",
-        "xpm run test --config qemu-cortex-a15-meson-debug",
-        "xpm run prepare --config qemu-cortex-a15-meson-release",
-        "xpm run build --config qemu-cortex-a15-meson-release",
-        "xpm run test --config qemu-cortex-a15-meson-release"
+      "test-cortex-meson-gcc13": [
+        "xpm run test-qemu-cortex-m0-meson-gcc13",
+        "xpm run test-qemu-cortex-m3-meson-gcc13",
+        "xpm run test-qemu-cortex-m4f-meson-gcc13",
+        "xpm run test-qemu-cortex-m7f-meson-gcc13",
+        "xpm run test-qemu-cortex-a15-meson-gcc13",
+        "xpm run test-qemu-cortex-a72-meson-gcc13"
       ],
-      "test-qemu-riscv-rv32imac-meson": [
-        "xpm run prepare --config qemu-riscv-rv32imac-meson-debug",
-        "xpm run build --config qemu-riscv-rv32imac-meson-debug",
-        "xpm run test --config qemu-riscv-rv32imac-meson-debug",
-        "xpm run prepare --config qemu-riscv-rv32imac-meson-release",
-        "xpm run build --config qemu-riscv-rv32imac-meson-release",
-        "xpm run test --config qemu-riscv-rv32imac-meson-release"
+      "test-riscv-cmake-all": [
+        "xpm run test-riscv-cmake-gcc13",
+        "xpm run test-riscv-cmake-gcc12",
+        "xpm run test-riscv-cmake-gcc11"
       ],
-      "test-qemu-riscv-rv64imafdc-meson": [
-        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-debug",
-        "xpm run build --config qemu-riscv-rv64imafdc-meson-debug",
-        "xpm run test --config qemu-riscv-rv64imafdc-meson-debug",
-        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-release",
-        "xpm run build --config qemu-riscv-rv64imafdc-meson-release",
-        "xpm run test --config qemu-riscv-rv64imafdc-meson-release"
+      "test-riscv-cmake-gcc": [
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc"
       ],
-      "link-deps-native-cmake": [
-        "xpm run link-deps --config native-cmake-sys-debug",
-        "xpm run link-deps --config native-cmake-sys-release",
-        "xpm run link-deps --config native-cmake-gcc-debug",
-        "xpm run link-deps --config native-cmake-gcc-release",
-        "xpm run link-deps --config native-cmake-gcc11-debug",
-        "xpm run link-deps --config native-cmake-gcc11-release",
-        "xpm run link-deps --config native-cmake-gcc12-debug",
-        "xpm run link-deps --config native-cmake-gcc12-release",
-        "xpm run link-deps --config native-cmake-gcc13-debug",
-        "xpm run link-deps --config native-cmake-gcc13-release",
-        "xpm run link-deps --config native-cmake-clang12-debug",
-        "xpm run link-deps --config native-cmake-clang12-release",
-        "xpm run link-deps --config native-cmake-clang13-debug",
-        "xpm run link-deps --config native-cmake-clang13-release",
-        "xpm run link-deps --config native-cmake-clang14-debug",
-        "xpm run link-deps --config native-cmake-clang14-release",
-        "xpm run link-deps --config native-cmake-clang15-debug",
-        "xpm run link-deps --config native-cmake-clang15-release",
-        "xpm run link-deps --config native-cmake-clang16-debug",
-        "xpm run link-deps --config native-cmake-clang16-release"
+      "test-riscv-cmake-gcc11": [
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc11",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc11"
       ],
-      "link-deps-native-meson": [
-        "xpm run link-deps --config native-meson-sys-debug",
-        "xpm run link-deps --config native-meson-sys-release",
-        "xpm run link-deps --config native-meson-gcc-debug",
-        "xpm run link-deps --config native-meson-gcc-release",
-        "xpm run link-deps --config native-meson-gcc11-debug",
-        "xpm run link-deps --config native-meson-gcc11-release",
-        "xpm run link-deps --config native-meson-gcc12-debug",
-        "xpm run link-deps --config native-meson-gcc12-release",
-        "xpm run link-deps --config native-meson-gcc13-debug",
-        "xpm run link-deps --config native-meson-gcc13-release",
-        "xpm run link-deps --config native-meson-clang12-debug",
-        "xpm run link-deps --config native-meson-clang12-release",
-        "xpm run link-deps --config native-meson-clang13-debug",
-        "xpm run link-deps --config native-meson-clang13-release",
-        "xpm run link-deps --config native-meson-clang14-debug",
-        "xpm run link-deps --config native-meson-clang14-release",
-        "xpm run link-deps --config native-meson-clang15-debug",
-        "xpm run link-deps --config native-meson-clang15-release",
-        "xpm run link-deps --config native-meson-clang16-debug",
-        "xpm run link-deps --config native-meson-clang16-release"
+      "test-riscv-cmake-gcc12": [
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc12",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc12"
       ],
-      "link-deps-cortex-cmake": [
-        "xpm run link-deps --config qemu-cortex-m7f-cmake-debug",
-        "xpm run link-deps --config qemu-cortex-m7f-cmake-release",
-        "xpm run link-deps --config qemu-cortex-m0-cmake-debug",
-        "xpm run link-deps --config qemu-cortex-m0-cmake-release",
-        "xpm run link-deps --config qemu-cortex-a72-cmake-debug",
-        "xpm run link-deps --config qemu-cortex-a72-cmake-release",
-        "xpm run link-deps --config qemu-cortex-a15-cmake-debug",
-        "xpm run link-deps --config qemu-cortex-a15-cmake-release"
+      "test-riscv-cmake-gcc13": [
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc13",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc13"
       ],
-      "link-deps-cortex-meson": [
-        "xpm run link-deps --config qemu-cortex-m7f-meson-debug",
-        "xpm run link-deps --config qemu-cortex-m7f-meson-release",
-        "xpm run link-deps --config qemu-cortex-m0-meson-debug",
-        "xpm run link-deps --config qemu-cortex-m0-meson-release",
-        "xpm run link-deps --config qemu-cortex-a72-meson-debug",
-        "xpm run link-deps --config qemu-cortex-a72-meson-release",
-        "xpm run link-deps --config qemu-cortex-a15-meson-debug",
-        "xpm run link-deps --config qemu-cortex-a15-meson-release"
+      "test-riscv-meson-all": [
+        "xpm run test-riscv-meson-gcc13",
+        "xpm run test-riscv-meson-gcc12",
+        "xpm run test-riscv-meson-gcc11"
       ],
-      "link-deps-riscv-cmake": [
-        "xpm run link-deps --config qemu-riscv-rv32imac-cmake-debug",
-        "xpm run link-deps --config qemu-riscv-rv32imac-cmake-release",
-        "xpm run link-deps --config qemu-riscv-rv64imafdc-cmake-debug",
-        "xpm run link-deps --config qemu-riscv-rv64imafdc-cmake-release"
+      "test-riscv-meson-gcc": [
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc"
       ],
-      "link-deps-riscv-meson": [
-        "xpm run link-deps --config qemu-riscv-rv32imac-meson-debug",
-        "xpm run link-deps --config qemu-riscv-rv32imac-meson-release",
-        "xpm run link-deps --config qemu-riscv-rv64imafdc-meson-debug",
-        "xpm run link-deps --config qemu-riscv-rv64imafdc-meson-release"
+      "test-riscv-meson-gcc11": [
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc11",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc11"
       ],
-      "clean-native-cmake": [
-        "xpm run clean --config native-cmake-sys-debug --ignore-errors",
-        "xpm run clean --config native-cmake-sys-release --ignore-errors",
-        "xpm run clean --config native-cmake-gcc-debug --ignore-errors",
-        "xpm run clean --config native-cmake-gcc-release --ignore-errors",
-        "xpm run clean --config native-cmake-gcc11-debug --ignore-errors",
-        "xpm run clean --config native-cmake-gcc11-release --ignore-errors",
-        "xpm run clean --config native-cmake-gcc12-debug --ignore-errors",
-        "xpm run clean --config native-cmake-gcc12-release --ignore-errors",
-        "xpm run clean --config native-cmake-gcc13-debug --ignore-errors",
-        "xpm run clean --config native-cmake-gcc13-release --ignore-errors",
-        "xpm run clean --config native-cmake-clang-debug --ignore-errors",
-        "xpm run clean --config native-cmake-clang-release --ignore-errors",
-        "xpm run clean --config native-cmake-clang12-debug --ignore-errors",
-        "xpm run clean --config native-cmake-clang12-release --ignore-errors",
-        "xpm run clean --config native-cmake-clang13-debug --ignore-errors",
-        "xpm run clean --config native-cmake-clang13-release --ignore-errors",
-        "xpm run clean --config native-cmake-clang14-debug --ignore-errors",
-        "xpm run clean --config native-cmake-clang14-release --ignore-errors",
-        "xpm run clean --config native-cmake-clang15-debug --ignore-errors",
-        "xpm run clean --config native-cmake-clang15-release --ignore-errors",
-        "xpm run clean --config native-cmake-clang16-debug --ignore-errors",
-        "xpm run clean --config native-cmake-clang16-release --ignore-errors"
+      "test-riscv-meson-gcc12": [
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc12",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc12"
       ],
-      "clean-native-meson": [
-        "xpm run clean --config native-meson-sys-debug --ignore-errors",
-        "xpm run clean --config native-meson-sys-release --ignore-errors",
-        "xpm run clean --config native-meson-gcc-debug --ignore-errors",
-        "xpm run clean --config native-meson-gcc-release --ignore-errors",
-        "xpm run clean --config native-meson-gcc11-debug --ignore-errors",
-        "xpm run clean --config native-meson-gcc11-release --ignore-errors",
-        "xpm run clean --config native-meson-gcc12-debug --ignore-errors",
-        "xpm run clean --config native-meson-gcc12-release --ignore-errors",
-        "xpm run clean --config native-meson-gcc13-debug --ignore-errors",
-        "xpm run clean --config native-meson-gcc13-release --ignore-errors",
-        "xpm run clean --config native-meson-clang-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang-release --ignore-errors",
-        "xpm run clean --config native-meson-clang12-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang12-release --ignore-errors",
-        "xpm run clean --config native-meson-clang13-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang13-release --ignore-errors",
-        "xpm run clean --config native-meson-clang14-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang14-release --ignore-errors",
-        "xpm run clean --config native-meson-clang15-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang15-release --ignore-errors",
-        "xpm run clean --config native-meson-clang16-debug --ignore-errors",
-        "xpm run clean --config native-meson-clang16-release --ignore-errors"
+      "test-riscv-meson-gcc13": [
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc13",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc13"
       ],
-      "clean-cortex-cmake": [
-        "xpm run clean --config qemu-cortex-m7f-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-m7f-cmake-release --ignore-errors",
-        "xpm run clean --config qemu-cortex-m0-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-m0-cmake-release --ignore-errors",
-        "xpm run clean --config qemu-cortex-a72-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-a72-cmake-release --ignore-errors",
-        "xpm run clean --config qemu-cortex-a15-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-a15-cmake-release --ignore-errors"
+      "test-qemu-cortex-m0-cmake-gcc": [
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc-release"
       ],
-      "clean-cortex-meson": [
-        "xpm run clean --config qemu-cortex-m7f-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-m7f-meson-release --ignore-errors",
-        "xpm run clean --config qemu-cortex-m0-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-m0-meson-release --ignore-errors",
-        "xpm run clean --config qemu-cortex-a72-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-a72-meson-release --ignore-errors",
-        "xpm run clean --config qemu-cortex-a15-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-cortex-a15-meson-release --ignore-errors"
+      "test-qemu-cortex-m0-cmake-gcc11": [
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc11-debug",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc11-debug",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc11-release",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc11-release",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc11-release"
       ],
-      "clean-riscv-cmake": [
-        "xpm run clean --config qemu-riscv-rv32imac-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-riscv-rv32imac-cmake-release --ignore-errors",
-        "xpm run clean --config qemu-riscv-rv64imafdc-cmake-debug --ignore-errors",
-        "xpm run clean --config qemu-riscv-rv64imafdc-cmake-release --ignore-errors"
+      "test-qemu-cortex-m0-cmake-gcc12": [
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc12-debug",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc12-debug",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc12-release",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc12-release",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc12-release"
       ],
-      "clean-riscv-meson": [
-        "xpm run clean --config qemu-riscv-rv32imac-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-riscv-rv32imac-meson-release --ignore-errors",
-        "xpm run clean --config qemu-riscv-rv64imafdc-meson-debug --ignore-errors",
-        "xpm run clean --config qemu-riscv-rv64imafdc-meson-release --ignore-errors"
+      "test-qemu-cortex-m0-cmake-gcc13": [
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc13-debug",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc13-debug",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m0-cmake-gcc13-release",
+        "xpm run build --config qemu-cortex-m0-cmake-gcc13-release",
+        "xpm run test --config qemu-cortex-m0-cmake-gcc13-release"
       ],
-      "trigger-workflow-test-all": "bash tests/scripts/trigger-workflow-test-all.sh"
+      "test-qemu-cortex-m3-cmake-gcc": [
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc-debug",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc-debug",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc-release",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc-release",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc-release"
+      ],
+      "test-qemu-cortex-m3-cmake-gcc11": [
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc11-debug",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc11-debug",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc11-release",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc11-release",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc11-release"
+      ],
+      "test-qemu-cortex-m3-cmake-gcc12": [
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc12-debug",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc12-debug",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc12-release",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc12-release",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc12-release"
+      ],
+      "test-qemu-cortex-m3-cmake-gcc13": [
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc13-debug",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc13-debug",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m3-cmake-gcc13-release",
+        "xpm run build --config qemu-cortex-m3-cmake-gcc13-release",
+        "xpm run test --config qemu-cortex-m3-cmake-gcc13-release"
+      ],
+      "test-qemu-cortex-m4f-cmake-gcc": [
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc-debug",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc-debug",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc-release",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc-release",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc-release"
+      ],
+      "test-qemu-cortex-m4f-cmake-gcc11": [
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc11-debug",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc11-debug",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc11-release",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc11-release",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc11-release"
+      ],
+      "test-qemu-cortex-m4f-cmake-gcc12": [
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc12-debug",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc12-debug",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc12-release",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc12-release",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc12-release"
+      ],
+      "test-qemu-cortex-m4f-cmake-gcc13": [
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc13-debug",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc13-debug",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m4f-cmake-gcc13-release",
+        "xpm run build --config qemu-cortex-m4f-cmake-gcc13-release",
+        "xpm run test --config qemu-cortex-m4f-cmake-gcc13-release"
+      ],
+      "test-qemu-cortex-m7f-cmake-gcc": [
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc-debug",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc-debug",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc-release",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc-release",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc-release"
+      ],
+      "test-qemu-cortex-m7f-cmake-gcc11": [
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc11-debug",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc11-debug",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc11-release",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc11-release",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc11-release"
+      ],
+      "test-qemu-cortex-m7f-cmake-gcc12": [
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc12-debug",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc12-debug",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc12-release",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc12-release",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc12-release"
+      ],
+      "test-qemu-cortex-m7f-cmake-gcc13": [
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc13-debug",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc13-debug",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m7f-cmake-gcc13-release",
+        "xpm run build --config qemu-cortex-m7f-cmake-gcc13-release",
+        "xpm run test --config qemu-cortex-m7f-cmake-gcc13-release"
+      ],
+      "test-qemu-cortex-a15-cmake-gcc": [
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc-debug",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc-debug",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc-debug",
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc-release",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc-release",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc-release"
+      ],
+      "test-qemu-cortex-a15-cmake-gcc11": [
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc11-debug",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc11-debug",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc11-release",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc11-release",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc11-release"
+      ],
+      "test-qemu-cortex-a15-cmake-gcc12": [
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc12-debug",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc12-debug",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc12-release",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc12-release",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc12-release"
+      ],
+      "test-qemu-cortex-a15-cmake-gcc13": [
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc13-debug",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc13-debug",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-a15-cmake-gcc13-release",
+        "xpm run build --config qemu-cortex-a15-cmake-gcc13-release",
+        "xpm run test --config qemu-cortex-a15-cmake-gcc13-release"
+      ],
+      "test-qemu-cortex-a72-cmake-gcc": [
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc-debug",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc-debug",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc-debug",
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc-release",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc-release",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc-release"
+      ],
+      "test-qemu-cortex-a72-cmake-gcc11": [
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc11-debug",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc11-debug",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc11-release",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc11-release",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc11-release"
+      ],
+      "test-qemu-cortex-a72-cmake-gcc12": [
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc12-debug",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc12-debug",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc12-release",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc12-release",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc12-release"
+      ],
+      "test-qemu-cortex-a72-cmake-gcc13": [
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc13-debug",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc13-debug",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-a72-cmake-gcc13-release",
+        "xpm run build --config qemu-cortex-a72-cmake-gcc13-release",
+        "xpm run test --config qemu-cortex-a72-cmake-gcc13-release"
+      ],
+      "test-qemu-riscv-rv32imac-cmake-gcc": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc-release",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc-release",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc-release"
+      ],
+      "test-qemu-riscv-rv32imac-cmake-gcc11": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc11-debug",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc11-debug",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc11-release",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc11-release",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc11-release"
+      ],
+      "test-qemu-riscv-rv32imac-cmake-gcc12": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc12-debug",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc12-debug",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc12-release",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc12-release",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc12-release"
+      ],
+      "test-qemu-riscv-rv32imac-cmake-gcc13": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc13-debug",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc13-debug",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc13-release",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc13-release",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc13-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-cmake-gcc": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-cmake-gcc11": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc11-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc11-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc11-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc11-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc11-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc11-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-cmake-gcc12": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc12-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc12-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc12-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc12-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc12-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc12-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-cmake-gcc13": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc13-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc13-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc13-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc13-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc13-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc13-release"
+      ],
+      "test-qemu-cortex-m0-meson-gcc": [
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm run build --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm run test --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc-release",
+        "xpm run build --config qemu-cortex-m0-meson-gcc-release",
+        "xpm run test --config qemu-cortex-m0-meson-gcc-release"
+      ],
+      "test-qemu-cortex-m0-meson-gcc11": [
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc11-debug",
+        "xpm run build --config qemu-cortex-m0-meson-gcc11-debug",
+        "xpm run test --config qemu-cortex-m0-meson-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc11-release",
+        "xpm run build --config qemu-cortex-m0-meson-gcc11-release",
+        "xpm run test --config qemu-cortex-m0-meson-gcc11-release"
+      ],
+      "test-qemu-cortex-m0-meson-gcc12": [
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc12-debug",
+        "xpm run build --config qemu-cortex-m0-meson-gcc12-debug",
+        "xpm run test --config qemu-cortex-m0-meson-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc12-release",
+        "xpm run build --config qemu-cortex-m0-meson-gcc12-release",
+        "xpm run test --config qemu-cortex-m0-meson-gcc12-release"
+      ],
+      "test-qemu-cortex-m0-meson-gcc13": [
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc13-debug",
+        "xpm run build --config qemu-cortex-m0-meson-gcc13-debug",
+        "xpm run test --config qemu-cortex-m0-meson-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m0-meson-gcc13-release",
+        "xpm run build --config qemu-cortex-m0-meson-gcc13-release",
+        "xpm run test --config qemu-cortex-m0-meson-gcc13-release"
+      ],
+      "test-qemu-cortex-m3-meson-gcc": [
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc-debug",
+        "xpm run build --config qemu-cortex-m3-meson-gcc-debug",
+        "xpm run test --config qemu-cortex-m3-meson-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc-release",
+        "xpm run build --config qemu-cortex-m3-meson-gcc-release",
+        "xpm run test --config qemu-cortex-m3-meson-gcc-release"
+      ],
+      "test-qemu-cortex-m3-meson-gcc11": [
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc11-debug",
+        "xpm run build --config qemu-cortex-m3-meson-gcc11-debug",
+        "xpm run test --config qemu-cortex-m3-meson-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc11-release",
+        "xpm run build --config qemu-cortex-m3-meson-gcc11-release",
+        "xpm run test --config qemu-cortex-m3-meson-gcc11-release"
+      ],
+      "test-qemu-cortex-m3-meson-gcc12": [
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc12-debug",
+        "xpm run build --config qemu-cortex-m3-meson-gcc12-debug",
+        "xpm run test --config qemu-cortex-m3-meson-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc12-release",
+        "xpm run build --config qemu-cortex-m3-meson-gcc12-release",
+        "xpm run test --config qemu-cortex-m3-meson-gcc12-release"
+      ],
+      "test-qemu-cortex-m3-meson-gcc13": [
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc13-debug",
+        "xpm run build --config qemu-cortex-m3-meson-gcc13-debug",
+        "xpm run test --config qemu-cortex-m3-meson-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m3-meson-gcc13-release",
+        "xpm run build --config qemu-cortex-m3-meson-gcc13-release",
+        "xpm run test --config qemu-cortex-m3-meson-gcc13-release"
+      ],
+      "test-qemu-cortex-m4f-meson-gcc": [
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc-debug",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc-debug",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc-release",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc-release",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc-release"
+      ],
+      "test-qemu-cortex-m4f-meson-gcc11": [
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc11-debug",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc11-debug",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc11-release",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc11-release",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc11-release"
+      ],
+      "test-qemu-cortex-m4f-meson-gcc12": [
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc12-debug",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc12-debug",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc12-release",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc12-release",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc12-release"
+      ],
+      "test-qemu-cortex-m4f-meson-gcc13": [
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc13-debug",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc13-debug",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m4f-meson-gcc13-release",
+        "xpm run build --config qemu-cortex-m4f-meson-gcc13-release",
+        "xpm run test --config qemu-cortex-m4f-meson-gcc13-release"
+      ],
+      "test-qemu-cortex-m7f-meson-gcc": [
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc-debug",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc-debug",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc-debug",
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc-release",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc-release",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc-release"
+      ],
+      "test-qemu-cortex-m7f-meson-gcc11": [
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc11-debug",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc11-debug",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc11-release",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc11-release",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc11-release"
+      ],
+      "test-qemu-cortex-m7f-meson-gcc12": [
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc12-debug",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc12-debug",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc12-release",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc12-release",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc12-release"
+      ],
+      "test-qemu-cortex-m7f-meson-gcc13": [
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc13-debug",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc13-debug",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-m7f-meson-gcc13-release",
+        "xpm run build --config qemu-cortex-m7f-meson-gcc13-release",
+        "xpm run test --config qemu-cortex-m7f-meson-gcc13-release"
+      ],
+      "test-qemu-cortex-a15-meson-gcc": [
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc-debug",
+        "xpm run build --config qemu-cortex-a15-meson-gcc-debug",
+        "xpm run test --config qemu-cortex-a15-meson-gcc-debug",
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc-release",
+        "xpm run build --config qemu-cortex-a15-meson-gcc-release",
+        "xpm run test --config qemu-cortex-a15-meson-gcc-release"
+      ],
+      "test-qemu-cortex-a15-meson-gcc11": [
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc11-debug",
+        "xpm run build --config qemu-cortex-a15-meson-gcc11-debug",
+        "xpm run test --config qemu-cortex-a15-meson-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc11-release",
+        "xpm run build --config qemu-cortex-a15-meson-gcc11-release",
+        "xpm run test --config qemu-cortex-a15-meson-gcc11-release"
+      ],
+      "test-qemu-cortex-a15-meson-gcc12": [
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc12-debug",
+        "xpm run build --config qemu-cortex-a15-meson-gcc12-debug",
+        "xpm run test --config qemu-cortex-a15-meson-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc12-release",
+        "xpm run build --config qemu-cortex-a15-meson-gcc12-release",
+        "xpm run test --config qemu-cortex-a15-meson-gcc12-release"
+      ],
+      "test-qemu-cortex-a15-meson-gcc13": [
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc13-debug",
+        "xpm run build --config qemu-cortex-a15-meson-gcc13-debug",
+        "xpm run test --config qemu-cortex-a15-meson-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-a15-meson-gcc13-release",
+        "xpm run build --config qemu-cortex-a15-meson-gcc13-release",
+        "xpm run test --config qemu-cortex-a15-meson-gcc13-release"
+      ],
+      "test-qemu-cortex-a72-meson-gcc": [
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc-debug",
+        "xpm run build --config qemu-cortex-a72-meson-gcc-debug",
+        "xpm run test --config qemu-cortex-a72-meson-gcc-debug",
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc-release",
+        "xpm run build --config qemu-cortex-a72-meson-gcc-release",
+        "xpm run test --config qemu-cortex-a72-meson-gcc-release"
+      ],
+      "test-qemu-cortex-a72-meson-gcc11": [
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc11-debug",
+        "xpm run build --config qemu-cortex-a72-meson-gcc11-debug",
+        "xpm run test --config qemu-cortex-a72-meson-gcc11-debug",
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc11-release",
+        "xpm run build --config qemu-cortex-a72-meson-gcc11-release",
+        "xpm run test --config qemu-cortex-a72-meson-gcc11-release"
+      ],
+      "test-qemu-cortex-a72-meson-gcc12": [
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc12-debug",
+        "xpm run build --config qemu-cortex-a72-meson-gcc12-debug",
+        "xpm run test --config qemu-cortex-a72-meson-gcc12-debug",
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc12-release",
+        "xpm run build --config qemu-cortex-a72-meson-gcc12-release",
+        "xpm run test --config qemu-cortex-a72-meson-gcc12-release"
+      ],
+      "test-qemu-cortex-a72-meson-gcc13": [
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc13-debug",
+        "xpm run build --config qemu-cortex-a72-meson-gcc13-debug",
+        "xpm run test --config qemu-cortex-a72-meson-gcc13-debug",
+        "xpm run prepare --config qemu-cortex-a72-meson-gcc13-release",
+        "xpm run build --config qemu-cortex-a72-meson-gcc13-release",
+        "xpm run test --config qemu-cortex-a72-meson-gcc13-release"
+      ],
+      "test-qemu-riscv-rv32imac-meson-gcc": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc-release",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc-release",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc-release"
+      ],
+      "test-qemu-riscv-rv32imac-meson-gcc11": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc11-debug",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc11-debug",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc11-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc11-release",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc11-release",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc11-release"
+      ],
+      "test-qemu-riscv-rv32imac-meson-gcc12": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc12-debug",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc12-debug",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc12-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc12-release",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc12-release",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc12-release"
+      ],
+      "test-qemu-riscv-rv32imac-meson-gcc13": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc13-debug",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc13-debug",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc13-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc13-release",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc13-release",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc13-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-meson-gcc": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-meson-gcc11": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc11-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc11-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc11-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc11-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc11-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc11-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-meson-gcc12": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc12-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc12-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc12-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc12-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc12-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc12-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-meson-gcc13": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc13-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc13-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc13-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc13-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc13-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc13-release"
+      ],
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
@@ -699,7 +1108,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-cortexm": "^6.3.0",
-          "@micro-os-plus/devices-qemu-cortexm": "^4.1.1"
+          "@micro-os-plus/devices-qemu-cortexm": "^5.1.0"
         }
       },
       "riscv-dependencies": {
@@ -786,13 +1195,6 @@
           "clang16-dependencies"
         ]
       },
-      "clang12-dependencies": {
-        "hidden": true,
-        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
-        "devDependencies": {
-          "@xpack-dev-tools/clang": "12.0.1-2.2"
-        }
-      },
       "clang13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
@@ -823,19 +1225,79 @@
       },
       "arm-none-eabi-gcc-dependencies": {
         "hidden": true,
+        "inherit": [
+          "arm-none-eabi-gcc13-dependencies"
+        ]
+      },
+      "arm-none-eabi-gcc11-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/arm-none-eabi-gcc": "11.3.1-1.1.2"
+        }
+      },
+      "arm-none-eabi-gcc12-dependencies": {
+        "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
         "devDependencies": {
           "@xpack-dev-tools/arm-none-eabi-gcc": "12.3.1-1.2.1"
         }
       },
+      "arm-none-eabi-gcc13-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/arm-none-eabi-gcc": "13.2.1-1.1.1"
+        }
+      },
       "aarch64-none-elf-gcc-dependencies": {
+        "hidden": true,
+        "inherit": [
+          "aarch64-none-elf-gcc13-dependencies"
+        ]
+      },
+      "aarch64-none-elf-gcc11-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/aarch64-none-elf-gcc": "11.3.1-1.2.1"
+        }
+      },
+      "aarch64-none-elf-gcc12-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
         "devDependencies": {
           "@xpack-dev-tools/aarch64-none-elf-gcc": "12.3.1-2.1.1"
         }
       },
+      "aarch64-none-elf-gcc13-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/aarch64-none-elf-gcc": "13.2.1-1.1.1"
+        }
+      },
       "riscv-none-elf-gcc-dependencies": {
+        "hidden": true,
+        "inherit": [
+          "riscv-none-elf-gcc13-dependencies"
+        ]
+      },
+      "riscv-none-elf-gcc11-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/riscv-none-elf-gcc": "11.3.0-1.1"
+        }
+      },
+      "riscv-none-elf-gcc12-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/riscv-none-elf-gcc": "12.3.0-1.1"
+        }
+      },
+      "riscv-none-elf-gcc13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
@@ -854,6 +1316,13 @@
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/qemu-riscv",
         "devDependencies": {
           "@xpack-dev-tools/qemu-riscv": "7.2.5-1.1"
+        }
+      },
+      "openocd-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/openocd",
+        "devDependencies": {
+          "@xpack-dev-tools/openocd": "0.12.0-2.1"
         }
       },
       "native-cmake-sys-debug": {
@@ -878,11 +1347,11 @@
           "buildType": "Release"
         }
       },
-      "native-cmake-gcc-debug": {
+      "native-cmake-gcc": {
+        "hidden": true,
         "inherit": [
           "cmake-actions",
           "native-actions",
-          "gcc-latest-dependencies",
           "native-dependencies"
         ],
         "properties": {
@@ -890,6 +1359,12 @@
           "platformName": "native",
           "toolchainFileName": "gcc.cmake"
         }
+      },
+      "native-cmake-gcc-debug": {
+        "inherit": [
+          "native-cmake-gcc",
+          "gcc-latest-dependencies"
+        ]
       },
       "native-cmake-gcc-release": {
         "inherit": [
@@ -901,16 +1376,9 @@
       },
       "native-cmake-gcc11-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "gcc11-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc.cmake"
-        }
+          "native-cmake-gcc",
+          "gcc11-dependencies"
+        ]
       },
       "native-cmake-gcc11-release": {
         "inherit": [
@@ -922,16 +1390,9 @@
       },
       "native-cmake-gcc12-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "gcc12-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc.cmake"
-        }
+          "native-cmake-gcc",
+          "gcc12-dependencies"
+        ]
       },
       "native-cmake-gcc12-release": {
         "inherit": [
@@ -943,16 +1404,9 @@
       },
       "native-cmake-gcc13-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "gcc13-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc.cmake"
-        }
+          "native-cmake-gcc",
+          "gcc13-dependencies"
+        ]
       },
       "native-cmake-gcc13-release": {
         "inherit": [
@@ -962,11 +1416,11 @@
           "buildType": "Release"
         }
       },
-      "native-cmake-clang-debug": {
+      "native-cmake-clang": {
+        "hidden": true,
         "inherit": [
           "cmake-actions",
           "native-actions",
-          "clang-latest-dependencies",
           "native-dependencies"
         ],
         "properties": {
@@ -974,6 +1428,12 @@
           "platformName": "native",
           "toolchainFileName": "clang.cmake"
         }
+      },
+      "native-cmake-clang-debug": {
+        "inherit": [
+          "native-cmake-clang",
+          "clang-latest-dependencies"
+        ]
       },
       "native-cmake-clang-release": {
         "inherit": [
@@ -983,39 +1443,11 @@
           "buildType": "Release"
         }
       },
-      "native-cmake-clang12-debug": {
-        "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "clang12-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "clang.cmake"
-        }
-      },
-      "native-cmake-clang12-release": {
-        "inherit": [
-          "native-cmake-clang12-debug"
-        ],
-        "properties": {
-          "buildType": "Release"
-        }
-      },
       "native-cmake-clang13-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "clang13-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "clang.cmake"
-        }
+          "native-cmake-clang",
+          "clang13-dependencies"
+        ]
       },
       "native-cmake-clang13-release": {
         "inherit": [
@@ -1027,16 +1459,9 @@
       },
       "native-cmake-clang14-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "clang14-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "clang.cmake"
-        }
+          "native-cmake-clang",
+          "clang14-dependencies"
+        ]
       },
       "native-cmake-clang14-release": {
         "inherit": [
@@ -1048,16 +1473,9 @@
       },
       "native-cmake-clang15-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "clang15-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "clang.cmake"
-        }
+          "native-cmake-clang",
+          "clang15-dependencies"
+        ]
       },
       "native-cmake-clang15-release": {
         "inherit": [
@@ -1069,16 +1487,9 @@
       },
       "native-cmake-clang16-debug": {
         "inherit": [
-          "cmake-actions",
-          "native-actions",
-          "clang16-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "native",
-          "toolchainFileName": "clang.cmake"
-        }
+          "native-cmake-clang",
+          "clang16-dependencies"
+        ]
       },
       "native-cmake-clang16-release": {
         "inherit": [
@@ -1110,11 +1521,11 @@
           "buildType": "release"
         }
       },
-      "native-meson-gcc-debug": {
+      "native-meson-gcc": {
+        "hidden": true,
         "inherit": [
           "native-actions",
           "meson-native-actions",
-          "gcc-latest-dependencies",
           "native-dependencies"
         ],
         "properties": {
@@ -1122,6 +1533,12 @@
           "platformName": "native",
           "toolchainFileName": "gcc-{{ os.platform }}.ini"
         }
+      },
+      "native-meson-gcc-debug": {
+        "inherit": [
+          "native-meson-gcc",
+          "gcc-latest-dependencies"
+        ]
       },
       "native-meson-gcc-release": {
         "inherit": [
@@ -1133,16 +1550,9 @@
       },
       "native-meson-gcc11-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "gcc11-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc-{{ os.platform }}.ini"
-        }
+          "native-meson-gcc",
+          "gcc11-dependencies"
+        ]
       },
       "native-meson-gcc11-release": {
         "inherit": [
@@ -1154,16 +1564,9 @@
       },
       "native-meson-gcc12-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "gcc12-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc-{{ os.platform }}.ini"
-        }
+          "native-meson-gcc",
+          "gcc12-dependencies"
+        ]
       },
       "native-meson-gcc12-release": {
         "inherit": [
@@ -1175,16 +1578,9 @@
       },
       "native-meson-gcc13-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "gcc13-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "gcc-{{ os.platform }}.ini"
-        }
+          "native-meson-gcc",
+          "gcc13-dependencies"
+        ]
       },
       "native-meson-gcc13-release": {
         "inherit": [
@@ -1194,11 +1590,11 @@
           "buildType": "release"
         }
       },
-      "native-meson-clang-debug": {
+      "native-meson-clang": {
+        "hidden": true,
         "inherit": [
           "native-actions",
           "meson-native-actions",
-          "clang-latest-dependencies",
           "native-dependencies"
         ],
         "properties": {
@@ -1206,6 +1602,12 @@
           "platformName": "native",
           "toolchainFileName": "clang-{{ os.platform }}.ini"
         }
+      },
+      "native-meson-clang-debug": {
+        "inherit": [
+          "native-meson-clang",
+          "clang-latest-dependencies"
+        ]
       },
       "native-meson-clang-release": {
         "inherit": [
@@ -1215,39 +1617,11 @@
           "buildType": "release"
         }
       },
-      "native-meson-clang12-debug": {
-        "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "clang12-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "clang-{{ os.platform }}.ini"
-        }
-      },
-      "native-meson-clang12-release": {
-        "inherit": [
-          "native-meson-clang12-debug"
-        ],
-        "properties": {
-          "buildType": "release"
-        }
-      },
       "native-meson-clang13-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "clang13-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "clang-{{ os.platform }}.ini"
-        }
+          "native-meson-clang",
+          "clang13-dependencies"
+        ]
       },
       "native-meson-clang13-release": {
         "inherit": [
@@ -1259,16 +1633,9 @@
       },
       "native-meson-clang14-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "clang14-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "clang-{{ os.platform }}.ini"
-        }
+          "native-meson-clang",
+          "clang14-dependencies"
+        ]
       },
       "native-meson-clang14-release": {
         "inherit": [
@@ -1280,16 +1647,9 @@
       },
       "native-meson-clang15-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "clang15-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "clang-{{ os.platform }}.ini"
-        }
+          "native-meson-clang",
+          "clang15-dependencies"
+        ]
       },
       "native-meson-clang15-release": {
         "inherit": [
@@ -1301,16 +1661,9 @@
       },
       "native-meson-clang16-debug": {
         "inherit": [
-          "native-actions",
-          "meson-native-actions",
-          "clang16-dependencies",
-          "native-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "native",
-          "toolchainFileName": "clang-{{ os.platform }}.ini"
-        }
+          "native-meson-clang",
+          "clang16-dependencies"
+        ]
       },
       "native-meson-clang16-release": {
         "inherit": [
@@ -1320,39 +1673,13 @@
           "buildType": "release"
         }
       },
-      "qemu-cortex-m7f-cmake-debug": {
+      "qemu-cortex-m0-cmake-gcc": {
+        "hidden": true,
         "inherit": [
           "short-win-paths-properties",
           "cmake-actions",
           "cortexm-actions",
           "arm-cmsis-core-dependencies",
-          "arm-none-eabi-gcc-dependencies",
-          "cortexm-dependencies",
-          "qemu-arm-dependencies"
-        ],
-        "properties": {
-          "buildType": "Debug",
-          "platformName": "qemu-cortex-m7f",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "shortConfigurationName": "q1d"
-        }
-      },
-      "qemu-cortex-m7f-cmake-release": {
-        "inherit": [
-          "qemu-cortex-m7f-cmake-debug"
-        ],
-        "properties": {
-          "buildType": "MinSizeRel",
-          "shortConfigurationName": "q1r"
-        }
-      },
-      "qemu-cortex-m0-cmake-debug": {
-        "inherit": [
-          "short-win-paths-properties",
-          "cmake-actions",
-          "cortexm-actions",
-          "arm-cmsis-core-dependencies",
-          "arm-none-eabi-gcc-dependencies",
           "bare-metal-dependencies",
           "cortexm-dependencies",
           "qemu-arm-dependencies"
@@ -1360,153 +1687,706 @@
         "properties": {
           "buildType": "Debug",
           "platformName": "qemu-cortex-m0",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "shortConfigurationName": "q2d"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
         }
       },
-      "qemu-cortex-m0-cmake-release": {
+      "qemu-cortex-m0-cmake-gcc-debug": {
         "inherit": [
-          "qemu-cortex-m0-cmake-debug"
+          "qemu-cortex-m0-cmake-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m0d"
+        }
+      },
+      "qemu-cortex-m0-cmake-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q2r"
+          "shortConfigurationName": "m0r"
         }
       },
-      "qemu-cortex-a72-cmake-debug": {
+      "qemu-cortex-m0-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m0da"
+        }
+      },
+      "qemu-cortex-m0-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m0ra"
+        }
+      },
+      "qemu-cortex-m0-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m0db"
+        }
+      },
+      "qemu-cortex-m0-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m0rb"
+        }
+      },
+      "qemu-cortex-m0-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m0dc"
+        }
+      },
+      "qemu-cortex-m0-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m0-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m0rc"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc": {
+        "hidden": true,
         "inherit": [
           "short-win-paths-properties",
-          "aarch64-actions",
           "cmake-actions",
-          "aarch64-dependencies",
-          "aarch64-none-elf-gcc-dependencies",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
           "bare-metal-dependencies",
+          "cortexm-dependencies",
           "qemu-arm-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
-          "platformName": "qemu-cortex-a72",
-          "toolchainFileName": "aarch64-none-elf-gcc.cmake",
-          "shortConfigurationName": "q3d"
+          "platformName": "qemu-cortex-m3",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
         }
       },
-      "qemu-cortex-a72-cmake-release": {
+      "qemu-cortex-m3-cmake-gcc-debug": {
         "inherit": [
-          "qemu-cortex-a72-cmake-debug"
+          "qemu-cortex-m3-cmake-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m3d"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q3r"
+          "shortConfigurationName": "m3r"
         }
       },
-      "qemu-cortex-a15-cmake-debug": {
+      "qemu-cortex-m3-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m3da"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m3ra"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m3db"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m3rb"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m3dc"
+        }
+      },
+      "qemu-cortex-m3-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m3-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m3rc"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc": {
+        "hidden": true,
+        "inherit": [
+          "short-win-paths-properties",
+          "cmake-actions",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-cortex-m4f",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m4d"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m4r"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m4da"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m4ra"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m4db"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m4rb"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m4dc"
+        }
+      },
+      "qemu-cortex-m4f-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m4f-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m4rc"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc": {
+        "hidden": true,
+        "inherit": [
+          "short-win-paths-properties",
+          "cmake-actions",
+          "cortexm-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-cortex-m7f",
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m7d"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m7r"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m7da"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m7ra"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m7db"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m7rb"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "m7dc"
+        }
+      },
+      "qemu-cortex-m7f-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m7f-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "m7rc"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc": {
+        "hidden": true,
         "inherit": [
           "short-win-paths-properties",
           "aarch32-actions",
           "cmake-actions",
           "aarch32-dependencies",
-          "arm-none-eabi-gcc-dependencies",
           "bare-metal-dependencies",
           "qemu-arm-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
           "platformName": "qemu-cortex-a15",
-          "toolchainFileName": "arm-none-eabi-gcc.cmake",
-          "shortConfigurationName": "q4d"
+          "toolchainFileName": "arm-none-eabi-gcc.cmake"
         }
       },
-      "qemu-cortex-a15-cmake-release": {
+      "qemu-cortex-a15-cmake-gcc-debug": {
         "inherit": [
-          "qemu-cortex-a15-cmake-debug"
+          "qemu-cortex-a15-cmake-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a1d"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc-release": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q4r"
+          "shortConfigurationName": "a1r"
         }
       },
-      "qemu-riscv-rv32imac-cmake-debug": {
+      "qemu-cortex-a15-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a1da"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a1ra"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a1db"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a1rb"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a1dc"
+        }
+      },
+      "qemu-cortex-a15-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-a15-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a1rc"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc": {
+        "hidden": true,
+        "inherit": [
+          "short-win-paths-properties",
+          "aarch64-actions",
+          "cmake-actions",
+          "aarch64-dependencies",
+          "bare-metal-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "Debug",
+          "platformName": "qemu-cortex-a72",
+          "toolchainFileName": "aarch64-none-elf-gcc.cmake"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc",
+          "aarch64-none-elf-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a7d"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc-release": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a7r"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc",
+          "aarch64-none-elf-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a7da"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a7ra"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc",
+          "aarch64-none-elf-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a7db"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a7rb"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc",
+          "aarch64-none-elf-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "a7dc"
+        }
+      },
+      "qemu-cortex-a72-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-a72-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "a7rc"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc": {
+        "hidden": true,
         "inherit": [
           "short-win-paths-properties",
           "cmake-actions",
           "riscv-actions",
           "bare-metal-dependencies",
           "riscv-dependencies",
-          "riscv-none-elf-gcc-dependencies",
           "qemu-riscv-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
           "platformName": "qemu-riscv-rv32imac",
-          "toolchainFileName": "riscv-none-elf-gcc.cmake",
-          "shortConfigurationName": "q5d"
+          "toolchainFileName": "riscv-none-elf-gcc.cmake"
         }
       },
-      "qemu-riscv-rv32imac-cmake-release": {
+      "qemu-riscv-rv32imac-cmake-gcc-debug": {
         "inherit": [
-          "qemu-riscv-rv32imac-cmake-debug"
+          "qemu-riscv-rv32imac-cmake-gcc",
+          "riscv-none-elf-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v3d"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q5r"
+          "shortConfigurationName": "v3r"
         }
       },
-      "qemu-riscv-rv64imafdc-cmake-debug": {
+      "qemu-riscv-rv32imac-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc",
+          "riscv-none-elf-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v3da"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v3ra"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc",
+          "riscv-none-elf-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v3db"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v3rb"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc",
+          "riscv-none-elf-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v3dc"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v3rc"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc": {
+        "hidden": true,
         "inherit": [
           "short-win-paths-properties",
           "cmake-actions",
           "riscv-actions",
           "bare-metal-dependencies",
           "riscv-dependencies",
-          "riscv-none-elf-gcc-dependencies",
           "qemu-riscv-dependencies"
         ],
         "properties": {
           "buildType": "Debug",
           "platformName": "qemu-riscv-rv64imafdc",
-          "toolchainFileName": "riscv-none-elf-gcc.cmake",
-          "shortConfigurationName": "q6d"
+          "toolchainFileName": "riscv-none-elf-gcc.cmake"
         }
       },
-      "qemu-riscv-rv64imafdc-cmake-release": {
+      "qemu-riscv-rv64imafdc-cmake-gcc-debug": {
         "inherit": [
-          "qemu-riscv-rv64imafdc-cmake-debug"
+          "qemu-riscv-rv64imafdc-cmake-gcc",
+          "riscv-none-elf-gcc-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v6d"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc-debug"
         ],
         "properties": {
           "buildType": "MinSizeRel",
-          "shortConfigurationName": "q6r"
+          "shortConfigurationName": "v6r"
         }
       },
-      "qemu-cortex-m7f-meson-debug": {
+      "qemu-riscv-rv64imafdc-cmake-gcc11-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc",
+          "riscv-none-elf-gcc11-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v6da"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc11-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v6ra"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc12-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc",
+          "riscv-none-elf-gcc12-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v6db"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc12-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v6rb"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc13-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc",
+          "riscv-none-elf-gcc13-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v6dc"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc13-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v6rc"
+        }
+      },
+      "qemu-cortex-m0-meson-gcc": {
+        "hidden": true,
         "inherit": [
           "cortexm-actions",
           "meson-cross-actions",
           "arm-cmsis-core-dependencies",
-          "arm-none-eabi-gcc-dependencies",
-          "bare-metal-dependencies",
-          "cortexm-dependencies",
-          "qemu-arm-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "qemu-cortex-m7f",
-          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
-        }
-      },
-      "qemu-cortex-m7f-meson-release": {
-        "inherit": [
-          "qemu-cortex-m7f-meson-debug"
-        ],
-        "properties": {
-          "buildType": "minsize"
-        }
-      },
-      "qemu-cortex-m0-meson-debug": {
-        "inherit": [
-          "cortexm-actions",
-          "meson-cross-actions",
-          "arm-cmsis-core-dependencies",
-          "arm-none-eabi-gcc-dependencies",
           "bare-metal-dependencies",
           "cortexm-dependencies",
           "qemu-arm-dependencies"
@@ -1517,20 +2397,355 @@
           "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
         }
       },
-      "qemu-cortex-m0-meson-release": {
+      "qemu-cortex-m0-meson-gcc-debug": {
         "inherit": [
-          "qemu-cortex-m0-meson-debug"
+          "qemu-cortex-m0-meson-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ]
+      },
+      "qemu-cortex-m0-meson-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc-debug"
         ],
         "properties": {
           "buildType": "minsize"
         }
       },
-      "qemu-cortex-a72-meson-debug": {
+      "qemu-cortex-m0-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ]
+      },
+      "qemu-cortex-m0-meson-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m0-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ]
+      },
+      "qemu-cortex-m0-meson-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m0-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ]
+      },
+      "qemu-cortex-m0-meson-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m0-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m3-meson-gcc": {
+        "hidden": true,
+        "inherit": [
+          "cortexm-actions",
+          "meson-cross-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-cortex-m3",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-cortex-m3-meson-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ]
+      },
+      "qemu-cortex-m3-meson-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m3-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ]
+      },
+      "qemu-cortex-m3-meson-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m3-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ]
+      },
+      "qemu-cortex-m3-meson-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m3-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ]
+      },
+      "qemu-cortex-m3-meson-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m3-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m4f-meson-gcc": {
+        "hidden": true,
+        "inherit": [
+          "cortexm-actions",
+          "meson-cross-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-cortex-m4f",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-cortex-m4f-meson-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ]
+      },
+      "qemu-cortex-m4f-meson-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m4f-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ]
+      },
+      "qemu-cortex-m4f-meson-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m4f-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ]
+      },
+      "qemu-cortex-m4f-meson-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m4f-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ]
+      },
+      "qemu-cortex-m4f-meson-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m4f-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m7f-meson-gcc": {
+        "hidden": true,
+        "inherit": [
+          "cortexm-actions",
+          "meson-cross-actions",
+          "arm-cmsis-core-dependencies",
+          "bare-metal-dependencies",
+          "cortexm-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-cortex-m7f",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-cortex-m7f-meson-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ]
+      },
+      "qemu-cortex-m7f-meson-gcc-release": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m7f-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ]
+      },
+      "qemu-cortex-m7f-meson-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m7f-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ]
+      },
+      "qemu-cortex-m7f-meson-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-m7f-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ]
+      },
+      "qemu-cortex-m7f-meson-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-m7f-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-a15-meson-gcc": {
+        "hidden": true,
+        "inherit": [
+          "aarch32-actions",
+          "meson-cross-actions",
+          "aarch32-dependencies",
+          "bare-metal-dependencies",
+          "qemu-arm-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-cortex-a15",
+          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-cortex-a15-meson-gcc-debug": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc",
+          "arm-none-eabi-gcc-dependencies"
+        ]
+      },
+      "qemu-cortex-a15-meson-gcc-release": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-a15-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc",
+          "arm-none-eabi-gcc11-dependencies"
+        ]
+      },
+      "qemu-cortex-a15-meson-gcc11-release": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-a15-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc",
+          "arm-none-eabi-gcc12-dependencies"
+        ]
+      },
+      "qemu-cortex-a15-meson-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-a15-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc",
+          "arm-none-eabi-gcc13-dependencies"
+        ]
+      },
+      "qemu-cortex-a15-meson-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-a15-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-a72-meson-gcc": {
+        "hidden": true,
         "inherit": [
           "aarch64-actions",
           "meson-cross-actions",
           "aarch64-dependencies",
-          "aarch64-none-elf-gcc-dependencies",
           "bare-metal-dependencies",
           "qemu-arm-dependencies"
         ],
@@ -1540,44 +2755,69 @@
           "toolchainFileName": "aarch64-none-elf-gcc-{{ os.platform }}.ini"
         }
       },
-      "qemu-cortex-a72-meson-release": {
+      "qemu-cortex-a72-meson-gcc-debug": {
         "inherit": [
-          "qemu-cortex-a72-meson-debug"
+          "qemu-cortex-a72-meson-gcc",
+          "aarch64-none-elf-gcc-dependencies"
+        ]
+      },
+      "qemu-cortex-a72-meson-gcc-release": {
+        "inherit": [
+          "qemu-cortex-a72-meson-gcc-debug"
         ],
         "properties": {
           "buildType": "minsize"
         }
       },
-      "qemu-cortex-a15-meson-debug": {
+      "qemu-cortex-a72-meson-gcc11-debug": {
         "inherit": [
-          "aarch32-actions",
-          "meson-cross-actions",
-          "arm-none-eabi-gcc-dependencies",
-          "aarch32-dependencies",
-          "bare-metal-dependencies",
-          "qemu-arm-dependencies"
-        ],
-        "properties": {
-          "buildType": "debug",
-          "platformName": "qemu-cortex-a15",
-          "toolchainFileName": "arm-none-eabi-gcc-{{ os.platform }}.ini"
-        }
+          "qemu-cortex-a72-meson-gcc",
+          "aarch64-none-elf-gcc11-dependencies"
+        ]
       },
-      "qemu-cortex-a15-meson-release": {
+      "qemu-cortex-a72-meson-gcc11-release": {
         "inherit": [
-          "qemu-cortex-a15-meson-debug"
+          "qemu-cortex-a72-meson-gcc11-debug"
         ],
         "properties": {
           "buildType": "minsize"
         }
       },
-      "qemu-riscv-rv32imac-meson-debug": {
+      "qemu-cortex-a72-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-cortex-a72-meson-gcc",
+          "aarch64-none-elf-gcc12-dependencies"
+        ]
+      },
+      "qemu-cortex-a72-meson-gcc12-release": {
+        "inherit": [
+          "qemu-cortex-a72-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-cortex-a72-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-cortex-a72-meson-gcc",
+          "aarch64-none-elf-gcc13-dependencies"
+        ]
+      },
+      "qemu-cortex-a72-meson-gcc13-release": {
+        "inherit": [
+          "qemu-cortex-a72-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-gcc": {
+        "hidden": true,
         "inherit": [
           "meson-cross-actions",
           "riscv-actions",
           "bare-metal-dependencies",
           "riscv-dependencies",
-          "riscv-none-elf-gcc-dependencies",
           "qemu-riscv-dependencies"
         ],
         "properties": {
@@ -1586,21 +2826,74 @@
           "toolchainFileName": "riscv-none-elf-gcc-{{ os.platform }}.ini"
         }
       },
-      "qemu-riscv-rv32imac-meson-release": {
+      "qemu-riscv-rv32imac-meson-gcc-debug": {
         "inherit": [
-          "qemu-riscv-rv32imac-meson-debug"
+          "qemu-riscv-rv32imac-meson-gcc",
+          "riscv-none-elf-gcc-dependencies"
+        ]
+      },
+      "qemu-riscv-rv32imac-meson-gcc-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc-debug"
         ],
         "properties": {
           "buildType": "minsize"
         }
       },
-      "qemu-riscv-rv64imafdc-meson-debug": {
+      "qemu-riscv-rv32imac-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc",
+          "riscv-none-elf-gcc11-dependencies"
+        ],
+        "properties": {
+          "buildType": "debug",
+          "platformName": "qemu-riscv-rv32imac",
+          "toolchainFileName": "riscv-none-elf-gcc-{{ os.platform }}.ini"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-gcc11-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc",
+          "riscv-none-elf-gcc12-dependencies"
+        ]
+      },
+      "qemu-riscv-rv32imac-meson-gcc12-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc",
+          "riscv-none-elf-gcc13-dependencies"
+        ]
+      },
+      "qemu-riscv-rv32imac-meson-gcc13-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc13-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc": {
+        "hidden": true,
         "inherit": [
           "meson-cross-actions",
           "riscv-actions",
           "bare-metal-dependencies",
           "riscv-dependencies",
-          "riscv-none-elf-gcc-dependencies",
           "qemu-riscv-dependencies"
         ],
         "properties": {
@@ -1609,9 +2902,57 @@
           "toolchainFileName": "riscv-none-elf-gcc-{{ os.platform }}.ini"
         }
       },
-      "qemu-riscv-rv64imafdc-meson-release": {
+      "qemu-riscv-rv64imafdc-meson-gcc-debug": {
         "inherit": [
-          "qemu-riscv-rv64imafdc-meson-debug"
+          "qemu-riscv-rv64imafdc-meson-gcc",
+          "riscv-none-elf-gcc-dependencies"
+        ]
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc11-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc",
+          "riscv-none-elf-gcc11-dependencies"
+        ]
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc11-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc11-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc12-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc",
+          "riscv-none-elf-gcc12-dependencies"
+        ]
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc12-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc12-debug"
+        ],
+        "properties": {
+          "buildType": "minsize"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc13-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc",
+          "riscv-none-elf-gcc13-dependencies"
+        ]
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc13-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc13-debug"
         ],
         "properties": {
           "buildType": "minsize"

@@ -12,60 +12,19 @@
 #
 # -----------------------------------------------------------------------------
 
-# Create the test applications.
+# Create the platform specific test executables.
+
+# -----------------------------------------------------------------------------
 
 message('Processing tests/platform-qemu-cortex-m7f...')
 
 # -----------------------------------------------------------------------------
-
-xpack_platform_compile_definition = 'PLATFORM_QEMU_CORTEX_M7F'
 
 # Enable them only when needed.
 xpack_create_listing = false
 xpack_create_hex = false
 
 # -----------------------------------------------------------------------------
-# Define the platform library.
-
-xpack_common_args = []
-xpack_include_directories = []
-xpack_sources = []
-xpack_compile_definitions = []
-
-# -----------------------------------------------------------------------------
-
-xpack_include_directories += [
-  'include-platform',
-]
-
-xpack_sources += [
-]
-
-xpack_compile_definitions += [
-  '-D' + xpack_platform_compile_definition,
-]
-
-# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-platform_qemu_cortex_m7f_dependency = declare_dependency(
-  include_directories: include_directories(xpack_include_directories),
-  sources: files(xpack_sources),
-  compile_args: xpack_common_args + xpack_compile_definitions,
-  dependencies: [
-    micro_os_plus_devices_qemu_cortexm_dependency,
-  ]
-)
-
-foreach xn : xpack_include_directories
-  message('+ -I ' + xn)
-endforeach
-# Note: depenedencies compile_args not shown.
-foreach xn : xpack_sources + xpack_common_args + xpack_compile_definitions
-  message('+ ' + xn)
-endforeach
-message('> platform_qemu_cortex_m7f_dependency')
-
-# =============================================================================
-# Define the tests executables.
 
 # Get the command names from the toolchain file.
 size = find_program('size')
@@ -74,56 +33,43 @@ objcopy = find_program('objcopy')
 
 # -----------------------------------------------------------------------------
 
+# Define the tests executables.
 test_names = [ 'sample-test', 'unit-test'  ]
 
 foreach name : test_names
 
-  xpack_common_args = []
-  xpack_c_args = []
-  xpack_cpp_args = []
-  xpack_include_directories = []
-  xpack_sources = []
-  xpack_compile_definitions = []
-  xpack_dependencies = []
-  xpack_link_args = []
-  xpack_link_with = []
+  _local_compile_args = [] # Common C/C++ args.
+  _local_compile_c_args = []
+  _local_compile_cpp_args = []
+  _local_include_directories = []
+  _local_sources = []
+  _local_compile_definitions = []
+  _local_dependencies = []
+  _local_link_args = []
+  _local_link_with = []
 
   # ---------------------------------------------------------------------------
 
-  xpack_include_directories += [
+  _local_include_directories += [
     '../include',
   ]
 
-  xpack_sources += [
+  _local_sources += [
     '../src/' + name + '.cpp',
   ]
 
-  # xpack_c_args += micro_os_plus_utils_lists_dependency_c_args
-  # xpack_cpp_args += micro_os_plus_utils_lists_dependency_cpp_args
+  _local_compile_c_args += platform_qemu_cortex_m7f_dependency_compile_c_args
+  _local_compile_cpp_args += platform_qemu_cortex_m7f_dependency_compile_cpp_args
 
-  xpack_link_args += [
-    '-nostartfiles',
-    # '--specs=rdimon.specs', '-Wl,--start-group', '-lgcc', '-lc', '-lc', '-lm', '-lrdimon', '-Wl,--end-group',
+  _local_compile_c_args += micro_os_plus_utils_lists_dependency_compile_c_args
+  _local_compile_cpp_args += micro_os_plus_utils_lists_dependency_compile_cpp_args
 
-    # Ensure the linker will keep the interrupt vectors which otherwise
-    # are not referred from anywhere.
-    # '-u_interrupt_vectors',
-
-    # nano has no exceptions.
-    # '-specs=nano.specs'
-
-    '-Wl,--gc-sections',
-
+  _local_link_args += [
     '-Wl,-Map,'+ name + '-map.txt',
     # '-v',
-
-    # Path are relative to the build folder.
-    '-T', 'xpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an500.ld',
-    '-T', 'xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-flash.ld',
-    # '-T', 'xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-ram.ld',
   ]
 
-  xpack_dependencies += [
+  _local_dependencies += [
     # Tested library.
     micro_os_plus_utils_lists_dependency,
 
@@ -132,12 +78,15 @@ foreach name : test_names
   ]
 
   if name == 'unit-test'
-    xpack_dependencies += [
+    _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
+    _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
+
+    _local_dependencies += [
       micro_os_plus_micro_test_plus_dependency,
     ]
   endif
 
-  xpack_dependencies += [
+  _local_dependencies += [
     # Platform specific dependencies.
     platform_qemu_cortex_m7f_dependency, # bring device & architecture too
 
@@ -145,29 +94,24 @@ foreach name : test_names
     micro_os_plus_startup_dependency,
   ]
 
-  xpack_link_with += [
-    # Tested library.
-    # micro_os_plus_utils_lists_static,
-  ]
-
   # https://mesonbuild.com/Reference-manual.html#executable
   exe = executable(
     name,
-    include_directories: include_directories(xpack_include_directories),
-    sources: files(xpack_sources),
-    c_args: xpack_common_args + xpack_c_args + xpack_compile_definitions,
-    cpp_args: xpack_common_args + xpack_cpp_args + xpack_compile_definitions,
-    dependencies: xpack_dependencies,
-    link_args: xpack_link_args,
-    link_with: xpack_link_with,
+    include_directories: include_directories(_local_include_directories),
+    sources: files(_local_sources),
+    c_args: _local_compile_args + _local_compile_c_args + _local_compile_definitions,
+    cpp_args: _local_compile_args + _local_compile_cpp_args + _local_compile_definitions,
+    dependencies: _local_dependencies,
+    link_args: _local_link_args,
+    link_with: _local_link_with,
     name_suffix: 'elf',
   )
 
-  foreach xn : xpack_include_directories
+  foreach xn : _local_include_directories
     message('A+ -I ' + xn)
   endforeach
   # Note: depenedencies compile_args not shown.
-  foreach xn : xpack_sources + xpack_common_args + xpack_c_args + xpack_cpp_args + xpack_compile_definitions + xpack_link_args
+  foreach xn : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args + _local_link_args
     message('A+ ' + xn)
   endforeach
   message('A> ' + name)
@@ -228,6 +172,8 @@ foreach name : test_names
   )
 
 endforeach
+
+# -----------------------------------------------------------------------------
 
 qemu = find_program('qemu-system-arm')
 
