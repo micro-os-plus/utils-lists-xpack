@@ -2,7 +2,6 @@
 
 @tableofcontents
 
-[![license](https://img.shields.io/github/license/micro-os-plus/utils-lists-xpack)](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/LICENSE)
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
 [![GitHub issues](https://img.shields.io/github/issues/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 [![GitHub pulls](https://img.shields.io/github/issues-pr/micro-os-plus/utils-lists-xpack.svg)](https://github.com/micro-os-plus/utils-lists-xpack/pulls)
@@ -24,7 +23,7 @@ git clone \
   ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
 
-For development purposes, clone the `xpack-develop` branch:
+For development purposes, clone the development branch (`xpack-develop`):
 
 ```sh
 rm -rf ~/Work/micro-os-plus/utils-lists-xpack.git && \
