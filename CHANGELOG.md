@@ -6,38 +6,49 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
-2023-11-28 * 0c42143 ci.yml update
-2023-11-28 * 6b3d0ec package.json: bump deps
-2023-11-28 * 2cd6f20 cmake & meson rework
-2023-11-28 * a353d25 rework tests after micro-test-plus
-2023-11-28 * f73f7c7 maintainer.md updates
-2023-11-28 * ebe6986 website/package.json: latest theme commit
-2023-11-28 * 3cc293a home.md: rephrase
-2023-11-28 * 9008012 home.md: remove ci & web badges
+## 2023-11-28
 
-2023-11-26 * 2dd5c15 testing.md: fix urls
-2023-11-26 * 6ce4ec6 add @page to static pages
-2023-11-26 * ba64331 package.json: update homepage
-2023-11-26 * 59d0b92 website/package.json update
-2023-11-26 * 2bdf3bd website/package.json add check urls
-2023-11-26 * 2e9f21b user-guide.md: fix broken link
-2023-11-26 * 4dfa7f0 .npmignore update
-2023-11-26 * 0a7bb55 install.md: show install tree
-2023-11-26 * 7976065 home.md: fix link
+* v4.0.0
+* 0c42143 ci.yml update
+* 6b3d0ec package.json: bump deps
+* 2cd6f20 cmake & meson rework
+* a353d25 rework tests after micro-test-plus
+* f73f7c7 maintainer.md updates
+* ebe6986 website/package.json: latest theme commit
+* 3cc293a home.md: rephrase
+* 9008012 home.md: remove ci & web badges
 
-2023-11-25 * 92d7a20 tests/package.json update
-2023-11-25 * 8172e34 home.md: add Manual Pages
+## 2023-11-26
 
-2023-11-23 * 6bb9d32 user-guide.md update
+* 2dd5c15 testing.md: fix urls
+* 6ce4ec6 add @page to static pages
+* ba64331 package.json: update homepage
+* 59d0b92 website/package.json update
+* 2bdf3bd website/package.json add check urls
+* 2e9f21b user-guide.md: fix broken link
+* 4dfa7f0 .npmignore update
+* 0a7bb55 install.md: show install tree
+* 7976065 home.md: fix link
 
-2023-11-22 * d027bb1 home.md: update
-2023-11-22 * 325d390 user-guide.md updates
-2023-11-22 * dc62054 rename user-guide
-2023-11-22 * 0611909 home.md update title
-2023-11-22 * 94af1b7 home.md update title
-2023-11-22 * dace2d5 home.md update title
-2023-11-22 * e1d6886 website topics update
-2023-11-22 * 69d0d6c update website after micro-test-plus
+## 2023-11-25
+
+* 92d7a20 tests/package.json update
+* 8172e34 home.md: add Manual Pages
+
+## 2023-11-23
+
+* 6bb9d32 user-guide.md update
+
+## 2023-11-22
+
+* d027bb1 home.md: update
+* 325d390 user-guide.md updates
+* dc62054 rename user-guide
+* 0611909 home.md update title
+* 94af1b7 home.md update title
+* dace2d5 home.md update title
+* e1d6886 website topics update
+* 69d0d6c update website after micro-test-plus
 
 ## 2023-10-18
 
