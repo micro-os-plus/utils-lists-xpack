@@ -257,7 +257,7 @@ There is a GitHub Actions CI
 [workflow](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
 that runs a selection of the
 tests on every push; for details see
-[ci.yml](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml).
+[ci.yml](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/.github/workflows/ci.yml).
 
 ## Extensive testing
 
