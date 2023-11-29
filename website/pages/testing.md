@@ -354,7 +354,7 @@ To do a deep cleanup in order to free space or to restart the tests
 from scratch:
 
 ```sh
-npm install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+npm install -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
 xpm run deep-clean -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
 ```
 
