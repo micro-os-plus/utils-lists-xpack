@@ -3,7 +3,6 @@
 @tableofcontents
 
 [![CI on Push](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml)
-[![Test on all platforms](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml/badge.svg)](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
 
 ## Overview
 
@@ -16,16 +15,22 @@ The supported test platforms are:
 
 - `platform-native` - run the test applications as **native processes**
   on the development machine
-- `platform-qemu-cortex-m7f` - run the tests as fully semihosted
-  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
-  (an Arm Cortex-M7 development board)
 - `platform-qemu-cortex-m0` - run the tests as fully semihosted
   **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
   (an Arm Cortex-M3 development board)
-- `platform-qemu-cortex-a72` - run the tests as fully semihosted
-  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
+- `platform-qemu-cortex-m3` - run the tests as fully semihosted
+  **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
+  (an Arm Cortex-M3 development board)
+- `platform-qemu-cortex-m4f` - run the tests as fully semihosted
+  **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
+  (an Arm Cortex-M4 development board)
+- `platform-qemu-cortex-m7f` - run the tests as fully semihosted
+  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
+  (an Arm Cortex-M7 development board)
 - `platform-qemu-cortex-a15` - run the tests as fully semihosted
   **Cortex-A15** applications on a QEMU **virt** emulated board
+- `platform-qemu-cortex-a72` - run the tests as fully semihosted
+  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
 - `platform-qemu-riscv-rv32imac` - run the tests as fully semihosted
   **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
 - `platform-qemu-riscv-rv64imafdc` - run the tests as fully semihosted
@@ -38,7 +43,9 @@ The tests are built and executed on:
 - Windows
 
 The build configurations use exactly the same source files on all platforms,
-without changes.
+without changes. On embedded platforms, the applications interact with the
+host via the
+[Arm semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
 
 ## Toolchains
 
@@ -47,11 +54,11 @@ toolchains, even with multiple versions of the same toolchain.
 
 The following toolchains are used:
 
-- gcc 11, 12 (native)
-- clang 12, 13, 14, 15 (native)
-- arm-none-eabi-gcc 11 (Cortex-M, AArch32)
-- aarch64-none-elf-gcc 11 (AArch64)
-- risc-none-elf-gcc 12 (RISC-V 32/64)
+- gcc 11, 12, 13 (native)
+- clang 13, 14, 15, 16 (native)
+- arm-none-eabi-gcc 11, 12, 13 (Cortex-M, AArch32)
+- aarch64-none-elf-gcc 11, 12, 13 (AArch64)
+- risc-none-elf-gcc 11, 12, 13 (RISC-V 32/64)
 
 ## Tests details
 
@@ -258,7 +265,7 @@ A second
 [workflow](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
 can be triggered manually before releases, and runs all available tests
 on all supported platforms; for details see
-[test-all.yml](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
+[test-all.yml](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/.github/workflows/test-all.yml)
 
 @note
 Running these tests on Apple Silicon macOS and Arm GNU/Linux
@@ -267,23 +274,90 @@ organisation to be up and running.
 
 ## Manual runs
 
-The full set can also be run manually with the following commands:
+The tests can be executed manually on any of the supported
+platforms:
+
+- GNU/Linux (Intel and Arm, **GLIBC>=2.27**); to run the native
+tests, a C++ development environment is required
+(on Ubuntu install `build-essential`)
+- macOS (Intel >= **10.13** and Apple Silicon > **11.1**);
+as C++ development environment use **Command Line Tools**
+- Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
+Windows 11
+
+### Prerequisites
+
+A recent **Node.js** (>=16) run environment. For instructions on how to
+install it, see the [prerequisites](https://xpack.github.io/install/) page.
+
+With **npm** available, install **xpm**:
 
 ```sh
 npm install --global xpm@latest
+```
 
+### Clone the project
+
+To clone the development branch (`xpack-develop`), run the following commands in a
+terminal (on Windows use the _Git Bash_ console):
+
+```sh
 rm -rf ~/Work/micro-os-plus/utils-lists-xpack.git && \
 mkdir -p ~/Work/micro-os-plus && \
 git clone \
   --branch xpack-develop \
   https://github.com/micro-os-plus/utils-lists-xpack.git \
   ~/Work/micro-os-plus/utils-lists-xpack.git
-
-xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
-xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git
 ```
+
+### Run the tests
+
+There are multiple predefined actions, to run various selections of tests,
+from a single run with the system compiler, to all possible tests.
 
 @note
 On the first run, the install step might take quite some time,
 since it has to download the toolchain archives, which are relatively
 large, up to hundreds of MB.
+
+To run the tests with the system compiler:
+
+```sh
+xpm run install -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+xpm run test -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+```
+
+To run a selection of tests with the latest versions of the toolchains:
+
+```sh
+xpm run install-selected -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+xpm run test-selected -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+```
+
+To run all tests with the latest versions of the toolchains:
+
+```sh
+xpm run install-latest -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+xpm run test-latest -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+```
+
+To run all tests with all toolchain versions:
+
+```sh
+xpm run install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+xpm run test-all -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+```
+
+### Cleanups
+
+To do a deep cleanup in order to free space or to restart the tests
+from scratch:
+
+```sh
+npm install-all -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+xpm run deep-clean -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
+```
+
+@note
+All dependencies installed by xpm are located in the home folder and
+can be removed by simply removing the folders.
