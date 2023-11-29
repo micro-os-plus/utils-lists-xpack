@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/utils-lists",
-  "version": "4.0.0-pre",
+  "version": "4.0.0",
   "description": "A source code library with the µOS++ C++ lists utilities",
   "main": "",
   "scripts": {
