@@ -360,4 +360,7 @@ xpm run deep-clean -C ~/Work/micro-os-plus/utils-lists-xpack.git/tests
 
 @note
 All dependencies installed by xpm are located in the home folder and
-can be removed by simply removing the folders.
+can be uninstalled by simply removing the folders:
+- `~/.local/xPacks` and `~/.cache/xpacks` on GNU/Linux,
+- `~/Library/xPacks` and `~/Library/Caches/xPacks` on macOS,
+- `%%APPDATA%\xPacks` and `%%LOCALAPPDATA%\Caches\xPacks` on Windows.
