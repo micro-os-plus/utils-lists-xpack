@@ -3,7 +3,7 @@
 
 @tableofcontents
 
-## Overview
+## Rationale
 
 The C++ standard libraries offer comprehensive support for various lists;
 however, most of them demand dynamic memory allocations for list nodes
