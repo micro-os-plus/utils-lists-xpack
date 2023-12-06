@@ -797,7 +797,7 @@ namespace micro_os_plus::utils
    * namespace os = micro_os_plus;
 
    * using threads_list = os::utils::intrusive_list<
-   * thread, utils::double_list_links, &thread::child_links_>;
+   * thread, os::utils::double_list_links, &thread::child_links_>;
    * @endcode
    *
    * @details
