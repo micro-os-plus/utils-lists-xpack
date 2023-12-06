@@ -69,7 +69,7 @@
 
 /**
  * @brief µOS++ utility definitions.
-*/
+ */
 namespace micro_os_plus::utils
 {
   // ==========================================================================
