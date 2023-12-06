@@ -21,7 +21,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-using namespace micro_os_plus;
+namespace os = micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
@@ -58,12 +58,12 @@ protected:
 public:
   // Intrusive node used to link this child to the registry list.
   // Must be public.
-  utils::double_list_links registry_links_;
+  os::utils::double_list_links registry_links_;
 };
 
 using children_list
-    = utils::intrusive_list<child, decltype (child::registry_links_),
-                            &child::registry_links_>;
+    = os::utils::intrusive_list<child, decltype (child::registry_links_),
+                                &child::registry_links_>;
 
 int
 main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
