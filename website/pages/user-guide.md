@@ -170,6 +170,8 @@ Here are some excerpts:
 ```cpp
 #include <micro-os-plus/utils/lists.h>
 
+namespace os = micro_os_plus;
+
 class child
 {
 public:
@@ -181,10 +183,10 @@ protected:
 public:
   // Intrusive node used to link this child to the registry list.
   // Must be public.
-  utils::double_list_links registry_links_;
+  os::utils::double_list_links registry_links_;
 };
 
-using static_children_list = utils::intrusive_list<
+using static_children_list = os::utils::intrusive_list<
         child, // type of nodes in the list
         decltype (child::registry_links_), // type of the `registry_links_` member
         &child::registry_links_, // name of member
