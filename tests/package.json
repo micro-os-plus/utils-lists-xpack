@@ -178,7 +178,8 @@
         "xpm run test-native-cmake-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
         "xpm run test-native-cmake-gcc13",
         "xpm run test-native-cmake-gcc12",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-cmake-gcc11",
+        "xpm run test-native-cmake-gcc11",
+        "xpm run test-native-cmake-clang17",
         "xpm run test-native-cmake-clang16",
         "xpm run test-native-cmake-clang15",
         "xpm run test-native-cmake-clang14",
@@ -264,11 +265,20 @@
         "xpm run build --config native-cmake-clang16-release",
         "xpm run test --config native-cmake-clang16-release"
       ],
+      "test-native-cmake-clang17": [
+        "xpm run prepare --config native-cmake-clang17-debug",
+        "xpm run build --config native-cmake-clang17-debug",
+        "xpm run test --config native-cmake-clang17-debug",
+        "xpm run prepare --config native-cmake-clang17-release",
+        "xpm run build --config native-cmake-clang17-release",
+        "xpm run test --config native-cmake-clang17-release"
+      ],
       "test-native-meson-all": [
         "xpm run test-native-meson-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
         "xpm run test-native-meson-gcc13",
         "xpm run test-native-meson-gcc12",
-        "{% if os.platform == 'darwin' %}echo {% endif %}xpm run test-native-meson-gcc11",
+        "xpm run test-native-meson-gcc11",
+        "xpm run test-native-meson-clang17",
         "xpm run test-native-meson-clang16",
         "xpm run test-native-meson-clang15",
         "xpm run test-native-meson-clang14",
@@ -353,6 +363,14 @@
         "xpm run prepare --config native-meson-clang16-release",
         "xpm run build --config native-meson-clang16-release",
         "xpm run test --config native-meson-clang16-release"
+      ],
+      "test-native-meson-clang17": [
+        "xpm run prepare --config native-meson-clang17-debug",
+        "xpm run build --config native-meson-clang17-debug",
+        "xpm run test --config native-meson-clang17-debug",
+        "xpm run prepare --config native-meson-clang17-release",
+        "xpm run build --config native-meson-clang17-release",
+        "xpm run test --config native-meson-clang17-release"
       ],
       "test-cortex-cmake-all": [
         "xpm run test-cortex-cmake-gcc13",
@@ -1194,7 +1212,7 @@
       "clang-latest-dependencies": {
         "hidden": true,
         "inherit": [
-          "clang16-dependencies"
+          "clang17-dependencies"
         ]
       },
       "clang13-dependencies": {
@@ -1223,6 +1241,13 @@
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "16.0.6-1.1"
+        }
+      },
+      "clang17-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "17.0.6-1.1"
         }
       },
       "arm-none-eabi-gcc-dependencies": {
@@ -1501,6 +1526,20 @@
           "buildType": "Release"
         }
       },
+      "native-cmake-clang17-debug": {
+        "inherit": [
+          "native-cmake-clang",
+          "clang17-dependencies"
+        ]
+      },
+      "native-cmake-clang17-release": {
+        "inherit": [
+          "native-cmake-clang17-debug"
+        ],
+        "properties": {
+          "buildType": "Release"
+        }
+      },
       "native-meson-sys-debug": {
         "inherit": [
           "native-actions",
@@ -1670,6 +1709,20 @@
       "native-meson-clang16-release": {
         "inherit": [
           "native-meson-clang16-debug"
+        ],
+        "properties": {
+          "buildType": "release"
+        }
+      },
+      "native-meson-clang17-debug": {
+        "inherit": [
+          "native-meson-clang",
+          "clang17-dependencies"
+        ]
+      },
+      "native-meson-clang17-release": {
+        "inherit": [
+          "native-meson-clang17-debug"
         ],
         "properties": {
           "buildType": "release"
