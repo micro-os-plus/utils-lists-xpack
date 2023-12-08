@@ -41,8 +41,8 @@
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
       "commandCMakePerformTests": "cd {{ properties.buildFolderRelativePath }} && ctest -V",
       "commandMesonPrepare": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} {{ properties.buildFolderRelativePathPosix }} .",
-      "commandMesonPrepareWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file xpacks/@micro-os-plus/build-helper/meson/toolchains/{{ properties.toolchainFileName }} --native-file platform-{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} .",
-      "commandMesonPrepareCross": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --cross xpacks/@micro-os-plus/build-helper/meson/toolchains/{{ properties.toolchainFileName }} --cross platform-{{ properties.platformName }}/meson/cross.ini {{ properties.buildFolderRelativePathPosix }} .",
+      "commandMesonPrepareWithToolchain": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --native-file xpacks/@micro-os-plus/build-helper/meson/toolchains/{{ properties.toolchainFileName }} --native-file platforms/{{ properties.platformName }}/meson/native.ini {{ properties.buildFolderRelativePathPosix }} .",
+      "commandMesonPrepareCross": "meson setup --backend ninja --buildtype {{ properties.buildType }} -D platform-name={{ properties.platformName }} --cross xpacks/@micro-os-plus/build-helper/meson/toolchains/{{ properties.toolchainFileName }} --cross platforms/{{ properties.platformName }}/meson/cross.ini {{ properties.buildFolderRelativePathPosix }} .",
       "commandMesonReconfigure": "meson setup --reconfigure {{ properties.buildFolderRelativePathPosix }} .",
       "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePathPosix }}",
       "commandMesonBuildVerbose": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
@@ -982,7 +982,9 @@
         "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc13-release",
         "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc13-release"
       ],
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
+      "update-tests-from-template": "bash xpacks/@micro-os-plus/build-helper/dev-scripts/update-tests-from-template.sh",
+      "update-tests-from-template-to-edit": "bash xpacks/@micro-os-plus/build-helper/dev-scripts/update-tests-from-template-to-edit.sh"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {

@@ -2,7 +2,7 @@
 #
 # This file is part of the µOS++ distribution.
 # (https://github.com/micro-os-plus/)
-# Copyright (c) 2022 Liviu Ionescu
+# Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
@@ -39,7 +39,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # Protect against in-source builds.
 if(CMAKE_BINARY_DIR STREQUAL CMAKE_SOURCE_DIR)
-    message(FATAL_ERROR "In-source builds are not supported. Please use a separate folder for build.")
+  message(FATAL_ERROR "In-source builds are not supported. Please use a separate folder for build.")
 endif()
 
 # The build-helper is a devDependency, available only after `xpm install`.
@@ -52,7 +52,7 @@ xpack_display_greetings("${CMAKE_CURRENT_SOURCE_DIR}/../package.json")
 
 # Bare-metal executables have the .elf extension.
 if(CMAKE_SYSTEM_NAME STREQUAL "Generic")
-    set(CMAKE_EXECUTABLE_SUFFIX ".elf")
+  set(CMAKE_EXECUTABLE_SUFFIX ".elf")
 endif()
 
 # -----------------------------------------------------------------------------
@@ -62,7 +62,7 @@ endif()
 # The compile options, symbols and include folders apply to all
 # compiled sources, from all libraries.
 if("${CMAKE_HOST_SYSTEM_NAME}" STREQUAL "Windows")
-    set(extension ".cmd")
+  set(extension ".cmd")
 endif()
 
 # Define `micro-os-plus::common-options` with the compile & link options
@@ -70,11 +70,11 @@ endif()
 include("cmake/common-options.cmake")
 
 # Set `xpack_dependencies_folders` with the platform specific dependencies.
-include("platform-${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
+include("platforms/${PLATFORM_NAME}/cmake/dependencies-folders.cmake")
 
 # Define `micro-os-plus::platform` with the plaform definitions,
 # common to all tests.
-include("platform-${PLATFORM_NAME}/cmake/platform-options.cmake")
+include("platforms/${PLATFORM_NAME}/cmake/platform-options.cmake")
 
 # Iterate the platform dependencies and `add_subdirectory()`.
 xpack_add_dependencies_subdirectories("${xpack_dependencies_folders}" "xpacks-bin")
@@ -90,6 +90,6 @@ add_subdirectory(".." "top-bin")
 
 # Add the platform specific targets and tests.
 # For consistency, the binaries are created in the `platform-bin` folder.
-add_subdirectory("platform-${PLATFORM_NAME}" "platform-bin")
+add_subdirectory("platforms/${PLATFORM_NAME}" "platform-bin")
 
 # -----------------------------------------------------------------------------
