@@ -12,13 +12,14 @@
   "license": "MIT",
   "config": {},
   "dependencies": {},
+  "bundleDependencies": [],
   "devDependencies": {
     "del-cli": "^5.0.0"
   },
   "xpack": {
-    "minimumXpmRequired": "0.16.2",
+    "minimumXpmRequired": "0.18.0",
     "dependencies": {},
-    "$dependenciesUrls": [
+    "$devDependenciesUrls": [
       "https://github.com/micro-os-plus",
       "https://github.com/xpack-dev-tools"
     ],
