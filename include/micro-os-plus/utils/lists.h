@@ -78,7 +78,7 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A base class for a double linked list.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    *
    * @details
    * A pair of uninitialised pointers to the **next** and **previous** list
@@ -219,7 +219,7 @@ namespace micro_os_plus::utils
    * @brief A class for the core of a double linked list (pointers to
    * neighbours).
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    *
    * @details
    * The pair of pointers to the **next** and **previous** list
@@ -274,7 +274,7 @@ namespace micro_os_plus::utils
    * @brief A class for the core of a statically allocated double linked list
    * (pointers to neighbours).
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    *
    * @details
    * The pair of uninitialised pointers to the **next** and **previous** list
@@ -357,7 +357,7 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A class template for a double linked list forward iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    * @tparam T Type of object returned by the iterator.
    * @tparam N Type of intrusive node. Must have the public members
    * **previous** & **next**.
@@ -455,7 +455,7 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils-lists-double-lists
    * @brief A class template for a double linked list of nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    * @tparam T Type of the elements linked into the list,
    * derived from class `double_list_links_base`.
    * @tparam L Type of the links node (one of
@@ -679,7 +679,7 @@ namespace micro_os_plus::utils
    * @ingroup micro-os-plus-utils-lists-intrusive-lists
    * @brief A class template for an intrusive list iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    * @tparam T Type of object that includes the intrusive node.
    * @tparam N Type of intrusive node. Must have the public members
    * **previous** & **next**.
@@ -783,7 +783,7 @@ namespace micro_os_plus::utils
    * @brief A class template for a list of nodes which store the links inside
    * themselves as intrusive nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
-   * @ingroup micro-os-plus-utils
+   * @ingroup micro-os-plus-utils-lists
    * @tparam T Type of object that includes the intrusive node.
    * @tparam N Type of intrusive node with the next & previous links.
    * @tparam MP Name of the intrusive node member in object T.
