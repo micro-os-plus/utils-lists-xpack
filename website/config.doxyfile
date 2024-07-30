@@ -248,3 +248,9 @@ __cplusplus \
 __cpp_exceptions \
 
 #---------------------------------------------------------------------------
+
+# Experimental, for possible future integration with Docusaurus.
+GENERATE_XML           = YES
+# XML_NS_MEMB_FILE_SCOPE = YES
+
+#---------------------------------------------------------------------------
