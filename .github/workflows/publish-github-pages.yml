@@ -6,7 +6,7 @@ name: GitHub Pages
 # https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml
 # https://micro-os-plus.github.io/utils-lists-xpack/
 
-# TODO: remove xpack-develop
+# TODO: remove xpack-development
 
 on:
   # Runs on pushes, if all conditions are met:
@@ -14,7 +14,7 @@ on:
     # ... on the master branch ...
     branches:
       - 'xpack'
-      - 'xpack-develop'
+      - 'xpack-development'
     # ... skip tags only ...
     tags-ignore:
       - '**'
@@ -120,5 +120,5 @@ jobs:
         with:
           artifact_name: github-pages
 
-# Branch "xpack-develop" is not allowed to deploy to github-pages due to environment protection rules.
+# Branch "xpack-development" is not allowed to deploy to github-pages due to environment protection rules.
 # https://github.com/micro-os-plus/micro-test-plus-xpack/settings/environments/1692678824/edit
