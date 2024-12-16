@@ -70,6 +70,7 @@ jobs:
         xpm install -C tests
 
     - name: Run test-native-cmake-gcc
+      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions
       if: ${{ ! startsWith(matrix.os, 'macos-') }}
       run: |
         xpm install --config native-cmake-gcc-debug -C tests
