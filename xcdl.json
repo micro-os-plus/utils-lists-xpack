@@ -1,0 +1,36 @@
+{
+    "minimumXcdlRequired": "2.0.0",
+    "license": "MIT",
+    "copyright": "Copyright (c) 2022 Liviu Ionescu. All rights reserved.",
+    "cdlPackage": {
+        "name": "utils-lists",
+        "description": "C++ lists, including intrusive lists.",
+        "parent": "micro-os-plus",
+        "compilerIncludeFolders": [
+            "include"
+        ],
+        "compilerSourceFiles": [
+            "src/lists.cpp"
+        ],
+        "compilerDefinitions": [],
+        "compilerOptions": [],
+        "dependencies": [],
+        "generatedDefinition": "MICRO_OS_PLUS_HAS_UTILS_LISTS",
+        "cdlOptions": {
+            "trace": {
+                "display": "Enable trace",
+                "description": "Log trace diagnostics when TRACE is enabled",
+                "valueType": "bool",
+                "requires": "isEnabled('diag-trace')",
+                "generatedDefinition": "MICRO_OS_PLUS_TRACE_UTILS_LISTS"
+            },
+            "trace-constructors": {
+                "display": "Enable trace constructors",
+                "description": "Log trace diagnostics in constructors when TRACE is enabled",
+                "valueType": "bool",
+                "requires": "isEnabled('trace')",
+                "generatedDefinition": "MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS"
+            }
+        }
+    }
+}
