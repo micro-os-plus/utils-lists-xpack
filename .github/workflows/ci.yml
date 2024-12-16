@@ -34,7 +34,7 @@ jobs:
     strategy:
       matrix:
         # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
-        os: [ 'ubuntu-22.04', 'macos-13', 'macos-15', 'windows-2022' ]
+        os: [ 'ubuntu-24.04', 'macos-13', 'macos-15', 'windows-2022' ]
         # https://nodejs.org/en - use LTS
         node-version: [ '18' ]
         # https://www.npmjs.com/package/xpm
@@ -70,6 +70,7 @@ jobs:
         xpm install -C tests
 
     - name: Run test-native-cmake-gcc
+      if: ${{ ! startsWith(matrix.os, 'macos-') }}
       run: |
         xpm install --config native-cmake-gcc-debug -C tests
         xpm install --config native-cmake-gcc-release -C tests
