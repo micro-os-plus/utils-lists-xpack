@@ -58,7 +58,7 @@ GITHUB_ORG="micro-os-plus"
 GITHUB_REPO="utils-lists-xpack"
 # GITHUB_API_DISPATCH_TOKEN must be present in the environment.
 
-branch="xpack-develop"
+branch="xpack-development"
 workflow_id="test-all.yml"
 
 while [ $# -gt 0 ]
