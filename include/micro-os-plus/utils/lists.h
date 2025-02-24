@@ -778,7 +778,11 @@ namespace micro_os_plus::utils
 
   // ==========================================================================
 
-  /**
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
+#endif
+    /**
    * @ingroup micro-os-plus-utils-lists-intrusive-lists
    * @brief A class template for a list of nodes which store the links inside
    * themselves as intrusive nodes.
@@ -812,6 +816,9 @@ namespace micro_os_plus::utils
    *
    * For statically allocated lists, set L=static_double_list_links.
    */
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
 
   template <class T, class N, N T::*MP, class L = double_list_links,
             class U = T>
