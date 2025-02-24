@@ -35,17 +35,21 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux" OR CMAKE_SYSTEM_NAME STREQUAL "Darwin")
     OUTPUT_VARIABLE cxx_library_path
     OUTPUT_STRIP_TRAILING_WHITESPACE
   )
-  string(REPLACE ":" ";" cxx_library_path_list ${cxx_library_path})
 
   set(rpath_options_list)
 
-  foreach(RPATH IN LISTS cxx_library_path_list)
-    cmake_path(SET normalized_path NORMALIZE ${RPATH})
-    list(APPEND rpath_options_list "-Wl,-rpath,${normalized_path}")
-  endforeach()
+  if(NOT "${cxx_library_path}" STREQUAL "")
+    string(REPLACE ":" ";" cxx_library_path_list ${cxx_library_path})
 
-  cmake_path(GET CMAKE_CXX_COMPILER FILENAME cxx_filename)
-  message(STATUS "${cxx_filename} RPATH_LIST: ${rpath_options_list}")
+    cmake_path(GET CMAKE_CXX_COMPILER FILENAME cxx_filename)
+    message(STATUS "${cxx_filename} RPATH_LIST: ${cxx_library_path}")
+
+    foreach(RPATH IN LISTS cxx_library_path_list)
+      cmake_path(SET normalized_path NORMALIZE ${RPATH})
+      list(APPEND rpath_options_list "-Wl,-rpath,${normalized_path}")
+      list(APPEND rpath_options_list "-L${normalized_path}")
+    endforeach()
+  endif()
 endif()
 
 # -----------------------------------------------------------------------------
@@ -134,13 +138,16 @@ endif()
 # 2 errors generated.
 target_compile_options(platform-native-interface INTERFACE
   ${_local_common_options}
+  # -v
 )
 
 # On macOS, GCC 11 gets confused.
 # dyld[72401]: Symbol not found: (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
 target_link_options(platform-native-interface INTERFACE
 
-  # -v
+  $<$<CONFIG:Debug>:-v>
+  # -Wl,-v
+  # -Wl,-t
 
   # When `-flto` is used, the compile options must be passed to the linker too.
   ${_local_common_options}
@@ -165,7 +172,7 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
     $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
     -rtlib=compiler-rt
     $<$<PLATFORM_ID:Linux>:-lunwind>
-    $<$<PLATFORM_ID:Linux>:-fuse-ld=lld>
+    $<$<PLATFORM_ID:Linux,Darwin>:-fuse-ld=lld>
   )
 endif()
 

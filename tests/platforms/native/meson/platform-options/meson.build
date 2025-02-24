@@ -26,19 +26,28 @@ assert(is_variable('xpack_platform_compile_definition'), 'Define xpack_platform_
 
 if build_machine.system() == 'linux' or build_machine.system() == 'darwin'
 
-  _local_cxx_library_path = run_command(
+  _local_cxx_run_result = run_command(
     xpack_tests_folder_path + '/xpacks/@micro-os-plus/build-helper/dev-scripts/get-libraries-paths.sh',
     cpp_compiler.cmd_array()[0],
     check: false,
     capture: true
-  ).stdout().strip().split(':')
+  )
 
-  message('RPATH_LIST:')
+  _local_cxx_run_result_stderr = _local_cxx_run_result.stderr()
+  if _local_cxx_run_result_stderr != ''
+     message(_local_cxx_run_result_stderr)
+  endif
+
   _local_rpath_options_list = []
-  foreach _local_rpath : _local_cxx_library_path
-    _local_rpath_options_list += '-Wl,-rpath,' + _local_rpath
-    message('-Wl,-rpath,' + _local_rpath)
-  endforeach
+
+  _local_cxx_run_result_stdout = _local_cxx_run_result.stdout().strip()
+  if _local_cxx_run_result_stdout != ''
+    message(cpp_compiler.cmd_array()[0] + ' RPATH_LIST: ' + _local_cxx_run_result_stdout)
+    foreach _local_rpath : _local_cxx_run_result_stdout.split(':')
+      _local_rpath_options_list += '-Wl,-rpath,' + _local_rpath
+      _local_rpath_options_list += '-L' + _local_rpath
+    endforeach
+  endif
 
 endif
 
@@ -112,18 +121,14 @@ if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' 
   endif
 endif
 
-if c_compiler.get_id().contains('clang')
-  _local_compile_cpp_args += [
-    '-stdlib=libc++'
-  ]
-endif
-
 _local_compile_c_args += common_options_dependency_compile_c_args
 _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
-_local_link_args += [
-  # '-v',
-]
+if get_option('buildtype') == 'debug'
+  _local_link_args += [
+    '-v',
+  ]
+endif
 
 if c_compiler.get_id().contains('clang')
   _local_link_args += [
@@ -133,6 +138,10 @@ if c_compiler.get_id().contains('clang')
   if build_machine.system() == 'linux'
     _local_link_args += [
       '-lunwind',
+    ]
+  endif
+  if build_machine.system() == 'linux' or build_machine.system() == 'darwin'
+    _local_link_args += [
       '-fuse-ld=lld'
     ]
   endif
