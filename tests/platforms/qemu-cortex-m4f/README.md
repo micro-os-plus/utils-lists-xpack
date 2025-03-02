@@ -1,5 +1,8 @@
 # platforms/qemu-cortex-m4f
 
+> DO NOT EDIT!
+> Automatically generated from build-helper/templates.
+
 Support files for building application to run on the QEMU "mps2-an386"
 emulated board.
 

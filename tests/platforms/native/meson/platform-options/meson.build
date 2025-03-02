@@ -1,14 +1,15 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates.
 #
-# This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/MIT/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -121,6 +122,12 @@ if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' 
   endif
 endif
 
+if c_compiler.get_id().contains('clang')
+  _local_compile_args += [
+    '-stdlib=libc++',
+  ]
+endif
+
 _local_compile_c_args += common_options_dependency_compile_c_args
 _local_compile_cpp_args += common_options_dependency_compile_cpp_args
 
@@ -132,7 +139,6 @@ endif
 
 if c_compiler.get_id().contains('clang')
   _local_link_args += [
-    '-stdlib=libc++',
     '-rtlib=compiler-rt'
   ]
   if build_machine.system() == 'linux'

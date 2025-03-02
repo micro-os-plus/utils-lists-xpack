@@ -1,14 +1,15 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates.
 #
-# This file is part of the µOS++ distribution.
-# (https://github.com/micro-os-plus/)
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2023 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/mit/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -64,11 +65,11 @@ target_include_directories(platform-native-interface INTERFACE
 )
 
 target_sources(platform-native-interface INTERFACE
-
   # None.
 )
 
 target_compile_definitions(platform-native-interface INTERFACE
+
   "${xpack_platform_compile_definition}"
 
   # Full POSIX conformance:
@@ -138,19 +139,16 @@ endif()
 # 2 errors generated.
 target_compile_options(platform-native-interface INTERFACE
   ${_local_common_options}
-  # -v
 )
 
 # On macOS, GCC 11 gets confused.
 # dyld[72401]: Symbol not found: (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
 target_link_options(platform-native-interface INTERFACE
 
-  $<$<CONFIG:Debug>:-v>
-  # -Wl,-v
-  # -Wl,-t
-
   # When `-flto` is used, the compile options must be passed to the linker too.
   ${_local_common_options}
+
+  # -v
 
   # On Windows configuring the path to access the compiler DLLs is tedious,
   # it is much easier to build everything static.
@@ -169,7 +167,6 @@ if("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
   # https://clang.llvm.org/docs/Toolchain.html#compiler-runtime
   target_link_options(platform-native-interface INTERFACE
 
-    $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
     -rtlib=compiler-rt
     $<$<PLATFORM_ID:Linux>:-lunwind>
     $<$<PLATFORM_ID:Linux,Darwin>:-fuse-ld=lld>

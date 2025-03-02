@@ -1,14 +1,15 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates.
 #
-# This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/MIT/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 ## Common definitions for all platforms ##
@@ -35,6 +36,7 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
     _local_compile_definitions += [ '-DDEBUG' ]
     _local_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
     _local_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
+    _local_link_args += [ '-v' ]
   endif
   if get_option('buildtype') == 'release'
     _local_compile_definitions += [ '-DNDEBUG' ]
@@ -65,7 +67,9 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
 
     # These are used in conjunction with linker `--gc-sections`.
     '-ffunction-sections',
-    '-fdata-sections'
+    '-fdata-sections',
+
+    '-fdiagnostics-color=always'
   ]
 
   common_options_dependency = declare_dependency(

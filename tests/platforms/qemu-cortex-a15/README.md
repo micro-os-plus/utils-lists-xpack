@@ -1,5 +1,8 @@
 # platforms/qemu-cortex-a15
 
+> DO NOT EDIT!
+> Automatically generated from build-helper/templates.
+
 Support files for building application to run on the QEMU "virt"
 emulated board with "cortex-a15" CPU.
 

@@ -3,7 +3,13 @@
   "version": "0.0.0",
   "description": "Tests",
   "main": "",
-  "scripts": {},
+  "scripts": {
+    "generate-tests-commons": "bash xpacks/@micro-os-plus/build-helper/maintenance-scripts/generate-commons.sh --micro-os-plus",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper",
+    "xpm-link-helpers": "xpm link @micro-os-plus/build-helper",
+    "deep-clean": "del-cli build node_modules xpacks package-json.json"
+  },
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
@@ -17,14 +23,14 @@
     "del-cli": "^6.0.0"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.5",
+    "minimumXpmRequired": "0.20.7",
     "dependencies": {},
     "$devDependenciesUrls": [
       "https://github.com/micro-os-plus",
       "https://github.com/xpack-dev-tools"
     ],
     "devDependencies": {
-      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-development",
+      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#v2.16.0",
       "@micro-os-plus/diag-trace": "^4.2.1",
       "@micro-os-plus/micro-test-plus": "^3.2.0",
       "@xpack-dev-tools/cmake": "3.30.7-1.1",
@@ -36,7 +42,7 @@
       "buildFolderRelativePathPosix": "{{ 'build' | path_posix_join: configuration.name | downcase }}",
       "commandCMakePrepare": "{{ properties.commandCMakeReconfigure }} --log-level=VERBOSE",
       "commandCMakePrepareWithToolchain": "{{ properties.commandCMakePrepare }} -D CMAKE_TOOLCHAIN_FILE=xpacks/@micro-os-plus/build-helper/cmake/toolchains/{{ properties.toolchainFileName }}",
-      "commandCMakeReconfigure": "cmake -S . -B {{ properties.buildFolderRelativePathPosix }} -G Ninja -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
+      "commandCMakeReconfigure": "cmake -S . -B {{ properties.buildFolderRelativePathPosix }} -G Ninja{% if os.platform == 'win32' %} -D CMAKE_MAKE_PROGRAM=ninja.cmd{% endif %} -D CMAKE_BUILD_TYPE={{ properties.buildType }} -D PLATFORM_NAME={{ properties.platformName }} -D CMAKE_EXPORT_COMPILE_COMMANDS=ON",
       "commandCMakeBuild": "cmake --build {{ properties.buildFolderRelativePathPosix }}",
       "commandCMakeBuildVerbose": "cmake --build {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandCMakeClean": "cmake --build {{ properties.buildFolderRelativePathPosix }} --target clean",
@@ -53,18 +59,33 @@
     "actions": {
       "deep-clean": "del-cli build node_modules xpacks package-lock.json",
       "install": [
-        "npm install",
         "xpm install",
-        "xpm install --config native-cmake-sys-debug",
-        "xpm install --config native-cmake-sys-release"
+        "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-debug{% else %}native-cmake-sys-debug{% endif %}",
+        "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-release{% else %}native-cmake-sys-release{% endif %}"
+      ],
+      "install-ci": [
+        "xpm install",
+        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-debug{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
+        "xpm install --config native-cmake-clang-debug",
+        "xpm install --config native-cmake-clang-release",
+        "xpm install --config native-meson-clang-debug",
+        "xpm install --config native-meson-clang-release",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
+        "xpm install --config qemu-cortex-m7f-cmake-gcc-release",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
+        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
+        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
+        "xpm install --config qemu-cortex-m0-meson-gcc-release"
       ],
       "install-selected": [
-        "npm install",
         "xpm install",
-        "xpm install --config native-cmake-gcc-debug",
-        "xpm install --config native-cmake-gcc-release",
-        "xpm install --config native-meson-gcc-debug",
-        "xpm install --config native-meson-gcc-release",
+        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-debug{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-debug{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-release{% endif %}",
         "xpm install --config native-cmake-clang-debug",
         "xpm install --config native-cmake-clang-release",
         "xpm install --config native-meson-clang-debug",
@@ -83,12 +104,11 @@
         "xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
       ],
       "install-latest": [
-        "npm install",
         "xpm install",
-        "xpm install --config native-cmake-gcc-debug",
-        "xpm install --config native-cmake-gcc-release",
-        "xpm install --config native-meson-gcc-debug",
-        "xpm install --config native-meson-gcc-release",
+        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-debug{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-debug{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-release{% endif %}",
         "xpm install --config native-cmake-clang-debug",
         "xpm install --config native-cmake-clang-release",
         "xpm install --config native-meson-clang-debug",
@@ -119,7 +139,6 @@
         "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-release"
       ],
       "install-all": [
-        "npm install",
         "xpm install",
         "xpm install --all-configs"
       ],
@@ -136,11 +155,20 @@
         "xpm run clean --all-configs --ignore-errors"
       ],
       "test": [
-        "xpm run test-native-cmake-sys"
+        "xpm run {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
+      ],
+      "test-ci": [
+        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
+        "xpm run test-native-cmake-clang",
+        "xpm run test-native-meson-clang",
+        "xpm run test-qemu-cortex-m0-cmake-gcc",
+        "xpm run test-qemu-cortex-m7f-cmake-gcc",
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
+        "xpm run test-qemu-cortex-m0-meson-gcc"
       ],
       "test-selected": [
-        "xpm run test-native-cmake-gcc",
-        "xpm run test-native-meson-gcc",
+        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc{% endif %}",
         "xpm run test-native-cmake-clang",
         "xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
@@ -151,8 +179,8 @@
         "xpm run test-qemu-riscv-rv32imac-meson-gcc"
       ],
       "test-latest": [
-        "xpm run test-native-cmake-gcc",
-        "xpm run test-native-meson-gcc",
+        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc{% endif %}",
         "xpm run test-native-cmake-clang",
         "xpm run test-native-meson-clang",
         "xpm run test-qemu-cortex-m0-cmake-gcc",
@@ -186,7 +214,9 @@
         "xpm run test-native-cmake-clang18",
         "xpm run test-native-cmake-clang17",
         "xpm run test-native-cmake-clang16",
-        "xpm run test-native-cmake-clang15"
+        "xpm run test-native-cmake-clang15",
+        "echo xpm run test-native-cmake-clang14",
+        "echo xpm run test-native-cmake-clang13"
       ],
       "test-native-cmake-sys": [
         "xpm run prepare --config native-cmake-sys-debug",
@@ -310,7 +340,9 @@
         "xpm run test-native-meson-clang18",
         "xpm run test-native-meson-clang17",
         "xpm run test-native-meson-clang16",
-        "xpm run test-native-meson-clang15"
+        "xpm run test-native-meson-clang15",
+        "echo xpm run test-native-meson-clang14",
+        "echo xpm run test-native-meson-clang13"
       ],
       "test-native-meson-sys": [
         "xpm run prepare --config native-meson-sys-debug",
@@ -1208,9 +1240,7 @@
         "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc14-release",
         "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc14-release"
       ],
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
-      "update-tests-from-template": "bash xpacks/@micro-os-plus/build-helper/dev-scripts/update-tests-from-template.sh",
-      "update-tests-from-template-to-edit": "bash xpacks/@micro-os-plus/build-helper/dev-scripts/update-tests-from-template-to-edit.sh"
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
@@ -1402,7 +1432,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "11.5.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -1412,7 +1442,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "12.4.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -1422,7 +1452,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "13.3.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -1432,7 +1462,7 @@
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
             "specifier": "14.2.0-2.1",
-            "platforms": "linux-x64, linux-arm64, win32-x64"
+            "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
       },
@@ -2929,6 +2959,7 @@
       "qemu-cortex-m0-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
           "arm-cmsis-core-dependencies",
@@ -2946,75 +2977,96 @@
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
           "arm-none-eabi-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n0d"
+        }
       },
       "qemu-cortex-m0-meson-gcc-release": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n0r"
         }
       },
       "qemu-cortex-m0-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
           "arm-none-eabi-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n0da"
+        }
       },
       "qemu-cortex-m0-meson-gcc11-release": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n0ra"
         }
       },
       "qemu-cortex-m0-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
           "arm-none-eabi-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n0db"
+        }
       },
       "qemu-cortex-m0-meson-gcc12-release": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n0rb"
         }
       },
       "qemu-cortex-m0-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
           "arm-none-eabi-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n0dc"
+        }
       },
       "qemu-cortex-m0-meson-gcc13-release": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n0rc"
         }
       },
       "qemu-cortex-m0-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc",
           "arm-none-eabi-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n0dd"
+        }
       },
       "qemu-cortex-m0-meson-gcc14-release": {
         "inherit": [
           "qemu-cortex-m0-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n0rd"
         }
       },
       "qemu-cortex-m3-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
           "arm-cmsis-core-dependencies",
@@ -3032,75 +3084,96 @@
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
           "arm-none-eabi-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n3d"
+        }
       },
       "qemu-cortex-m3-meson-gcc-release": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n3r"
         }
       },
       "qemu-cortex-m3-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
           "arm-none-eabi-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n3da"
+        }
       },
       "qemu-cortex-m3-meson-gcc11-release": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n3ra"
         }
       },
       "qemu-cortex-m3-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
           "arm-none-eabi-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n3db"
+        }
       },
       "qemu-cortex-m3-meson-gcc12-release": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n3rb"
         }
       },
       "qemu-cortex-m3-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
           "arm-none-eabi-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n3dc"
+        }
       },
       "qemu-cortex-m3-meson-gcc13-release": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n3rc"
         }
       },
       "qemu-cortex-m3-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc",
           "arm-none-eabi-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n3dd"
+        }
       },
       "qemu-cortex-m3-meson-gcc14-release": {
         "inherit": [
           "qemu-cortex-m3-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n3rd"
         }
       },
       "qemu-cortex-m4f-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
           "arm-cmsis-core-dependencies",
@@ -3118,75 +3191,96 @@
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
           "arm-none-eabi-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n4d"
+        }
       },
       "qemu-cortex-m4f-meson-gcc-release": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n4r"
         }
       },
       "qemu-cortex-m4f-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
           "arm-none-eabi-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n4da"
+        }
       },
       "qemu-cortex-m4f-meson-gcc11-release": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n4ra"
         }
       },
       "qemu-cortex-m4f-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
           "arm-none-eabi-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n4db"
+        }
       },
       "qemu-cortex-m4f-meson-gcc12-release": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n4rb"
         }
       },
       "qemu-cortex-m4f-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
           "arm-none-eabi-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n4dc"
+        }
       },
       "qemu-cortex-m4f-meson-gcc13-release": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n4rc"
         }
       },
       "qemu-cortex-m4f-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc",
           "arm-none-eabi-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n4dd"
+        }
       },
       "qemu-cortex-m4f-meson-gcc14-release": {
         "inherit": [
           "qemu-cortex-m4f-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n4rd"
         }
       },
       "qemu-cortex-m7f-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "cortexm-actions",
           "meson-cross-actions",
           "arm-cmsis-core-dependencies",
@@ -3204,75 +3298,96 @@
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
           "arm-none-eabi-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n7d"
+        }
       },
       "qemu-cortex-m7f-meson-gcc-release": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n7r"
         }
       },
       "qemu-cortex-m7f-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
           "arm-none-eabi-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n7da"
+        }
       },
       "qemu-cortex-m7f-meson-gcc11-release": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n7ra"
         }
       },
       "qemu-cortex-m7f-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
           "arm-none-eabi-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n7db"
+        }
       },
       "qemu-cortex-m7f-meson-gcc12-release": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n7rb"
         }
       },
       "qemu-cortex-m7f-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
           "arm-none-eabi-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n7dc"
+        }
       },
       "qemu-cortex-m7f-meson-gcc13-release": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n7rc"
         }
       },
       "qemu-cortex-m7f-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc",
           "arm-none-eabi-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "n7dd"
+        }
       },
       "qemu-cortex-m7f-meson-gcc14-release": {
         "inherit": [
           "qemu-cortex-m7f-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "n7rd"
         }
       },
       "qemu-cortex-a15-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "aarch32-actions",
           "meson-cross-actions",
           "aarch32-dependencies",
@@ -3289,75 +3404,96 @@
         "inherit": [
           "qemu-cortex-a15-meson-gcc",
           "arm-none-eabi-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b1d"
+        }
       },
       "qemu-cortex-a15-meson-gcc-release": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b1r"
         }
       },
       "qemu-cortex-a15-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc",
           "arm-none-eabi-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b1da"
+        }
       },
       "qemu-cortex-a15-meson-gcc11-release": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b1ra"
         }
       },
       "qemu-cortex-a15-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc",
           "arm-none-eabi-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b1db"
+        }
       },
       "qemu-cortex-a15-meson-gcc12-release": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b1rb"
         }
       },
       "qemu-cortex-a15-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc",
           "arm-none-eabi-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b1dc"
+        }
       },
       "qemu-cortex-a15-meson-gcc13-release": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b1rc"
         }
       },
       "qemu-cortex-a15-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc",
           "arm-none-eabi-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b1dd"
+        }
       },
       "qemu-cortex-a15-meson-gcc14-release": {
         "inherit": [
           "qemu-cortex-a15-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b1rd"
         }
       },
       "qemu-cortex-a72-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "aarch64-actions",
           "meson-cross-actions",
           "aarch64-dependencies",
@@ -3374,75 +3510,96 @@
         "inherit": [
           "qemu-cortex-a72-meson-gcc",
           "aarch64-none-elf-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b7d"
+        }
       },
       "qemu-cortex-a72-meson-gcc-release": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b7r"
         }
       },
       "qemu-cortex-a72-meson-gcc11-debug": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc",
           "aarch64-none-elf-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b7da"
+        }
       },
       "qemu-cortex-a72-meson-gcc11-release": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b7ra"
         }
       },
       "qemu-cortex-a72-meson-gcc12-debug": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc",
           "aarch64-none-elf-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b7db"
+        }
       },
       "qemu-cortex-a72-meson-gcc12-release": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b7rb"
         }
       },
       "qemu-cortex-a72-meson-gcc13-debug": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc",
           "aarch64-none-elf-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b7dc"
+        }
       },
       "qemu-cortex-a72-meson-gcc13-release": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b7rc"
         }
       },
       "qemu-cortex-a72-meson-gcc14-debug": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc",
           "aarch64-none-elf-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "b7dd"
+        }
       },
       "qemu-cortex-a72-meson-gcc14-release": {
         "inherit": [
           "qemu-cortex-a72-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "b7rd"
         }
       },
       "qemu-riscv-rv32imac-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "meson-cross-actions",
           "riscv-actions",
           "bare-metal-dependencies",
@@ -3459,14 +3616,18 @@
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
           "riscv-none-elf-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w3d"
+        }
       },
       "qemu-riscv-rv32imac-meson-gcc-release": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w3r"
         }
       },
       "qemu-riscv-rv32imac-meson-gcc11-debug": {
@@ -3475,9 +3636,7 @@
           "riscv-none-elf-gcc11-dependencies"
         ],
         "properties": {
-          "buildType": "debug",
-          "platformName": "qemu-riscv-rv32imac",
-          "toolchainFileName": "riscv-none-elf-gcc-{{ os.platform }}.ini"
+          "shortConfigurationName": "w3da"
         }
       },
       "qemu-riscv-rv32imac-meson-gcc11-release": {
@@ -3485,54 +3644,68 @@
           "qemu-riscv-rv32imac-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w3ra"
         }
       },
       "qemu-riscv-rv32imac-meson-gcc12-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
           "riscv-none-elf-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w3db"
+        }
       },
       "qemu-riscv-rv32imac-meson-gcc12-release": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w3rb"
         }
       },
       "qemu-riscv-rv32imac-meson-gcc13-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
           "riscv-none-elf-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w3dc"
+        }
       },
       "qemu-riscv-rv32imac-meson-gcc13-release": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w3rc"
         }
       },
       "qemu-riscv-rv32imac-meson-gcc14-debug": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc",
           "riscv-none-elf-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w3dd"
+        }
       },
       "qemu-riscv-rv32imac-meson-gcc14-release": {
         "inherit": [
           "qemu-riscv-rv32imac-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w3rc"
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc": {
         "hidden": true,
         "inherit": [
+          "short-win-paths-properties",
           "meson-cross-actions",
           "riscv-actions",
           "bare-metal-dependencies",
@@ -3549,70 +3722,90 @@
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "riscv-none-elf-gcc-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w6d"
+        }
       },
       "qemu-riscv-rv64imafdc-meson-gcc-release": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w6r"
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc11-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "riscv-none-elf-gcc11-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w6da"
+        }
       },
       "qemu-riscv-rv64imafdc-meson-gcc11-release": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc11-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w6ra"
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc12-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "riscv-none-elf-gcc12-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w6db"
+        }
       },
       "qemu-riscv-rv64imafdc-meson-gcc12-release": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc12-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w6rb"
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc13-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "riscv-none-elf-gcc13-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w6dc"
+        }
       },
       "qemu-riscv-rv64imafdc-meson-gcc13-release": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc13-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w6rc"
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc14-debug": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc",
           "riscv-none-elf-gcc14-dependencies"
-        ]
+        ],
+        "properties": {
+          "shortConfigurationName": "w6dd"
+        }
       },
       "qemu-riscv-rv64imafdc-meson-gcc14-release": {
         "inherit": [
           "qemu-riscv-rv64imafdc-meson-gcc14-debug"
         ],
         "properties": {
-          "buildType": "minsize"
+          "buildType": "minsize",
+          "shortConfigurationName": "w6rd"
         }
       }
     }

@@ -1,14 +1,15 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from build-helper/templates.
 #
-# This file is part of the µOS++ distribution.
-# (https://github.com/micro-os-plus/)
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/MIT/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
@@ -69,6 +70,8 @@ target_include_directories(micro-os-plus-common-options-interface INTERFACE
 # When `-flto` is used, the compile options must be passed to the linker too.
 target_link_options(micro-os-plus-common-options-interface INTERFACE
   ${global_common_options}
+
+  $<$<CONFIG:Debug>:-v>
 )
 
 if(COMMAND xpack_display_target_lists)
