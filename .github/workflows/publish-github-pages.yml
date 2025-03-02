@@ -1,20 +1,33 @@
-# Simple workflow for deploying static content to GitHub Pages
+# -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from npm-packages-helper/templates/*.
+#
+# This file is part of the µOS++ project (http://micro-os-plus.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+#
+# Permission to use, copy, modify, and/or distribute this software
+# for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit.
+#
+# -----------------------------------------------------------------------------
+
+# https://micro-os-plus.github.io/utils-lists-xpack/
+# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml
+
+# Workflow for deploying static content to GitHub Pages.
 name: GitHub Pages
 
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
-
-# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml
-# https://micro-os-plus.github.io/utils-lists-xpack/
-
-# TODO: remove xpack-development
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 
 on:
   # Runs on pushes, if all conditions are met:
   push:
-    # ... on the master branch ...
+    # ... on the `website` branch ...
     branches:
-      - 'xpack'
-      - 'xpack-development'
+      - 'master'
     # ... skip tags only ...
     tags-ignore:
       - '**'
@@ -23,32 +36,32 @@ on:
       - 'website/**'
       - 'src/**'
       - 'include/**'
+      - 'README.md'
       - '.github/workflows/publish-github-pages.yml'
+      - 'package.json'
 
-# Allow one concurrent deployment
-# https://docs.github.com/en/actions/using-jobs/using-concurrency
-concurrency:
-  group: "pages"
-  cancel-in-progress: true
+  # Allows you to run this workflow manually from the Actions tab.
+  workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages.
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Allow one concurrent deployment.
+# https://docs.github.com/en/actions/using-jobs/using-concurrency
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
 jobs:
-
-  build:
-    name: Build the Doxygen pages
-
-    strategy:
-      matrix:
-        # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.20.5' ]
-        # https://nodejs.org/en - use LTS
-        node-version: [ '18' ]
-
+  # Single deploy job since we're just deploying.
+  # https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners#standard-github-hosted-runners-for-public-repositories
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{steps.deployment.outputs.page_url}}
     # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
     runs-on: ubuntu-24.04
 
@@ -57,39 +70,23 @@ jobs:
         # https://github.com/actions/checkout
         uses: actions/checkout@v4
         with:
-          fetch-depth: 3
+          # The full history, required to compute lastUpdatedAt
+          fetch-depth: 0
 
-      - name: Use Node.js
+      - name: Use Nodejs
         # https://github.com/actions/setup-node
         uses: actions/setup-node@v4
         with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install Doxygen
-        # https://www.doxygen.nl/download.html
-        env:
-          DOXYGEN_VERSION: "1.10.0"
-        run: |
-          curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
-          tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
-          ls -l doxygen-$DOXYGEN_VERSION
-          mkdir -pv website/.local/bin
-          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/.local/bin/doxygen
-          ls -l website
-
-      - name: Install xpm@${{ matrix.xpm-version }}
-        run: |
-          npm install -g xpm@${{ matrix.xpm-version }}
+          # Node LTS version.
+          node-version: 20
 
       - name: Install dependencies
-        # For the build helper and the Doxygen theme.
-        run: |
-          xpm install -C website
+        run: (cd website; npm ci)
 
-      - name: Build site with Doxygen
-        run: (cd website; .local/bin/doxygen config.doxyfile)
+      - name: Build the Docusaurus site
+        run: (cd website; npm run build)
 
-      - name: Configure Pages
+      - name: Setup Pages
         # https://github.com/actions/configure-pages
         uses: actions/configure-pages@v5
 
@@ -98,27 +95,11 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
-          path: './website/html'
+          path: './website/build'
 
-  deploy:
-    name: Deploy to GitHub Pages
-
-    needs: build
-
-    # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners#supported-runners-and-hardware-resources
-    runs-on: ubuntu-24.04
-
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment # referred by environment above, to get the URL.
         # https://github.com/actions/deploy-pages
         uses: actions/deploy-pages@v4
         with:
           artifact_name: github-pages
-
-# Branch "xpack-development" is not allowed to deploy to github-pages due to environment protection rules.
-# https://github.com/micro-os-plus/micro-test-plus-xpack/settings/environments/1692678824/edit

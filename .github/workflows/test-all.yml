@@ -1,130 +1,93 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from npm-packages-helper/templates/*.
 #
-# This file is part of the µOS++ distribution.
-#   (https://github.com/micro-os-plus/)
+# This file is part of the µOS++ project (http://micro-os-plus.github.io).
 # Copyright (c) 2021 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.
 #
 # If a copy of the license was not distributed with this file, it can
-# be obtained from https://opensource.org/licenses/MIT/.
+# be obtained from https://opensource.org/licenses/mit.
 #
 # -----------------------------------------------------------------------------
 
-# https://help.github.com/en/actions
-# https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
+# https://micro-os-plus.github.io/utils-lists-xpack/
+# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-ci.yml
 
-# https://docs.github.com/en/actions/reference/events-that-trigger-workflows#workflow_dispatch
-# https://docs.github.com/en/developers/webhooks-and-events/webhooks/webhook-events-and-payloads#workflow_dispatch
-# https://docs.github.com/en/rest/reference/actions#create-a-workflow-dispatch-event
+# Workflow for running some tests on each Push.
+name: Run all tests
 
-# -----------------------------------------------------------------------------
-
-name: 'Test on all platforms'
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
 
 on:
+  # Runs on manual triggering.
   workflow_dispatch:
 
 jobs:
+  ci-test:
+    name: 'All µOS++ C++ lists utilities tests'
 
-  linux-x64:
-    name: 'Linux x64 utils-lists tests'
-    runs-on: ubuntu-latest
+    runs-on:  ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        # https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+        os: [ 'ubuntu-24.04', 'ubuntu-22.04', 'ubuntu-24.04-arm', 'ubuntu-22.04-arm', 'macos-13', 'macos-14', 'windows-2022', 'windows-2019' ]
+        # https://nodejs.org/en - use LTS
+        node-version: [ '20' ]
+        # https://www.npmjs.com/package/xpm
+        xpm-version: [ '0.20.7' ]
+
     steps:
-      - name: 'Machine'
-        run: uname -a
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 3
-          submodules: true
-      - name: 'Ubuntu latest x64 native xpm test-all'
-        run: bash tests/scripts/test-all.sh
-      - name: 'Debian node:lts x64 docker xpm test-all'
-        uses: docker://node:lts
-        with:
-          entrypoint: /bin/bash
-          args: /github/workspace/tests/scripts/test-all.sh --image node:lts
+    - name: Checkout
+      # https://github.com/actions/checkout/
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 3
 
-  linux-arm64:
-    name: 'Linux arm64 utils-lists tests'
-    runs-on: [self-hosted, linux, arm64, xbbla]
-    steps:
-      - name: 'Machine'
-        run: uname -a
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 3
-          submodules: true
-      - name: 'Debian node:lts arm64 docker xpm test-all'
-        uses: docker://node:lts
-        with:
-          entrypoint: /bin/bash
-          args: /github/workspace/tests/scripts/test-all.sh --image node:lts
+    - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
+      # https://github.com/actions/setup-node
+      uses: actions/setup-node@v4
+      with:
+        node-version: ${{ matrix.node-version }}
 
-  linux-arm32:
-    name: 'Linux arm32 utils-lists tests'
-    runs-on: [self-hosted, linux, arm64, xbbla]
-    steps:
-      - name: 'Machine'
-        run: uname -a
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 3
-          submodules: true
-      - name: 'Debian node:lts arm32 docker xpm test-all'
-        uses: docker://arm32v7/node:lts
-        with:
-          entrypoint: /usr/bin/linux32
-          args: /bin/bash /github/workspace/tests/scripts/test-all.sh --image arm32v7/node:lts
-      # Ubuntu 20.04 & Debian buster fail to install nvm
+    - name: Install xpm@${{ matrix.xpm-version }} on ${{ matrix.os }}
+      run: npm install -g xpm@${{ matrix.xpm-version }}
 
-  macos-x64:
-    name: 'macOS x64 utils-lists tests'
-    runs-on: macos-latest
-    steps:
-      - name: 'Machine'
-        run: uname -a
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 3
-          submodules: true
-      - name: 'macOS x64 native xpm test-all'
-        run: bash tests/scripts/test-all.sh
+    - name: Show environment
+      run: |
+        id
+        uname -a
+        node --version
+        npm --version
+        xpm --version
+        env | sort
 
-  macos-arm64:
-    name: 'macOS arm64 utils-lists tests'
-    runs-on: [self-hosted, macos, apple]
-    defaults:
-      run:
-        shell: "/usr/bin/arch -arch arm64e /bin/bash -l {0}"
-    steps:
-      - name: 'Machine'
-        run: uname -a
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 3
-          submodules: true
-      - name: 'macOS arm64 native xpm test-all'
-        run: bash tests/scripts/test-all.sh
+    - name: Satisfy project dependencies on ${{ matrix.os }}
+      run: |
+        npm ci -C tests
+        xpm run install-all -C tests
 
-  windows-x64:
-    name: 'Windows x64 utils-lists tests'
-    runs-on: windows-latest
-    steps:
-      - name: 'Machine'
-        run: uname -a
-      - name: 'Checkout'
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 3
-          submodules: true
-      - name: 'Windows x64 native xpm test-all'
-        run: bash tests/scripts/test-all.sh
+    - name: Clean xPack cache Linux
+      if: runner.os == 'Linux'
+      run: |
+        rm -rf "${HOME}/.cache/xPacks"
 
-# -----------------------------------------------------------------------------
+    - name: Clean xPack cache macOS
+      if: runner.os == 'macOS'
+      run: |
+        rm -rf "${HOME}/Library/Caches/xPacks"
+
+    - name: Clean xPack cache Windows
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: |
+        Remove-Item -LiteralPath "$env:LOCALAPPDATA\Caches\xPacks" -Force -Recurse
+
+    - name: Run tests on ${{ matrix.os }}
+      run: xpm run test-all -C tests
+      env:
+          CI: true

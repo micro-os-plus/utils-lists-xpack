@@ -1,12 +1,38 @@
-# https://help.github.com/en/actions
-# https://docs.github.com/en/actions/learn-github-actions/workflow-syntax-for-github-actions
-# https://github.com/actions
+# -----------------------------------------------------------------------------
+# DO NOT EDIT!
+# Automatically generated from npm-packages-helper/templates/*.
+#
+# This file is part of the µOS++ project (http://micro-os-plus.github.io).
+# Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+#
+# Permission to use, copy, modify, and/or distribute this software
+# for any purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can
+# be obtained from https://opensource.org/licenses/mit.
+#
+# -----------------------------------------------------------------------------
 
-# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/ci.yml
+# https://micro-os-plus.github.io/utils-lists-xpack/
+# https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-ci.yml
+
+# Workflow for running some tests on each Push.
 name: CI on Push
 
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+# https://docs.github.com/en/actions/using-workflows/events-that-trigger-workflows
+
 on:
+  # Runs on pushes, if all conditions are met:
   push:
+    # ... on the active branches ...
+    branches:
+      - 'xpack-development'
+      - 'xpack'
+    # ... skip tags only ...
+    tags-ignore:
+      - '**'
+    # ... include everything except ...
     paths-ignore:
       - '.vscode/**'
       - 'LICENSE'
@@ -19,26 +45,21 @@ on:
       - 'tests/scripts/**'
       - '**/README**'
       - 'website/**'
-    # This should disable running the workflow on tags, according to the
-    # on.<push|pull_request>.<branches|tags> GitHub Actions docs.
-    # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#onpushbranchestagsbranches-ignoretags-ignore
-    branches:
-      - '*'
 
 jobs:
   ci-test:
-    name: 'CI utils-lists tests'
+    name: 'CI µOS++ C++ lists utilities tests'
 
-    runs-on: ${{ matrix.os }}
+    runs-on:  ${{ matrix.os }}
 
     strategy:
       matrix:
-        # https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners
-        os: [ 'ubuntu-24.04', 'macos-13', 'macos-15', 'windows-2022' ]
+        # https://docs.github.com/en/actions/using-github-hosted-runners/using-github-hosted-runners/about-github-hosted-runners
+        os: [ 'ubuntu-24.04', 'ubuntu-24.04-arm', 'macos-13', 'macos-14', 'windows-2022' ]
         # https://nodejs.org/en - use LTS
-        node-version: [ '18' ]
+        node-version: [ '20' ]
         # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.20.5' ]
+        xpm-version: [ '0.20.7' ]
 
     steps:
     - name: Checkout
@@ -53,7 +74,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
 
-    - name: Install xpm@${{ matrix.xpm-version }}
+    - name: Install xpm@${{ matrix.xpm-version }} on ${{ matrix.os }}
       run: npm install -g xpm@${{ matrix.xpm-version }}
 
     - name: Show environment
@@ -65,45 +86,12 @@ jobs:
         xpm --version
         env | sort
 
-    - name: Satisfy project dependencies
+    - name: Satisfy project dependencies on ${{ matrix.os }}
       run: |
-        xpm install -C tests
+        npm ci -C tests
+        xpm run install-ci -C tests
 
-    - name: Run test-native-cmake-gcc
-      # https://docs.github.com/en/actions/writing-workflows/choosing-what-your-workflow-does/evaluate-expressions-in-workflows-and-actions
-      if: ${{ ! startsWith(matrix.os, 'macos-') }}
-      run: |
-        xpm install --config native-cmake-gcc-debug -C tests
-        xpm install --config native-cmake-gcc-release -C tests
-        xpm run test-native-cmake-gcc -C tests
-
-    - name: Run test-native-cmake-clang
-      run: |
-        xpm install --config native-cmake-clang-debug -C tests
-        xpm install --config native-cmake-clang-release -C tests
-        xpm run test-native-cmake-clang -C tests
-
-    - name: Run test-qemu-cortex-m0-cmake
-      run: |
-        xpm install --config qemu-cortex-m0-cmake-gcc-debug -C tests
-        xpm install --config qemu-cortex-m0-cmake-gcc-release -C tests
-        xpm run test-qemu-cortex-m0-cmake-gcc -C tests
-
-    - name: Run test-qemu-cortex-m7f-cmake
-      run: |
-        xpm install --config qemu-cortex-m7f-cmake-gcc-debug -C tests
-        xpm install --config qemu-cortex-m7f-cmake-gcc-release -C tests
-        xpm run test-qemu-cortex-m7f-cmake-gcc -C tests
-
-    - name: Run test-qemu-riscv-rv32imac-cmake
-      run: |
-        xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug -C tests
-        xpm install --config qemu-riscv-rv32imac-cmake-gcc-release -C tests
-        xpm run test-qemu-riscv-rv32imac-cmake-gcc -C tests
-
-    - name: Run test-qemu-cortex-m0-meson
-      run: |
-        xpm install --config qemu-cortex-m0-meson-gcc-debug -C tests
-        xpm install --config qemu-cortex-m0-meson-gcc-release -C tests
-        xpm run test-qemu-cortex-m0-meson-gcc -C tests
-
+    - name: Run tests on ${{ matrix.os }}
+      run: xpm run test-ci -C tests
+      env:
+          CI: true
