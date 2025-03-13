@@ -59,7 +59,7 @@
     "buildConfigurations": {}
   },
   "topConfig": {
-    "descriptiveName": "µOS++ C++ lists utilities",
+    "descriptiveName": "µOS++ C++ Intrusive Lists",
     "permalinkName": "utils-lists"
   },
   "engines": {
