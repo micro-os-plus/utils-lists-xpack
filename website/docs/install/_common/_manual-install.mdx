@@ -1,0 +1,29 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+{/* ------------------------------------------------------------------------ */}
+
+## Manual install
+
+### Copy files
+
+The traditional way of using source libraries is to simply copy them
+into the user project.
+
+The obvious advantage is simplicity, but the downside is that the
+library becomes part of the project, and any improvements or bug fixes
+must be manually copied to the project.
+
+### Add as a Git submodule
+
+Another common solution is to link the entire project as a **Git submodule**,
+for example below an `xpacks` folder:
+
+```sh
+cd my-project
+git init # Unless already a Git project
+mkdir -p xpacks
+
+git submodule add https://github.com/micro-os-plus/utils-lists-xpack.git \
+  xpacks/@micro-os-plus/utils-lists
+```

@@ -1,0 +1,136 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+{/* ------------------------------------------------------------------------ */}
+
+import CommonManualTests from '@site/docs/_common/_manual-tests.mdx';
+import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
+import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
+import CommonGetHelperSources from '@site/docs/_common/_get-helper-sources-details.mdx';
+import CommonCodeFormatting from '@site/docs/_common/_code-formatting.mdx';
+import CommonPrepareWebsite from '@site/docs/_common/_prepare-website.mdx';
+import CommonBuildWebsiteLocally from '@site/docs/_common/_build-website-locally.mdx';
+import CommonRegenerateDoxygen from '@site/docs/_common/_regenerate-doxygen.mdx';
+import CommonPublishWebsite from '@site/docs/_common/_publish-website.mdx';
+import CommonStartLocalWebServer from '@site/docs/_common/_start-local-web-server.mdx';
+import CommonContinuousIntegration from '@site/docs/_common/_continuous-integration.mdx';
+
+import ProjectTestDetails from '../_project/_test-details.mdx';
+
+{/* ------------------------------------------------------------------------ */}
+
+The project is written in modern C++ and, for reproducibility reasons,
+uses the xPack Framework tools during development.
+
+<CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
+
+<CommonGetProjectSources />
+
+<CommonGetHelperSources helperOrganizationName="micro-os-plus"  helperProjectName="build-helper-xpack" helperBranchName="xpack-development" />
+
+## Satisfy dependencies
+
+Run the following commands in the project folder:
+
+```sh
+npm install
+npm install -C tests
+xpm install -C tests
+```
+
+## Language standard compliance
+
+The library is written in modern C++ and should be compiled with `-std=c++20`.
+
+<CommonCodeFormatting />
+
+## Tests
+
+The µOS++ testing strategy involves compiling the sources with
+as many toolchains as possible and executing them on a wide
+range of platforms.
+
+### Host Platforms
+
+The tests can be executed on any of the supported host
+platforms:
+
+- GNU/Linux (x64 and arm64, **GLIBC>=2.28**); to run the native
+tests, a C++ development environment is required
+(on Ubuntu install `build-essential`)
+- macOS (>= **11.0**);
+as C++ development environment use **Command Line Tools**
+- Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
+Windows 11
+
+### Target Platforms
+
+The supported target test platforms are:
+
+- `platforms/native` - run the test applications as **native processes**
+  on the development machine
+- `platforms/qemu-cortex-m0` - run the tests as fully semihosted
+  **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
+  (an Arm Cortex-M3 development board)
+- `platforms/qemu-cortex-m3` - run the tests as fully semihosted
+  **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
+  (an Arm Cortex-M3 development board)
+- `platforms/qemu-cortex-m4f` - run the tests as fully semihosted
+  **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
+  (an Arm Cortex-M4 development board)
+- `platforms/qemu-cortex-m7f` - run the tests as fully semihosted
+  **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
+  (an Arm Cortex-M7 development board)
+- `platforms/qemu-cortex-a15` - run the tests as fully semihosted
+  **Cortex-A15** applications on a QEMU **virt** emulated board
+- `platforms/qemu-cortex-a72` - run the tests as fully semihosted
+  **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
+- `platforms/qemu-riscv-rv32imac` - run the tests as fully semihosted
+  **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
+- `platforms/qemu-riscv-rv64imafdc` - run the tests as fully semihosted
+  **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
+
+The build configurations use exactly the same source files on all platforms,
+without changes.
+
+### Semihosting
+
+On embedded platforms, the applications interact with the
+host via the
+[Arm semihosting mechanism](https://github.com/ARM-software/abi-aa/blob/main/semihosting/semihosting.rst).
+
+### Toolchains
+
+To enhance source code portability, the builds are repeatedly conducted
+using various toolchains, including multiple versions of the same toolchain.
+
+The following toolchains are used:
+
+- gcc (native)
+- clang (native)
+- arm-none-eabi-gcc (Cortex-M, AArch32)
+- aarch64-none-elf-gcc (AArch64)
+- risc-none-elf-gcc (RISC-V 32/64)
+
+<ProjectTestDetails />
+
+<CommonManualTests />
+
+### Continuous Integration (CI)
+
+<CommonContinuousIntegration />
+
+## The website
+
+The project includes the source files for its website. The main pages
+are generated with [Docusaurus](https://docusaurus.io/), and the
+reference pages are generated with [Doxygen](https://www.doxygen.nl/).
+
+<CommonRegenerateDoxygen />
+
+<CommonPrepareWebsite />
+
+<CommonBuildWebsiteLocally />
+
+<CommonStartLocalWebServer />
+

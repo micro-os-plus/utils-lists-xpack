@@ -1,3 +1,6 @@
+# DO NOT EDIT!
+# Automatically generated from docusaurus-template-liquid/templates/docusaurus.
+
 # Doxyfile 1.9.7 - project specific
 
 # This file describes the settings to be used by the documentation system
@@ -25,8 +28,8 @@
 
 #---------------------------------------------------------------------------
 
-@INCLUDE = xpacks/@micro-os-plus/build-helper/doxygen/original-config.doxyfile
-@INCLUDE = xpacks/@micro-os-plus/build-helper/doxygen/common-config.doxyfile
+@INCLUDE = ../node_modules/@micro-os-plus/build-helper/doxygen/original-config.doxyfile
+@INCLUDE = ../node_modules/@micro-os-plus/build-helper/doxygen/common-config.doxyfile
 
 #---------------------------------------------------------------------------
 # Project related configuration options
@@ -50,7 +53,7 @@ PROJECT_NUMBER = 4.0.0
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF = "µOS++ C++ intrusive lists utilities"
+PROJECT_BRIEF = "The µOS++ Intrusive Lists"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
@@ -58,6 +61,18 @@ PROJECT_BRIEF = "µOS++ C++ intrusive lists utilities"
 # the logo to the output directory.
 
 PROJECT_LOGO = assets/wall-e-icon-64.png
+
+#---------------------------------------------------------------------------
+
+# The SITEMAP_URL tag is used to specify the full URL of the place where the
+# generated documentation will be placed on the server by the user during the
+# deployment of the documentation. The generated sitemap is called sitemap.xml
+# and placed on the directory specified by HTML_OUTPUT. In case no SITEMAP_URL
+# is specified no sitemap is generated. For information about the sitemap
+# protocol see https://www.sitemaps.org
+# This tag requires that the tag GENERATE_HTML is set to YES.
+
+SITEMAP_URL = https://micro-os-plus.github.io/utils-lists-xpack/reference/
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
@@ -85,16 +100,8 @@ WARN_AS_ERROR = YES
 # The order is preserved in the side bar.
 
 INPUT = \
-../include \
-../src \
-pages/home.md \
-pages/install.md \
-pages/user-guide.md \
-pages/maintainer.md \
-pages/testing.md \
-pages/change-log.md \
-pages/credits.md \
-pages/license.md \
+../../include \
+../../src \
 topics.doxyfile \
 
 
@@ -103,7 +110,7 @@ topics.doxyfile \
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE = pages/home.md
+# USE_MDFILE_AS_MAINPAGE = pages/home.md
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -137,9 +144,6 @@ INPUT_FILTER = "sed -e 's|__attribute__\s*[(]\s*[(].*[)]\s*[)]||g'"
 # \image command).
 
 IMAGE_PATH = \
-assets/regular.png \
-assets/intrusive.png \
-assets/low-intrusive.png \
 
 #---------------------------------------------------------------------------
 # Configuration options related to warning and progress messages
@@ -171,7 +175,8 @@ WARN_AS_ERROR          = YES
 # The default directory is: html.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_OUTPUT            = html
+# HTML_OUTPUT            = html
+HTML_OUTPUT            = ../static/reference
 
 # The HTML_HEADER tag can be used to specify a user-defined HTML header file for
 # each generated HTML page. If the tag is left blank doxygen will generate a
@@ -192,7 +197,7 @@ HTML_OUTPUT            = html
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_HEADER = \
-xpacks/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
+../node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -211,9 +216,8 @@ xpacks/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_STYLESHEET = \
-xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
-xpacks/@micro-os-plus/build-helper/doxygen/common-custom.css \
-xpacks/@micro-os-plus/build-helper/doxygen/cards.css \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
+../node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css \
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -224,11 +228,11 @@ xpacks/@micro-os-plus/build-helper/doxygen/cards.css \
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
 HTML_EXTRA_FILES = \
-xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
-xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
-xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
-xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
-xpacks/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
 
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
@@ -249,8 +253,55 @@ __cpp_exceptions \
 
 #---------------------------------------------------------------------------
 
-# Experimental, for possible future integration with Docusaurus.
-GENERATE_XML           = YES
-# XML_NS_MEMB_FILE_SCOPE = YES
+# The LAYOUT_FILE tag can be used to specify a layout file which will be parsed
+# by doxygen. The layout file controls the global structure of the generated
+# output files in an output format independent way. To create the layout file
+# that represents doxygen's defaults, run doxygen with the -l option. You can
+# optionally specify a file name after the option, if omitted DoxygenLayout.xml
+# will be used as the name of the layout file. See also section "Changing the
+# layout of pages" for information.
+#
+# Note that if you run doxygen from a directory containing a file called
+# DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
+# tag is left empty.
+
+LAYOUT_FILE = DoxygenLayout.xml
 
 #---------------------------------------------------------------------------
+# Configuration options related to the XML output
+#---------------------------------------------------------------------------
+
+# If the GENERATE_XML tag is set to YES, doxygen will generate an XML file that
+# captures the structure of the code including all documentation.
+# The default value is: NO.
+
+# GENERATE_XML           = YES
+# Disabled for now; to be re-enable for the Docusaurus integration.
+GENERATE_XML           = NO
+
+# The XML_OUTPUT tag is used to specify where the XML pages will be put. If a
+# relative path is entered the value of OUTPUT_DIRECTORY will be put in front of
+# it.
+# The default directory is: xml.
+# This tag requires that the tag GENERATE_XML is set to YES.
+
+XML_OUTPUT             = xml
+
+# If the XML_PROGRAMLISTING tag is set to YES, doxygen will dump the program
+# listings (including syntax highlighting and cross-referencing information) to
+# the XML output. Note that enabling this will significantly increase the size
+# of the XML output.
+# The default value is: YES.
+# This tag requires that the tag GENERATE_XML is set to YES.
+
+XML_PROGRAMLISTING     = YES
+
+# If the XML_NS_MEMB_FILE_SCOPE tag is set to YES, doxygen will include
+# namespace members in file scope as well, matching the HTML output.
+# The default value is: NO.
+# This tag requires that the tag GENERATE_XML is set to YES.
+
+XML_NS_MEMB_FILE_SCOPE = YES
+
+#---------------------------------------------------------------------------
+

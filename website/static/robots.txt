@@ -1,0 +1,7 @@
+Sitemap: https://micro-os-plus.github.io/utils-lists-xpack/sitemap.xml
+
+User-agent: *
+Disallow: /utils-lists-xpack/blog/archive/
+Disallow: /utils-lists-xpack/blog/authors/
+Disallow: /utils-lists-xpack/blog/page/
+Disallow: /utils-lists-xpack/blog/tags/

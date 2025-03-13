@@ -1,0 +1,126 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+{/* ------------------------------------------------------------------------ */}
+
+import CommonManualTests from '@site/docs/_common/_manual-tests.mdx';
+import CommonPrerequisites from '@site/docs/_common/_prerequisites.mdx';
+import CommonGetProjectSources from '@site/docs/_common/_get-project-sources.mdx';
+import CommonGetHelperSources from '@site/docs/_common/_get-helper-sources-details.mdx';
+import CommonGenerateWebsiteCommons from '@site/docs/_common/_generate-website-commons.mdx';
+import CommonCodeFormatting from '@site/docs/_common/_code-formatting.mdx';
+import CommonRegenerateDoxygen from '@site/docs/_common/_regenerate-doxygen.mdx';
+import CommonBuildWebsiteLocally from '@site/docs/_common/_build-website-locally.mdx';
+import CommonPrepareWebsite from '@site/docs/_common/_prepare-website.mdx';
+import CommonPublishWebsite from '@site/docs/_common/_publish-website.mdx';
+import CommonStartLocalWebServer from '@site/docs/_common/_start-local-web-server.mdx';
+
+import CommonCheckGit from '../_common/_check-git.mdx';
+
+import CommonIncreaseVersion from '../_common/_increase-version.mdx';
+import CommonUpdateWebsiteConfig from '../_common/_update-website-config.mdx';
+
+import CommonFixOpenIssues from '../_common/_fix-open-issues.mdx';
+import CommonUpdateChangelog from '../_common/_update-changelog.mdx';
+
+import CommonPrepareRelease from '../_common/_prepare-release.mdx'
+import CommonPrepareNewBlogPost from '../_common/_prepare-new-blog-post.mdx'
+import CommonPublishRelease from '../_common/_publish-release.mdx'
+import CommonShareOnTwitter from '../_common/_share-on-twitter.mdx'
+import CommonAnalytics from '../_common/_analytics.mdx';
+import CommonSetNewVersion from '../_common/_set-new-version.mdx';
+import CommonCloseOpenIssues from '../_common/_close-open-issues.mdx';
+import CommonTagNpmLatest from '../_common/_tag-npm-latest.mdx';
+import CommonUpdateMainBranch from '../_common/_update-main-branch.mdx';
+import CommonCloseMilestone from '../_common/_close-milestone.mdx';
+import CommonCiTests from '../_common/_ci-tests.mdx';
+
+import ProjectMore from '../_project/_more.mdx';
+
+{/* ------------------------------------------------------------------------ */}
+
+<CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
+
+<CommonGetProjectSources />
+
+<CommonGetHelperSources helperOrganizationName="micro-os-plus"  helperProjectName="build-helper-xpack" helperBranchName="xpack-development" />
+
+<CommonCodeFormatting />
+
+## Release schedule
+
+There are no fixed releases.
+
+## Prepare a new release
+
+<CommonCheckGit />
+
+<CommonIncreaseVersion />
+
+<CommonUpdateWebsiteConfig />
+
+<CommonGenerateWebsiteCommons />
+
+<CommonStartLocalWebServer />
+
+<CommonFixOpenIssues />
+
+<CommonUpdateChangelog />
+
+### Reformat source files
+
+- reformat the source files that were changed
+- commit and push
+
+<CommonManualTests />
+
+<CommonPrepareRelease />
+
+<CommonSetNewVersion />
+
+<CommonCiTests />
+
+### Test on all platforms
+
+In addition, it is possible to manually trigger a **test-all** job, that
+runs all available tests, on all supported platforms.
+
+For this:
+
+- ensure that the `xpack-development` branch is pushed
+- run the **trigger-workflow-test-all** action
+  ```sh
+  xpm run trigger-workflow-test-all -C tests
+  ```
+- wait for the **test-all** job to complete
+  (https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/test-all.yml)
+
+<CommonPrepareNewBlogPost />
+
+<CommonPublishRelease />
+
+## Publish the website
+
+<CommonRegenerateDoxygen />
+
+<CommonPrepareWebsite />
+
+<CommonBuildWebsiteLocally />
+
+<CommonPublishWebsite />
+
+## Final updates
+
+<CommonUpdateMainBranch />
+
+<CommonCloseOpenIssues />
+
+<CommonCloseMilestone />
+
+<CommonTagNpmLatest />
+
+<CommonShareOnTwitter />
+
+<CommonAnalytics />
+
+<ProjectMore />

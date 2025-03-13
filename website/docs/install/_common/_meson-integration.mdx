@@ -1,0 +1,29 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+{/* ------------------------------------------------------------------------ */}
+
+### Meson Build
+
+To integrate the **utils-lists** library into a
+[meson](https://mesonbuild.com) application,
+add the folder where this project is located to the build:
+
+```meson
+subdir('xpacks/@micro-os-plus/utils-lists')
+```
+
+The result is **a dependency object** that can be added
+to an application with:
+
+```meson
+exe = executable(
+  your-target,
+  link_with: [
+    # Nothing, not static.
+  ],
+  dependencies: [
+    micro_os_plus_utils_lists_dependency,
+  ]
+)
+```

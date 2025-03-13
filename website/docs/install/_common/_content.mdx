@@ -1,0 +1,68 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+import CodeBlock from '@theme/CodeBlock';
+
+import CommonContinuousIntegration from '@site/docs/_common/_continuous-integration.mdx';
+
+import CommonXpmPackageRefresher from '../_common/_xpm-package-refresher.mdx';
+import CommonPrerequisites from '../_common/_prerequisites.mdx';
+import CommonInitialiseTheProject from '../_common/_initialise-the-project.mdx';
+import CommonInstallViaXpm from '../_common/_install-via-xpm.mdx';
+import CommonInstallViaNpm from '../_common/_install-via-npm.mdx';
+import CommonInstallationDetails from '../_common/_installation-details.mdx';
+import CommonReproducibilityAndDependencies from '../_common/_reproducibility-and-dependencies.mdx';
+import CommonUninstall from '../_common/_uninstall.mdx';
+import CommonManualInstall from '../_common/_manual-install.mdx';
+
+import ProjectInstallFolderHierarchy from '../_project/_install-folder-hierarchy.mdx';
+import ProjectBuildAndIntegrationInfo from '../_project/_build-and-integration-info.mdx';
+import ProjectStatus from '../_project/_status.mdx';
+
+{/* ------------------------------------------------------------------------ */}
+
+As an xpm package, the the most convenient way to integrate
+the **µOS++ Intrusive Lists** into a project is to
+**add it as a dependency** via **xpm**.
+
+However, as any source code library, this project can also be integrated into another project
+in the traditional manner,
+either by **copying the relevant files** into the target project, or by **linking**
+the entire project as a **Git submodule**.
+
+<CommonXpmPackageRefresher />
+
+## Automated install
+
+Alongside the source files, this project also includes a `package.json`
+file containing the metadata that identifies it as an **xpm**/**npm**
+package, enabling direct installation from GitHub or
+from the [npmjs.com](https://www.npmjs.com) registry as
+[`@micro-os-plus/utils-lists`](https://www.npmjs.com/package/@micro-os-plus/utils-lists).
+
+<CommonPrerequisites />
+
+<CommonInitialiseTheProject />
+
+<CommonInstallViaXpm />
+
+<CommonInstallationDetails />
+
+<CommonReproducibilityAndDependencies />
+
+<ProjectInstallFolderHierarchy />
+
+<CommonUninstall />
+
+<CommonInstallViaNpm />
+
+<CommonManualInstall />
+
+<ProjectBuildAndIntegrationInfo />
+
+<ProjectStatus />
+
+## Testing
+
+<CommonContinuousIntegration />
+

@@ -1,0 +1,23 @@
+{/* DO NOT EDIT! */}
+{/* Automatically generated from docusaurus-template-liquid/templates/docusaurus. */}
+
+{/* ------------------------------------------------------------------------ */}
+
+### CMake
+
+To integrate the **utils-lists** library into a CMake application,
+add the folder where this project is located to the build:
+
+```cmake
+add_subdirectory("xpacks/@micro-os-plus/utils-lists")
+```
+
+The result is **an interface library** that can be added as an application
+dependency with:
+
+```cmake
+target_link_libraries(your-target PRIVATE
+
+  micro-os-plus::utils-lists
+)
+```
