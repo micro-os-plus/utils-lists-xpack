@@ -48,7 +48,7 @@ on:
 
 jobs:
   ci-test:
-    name: 'CI µOS++ C++ intrusive lists tests'
+    name: 'CI µOS++ Intrusive Lists tests'
 
     runs-on:  ${{ matrix.os }}
 
