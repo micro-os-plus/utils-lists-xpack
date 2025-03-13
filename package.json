@@ -1,7 +1,7 @@
 {
   "name": "@micro-os-plus/utils-lists",
   "version": "4.0.0",
-  "description": "A source code library with the µOS++ C++ lists utilities",
+  "description": "A source code library with the µOS++ intrusive lists",
   "main": "",
   "scripts": {
     "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --micro-os-plus",
@@ -59,7 +59,7 @@
     "buildConfigurations": {}
   },
   "topConfig": {
-    "descriptiveName": "µOS++ C++ Intrusive Lists",
+    "descriptiveName": "µOS++ Intrusive Lists",
     "permalinkName": "utils-lists"
   },
   "engines": {
