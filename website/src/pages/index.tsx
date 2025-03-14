@@ -33,7 +33,7 @@ function HomepageHeader() {
         <p className="hero__subtitle">{siteConfig.tagline}
         </p>
         <div className={styles.installWithCopy}>
-          <InstallWithCopy>xpm install @micro-os-plus/utils-lists@4.0.1 --verbose
+          <InstallWithCopy>xpm install @micro-os-plus/utils-lists@4.0.2 --verbose
           </InstallWithCopy>
 
         </div>

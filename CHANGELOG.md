@@ -8,7 +8,12 @@ and close existing issues and pull requests.
 
 ## 2025-03-15
 
-* v4.0.1 prepared
+* v4.0.2 prepared
+* 4de138c website: blog post release 4.0.1 published
+* be75b74 4.0.1
+* c730338 tests/package.json: bump micro-test
+* 9b0251a tests/package.json: bump micro-test
+* fa244ae prepare v4.0.1
 
 ## 2025-03-14
 
