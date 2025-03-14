@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2025-03-15
 
+* v4.0.2 published on npmjs.com
 * v4.0.2 prepared
 * 4de138c website: blog post release 4.0.1 published
 * be75b74 4.0.1
