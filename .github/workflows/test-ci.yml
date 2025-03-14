@@ -59,7 +59,7 @@ jobs:
         # https://nodejs.org/en - use LTS
         node-version: [ '20' ]
         # https://www.npmjs.com/package/xpm
-        xpm-version: [ '0.20.7' ]
+        xpm-version: [ '0.20.8' ]
 
     steps:
     - name: Checkout
