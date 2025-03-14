@@ -409,7 +409,7 @@ namespace micro_os_plus::utils
 
     constexpr explicit double_list_iterator (reference element);
 
-    // DO NOT delete the copy constructors, since the default one are
+    // DO NOT delete the copy constructors, since the default ones are
     // used.
 
     constexpr pointer
@@ -732,7 +732,7 @@ namespace micro_os_plus::utils
 
     constexpr explicit intrusive_list_iterator (reference element);
 
-    // DO NOT delete the copy constructors, since the default one are
+    // DO NOT delete the copy constructors, since the default ones are
     // used.
 
     pointer
