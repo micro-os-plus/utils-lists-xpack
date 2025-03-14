@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/utils-lists",
-  "version": "4.0.0",
+  "version": "4.0.1-pre",
   "description": "A source code library with the µOS++ intrusive lists",
   "main": "",
   "scripts": {
@@ -52,7 +52,7 @@
     "liquidjs": "^10.19.1"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.7",
+    "minimumXpmRequired": "0.20.8",
     "dependencies": {},
     "devDependencies": {},
     "properties": {},

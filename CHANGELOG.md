@@ -6,6 +6,102 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
+## 2025-03-15
+
+* v4.0.1 prepared
+
+## 2025-03-14
+
+* 8ce120e tests: re-generate commons
+* ed9bc89 re-generate commons
+* 259f650 website: re-generate commons
+* 9adec38 tests: re-generate commons
+* c6bceb5 lists.h: fix typo in comment
+
+## 2025-03-13
+
+* 471747d website: preliminary content
+* 960033c re-generate commons
+* 0130339 package.json: shorten description
+* aa7176a re-generate commons
+* b13d78e package.json: update description
+
+## 2025-03-02
+
+* 442d552 tests/package-lock.json update
+* c821d57 tests: re-generate commons
+* be3f2e9 re-generate workflows
+
+## 2025-02-24
+
+* 056327f update for xpack-development
+* c95b19c test-ci.yml: bump deps
+* 25152e1 publish-github-pages.yml update
+* f9da646 tests/package*.json update deps
+* 4c04fc1 native: rework RPATH
+* cef3724 a15/meson/cross.ini: cpu_family = 'arm'
+* 36e7a8a lists.h: silence documentation warning
+
+## 2024-12-16
+
+* 1de7fe1 ci.yml: cosmetics
+* d353209 ci.yml: skip gcc on macos
+* dc562ca ci.yml: update macos-13, 15
+* 36112e2 xcdl.json update
+* 87bac69 tests/package-lock.json update
+* 028b4f8 package*.json update
+
+## 2024-11-21
+
+* b8bd338 rename xpack-development
+* 3cfcc86 package.json: include cdlComponents
+* 926cc19 update copyright notice
+
+## 2024-07-30
+
+* 04d170a add xml output to doxygen
+
+## 2023-12-26
+
+* 01a51cd lists.h: fix doxy parent @ingroup
+* 9bbbe27 credits.md: remove macstadium.com opensource
+* 1a754ad website/pages/home.md: cleanup dummy links
+* c00059a publish-github-pages.yml: bump doxygen 1.10.0
+
+## 2023-12-08
+
+* 4ae87cd tests cosmetics
+* 59182c5 tests/package.json: cosmetics
+* b7f2fe9 tests/package.json: bump deps
+* 1ad3d89 tests/package.json: add clang17
+* 18bef79 rework tests/platforms
+
+## 2023-12-07
+
+* db74726 doxygen metadata: use explicit os::
+* 50df4ec doxygen metadata: use explicit os::
+* 3f63f33 tests: use explicit namespaces
+* 3878977 lists.h: cosmetics
+* 76cfc69 tests/package.json: bump deps
+
+## 2023-11-30
+
+* 998c868 website/package.json: #v2.3.1
+* df132f5 testing.md updates
+* b4ee655 website/package.json: explicit #v2.3.0
+* 860a4d8 user-guide.md updates
+* bcc7923 testing.md update
+
+## 2023-11-29
+
+* 3c05796 testing.md update
+* 2142474 testing.md update
+* f737d0f 4.0.0
+* 5b79c58 prepare v4.0.0
+* 17c69f5 tests/package.json: bump deps
+* 8679655 CHANGELOG update
+* 5a36c67 testing.md update
+
 ## 2023-11-28
 
 * v4.0.0
