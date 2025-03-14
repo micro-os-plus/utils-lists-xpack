@@ -1,6 +1,6 @@
 {
   "name": "@micro-os-plus/utils-lists",
-  "version": "4.0.1-pre",
+  "version": "4.0.1",
   "description": "A source code library with the µOS++ intrusive lists",
   "main": "",
   "scripts": {
