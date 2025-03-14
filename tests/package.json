@@ -142,12 +142,12 @@
         "xpm install",
         "xpm install --all-configs"
       ],
-      "link-deps": [
+      "link-dependencies": [
         "xpm link @micro-os-plus/build-helper",
         "xpm link @micro-os-plus/diag-trace",
         "xpm link @micro-os-plus/micro-test-plus"
       ],
-      "link-deps-all": [
+      "link-dependencies-all": [
         "xpm run link-deps",
         "xpm run link-deps --all-configs"
       ],
@@ -1240,7 +1240,16 @@
         "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc14-release",
         "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc14-release"
       ],
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
+      "link-deps": [
+        "xpm link @micro-os-plus/build-helper",
+        "xpm link @micro-os-plus/diag-trace",
+        "xpm link @micro-os-plus/micro-test-plus"
+      ],
+      "link-deps-all": [
+        "xpm run link-deps",
+        "xpm run link-deps --all-configs"
+      ]
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
