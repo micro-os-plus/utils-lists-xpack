@@ -46,7 +46,7 @@
     <tab type="examples" visible="yes" title="" intro=""/>
 
     <!-- https://www.doxygen.nl/manual/customize.html#layout -->
-    <tab type="user" url="micro-os-plus/utils-lists-xpack" title="GitHub"/>
+    <tab type="user" url="https://github.com/micro-os-plus/utils-lists-xpack.git" title="GitHub"/>
 
   </navindex>
 

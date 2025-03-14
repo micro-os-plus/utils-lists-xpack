@@ -6,13 +6,11 @@ import CommonMesonIntegration from '../_common/_meson-integration.mdx';
 
 ## Build & integration info
 
-The project is written in C++, ...
+The project is written in C++, and it is expected to be used in C++ projects.
 
 The source code has been compiled natively with **GCC** and **LLVM/clang**,
 and cross-compiled on embedded **Arm** and **RISC-V** targets,
 ensuring it is free from warnings.
-
-...
 
 To facilitate the integration of this library into user projects,
 pre-made **CMake** and **meson** configuration files are provided
@@ -36,7 +34,7 @@ The header files to be included in user projects are:
 
 The source files to be added to user projects are:
 
-- `src/xxx.cpp`
+- `src/lists.cpp`
 
 ### Preprocessor definitions
 
@@ -44,7 +42,10 @@ There are several preprocessor definitions used to configure the build:
 
 - `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
 - `MICRO_OS_PLUS_TRACE` - to include the trace calls
-- `MICRO_OS_PLUS_TRACE_XXX` - to enable some tracing messages
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
+  `insert()`, `link()`, `unlink()`
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT` - to trace constructors and
+  destructors
 
 ### Compiler options
 
@@ -56,7 +57,9 @@ The following options must be passed to the compiler and linker:
 
 The library has the following dependencies:
 
-- none
+- `@micro-os-plus/diag-trace` - the **µOS++** `trace::printf()` tracing
+  infrastructure (optional, used only if `MICRO_OS_PLUS_TRACE_UTILS_LISTS*`
+  are defined)
 
 <CommonCmakeIntegration />
 
