@@ -60,7 +60,8 @@
   },
   "topConfig": {
     "descriptiveName": "µOS++ Intrusive Lists",
-    "permalinkName": "utils-lists"
+    "permalinkName": "utils-lists",
+    "useDoxygen": "true"
   },
   "engines": {
     "node": " >=18.0.0"

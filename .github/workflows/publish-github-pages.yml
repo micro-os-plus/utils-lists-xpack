@@ -83,6 +83,21 @@ jobs:
       - name: Install dependencies
         run: (cd website; npm ci)
 
+      - name: Install Doxygen
+        # https://www.doxygen.nl/download.html
+        env:
+          DOXYGEN_VERSION: "1.13.2"
+        run: |
+          curl https://www.doxygen.nl/files/doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz --output doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
+          tar xf doxygen-$DOXYGEN_VERSION.linux.bin.tar.gz
+          ls -l doxygen-$DOXYGEN_VERSION
+          mkdir -pv website/doxygen/.local/bin
+          ln -sv $(pwd)/doxygen-$DOXYGEN_VERSION/bin/doxygen website/doxygen/.local/bin/doxygen
+          ls -lLA website website/doxygen
+
+      - name: Build the Doxygen site
+        run: (cd website/doxygen; .local/bin/doxygen config.doxyfile)
+
       - name: Build the Docusaurus site
         run: (cd website; npm run build)
 

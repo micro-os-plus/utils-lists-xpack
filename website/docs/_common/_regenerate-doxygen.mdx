@@ -1,2 +1,16 @@
 
 {/* ------------------------------------------------------------------------ */}
+
+### Re-generate the Doxygen pages
+
+Run the **doxygen** npm script:
+
+```sh
+npm run doxygen -C website
+```
+
+For the moment the doxygen program must be installed on the host,
+it is not available as an xpm dependency.
+
+With the current configuration, the static html pages are generated
+in the `website/static/reference` folder.
