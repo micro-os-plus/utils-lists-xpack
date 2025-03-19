@@ -35,8 +35,7 @@ project('micro-os-plus-utils-lists-tests',
 # -----------------------------------------------------------------------------
 # Global definitions #
 
-enable_sample_test = true
-enable_unit_test = true
+subdir('meson/global-definitions')
 
 # -----------------------------------------------------------------------------
 

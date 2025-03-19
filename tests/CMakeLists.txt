@@ -29,8 +29,7 @@ enable_testing()
 # -----------------------------------------------------------------------------
 
 # Global definitions.
-set(ENABLE_SAMPLE_TEST true)
-set(ENABLE_UNIT_TEST true)
+include("cmake/global-definitions.cmake")
 
 # -----------------------------------------------------------------------------
 
