@@ -10,7 +10,7 @@
  */
 
 /*
- * This library implements several double linked lists, used by some
+ * This library implements several doubly linked lists, used by some
  * µOS++ components to keep track of internal objects; however it is
  * generic enough to be useful in other applications too, thus packing
  * it as a separate library.
@@ -75,7 +75,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-double-lists
-   * @brief A base class for a double linked list.
+   * @brief A base class for a doubly linked list.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    *
    * @details
@@ -214,7 +214,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-double-lists
-   * @brief A class for the core of a double linked list (pointers to
+   * @brief A class for the core of a doubly linked list (pointers to
    * neighbours).
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    *
@@ -268,7 +268,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-double-lists
-   * @brief A class for the core of a statically allocated double linked list
+   * @brief A class for the core of a statically allocated doubly linked list
    * (pointers to neighbours).
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    *
@@ -351,7 +351,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-double-lists
-   * @brief A class template for a double linked list forward iterator.
+   * @brief A class template for a doubly linked list forward iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @tparam T Type of object returned by the iterator.
    * @tparam N Type of intrusive node. Must have the public members
@@ -361,7 +361,7 @@ namespace micro_os_plus::utils
    * @details
    * This class provides an interface similar to `std::list::iterator`.
    *
-   * In a common double linked list, all types are `double_list_links`.
+   * In a common doubly linked list, all types are `double_list_links`.
    */
   template <class T, class N = T, class U = T>
   class double_list_iterator
@@ -448,7 +448,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-double-lists
-   * @brief A class template for a double linked list of nodes.
+   * @brief A class template for a doubly linked list of nodes.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @tparam T Type of the elements linked into the list,
    * derived from class `double_list_links_base`.
@@ -456,7 +456,7 @@ namespace micro_os_plus::utils
    * `double_list_links` or `static_double_list_links`).
    *
    * @details
-   * A double linked list is a pair of head/tail pointers,
+   * A doubly linked list is a pair of head/tail pointers,
    * allowing to iterate over the nodes.
    *
    * @note
@@ -523,7 +523,7 @@ namespace micro_os_plus::utils
         typename links_type::is_statically_allocated;
 
     /**
-     * @brief Construct a double linked list.
+     * @brief Construct a doubly linked list.
      */
     double_list ();
 
@@ -865,7 +865,7 @@ namespace micro_os_plus::utils
     using difference_type = ptrdiff_t;
 
     /**
-     * @brief Construct an intrusive double linked list.
+     * @brief Construct an intrusive doubly linked list.
      */
     constexpr intrusive_list ();
 
