@@ -9,6 +9,16 @@ nodes (the objects used to store pairs of links), which can pose challenges
 on embedded systems. Consequently, it is advisable to avoid such allocations
 where possible, particularly at the system level.
 
+## Regular lists
+
+A standard doubly linked list comprises a pair of pointers (represented
+by the red object) and a set of additional pointers that connect to
+each other as well as to the payload (depicted by the yellow objects).
+
+Whenever a payload is added to the list, the corresponding object must
+be acquired from an allocator. Similarly, whenever an object is removed
+from the list, it must be returned to the free storage.
+
 ![Regular list](/img/2023/regular.png)
 
 ## Intrusive lists
@@ -79,7 +89,7 @@ The definitions are organised within a namespace under `micro_os_plus`:
 
 - `micro_os_plus::utils`
 
-### Intrusive double linked lists class
+### Intrusive doubly linked lists class
 
 The intrusive lists can be defined by instantiating a class template:
 
@@ -96,9 +106,9 @@ template <class T, class N, N T::*MP, class L = double_list_links,
 class intrusive_list;
 ```
 
-See the reference [Intrusive double linked lists](pathname:///reference/group__micro-os-plus-utils-lists-intrusive-lists.html) page.
+See the reference [Intrusive doubly linked lists](pathname:///reference/group__micro-os-plus-utils-lists-intrusive-lists.html) page.
 
-### Double linked lists class
+### Doubly linked lists class
 
 For simpler use cases, such as traditional lists or low intrusive lists,
 there is a simpler template:
@@ -114,7 +124,7 @@ template <class T, class L = double_list_links>
 class double_list;
 ```
 
-See the reference [Double linked lists](pathname:///reference/group__micro-os-plus-utils-lists-double-lists.html) page.
+See the reference [Doubly linked lists](pathname:///reference/group__micro-os-plus-utils-lists-double-lists.html) page.
 
 ### Methods
 
