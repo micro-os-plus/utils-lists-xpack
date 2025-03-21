@@ -37,8 +37,8 @@ and thus the main API is C++.
 @ingroup micro-os-plus-utils-lists
 @details
 
-The µOS++ **utils-list** is C++ specific, and there are no C equivalents
-for the C++ definitions.
+The µOS++ **utils-list** project is specifically tailored for C++ and does
+not provide equivalent definitions for the C programming language.
 
 */
 -------------------------------------------------------------------------------
