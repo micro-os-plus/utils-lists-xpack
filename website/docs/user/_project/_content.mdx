@@ -178,7 +178,13 @@ There are no C equivalents for the C++ definitions.
 An example demonstrating the usage of intrusive lists can be found in
 [tests/src/sample-test.cpp](https://github.com/micro-os-plus/utils-lists-xpack/blob/xpack/tests/src/sample-test.cpp).
 
-Here are some excerpts:
+Presented below is a brief excerpt.
+
+Points to consider:
+
+- The method by which links are incorporated as a member of the object.
+- The necessity for this member to be declared public.
+- The elegant approach to specifying the type of the list through a C++ template.
 
 ```cpp
 #include <micro-os-plus/utils/lists.h>
