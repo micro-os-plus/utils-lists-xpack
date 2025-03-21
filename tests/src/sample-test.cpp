@@ -31,6 +31,7 @@ namespace os = micro_os_plus;
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
 
+// A simple example with an object that can be linked into two lists.
 class child
 {
 public:
@@ -45,58 +46,74 @@ public:
     return name_;
   }
 
-  void
-  unlink (void)
-  {
-    registry_links_.unlink ();
-  }
-
 protected:
   const char* name_;
 
 public:
-  // Intrusive node used to link this child to the registry list.
+  // Intrusive nodes used to link this object to the lists.
   // Must be public.
-  os::utils::double_list_links registry_links_;
+  os::utils::double_list_links all_kids_links;
+  os::utils::double_list_links school_kids_links;
 };
 
-using children_list
-    = os::utils::intrusive_list<child, decltype (child::registry_links_),
-                                &child::registry_links_>;
+// Type of a list of all kids.
+using all_kids_list
+    = os::utils::intrusive_list<child, decltype (child::all_kids_links),
+                                &child::all_kids_links>;
+
+// Type of a list of school kids.
+using school_kids_list
+    = os::utils::intrusive_list<child, decltype (child::school_kids_links),
+                                &child::school_kids_links>;
 
 int
 main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 {
-  // Create an empty registry.
-  children_list children_registry;
+  // Create the empty lists locally.
+  all_kids_list all_kids_registry;
+  school_kids_list school_kids_registry;
 
   // Add several members.
   child mary{ "Mary" };
-  children_registry.link_tail (mary);
+  all_kids_registry.link_tail (mary);
 
   child bob{ "Bob" };
-  children_registry.link_tail (bob);
+  all_kids_registry.link_tail (bob);
 
   child sally{ "Sally" };
-  children_registry.link_tail (sally);
+  all_kids_registry.link_tail (sally);
+  school_kids_registry.link_tail (sally);
 
-  // List them.
-  for (auto&& p : children_registry)
+  child doug{ "Doug" };
+  all_kids_registry.link_tail (doug);
+  school_kids_registry.link_tail (doug);
+
+  printf ("\nAll kids:\n");
+
+  // List all kids.
+  for (auto&& p : all_kids_registry)
     {
-      printf ("%s\n", p.name ());
+      printf ("- %s\n", p.name ());
     }
 
-  printf ("\n");
+  printf ("\nBob is gone...\n");
 
-  // Remove one of them.
-  bob.unlink ();
+  // Remove one of them from the all_kids list.
+  bob.all_kids_links.unlink ();
 
-  // List the remaining ones.
-  for (auto&& p : children_registry)
+  // List the remaining ones in the list.
+  for (auto&& p : all_kids_registry)
     {
-      printf ("%s\n", p.name ());
+      printf ("- %s\n", p.name ());
     }
 
+  printf ("\nSchool kids:\n");
+  for (auto&& p : school_kids_registry)
+    {
+      printf ("- %s\n", p.name ());
+    }
+
+  printf ("\nDone.\n");
   return 0;
 }
 
