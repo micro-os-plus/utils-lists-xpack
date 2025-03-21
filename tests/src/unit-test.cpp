@@ -368,7 +368,7 @@ check_intrusive_list ()
 
   // The static_double_list_links objects are mt::expected to be uninitialised.
   // The double_list_links objects are cleared by the constructor.
-  static kid marry{ "Marry" };
+  static kid mary{ "Mary" };
   static kid bob{ "Bob" };
   static kid sally{ "Sally" };
 
@@ -388,18 +388,18 @@ check_intrusive_list ()
     mt::expect (it == kids.end ()) << "iterator at end";
   });
 
-  mt::test_case ("Link Marry", [&] {
-    kids.link_tail (marry);
+  mt::test_case ("Link Mary", [&] {
+    kids.link_tail (mary);
     mt::expect (!kids.empty ()) << "list not empty";
 
     // auto x = kids.tail();
-    // mt::expect(mt::eq(std::string_view{kids.tail()->name()}, "Marry"sv)) <<
-    // "tail is Marry";
+    // mt::expect(mt::eq(std::string_view{kids.tail()->name()}, "Mary"sv)) <<
+    // "tail is Mary";
 
     auto it = kids.begin ();
     mt::expect (it != kids.end ()) << "first iteration";
-    mt::expect (mt::eq (std::string_view{ it->name () }, "Marry"sv))
-        << "first iteration is Marry";
+    mt::expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+        << "first iteration is Mary";
     ++it;
     mt::expect (it == kids.end ()) << "iterator at end";
   });
@@ -409,8 +409,8 @@ check_intrusive_list ()
     auto it = kids.begin ();
     mt::expect (!kids.empty ()) << "list not empty";
     mt::expect (it != kids.end ()) << "first iteration";
-    mt::expect (mt::eq (std::string_view{ it->name () }, "Marry"sv))
-        << "first iteration is Marry";
+    mt::expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+        << "first iteration is Mary";
     ++it;
     mt::expect (it != kids.end ()) << "second iteration";
     mt::expect (mt::eq (std::string_view{ it->name () }, "Bob"sv))
@@ -425,8 +425,8 @@ check_intrusive_list ()
 
     auto it = kids.begin ();
     mt::expect (it != kids.end ()) << "first iteration";
-    mt::expect (mt::eq (std::string_view{ it->name () }, "Marry"sv))
-        << "first iteration is Marry";
+    mt::expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+        << "first iteration is Mary";
     ++it;
     mt::expect (it != kids.end ()) << "second iteration";
     mt::expect (mt::eq (std::string_view{ it->name () }, "Bob"sv))
@@ -445,8 +445,8 @@ check_intrusive_list ()
 
     auto it = kids.begin ();
     mt::expect (it != kids.end ()) << "first iteration";
-    mt::expect (mt::eq (std::string_view{ it->name () }, "Marry"sv))
-        << "first iteration is Marry";
+    mt::expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+        << "first iteration is Mary";
     ++it;
     mt::expect (it != kids.end ()) << "second iteration";
     mt::expect (mt::eq (std::string_view{ it->name () }, "Sally"sv))
@@ -455,8 +455,8 @@ check_intrusive_list ()
     mt::expect (it == kids.end ()) << "iterator at end";
   });
 
-  mt::test_case ("Unlink Marry", [&] {
-    marry.unlink ();
+  mt::test_case ("Unlink Mary", [&] {
+    mary.unlink ();
     mt::expect (!kids.empty ()) << "list not empty";
 
     auto it = kids.begin ();
@@ -467,14 +467,14 @@ check_intrusive_list ()
     mt::expect (it == kids.end ()) << "iterator at end";
   });
 
-  mt::test_case ("Link Marry at head", [&] {
-    kids.link_head (marry);
+  mt::test_case ("Link Mary at head", [&] {
+    kids.link_head (mary);
     mt::expect (!kids.empty ()) << "list not empty";
 
     auto it = kids.begin ();
     mt::expect (it != kids.end ()) << "first iteration";
-    mt::expect (mt::eq (std::string_view{ it->name () }, "Marry"sv))
-        << "first iteration is Marry";
+    mt::expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+        << "first iteration is Mary";
     ++it;
     mt::expect (it != kids.end ()) << "second iteration";
     mt::expect (mt::eq (std::string_view{ it->name () }, "Sally"sv))
@@ -483,8 +483,8 @@ check_intrusive_list ()
     mt::expect (it == kids.end ()) << "iterator at end";
   });
 
-  mt::test_case ("Unlink Marry", [&] {
-    marry.unlink ();
+  mt::test_case ("Unlink Mary", [&] {
+    mary.unlink ();
     mt::expect (!kids.empty ()) << "list not empty";
 
     auto it = kids.begin ();
@@ -502,8 +502,8 @@ check_intrusive_list ()
     mt::expect (it == kids.end ()) << "iterator at end";
   });
 
-  mt::test_case ("Link Marry again", [&] {
-    kids.link_tail (marry);
+  mt::test_case ("Link Mary again", [&] {
+    kids.link_tail (mary);
     mt::expect (!kids.empty ()) << "list not empty";
 
     auto it = kids.begin ();

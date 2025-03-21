@@ -71,8 +71,8 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   children_list children_registry;
 
   // Add several members.
-  child marry{ "Marry" };
-  children_registry.link_tail (marry);
+  child mary{ "Mary" };
+  children_registry.link_tail (mary);
 
   child bob{ "Bob" };
   children_registry.link_tail (bob);
