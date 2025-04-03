@@ -17,6 +17,7 @@
 /**
 
 @defgroup micro-os-plus-utils-lists µOS++ Intrusive Lists
+@ingroup micro-os-plus
 
 */
 -------------------------------------------------------------------------------

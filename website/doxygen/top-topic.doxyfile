@@ -1,0 +1,26 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.com/).
+ * Copyright (c) 2021 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software
+ * for any purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can
+ * be obtained from https://opensource.org/licenses/mit.
+ */
+
+// Not really a .doxyfile, since it does not define variables.
+// But also it cannot be .md, since Doxygen renders markdown files
+// as extra entries in the sidebar. Suggestions welcomed!
+
+-------------------------------------------------------------------------------
+/**
+
+@defgroup micro-os-plus µOS++
+@details
+
+The **µOS++ Framework** is the top project that includes multiple
+source libraries as separate GitHub projects.
+
+*/
+-------------------------------------------------------------------------------
