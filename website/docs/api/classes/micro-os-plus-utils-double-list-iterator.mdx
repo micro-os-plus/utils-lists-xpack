@@ -1,0 +1,368 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+title: The double_list_iterator Class Template Reference
+slug: /api/classes/micro-os-plus/utils/double-list-iterator
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
+import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+<DoxygenPage version="1.13.2">
+
+A class template for a doubly linked list forward iterator. <a href="#details">More...</a>
+
+## Fully Qualified Name
+
+<CodeBlock>micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="micro-os-plus/utils/lists.h" permalink="/docs/api/files/include/micro-os-plus/utils/lists-h" isLocal="false" />
+</IncludesList>
+
+<h2>Member Typedefs</h2>
+
+<MembersList>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a2503f7f12aa9fda358cf1536cd36c313">difference&#95;type</Link> = ptrdiff&#95;t</>}>
+Type of pointer difference. <Link to="#a2503f7f12aa9fda358cf1536cd36c313">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a608d5247c01f595f4f00d5a54c3fafc2">iterator&#95;category</Link> = std::forward&#95;iterator&#95;tag</>}>
+Category of iterator. <Link to="#a608d5247c01f595f4f00d5a54c3fafc2">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#afb43bcf73a842c31d48e128c4c289d26">iterator&#95;pointer</Link> = N &#42;</>}>
+Type of reference to the iterator internal pointer. <Link to="#afb43bcf73a842c31d48e128c4c289d26">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a4d40f463ce14aaed72a3132e49ae99b0">pointer</Link> = <Link to="#ac2589f53de7916d046b4177f4f7ff346">value&#95;type</Link> &#42;</>}>
+Type of pointer to object <em>pointed to</em> by the iterator. <Link to="#a4d40f463ce14aaed72a3132e49ae99b0">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#ac0ad55399bdc6d2b83a1829f86ff7586">reference</Link> = <Link to="#ac2589f53de7916d046b4177f4f7ff346">value&#95;type</Link> &amp;</>}>
+Type of reference to object <em>pointed to</em> by the iterator. <Link to="#ac0ad55399bdc6d2b83a1829f86ff7586">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#ac2589f53de7916d046b4177f4f7ff346">value&#95;type</Link> = U</>}>
+Type of value <em>pointed to</em> by the iterator. <Link to="#ac2589f53de7916d046b4177f4f7ff346">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+<h2>Protected Member Attributes</h2>
+
+<MembersList>
+
+<MembersListItem itemLeft={<><Link to="#afb43bcf73a842c31d48e128c4c289d26">iterator&#95;pointer</Link></>} itemRight={<><Link to="#ac185c8ffa5f9d12454f264fa9b0a1733">node&#95;</Link></>}>
+Pointer to the node. <Link to="#ac185c8ffa5f9d12454f264fa9b0a1733">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+<h2>Member Functions</h2>
+
+<MembersList>
+
+<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#ac26720e2d8837ad6e26e2f103bf3e8e3">double&#95;list&#95;iterator</Link> ()</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#a9dcb547fe44a5956040c3c873fa2ae7d">double&#95;list&#95;iterator</Link> (iterator_pointer const node)</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#a03f4f8570751fcfdcd9ad2ad4e1f27d9">double&#95;list&#95;iterator</Link> (reference element)</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#afb43bcf73a842c31d48e128c4c289d26">iterator&#95;pointer</Link></>} itemRight={<><Link to="#a65b1288140bd58837231b1fb68706a12">get&#95;iterator&#95;pointer</Link> () const</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#a4d40f463ce14aaed72a3132e49ae99b0">pointer</Link></>} itemRight={<><Link to="#a45be1449074d7ebe2a8c1acad83f485d">get&#95;pointer</Link> () const</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft="bool" itemRight={<><Link to="#a5cce9653aa78c5989ef863a6a7831d59">operator!=</Link> (const double_list_iterator &other) const</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#ac0ad55399bdc6d2b83a1829f86ff7586">reference</Link></>} itemRight={<><Link to="#a81984e048a2b2778bfd6fd5098a4e7d4">operator&#42;</Link> () const</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp;</>} itemRight={<><Link to="#a79955aa86c312930d561bfdaa7f8e740">operator++</Link> ()</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link></>} itemRight={<><Link to="#a60ce68c08d226be1b5ff5bc92e21a4fc">operator++</Link> (int)</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp;</>} itemRight={<><Link to="#a511da5b3fb41b18a16d1d04c4f7b1095">operator--</Link> ()</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link></>} itemRight={<><Link to="#a1bc00178e8a6da8c816716236fd60be1">operator--</Link> (int)</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#a4d40f463ce14aaed72a3132e49ae99b0">pointer</Link></>} itemRight={<><Link to="#a4c59c7d0ddbf8a7e2008d6288a042c08">operator-&gt;</Link> () const</>}>
+</MembersListItem>
+
+<MembersListItem itemLeft="bool" itemRight={<><Link to="#a4046bc946ebb2d019dac5fd3ffd4d118">operator==</Link> (const double_list_iterator &other) const</>}>
+</MembersListItem>
+
+</MembersList>
+
+## Description {#details}
+
+The class template declaration is:
+
+<CodeBlock>template &lt; class T, class N = T, class U = T &gt;
+class micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;;</CodeBlock>
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">Type of object returned by the iterator.</ParametersListItem>
+<ParametersListItem name="N">Type of intrusive node. Must have the public members <b>previous</b> &amp; <b>next</b>.</ParametersListItem>
+<ParametersListItem name="U">Type stored in the list, derived from T.</ParametersListItem>
+</ParametersList>
+
+This class provides an interface similar to <code>std::list::iterator</code>.
+
+In a common doubly linked list, all types are <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links">double&#95;list&#95;links</Link></code>.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00389">389</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+
+<SectionDefinition>
+
+## Member Typedefs
+
+### difference_type {#a2503f7f12aa9fda358cf1536cd36c313}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::difference_type =  ptrdiff_t</>}>
+Type of pointer difference.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00415">415</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### iterator_category {#a608d5247c01f595f4f00d5a54c3fafc2}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::iterator_category =  std::forward_iterator_tag</>}>
+Category of iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00420">420</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### iterator_pointer {#afb43bcf73a842c31d48e128c4c289d26}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::iterator_pointer =  N*</>}>
+Type of reference to the iterator internal pointer.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00410">410</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### pointer {#a4d40f463ce14aaed72a3132e49ae99b0}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::pointer =  value_type*</>}>
+Type of pointer to object <em>pointed to</em> by the iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00400">400</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### reference {#ac0ad55399bdc6d2b83a1829f86ff7586}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::reference =  value_type&</>}>
+Type of reference to object <em>pointed to</em> by the iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00405">405</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### value_type {#ac2589f53de7916d046b4177f4f7ff346}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::value_type =  U</>}>
+Type of value <em>pointed to</em> by the iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00395">395</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### node_ {#ac185c8ffa5f9d12454f264fa9b0a1733}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>iterator_pointer micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</>}
+ labels = {["protected"]}>
+Pointer to the node.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00466">466</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Constructors
+
+### double_list_iterator() {#ac26720e2d8837ad6e26e2f103bf3e8e3}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator ()</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00423">423</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### double_list_iterator() {#a9dcb547fe44a5956040c3c873fa2ae7d}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator (<Link to="#afb43bcf73a842c31d48e128c4c289d26">iterator&#95;pointer</Link> const node)</>}
+ labels = {["explicit", "constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00425">425</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### double_list_iterator() {#a03f4f8570751fcfdcd9ad2ad4e1f27d9}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator (<Link to="#ac0ad55399bdc6d2b83a1829f86ff7586">reference</Link> element)</>}
+ labels = {["explicit", "constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00427">427</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+## Member Functions
+
+### get_iterator_pointer() {#a65b1288140bd58837231b1fb68706a12}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt;::iterator_pointer micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::get_iterator_pointer () const</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00460">460</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### get_pointer() {#a45be1449074d7ebe2a8c1acad83f485d}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>pointer micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::get_pointer () const</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00457">457</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator!=() {#a5cce9653aa78c5989ef863a6a7831d59}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>bool micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator!= (const <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp; other) const</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00454">454</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator*() {#a81984e048a2b2778bfd6fd5098a4e7d4}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt;::reference micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator* () const</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00436">436</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator++() {#a79955aa86c312930d561bfdaa7f8e740}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt; & micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator++ ()</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00439">439</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator++() {#a60ce68c08d226be1b5ff5bc92e21a4fc}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt; micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator++ (int)</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00442">442</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator--() {#a511da5b3fb41b18a16d1d04c4f7b1095}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt; & micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator-- ()</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00445">445</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator--() {#a1bc00178e8a6da8c816716236fd60be1}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt; micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator-- (int)</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00448">448</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator->() {#a4c59c7d0ddbf8a7e2008d6288a042c08}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>double_list_iterator&lt; T, N, U &gt;::pointer micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator-&gt; () const</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00433">433</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator==() {#a4046bc946ebb2d019dac5fd3ffd4d118}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, class U&gt;</>}
+  prototype={<>bool micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator== (const <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp; other) const</>}
+ labels = {["constexpr"]}>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00451">451</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

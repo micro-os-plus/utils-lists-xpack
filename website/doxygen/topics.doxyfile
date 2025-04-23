@@ -9,44 +9,44 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
-// Not really a .doxyfile, since it does not define variables.
-// But also it cannot be .md, since Doxygen renders markdown files
-// as extra entries in the sidebar. Suggestions welcomed!
+// Not really a .doxyfile, since it does not define any variables.
+// But it cannot be .md either, since Doxygen renders markdown files
+// in the sidebar.
 
--------------------------------------------------------------------------------
 /**
+
+@file
+@brief The Doxygen project specific topics definitions.
 
 @defgroup micro-os-plus-utils-lists µOS++ Intrusive Lists
+@brief The µOS++ Intrusive Lists project topics.
 @ingroup micro-os-plus
+@details
 
-*/
--------------------------------------------------------------------------------
-/**
+The **µOS++ Intrusive Lists** project is a C++ source code library
+designed to implement **µOS++ intrusive doubly linked lists**. These
+specialised lists eliminate the need for dynamic memory allocations
+by embedding linkage directly within the list elements, making them
+particularly advantageous for embedded systems.
 
 @defgroup micro-os-plus-utils-lists-cpp-api C++ API
+@brief The µOS++ Intrusive Lists C++ API topics.
 @ingroup micro-os-plus-utils-lists
 @details
 
 The µOS++ **utils-list** implementation uses C++ templates,
-and thus the main API is C++.
-
-*/
--------------------------------------------------------------------------------
-/**
+thus the main API is C++.
 
 @defgroup micro-os-plus-utils-lists-c-api C API
+@brief The µOS++ Intrusive Lists C API topics (hint: none).
 @ingroup micro-os-plus-utils-lists
 @details
 
-The µOS++ **utils-list** project is specifically tailored for C++ and does
-not provide equivalent definitions for the C programming language.
+The µOS++ **utils-list** project is specifically designed for C++ and does
+not include equivalent definitions for the C programming language.
 
-*/
--------------------------------------------------------------------------------
-
-/**
-
-@defgroup micro-os-plus-utils-lists-intrusive-lists Intrusive doubly linked lists
+@defgroup micro-os-plus-utils-lists-intrusive-lists Intrusive Doubly Linked Lists
+@brief The µOS++ intrusive doubly linked lists classes.
 @ingroup micro-os-plus-utils-lists-cpp-api
 @details
 
@@ -87,17 +87,29 @@ using static_children_list = os::utils::intrusive_list<
 static_children_list kids_registry;
 ```
 
-*/
--------------------------------------------------------------------------------
-
-/**
-
-@defgroup micro-os-plus-utils-lists-double-lists Doubly linked lists
+@defgroup micro-os-plus-utils-lists-double-lists Doubly Linked Lists
+@brief The µOS++ doubly linked lists classes.
 @ingroup micro-os-plus-utils-lists-cpp-api
 @details
+
+Traditional doubly linked or low intrusive doubly linked lists.
 
 For simpler use cases, like traditional list or low intrusive lists,
 there are several simpler classes and templates.
 
+@dir include/micro-os-plus/utils
+@brief The folder with the utilities header files.
+
+@file website/doxygen/top-common.doxyfile
+@brief The Doxygen top common definitions.
+
+@dir include
+@brief The top folder with all header files.
+
+@dir include/micro-os-plus
+@brief The top folder with the µOS++ header files.
+
+@dir src
+@brief The top folder with the project source files.
+
 */
--------------------------------------------------------------------------------

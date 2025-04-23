@@ -10,7 +10,7 @@ To build the site, run the following from the top project folder:
 doxygen website/doxygen/config.doxygen
 ```
 
-The result is in `website/static/reference`.
+The result is in `website/static/doxygen`.
 
 ## Content
 

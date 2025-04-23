@@ -1,0 +1,512 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+title: The double_list Class Template Reference
+slug: /api/classes/micro-os-plus/utils/double-list
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - class
+toc_max_heading_level: 3
+
+---
+
+import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
+import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
+import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+
+<DoxygenPage version="1.13.2">
+
+A class template for a doubly linked list of nodes. <a href="#details">More...</a>
+
+## Fully Qualified Name
+
+<CodeBlock>micro_os_plus::utils::double_list&lt; T, L &gt;</CodeBlock>
+
+## Included Headers
+
+<IncludesList>
+<IncludesListItem filePath="micro-os-plus/utils/lists.h" permalink="/docs/api/files/include/micro-os-plus/utils/lists-h" isLocal="false" />
+</IncludesList>
+
+## Derived Classes
+
+<MembersList>
+
+<MembersListItem itemLeft="class" itemRight={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;</Link></>}>
+A class template for a list of nodes which store the links inside themselves as intrusive nodes. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list#details">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+<h2>Member Typedefs</h2>
+
+<MembersList>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#af5154bec6413008e1c87431955b7ff62">is&#95;statically&#95;allocated</Link> = typename links&#95;type::is&#95;statically&#95;allocated</>}>
+Type indicating that the links node is statically allocated. <Link to="#af5154bec6413008e1c87431955b7ff62">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#acf8f116b672e82b97745b87ec664b379">iterator</Link> = <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link>&lt; <Link to="#acdef791cfa2b3c2199d387aa6edafc3e">value&#95;type</Link> &gt;</>}>
+Type of iterator over the values. <Link to="#acf8f116b672e82b97745b87ec664b379">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a3edeece487e107c419c78a061315dc45">iterator&#95;pointer</Link> = <Link to="#acdef791cfa2b3c2199d387aa6edafc3e">value&#95;type</Link> &#42;</>}>
+Type of reference to the iterator internal pointer. <Link to="#a3edeece487e107c419c78a061315dc45">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a2478a7ae1ba2337b5c7be58face3a459">links&#95;type</Link> = L</>}>
+Type of the links node object where the pointers to the list head and tail are stored. <Link to="#a2478a7ae1ba2337b5c7be58face3a459">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a7414b872d9dce66e21c17e37f9e127c1">pointer</Link> = <Link to="#acdef791cfa2b3c2199d387aa6edafc3e">value&#95;type</Link> &#42;</>}>
+Type of pointer to object <em>pointed to</em> by the iterator. <Link to="#a7414b872d9dce66e21c17e37f9e127c1">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#a9fb1bd5b75cbd9f56ea199e44a695946">reference</Link> = <Link to="#acdef791cfa2b3c2199d387aa6edafc3e">value&#95;type</Link> &amp;</>}>
+Type of reference to object <em>pointed to</em> by the iterator. <Link to="#a9fb1bd5b75cbd9f56ea199e44a695946">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="using" itemRight={<><Link to="#acdef791cfa2b3c2199d387aa6edafc3e">value&#95;type</Link> = T</>}>
+Type of value <em>pointed to</em> by the iterator. <Link to="#acdef791cfa2b3c2199d387aa6edafc3e">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+<h2>Protected Member Attributes</h2>
+
+<MembersList>
+
+<MembersListItem itemLeft={<><Link to="#a2478a7ae1ba2337b5c7be58face3a459">links&#95;type</Link></>} itemRight={<><Link to="#a22d5f70c0589acc1c18d10e740c7a599">links&#95;</Link></>}>
+The list top node used to point to <b>head</b> and <b>tail</b> nodes. <Link to="#a22d5f70c0589acc1c18d10e740c7a599">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+<h2>Member Functions</h2>
+
+<MembersList>
+
+<MembersListItem itemLeft="&nbsp;" itemRight={<><Link to="#aae4f864990bb22d349fc6f4fe06978fa">double&#95;list</Link> ()</>}>
+Construct a doubly linked list. <Link to="#aae4f864990bb22d349fc6f4fe06978fa">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#a9eba8d60614723f1c041359fe8d9f4bd">~double&#95;list</Link> ()</>}>
+Destruct the list. <Link to="#a9eba8d60614723f1c041359fe8d9f4bd">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#acf8f116b672e82b97745b87ec664b379">iterator</Link></>} itemRight={<><Link to="#acf7950853947782be95524ffe30febef">begin</Link> () const</>}>
+Iterator begin. <Link to="#acf7950853947782be95524ffe30febef">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="void" itemRight={<><Link to="#ab19a62873a09745075bdceb60096c03c">clear</Link> (void)</>}>
+Clear the list. <Link to="#ab19a62873a09745075bdceb60096c03c">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="bool" itemRight={<><Link to="#ae5fcdb79a6a10fa523cd39a5363ff76a">empty</Link> (void) const</>}>
+Check if the list is empty. <Link to="#ae5fcdb79a6a10fa523cd39a5363ff76a">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#acf8f116b672e82b97745b87ec664b379">iterator</Link></>} itemRight={<><Link to="#abb4f476badf26d59503fe5a3a2ad0400">end</Link> () const</>}>
+Iterator end. <Link to="#abb4f476badf26d59503fe5a3a2ad0400">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#a7414b872d9dce66e21c17e37f9e127c1">pointer</Link></>} itemRight={<><Link to="#aba89961ff686c458b91bbe59f2480519">head</Link> (void) const</>}>
+Get the list <b>head</b>. <Link to="#aba89961ff686c458b91bbe59f2480519">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="void" itemRight={<><Link to="#a6c5ca2deb541088fac9aae237e0c3699">initialize&#95;once</Link> (void)</>}>
+Initialize the list only at first run. <Link to="#a6c5ca2deb541088fac9aae237e0c3699">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="void" itemRight={<><Link to="#a0be123af44b95f76b0347e38a1e93d00">link&#95;head</Link> (reference node)</>}>
+Add a node to the head of the list. <Link to="#a0be123af44b95f76b0347e38a1e93d00">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="void" itemRight={<><Link to="#aeb06a4ae2e5497418a29e488d989f6da">link&#95;tail</Link> (reference node)</>}>
+Add a node to the tail of the list. <Link to="#aeb06a4ae2e5497418a29e488d989f6da">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft={<>const <Link to="#a2478a7ae1ba2337b5c7be58face3a459">links&#95;type</Link> &#42;</>} itemRight={<><Link to="#a87bd66fd3786a4183968c0127c1f487e">links&#95;pointer</Link> () const</>}>
+Get the address of the node storing the list links. <Link to="#a87bd66fd3786a4183968c0127c1f487e">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft={<><Link to="#a7414b872d9dce66e21c17e37f9e127c1">pointer</Link></>} itemRight={<><Link to="#a4ff535226e16d0d2e5aeb8c6a5590021">tail</Link> (void) const</>}>
+Get the list <b>tail</b>. <Link to="#a4ff535226e16d0d2e5aeb8c6a5590021">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="bool" itemRight={<><Link to="#aee22388cb4629e7a170c216cb95d0236">uninitialized</Link> (void) const</>}>
+Check if the list is uninitialised (only statically allocated lists can be uninitialised). <Link to="#aee22388cb4629e7a170c216cb95d0236">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+## Description {#details}
+
+The class template declaration is:
+
+<CodeBlock>template &lt; class T, class L = double_list_links &gt;
+class micro_os_plus::utils::double_list&lt; T, L &gt;;</CodeBlock>
+
+<ParametersList title="Template Parameters">
+<ParametersListItem name="T">Type of the elements linked into the list, derived from class <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link></code>.</ParametersListItem>
+<ParametersListItem name="L">Type of the links node (one of <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links">double&#95;list&#95;links</Link></code> or <code><Link to="/docs/api/classes/micro-os-plus/utils/static-double-list-links">static&#95;double&#95;list&#95;links</Link></code>).</ParametersListItem>
+</ParametersList>
+
+A doubly linked list is a pair of head/tail pointers, allowing to iterate over the nodes.
+
+:::info
+Currently only forward iterators are provided, but there is no problem to add reverse iterators, if needed.
+:::
+
+The list elements (of type T) should be derived from the <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link></code> class, (usually from <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links">double&#95;list&#95;links</Link></code>) extended with the payload, that may be either the actual content or a pointer to the content.
+
+The iterators return pointers to the list elements, i.e. to the beginning of the objects of type T.
+
+:::info
+The class does not use inheritance, but composition for the links node, to avoid inheriting unwanted methods from it.
+:::
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00502">502</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+
+<SectionDefinition>
+
+## Member Typedefs
+
+### is_statically_allocated {#af5154bec6413008e1c87431955b7ff62}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::is_statically_allocated = 
+        typename links_type::is_statically_allocated</>}>
+Type indicating that the links node is statically allocated.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00544">544</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### iterator {#acf8f116b672e82b97745b87ec664b379}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::iterator =  double_list_iterator&lt;value_type&gt;</>}>
+Type of iterator over the values.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00534">534</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### iterator_pointer {#a3edeece487e107c419c78a061315dc45}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::iterator_pointer =  value_type*</>}>
+Type of reference to the iterator internal pointer.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00539">539</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### links_type {#a2478a7ae1ba2337b5c7be58face3a459}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::links_type =  L</>}>
+Type of the links node object where the pointers to the list head and tail are stored.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00514">514</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### pointer {#a7414b872d9dce66e21c17e37f9e127c1}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::pointer =  value_type*</>}>
+Type of pointer to object <em>pointed to</em> by the iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00524">524</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### reference {#a9fb1bd5b75cbd9f56ea199e44a695946}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::reference =  value_type&</>}>
+Type of reference to object <em>pointed to</em> by the iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00529">529</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### value_type {#acdef791cfa2b3c2199d387aa6edafc3e}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>using micro_os_plus::utils::double_list&lt; T, L &gt;::value_type =  T</>}>
+Type of value <em>pointed to</em> by the iterator.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00519">519</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Protected Member Attributes
+
+### links_ {#a22d5f70c0589acc1c18d10e740c7a599}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>links_type micro_os_plus::utils::double_list&lt; T, L &gt;::links_</>}
+ labels = {["protected"]}>
+The list top node used to point to <b>head</b> and <b>tail</b> nodes.
+
+The node <b>next</b> pointer points to the list head, and the <b>previous</b> pointer points to the list tail.
+
+To simplify processing, the list always has these pointers set, with an empty list node pointing to itself.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00689">689</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+<SectionDefinition>
+
+## Constructors
+
+### double_list() {#aae4f864990bb22d349fc6f4fe06978fa}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>micro_os_plus::utils::double_list&lt; T, L &gt;::double_list ()</>}>
+Construct a doubly linked list.
+
+For non-statically allocated lists, the initial list status is <em>empty</em>.
+
+Statically allocated remain <em>uninitialised</em>.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00550">550</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+## Destructor
+
+### ~double_list() {#a9eba8d60614723f1c041359fe8d9f4bd}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>micro_os_plus::utils::double_list&lt; T, L &gt;::~double_list ()</>}
+ labels = {["constexpr"]}>
+Destruct the list.
+
+Normally at this point there must be no nodes in the list. However, for statically allocated lists, this might not be always true.
+
+:::info
+In debug mode, the code warns if the list is not empty when destroyed.
+:::
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00573">573</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+## Member Functions
+
+### begin() {#acf7950853947782be95524ffe30febef}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>double_list&lt; T, L &gt;::iterator micro_os_plus::utils::double_list&lt; T, L &gt;::begin () const</>}>
+Iterator begin.
+
+<SectionUser title="Returns">
+An iterator positioned at the first element.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00654">654</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### clear() {#ab19a62873a09745075bdceb60096c03c}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>void micro_os_plus::utils::double_list&lt; T, L &gt;::clear (void)</>}>
+Clear the list.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+Initialise the mandatory node with links to itself.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00615">615</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### empty() {#ae5fcdb79a6a10fa523cd39a5363ff76a}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>bool micro_os_plus::utils::double_list&lt; T, L &gt;::empty (void) const</>}>
+Check if the list is empty.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<ParametersList title="Return Values">
+<ParametersListItem name="true">The list has <b>no</b> nodes.</ParametersListItem>
+<ParametersListItem name="false">The list has <b>at least one</b> node.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00605">605</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### end() {#abb4f476badf26d59503fe5a3a2ad0400}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>double_list&lt; T, L &gt;::iterator micro_os_plus::utils::double_list&lt; T, L &gt;::end () const</>}>
+Iterator end.
+
+<SectionUser title="Returns">
+An iterator positioned after the last element.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00661">661</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### head() {#aba89961ff686c458b91bbe59f2480519}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>double_list&lt; T, L &gt;::pointer micro_os_plus::utils::double_list&lt; T, L &gt;::head (void) const</>}
+ labels = {["constexpr"]}>
+Get the list <b>head</b>.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Pointer to the head node.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00624">624</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### initialize_once() {#a6c5ca2deb541088fac9aae237e0c3699}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>void micro_os_plus::utils::double_list&lt; T, L &gt;::initialize_once (void)</>}>
+Initialize the list only at first run.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Nothing.
+</SectionUser>
+
+If the statically allocated list is still in the initial <em>uninitialised</em> state (with both pointers null), initialise the list to the empty state, with both pointers pointing to itself.
+
+For non-statically initialised lists, this method is ineffective.
+
+:::info
+Must be manually called for statically allocated list before inserting elements, or any other operations.
+:::
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00595">595</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### link_head() {#a0be123af44b95f76b0347e38a1e93d00}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>void micro_os_plus::utils::double_list&lt; T, L &gt;::link_head (<Link to="#a9fb1bd5b75cbd9f56ea199e44a695946">reference</Link> node)</>}>
+Add a node to the head of the list.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00645">645</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### link_tail() {#aeb06a4ae2e5497418a29e488d989f6da}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>void micro_os_plus::utils::double_list&lt; T, L &gt;::link_tail (<Link to="#a9fb1bd5b75cbd9f56ea199e44a695946">reference</Link> node)</>}>
+Add a node to the tail of the list.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00639">639</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### links_pointer() {#a87bd66fd3786a4183968c0127c1f487e}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>const links_type * micro_os_plus::utils::double_list&lt; T, L &gt;::links_pointer () const</>}
+ labels = {["inline", "constexpr"]}>
+Get the address of the node storing the list links.
+
+<SectionUser title="Returns">
+A pointer to the list head object.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00670">670</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### tail() {#a4ff535226e16d0d2e5aeb8c6a5590021}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>double_list&lt; T, L &gt;::pointer micro_os_plus::utils::double_list&lt; T, L &gt;::tail (void) const</>}
+ labels = {["constexpr"]}>
+Get the list <b>tail</b>.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<SectionUser title="Returns">
+Pointer to the tail node.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00633">633</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### uninitialized() {#aee22388cb4629e7a170c216cb95d0236}
+
+<MemberDefinition
+  template={<>template &lt;class T, class L&gt;</>}
+  prototype={<>bool micro_os_plus::utils::double_list&lt; T, L &gt;::uninitialized (void) const</>}>
+Check if the list is uninitialised (only statically allocated lists can be uninitialised).
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+<ParametersList title="Return Values">
+<ParametersListItem name="true">The list was <b>not</b> initialised.</ParametersListItem>
+<ParametersListItem name="false">The list was initialised.</ParametersListItem>
+</ParametersList>
+
+An uninitialized node is a node with any of the pointers set to <code>nullptr</code>.
+
+Only statically allocated nodes in the initial state are <em>uninitialized</em>.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00585">585</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+</SectionDefinition>
+
+</DoxygenPage>

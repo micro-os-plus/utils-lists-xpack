@@ -140,6 +140,10 @@ const config: Config = {
         disableInDev: false,
       },
     ],
+    [
+      '@xpack/docusaurus-plugin-doxygen',
+      {}
+    ],
 
     // Local plugins.
     './src/plugins/SelectReleasesPlugin',
@@ -277,10 +281,11 @@ const config: Config = {
           ],
         },
         {
-          to: 'pathname:///reference/topics.html',
+          to: '/docs/api',
           label: 'API',
           position: 'left',
         },
+
         {
           type: 'dropdown',
           to: '/blog',

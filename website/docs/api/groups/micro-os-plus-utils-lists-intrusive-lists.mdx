@@ -1,0 +1,85 @@
+---
+
+# DO NOT EDIT!
+# Automatically generated via docusaurus-plugin-doxygen by Doxygen.
+
+title: The Intrusive Doubly Linked Lists Reference
+slug: /api/groups/micro-os-plus-utils-lists-intrusive-lists
+custom_edit_url: null
+keywords:
+  - doxygen
+  - reference
+  - group
+
+---
+
+import Link from '@docusaurus/Link'
+import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
+import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
+import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+
+<DoxygenPage version="1.13.2">
+
+The µOS++ intrusive doubly linked lists classes. <a href="#details">More...</a>
+
+## Classes
+
+<MembersList>
+
+<MembersListItem itemLeft="class" itemRight={<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;</Link>}>
+A class template for a list of nodes which store the links inside themselves as intrusive nodes. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list#details">More...</Link>
+</MembersListItem>
+
+<MembersListItem itemLeft="class" itemRight={<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;</Link>}>
+A class template for the intrusive list iterator. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator#details">More...</Link>
+</MembersListItem>
+
+</MembersList>
+
+## Description {#details}
+
+Intrusive lists are doubly linked lists that keep the two pointers inside each linked object.
+
+The intrusive lists can be defined by instantiating the <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro&#95;os&#95;plus::utils::intrusive&#95;list</Link></code> class template.
+
+<SectionUser title="Example">
+
+</SectionUser>
+
+
+<ProgramListing extension="cpp">
+
+<CodeLine><Highlight kind="preprocessor">#include &lt;<Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">micro-os-plus/utils/lists.h</Link>&gt;</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">os = <Link to="/docs/api/namespaces/micro-os-plus">micro&#95;os&#95;plus</Link>;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">class </Highlight><Highlight kind="normal">child</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#123;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  child (</Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; name);</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// ...</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">protected</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="keyword">const</Highlight><Highlight kind="normal"> </Highlight><Highlight kind="keywordtype">char</Highlight><Highlight kind="normal">&#42; name&#95;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">public</Highlight><Highlight kind="normal">:</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Intrusive node used to link this child to the registry list.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  </Highlight><Highlight kind="comment">// Must be public.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  os::utils::double&#95;list&#95;links registry&#95;links&#95;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">&#125;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">static&#95;children&#95;list = os::utils::intrusive&#95;list&lt;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        child, </Highlight><Highlight kind="comment">// type of nodes in the list</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (child::registry&#95;links&#95;), </Highlight><Highlight kind="comment">// type of the `registry&#95;links&#95;` member</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        &amp;child::registry&#95;links&#95;, </Highlight><Highlight kind="comment">// name of member</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        static&#95;double&#95;list&#95;links&gt;; </Highlight><Highlight kind="comment">// type of the head links node</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal"></Highlight><Highlight kind="comment">// The list head is statically allocated.</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">static&#95;children&#95;list kids&#95;registry;</Highlight></CodeLine>
+
+</ProgramListing>
+
+</DoxygenPage>
