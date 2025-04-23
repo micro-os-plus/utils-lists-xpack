@@ -16,19 +16,19 @@ toc_max_heading_level: 3
 
 import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
+import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
 import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
 import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
 import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
-import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
-import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
-import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
-import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
-import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
-import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
-import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
+import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 <DoxygenPage version="1.13.2">
 
@@ -214,7 +214,7 @@ Intrusive nodes do not need separate allocations for the links, but store them i
 
 For statically allocated lists, set L=<Link to="/docs/api/classes/micro-os-plus/utils/static-double-list-links">static&#95;double&#95;list&#95;links</Link>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00839">839</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00838">838</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
@@ -227,7 +227,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::difference_type =  ptrdiff_t</>}>
 Type of pointer difference.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00887">887</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00886">886</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### is_statically_allocated {#a54065d590254d59ade7c08ca0def9aff}
@@ -238,7 +238,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
         typename links_type::is_statically_allocated</>}>
 Type of reference to the iterator internal pointer.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00876">876</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00875">875</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator {#a6c44dc25422336e98d5c450874496041}
@@ -248,7 +248,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::iterator =  intrusive_list_iterator&lt;T, N, MP, U&gt;</>}>
 Type of iterator over the values.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00871">871</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00870">870</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator_pointer {#a3c9a90f0bde3f7d498d4419c41adf723}
@@ -258,7 +258,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::iterator_pointer =  N*</>}>
 Type of reference to the iterator internal pointer.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00882">882</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00881">881</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### links_type {#a0bb5c5cba26ff911bbae525200d9e3c1}
@@ -268,7 +268,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::links_type =  L</>}>
 Type of the list links node object where the pointers to the list head and tail are stored.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00851">851</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00850">850</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### pointer {#ac7006fb066460b5ff008f6f64d62e272}
@@ -278,7 +278,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::pointer =  value_type*</>}>
 Type of pointer to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00861">861</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00860">860</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### reference {#aa9d68f393f6506fd6d84d7f9e7e520c3}
@@ -288,7 +288,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::reference =  value_type&</>}>
 Type of reference to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00866">866</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00865">865</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### value_type {#a75fc498797691719252818fb40047e14}
@@ -298,7 +298,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::value_type =  U</>}>
 Type of value <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00856">856</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00855">855</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -315,7 +315,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
  labels = {["constexpr"]}>
 Construct an intrusive doubly linked list.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00892">892</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00891">891</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ## Destructor
@@ -328,7 +328,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
  labels = {["constexpr"]}>
 Destruct the list.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00915">915</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00914">914</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ## Member Functions
@@ -345,7 +345,7 @@ Iterator begin.
 An iterator positioned at the first element.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00977">977</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00976">976</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### clear() {#ab19a62873a09745075bdceb60096c03c}
@@ -365,7 +365,7 @@ Nothing.
 
 Initialise the mandatory node with links to itself.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00615">615</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00614">614</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### empty() {#a0fa893095f3705c8dc2c59033258faac}
@@ -385,7 +385,7 @@ None.
 <ParametersListItem name="false">The list has <b>at least one</b> node.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00936">936</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00935">935</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### end() {#a7b1a1165f207467209a06cf7cb97e6be}
@@ -400,7 +400,7 @@ Iterator begin.
 An iterator positioned after the last element.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00984">984</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00983">983</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### head() {#aba89961ff686c458b91bbe59f2480519}
@@ -419,7 +419,7 @@ None.
 Pointer to the head node.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00624">624</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00623">623</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### initialize_once() {#a6ea6345b2ce0664b1fc1bbd484d7a653}
@@ -445,7 +445,7 @@ For non-statically initialised lists, this method is ineffective.
 Must be manually called for statically allocated list before inserting elements, or any other operations.
 :::
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00926">926</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00925">925</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### link_head() {#a69ff5a010ced371d2bff3e4ebe1fb13d}
@@ -463,7 +463,7 @@ Add a node to the head of the list.
 Nothing.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00954">954</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00953">953</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### link_tail() {#a39f23959a6cd2774eb5ed1f1caeda242}
@@ -481,7 +481,7 @@ Add a node to the tail of the list.
 Nothing.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00945">945</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00944">944</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### links_pointer() {#a87bd66fd3786a4183968c0127c1f487e}
@@ -496,7 +496,7 @@ Get the address of the node storing the list links.
 A pointer to the list head object.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00670">670</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00669">669</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### tail() {#a4ff535226e16d0d2e5aeb8c6a5590021}
@@ -515,7 +515,7 @@ None.
 Pointer to the tail node.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00633">633</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00632">632</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#aee22388cb4629e7a170c216cb95d0236}
@@ -538,7 +538,7 @@ An uninitialized node is a node with any of the pointers set to <code>nullptr</c
 
 Only statically allocated nodes in the initial state are <em>uninitialized</em>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00585">585</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### unlink_head() {#a5705b4896215d3fc3d8941c26e814bac}
@@ -552,7 +552,7 @@ Unlink the first element from the list.
 Pointer to the first element in the list.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00968">968</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00967">967</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### unlink_tail() {#ad499ca0d5953647f3a23876e28f73295}
@@ -566,7 +566,7 @@ Unlink the last element from the list.
 Pointer to the last element in the list.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00961">961</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00960">960</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -587,7 +587,7 @@ Get the address of the node.
 A pointer with the address of the node.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00993">993</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00992">992</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -608,7 +608,7 @@ The node <b>next</b> pointer points to the list head, and the <b>previous</b> po
 
 To simplify processing, the list always has these pointers set, with an empty list node pointing to itself.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00689">689</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00688">688</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

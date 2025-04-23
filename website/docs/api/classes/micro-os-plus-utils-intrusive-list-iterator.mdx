@@ -17,15 +17,15 @@ toc_max_heading_level: 3
 import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
 import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
 import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
 import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
-import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
-import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
-import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
-import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 <DoxygenPage version="1.13.2">
 
@@ -143,7 +143,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;;</CodeB
 
 This class provides an interface similar to <code>std::list::iterator</code>, except that it keeps track of the offset where the intrusive list element is located in the parent object.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00710">710</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00709">709</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
@@ -156,7 +156,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::difference_type =  ptrdiff_t</>}>
 Type of pointer difference.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00736">736</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00735">735</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator_category {#a11541e8681f9015d6b8e8cc93c15eb4a}
@@ -166,7 +166,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_category =  std::forward_iterator_tag</>}>
 Category of iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00741">741</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00740">740</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator_pointer {#a520f5e4b1067d0febf857e04f6f37b83}
@@ -176,7 +176,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_pointer =  N*</>}>
 Type of reference to the iterator internal pointer.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00731">731</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00730">730</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### pointer {#a08ac64c64dce736d83a93dfc838083af}
@@ -186,7 +186,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::pointer =  value_type*</>}>
 Type of pointer to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00721">721</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00720">720</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### reference {#a90c6d3cd7bf8dab6039cb02af0ab5e4e}
@@ -196,7 +196,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::reference =  value_type&</>}>
 Type of reference to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00726">726</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00725">725</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### value_type {#aa7fd4b71eb2848e6016ea84fdedb06c7}
@@ -206,7 +206,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::value_type =  U</>}>
 Type of value <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00716">716</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00715">715</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -223,7 +223,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
  labels = {["protected"]}>
 Pointer to intrusive node.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00791">791</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00790">790</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -239,7 +239,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator ()</>}
  labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00744">744</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00743">743</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### intrusive_list_iterator() {#ac7aecafdf290c92a25481b63b5159e69}
@@ -249,7 +249,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator (<Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link> const node)</>}
  labels = {["explicit", "constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00746">746</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00745">745</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### intrusive_list_iterator() {#acb115adc091ab89e63afaceeb05cdc07}
@@ -259,7 +259,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator (<Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link> element)</>}
  labels = {["explicit", "constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00748">748</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00747">747</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ## Member Functions
@@ -271,7 +271,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_pointer micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_iterator_pointer () const</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00785">785</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00784">784</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### get_pointer() {#a11f2bc99a1f478650b82546e2e5470d1}
@@ -286,7 +286,7 @@ Get the object node from the intrusive node.
 Pointer to object node.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00782">782</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00781">781</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator!=() {#aa5703a48802f7fa6c20df08a5d90a3fa}
@@ -296,7 +296,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!= (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp; other) const</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00775">775</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00774">774</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator*() {#a5db55a56e22dbdea96e6d7e05c52f4c8}
@@ -306,7 +306,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::reference micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator* () const</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00757">757</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00756">756</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#a22f5ebc83ff86c67f62bf16bc2db6e39}
@@ -316,7 +316,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; & micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++ ()</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00760">760</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00759">759</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#afd38a451e17ae6bf25966460f7815f12}
@@ -326,7 +326,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++ (int)</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00763">763</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00762">762</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#ad74d2e875227841cfc46f17394402b43}
@@ -336,7 +336,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; & micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-- ()</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00766">766</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00765">765</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#ab0996080fb49e46789339ce10a9b5adf}
@@ -345,7 +345,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-- (int)</>}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00769">769</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00768">768</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator->() {#ab739aa0c113044d7288ea2f2b501336f}
@@ -355,7 +355,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::pointer micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-&gt; () const</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00754">754</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00753">753</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#a7322f7566ab683966604148c49260562}
@@ -365,7 +365,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator== (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp; other) const</>}
  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00772">772</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00771">771</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

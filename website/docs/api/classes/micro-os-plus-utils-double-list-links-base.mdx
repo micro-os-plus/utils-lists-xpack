@@ -17,15 +17,15 @@ toc_max_heading_level: 3
 import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
+import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
+import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
+import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
 import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
 import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
 import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
 import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
-import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
-import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
-import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
-import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 <DoxygenPage version="1.13.2">
 
@@ -127,7 +127,7 @@ A pair of uninitialised pointers to the <b>next</b> and <b>previous</b> list ele
 Both the regular and the statically allocated list elements are derived from this class.
 :::
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00112">112</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00111">111</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
@@ -140,7 +140,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
  labels = {["protected"]}>
 Pointer to the <b>next</b> node.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00232">232</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00231">231</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### previous_ {#a15d3c57a6bbdaac2de839ac47010b86d}
@@ -150,7 +150,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
  labels = {["protected"]}>
 Pointer to the <b>previous</b> node.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00227">227</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00226">226</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -180,7 +180,7 @@ Code analysis may trigger:
 </ul>
 :::
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00118">118</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ## Destructor
@@ -194,7 +194,7 @@ Destruct the node.
 
 This must be an empty destructor, that does not touch the pointers, but leaves them unchanged.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00141">141</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00140">140</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ## Member Functions
@@ -222,7 +222,7 @@ This is the definition of an <b>unlinked</b> node.
 After unlinking the node from a list, it must be returned to this state.
 :::
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00161">161</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00160">160</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### initialize_once() {#a19d5ef00655b74ec23dee3a4acb08513}
@@ -247,7 +247,7 @@ For non-statically initialised lists, this method is ineffective, since the node
 This method must be manually called for statically allocated list before inserting elements, or performing any other operations.
 :::
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00171">171</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00170">170</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### link_next() {#a5f8747ea15632be0b184be317bc1f98c}
@@ -268,7 +268,7 @@ Insert the new node between the <b>next</b> pointer and the node pointed by it.
 
 Used by lists to link new nodes to the list head.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00181">181</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00180">180</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### link_previous() {#a9b3158786426a54c1d833723eae895b4}
@@ -289,7 +289,7 @@ Insert the new node between the <b>previous</b> pointer and the node pointed by 
 
 Used by lists to link new nodes to the list tail.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00191">191</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00190">190</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### linked() {#a8f12afc06993300454b0ad618a4204c3}
@@ -305,7 +305,7 @@ Check if the node is linked to a double list.
 
 To be <em>linked</em>, both pointers must point to different nodes than itself (double list requirement).
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00207">207</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00206">206</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### next() {#a52cfec44e36307862ce8bf8522059c78}
@@ -319,7 +319,7 @@ Get the link to the <b>next</b> node.
 <ParametersListItem name="Pointer">to the next node.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00214">214</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00213">213</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### previous() {#a8c0fd02eb96b1799a45285620fc8718a}
@@ -333,7 +333,7 @@ Get the link to the <b>previous</b> node.
 <ParametersListItem name="Pointer">to the previous node.</ParametersListItem>
 </ParametersList>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00221">221</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00220">220</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#ab1f8f02b4ce24ae9eeae5383f8b0498b}
@@ -355,7 +355,7 @@ An <em>uninitialized</em> node is a node with the pointers set to <code>nullptr<
 
 Only statically allocated nodes in the initial state are uninitialized. Regular nodes are always initialised.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00151">151</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### unlink() {#af71b18b73b6079575d3532cd80e75aed}
@@ -372,7 +372,7 @@ Update both neighbours to point to each other, practically removing the node fro
 
 The node is returned to the initial state (empty), with both pointers pointing to itself.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00199">199</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00198">198</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
