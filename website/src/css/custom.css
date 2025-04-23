@@ -77,6 +77,7 @@ h2[class*="title"]
 .markdown h1:first-child {
   --ifm-h1-font-size: 2.5em
 }
+
 img.mac-stadium-img {
   float: right;
   width: 200px;
