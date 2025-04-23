@@ -9,32 +9,42 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
-/*
- * This library implements several doubly linked lists, used by some
- * µOS++ components to keep track of internal objects; however it is
- * generic enough to be useful in other applications too, thus packing
- * it as a separate library.
+/**
+ * @file
+ * @brief The file with the declarations of the µOS++ lists classes.
+ * @details
  *
- * The main differentiator from `std::list` is that the implementation
- * does not require dynamic memory allocation for the list links,
- * hence it does not need an allocator.
+ * The `lists.h` header file contains the C++ declarations of
+ * the **µOS++ Intrusive Lists** classes, delivering
+ * an efficient and lightweight linked list management system tailored
+ * for embedded applications.
  *
- * Instead, it uses intrusive lists, which store the links inside the
+ * The classes implementations are in the @ref lists.cpp and @ref inlines.h files.
+ *
+ * @mainpage
+ * This library implements several **doubly linked lists**, used by some of the
+ * **µOS++** components to manage internal objects.
+ * However, its design is sufficiently
+ * **generic** to be valuable in other applications, warranting its
+ * packaging as a standalone library.
+ *
+ * A key differentiator from `std::list` is that this implementation
+ * **does not require dynamic memory allocation** for list links,
+ * thereby eliminating the need for an allocator. Instead, it employs
+ * **intrusive lists**, where links are stored directly within the
  * list elements.
  *
- * Another specific feature is statically initialised lists.
+ * Another notable feature is **statically initialised lists**, created
+ * in the **global scope** without modifying their members in constructors.
+ * Instead, they are fully **initialised** by setting their entire
+ * content to zero during startup (via **BSS initialisation**).
  *
- * These are lists created in the global scope which do not change the
- * content of any of their members in the constructors; instead,
- * they are fully initialized by setting the entire content to zero
- * during startup (via BSS init).
- *
- * This allows other static objects to auto-register themselves to
- * static registrar objects. This requires the registrar to be
- * initialised before the clients need to register; since the order
- * of static constructors is not defined, the only solution that
- * guarantees this is to initialize the registrar during startup
- * (via BSS init) before the static constructors.
+ * This approach enables **static objects** to **auto-register** with
+ * static registrar instances. As static constructor execution order
+ * is undefined, the only reliable way to ensure the registrar is
+ * ready before clients attempt to register is to initialise it during
+ * **startup** (via BSS initialisation) prior to the execution of
+ * static constructors.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_LISTS_H_
@@ -67,7 +77,18 @@
 #endif
 
 /**
- * @brief µOS++ utility definitions.
+ * @brief The µOS++ utilities definitions.
+ * @details
+ *
+ * The `micro_os_plus::utils` namespace serves as a dedicated space for
+ * **utility list classes**, essential to the **µOS++** project. By
+ * encapsulating commonly used list implementations, it enhances code
+ * organisation, minimises redundancy, and improves overall maintainability
+ * within the framework.
+ *
+ * This structured approach fosters modular development
+ * and ensures seamless integration within **µOS++**, contributing to a
+ * more efficient and scalable system.
  */
 namespace micro_os_plus::utils
 {
@@ -368,17 +389,17 @@ namespace micro_os_plus::utils
   {
   public:
     /**
-     * @brief Type of value "pointed to" by the iterator.
+     * @brief Type of value _pointed to_ by the iterator.
      */
     using value_type = U;
 
     /**
-     * @brief Type of pointer to object "pointed to" by the iterator.
+     * @brief Type of pointer to object _pointed to_ by the iterator.
      */
     using pointer = value_type*;
 
     /**
-     * @brief Type of reference to object "pointed to" by the iterator.
+     * @brief Type of reference to object _pointed to_ by the iterator.
      */
     using reference = value_type&;
 
@@ -492,17 +513,17 @@ namespace micro_os_plus::utils
     using links_type = L;
 
     /**
-     * @brief Type of value "pointed to" by the iterator.
+     * @brief Type of value _pointed to_ by the iterator.
      */
     using value_type = T;
 
     /**
-     * @brief Type of pointer to object "pointed to" by the iterator.
+     * @brief Type of pointer to object _pointed to_ by the iterator.
      */
     using pointer = value_type*;
 
     /**
-     * @brief Type of reference to object "pointed to" by the iterator.
+     * @brief Type of reference to object _pointed to_ by the iterator.
      */
     using reference = value_type&;
 
@@ -553,7 +574,7 @@ namespace micro_os_plus::utils
   public:
     /**
      * @brief Check if the list is uninitialised
-     * (only statically allocated can be).
+     * (only statically allocated lists can be uninitialised).
      * @par Parameters
      *  None.
      * @retval true The list was **not** initialised.
@@ -577,7 +598,7 @@ namespace micro_os_plus::utils
      * @par Parameters
      *  None.
      * @retval true The list has **no** nodes.
-     * @retval false The list has at least one node.
+     * @retval false The list has **at least one** node.
      */
     bool
     empty (void) const;
@@ -671,7 +692,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-intrusive-lists
-   * @brief A class template for an intrusive list iterator.
+   * @brief A class template for the intrusive list iterator.
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    * @tparam T Type of object that includes the intrusive node.
    * @tparam N Type of intrusive node. Must have the public members
@@ -689,17 +710,17 @@ namespace micro_os_plus::utils
   {
   public:
     /**
-     * @brief Type of value "pointed to" by the iterator.
+     * @brief Type of value _pointed to_ by the iterator.
      */
     using value_type = U;
 
     /**
-     * @brief Type of pointer to object "pointed to" by the iterator.
+     * @brief Type of pointer to object _pointed to_ by the iterator.
      */
     using pointer = value_type*;
 
     /**
-     * @brief Type of reference to object "pointed to" by the iterator.
+     * @brief Type of reference to object _pointed to_ by the iterator.
      */
     using reference = value_type&;
 
@@ -829,17 +850,17 @@ namespace micro_os_plus::utils
     using links_type = L;
 
     /**
-     * @brief Type of value "pointed to" by the iterator.
+     * @brief Type of value _pointed to_ by the iterator.
      */
     using value_type = U;
 
     /**
-     * @brief Type of pointer to object "pointed to" by the iterator.
+     * @brief Type of pointer to object _pointed to_ by the iterator.
      */
     using pointer = value_type*;
 
     /**
-     * @brief Type of reference to object "pointed to" by the iterator.
+     * @brief Type of reference to object _pointed to_ by the iterator.
      */
     using reference = value_type&;
 
@@ -907,8 +928,8 @@ namespace micro_os_plus::utils
      * @brief Check if the list is empty.
      * @par Parameters
      *  None.
-     * @retval true The list has no nodes.
-     * @retval false The list has at least one node.
+     * @retval true The list has **no** nodes.
+     * @retval false The list has **at least one** node.
      */
     constexpr bool
     empty (void) const;

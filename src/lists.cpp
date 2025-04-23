@@ -9,6 +9,19 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
+ /**
+  * @file
+  * @brief The file with the implementations of the µOS++ lists methods.
+  * @details
+  *
+  * The `list.cpp` source file contains the C++ implementations of
+  * the methods for the **µOS++ Intrusive Lists** classes, delivering
+  * an efficient and lightweight linked list management system tailored
+  * for embedded applications.
+  *
+  * The class definitions are in the @ref lists.h file.
+  */
+
 // ----------------------------------------------------------------------------
 
 #if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)

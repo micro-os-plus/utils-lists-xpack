@@ -9,6 +9,19 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
+/**
+ * @file
+ * @brief The file with the implementations of the µOS++ lists inlined methods.
+ * @details
+ *
+ * The `inlines.h` header file contains the C++ implementations of
+ * the inlined methods for the **µOS++ Intrusive Lists** classes, delivering
+ * an efficient and lightweight linked list management system tailored
+ * for embedded applications.
+ *
+ * The class definitions are in the @ref lists.h file.
+ */
+
 #ifndef MICRO_OS_PLUS_UTILS_LISTS_INLINES_H_
 #define MICRO_OS_PLUS_UTILS_LISTS_INLINES_H_
 
@@ -46,8 +59,8 @@ namespace micro_os_plus::utils
    *
    * @warning
    * Code analysis may trigger:
-   * - Member 'previous_' was not initialized in constructor
-   * - Member 'next_' was not initialized in constructor
+   * - Member `previous_` was not initialized in constructor
+   * - Member `next_` was not initialized in constructor
    */
   constexpr double_list_links_base::double_list_links_base ()
   {
@@ -113,8 +126,8 @@ namespace micro_os_plus::utils
    *
    * @warning
    * Code analysis may trigger:
-   * - Member 'previous_' was not initialized in constructor
-   * - Member 'next_' was not initialized in constructor
+   * - Member `previous_` was not initialized in constructor
+   * - Member `next_` was not initialized in constructor
    */
   constexpr static_double_list_links::static_double_list_links ()
   {
@@ -128,7 +141,10 @@ namespace micro_os_plus::utils
 #endif
   /**
    * @warning
-   * GCC optimizes out the content (dead store elimination).
+   * The code to clear the pointers is now commented out, since recent
+   * GCC optimizes it out (dead store elimination).
+   * Depending on the version, there might be some attributes to
+   * allow this, but they are not safe, for example
    * @n
    * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
    * help. The workaround is to use `nullify()` explicitly,
