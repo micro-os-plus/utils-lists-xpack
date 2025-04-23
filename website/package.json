@@ -64,10 +64,10 @@
     "@docusaurus/module-type-aliases": "3.6.3",
     "@docusaurus/tsconfig": "3.6.3",
     "@docusaurus/types": "3.6.3",
+    "@xpack/docusaurus-plugin-doxygen": "^0.1.0",
     "json": "^11.0.0",
     "liquidjs": "^10.20.1",
-    "typescript": "~5.6.3",
-    "@xpack/docusaurus-plugin-doxygen": "github:xpack/docusaurus-plugin-doxygen#v0.1.0"
+    "typescript": "~5.6.3"
   },
   "browserslist": {
     "production": [
