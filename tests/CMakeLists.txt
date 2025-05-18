@@ -21,7 +21,7 @@ cmake_minimum_required(VERSION 3.20)
 
 project(
   micro-os-plus-utils-lists-tests
-  DESCRIPTION "utils-lists tests"
+  DESCRIPTION "µOS++ Intrusive Lists tests"
 )
 
 # Must be called from the top CMakeLists.txt.
