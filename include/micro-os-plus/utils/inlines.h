@@ -145,9 +145,8 @@ namespace micro_os_plus::utils
    * GCC optimizes it out (dead store elimination).
    * Depending on the version, there might be some attributes to
    * allow this, but they are not safe, for example
-   * @n
-   * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
-   * help. The workaround is to use `nullify()` explicitly,
+   * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))`
+   * did not help. The workaround is to use `nullify()` explicitly,
    * or, even better, to clear the memory before invoking the placement
    * `new` constructor again.
    */
