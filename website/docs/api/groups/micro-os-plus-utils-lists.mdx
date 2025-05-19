@@ -3,7 +3,6 @@
 # DO NOT EDIT!
 # Automatically generated via docusaurus-plugin-doxygen by Doxygen.
 
-title: The µOS++ Intrusive Lists Reference
 slug: /api/groups/micro-os-plus-utils-lists
 custom_edit_url: null
 keywords:
@@ -14,29 +13,38 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link'
+
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
-import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+
+# The µOS++ Intrusive Lists Reference
 
 <DoxygenPage version="1.13.2">
 
-The µOS++ Intrusive Lists project topics. <a href="#details">More...</a>
+The µOS++ Intrusive Lists project topics. <Link to="#details">More...</Link>
 
-## Topics
+## Topics Index
 
-<MembersList>
+<MembersIndex>
 
-<MembersListItem itemLeft="&nbsp;" itemRight={<Link to="/docs/api/groups/micro-os-plus-utils-lists-cpp-api">C++ API</Link>}>
-The µOS++ Intrusive Lists C++ API topics.
-</MembersListItem>
+<MembersIndexItem
+  type="&nbsp;"
+  name={<Link to="/docs/api/groups/micro-os-plus-utils-lists-cpp-api">C++ API</Link>}>
+The µOS++ Intrusive Lists C++ API topics. <Link to="/docs/api/groups/micro-os-plus-utils-lists-cpp-api/#details">More...</Link>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="&nbsp;" itemRight={<Link to="/docs/api/groups/micro-os-plus-utils-lists-c-api">C API</Link>}>
-The µOS++ Intrusive Lists C API topics (hint: none).
-</MembersListItem>
+<MembersIndexItem
+  type="&nbsp;"
+  name={<Link to="/docs/api/groups/micro-os-plus-utils-lists-c-api">C API</Link>}>
+The µOS++ Intrusive Lists C API topics (hint: none). <Link to="/docs/api/groups/micro-os-plus-utils-lists-c-api/#details">More...</Link>
+</MembersIndexItem>
 
-</MembersList>
+</MembersIndex>
 
 ## Description {#details}
+
+The µOS++ Intrusive Lists project topics.
 
 The <b>µOS++ Intrusive Lists</b> project is a C++ source code library designed to implement <b>µOS++ intrusive doubly linked lists</b>. These specialised lists eliminate the need for dynamic memory allocations by embedding linkage directly within the list elements, making them particularly advantageous for embedded systems.
 

@@ -7,6 +7,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
+import doxygenApiMenu from './docusaurus-config-doxygen-menu-dropdown.json'
 import {redirects} from './docusaurus-config-redirects';
 import {getCustomFields} from './customFields';
 
@@ -142,7 +143,13 @@ const config: Config = {
     ],
     [
       '@xpack/docusaurus-plugin-doxygen',
-      {}
+      {
+        outputFolderPath: 'docs/api', // doxygen/mdx
+        outputBaseUrl: 'api',
+        redirectsOutputFolderPath: 'reference',
+        verbose: true,
+        runOnStart: false
+      }
     ],
 
     // Local plugins.
@@ -280,12 +287,7 @@ const config: Config = {
             },
           ],
         },
-        {
-          to: '/docs/api',
-          label: 'API',
-          position: 'left',
-        },
-
+        doxygenApiMenu,
         {
           type: 'dropdown',
           to: '/blog',

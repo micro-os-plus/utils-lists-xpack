@@ -3,7 +3,6 @@
 # DO NOT EDIT!
 # Automatically generated via docusaurus-plugin-doxygen by Doxygen.
 
-title: The micro_os_plus Namespace Reference
 slug: /api/namespaces/micro-os-plus
 custom_edit_url: null
 keywords:
@@ -14,26 +13,42 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link'
+import CodeBlock from '@theme/CodeBlock'
+
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
-import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+
+# The `micro_os_plus` Namespace Reference
 
 <DoxygenPage version="1.13.2">
 
-The top µOS++ namespace. <a href="#details">More...</a>
+The primary namespace for the µOS++ framework. <Link to="#details">More...</Link>
 
-## Namespaces
+## Definition
 
-<MembersList>
+<CodeBlock>namespace micro_os_plus</CodeBlock>
 
-<MembersListItem itemLeft="namespace" itemRight={<Link to="/docs/api/namespaces/micro-os-plus/utils">utils</Link>}>
-The µOS++ utilities definitions.
-</MembersListItem>
+## Namespaces Index
 
-</MembersList>
+<MembersIndex>
+
+<MembersIndexItem
+  type="namespace"
+  name={<Link to="/docs/api/namespaces/micro-os-plus/utils">micro&#95;os&#95;plus::utils</Link>}>
+The µOS++ utilities definitions. <Link to="/docs/api/namespaces/micro-os-plus/utils/#details">More...</Link>
+</MembersIndexItem>
+
+</MembersIndex>
 
 ## Description {#details}
 
-TODO: add <code>@details</code> to <code>@namespace micro_os_plus</code>
+The primary namespace for the µOS++ framework.
+
+The <code><Link to="/docs/api/namespaces/micro-os-plus">micro&#95;os&#95;plus</Link></code> namespace serves as the main scope for all components of the µOS++ framework, encompassing classes, functions, variables, enumerations, type definitions, and related entities.
+
+This namespace is further structured into nested namespaces, each dedicated to specific modules or subsystems. By encapsulating all definitions within well-defined namespaces, the framework achieves clear code organisation, minimises naming conflicts, and enhances overall maintainability.
+
+This approach promotes modular development, facilitates code reuse, and ensures seamless integration of components within the µOS++ ecosystem, supporting the creation of efficient, robust, and scalable embedded systems.
 
 </DoxygenPage>

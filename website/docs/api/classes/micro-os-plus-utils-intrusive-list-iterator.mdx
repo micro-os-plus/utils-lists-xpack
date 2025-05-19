@@ -3,7 +3,6 @@
 # DO NOT EDIT!
 # Automatically generated via docusaurus-plugin-doxygen by Doxygen.
 
-title: The intrusive_list_iterator Class Template Reference
 slug: /api/classes/micro-os-plus/utils/intrusive-list-iterator
 custom_edit_url: null
 keywords:
@@ -16,123 +15,173 @@ toc_max_heading_level: 3
 
 import Link from '@docusaurus/Link'
 import CodeBlock from '@theme/CodeBlock'
+
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 import IncludesList from '@xpack/docusaurus-plugin-doxygen/components/IncludesList'
 import IncludesListItem from '@xpack/docusaurus-plugin-doxygen/components/IncludesListItem'
 import MemberDefinition from '@xpack/docusaurus-plugin-doxygen/components/MemberDefinition'
-import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
-import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
 import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
 import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
+# The `intrusive_list_iterator` Class Template Reference
+
 <DoxygenPage version="1.13.2">
 
-A class template for the intrusive list iterator. <a href="#details">More...</a>
+A class template for the intrusive list iterator. <Link to="#details">More...</Link>
 
-## Fully Qualified Name
+## Declaration
 
-<CodeBlock>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;</CodeBlock>
+<CodeBlock>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;
+class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt;;</CodeBlock>
 
 ## Included Headers
 
 <IncludesList>
-<IncludesListItem filePath="micro-os-plus/utils/lists.h" permalink="/docs/api/files/include/micro-os-plus/utils/lists-h" isLocal="false" />
+<IncludesListItem
+  filePath="micro-os-plus/utils/lists.h"
+  permalink="/docs/api/files/include/micro-os-plus/utils/lists-h"
+  isLocal="false" />
 </IncludesList>
 
-<h2>Member Typedefs</h2>
+## Public Member Typedefs Index
 
-<MembersList>
+<MembersIndex>
 
-<MembersListItem itemLeft="using" itemRight={<><Link to="#adf2b6ab52c63f0747113565c183df0f3">difference&#95;type</Link> = ptrdiff&#95;t</>}>
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#adf2b6ab52c63f0747113565c183df0f3">difference&#95;type</Link> = ptrdiff&#95;t</>}>
 Type of pointer difference. <Link to="#adf2b6ab52c63f0747113565c183df0f3">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="using" itemRight={<><Link to="#a11541e8681f9015d6b8e8cc93c15eb4a">iterator&#95;category</Link> = std::forward&#95;iterator&#95;tag</>}>
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#a11541e8681f9015d6b8e8cc93c15eb4a">iterator&#95;category</Link> = std::forward&#95;iterator&#95;tag</>}>
 Category of iterator. <Link to="#a11541e8681f9015d6b8e8cc93c15eb4a">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="using" itemRight={<><Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link> = N &#42;</>}>
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link> = N &#42;</>}>
 Type of reference to the iterator internal pointer. <Link to="#a520f5e4b1067d0febf857e04f6f37b83">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="using" itemRight={<><Link to="#a08ac64c64dce736d83a93dfc838083af">pointer</Link> = <Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">value&#95;type</Link> &#42;</>}>
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#a08ac64c64dce736d83a93dfc838083af">pointer</Link> = <Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">value&#95;type</Link> &#42;</>}>
 Type of pointer to object <em>pointed to</em> by the iterator. <Link to="#a08ac64c64dce736d83a93dfc838083af">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="using" itemRight={<><Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link> = <Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">value&#95;type</Link> &amp;</>}>
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link> = <Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">value&#95;type</Link> &amp;</>}>
 Type of reference to object <em>pointed to</em> by the iterator. <Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="using" itemRight={<><Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">value&#95;type</Link> = U</>}>
+<MembersIndexItem
+  type="using"
+  name={<><Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">value&#95;type</Link> = U</>}>
 Type of value <em>pointed to</em> by the iterator. <Link to="#aa7fd4b71eb2848e6016ea84fdedb06c7">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-</MembersList>
+</MembersIndex>
 
-<h2>Protected Member Attributes</h2>
+## Protected Member Attributes Index
 
-<MembersList>
+<MembersIndex>
 
-<MembersListItem itemLeft={<><Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link></>} itemRight={<><Link to="#aee433922fe4b649d6c1b529e620e9345">node&#95;</Link></>}>
+<MembersIndexItem
+  type={<><Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link></>}
+  name={<><Link to="#aee433922fe4b649d6c1b529e620e9345">node&#95;</Link></>}>
 Pointer to intrusive node. <Link to="#aee433922fe4b649d6c1b529e620e9345">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-</MembersList>
+</MembersIndex>
 
-<h2>Member Functions</h2>
+## Public Constructors Index
 
-<MembersList>
+<MembersIndex>
 
-<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive&#95;list&#95;iterator</Link> ()</>}>
-</MembersListItem>
+<MembersIndexItem
+  type="constexpr"
+  name={<><Link to="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive&#95;list&#95;iterator</Link> ()</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#ac7aecafdf290c92a25481b63b5159e69">intrusive&#95;list&#95;iterator</Link> (iterator_pointer const node)</>}>
-</MembersListItem>
+<MembersIndexItem
+  type="constexpr"
+  name={<><Link to="#ac7aecafdf290c92a25481b63b5159e69">intrusive&#95;list&#95;iterator</Link> (iterator&#95;pointer const node)</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="constexpr" itemRight={<><Link to="#acb115adc091ab89e63afaceeb05cdc07">intrusive&#95;list&#95;iterator</Link> (reference element)</>}>
-</MembersListItem>
+<MembersIndexItem
+  type="constexpr"
+  name={<><Link to="#acb115adc091ab89e63afaceeb05cdc07">intrusive&#95;list&#95;iterator</Link> (reference element)</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link></>} itemRight={<><Link to="#a7c3bf59f9d5ef83136d3b17f8fac62ef">get&#95;iterator&#95;pointer</Link> () const</>}>
-</MembersListItem>
+</MembersIndex>
 
-<MembersListItem itemLeft={<><Link to="#a08ac64c64dce736d83a93dfc838083af">pointer</Link></>} itemRight={<><Link to="#a11f2bc99a1f478650b82546e2e5470d1">get&#95;pointer</Link> (void) const</>}>
+## Public Member Functions Index
+
+<MembersIndex>
+
+<MembersIndexItem
+  type={<><Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link></>}
+  name={<><Link to="#a7c3bf59f9d5ef83136d3b17f8fac62ef">get&#95;iterator&#95;pointer</Link> () const</>}>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="#a08ac64c64dce736d83a93dfc838083af">pointer</Link></>}
+  name={<><Link to="#a11f2bc99a1f478650b82546e2e5470d1">get&#95;pointer</Link> (void) const</>}>
 Get the object node from the intrusive node. <Link to="#a11f2bc99a1f478650b82546e2e5470d1">More...</Link>
-</MembersListItem>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="bool" itemRight={<><Link to="#aa5703a48802f7fa6c20df08a5d90a3fa">operator!=</Link> (const intrusive_list_iterator &other) const</>}>
-</MembersListItem>
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp;</>}
+  name={<><Link to="#ad74d2e875227841cfc46f17394402b43">operator--</Link> ()</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link></>} itemRight={<><Link to="#a5db55a56e22dbdea96e6d7e05c52f4c8">operator&#42;</Link> () const</>}>
-</MembersListItem>
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link></>}
+  name={<><Link to="#ab0996080fb49e46789339ce10a9b5adf">operator--</Link> (int)</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp;</>} itemRight={<><Link to="#a22f5ebc83ff86c67f62bf16bc2db6e39">operator++</Link> ()</>}>
-</MembersListItem>
+<MembersIndexItem
+  type={<><Link to="#a08ac64c64dce736d83a93dfc838083af">pointer</Link></>}
+  name={<><Link to="#ab739aa0c113044d7288ea2f2b501336f">operator-&gt;</Link> () const</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link></>} itemRight={<><Link to="#afd38a451e17ae6bf25966460f7815f12">operator++</Link> (int)</>}>
-</MembersListItem>
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#aa5703a48802f7fa6c20df08a5d90a3fa">operator!=</Link> (const intrusive&#95;list&#95;iterator &amp;other) const</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp;</>} itemRight={<><Link to="#ad74d2e875227841cfc46f17394402b43">operator--</Link> ()</>}>
-</MembersListItem>
+<MembersIndexItem
+  type={<><Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link></>}
+  name={<><Link to="#a5db55a56e22dbdea96e6d7e05c52f4c8">operator&#42;</Link> () const</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link></>} itemRight={<><Link to="#ab0996080fb49e46789339ce10a9b5adf">operator--</Link> (int)</>}>
-</MembersListItem>
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp;</>}
+  name={<><Link to="#a22f5ebc83ff86c67f62bf16bc2db6e39">operator++</Link> ()</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft={<><Link to="#a08ac64c64dce736d83a93dfc838083af">pointer</Link></>} itemRight={<><Link to="#ab739aa0c113044d7288ea2f2b501336f">operator-&gt;</Link> () const</>}>
-</MembersListItem>
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link></>}
+  name={<><Link to="#afd38a451e17ae6bf25966460f7815f12">operator++</Link> (int)</>}>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="bool" itemRight={<><Link to="#a7322f7566ab683966604148c49260562">operator==</Link> (const intrusive_list_iterator &other) const</>}>
-</MembersListItem>
+<MembersIndexItem
+  type="bool"
+  name={<><Link to="#a7322f7566ab683966604148c49260562">operator==</Link> (const intrusive&#95;list&#95;iterator &amp;other) const</>}>
+</MembersIndexItem>
 
-</MembersList>
+</MembersIndex>
 
 ## Description {#details}
 
-The class template declaration is:
-
-<CodeBlock>template &lt; class T, class N, N T::* MP, class U = T &gt;
-class micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;;</CodeBlock>
+A class template for the intrusive list iterator.
 
 <ParametersList title="Template Parameters">
 <ParametersListItem name="T">Type of object that includes the intrusive node.</ParametersListItem>
@@ -140,40 +189,39 @@ class micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;;</CodeB
 <ParametersListItem name="MP">Name of the intrusive node member in object T.</ParametersListItem>
 <ParametersListItem name="U">Type stored in the list, derived from T.</ParametersListItem>
 </ParametersList>
-
 This class provides an interface similar to <code>std::list::iterator</code>, except that it keeps track of the offset where the intrusive list element is located in the parent object.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00709">709</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
-## Member Typedefs
+## Public Member Typedefs
 
-### difference_type {#adf2b6ab52c63f0747113565c183df0f3}
+### difference&#95;type {#adf2b6ab52c63f0747113565c183df0f3}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::difference_type =  ptrdiff_t</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::difference&#95;type =  ptrdiff&#95;t</>}>
 Type of pointer difference.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00735">735</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
-### iterator_category {#a11541e8681f9015d6b8e8cc93c15eb4a}
+### iterator&#95;category {#a11541e8681f9015d6b8e8cc93c15eb4a}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_category =  std::forward_iterator_tag</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::iterator&#95;category =  std::forward&#95;iterator&#95;tag</>}>
 Category of iterator.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00740">740</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
-### iterator_pointer {#a520f5e4b1067d0febf857e04f6f37b83}
+### iterator&#95;pointer {#a520f5e4b1067d0febf857e04f6f37b83}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_pointer =  N*</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::iterator&#95;pointer =  N&#42;</>}>
 Type of reference to the iterator internal pointer.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00730">730</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
@@ -182,8 +230,8 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
 ### pointer {#a08ac64c64dce736d83a93dfc838083af}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::pointer =  value_type*</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::pointer =  value&#95;type&#42;</>}>
 Type of pointer to object <em>pointed to</em> by the iterator.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00720">720</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
@@ -192,18 +240,18 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
 ### reference {#a90c6d3cd7bf8dab6039cb02af0ab5e4e}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::reference =  value_type&</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::reference =  value&#95;type&amp;</>}>
 Type of reference to object <em>pointed to</em> by the iterator.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00725">725</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
-### value_type {#aa7fd4b71eb2848e6016ea84fdedb06c7}
+### value&#95;type {#aa7fd4b71eb2848e6016ea84fdedb06c7}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::value_type =  U</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::value&#95;type =  U</>}>
 Type of value <em>pointed to</em> by the iterator.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00715">715</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
@@ -215,12 +263,12 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
 
 ## Protected Member Attributes
 
-### node_ {#aee433922fe4b649d6c1b529e620e9345}
+### node&#95; {#aee433922fe4b649d6c1b529e620e9345}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>iterator_pointer micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</>}
- labels = {["protected"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>iterator&#95;pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::node&#95;</>}
+  labels = {["protected"]}>
 Pointer to intrusive node.
 
 Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00790">790</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
@@ -230,144 +278,157 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
 
 <SectionDefinition>
 
-## Constructors
+## Public Constructors
 
-### intrusive_list_iterator() {#a93cc9e0b0cc3629edb655faec0feb4b3}
+### intrusive&#95;list&#95;iterator() {#a93cc9e0b0cc3629edb655faec0feb4b3}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator ()</>}
- labels = {["constexpr"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::intrusive&#95;list&#95;iterator ()</>}
+  labels = {["constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00743">743</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00743">743</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00459">459</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### intrusive_list_iterator() {#ac7aecafdf290c92a25481b63b5159e69}
+### intrusive&#95;list&#95;iterator() {#ac7aecafdf290c92a25481b63b5159e69}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator (<Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link> const node)</>}
- labels = {["explicit", "constexpr"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::intrusive&#95;list&#95;iterator (<Link to="#a520f5e4b1067d0febf857e04f6f37b83">iterator&#95;pointer</Link> const node)</>}
+  labels = {["explicit", "constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00745">745</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00745">745</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00465">465</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### intrusive_list_iterator() {#acb115adc091ab89e63afaceeb05cdc07}
+### intrusive&#95;list&#95;iterator() {#acb115adc091ab89e63afaceeb05cdc07}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator (<Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link> element)</>}
- labels = {["explicit", "constexpr"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::intrusive&#95;list&#95;iterator (<Link to="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</Link> element)</>}
+  labels = {["explicit", "constexpr"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00747">747</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00747">747</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00472">472</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-## Member Functions
+</SectionDefinition>
 
-### get_iterator_pointer() {#a7c3bf59f9d5ef83136d3b17f8fac62ef}
+<SectionDefinition>
+
+## Public Member Functions
+
+### get&#95;iterator&#95;pointer() {#a7c3bf59f9d5ef83136d3b17f8fac62ef}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_pointer micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_iterator_pointer () const</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::iterator&#95;pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::get&#95;iterator&#95;pointer () const</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00784">784</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00784">784</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00564">564</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### get_pointer() {#a11f2bc99a1f478650b82546e2e5470d1}
+### get&#95;pointer() {#a11f2bc99a1f478650b82546e2e5470d1}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::pointer micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer (void) const</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::get&#95;pointer (void) const</>}
+  labels = {["inline"]}>
 Get the object node from the intrusive node.
 
 <SectionUser title="Returns">
 Pointer to object node.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00781">781</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00781">781</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00546">546</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator!=() {#aa5703a48802f7fa6c20df08a5d90a3fa}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!= (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp; other) const</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>bool micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator!= (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp; other) const</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00774">774</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00774">774</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00538">538</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### operator*() {#a5db55a56e22dbdea96e6d7e05c52f4c8}
+### operator&#42;() {#a5db55a56e22dbdea96e6d7e05c52f4c8}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::reference micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator* () const</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::reference micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator&#42; () const</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00756">756</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00756">756</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00489">489</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#a22f5ebc83ff86c67f62bf16bc2db6e39}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; & micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++ ()</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt; &amp; micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator++ ()</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00759">759</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00759">759</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00496">496</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#afd38a451e17ae6bf25966460f7815f12}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++ (int)</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt; micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator++ (int)</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00762">762</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00762">762</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00504">504</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#ad74d2e875227841cfc46f17394402b43}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; & micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-- ()</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt; &amp; micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator-- ()</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00765">765</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00765">765</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00513">513</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#ab0996080fb49e46789339ce10a9b5adf}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt; micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-- (int)</>}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt; micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator-- (int)</>}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00768">768</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00768">768</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00521">521</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### operator->() {#ab739aa0c113044d7288ea2f2b501336f}
+### operator-&gt;() {#ab739aa0c113044d7288ea2f2b501336f}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>intrusive_list_iterator&lt; T, N, MP, U &gt;::pointer micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-&gt; () const</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator-&gt; () const</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00753">753</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00753">753</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00482">482</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#a7322f7566ab683966604148c49260562}
 
 <MemberDefinition
-  template={<>template &lt;class T, class N, N T::* MP, class U&gt;</>}
-  prototype={<>bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator== (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp; other) const</>}
- labels = {["inline"]}>
+  template={<>template &lt;class T, class N, N T::&#42; MP, class U = T&gt;</>}
+  prototype={<>bool micro&#95;os&#95;plus::utils::intrusive&#95;list&#95;iterator&lt; T, N, MP, U &gt;::operator== (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link> &amp; other) const</>}
+  labels = {["inline"]}>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00771">771</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00771">771</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00530">530</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
+
+<hr/>
+
+The documentation for this class was generated from the following files:
+
+<ul>
+<li><Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link></li>
+<li><Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link></li>
+</ul>
 
 </DoxygenPage>

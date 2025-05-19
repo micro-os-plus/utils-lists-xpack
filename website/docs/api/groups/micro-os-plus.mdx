@@ -3,7 +3,6 @@
 # DO NOT EDIT!
 # Automatically generated via docusaurus-plugin-doxygen by Doxygen.
 
-title: The µOS++ Reference
 slug: /api/groups/micro-os-plus
 custom_edit_url: null
 keywords:
@@ -14,26 +13,50 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link'
+
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
-import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
-import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
+
+# The µOS++ Topics Reference
 
 <DoxygenPage version="1.13.2">
 
-The µOS++ Framework topics. <a href="#details">More...</a>
+Topics related to the µOS++ framework. <Link to="#details">More...</Link>
 
-## Topics
+## Topics Index
 
-<MembersList>
+<MembersIndex>
 
-<MembersListItem itemLeft="&nbsp;" itemRight={<Link to="/docs/api/groups/micro-os-plus-utils-lists">µOS++ Intrusive Lists</Link>}>
-The µOS++ Intrusive Lists project topics.
-</MembersListItem>
+<MembersIndexItem
+  type="&nbsp;"
+  name={<Link to="/docs/api/groups/micro-os-plus-utils-lists">µOS++ Intrusive Lists</Link>}>
+The µOS++ Intrusive Lists project topics. <Link to="/docs/api/groups/micro-os-plus-utils-lists/#details">More...</Link>
+</MembersIndexItem>
 
-</MembersList>
+</MembersIndex>
 
-## Description {#details}
+Topics related to the µOS++ framework.
 
-The <a href="https://micro-os-plus.github.io">µOS++</a> Framework represents the primary project, encompassing multiple source libraries. These libraries are managed as separate repositories on GitHub and are collectively maintained under the <a href="https://github.com/micro-os-plus">micro-os-plus</a> group.
+<Link id="#details" />
+
+
+## Description
+
+
+
+The <a href="https://micro-os-plus.github.io">µOS++ Framework</a> is the principal project within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite of modern C++ libraries for embedded systems development.
+
+
+
+µOS++ is organised as a <b>collection of modular source libraries</b>, each maintained in its own repository on GitHub and collectively managed under the <a href="https://github.com/micro-os-plus">micro-os-plus</a> GitHub organization. This modular structure enables developers to select and integrate only the components relevant to their projects, promoting flexibility and maintainability.
+
+
+
+The framework covers a wide range of topics, including <b>core operating system</b> functionality, <b>POSIX I/O</b>, <b>testing</b> frameworks, <b>utilities</b>, and supporting <b>tools</b>. Detailed documentation is provided for each library, ensuring that users have access to clear guidance, usage examples, and best practices for professional embedded software development.
+
+
+
+By adopting µOS++, developers benefit from a robust, scalable, and well-documented foundation for building high-quality embedded applications.
 
 </DoxygenPage>

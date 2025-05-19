@@ -3,7 +3,6 @@
 # DO NOT EDIT!
 # Automatically generated via docusaurus-plugin-doxygen by Doxygen.
 
-title: The Intrusive Doubly Linked Lists Reference
 slug: /api/groups/micro-os-plus-utils-lists-intrusive-lists
 custom_edit_url: null
 keywords:
@@ -14,37 +13,47 @@ keywords:
 ---
 
 import Link from '@docusaurus/Link'
+
 import CodeLine from '@xpack/docusaurus-plugin-doxygen/components/CodeLine'
 import DoxygenPage from '@xpack/docusaurus-plugin-doxygen/components/DoxygenPage'
 import Highlight from '@xpack/docusaurus-plugin-doxygen/components/Highlight'
-import MembersList from '@xpack/docusaurus-plugin-doxygen/components/MembersList'
-import MembersListItem from '@xpack/docusaurus-plugin-doxygen/components/MembersListItem'
+import MembersIndex from '@xpack/docusaurus-plugin-doxygen/components/MembersIndex'
+import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/MembersIndexItem'
 import ProgramListing from '@xpack/docusaurus-plugin-doxygen/components/ProgramListing'
 import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
+# The Intrusive Doubly Linked Lists Reference
+
 <DoxygenPage version="1.13.2">
 
-The µOS++ intrusive doubly linked lists classes. <a href="#details">More...</a>
+The µOS++ intrusive doubly linked lists classes. <Link to="#details">More...</Link>
 
-## Classes
+## Classes Index
 
-<MembersList>
+<MembersIndex>
 
-<MembersListItem itemLeft="class" itemRight={<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;</Link>}>
-A class template for a list of nodes which store the links inside themselves as intrusive nodes. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list#details">More...</Link>
-</MembersListItem>
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list&lt;T, N, MP, L, U&gt;</Link>}>
+A class template for a list of nodes which store the links inside themselves as intrusive nodes. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list/#details">More...</Link>
+</MembersIndexItem>
 
-<MembersListItem itemLeft="class" itemRight={<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;</Link>}>
-A class template for the intrusive list iterator. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator#details">More...</Link>
-</MembersListItem>
+<MembersIndexItem
+  type="class"
+  name={<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator&lt;T, N, MP, U&gt;</Link>}>
+A class template for the intrusive list iterator. <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator/#details">More...</Link>
+</MembersIndexItem>
 
-</MembersList>
+</MembersIndex>
 
 ## Description {#details}
+
+The µOS++ intrusive doubly linked lists classes.
 
 Intrusive lists are doubly linked lists that keep the two pointers inside each linked object.
 
 The intrusive lists can be defined by instantiating the <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro&#95;os&#95;plus::utils::intrusive&#95;list</Link></code> class template.
+
 
 <SectionUser title="Example">
 
@@ -73,7 +82,7 @@ The intrusive lists can be defined by instantiating the <code><Link to="/docs/ap
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">static&#95;children&#95;list = os::utils::intrusive&#95;list&lt;</Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">        child, </Highlight><Highlight kind="comment">// type of nodes in the list</Highlight><Highlight kind="normal"></Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">        </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (child::registry&#95;links&#95;), </Highlight><Highlight kind="comment">// type of the `registry&#95;links&#95;` member</Highlight><Highlight kind="normal"></Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">        </Highlight><Highlight kind="keyword">decltype</Highlight><Highlight kind="normal"> (child::registry&#95;links&#95;), </Highlight><Highlight kind="comment">// type of the &#96;registry&#95;links&#95;&#96; member</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">        &amp;child::registry&#95;links&#95;, </Highlight><Highlight kind="comment">// name of member</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal">        static&#95;double&#95;list&#95;links&gt;; </Highlight><Highlight kind="comment">// type of the head links node</Highlight><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight></CodeLine>

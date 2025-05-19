@@ -9,10 +9,6 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
-// Not really a .doxyfile, since it does not define any variables.
-// But it cannot be .md either, since Doxygen renders markdown files
-// in the sidebar.
-
 /**
 
 @file
@@ -99,9 +95,6 @@ there are several simpler classes and templates.
 
 @dir include/micro-os-plus/utils
 @brief The folder with the utilities header files.
-
-@file website/doxygen/top-common.doxyfile
-@brief The Doxygen top common definitions.
 
 @dir include
 @brief The top folder with all header files.

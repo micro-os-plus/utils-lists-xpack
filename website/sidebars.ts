@@ -2,7 +2,7 @@
 // Automatically generated from docusaurus-template-liquid/templates/docusaurus.
 
 import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
-import doxygenSidebarItems from './docs/api/sidebar-doxygen.json';
+import doxygenSidebarItems from './sidebar-category-doxygen.json';
 
 /**
  * Creating a sidebar enables you to:
@@ -79,23 +79,14 @@ const sidebars: SidebarsConfig = {
         {
           type: 'link',
           label: 'License',
-          href: 'https://opensource.org/license/MIT',
+          href: 'https://opensource.org/license/mit',
         },
       ]
     },
   ],
 
-  doyygenSidebar: [
-    {
-      type: 'category',
-      label: 'API Reference (Doxygen)',
-      link: {
-        type: 'doc',
-        id: 'api/index',
-      },
-      collapsed: false,
-      items: doxygenSidebarItems,
-    },
+  doxygenSidebar: [
+    doxygenSidebarItems,
   ],
 };
 

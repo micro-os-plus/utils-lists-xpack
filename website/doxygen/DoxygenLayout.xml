@@ -7,7 +7,7 @@
   <navindex>
     <tab type="user" url="/utils-lists-xpack/" title="Documentation"/>
     <tab type="mainpage" visible="no" title=""/>
-    <tab type="pages" visible="no" title="" intro=""/>
+    <tab type="pages" visible="yes" title="" intro=""/>
     <tab type="topics" visible="yes" title="Reference" intro=""/>
     <tab type="modules" visible="yes" title="" intro="">
       <tab type="modulelist" visible="yes" title="" intro=""/>
