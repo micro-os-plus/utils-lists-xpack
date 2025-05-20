@@ -11,16 +11,14 @@
 
 /**
  * @file
- * @brief C++ Header file with the implementations of the µOS++ lists inlined
- * methods.
+ * @brief C++ header file with the inline implementations for the µOS++ lists methods.
  *
  * @details
- * The `inlines.h` header file contains the C++ implementations of
- * the inlined methods for the **µOS++ Intrusive Lists** classes, delivering
- * an efficient and lightweight linked list management system tailored
- * for embedded applications.
+ * The `inlines.h` header provides the C++ inline implementations for the
+ * **µOS++ Intrusive Lists** classes.
  *
- * The class definitions are in the @ref lists.h file.
+ * Class definitions are located in @ref lists.h. Inline methods are separated
+ * into this file to improve project structure and maintainability.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_LISTS_INLINES_H_

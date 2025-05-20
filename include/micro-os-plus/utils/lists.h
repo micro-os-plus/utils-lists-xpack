@@ -11,7 +11,7 @@
 
 /**
  * @file
- * @brief C++ Header file with the declarations of the µOS++ lists classes.
+ * @brief Main C++ header file with the declarations for the µOS++ lists classes.
  *
  * @details
  * The `lists.h` header file contains the C++ declarations of

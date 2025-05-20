@@ -1,2 +1,8 @@
 @dir include/micro-os-plus/utils
 @brief Folder with C++ header files for the µOS++ utilities.
+
+@details
+This folder contains the public C++ header files for the µOS++ utilities library.
+The files in this folder define the main APIs, classes, templates, and inline implementations
+for intrusive lists and related utilities. These headers are intended to be included by user code
+and provide the primary interface for interacting with the utilities provided by this package.
