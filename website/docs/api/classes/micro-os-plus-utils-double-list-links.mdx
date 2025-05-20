@@ -244,7 +244,7 @@ For statically allocated nodes, the constructor is intentionally left empty to a
 The copy constructor, move constructor, copy assignment operator, and move assignment operator are explicitly deleted to prevent accidental copying or moving of <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> objects. This ensures the integrity of the list structure, as duplicating or moving lists could result in invalid or inconsistent links within the list.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00307">307</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00256">256</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00307">307</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00254">254</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### double&#95;list&#95;links() {#ac959e3c2ac390872e194018476c9f0f3}
@@ -286,7 +286,7 @@ Destruct the node.
 
 Destroys the node. No special cleanup is required as the class does not manage resources.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00360">360</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00268">268</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00360">360</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00266">266</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -320,7 +320,7 @@ This method is called during initialisation and after a node is unlinked from a 
 After unlinking a node from a list, it must be returned to this state to prevent accidental access through stale links.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00115">115</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00113">113</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### initialize&#95;once() {#a19d5ef00655b74ec23dee3a4acb08513}
@@ -430,7 +430,7 @@ Returns a pointer to the next node in the list. If this node is the last in the 
 The returned pointer is of type <code>double&#95;list&#95;links&#95;base&#42;</code> and may need to be cast to the appropriate derived type by the caller.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00252">252</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00252">252</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00137">137</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator=() {#a256f1ab823a6571d1fa0430914540974}
@@ -479,7 +479,7 @@ Returns a pointer to the previous node in the list. If this node is the first in
 The returned pointer is of type <code>double&#95;list&#95;links&#95;base&#42;</code> and may need to be cast to the appropriate derived type by the caller.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00156">156</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00154">154</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#ab1f8f02b4ce24ae9eeae5383f8b0498b}

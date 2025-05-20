@@ -309,7 +309,7 @@ The default constructor for <code><Link to="/docs/api/classes/micro-os-plus/util
 The internal node pointer is value-initialised (set to <code>nullptr</code>), ensuring that the iterator is safe to use in comparisons and will not dereference an invalid address.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00967">967</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00737">737</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00967">967</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00735">735</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### intrusive&#95;list&#95;iterator() {#ac7aecafdf290c92a25481b63b5159e69}
@@ -325,7 +325,7 @@ Construct an iterator from a node pointer.
 </ParametersList>
 This constructor creates an <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link></code> that points to the specified node. The internal node pointer is set to the provided node address, allowing the iterator to traverse the list starting from that node. This is typically used to initialise an iterator to a specific position within the list, such as the beginning or end.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00974">974</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00751">751</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00974">974</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00749">749</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### intrusive&#95;list&#95;iterator() {#acb115adc091ab89e63afaceeb05cdc07}
@@ -341,7 +341,7 @@ Construct an iterator from a reference to an element.
 </ParametersList>
 This constructor creates an <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive&#95;list&#95;iterator</Link></code> that points to the specified element. The internal node pointer is set to the address of the intrusive node member within the given element, allowing the iterator to traverse the list starting from that element. This is typically used to initialise an iterator to a specific object in the list.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00982">982</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00766">766</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00982">982</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00764">764</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -369,7 +369,7 @@ The iterator pointer corresponding to the current node.
 
 Returns a pointer to the internal iterator node associated with the current object. This is typically used for advanced list operations or when direct access to the underlying node is required.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01072">1072</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00940">940</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01072">1072</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00938">938</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### get&#95;pointer() {#a11f2bc99a1f478650b82546e2e5470d1}
@@ -391,7 +391,7 @@ Pointer to object node.
 
 Computes and returns a pointer to the parent object that contains the intrusive node currently referenced by the iterator. This is achieved by calculating the offset of the intrusive node member within the parent object type and subtracting it from the node&#39;s address. This technique allows the iterator to provide access to the full object from just the node pointer, enabling intrusive list traversal and manipulation.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01062">1062</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00916">916</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01062">1062</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00914">914</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator!=() {#aa5703a48802f7fa6c20df08a5d90a3fa}
@@ -412,7 +412,7 @@ Inequality comparison operator.
 
 The inequality comparison operator (<code>operator!=</code>) checks whether two intrusive list iterators point to different nodes in the list by comparing their internal node pointers. This is useful for standard iterator operations, such as determining whether an iterator has reached the end of a range or for loop termination conditions.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01052">1052</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00899">899</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01052">1052</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00897">897</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&#42;() {#a5db55a56e22dbdea96e6d7e05c52f4c8}
@@ -431,7 +431,7 @@ The dereference operator (<code>operator&#42;</code>) provides access to the val
 
 This allows the iterator to be used in a manner similar to standard C++ iterators, enabling direct access to the list element for reading or modification.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01001">1001</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00802">802</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01001">1001</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00800">800</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#a22f5ebc83ff86c67f62bf16bc2db6e39}
@@ -448,7 +448,7 @@ Reference to the incremented iterator.
 
 The pre-increment operator (<code>operator++</code>) advances the intrusive list iterator to the next node in the list. It updates the internal node pointer to point to the node returned by the current node&#39;s <code>next()</code> method. This enables forward traversal of the list, following the linked structure.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01009">1009</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00817">817</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01009">1009</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00815">815</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#afd38a451e17ae6bf25966460f7815f12}
@@ -465,7 +465,7 @@ Iterator before increment.
 
 The post-increment operator (<code><Link to="#afd38a451e17ae6bf25966460f7815f12">operator++(int)</Link></code>) advances the intrusive list iterator to the next node in the list, but returns a copy of the iterator as it was before the increment. This allows iteration logic that requires access to the current element before moving to the next one, following the standard C++ iterator semantics for post-increment.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01017">1017</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00833">833</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01017">1017</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00831">831</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#ad74d2e875227841cfc46f17394402b43}
@@ -482,7 +482,7 @@ Reference to the decremented iterator.
 
 The pre-decrement operator (<code>operator--</code>) moves the intrusive list iterator to the previous node in the list. It updates the internal node pointer to point to the node returned by the current node&#39;s <code>previous()</code> method. This enables backward traversal of the list, following the linked structure in reverse.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01025">1025</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00850">850</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01025">1025</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00848">848</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#ab0996080fb49e46789339ce10a9b5adf}
@@ -498,7 +498,7 @@ Iterator before decrement.
 
 The post-decrement operator (<code><Link to="#ab0996080fb49e46789339ce10a9b5adf">operator--(int)</Link></code>) moves the intrusive list iterator to the previous node in the list, but returns a copy of the iterator as it was before the decrement. This enables iteration logic that requires access to the current element before moving backward, following the standard C++ iterator semantics for post-decrement.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01033">1033</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00866">866</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01033">1033</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00864">864</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator-&gt;() {#ab739aa0c113044d7288ea2f2b501336f}
@@ -515,7 +515,7 @@ Pointer to the value pointed to by the iterator.
 
 The pointer access operator (<code>operator-&gt;</code>) allows the intrusive list iterator to provide direct access to the value pointed to by the iterator, mimicking the behavior of a raw pointer. Internally, it calls <code><Link to="#a11f2bc99a1f478650b82546e2e5470d1">get&#95;pointer()</Link></code>, which computes and returns a pointer to the underlying value or object associated with the current node in the list.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00993">993</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00784">784</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00993">993</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00782">782</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#a7322f7566ab683966604148c49260562}
@@ -536,7 +536,7 @@ Equality comparison operator.
 
 The equality comparison operator (<code>operator==</code>) checks whether two intrusive list iterators point to the same node in the list by comparing their internal node pointers. This enables standard iterator comparisons, such as detecting the end of a range or verifying if two iterators refer to the same position within the list.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01043">1043</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00883">883</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01043">1043</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00881">881</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

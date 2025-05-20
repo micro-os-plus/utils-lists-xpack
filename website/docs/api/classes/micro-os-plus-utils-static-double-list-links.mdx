@@ -260,7 +260,7 @@ Code analysis tools may report:
 The copy constructor, move constructor, copy assignment operator, and move assignment operator are explicitly deleted to prevent accidental copying or moving of <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> objects. This ensures the integrity of the list structure, as duplicating or moving lists could result in invalid or inconsistent links within the list.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00407">407</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00191">191</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00407">407</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### static&#95;double&#95;list&#95;links() {#a6958ea54182c599d01d444e4e9f30df1}
@@ -309,7 +309,7 @@ As a result, explicit pointer clearing in the destructor is not reliable. If poi
 The code to clear the pointers is now commented out, since recent GCC optimizes it out (dead store elimination). Depending on the version, there might be some attributes to allow this, but they are not safe, for example <code>&#95;&#95;attribute&#95;&#95;((optimize(&quot;no-lifetime-dse,no-dse,no-inline&quot;)))</code> did not help. The workaround is to use <code><Link to="#ac7c7be24256a093ae9b047efd45cbfc3">nullify()</Link></code> explicitly, or, even better, to clear the memory before invoking the placement <code>new</code> constructor again.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00455">455</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00222">222</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00455">455</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00220">220</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -343,7 +343,7 @@ This method is called during initialisation and after a node is unlinked from a 
 After unlinking a node from a list, it must be returned to this state to prevent accidental access through stale links.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00115">115</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00113">113</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### initialize&#95;once() {#a19d5ef00655b74ec23dee3a4acb08513}
@@ -453,7 +453,7 @@ Returns a pointer to the next node in the list. If this node is the last in the 
 The returned pointer is of type <code>double&#95;list&#95;links&#95;base&#42;</code> and may need to be cast to the appropriate derived type by the caller.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00252">252</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00252">252</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00137">137</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### nullify() {#ac7c7be24256a093ae9b047efd45cbfc3}
@@ -527,7 +527,7 @@ Returns a pointer to the previous node in the list. If this node is the first in
 The returned pointer is of type <code>double&#95;list&#95;links&#95;base&#42;</code> and may need to be cast to the appropriate derived type by the caller.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00156">156</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00154">154</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#ab1f8f02b4ce24ae9eeae5383f8b0498b}

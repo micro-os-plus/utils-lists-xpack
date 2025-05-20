@@ -364,7 +364,7 @@ This constructor does not clear or modify the internal pointers for statically a
 The copy constructor, move constructor, copy assignment operator, and move assignment operator are explicitly deleted to prevent accidental copying or moving of <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> objects. This ensures the integrity of the list structure, as duplicating or moving lists could result in invalid or inconsistent links within the list.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00722">722</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00488">488</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00722">722</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00486">486</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### double&#95;list() {#ac38c0cef28c56bcac8ea5aa213977c08}
@@ -414,7 +414,7 @@ Normally at this point there must be no nodes in the list. However, for statical
 In debug mode, the destructor emits a warning if the list is not empty when destroyed, helping to catch potential resource leaks or logic errors in list management.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00770">770</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00518">518</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00770">770</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00516">516</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -436,7 +436,7 @@ An iterator to the first element.
 
 Returns an iterator to the first element in the list. For statically allocated lists, asserts that the list is already initialised. The iterator will point to the node after the internal links node (the head). If the list is empty, the iterator will compare equal to <code><Link to="#abb4f476badf26d59503fe5a3a2ad0400">end()</Link></code>.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00866">866</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00693">693</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00866">866</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00691">691</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### clear() {#ab19a62873a09745075bdceb60096c03c}
@@ -457,7 +457,7 @@ Nothing.
 
 The <code><Link to="#ab19a62873a09745075bdceb60096c03c">clear()</Link></code> method initialises the mandatory internal links node so that both its <code>previous&#95;</code> and <code>next&#95;</code> pointers refer to itself. This marks the list as empty and ensures it is in a safe, known state, ready for new insertions. This operation is typically used to reset the list, removing all elements and breaking any existing links.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00816">816</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00603">603</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00816">816</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00601">601</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### empty() {#ae5fcdb79a6a10fa523cd39a5363ff76a}
@@ -478,7 +478,7 @@ None.
 </ParametersList>
 Checks whether the list contains any nodes. The list is considered empty if the internal links node is not linked to any other nodes. This method provides a fast way to determine if the list has elements or is currently empty.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00805">805</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00587">587</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00805">805</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00585">585</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### end() {#abb4f476badf26d59503fe5a3a2ad0400}
@@ -494,7 +494,7 @@ An iterator positioned after the last element.
 
 Returns an iterator to the position after the last element in the list (the end iterator). This iterator points to the internal links node, which acts as a sentinel. It is used as the past-the-end marker in iteration and comparison operations. The end iterator does not reference any valid list element.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00874">874</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00713">713</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00874">874</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00711">711</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### head() {#aba89961ff686c458b91bbe59f2480519}
@@ -516,7 +516,7 @@ Pointer to the head node.
 
 Returns a pointer to the first node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during iteration. The returned pointer should be checked against <code><Link to="#abb4f476badf26d59503fe5a3a2ad0400">end()</Link></code> or the sentinel node to determine if the list contains any elements.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00826">826</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00621">621</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00826">826</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00619">619</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### initialize&#95;once() {#a6c5ca2deb541088fac9aae237e0c3699}
@@ -542,7 +542,7 @@ If the statically allocated list is still in the initial <em>uninitialised</em> 
 Must be manually called for statically allocated lists before inserting elements or performing any other operations.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00794">794</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00570">570</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00794">794</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00568">568</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### link&#95;head() {#a0be123af44b95f76b0347e38a1e93d00}
@@ -562,7 +562,7 @@ Nothing.
 
 Adds a new node to the beginning (head) of the list. For statically allocated lists, asserts that the list is already initialised. The new node is linked before the current head node, updating the list structure accordingly. This operation does not check for duplicate nodes or whether the node is already linked elsewhere.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00856">856</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00672">672</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00856">856</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00670">670</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### link&#95;tail() {#aeb06a4ae2e5497418a29e488d989f6da}
@@ -582,7 +582,7 @@ Nothing.
 
 Adds a new node to the end (tail) of the list. For statically allocated lists, asserts that the list is already initialised. The new node is linked after the current tail node, updating the list structure accordingly. This operation does not check for duplicate nodes or whether the node is already linked elsewhere.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00846">846</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00651">651</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00846">846</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00649">649</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### links&#95;pointer() {#a052a2e54bdf39df3c7d57e51a555ecab}
@@ -650,7 +650,7 @@ Pointer to the tail node.
 
 Returns a pointer to the last node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during reverse iteration. The returned pointer should be checked against the sentinel node to determine if the list contains any elements.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00836">836</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00636">636</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00836">836</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00634">634</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#aee22388cb4629e7a170c216cb95d0236}
@@ -671,7 +671,7 @@ None.
 </ParametersList>
 An uninitialized node is a node with any of the pointers set to <code>nullptr</code>. Only statically allocated nodes in the initial state are considered <em>uninitialized</em>. For dynamically allocated lists, this method always returns <code>false</code> since their nodes are explicitly initialized during construction.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00783">783</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00544">544</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00783">783</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00542">542</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
