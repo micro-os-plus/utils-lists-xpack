@@ -75,7 +75,7 @@ Type of pointer difference. <Link to="#ac680e68f2e9956c87105cccdfbedeb6b">More..
 <MembersIndexItem
   type="using"
   name={<><Link to="#a54065d590254d59ade7c08ca0def9aff">is&#95;statically&#95;allocated</Link> = typename links&#95;type::is&#95;statically&#95;allocated</>}>
-Type of reference to the iterator internal pointer. <Link to="#a54065d590254d59ade7c08ca0def9aff">More...</Link>
+Type indicating if the links node is statically allocated. <Link to="#a54065d590254d59ade7c08ca0def9aff">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -124,6 +124,18 @@ Type of value <em>pointed to</em> by the iterator. <Link to="#a75fc4987976917192
   type="constexpr"
   name={<><Link to="#a05efb4b473471f15d792fb4042435bc2">intrusive&#95;list</Link> ()</>}>
 Construct an intrusive doubly linked list. <Link to="#a05efb4b473471f15d792fb4042435bc2">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#ae66333c76d059f070d959298e0fa396c">intrusive&#95;list</Link> (const intrusive&#95;list &amp;)=delete</>}>
+Deleted copy constructor. <Link to="#ae66333c76d059f070d959298e0fa396c">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#ace009ba3457127e9311d9fc8ae80b181">intrusive&#95;list</Link> (intrusive&#95;list &amp;&amp;)=delete</>}>
+Deleted move constructor. <Link to="#ace009ba3457127e9311d9fc8ae80b181">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -194,8 +206,20 @@ Add a node to the tail of the list. <Link to="#a39f23959a6cd2774eb5ed1f1caeda242
 
 <MembersIndexItem
   type={<>constexpr const <Link to="#a0bb5c5cba26ff911bbae525200d9e3c1">links&#95;type</Link> &#42;</>}
-  name={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list/#a87bd66fd3786a4183968c0127c1f487e">links&#95;pointer</Link> () const</>}>
-Get the address of the node storing the list links. <Link to="/docs/api/classes/micro-os-plus/utils/double-list/#a87bd66fd3786a4183968c0127c1f487e">More...</Link>
+  name={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list/#a052a2e54bdf39df3c7d57e51a555ecab">links&#95;pointer</Link> (void) const</>}>
+Get the address of the node storing the list links. <Link to="/docs/api/classes/micro-os-plus/utils/double-list/#a052a2e54bdf39df3c7d57e51a555ecab">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> &amp;</>}
+  name={<><Link to="#a96c735ada72f8b5f08b07b40bd315bb4">operator=</Link> (const intrusive&#95;list &amp;)=delete</>}>
+Deleted copy assignment operator. <Link to="#a96c735ada72f8b5f08b07b40bd315bb4">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> &amp;</>}
+  name={<><Link to="#aefd72bb2624733146adfd2f1de3f341e">operator=</Link> (intrusive&#95;list &amp;&amp;)=delete</>}>
+Deleted move assignment operator. <Link to="#aefd72bb2624733146adfd2f1de3f341e">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -231,7 +255,7 @@ Unlink the last element from the list. <Link to="#ad499ca0d5953647f3a23876e28f73
 <MembersIndexItem
   type={<><Link to="#ac7006fb066460b5ff008f6f64d62e272">pointer</Link></>}
   name={<><Link to="#adec6609971de187a30fdc6607031c78a">get&#95;pointer</Link> (iterator&#95;pointer node) const</>}>
-Get the address of the node. <Link to="#adec6609971de187a30fdc6607031c78a">More...</Link>
+Get the address of the object from the intrusive node pointer. <Link to="#adec6609971de187a30fdc6607031c78a">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -259,8 +283,14 @@ A class template for a list of nodes which store the links inside themselves as 
 <ParametersListItem name="L">Type of the links node (one of <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links">double&#95;list&#95;links</Link></code> or <code><Link to="/docs/api/classes/micro-os-plus/utils/static-double-list-links">static&#95;double&#95;list&#95;links</Link></code>).</ParametersListItem>
 <ParametersListItem name="U">Type stored in the list, derived from T.</ParametersListItem>
 </ParametersList>
+This class implements an intrusive doubly linked list, where each object stores its own link node as a member. The list maintains a pair of head and tail pointers, allowing efficient insertion, removal, and iteration. The intrusive approach eliminates the need for separate node allocations, as the links are embedded within the objects themselves.
 
-<SectionUser title="Examples">
+The template parameter <code>MP</code> specifies the member pointer to the intrusive node within the object, enabling the list to compute the address of the parent object from the node pointer. This design supports both regular and statically allocated lists, depending on the type used for <code>L</code>.
+
+Iterators provide access to the objects in the list, supporting bidirectional traversal.
+
+
+<SectionUser title="Example">
 
 </SectionUser>
 
@@ -268,19 +298,14 @@ A class template for a list of nodes which store the links inside themselves as 
 <ProgramListing extension="cpp">
 
 <CodeLine><Highlight kind="keyword">namespace </Highlight><Highlight kind="normal">os = micro&#95;os&#95;plus;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal"></Highlight></CodeLine>
 <CodeLine><Highlight kind="normal"></Highlight><Highlight kind="keyword">using </Highlight><Highlight kind="normal">threads&#95;list = os::utils::intrusive&#95;list&lt;</Highlight></CodeLine>
-<CodeLine><Highlight kind="normal">thread, os::utils::double&#95;list&#95;links, &amp;thread::child&#95;links&#95;&gt;;</Highlight></CodeLine>
+<CodeLine><Highlight kind="normal">  thread, os::utils::double&#95;list&#95;links, &amp;thread::child&#95;links&#95;&gt;;</Highlight></CodeLine>
 
 </ProgramListing>
 
-A pair of head/tail pointers, maintaining a list of intrusive nodes.
-
-Intrusive nodes do not need separate allocations for the links, but store them in the linked objects, in the MP member. The main thing this class does is to compute the address of the object by subtracting the offset from the address of the member storing the pointers.
-
 For statically allocated lists, set L=<Link to="/docs/api/classes/micro-os-plus/utils/static-double-list-links">static&#95;double&#95;list&#95;links</Link>.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00838">838</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01135">1135</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
@@ -293,7 +318,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::difference&#95;type =  ptrdiff&#95;t</>}>
 Type of pointer difference.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00886">886</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01183">1183</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### is&#95;statically&#95;allocated {#a54065d590254d59ade7c08ca0def9aff}
@@ -302,9 +327,9 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::is&#95;statically&#95;allocated = 
         typename links&#95;type::is&#95;statically&#95;allocated</>}>
-Type of reference to the iterator internal pointer.
+Type indicating if the links node is statically allocated.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00875">875</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01172">1172</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator {#a6c44dc25422336e98d5c450874496041}
@@ -314,7 +339,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::iterator =  intrusive&#95;list&#95;iterator&lt;T, N, MP, U&gt;</>}>
 Type of iterator over the values.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00870">870</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01167">1167</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator&#95;pointer {#a3c9a90f0bde3f7d498d4419c41adf723}
@@ -324,7 +349,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::iterator&#95;pointer =  N&#42;</>}>
 Type of reference to the iterator internal pointer.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00881">881</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01178">1178</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### links&#95;type {#a0bb5c5cba26ff911bbae525200d9e3c1}
@@ -334,7 +359,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::links&#95;type =  L</>}>
 Type of the list links node object where the pointers to the list head and tail are stored.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00850">850</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01147">1147</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### pointer {#ac7006fb066460b5ff008f6f64d62e272}
@@ -344,7 +369,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::pointer =  value&#95;type&#42;</>}>
 Type of pointer to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00860">860</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01157">1157</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### reference {#aa9d68f393f6506fd6d84d7f9e7e520c3}
@@ -354,7 +379,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::reference =  value&#95;type&amp;</>}>
 Type of reference to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00865">865</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01162">1162</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### value&#95;type {#a75fc498797691719252818fb40047e14}
@@ -364,7 +389,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::value&#95;type =  U</>}>
 Type of value <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00855">855</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01152">1152</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -381,7 +406,40 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   labels = {["constexpr"]}>
 Construct an intrusive doubly linked list.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00891">891</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00572">572</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+The default constructor for <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link></code> creates an empty intrusive list. No initialisation of internal pointers is performed here; for statically allocated lists, the pointers are expected to be zero-initialised by the runtime, while for dynamically allocated lists, initialisation is handled by the base class or explicit methods.
+
+
+<SectionUser title="The rule of five">
+The copy constructor, move constructor, copy assignment operator, and move assignment operator are explicitly deleted to prevent accidental copying or moving of <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> objects. This ensures the integrity of the list structure, as duplicating or moving lists could result in invalid or inconsistent links within the list.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01188">1188</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00962">962</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+</MemberDefinition>
+
+### intrusive&#95;list() {#ae66333c76d059f070d959298e0fa396c}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::intrusive&#95;list (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> &amp;)</>}
+  labels = {["delete"]}>
+Deleted copy constructor.
+
+Copying of <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link></code> instances is explicitly disallowed to prevent accidental duplication, which could compromise the integrity of the list structure.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01200">1200</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### intrusive&#95;list() {#ace009ba3457127e9311d9fc8ae80b181}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
+  prototype={<>micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::intrusive&#95;list (<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> &amp;&amp;)</>}
+  labels = {["delete"]}>
+Deleted move constructor.
+
+Moving of <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link></code> instances is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving lists.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01210">1210</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -398,7 +456,9 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   labels = {["constexpr"]}>
 Destruct the list.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00914">914</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00577">577</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+The destructor for <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link></code> does not perform any cleanup or pointer manipulation. List management and node unlinking are handled elsewhere, so the destructor is intentionally left empty to avoid unnecessary writes or side effects during object destruction.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01238">1238</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00974">974</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -419,7 +479,9 @@ Iterator begin.
 An iterator positioned at the first element.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00976">976</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00649">649</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Returns an iterator to the first element in the intrusive list. The iterator points to the node after the internal links node (the head). For statically allocated lists, the initialisation check is handled by the links class. If the list is empty, the iterator will compare equal to <code><Link to="#a7b1a1165f207467209a06cf7cb97e6be">end()</Link></code>.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01311">1311</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01077">1077</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### clear() {#ab19a62873a09745075bdceb60096c03c}
@@ -438,9 +500,9 @@ None.
 Nothing.
 </SectionUser>
 
-Initialise the mandatory node with links to itself.
+The <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list/#ab19a62873a09745075bdceb60096c03c">clear()</Link></code> method initialises the mandatory internal links node so that both its <code>previous&#95;</code> and <code>next&#95;</code> pointers refer to itself. This marks the list as empty and ensures it is in a safe, known state, ready for new insertions. This operation is typically used to reset the list, removing all elements and breaking any existing links.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00614">614</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00385">385</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00816">816</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00602">602</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### empty() {#a0fa893095f3705c8dc2c59033258faac}
@@ -460,8 +522,9 @@ None.
 <ParametersListItem name="true">The list has <b>no</b> nodes.</ParametersListItem>
 <ParametersListItem name="false">The list has <b>at least one</b> node.</ParametersListItem>
 </ParametersList>
+Checks whether the intrusive list contains any nodes. This method delegates to the underlying double list implementation to determine if the list is empty. The list is considered empty if there are no elements linked.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00935">935</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00603">603</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01261">1261</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01005">1005</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### end() {#a7b1a1165f207467209a06cf7cb97e6be}
@@ -476,7 +539,9 @@ Iterator begin.
 An iterator positioned after the last element.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00983">983</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00659">659</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Returns an iterator to the position after the last element in the intrusive list (the end iterator). This iterator points to the internal links node, which acts as a sentinel. It is used as the past-the-end marker in iteration and comparison operations. The end iterator does not reference any valid list element.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01319">1319</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01095">1095</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### head() {#aba89961ff686c458b91bbe59f2480519}
@@ -496,7 +561,9 @@ None.
 Pointer to the head node.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00623">623</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00395">395</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Returns a pointer to the first node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during iteration. The returned pointer should be checked against <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list/#abb4f476badf26d59503fe5a3a2ad0400">end()</Link></code> or the sentinel node to determine if the list contains any elements.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00826">826</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00620">620</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### initialize&#95;once() {#a6ea6345b2ce0664b1fc1bbd484d7a653}
@@ -515,16 +582,14 @@ None.
 Nothing.
 </SectionUser>
 
-If the statically allocated list is still in the initial <em>uninitialised</em> state (with both pointers null), initialise the list to the empty state, with both pointers pointing to itself.
-
-For non-statically initialised lists, this method is ineffective.
+If the statically allocated list is still in the initial uninitialised state (with both pointers null), this method initialises the list to the empty state, with both pointers pointing to itself. For non-statically initialised lists, this method has no effect.
 
 
 :::info
-Must be manually called for statically allocated list before inserting elements, or any other operations.
+Must be manually called for statically allocated lists before inserting elements or performing any other operations.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00925">925</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00596">596</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01250">1250</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00991">991</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### link&#95;head() {#a69ff5a010ced371d2bff3e4ebe1fb13d}
@@ -542,7 +607,9 @@ Add a node to the head of the list.
 Nothing.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00953">953</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00627">627</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Adds a new node to the beginning (head) of the intrusive list. The offset of the intrusive node member within the containing object is computed, and the node is linked before the current head node. This operation does not check for duplicate nodes or whether the node is already linked elsewhere. For statically allocated lists, the initialisation check is handled by the links class.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01281">1281</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01047">1047</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### link&#95;tail() {#a39f23959a6cd2774eb5ed1f1caeda242}
@@ -560,22 +627,55 @@ Add a node to the tail of the list.
 Nothing.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00944">944</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00610">610</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Adds a new node to the end (tail) of the intrusive list. The offset of the intrusive node member within the containing object is computed, and the node is linked after the current tail node. This operation does not check for duplicate nodes or whether the node is already linked elsewhere. For statically allocated lists, the initialisation check is handled by the links class.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01271">1271</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01021">1021</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### links&#95;pointer() {#a87bd66fd3786a4183968c0127c1f487e}
+### links&#95;pointer() {#a052a2e54bdf39df3c7d57e51a555ecab}
 
 <MemberDefinition
   template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
-  prototype={<>const links&#95;type &#42; micro&#95;os&#95;plus::utils::double&#95;list&lt; N, double&#95;list&#95;links &gt;::links&#95;pointer () const</>}
+  prototype={<>const links&#95;type &#42; micro&#95;os&#95;plus::utils::double&#95;list&lt; N, double&#95;list&#95;links &gt;::links&#95;pointer (void) const</>}
   labels = {["inline", "constexpr"]}>
 Get the address of the node storing the list links.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
 
 <SectionUser title="Returns">
 A pointer to the list head object.
 </SectionUser>
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00669">669</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00886">886</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator=() {#a96c735ada72f8b5f08b07b40bd315bb4}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list &amp; micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::operator= (const <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> &amp;)</>}
+  labels = {["delete"]}>
+Deleted copy assignment operator.
+
+Copy assignment is explicitly disallowed to prevent accidental overwriting of list objects, which could lead to corruption of the list structure.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01221">1221</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator=() {#aefd72bb2624733146adfd2f1de3f341e}
+
+<MemberDefinition
+  template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
+  prototype={<>intrusive&#95;list &amp; micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::operator= (<Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> &amp;&amp;)</>}
+  labels = {["delete"]}>
+Deleted move assignment operator.
+
+Move assignment is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving lists.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01232">1232</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### tail() {#a4ff535226e16d0d2e5aeb8c6a5590021}
@@ -595,7 +695,9 @@ None.
 Pointer to the tail node.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00632">632</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00402">402</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Returns a pointer to the last node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during reverse iteration. The returned pointer should be checked against the sentinel node to determine if the list contains any elements.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00836">836</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00635">635</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#aee22388cb4629e7a170c216cb95d0236}
@@ -614,11 +716,9 @@ None.
 <ParametersListItem name="true">The list was <b>not</b> initialised.</ParametersListItem>
 <ParametersListItem name="false">The list was initialised.</ParametersListItem>
 </ParametersList>
-An uninitialized node is a node with any of the pointers set to <code>nullptr</code>.
+An uninitialized node is a node with any of the pointers set to <code>nullptr</code>. Only statically allocated nodes in the initial state are considered <em>uninitialized</em>. For dynamically allocated lists, this method always returns <code>false</code> since their nodes are explicitly initialized during construction.
 
-Only statically allocated nodes in the initial state are <em>uninitialized</em>.
-
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00584">584</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00336">336</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00783">783</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00543">543</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### unlink&#95;head() {#a5705b4896215d3fc3d8941c26e814bac}
@@ -628,11 +728,18 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   prototype={<>intrusive&#95;list&lt; T, N, MP, L, U &gt;::pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::unlink&#95;head (void)</>}>
 Unlink the first element from the list.
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 Pointer to the first element in the list.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00967">967</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00693">693</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Removes and unlinks the first element from the intrusive list. If the list is empty, this operation is a no-op and returns a pointer to the internal links node. The method unlinks the node at the head of the list and returns a pointer to the parent object containing the unlinked node.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01301">1301</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01146">1146</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### unlink&#95;tail() {#ad499ca0d5953647f3a23876e28f73295}
@@ -642,11 +749,18 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   prototype={<>intrusive&#95;list&lt; T, N, MP, L, U &gt;::pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::unlink&#95;tail (void)</>}>
 Unlink the last element from the list.
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 Pointer to the last element in the list.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00960">960</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00707">707</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Removes and unlinks the last element from the intrusive list. If the list is empty, this operation is a no-op and returns a pointer to the internal links node. The method unlinks the node at the tail of the list and returns a pointer to the parent object containing the unlinked node.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01291">1291</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01168">1168</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -661,13 +775,19 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N, N T::&#42; MP, class L = double&#95;list&#95;links, class U = T&gt;</>}
   prototype={<>intrusive&#95;list&lt; T, N, MP, L, U &gt;::pointer micro&#95;os&#95;plus::utils::intrusive&#95;list&lt; T, N, MP, L, U &gt;::get&#95;pointer (<Link to="#a3c9a90f0bde3f7d498d4419c41adf723">iterator&#95;pointer</Link> node) const</>}
   labels = {["inline", "protected"]}>
-Get the address of the node.
+Get the address of the object from the intrusive node pointer.
+
+<ParametersList title="Parameters">
+<ParametersListItem name="node">Pointer to the intrusive node.</ParametersListItem>
+</ParametersList>
 
 <SectionUser title="Returns">
-A pointer with the address of the node.
+A pointer to the parent object containing the node.
 </SectionUser>
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00992">992</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00675">675</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Computes and returns a pointer to the parent object that contains the intrusive node referenced by the given node pointer. This is achieved by calculating the offset of the intrusive node member within the parent object type and subtracting it from the node&#39;s address. This allows retrieval of the full object from just the node pointer, enabling intrusive list traversal and manipulation.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l01330">1330</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l01120">1120</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -684,11 +804,9 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   labels = {["protected"]}>
 The list top node used to point to <b>head</b> and <b>tail</b> nodes.
 
-The node <b>next</b> pointer points to the list head, and the <b>previous</b> pointer points to the list tail.
+This member stores the internal links node for the list. The <b>next</b> pointer of this node points to the head of the list, and the <b>previous</b> pointer points to the tail. For an empty list, both pointers refer to the node itself, simplifying list management and boundary checks.
 
-To simplify processing, the list always has these pointers set, with an empty list node pointing to itself.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00688">688</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00904">904</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

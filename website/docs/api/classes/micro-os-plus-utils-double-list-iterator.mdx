@@ -25,6 +25,7 @@ import MembersIndexItem from '@xpack/docusaurus-plugin-doxygen/components/Member
 import ParametersList from '@xpack/docusaurus-plugin-doxygen/components/ParametersList'
 import ParametersListItem from '@xpack/docusaurus-plugin-doxygen/components/ParametersListItem'
 import SectionDefinition from '@xpack/docusaurus-plugin-doxygen/components/SectionDefinition'
+import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser'
 
 # The `double_list_iterator` Class Template Reference
 
@@ -107,16 +108,19 @@ Pointer to the node. <Link to="#ac185c8ffa5f9d12454f264fa9b0a1733">More...</Link
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#ac26720e2d8837ad6e26e2f103bf3e8e3">double&#95;list&#95;iterator</Link> ()</>}>
+Default constructor. Constructs an iterator pointing to <code>nullptr</code>. <Link to="#ac26720e2d8837ad6e26e2f103bf3e8e3">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#a9dcb547fe44a5956040c3c873fa2ae7d">double&#95;list&#95;iterator</Link> (iterator&#95;pointer const node)</>}>
+Construct an iterator from a node pointer. <Link to="#a9dcb547fe44a5956040c3c873fa2ae7d">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr"
   name={<><Link to="#a03f4f8570751fcfdcd9ad2ad4e1f27d9">double&#95;list&#95;iterator</Link> (reference element)</>}>
+Construct an iterator from a reference to an element. <Link to="#a03f4f8570751fcfdcd9ad2ad4e1f27d9">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -127,52 +131,62 @@ Pointer to the node. <Link to="#ac185c8ffa5f9d12454f264fa9b0a1733">More...</Link
 
 <MembersIndexItem
   type={<>constexpr <Link to="#afb43bcf73a842c31d48e128c4c289d26">iterator&#95;pointer</Link></>}
-  name={<><Link to="#a65b1288140bd58837231b1fb68706a12">get&#95;iterator&#95;pointer</Link> () const</>}>
+  name={<><Link to="#a473a42671746c760cd95646f0810b469">get&#95;iterator&#95;pointer</Link> (void) const</>}>
+Get the internal iterator pointer (node pointer). <Link to="#a473a42671746c760cd95646f0810b469">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="#a4d40f463ce14aaed72a3132e49ae99b0">pointer</Link></>}
-  name={<><Link to="#a45be1449074d7ebe2a8c1acad83f485d">get&#95;pointer</Link> () const</>}>
+  name={<><Link to="#a4dda1a12bf05e974cc3e6394f28302a0">get&#95;pointer</Link> (void) const</>}>
+Get a pointer to the value pointed to by the iterator. <Link to="#a4dda1a12bf05e974cc3e6394f28302a0">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp;</>}
   name={<><Link to="#a511da5b3fb41b18a16d1d04c4f7b1095">operator--</Link> ()</>}>
+Pre-decrement operator. <Link to="#a511da5b3fb41b18a16d1d04c4f7b1095">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link></>}
   name={<><Link to="#a1bc00178e8a6da8c816716236fd60be1">operator--</Link> (int)</>}>
+Post-decrement operator. <Link to="#a1bc00178e8a6da8c816716236fd60be1">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="#a4d40f463ce14aaed72a3132e49ae99b0">pointer</Link></>}
   name={<><Link to="#a4c59c7d0ddbf8a7e2008d6288a042c08">operator-&gt;</Link> () const</>}>
+Pointer access operator. <Link to="#a4c59c7d0ddbf8a7e2008d6288a042c08">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr bool"
   name={<><Link to="#a5cce9653aa78c5989ef863a6a7831d59">operator!=</Link> (const double&#95;list&#95;iterator &amp;other) const</>}>
+Inequality comparison operator. <Link to="#a5cce9653aa78c5989ef863a6a7831d59">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="#ac0ad55399bdc6d2b83a1829f86ff7586">reference</Link></>}
   name={<><Link to="#a81984e048a2b2778bfd6fd5098a4e7d4">operator&#42;</Link> () const</>}>
+Dereference operator. <Link to="#a81984e048a2b2778bfd6fd5098a4e7d4">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp;</>}
   name={<><Link to="#a79955aa86c312930d561bfdaa7f8e740">operator++</Link> ()</>}>
+Pre-increment operator. <Link to="#a79955aa86c312930d561bfdaa7f8e740">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link></>}
   name={<><Link to="#a60ce68c08d226be1b5ff5bc92e21a4fc">operator++</Link> (int)</>}>
+Post-increment operator. <Link to="#a60ce68c08d226be1b5ff5bc92e21a4fc">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type="constexpr bool"
   name={<><Link to="#a4046bc946ebb2d019dac5fd3ffd4d118">operator==</Link> (const double&#95;list&#95;iterator &amp;other) const</>}>
+Equality comparison operator. <Link to="#a4046bc946ebb2d019dac5fd3ffd4d118">More...</Link>
 </MembersIndexItem>
 
 </MembersIndex>
@@ -186,11 +200,9 @@ A class template for a doubly linked list forward iterator.
 <ParametersListItem name="N">Type of intrusive node. Must have the public members <b>previous</b> &amp; <b>next</b>.</ParametersListItem>
 <ParametersListItem name="U">Type stored in the list, derived from T.</ParametersListItem>
 </ParametersList>
-This class provides an interface similar to <code>std::list::iterator</code>.
+This iterator provides an interface similar to <code>std::list::iterator</code> for traversing a doubly linked list. It supports bidirectional iteration and access to the underlying node and value. In a typical doubly linked list, all types are <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links">double&#95;list&#95;links</Link></code>.
 
-In a common doubly linked list, all types are <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links">double&#95;list&#95;links</Link></code>.
-
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00388">388</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00489">489</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
@@ -203,7 +215,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::difference&#95;type =  ptrdiff&#95;t</>}>
 Type of pointer difference.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00414">414</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00515">515</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator&#95;category {#a608d5247c01f595f4f00d5a54c3fafc2}
@@ -213,7 +225,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::iterator&#95;category =  std::forward&#95;iterator&#95;tag</>}>
 Category of iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00419">419</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00520">520</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### iterator&#95;pointer {#afb43bcf73a842c31d48e128c4c289d26}
@@ -223,7 +235,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::iterator&#95;pointer =  N&#42;</>}>
 Type of reference to the iterator internal pointer.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00409">409</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00510">510</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### pointer {#a4d40f463ce14aaed72a3132e49ae99b0}
@@ -233,7 +245,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::pointer =  value&#95;type&#42;</>}>
 Type of pointer to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00399">399</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00500">500</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### reference {#ac0ad55399bdc6d2b83a1829f86ff7586}
@@ -243,7 +255,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::reference =  value&#95;type&amp;</>}>
 Type of reference to object <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00404">404</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00505">505</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### value&#95;type {#ac2589f53de7916d046b4177f4f7ff346}
@@ -253,7 +265,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   prototype={<>using micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::value&#95;type =  U</>}>
 Type of value <em>pointed to</em> by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00394">394</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00495">495</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -270,7 +282,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   labels = {["protected"]}>
 Pointer to the node.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00465">465</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00640">640</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -285,8 +297,16 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::double&#95;list&#95;iterator ()</>}
   labels = {["constexpr"]}>
+Default constructor. Constructs an iterator pointing to <code>nullptr</code>.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00422">422</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00179">179</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+The default constructor for <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link></code> initialises the iterator to a null state, meaning it does not point to any node in the list. This is typically used to create an &quot;end&quot; iterator or to initialise an iterator variable before assigning it to a valid node.
+
+
+:::info
+The internal node pointer is value-initialised (set to <code>nullptr</code>), ensuring that the iterator is safe to use in comparisons and will not dereference an invalid address.
+:::
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00528">528</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00286">286</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### double&#95;list&#95;iterator() {#a9dcb547fe44a5956040c3c873fa2ae7d}
@@ -295,8 +315,14 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::double&#95;list&#95;iterator (<Link to="#afb43bcf73a842c31d48e128c4c289d26">iterator&#95;pointer</Link> const node)</>}
   labels = {["explicit", "constexpr"]}>
+Construct an iterator from a node pointer.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00424">424</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00184">184</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<ParametersList title="Parameters">
+<ParametersListItem name="node">Pointer to the node to which the iterator should point.</ParametersListItem>
+</ParametersList>
+This constructor creates a <code><Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link></code> that points to the specified node. The internal node pointer is set to the provided node address, allowing the iterator to traverse the list starting from that node. This constructor is typically used to initialise an iterator to a specific position within the list, such as the beginning or end.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00535">535</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00299">299</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### double&#95;list&#95;iterator() {#a03f4f8570751fcfdcd9ad2ad4e1f27d9}
@@ -305,8 +331,13 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::double&#95;list&#95;iterator (<Link to="#ac0ad55399bdc6d2b83a1829f86ff7586">reference</Link> element)</>}
   labels = {["explicit", "constexpr"]}>
+Construct an iterator from a reference to an element.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00426">426</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+<ParametersList title="Parameters">
+<ParametersListItem name="element">Reference to the element to which the iterator should point.</ParametersListItem>
+</ParametersList>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00543">543</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -315,24 +346,46 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
 
 ## Public Member Functions
 
-### get&#95;iterator&#95;pointer() {#a65b1288140bd58837231b1fb68706a12}
+### get&#95;iterator&#95;pointer() {#a473a42671746c760cd95646f0810b469}
 
 <MemberDefinition
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
-  prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt;::iterator&#95;pointer micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::get&#95;iterator&#95;pointer () const</>}
+  prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt;::iterator&#95;pointer micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::get&#95;iterator&#95;pointer (void) const</>}
   labels = {["constexpr"]}>
+Get the internal iterator pointer (node pointer).
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00459">459</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00267">267</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+Pointer to the node.
+</SectionUser>
+
+Returns the internal node pointer that the iterator currently references. This is useful for advanced list operations or when direct access to the underlying node structure is required, such as for interoperability with other list utilities or for debugging purposes.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00634">634</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00456">456</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
-### get&#95;pointer() {#a45be1449074d7ebe2a8c1acad83f485d}
+### get&#95;pointer() {#a4dda1a12bf05e974cc3e6394f28302a0}
 
 <MemberDefinition
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
-  prototype={<>pointer micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::get&#95;pointer () const</>}
+  prototype={<>pointer micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::get&#95;pointer (void) const</>}
   labels = {["constexpr"]}>
+Get a pointer to the value pointed to by the iterator.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00456">456</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
+<SectionUser title="Returns">
+Pointer to the value.
+</SectionUser>
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00624">624</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### operator!=() {#a5cce9653aa78c5989ef863a6a7831d59}
@@ -341,8 +394,19 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>bool micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator!= (const <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp; other) const</>}
   labels = {["constexpr"]}>
+Inequality comparison operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00453">453</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00259">259</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<ParametersList title="Parameters">
+<ParametersListItem name="other">Iterator to compare with.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+<code>true</code> if the iterators point to different nodes, <code>false</code> otherwise.
+</SectionUser>
+
+The inequality comparison operator (<code>operator!=</code>) checks whether two iterators point to different nodes in the list by comparing their internal node pointers. This is useful for standard iterator operations, such as determining whether an iterator has reached the end of a range or for loop termination conditions.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00614">614</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00441">441</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator&#42;() {#a81984e048a2b2778bfd6fd5098a4e7d4}
@@ -351,8 +415,17 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt;::reference micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator&#42; () const</>}
   labels = {["constexpr"]}>
+Dereference operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00435">435</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00210">210</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Returns">
+Reference to the value pointed to by the iterator.
+</SectionUser>
+
+The dereference operator (<code>operator&#42;</code>) provides access to the value or object pointed to by the iterator. Internally, it calls <code><Link to="#a4dda1a12bf05e974cc3e6394f28302a0">get&#95;pointer()</Link></code> to obtain a pointer to the underlying value or object associated with the current node in the list, and then dereferences it to return a reference.
+
+This allows the iterator to be used in a manner similar to standard C++ iterators, enabling direct access to the list element for reading or modification.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00562">562</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00344">344</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#a79955aa86c312930d561bfdaa7f8e740}
@@ -361,8 +434,15 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt; &amp; micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator++ ()</>}
   labels = {["constexpr"]}>
+Pre-increment operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00438">438</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00217">217</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Returns">
+Reference to the incremented iterator.
+</SectionUser>
+
+The pre-increment operator (<code>operator++</code>) advances the iterator to the next node in the list. It updates the internal node pointer to point to the node returned by the current node&#39;s <code>next()</code> method. This allows the iterator to traverse the list in the forward direction, following the linked structure.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00570">570</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00359">359</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator++() {#a60ce68c08d226be1b5ff5bc92e21a4fc}
@@ -371,8 +451,15 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt; micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator++ (int)</>}
   labels = {["constexpr"]}>
+Post-increment operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00441">441</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00225">225</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Returns">
+Iterator before increment.
+</SectionUser>
+
+The post-increment operator (<code><Link to="#a60ce68c08d226be1b5ff5bc92e21a4fc">operator++(int)</Link></code>) advances the iterator to the next node in the list, but returns a copy of the iterator as it was before the increment. This allows iteration logic that requires access to the current element before moving to the next one, following the standard C++ iterator semantics for post-increment.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00578">578</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00375">375</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#a511da5b3fb41b18a16d1d04c4f7b1095}
@@ -381,8 +468,15 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt; &amp; micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator-- ()</>}
   labels = {["constexpr"]}>
+Pre-decrement operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00444">444</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00234">234</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Returns">
+Reference to the decremented iterator.
+</SectionUser>
+
+The pre-decrement operator (<code>operator--</code>) moves the iterator to the previous node in the list. It updates the internal node pointer to point to the node returned by the current node&#39;s <code>previous</code> pointer. This enables backward traversal of the list, following the linked structure in reverse.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00586">586</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00392">392</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator--() {#a1bc00178e8a6da8c816716236fd60be1}
@@ -391,8 +485,15 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt; micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator-- (int)</>}
   labels = {["constexpr"]}>
+Post-decrement operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00447">447</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00242">242</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Returns">
+Iterator before decrement.
+</SectionUser>
+
+The post-decrement operator (<code><Link to="#a1bc00178e8a6da8c816716236fd60be1">operator--(int)</Link></code>) moves the iterator to the previous node in the list, but returns a copy of the iterator as it was before the decrement. This enables iteration logic that requires access to the current element before moving backward, following the standard C++ iterator semantics for post-decrement.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00594">594</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00408">408</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator-&gt;() {#a4c59c7d0ddbf8a7e2008d6288a042c08}
@@ -401,8 +502,15 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>double&#95;list&#95;iterator&lt; T, N, U &gt;::pointer micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator-&gt; () const</>}
   labels = {["constexpr"]}>
+Pointer access operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00432">432</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00203">203</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<SectionUser title="Returns">
+Pointer to the value pointed to by the iterator.
+</SectionUser>
+
+The pointer access operator (<code>operator-&gt;</code>) allows the iterator to provide direct access to the value pointed to by the iterator, mimicking the behavior of a raw pointer. Internally, it calls <code><Link to="#a4dda1a12bf05e974cc3e6394f28302a0">get&#95;pointer()</Link></code>, which computes and returns a pointer to the underlying value or object associated with the current node in the list.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00554">554</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00326">326</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### operator==() {#a4046bc946ebb2d019dac5fd3ffd4d118}
@@ -411,8 +519,19 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   template={<>template &lt;class T, class N = T, class U = T&gt;</>}
   prototype={<>bool micro&#95;os&#95;plus::utils::double&#95;list&#95;iterator&lt; T, N, U &gt;::operator== (const <Link to="/docs/api/classes/micro-os-plus/utils/double-list-iterator">double&#95;list&#95;iterator</Link> &amp; other) const</>}
   labels = {["constexpr"]}>
+Equality comparison operator.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00450">450</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00251">251</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+<ParametersList title="Parameters">
+<ParametersListItem name="other">Iterator to compare with.</ParametersListItem>
+</ParametersList>
+
+<SectionUser title="Returns">
+<code>true</code> if both iterators point to the same node, <code>false</code> otherwise.
+</SectionUser>
+
+The equality comparison operator (<code>operator==</code>) checks whether two iterators point to the same node in the list by comparing their internal node pointers. This allows for standard iterator comparisons, such as detecting the end of a range or verifying if two iterators refer to the same position.
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00604">604</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00425">425</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>

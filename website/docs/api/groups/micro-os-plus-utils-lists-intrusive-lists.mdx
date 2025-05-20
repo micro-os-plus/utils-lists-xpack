@@ -26,7 +26,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-The µOS++ intrusive doubly linked lists classes. <Link to="#details">More...</Link>
+Intrusive doubly linked lists classes. <Link to="#details">More...</Link>
 
 ## Classes Index
 
@@ -48,16 +48,18 @@ A class template for the intrusive list iterator. <Link to="/docs/api/classes/mi
 
 ## Description {#details}
 
-The µOS++ intrusive doubly linked lists classes.
+Intrusive doubly linked lists classes.
 
-Intrusive lists are doubly linked lists that keep the two pointers inside each linked object.
+Intrusive lists are doubly linked lists that store the two pointers required for linking directly within each object that is part of the list. This approach eliminates the need for separate node wrappers, resulting in improved performance and reduced memory usage.
 
-The intrusive lists can be defined by instantiating the <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro&#95;os&#95;plus::utils::intrusive&#95;list</Link></code> class template.
+The intrusive lists can be defined by instantiating the <code><Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">micro&#95;os&#95;plus::utils::intrusive&#95;list</Link></code> class template, which provides a flexible and efficient way to manage collections of objects.
 
 
 <SectionUser title="Example">
 
 </SectionUser>
+
+The following example demonstrates how to define and use an intrusive list:
 
 
 <ProgramListing extension="cpp">

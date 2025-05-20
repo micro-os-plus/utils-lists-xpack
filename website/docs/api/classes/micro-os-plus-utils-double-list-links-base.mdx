@@ -31,7 +31,7 @@ import SectionUser from '@xpack/docusaurus-plugin-doxygen/components/SectionUser
 
 <DoxygenPage version="1.13.2">
 
-A base class for a doubly linked list. <Link to="#details">More...</Link>
+A base class for a doubly linked list node. <Link to="#details">More...</Link>
 
 ## Declaration
 
@@ -91,6 +91,18 @@ Pointer to the <b>previous</b> node. <Link to="#a15d3c57a6bbdaac2de839ac47010b86
 Construct an uninitialised list node. <Link to="#a414a3b580f22c9e5b528748321f444bf">More...</Link>
 </MembersIndexItem>
 
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#a275208a1bb725aef51783b846b6bc5ae">double&#95;list&#95;links&#95;base</Link> (const double&#95;list&#95;links&#95;base &amp;)=delete</>}>
+Deleted copy constructor. <Link to="#a275208a1bb725aef51783b846b6bc5ae">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type="&nbsp;"
+  name={<><Link to="#ad612a4bbd88be53fbf60782650f12959">double&#95;list&#95;links&#95;base</Link> (double&#95;list&#95;links&#95;base &amp;&amp;)=delete</>}>
+Deleted move constructor. <Link to="#ad612a4bbd88be53fbf60782650f12959">More...</Link>
+</MembersIndexItem>
+
 </MembersIndex>
 
 ## Public Destructor Index
@@ -118,7 +130,7 @@ Initialise the node links. <Link to="#af00094c1fb22120e6c8361bcbd94412d">More...
 <MembersIndexItem
   type="void"
   name={<><Link to="#a19d5ef00655b74ec23dee3a4acb08513">initialize&#95;once</Link> (void)</>}>
-Initialize the list only at first run. <Link to="#a19d5ef00655b74ec23dee3a4acb08513">More...</Link>
+Initialise the node links only if not already initialised. <Link to="#a19d5ef00655b74ec23dee3a4acb08513">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -136,13 +148,25 @@ Link the new node as <b>previous</b>. <Link to="#a9b3158786426a54c1d833723eae895
 <MembersIndexItem
   type="bool"
   name={<><Link to="#a8f12afc06993300454b0ad618a4204c3">linked</Link> (void) const</>}>
-Check if the node is linked to a double list. <Link to="#a8f12afc06993300454b0ad618a4204c3">More...</Link>
+Check if the node is linked to a doubly linked list. <Link to="#a8f12afc06993300454b0ad618a4204c3">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
   type={<>constexpr <Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &#42;</>}
   name={<><Link to="#a52cfec44e36307862ce8bf8522059c78">next</Link> (void) const</>}>
 Get the link to the <b>next</b> node. <Link to="#a52cfec44e36307862ce8bf8522059c78">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &amp;</>}
+  name={<><Link to="#abf5c00306fbc5499a189f358022e4942">operator=</Link> (const double&#95;list&#95;links&#95;base &amp;)=delete</>}>
+Deleted copy assignment operator. <Link to="#abf5c00306fbc5499a189f358022e4942">More...</Link>
+</MembersIndexItem>
+
+<MembersIndexItem
+  type={<><Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &amp;</>}
+  name={<><Link to="#a2f7c25a82c09798f07eb516e79ea4cd5">operator=</Link> (double&#95;list&#95;links&#95;base &amp;&amp;)=delete</>}>
+Deleted move assignment operator. <Link to="#a2f7c25a82c09798f07eb516e79ea4cd5">More...</Link>
 </MembersIndexItem>
 
 <MembersIndexItem
@@ -167,16 +191,16 @@ Remove this node from the list. <Link to="#af71b18b73b6079575d3532cd80e75aed">Mo
 
 ## Description {#details}
 
-A base class for a doubly linked list.
+A base class for a doubly linked list node.
 
-A pair of uninitialised pointers to the <b>next</b> and <b>previous</b> list elements, plus a set of simple (some inlined) methods to access the pointers.
+This class provides a pair of uninitialised pointers to the <b>next</b> and <b>previous</b> elements in a doubly linked list, along with a set of simple (some inlined) methods to access and manipulate these pointers.
 
 
 :::info
-Both the regular and the statically allocated list elements are derived from this class.
+Both regular and statically allocated list elements are derived from this class.
 :::
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00111">111</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00112">112</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 
 <SectionDefinition>
 
@@ -189,7 +213,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   labels = {["protected"]}>
 Pointer to the <b>next</b> node.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00231">231</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00273">273</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### previous&#95; {#a15d3c57a6bbdaac2de839ac47010b86d}
@@ -199,7 +223,7 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   labels = {["protected"]}>
 Pointer to the <b>previous</b> node.
 
-Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00226">226</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00268">268</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -215,22 +239,52 @@ Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h
   labels = {["constexpr"]}>
 Construct an uninitialised list node.
 
-This must be an empty constructor, that does not touch the pointers, but leaves them unchanged.
+This must be an empty constructor that does not modify the member pointers, leaving them unchanged. For statically initialised lists, this means both pointers remain as <code>nullptr</code>, representing an uninitialised state. For regular (dynamically initialised) lists, the derived class constructor will handle the initialisation of the pointers.
 
-For statically initialised lists, this means a pair of <code>nullptr</code> pointers.
 
-For regular lists, the constructor of the derived class will handle the initialisations.
+:::info
+This design allows statically allocated objects to be safely zero-initialised at startup (via BSS initialisation), ensuring that the list links are in a known state before any constructors run. It also avoids unnecessary writes for statically allocated objects.
+:::
 
 
 :::warning
-Code analysis may trigger:
+Code analysis tools may report:
 <ul>
 <li>Member <code>previous&#95;</code> was not initialized in constructor</li>
-<li>Member <code>next&#95;</code> was not initialized in constructor</li>
+<li>Member <code>next&#95;</code> was not initialized in constructor These warnings are expected and can be safely ignored in this context.</li>
 </ul>
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00117">117</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00065">65</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+
+<SectionUser title="The rule of five">
+The copy constructor, move constructor, copy assignment operator, and move assignment operator are explicitly deleted to prevent accidental copying or moving of <Link to="/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive&#95;list</Link> objects. This ensures the integrity of the list structure, as duplicating or moving lists could result in invalid or inconsistent links within the list.
+</SectionUser>
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00118">118</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00076">76</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+</MemberDefinition>
+
+### double&#95;list&#95;links&#95;base() {#a275208a1bb725aef51783b846b6bc5ae}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::double&#95;list&#95;links&#95;base (const <Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &amp;)</>}
+  labels = {["delete"]}>
+Deleted copy constructor.
+
+Copying of list node objects is explicitly disallowed to prevent accidental duplication, which could compromise the integrity of the list structure.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00130">130</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### double&#95;list&#95;links&#95;base() {#ad612a4bbd88be53fbf60782650f12959}
+
+<MemberDefinition
+  prototype={<>micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::double&#95;list&#95;links&#95;base (<Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &amp;&amp;)</>}
+  labels = {["delete"]}>
+Deleted move constructor.
+
+Moving of list node objects is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving nodes.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00139">139</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -246,9 +300,14 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   labels = {["constexpr"]}>
 Destruct the node.
 
-This must be an empty destructor, that does not touch the pointers, but leaves them unchanged.
+This must be an empty destructor that does not modify or reset the member pointers, leaving them unchanged. For both statically and dynamically allocated lists, the destructor does not perform any cleanup or pointer manipulation, as the list management is handled elsewhere.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00140">140</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00075">75</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+
+:::info
+This design avoids unnecessary writes or side effects during object destruction, which is especially important for statically allocated objects or when list nodes may be reused or re-initialised after destruction.
+:::
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00167">167</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00094">94</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
@@ -273,23 +332,23 @@ None.
 Nothing.
 </SectionUser>
 
-Set both pointers to point to this node.
+Sets both the <code>previous&#95;</code> and <code>next&#95;</code> pointers to point to this node itself, marking the node as unlinked. This state is used to indicate that the node is not currently part of any list.
 
-This is the definition of an <b>unlinked</b> node.
+This method is called during initialisation and after a node is unlinked from a list, ensuring the node is in a safe, standalone state and cannot be traversed as part of a list.
 
 
 :::info
-After unlinking the node from a list, it must be returned to this state.
+After unlinking a node from a list, it must be returned to this state to prevent accidental access through stale links.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00160">160</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00091">91</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00189">189</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00114">114</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### initialize&#95;once() {#a19d5ef00655b74ec23dee3a4acb08513}
 
 <MemberDefinition
   prototype={<>void micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::initialize&#95;once (void)</>}>
-Initialize the list only at first run.
+Initialise the node links only if not already initialised.
 
 <SectionUser title="Parameters">
 None.
@@ -300,16 +359,16 @@ None.
 Nothing.
 </SectionUser>
 
-If the statically allocated list is still in the initial <em>uninitialised</em> state (with both pointers <code>nullptr</code>), initialise the list to the empty state, with both pointers pointing to itself.
+If the statically allocated list is still in the initial <em>uninitialised</em> state (with both pointers <code>nullptr</code>), this method initialises the list to the empty state, with both pointers pointing to itself.
 
 For non-statically initialised lists, this method is ineffective, since the node is always initialised at construct time.
 
 
 :::info
-This method must be manually called for statically allocated list before inserting elements, or performing any other operations.
+This method must be manually called for a statically allocated list before inserting elements or performing any other operations.
 :::
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00170">170</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00085">85</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00200">200</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00083">83</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
 </MemberDefinition>
 
 ### link&#95;next() {#a5f8747ea15632be0b184be317bc1f98c}
@@ -318,20 +377,17 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   prototype={<>void micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::link&#95;next (<Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &#42; node)</>}>
 Link the new node as <b>next</b>.
 
-<SectionUser title="Parameters">
-None.
-</SectionUser>
-
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] node">Pointer to the node to be linked as next.</ParametersListItem>
+</ParametersList>
 
 <SectionUser title="Returns">
 Nothing.
 </SectionUser>
 
-Insert the new node between the <b>next</b> pointer and the node pointed by it.
+Insert the new node between the <b>next</b> pointer and the node pointed by it. This operation is used by lists to link new nodes to the list head. The new node&#39;s <code>previous&#95;</code> pointer is set to the current node, and its <code>next&#95;</code> pointer is set to the current node&#39;s <code>next&#95;</code>. The neighbouring nodes are updated to point to the new node, maintaining the integrity of the double-linked list.
 
-Used by lists to link new nodes to the list head.
-
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00180">180</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00101">101</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00210">210</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00101">101</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
 </MemberDefinition>
 
 ### link&#95;previous() {#a9b3158786426a54c1d833723eae895b4}
@@ -340,35 +396,37 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   prototype={<>void micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::link&#95;previous (<Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &#42; node)</>}>
 Link the new node as <b>previous</b>.
 
-<SectionUser title="Parameters">
-None.
-</SectionUser>
-
+<ParametersList title="Parameters">
+<ParametersListItem name="[in] node">Pointer to the node to be linked as previous.</ParametersListItem>
+</ParametersList>
 
 <SectionUser title="Returns">
 Nothing.
 </SectionUser>
 
-Insert the new node between the <b>previous</b> pointer and the node pointed by it.
+Insert the new node between the <b>previous</b> pointer and the node pointed by it. Used by lists to link new nodes to the list tail. The new node&#39;s <code>next&#95;</code> pointer is set to the current node, and its <code>previous&#95;</code> pointer is set to the current node&#39;s <code>previous&#95;</code>. The neighbouring nodes are updated to point to the new node, maintaining the integrity of the double-linked list.
 
-Used by lists to link new nodes to the list tail.
-
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00190">190</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00125">125</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00220">220</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00127">127</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
 </MemberDefinition>
 
 ### linked() {#a8f12afc06993300454b0ad618a4204c3}
 
 <MemberDefinition
   prototype={<>bool micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::linked (void) const</>}>
-Check if the node is linked to a double list.
+Check if the node is linked to a doubly linked list.
+
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
 
 <ParametersList title="Return Values">
 <ParametersListItem name="true">The node is linked with both pointers.</ParametersListItem>
 <ParametersListItem name="false">The node is not linked.</ParametersListItem>
 </ParametersList>
-To be <em>linked</em>, both pointers must point to different nodes than itself (double list requirement).
+To be <em>linked</em>, both pointers must point to different nodes than itself (double list requirement). If either <code>next&#95;</code> or <code>previous&#95;</code> points to <code>this</code>, the node is considered unlinked (empty state). This method checks the node&#39;s linkage status for safe list operations.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00206">206</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00173">173</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00242">242</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00176">176</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
 </MemberDefinition>
 
 ### next() {#a52cfec44e36307862ce8bf8522059c78}
@@ -378,11 +436,46 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   labels = {["constexpr"]}>
 Get the link to the <b>next</b> node.
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <ParametersList title="Return Values">
 <ParametersListItem name="Pointer">to the next node.</ParametersListItem>
 </ParametersList>
+Returns a pointer to the next node in the list. If this node is the last in the list, the returned pointer may refer back to the list&#39;s sentinel node (for example, the links node in the list container) or to itself if the list is empty.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00213">213</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00104">104</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+
+:::info
+The returned pointer is of type <code>double&#95;list&#95;links&#95;base&#42;</code> and may need to be cast to the appropriate derived type by the caller.
+:::
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00252">252</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00138">138</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+</MemberDefinition>
+
+### operator=() {#abf5c00306fbc5499a189f358022e4942}
+
+<MemberDefinition
+  prototype={<>double&#95;list&#95;links&#95;base &amp; micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::operator= (const <Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &amp;)</>}
+  labels = {["delete"]}>
+Deleted copy assignment operator.
+
+Copy assignment is explicitly disallowed to prevent accidental overwriting of list node objects, which could lead to corruption of the list structure.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
+</MemberDefinition>
+
+### operator=() {#a2f7c25a82c09798f07eb516e79ea4cd5}
+
+<MemberDefinition
+  prototype={<>double&#95;list&#95;links&#95;base &amp; micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::operator= (<Link to="/docs/api/classes/micro-os-plus/utils/double-list-links-base">double&#95;list&#95;links&#95;base</Link> &amp;&amp;)</>}
+  labels = {["delete"]}>
+Deleted move assignment operator.
+
+Move assignment is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving nodes.
+
+Definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00161">161</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>.
 </MemberDefinition>
 
 ### previous() {#a8c0fd02eb96b1799a45285620fc8718a}
@@ -392,11 +485,22 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   labels = {["constexpr"]}>
 Get the link to the <b>previous</b> node.
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <ParametersList title="Return Values">
 <ParametersListItem name="Pointer">to the previous node.</ParametersListItem>
 </ParametersList>
+Returns a pointer to the previous node in the list. If this node is the first in the list, the returned pointer may refer back to the list&#39;s sentinel node (such as the links node in the list container) or to itself if the list is empty.
 
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00220">220</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00110">110</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
+
+:::info
+The returned pointer is of type <code>double&#95;list&#95;links&#95;base&#42;</code> and may need to be cast to the appropriate derived type by the caller.
+:::
+
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00262">262</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h/#l00155">155</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/inlines-h">inlines.h</Link>.
 </MemberDefinition>
 
 ### uninitialized() {#ab1f8f02b4ce24ae9eeae5383f8b0498b}
@@ -414,11 +518,9 @@ None.
 <ParametersListItem name="true">The links are <b>not</b> initialised.</ParametersListItem>
 <ParametersListItem name="false">The links are initialised.</ParametersListItem>
 </ParametersList>
-An <em>uninitialized</em> node is a node with the pointers set to <code>nullptr</code>.
+An <em>uninitialized</em> node is a node with its pointers set to <code>nullptr</code>. Only statically allocated nodes in their initial state are considered uninitialized. Regular (dynamically or automatically allocated) nodes are always initialized during construction, so this method will only return <code>true</code> for statically allocated nodes that have not yet been initialized.
 
-Only statically allocated nodes in the initial state are uninitialized. Regular nodes are always initialised.
-
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00150">150</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00058">58</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00178">178</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00058">58</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
 </MemberDefinition>
 
 ### unlink() {#af71b18b73b6079575d3532cd80e75aed}
@@ -427,15 +529,18 @@ Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-
   prototype={<>void micro&#95;os&#95;plus::utils::double&#95;list&#95;links&#95;base::unlink (void)</>}>
 Remove this node from the list.
 
+<SectionUser title="Parameters">
+None.
+</SectionUser>
+
+
 <SectionUser title="Returns">
 Nothing.
 </SectionUser>
 
-Update both neighbours to point to each other, practically removing the node from the list.
+Update both neighbours to point to each other, effectively removing the node from the list. The node is then returned to the initial state (empty), with both pointers pointing to itself. This operation is safe to call even if the node is already unlinked.
 
-The node is returned to the initial state (empty), with both pointers pointing to itself.
-
-Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00198">198</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00150">150</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
+Declaration at line <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h/#l00231">231</Link> of file <Link to="/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</Link>, definition at line <Link to="/docs/api/files/src/lists-cpp/#l00151">151</Link> of file <Link to="/docs/api/files/src/lists-cpp">lists.cpp</Link>.
 </MemberDefinition>
 
 </SectionDefinition>
