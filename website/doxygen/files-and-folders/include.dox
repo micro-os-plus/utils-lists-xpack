@@ -1,0 +1,9 @@
+@dir include
+@brief Public header folder for the µOS++ Intrusive Lists.
+
+@details
+The `include` folder contains all public header files for the µOS++ Intrusive Lists, serving as the main interface for users and integrators.
+
+Within this folder, you will find the declarations for the core intrusive list classes and templates. All public API definitions are organised here, ensuring a clear separation from implementation details, which are located in the `src` folder.
+
+The structure of the `include` folder promotes modularity, maintainability, and straightforward integration. By including the relevant headers from this folder, users can access the full range of features provided by the µOS++ Intrusive Lists in their projects.

@@ -1,0 +1,12 @@
+@defgroup micro-os-plus-utils-lists-double-lists Doubly Linked Lists
+@ingroup micro-os-plus-utils-lists-cpp-api
+@brief Doubly linked lists classes.
+
+@details
+Traditional doubly linked or low-intrusive doubly linked lists are provided for use cases
+where a fully intrusive approach is not required. These classes and templates offer a
+straightforward way to manage collections of objects using the classic doubly linked list
+structure.
+
+For simpler use cases, such as traditional lists or low-intrusive lists,
+there are several simpler classes and templates available.

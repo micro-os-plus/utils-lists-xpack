@@ -1,0 +1,6 @@
+@defgroup micro-os-plus-utils-lists-cpp-api C++ API
+@ingroup micro-os-plus-utils-lists
+@brief Topics related to the µOS++ Intrusive Lists C++ API.
+
+@details
+The µOS++ **utils-list** library is implemented using C++ templates, providing a modern and type-safe interface. As a result, the primary API is designed for use with C++ projects.

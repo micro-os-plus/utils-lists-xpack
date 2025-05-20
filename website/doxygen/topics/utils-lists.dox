@@ -1,0 +1,10 @@
+@defgroup micro-os-plus-utils-lists µOS++ Intrusive Lists
+@ingroup micro-os-plus
+@brief Topics related to the µOS++ Intrusive Lists.
+
+@details
+µOS++ Intrusive Lists is a modern C++ source code library that provides efficient and flexible intrusive list implementations.
+These lists are designed for use in embedded and performance-critical applications, allowing objects to be linked directly without additional node wrappers.
+The library offers a range of templates and classes to support various use cases, with a focus on reliability, low overhead, and modern C++ best practices.
+
+
