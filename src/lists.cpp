@@ -9,18 +9,18 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
- /**
-  * @file
-  * @brief The file with the implementations of the µOS++ lists methods.
-  * @details
-  *
-  * The `list.cpp` source file contains the C++ implementations of
-  * the methods for the **µOS++ Intrusive Lists** classes, delivering
-  * an efficient and lightweight linked list management system tailored
-  * for embedded applications.
-  *
-  * The class definitions are in the @ref lists.h file.
-  */
+/**
+ * @file
+ * @brief The file with the implementations of the µOS++ lists methods.
+ *
+ * @details
+ * The `list.cpp` source file contains the C++ implementations of
+ * the methods for the **µOS++ Intrusive Lists** classes, delivering
+ * an efficient and lightweight linked list management system tailored
+ * for embedded applications.
+ *
+ * The class definitions are in the @ref lists.h file.
+ */
 
 // ----------------------------------------------------------------------------
 
@@ -48,11 +48,11 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * An _uninitialized_ node is a node with the pointers
-   * set to `nullptr`.
-   *
-   * Only statically allocated nodes in the initial state are uninitialized.
-   * Regular nodes are always initialised.
+   * An _uninitialized_ node is a node with its pointers set to `nullptr`.
+   * Only statically allocated nodes in their initial state are considered
+   * uninitialized. Regular (dynamically or automatically allocated) nodes are
+   * always initialized during construction, so this method will only return
+   * `true` for statically allocated nodes that have not yet been initialized.
    */
   bool
   double_list_links_base::uninitialized (void) const
@@ -68,18 +68,16 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * If the statically allocated list is still in the initial
-   * _uninitialised_ state (with both
-   * pointers `nullptr`), initialise the list to the empty state,
-   * with both pointers pointing to itself.
+   * If the statically allocated list is still in the initial _uninitialised_
+   * state (with both pointers `nullptr`), this method initialises the list to
+   * the empty state, with both pointers pointing to itself.
    *
-   * For non-statically initialised lists, this method is ineffective,
-   * since the node is always initialised at construct time.
+   * For non-statically initialised lists, this method is ineffective, since
+   * the node is always initialised at construct time.
    *
    * @note
-   * This method must be manually called for statically
-   * allocated list before
-   * inserting elements, or performing any other operations.
+   * This method must be manually called for a statically allocated list before
+   * inserting elements or performing any other operations.
    */
   void
   double_list_links_base::initialize_once (void)
@@ -92,10 +90,12 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * Insert the new node between the **next** pointer and the node
-   * pointed by it.
-   *
-   * Used by lists to link new nodes to the list head.
+   * Insert the new node between the **next** pointer and the node pointed by
+   * it. This operation is used by lists to link new nodes to the list head.
+   * The new node's `previous_` pointer is set to the current node, and its
+   * `next_` pointer is set to the current node's `next_`. The neighbouring
+   * nodes are updated to point to the new node, maintaining the integrity of
+   * the double-linked list.
    */
   void
   double_list_links_base::link_next (double_list_links_base* node)
@@ -116,10 +116,12 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * Insert the new node between the **previous** pointer and the node
-   * pointed by it.
-   *
-   * Used by lists to link new nodes to the list tail.
+   * Insert the new node between the **previous** pointer and the node pointed
+   * by it. Used by lists to link new nodes to the list tail. The new node's
+   * `next_` pointer is set to the current node, and its `previous_` pointer is
+   * set to the current node's `previous_`. The neighbouring nodes are updated
+   * to point to the new node, maintaining the integrity of the double-linked
+   * list.
    */
   void
   double_list_links_base::link_previous (double_list_links_base* node)
@@ -140,11 +142,10 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * Update both neighbours to
-   * point to each other, practically removing the node from the list.
-   *
-   * The node is returned to the initial state (empty), with both
-   * pointers pointing to itself.
+   * Update both neighbours to point to each other, effectively removing the
+   * node from the list. The node is then returned to the initial state
+   * (empty), with both pointers pointing to itself. This operation is safe to
+   * call even if the node is already unlinked.
    */
   void
   double_list_links_base::unlink (void)
@@ -166,8 +167,10 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * To be _linked_, both pointers must point to different nodes
-   * than itself (double list requirement).
+   * To be _linked_, both pointers must point to different nodes than itself
+   * (double list requirement). If either `next_` or `previous_` points to
+   * `this`, the node is considered unlinked (empty state). This method checks
+   * the node's linkage status for safe list operations.
    */
   bool
   double_list_links_base::linked (void) const
@@ -184,8 +187,12 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
-   * @warning
-   * Not very safe, since the compiler may optimise out the code.
+   * @details
+   * Sets both the `next_` and `previous_` pointers to `nullptr`, marking the
+   * node as uninitialized. This is typically used for statically allocated
+   * nodes to explicitly place them in an uninitialized state.
+   *
+   * @warning Not very safe, since the compiler may optimise out the code.
    */
 #if defined(__GNUC__) && !defined(__clang__)
   // Prevent LTO to optimize out the code.
