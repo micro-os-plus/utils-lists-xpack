@@ -178,8 +178,8 @@
                   "items": [
                     {
                       "type": "doc",
-                      "label": "inlines.h",
-                      "id": "api/files/include-micro-os-plus-utils-inlines-h"
+                      "label": "lists-inlines.h",
+                      "id": "api/files/include-micro-os-plus-utils-lists-inlines-h"
                     },
                     {
                       "type": "doc",
