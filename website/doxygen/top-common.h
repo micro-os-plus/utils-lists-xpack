@@ -15,7 +15,7 @@
 /**
 
 @file top-common.h
-@brief Common Doxygen group and namespace documentation for the µOS++ project.
+@brief Common Doxygen definitions for the µOS++ project.
 
 @details
 This file provides the principal Doxygen group and namespace documentation for
@@ -41,6 +41,25 @@ redundancy, and enhance maintainability.
 All definitions and documentation topics in this file are maintained in the
 `website/doxygen` folder to ensure a consistent and modular structure
 throughout the project's documentation.
+
+
+@dir include
+@brief Folder with C/C++ header files.
+
+@details
+The `include` folder contains all public header files for the µOS++ libraries.
+
+To provide isolation with other projects, the header files for the µOS++ libraries are located in the `micro-os-plus` folder.
+
+
+@dir include/micro-os-plus
+@brief Folder with C/C++ header files for the µOS++ libraries.
+
+@details
+The `include/micro-os-plus` folder contains the public C++ header files for the µOS++ libraries.
+
+These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries.
+All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality.
 
 
 @defgroup micro-os-plus µOS++ Topics

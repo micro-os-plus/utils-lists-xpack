@@ -1,2 +1,2 @@
 @dir include/micro-os-plus/utils
-@brief The folder with the utilities header files.
+@brief Folder with C++ header files for the µOS++ utilities.

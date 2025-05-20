@@ -1,7 +1,6 @@
 @dir src
-@brief Source folder for the implementation of the µOS++ Intrusive Lists.
+@brief Folder with C/C++ source files.
 
 @details
-The `src` folder contains the implementation files for the µOS++ Intrusive Lists library, including the source code for all core classes, templates, and supporting code. These files define the internal logic and algorithms that underpin the public interfaces declared in the `include` folder.
+The `src` folder contains the implementation files for the µOS++ Intrusive Lists library.
 
-The organisation of the `src` folder promotes maintainability and modularity by maintaining a clear separation between public interface declarations (located in the `include` folder) and implementation details. This structure supports professional development practices and facilitates straightforward integration and extension of the framework.
