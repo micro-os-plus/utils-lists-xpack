@@ -11,7 +11,8 @@
 
 /**
  * @file
- * @brief The file with the implementations of the µOS++ lists inlined methods.
+ * @brief C++ Header file with the implementations of the µOS++ lists inlined
+ * methods.
  *
  * @details
  * The `inlines.h` header file contains the C++ implementations of

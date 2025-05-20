@@ -11,7 +11,7 @@
 
 /**
  * @file
- * @brief The file with the implementations of the µOS++ lists methods.
+ * @brief C++ source file with the implementations of the µOS++ lists methods.
  *
  * @details
  * The `list.cpp` source file contains the C++ implementations of
