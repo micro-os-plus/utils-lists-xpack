@@ -19,7 +19,7 @@
  * an efficient and lightweight linked list management system tailored
  * for embedded applications.
  *
- * The classes implementations are in the @ref lists.cpp and @ref inlines.h
+ * The classes implementations are in the @ref lists.cpp and @ref lists-inlines.h
  * files.
  */
 
@@ -1344,7 +1344,7 @@ namespace micro_os_plus::utils
 // ===== Inline & template implementations ====================================
 
 // All other inlines.
-#include "inlines.h"
+#include "lists-inlines.h"
 
 // ----------------------------------------------------------------------------
 
