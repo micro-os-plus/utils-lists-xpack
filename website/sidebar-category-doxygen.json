@@ -93,6 +93,42 @@
       "items": [
         {
           "type": "category",
+          "label": "#Index",
+          "link": {
+            "type": "doc",
+            "id": "api/index/classes/all"
+          },
+          "collapsed": true,
+          "items": [
+            {
+              "type": "doc",
+              "label": "All",
+              "id": "api/index/classes/all"
+            },
+            {
+              "type": "doc",
+              "label": "Classes",
+              "id": "api/index/classes/classes"
+            },
+            {
+              "type": "doc",
+              "label": "Functions",
+              "id": "api/index/classes/functions"
+            },
+            {
+              "type": "doc",
+              "label": "Variables",
+              "id": "api/index/classes/variables"
+            },
+            {
+              "type": "doc",
+              "label": "Typedefs",
+              "id": "api/index/classes/typedefs"
+            }
+          ]
+        },
+        {
+          "type": "category",
           "label": "double_list",
           "link": {
             "type": "doc",
