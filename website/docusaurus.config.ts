@@ -1,15 +1,15 @@
 // DO NOT EDIT!
 // Automatically generated from docusaurus-template-liquid/templates/docusaurus.
 
-import {themes as prismThemes} from 'prism-react-renderer';
-import type {Config} from '@docusaurus/types';
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
 import doxygenApiMenu from './docusaurus-config-doxygen-menu-dropdown.json'
-import {redirects} from './docusaurus-config-redirects';
-import {getCustomFields} from './customFields';
+import { redirects } from './docusaurus-config-redirects';
+import { getCustomFields } from './customFields';
 
 // The node.js modules cannot be used in modules imported in browser code:
 // webpack < 5 used to include polyfills for node.js core modules by default.
@@ -22,7 +22,7 @@ const customFields = getCustomFields();
 console.log('customFields: ' + util.inspect(customFields));
 
 const actualBaseUrl = process.env.DOCUSAURUS_BASEURL ??
-    '/utils-lists-xpack/';
+  '/utils-lists-xpack/';
 
 // ----------------------------------------------------------------------------
 
@@ -65,7 +65,8 @@ const config: Config = {
 
   plugins: [
     [
-      '@docusaurus/plugin-content-docs',
+      // '@docusaurus/plugin-content-docs',
+      './src/plugins/DocusaurusContentDocsWithDoxygenWrapper.js',
       {
         sidebarPath: './sidebars.ts',
         // Please change this to your repo.
@@ -73,6 +74,14 @@ const config: Config = {
         editUrl: 'https://github.com/micro-os-plus/utils-lists-xpack/edit/website/website/',
         // showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+
+        doxygenPluginOptions: {
+          outputFolderPath: 'docs/api', // doxygen/mdx
+          outputBaseUrl: 'api',
+          redirectsOutputFolderPath: 'reference',
+          verbose: false,
+          runOnStart: true
+        }
       },
     ],
     [
@@ -140,16 +149,6 @@ const config: Config = {
         steps: 2, // the max number of images generated between min and max (inclusive)
         disableInDev: false,
       },
-    ],
-    [
-      '@xpack/docusaurus-plugin-doxygen',
-      {
-        outputFolderPath: 'docs/api', // doxygen/mdx
-        outputBaseUrl: 'api',
-        redirectsOutputFolderPath: 'reference',
-        verbose: true,
-        runOnStart: false
-      }
     ],
 
     // Local plugins.
