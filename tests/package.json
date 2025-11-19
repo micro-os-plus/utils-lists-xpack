@@ -32,12 +32,12 @@
       "https://github.com/xpack-dev-tools"
     ],
     "devDependencies": {
-      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#v2.16.0",
-      "@micro-os-plus/diag-trace": "^4.2.1",
+      "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#v2.17.0",
+      "@micro-os-plus/diag-trace": "^4.2.2",
       "@micro-os-plus/micro-test-plus": "^3.2.2",
-      "@xpack-dev-tools/cmake": "3.30.7-1.1",
-      "@xpack-dev-tools/meson-build": "1.6.1-1.1",
-      "@xpack-dev-tools/ninja-build": "1.12.1-1.1"
+      "@xpack-dev-tools/cmake": "3.30.9-1.1",
+      "@xpack-dev-tools/meson-build": "1.8.5-1.1",
+      "@xpack-dev-tools/ninja-build": "1.13.1-1.1"
     },
     "properties": {
       "buildFolderRelativePath": "{{ 'build' | path_join: configuration.name | to_filename | downcase }}",
@@ -208,15 +208,17 @@
       ],
       "test-native-cmake-all": [
         "xpm run test-native-cmake-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc15{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc14{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc13{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc12{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc11{% endif %}",
+        "xpm run test-native-cmake-clang20",
         "xpm run test-native-cmake-clang19",
         "xpm run test-native-cmake-clang18",
         "xpm run test-native-cmake-clang17",
         "xpm run test-native-cmake-clang16",
-        "xpm run test-native-cmake-clang15",
+        "echo xpm run test-native-cmake-clang15",
         "echo xpm run test-native-cmake-clang14",
         "echo xpm run test-native-cmake-clang13"
       ],
@@ -267,6 +269,14 @@
         "xpm run prepare --config native-cmake-gcc14-release",
         "xpm run build --config native-cmake-gcc14-release",
         "xpm run test --config native-cmake-gcc14-release"
+      ],
+      "test-native-cmake-gcc15": [
+        "xpm run prepare --config native-cmake-gcc15-debug",
+        "xpm run build --config native-cmake-gcc15-debug",
+        "xpm run test --config native-cmake-gcc15-debug",
+        "xpm run prepare --config native-cmake-gcc15-release",
+        "xpm run build --config native-cmake-gcc15-release",
+        "xpm run test --config native-cmake-gcc15-release"
       ],
       "test-native-cmake-clang": [
         "xpm run prepare --config native-cmake-clang-debug",
@@ -332,17 +342,27 @@
         "xpm run build --config native-cmake-clang19-release",
         "xpm run test --config native-cmake-clang19-release"
       ],
+      "test-native-cmake-clang20": [
+        "xpm run prepare --config native-cmake-clang20-debug",
+        "xpm run build --config native-cmake-clang20-debug",
+        "xpm run test --config native-cmake-clang20-debug",
+        "xpm run prepare --config native-cmake-clang20-release",
+        "xpm run build --config native-cmake-clang20-release",
+        "xpm run test --config native-cmake-clang20-release"
+      ],
       "test-native-meson-all": [
         "{% if os.platform != 'darwin' %}xpm run test-native-meson-sys --ignore-errors{% endif %}",
+        "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc15{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc14{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc13{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc12{% endif %}",
         "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc11{% endif %}",
+        "xpm run test-native-meson-clang20",
         "xpm run test-native-meson-clang19",
         "xpm run test-native-meson-clang18",
         "xpm run test-native-meson-clang17",
         "xpm run test-native-meson-clang16",
-        "xpm run test-native-meson-clang15",
+        "echo xpm run test-native-meson-clang15",
         "echo xpm run test-native-meson-clang14",
         "echo xpm run test-native-meson-clang13"
       ],
@@ -393,6 +413,14 @@
         "xpm run prepare --config native-meson-gcc14-release",
         "xpm run build --config native-meson-gcc14-release",
         "xpm run test --config native-meson-gcc14-release"
+      ],
+      "test-native-meson-gcc15": [
+        "xpm run prepare --config native-meson-gcc15-debug",
+        "xpm run build --config native-meson-gcc15-debug",
+        "xpm run test --config native-meson-gcc15-debug",
+        "xpm run prepare --config native-meson-gcc15-release",
+        "xpm run build --config native-meson-gcc15-release",
+        "xpm run test --config native-meson-gcc15-release"
       ],
       "test-native-meson-clang": [
         "xpm run prepare --config native-meson-clang-debug",
@@ -457,6 +485,14 @@
         "xpm run prepare --config native-meson-clang19-release",
         "xpm run build --config native-meson-clang19-release",
         "xpm run test --config native-meson-clang19-release"
+      ],
+      "test-native-meson-clang20": [
+        "xpm run prepare --config native-meson-clang20-debug",
+        "xpm run build --config native-meson-clang20-debug",
+        "xpm run test --config native-meson-clang20-debug",
+        "xpm run prepare --config native-meson-clang20-release",
+        "xpm run build --config native-meson-clang20-release",
+        "xpm run test --config native-meson-clang20-release"
       ],
       "test-cortex-cmake-all": [
         "xpm run test-cortex-cmake-gcc14",
@@ -551,6 +587,7 @@
         "xpm run test-qemu-cortex-a72-meson-gcc14"
       ],
       "test-riscv-cmake-all": [
+        "xpm run test-riscv-cmake-gcc15",
         "xpm run test-riscv-cmake-gcc14",
         "xpm run test-riscv-cmake-gcc13",
         "xpm run test-riscv-cmake-gcc12",
@@ -576,7 +613,12 @@
         "xpm run test-qemu-riscv-rv32imac-cmake-gcc14",
         "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc14"
       ],
+      "test-riscv-cmake-gcc15": [
+        "xpm run test-qemu-riscv-rv32imac-cmake-gcc15",
+        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc15"
+      ],
       "test-riscv-meson-all": [
+        "xpm run test-riscv-meson-gcc15",
         "xpm run test-riscv-meson-gcc14",
         "xpm run test-riscv-meson-gcc13",
         "xpm run test-riscv-meson-gcc12",
@@ -601,6 +643,10 @@
       "test-riscv-meson-gcc14": [
         "xpm run test-qemu-riscv-rv32imac-meson-gcc14",
         "xpm run test-qemu-riscv-rv64imafdc-meson-gcc14"
+      ],
+      "test-riscv-meson-gcc15": [
+        "xpm run test-qemu-riscv-rv32imac-meson-gcc15",
+        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc15"
       ],
       "test-qemu-cortex-m0-cmake-gcc": [
         "xpm run prepare --config qemu-cortex-m0-cmake-gcc-debug",
@@ -882,6 +928,14 @@
         "xpm run build --config qemu-riscv-rv32imac-cmake-gcc14-release",
         "xpm run test --config qemu-riscv-rv32imac-cmake-gcc14-release"
       ],
+      "test-qemu-riscv-rv32imac-cmake-gcc15": [
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc15-debug",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc15-debug",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc15-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-cmake-gcc15-release",
+        "xpm run build --config qemu-riscv-rv32imac-cmake-gcc15-release",
+        "xpm run test --config qemu-riscv-rv32imac-cmake-gcc15-release"
+      ],
       "test-qemu-riscv-rv64imafdc-cmake-gcc": [
         "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
         "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
@@ -921,6 +975,14 @@
         "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc14-release",
         "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc14-release",
         "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc14-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-cmake-gcc15": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc15-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc15-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc15-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-cmake-gcc15-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-cmake-gcc15-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-cmake-gcc15-release"
       ],
       "test-qemu-cortex-m0-meson-gcc": [
         "xpm run prepare --config qemu-cortex-m0-meson-gcc-debug",
@@ -1202,6 +1264,14 @@
         "xpm run build --config qemu-riscv-rv32imac-meson-gcc14-release",
         "xpm run test --config qemu-riscv-rv32imac-meson-gcc14-release"
       ],
+      "test-qemu-riscv-rv32imac-meson-gcc15": [
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc15-debug",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc15-debug",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc15-debug",
+        "xpm run prepare --config qemu-riscv-rv32imac-meson-gcc15-release",
+        "xpm run build --config qemu-riscv-rv32imac-meson-gcc15-release",
+        "xpm run test --config qemu-riscv-rv32imac-meson-gcc15-release"
+      ],
       "test-qemu-riscv-rv64imafdc-meson-gcc": [
         "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc-debug",
         "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc-debug",
@@ -1241,6 +1311,14 @@
         "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc14-release",
         "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc14-release",
         "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc14-release"
+      ],
+      "test-qemu-riscv-rv64imafdc-meson-gcc15": [
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc15-debug",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc15-debug",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc15-debug",
+        "xpm run prepare --config qemu-riscv-rv64imafdc-meson-gcc15-release",
+        "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc15-release",
+        "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc15-release"
       ],
       "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
       "link-deps": [
@@ -1366,7 +1444,7 @@
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@micro-os-plus/architecture-synthetic-posix",
         "devDependencies": {
-          "@micro-os-plus/architecture-synthetic-posix": "4.0.2"
+          "@micro-os-plus/architecture-synthetic-posix": "4.0.3"
         }
       },
       "cortexm-dependencies": {
@@ -1399,7 +1477,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-aarch32": "^3.2.0",
-          "@micro-os-plus/devices-qemu-aarch32": "4.0.0"
+          "@micro-os-plus/devices-qemu-aarch32": "4.1.0"
         }
       },
       "aarch64-dependencies": {
@@ -1410,7 +1488,7 @@
         ],
         "devDependencies": {
           "@micro-os-plus/architecture-aarch64": "^3.2.0",
-          "@micro-os-plus/devices-qemu-aarch64": "4.0.0"
+          "@micro-os-plus/devices-qemu-aarch64": "4.1.1"
         }
       },
       "bare-metal-dependencies": {
@@ -1434,7 +1512,7 @@
       "gcc-latest-dependencies": {
         "hidden": true,
         "inherit": [
-          "gcc14-dependencies"
+          "gcc15-dependencies"
         ]
       },
       "gcc11-dependencies": {
@@ -1452,7 +1530,7 @@
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
-            "specifier": "12.4.0-2.1",
+            "specifier": "12.5.0-1.1",
             "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
@@ -1462,7 +1540,7 @@
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
-            "specifier": "13.3.0-2.1",
+            "specifier": "13.4.0-1.1",
             "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
@@ -1472,7 +1550,17 @@
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
         "devDependencies": {
           "@xpack-dev-tools/gcc": {
-            "specifier": "14.2.0-2.1",
+            "specifier": "14.3.0-1.1",
+            "platforms": "linux-x64,linux-arm64,win32-x64"
+          }
+        }
+      },
+      "gcc15-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/gcc": {
+            "specifier": "15.2.0-1.1",
             "platforms": "linux-x64,linux-arm64,win32-x64"
           }
         }
@@ -1480,7 +1568,7 @@
       "clang-latest-dependencies": {
         "hidden": true,
         "inherit": [
-          "clang19-dependencies"
+          "clang20-dependencies"
         ]
       },
       "clang13-dependencies": {
@@ -1530,6 +1618,13 @@
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
         "devDependencies": {
           "@xpack-dev-tools/clang": "19.1.7-1.1"
+        }
+      },
+      "clang20-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
+        "devDependencies": {
+          "@xpack-dev-tools/clang": "20.1.8-1.1"
         }
       },
       "arm-none-eabi-gcc-dependencies": {
@@ -1617,42 +1712,49 @@
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
-          "@xpack-dev-tools/riscv-none-elf-gcc": "12.4.0-2.1"
+          "@xpack-dev-tools/riscv-none-elf-gcc": "12.5.0-1.1"
         }
       },
       "riscv-none-elf-gcc13-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
-          "@xpack-dev-tools/riscv-none-elf-gcc": "13.3.0-2.1"
+          "@xpack-dev-tools/riscv-none-elf-gcc": "13.4.0-1.1"
         }
       },
       "riscv-none-elf-gcc14-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
         "devDependencies": {
-          "@xpack-dev-tools/riscv-none-elf-gcc": "14.2.0-3.1"
+          "@xpack-dev-tools/riscv-none-elf-gcc": "14.3.0-1.1"
+        }
+      },
+      "riscv-none-elf-gcc15-dependencies": {
+        "hidden": true,
+        "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
+        "devDependencies": {
+          "@xpack-dev-tools/riscv-none-elf-gcc": "15.2.0-1.1"
         }
       },
       "qemu-arm-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/qemu-arm",
         "devDependencies": {
-          "@xpack-dev-tools/qemu-arm": "8.2.6-1.1"
+          "@xpack-dev-tools/qemu-arm": "9.2.4-1.1"
         }
       },
       "qemu-riscv-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/qemu-riscv",
         "devDependencies": {
-          "@xpack-dev-tools/qemu-riscv": "8.2.6-1.1"
+          "@xpack-dev-tools/qemu-riscv": "9.2.4-1.1"
         }
       },
       "openocd-dependencies": {
         "hidden": true,
         "$devDependenciesUrl": "https://www.npmjs.com/package/@xpack-dev-tools/openocd",
         "devDependencies": {
-          "@xpack-dev-tools/openocd": "0.12.0-6.1"
+          "@xpack-dev-tools/openocd": "0.12.0-7.1"
         }
       },
       "native-cmake-sys-debug": {
@@ -1755,6 +1857,20 @@
       "native-cmake-gcc14-release": {
         "inherit": [
           "native-cmake-gcc14-debug"
+        ],
+        "properties": {
+          "buildType": "Release"
+        }
+      },
+      "native-cmake-gcc15-debug": {
+        "inherit": [
+          "native-cmake-gcc",
+          "gcc15-dependencies"
+        ]
+      },
+      "native-cmake-gcc15-release": {
+        "inherit": [
+          "native-cmake-gcc15-debug"
         ],
         "properties": {
           "buildType": "Release"
@@ -1880,6 +1996,20 @@
       "native-cmake-clang19-release": {
         "inherit": [
           "native-cmake-clang19-debug"
+        ],
+        "properties": {
+          "buildType": "Release"
+        }
+      },
+      "native-cmake-clang20-debug": {
+        "inherit": [
+          "native-cmake-clang",
+          "clang20-dependencies"
+        ]
+      },
+      "native-cmake-clang20-release": {
+        "inherit": [
+          "native-cmake-clang20-debug"
         ],
         "properties": {
           "buildType": "Release"
@@ -2110,6 +2240,20 @@
       "native-meson-clang19-release": {
         "inherit": [
           "native-meson-clang19-debug"
+        ],
+        "properties": {
+          "buildType": "release"
+        }
+      },
+      "native-meson-clang20-debug": {
+        "inherit": [
+          "native-meson-clang",
+          "clang20-dependencies"
+        ]
+      },
+      "native-meson-clang20-release": {
+        "inherit": [
+          "native-meson-clang20-debug"
         ],
         "properties": {
           "buildType": "release"
@@ -2861,6 +3005,24 @@
           "shortConfigurationName": "v3rd"
         }
       },
+      "qemu-riscv-rv32imac-cmake-gcc15-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc",
+          "riscv-none-elf-gcc15-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v3de"
+        }
+      },
+      "qemu-riscv-rv32imac-cmake-gcc15-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-cmake-gcc15-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v3re"
+        }
+      },
       "qemu-riscv-rv64imafdc-cmake-gcc": {
         "hidden": true,
         "inherit": [
@@ -2965,6 +3127,24 @@
         "properties": {
           "buildType": "MinSizeRel",
           "shortConfigurationName": "v6rd"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc15-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc",
+          "riscv-none-elf-gcc15-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "v6de"
+        }
+      },
+      "qemu-riscv-rv64imafdc-cmake-gcc15-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-cmake-gcc15-debug"
+        ],
+        "properties": {
+          "buildType": "MinSizeRel",
+          "shortConfigurationName": "v6re"
         }
       },
       "qemu-cortex-m0-meson-gcc": {
@@ -3710,7 +3890,25 @@
         ],
         "properties": {
           "buildType": "minsize",
-          "shortConfigurationName": "w3rc"
+          "shortConfigurationName": "w3rd"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-gcc15-debug": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc",
+          "riscv-none-elf-gcc15-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "w3de"
+        }
+      },
+      "qemu-riscv-rv32imac-meson-gcc15-release": {
+        "inherit": [
+          "qemu-riscv-rv32imac-meson-gcc15-debug"
+        ],
+        "properties": {
+          "buildType": "minsize",
+          "shortConfigurationName": "w3re"
         }
       },
       "qemu-riscv-rv64imafdc-meson-gcc": {
@@ -3818,11 +4016,29 @@
           "buildType": "minsize",
           "shortConfigurationName": "w6rd"
         }
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc15-debug": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc",
+          "riscv-none-elf-gcc15-dependencies"
+        ],
+        "properties": {
+          "shortConfigurationName": "w6de"
+        }
+      },
+      "qemu-riscv-rv64imafdc-meson-gcc15-release": {
+        "inherit": [
+          "qemu-riscv-rv64imafdc-meson-gcc15-debug"
+        ],
+        "properties": {
+          "buildType": "minsize",
+          "shortConfigurationName": "w6re"
+        }
       }
     }
   },
   "testsConfig": {},
   "engines": {
-    "node": ">=18.0"
+    "node": ">=20.0"
   }
 }
