@@ -28,6 +28,7 @@ namespace os = micro_os_plus;
 
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
 #endif
 
@@ -93,7 +94,12 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // List all kids.
   for (auto&& p : all_kids_registry)
     {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
       printf ("- %s\n", p.name ());
+#pragma GCC diagnostic pop
     }
 
   printf ("\nBob is gone...\n");
@@ -104,13 +110,23 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // List the remaining ones in the list.
   for (auto&& p : all_kids_registry)
     {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
       printf ("- %s\n", p.name ());
+#pragma GCC diagnostic pop
     }
 
   printf ("\nSchool kids:\n");
   for (auto&& p : school_kids_registry)
     {
+#pragma GCC diagnostic push
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
+#endif
       printf ("- %s\n", p.name ());
+#pragma GCC diagnostic pop
     }
 
   printf ("\nDone.\n");
