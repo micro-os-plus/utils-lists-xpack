@@ -68,7 +68,7 @@ jobs:
 
     - name: Satisfy project dependencies on ${{ matrix.os }}
       run: |
-        npm ci -C tests
+        npm --prefix tests ci
         xpm run install-all -C tests
 
     - name: Clean xPack cache Linux

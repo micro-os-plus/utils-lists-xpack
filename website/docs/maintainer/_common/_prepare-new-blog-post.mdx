@@ -8,7 +8,7 @@
 - check and possibly update the `website/blog/_templates/blog-post*-release-liquid.mdx`
 - run the **generate-website-blog-post** npm script; this will add a file in the `website/blog` folder:
   ```sh
-  npm run generate-website-blog-post -C website
+  npm --prefix website run generate-website-blog-post
   ```
 - edit the front matter properties (the `description` property)
 - select the correct summary (maintenance vs. new release)
