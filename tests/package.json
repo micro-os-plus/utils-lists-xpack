@@ -4,11 +4,9 @@
   "description": "Tests",
   "main": "",
   "scripts": {
-    "generate-tests-commons": "bash xpacks/@micro-os-plus/build-helper/maintenance-scripts/generate-tests-commons.sh --micro-os-plus",
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/npm-packages-helper",
-    "xpm-link-helpers": "xpm link @micro-os-plus/build-helper",
-    "deep-clean": "del-cli build node_modules xpacks package-json.json"
+    "npm-outdated": "npm outdated"
   },
   "author": {
     "name": "Liviu Ionescu",
@@ -25,7 +23,7 @@
     "liquidjs": "^10.20.1"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.7",
+    "minimumXpmRequired": "0.21.0",
     "dependencies": {},
     "$devDependenciesUrls": [
       "https://github.com/micro-os-plus",
@@ -56,147 +54,84 @@
       "commandMesonBuild": "meson compile -C {{ properties.buildFolderRelativePathPosix }}",
       "commandMesonBuildVerbose": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --clean",
-      "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose"
+      "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose",
+      "configs-ci-non-darwin": "native-cmake-gcc",
+      "configs-ci": "native-cmake-clang,native-meson-clang,qemu-cortex-m0-cmake-gcc,qemu-cortex-m7f-cmake-gcc,qemu-riscv-rv32imac-cmake-gcc,qemu-cortex-m0-meson-gcc",
+      "configs-selected-non-darwin": "native-cmake-gcc,native-meson-gcc",
+      "configs-selected": "native-cmake-clang, native-meson-clang,qemu-cortex-m0-cmake-gcc,qemu-cortex-m0-meson-gcc,qemu-cortex-m4f-cmake-gcc,qemu-cortex-m4f-meson-gcc,qemu-riscv-rv32imac-cmake-gcc,qemu-riscv-rv32imac-meson-gcc",
+      "configs-latest-non-darwin": "native-cmake-gcc,native-meson-gcc",
+      "configs-latest": "native-cmake-clang,native-meson-clang,qemu-cortex-m0-cmake-gcc,qemu-cortex-m0-meson-gcc,qemu-cortex-m3-cmake-gcc,qemu-cortex-m3-meson-gcc,qemu-cortex-m4f-cmake-gcc,qemu-cortex-m4f-meson-gcc,qemu-cortex-m7f-cmake-gcc,qemu-cortex-m7f-meson-gcc,qemu-riscv-rv32imac-cmake-gcc,qemu-riscv-rv32imac-meson-gcc,qemu-riscv-rv64imafdc-cmake-gcc,qemu-riscv-rv64imafdc-meson-gcc",
+      "build-types": "debug,release",
+      "test-actions": "prepare,build,test",
+      "actions-install-for-configs": "{% assign build-types = properties.build-types | split: ',' %}{% for config in configs %}{% for build-type in build-types %}xpm install --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-link-dependencies-for-configs": "{% assign build-types = properties.build-types | split: ',' %}{% for config in configs %}{% for build-type in build-types %}xpm run link-dependencies --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-prepare-build-test-for-configs": "{% assign build-types = properties.build-types | split: ',' %}{% assign test-actions = properties.test-actions | split: ',' %}{% for config in configs %}{% for build-type in build-types %}{% for test-action in test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}{% endfor %}"
     },
     "actions": {
       "deep-clean": "del-cli build node_modules xpacks package-lock.json",
+      "generate-tests-commons": "bash xpacks/@micro-os-plus/build-helper/maintenance-scripts/generate-tests-commons.sh --micro-os-plus",
       "install": [
         "xpm install",
         "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-debug{% else %}native-cmake-sys-debug{% endif %}",
         "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-release{% else %}native-cmake-sys-release{% endif %}"
-      ],
-      "install-ci": [
-        "xpm install",
-        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-debug{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
-        "xpm install --config native-cmake-clang-debug",
-        "xpm install --config native-cmake-clang-release",
-        "xpm install --config native-meson-clang-debug",
-        "xpm install --config native-meson-clang-release",
-        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m7f-cmake-gcc-release",
-        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
-        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m0-meson-gcc-release"
-      ],
-      "install-selected": [
-        "xpm install",
-        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-debug{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-debug{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-release{% endif %}",
-        "xpm install --config native-cmake-clang-debug",
-        "xpm install --config native-cmake-clang-release",
-        "xpm install --config native-meson-clang-debug",
-        "xpm install --config native-meson-clang-release",
-        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m0-meson-gcc-release",
-        "xpm install --config qemu-cortex-m4f-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m4f-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m4f-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m4f-meson-gcc-release",
-        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
-        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
-        "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
-        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release"
-      ],
-      "install-latest": [
-        "xpm install",
-        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-debug{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-cmake-gcc-release{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-debug{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm install --config native-meson-gcc-release{% endif %}",
-        "xpm install --config native-cmake-clang-debug",
-        "xpm install --config native-cmake-clang-release",
-        "xpm install --config native-meson-clang-debug",
-        "xpm install --config native-meson-clang-release",
-        "xpm install --config qemu-cortex-m0-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m0-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m0-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m0-meson-gcc-release",
-        "xpm install --config qemu-cortex-m3-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m3-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m3-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m3-meson-gcc-release",
-        "xpm install --config qemu-cortex-m4f-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m4f-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m4f-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m4f-meson-gcc-release",
-        "xpm install --config qemu-cortex-m7f-cmake-gcc-debug",
-        "xpm install --config qemu-cortex-m7f-cmake-gcc-release",
-        "xpm install --config qemu-cortex-m7f-meson-gcc-debug",
-        "xpm install --config qemu-cortex-m7f-meson-gcc-release",
-        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-debug",
-        "xpm install --config qemu-riscv-rv32imac-cmake-gcc-release",
-        "xpm install --config qemu-riscv-rv32imac-meson-gcc-debug",
-        "xpm install --config qemu-riscv-rv32imac-meson-gcc-release",
-        "xpm install --config qemu-riscv-rv64imafdc-cmake-gcc-debug",
-        "xpm install --config qemu-riscv-rv64imafdc-cmake-gcc-release",
-        "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-debug",
-        "xpm install --config qemu-riscv-rv64imafdc-meson-gcc-release"
-      ],
-      "install-all": [
-        "xpm install",
-        "xpm install --all-configs"
       ],
       "link-dependencies": [
         "xpm link @micro-os-plus/build-helper",
         "xpm link @micro-os-plus/diag-trace",
         "xpm link @micro-os-plus/micro-test-plus"
       ],
-      "link-dependencies-all": [
-        "xpm run link-deps",
-        "xpm run link-deps --all-configs"
-      ],
-      "clean-all": [
-        "xpm run clean --all-configs --ignore-errors"
-      ],
       "test": [
         "xpm run {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
       ],
+      "install-ci": [
+        "xpm install",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci | split: ',' %}{% assign build-types = properties.build-types | split: ',' %}{{ properties.actions-install-for-configs }}"
+      ],
+      "link-dependencies-ci": [
+        "xpm run link-dependencies",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci | split: ',' %}{{ properties.actions-link-dependencies-for-configs }}"
+      ],
       "test-ci": [
-        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
-        "xpm run test-native-cmake-clang",
-        "xpm run test-native-meson-clang",
-        "xpm run test-qemu-cortex-m0-cmake-gcc",
-        "xpm run test-qemu-cortex-m7f-cmake-gcc",
-        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
-        "xpm run test-qemu-cortex-m0-meson-gcc"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}"
+      ],
+      "install-selected": [
+        "xpm install",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected | split: ',' %}{{ properties.actions-install-for-configs }}"
+      ],
+      "link-dependencies-selected": [
+        "xpm run link-dependencies",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected | split: ',' %}{{ properties.actions-install-for-configs }}"
       ],
       "test-selected": [
-        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc{% endif %}",
-        "xpm run test-native-cmake-clang",
-        "xpm run test-native-meson-clang",
-        "xpm run test-qemu-cortex-m0-cmake-gcc",
-        "xpm run test-qemu-cortex-m0-meson-gcc",
-        "xpm run test-qemu-cortex-m4f-cmake-gcc",
-        "xpm run test-qemu-cortex-m4f-meson-gcc",
-        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
-        "xpm run test-qemu-riscv-rv32imac-meson-gcc"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}"
+      ],
+      "install-latest": [
+        "xpm install",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-latest-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-latest | split: ',' %}{{ properties.actions-install-for-configs }}"
+      ],
+      "link-dependencies-latest": [
+        "xpm run link-dependencies",
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-latest-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-latest | split: ',' %}{{ properties.actions-install-for-configs }}"
       ],
       "test-latest": [
-        "{% if os.platform != 'darwin' %}xpm run test-native-cmake-gcc{% endif %}",
-        "{% if os.platform != 'darwin' %}xpm run test-native-meson-gcc{% endif %}",
-        "xpm run test-native-cmake-clang",
-        "xpm run test-native-meson-clang",
-        "xpm run test-qemu-cortex-m0-cmake-gcc",
-        "xpm run test-qemu-cortex-m0-meson-gcc",
-        "xpm run test-qemu-cortex-m3-cmake-gcc",
-        "xpm run test-qemu-cortex-m3-meson-gcc",
-        "xpm run test-qemu-cortex-m4f-cmake-gcc",
-        "xpm run test-qemu-cortex-m4f-meson-gcc",
-        "xpm run test-qemu-cortex-m7f-cmake-gcc",
-        "xpm run test-qemu-cortex-m7f-meson-gcc",
-        "xpm run test-qemu-riscv-rv32imac-cmake-gcc",
-        "xpm run test-qemu-riscv-rv32imac-meson-gcc",
-        "xpm run test-qemu-riscv-rv64imafdc-cmake-gcc",
-        "xpm run test-qemu-riscv-rv64imafdc-meson-gcc"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-latest-non-darwin | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-latest | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}"
+      ],
+      "install-all": [
+        "xpm install",
+        "xpm install --all-configs"
+      ],
+      "link-dependencies-all": [
+        "xpm run link-dependencies",
+        "xpm run link-dependencies --all-configs"
       ],
       "test-all": [
         "xpm run test-native-cmake-all",
@@ -205,6 +140,9 @@
         "xpm run test-cortex-meson-all",
         "xpm run test-riscv-cmake-all",
         "xpm run test-riscv-meson-all"
+      ],
+      "clean-all": [
+        "xpm run clean --all-configs --ignore-errors"
       ],
       "test-native-cmake-all": [
         "xpm run test-native-cmake-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
@@ -1320,16 +1258,7 @@
         "xpm run build --config qemu-riscv-rv64imafdc-meson-gcc15-release",
         "xpm run test --config qemu-riscv-rv64imafdc-meson-gcc15-release"
       ],
-      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh",
-      "link-deps": [
-        "xpm link @micro-os-plus/build-helper",
-        "xpm link @micro-os-plus/diag-trace",
-        "xpm link @micro-os-plus/micro-test-plus"
-      ],
-      "link-deps-all": [
-        "xpm run link-deps",
-        "xpm run link-deps --all-configs"
-      ]
+      "trigger-workflow-test-all": "bash scripts/trigger-workflow-test-all.sh"
     },
     "buildConfigurations": {
       "short-win-paths-properties": {
@@ -1378,7 +1307,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
-          "link-deps": [
+          "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-synthetic-posix"
           ]
         }
@@ -1389,7 +1318,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
-          "link-deps": [
+          "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
@@ -1404,7 +1333,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
-          "link-deps": [
+          "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch32",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch32",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
@@ -1418,7 +1347,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
-          "link-deps": [
+          "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch64",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch64",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
@@ -1432,7 +1361,7 @@
           "install": [
             "xpm install --config {{ configuration.name }}"
           ],
-          "link-deps": [
+          "link-dependencies": [
             "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv",
             "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-riscv",
             "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
