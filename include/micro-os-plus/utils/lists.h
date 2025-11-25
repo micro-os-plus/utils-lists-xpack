@@ -1114,7 +1114,7 @@ namespace micro_os_plus::utils
  * Iterators provide access to the objects in the list, supporting
  * bidirectional traversal.
  *
- * @par Example
+ * **Example**
  *
  * @code{.cpp}
  * namespace os = micro_os_plus;

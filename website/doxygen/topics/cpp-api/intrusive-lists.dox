@@ -11,7 +11,7 @@ The intrusive lists can be defined by instantiating the
 `micro_os_plus::utils::intrusive_list` class template, which provides a flexible and
 efficient way to manage collections of objects.
 
-@par Example
+**Example**
 
 The following example demonstrates how to define and use an intrusive list:
 
