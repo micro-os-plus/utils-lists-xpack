@@ -23,7 +23,7 @@
     "liquidjs": "^10.20.1"
   },
   "xpack": {
-    "minimumXpmRequired": "0.21.0",
+    "minimumXpmRequired": "0.21.4",
     "dependencies": {},
     "$devDependenciesUrls": [
       "https://github.com/micro-os-plus",
@@ -55,17 +55,93 @@
       "commandMesonBuildVerbose": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --clean",
       "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose",
-      "configs-ci-non-darwin": "native-cmake-gcc",
-      "configs-ci": "native-cmake-clang,native-meson-clang,qemu-cortex-m0-cmake-gcc,qemu-cortex-m7f-cmake-gcc,qemu-riscv-rv32imac-cmake-gcc,qemu-cortex-m0-meson-gcc",
-      "configs-selected-non-darwin": "native-cmake-gcc,native-meson-gcc",
-      "configs-selected": "native-cmake-clang, native-meson-clang,qemu-cortex-m0-cmake-gcc,qemu-cortex-m0-meson-gcc,qemu-cortex-m4f-cmake-gcc,qemu-cortex-m4f-meson-gcc,qemu-riscv-rv32imac-cmake-gcc,qemu-riscv-rv32imac-meson-gcc",
-      "configs-latest-non-darwin": "native-cmake-gcc,native-meson-gcc",
-      "configs-latest": "native-cmake-clang,native-meson-clang,qemu-cortex-m0-cmake-gcc,qemu-cortex-m0-meson-gcc,qemu-cortex-m3-cmake-gcc,qemu-cortex-m3-meson-gcc,qemu-cortex-m4f-cmake-gcc,qemu-cortex-m4f-meson-gcc,qemu-cortex-m7f-cmake-gcc,qemu-cortex-m7f-meson-gcc,qemu-riscv-rv32imac-cmake-gcc,qemu-riscv-rv32imac-meson-gcc,qemu-riscv-rv64imafdc-cmake-gcc,qemu-riscv-rv64imafdc-meson-gcc",
-      "build-types": "debug,release",
-      "test-actions": "prepare,build,test",
-      "actions-install-for-configs": "{% assign build-types = properties.build-types | split: ',' %}{% for config in configs %}{% for build-type in build-types %}xpm install --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
-      "actions-link-dependencies-for-configs": "{% assign build-types = properties.build-types | split: ',' %}{% for config in configs %}{% for build-type in build-types %}xpm run link-dependencies --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
-      "actions-prepare-build-test-for-configs": "{% assign build-types = properties.build-types | split: ',' %}{% assign test-actions = properties.test-actions | split: ',' %}{% for config in configs %}{% for build-type in build-types %}{% for test-action in test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}{% endfor %}"
+      "configs-ci-non-darwin": [
+        "native-cmake-gcc"
+      ],
+      "configs-ci": [
+        "native-cmake-clang",
+        "native-meson-clang",
+        "qemu-cortex-m0-cmake-gcc",
+        "qemu-cortex-m7f-cmake-gcc",
+        "qemu-riscv-rv32imac-cmake-gcc",
+        "qemu-cortex-m0-meson-gcc"
+      ],
+      "configs-selected-non-darwin": [
+        "native-cmake-gcc",
+        "native-meson-gcc"
+      ],
+      "configs-selected": [
+        "native-cmake-clang",
+        "native-meson-clang",
+        "qemu-cortex-m0-cmake-gcc",
+        "qemu-cortex-m0-meson-gcc",
+        "qemu-cortex-m4f-cmake-gcc",
+        "qemu-cortex-m4f-meson-gcc",
+        "qemu-cortex-a72-cmake-gcc",
+        "qemu-cortex-a72-meson-gcc",
+        "qemu-riscv-rv32imac-cmake-gcc",
+        "qemu-riscv-rv32imac-meson-gcc"
+      ],
+      "native-gcc-non-darwin-versions": [
+        "15",
+        "14",
+        "13",
+        "12",
+        "11"
+      ],
+      "native-clang-versions": [
+        "20",
+        "19",
+        "18",
+        "17",
+        "16"
+      ],
+      "cortex-gcc-versions": [
+        "14",
+        "13",
+        "12",
+        "11"
+      ],
+      "riscv-gcc-versions": [
+        "15",
+        "14",
+        "13",
+        "12"
+      ],
+      "qemu-cortex-variants": [
+        "m0",
+        "m3",
+        "m4f",
+        "m7f",
+        "a15",
+        "a72"
+      ],
+      "qemu-riscv-variants": [
+        "rv32imac",
+        "rv64imafdc"
+      ],
+      "builders": [
+        "cmake",
+        "meson"
+      ],
+      "build-types": [
+        "debug",
+        "release"
+      ],
+      "test-actions": [
+        "prepare",
+        "build",
+        "test"
+      ],
+      "compute-latest-non-darwin-configs": "{% assign configs = [ 'native-cmake-gcc', 'native-meson-gcc' ] %}",
+      "compute-latest-configs": "{% assign configs = [ 'native-cmake-clang', 'native-meson-clang' ] %}{% for variant in properties.qemu-cortex-variants %}{% for builder in properties.builders %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% for variant in properties.qemu-riscv-variants %}{% for builder in properties.builders %}{% assign config = 'qemu-riscv-' | append: variant | append: '-' | append: builder | append: '-gcc' %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
+      "compute-all-non-darwin-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{% for version in properties.native-gcc-non-darwin-versions %}{% assign config = 'native-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}",
+      "compute-all-configs": "{% assign configs = '' | split: '' %}{% for builder in properties.builders %}{% for version in properties.native-clang-versions %}{% assign config = 'native-' | append: builder | append: '-clang' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% for variant in properties.qemu-cortex-variants %}{% for builder in properties.builders %}{% for version in properties.cortex-gcc-versions %}{% assign config = 'qemu-cortex-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% endfor %}{% for variant in properties.qemu-riscv-variants %}{% for builder in properties.builders %}{% for version in properties.riscv-gcc-versions %}{% assign config = 'qemu-riscv-' | append: variant | append: '-' | append: builder | append: '-gcc' | append: version %}{% assign configs = configs | push: config %}{% endfor %}{% endfor %}{% endfor %}",
+      "actions-install-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm install --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-link-dependencies-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run link-dependencies --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-prepare-build-test-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}{% endfor %}",
+      "actions-prepare-build-test-for-config": "{% for build-type in properties.build-types %}{% for test-action in properties.test-actions %}xpm run {{ test-action }} --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}",
+      "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
       "deep-clean": "del-cli build node_modules xpacks package-lock.json",
@@ -85,64 +161,75 @@
       ],
       "install-ci": [
         "xpm install",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-ci | split: ',' %}{% assign build-types = properties.build-types | split: ',' %}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci %}{{ properties.actions-install-for-configs }}"
       ],
       "link-dependencies-ci": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-ci | split: ',' %}{{ properties.actions-link-dependencies-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci %}{{ properties.actions-link-dependencies-for-configs }}"
       ],
       "test-ci": [
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-ci | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci %}{{ properties.actions-prepare-build-test-for-configs }}"
+      ],
+      "clean-ci": [
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-ci-non-darwin %}{{ properties.actions-clean-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-ci %}{{ properties.actions-clean-for-configs }}"
       ],
       "install-selected": [
         "xpm install",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-selected | split: ',' %}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected %}{{ properties.actions-install-for-configs }}"
       ],
       "link-dependencies-selected": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-selected | split: ',' %}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected %}{{ properties.actions-install-for-configs }}"
       ],
       "test-selected": [
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-selected | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}"
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected %}{{ properties.actions-prepare-build-test-for-configs }}"
+      ],
+      "clean-selected": [
+        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-selected-non-darwin %}{{ properties.actions-clean-for-configs }}{% endif %}",
+        "{% assign configs = properties.configs-selected %}{{ properties.actions-clean-for-configs }}"
       ],
       "install-latest": [
         "xpm install",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-latest-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-latest | split: ',' %}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{{ properties.compute-latest-configs }}{{ properties.actions-install-for-configs }}"
       ],
       "link-dependencies-latest": [
         "xpm run link-dependencies",
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-latest-non-darwin | split: ',' %}{{ properties.actions-install-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-latest | split: ',' %}{{ properties.actions-install-for-configs }}"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{{ properties.compute-latest-configs }}{{ properties.actions-install-for-configs }}"
       ],
       "test-latest": [
-        "{% if os.platform != 'darwin' %}{% assign configs = properties.configs-latest-non-darwin | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
-        "{% assign configs = properties.configs-latest | split: ',' %}{{ properties.actions-prepare-build-test-for-configs }}"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{{ properties.compute-latest-configs }}{{ properties.actions-prepare-build-test-for-configs }}"
+      ],
+      "clean-latest": [
+        "{% if os.platform != 'darwin' %}{{ properties.compute-latest-non-darwin-configs }}{{ properties.actions-clean-for-configs }}{% endif %}",
+        "{{ properties.compute-latest-configs }}{{ properties.actions-clean-for-configs }}"
       ],
       "install-all": [
         "xpm install",
-        "xpm install --all-configs"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{{ properties.compute-all-configs }}{{ properties.actions-install-for-configs }}"
       ],
       "link-dependencies-all": [
         "xpm run link-dependencies",
-        "xpm run link-dependencies --all-configs"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-install-for-configs }}{% endif %}",
+        "{{ properties.compute-all-configs }}{{ properties.actions-install-for-configs }}"
       ],
       "test-all": [
-        "xpm run test-native-cmake-all",
-        "xpm run test-native-meson-all",
-        "xpm run test-cortex-cmake-all",
-        "xpm run test-cortex-meson-all",
-        "xpm run test-riscv-cmake-all",
-        "xpm run test-riscv-meson-all"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-prepare-build-test-for-configs }}{% endif %}",
+        "{{ properties.compute-all-configs }}{{ properties.actions-prepare-build-test-for-configs }}"
       ],
       "clean-all": [
-        "xpm run clean --all-configs --ignore-errors"
+        "{% if os.platform != 'darwin' %}{{ properties.compute-all-non-darwin-configs }}{{ properties.actions-clean-for-configs }}{% endif %}",
+        "{{ properties.compute-all-configs }}{{ properties.actions-clean-for-configs }}"
       ],
       "test-native-cmake-all": [
         "xpm run test-native-cmake-sys{% if os.platform != 'darwin' %} --ignore-errors{% endif %}",
