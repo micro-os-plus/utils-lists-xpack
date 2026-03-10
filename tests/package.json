@@ -266,9 +266,7 @@
         "xpm link @micro-os-plus/build-helper"
       ],
       "link-dependencies": [
-        "xpm link @micro-os-plus/build-helper",
-        "xpm link @micro-os-plus/diag-trace",
-        "xpm link @micro-os-plus/micro-test-plus"
+        "xpm link @micro-os-plus/build-helper @micro-os-plus/diag-trace @micro-os-plus/micro-test-plus"
       ],
       "test": [
         "xpm run {% if os.platform == 'win32' %}test-native-cmake-gcc{% else %}test-native-cmake-sys{% endif %}"
@@ -621,11 +619,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-cortexm",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup",
-            "xpm link --config {{ configuration.name }} @xpack-3rd-party/arm-cmsis-core"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-cortexm @micro-os-plus/devices-qemu-cortexm @micro-os-plus/semihosting @micro-os-plus/startup @xpack-3rd-party/arm-cmsis-core"
           ]
         }
       },
@@ -636,10 +630,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch32",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch32",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch32 @micro-os-plus/devices-qemu-aarch32 @micro-os-plus/semihosting @micro-os-plus/startup"
           ]
         }
       },
@@ -650,10 +641,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch64",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-aarch64",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-aarch64 @micro-os-plus/devices-qemu-aarch64 @micro-os-plus/semihosting @micro-os-plus/startup"
           ]
         }
       },
@@ -664,10 +652,7 @@
             "xpm install --config {{ configuration.name }}"
           ],
           "link-dependencies": [
-            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/devices-qemu-riscv",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/semihosting",
-            "xpm link --config {{ configuration.name }} @micro-os-plus/startup"
+            "xpm link --config {{ configuration.name }} @micro-os-plus/architecture-riscv @micro-os-plus/devices-qemu-riscv @micro-os-plus/semihosting @micro-os-plus/startup"
           ]
         }
       },
