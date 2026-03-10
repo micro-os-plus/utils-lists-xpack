@@ -15,7 +15,7 @@
 
 # -----------------------------------------------------------------------------
 
-message('Processing tests/platform-qemu-riscv-rv64imafdc...')
+message('Processing tests/platforms/qemu-riscv-rv64imafdc...')
 
 # -----------------------------------------------------------------------------
 
@@ -33,7 +33,6 @@ objcopy = find_program('objcopy')
 # -----------------------------------------------------------------------------
 
 # Define the tests executables.
-
 test_names = [ 'sample-test', 'unit-test'  ]
 
 foreach name : test_names
@@ -58,36 +57,35 @@ foreach name : test_names
     '../../src/' + name + '.cpp',
   ]
 
-  _local_compile_c_args += platform_qemu_riscv_rv64imafdc_dependency_compile_c_args
-  _local_compile_cpp_args += platform_qemu_riscv_rv64imafdc_dependency_compile_cpp_args
-
-  _local_compile_c_args += micro_os_plus_utils_lists_dependency_compile_c_args
-  _local_compile_cpp_args += micro_os_plus_utils_lists_dependency_compile_cpp_args
-
   _local_link_args += [
     '-Wl,-Map,'+ name + '-map.txt',
     # '-v',
   ]
 
-  _local_dependencies += [
-    # Tested library.
-    micro_os_plus_utils_lists_dependency,
+  # Tested library.
+  _local_compile_c_args += micro_os_plus_utils_lists_dependency_compile_c_args
+  _local_compile_cpp_args += micro_os_plus_utils_lists_dependency_compile_cpp_args
 
-    # Portable dependencies.
-    micro_os_plus_diag_trace_dependency,
-  ]
+  _local_dependencies += [ micro_os_plus_utils_lists_dependency ]
+
+  # Portable dependencies.
+  _local_compile_c_args += micro_os_plus_diag_trace_dependency_compile_c_args
+  _local_compile_cpp_args += micro_os_plus_diag_trace_dependency_compile_cpp_args
+
+  _local_dependencies += [ micro_os_plus_diag_trace_dependency ]
 
   if name == 'unit-test'
     _local_compile_c_args += micro_os_plus_micro_test_plus_dependency_compile_c_args
     _local_compile_cpp_args += micro_os_plus_micro_test_plus_dependency_compile_cpp_args
 
-    _local_dependencies += [
-      micro_os_plus_micro_test_plus_dependency,
-    ]
+    _local_dependencies += [ micro_os_plus_micro_test_plus_dependency ]
   endif
 
+  # Platform specific dependencies.
+  _local_compile_c_args += platform_qemu_riscv_rv64imafdc_dependency_compile_c_args
+  _local_compile_cpp_args += platform_qemu_riscv_rv64imafdc_dependency_compile_cpp_args
+
   _local_dependencies += [
-    # Platform specific dependencies.
     platform_qemu_riscv_rv64imafdc_dependency, # bring device & architecture too
 
     micro_os_plus_semihosting_dependency,
