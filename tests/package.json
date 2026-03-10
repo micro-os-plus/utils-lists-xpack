@@ -22,6 +22,7 @@
   "scripts": {
     "generate-tests-commons": "bash xpacks/@micro-os-plus/build-helper/maintenance-scripts/generate-tests-commons.sh --micro-os-plus",
     "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper",
     "npm-outdated": "npm outdated",
     "deep-clean": "del-cli build node_modules xpacks package-lock.json"
   },
@@ -107,24 +108,24 @@
       ],
       "$native-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/gcc",
       "native-gcc-releases": {
-        "15": {
-          "specifier": "15.2.0-1.1",
-          "platforms": "linux-x64,linux-arm64,win32-x64"
-        },
-        "14": {
-          "specifier": "14.3.0-1.1",
-          "platforms": "linux-x64,linux-arm64,win32-x64"
-        },
-        "13": {
-          "specifier": "13.4.0-1.1",
+        "11": {
+          "specifier": "11.5.0-2.1",
           "platforms": "linux-x64,linux-arm64,win32-x64"
         },
         "12": {
           "specifier": "12.5.0-1.1",
           "platforms": "linux-x64,linux-arm64,win32-x64"
         },
-        "11": {
-          "specifier": "11.5.0-2.1",
+        "13": {
+          "specifier": "13.4.0-1.1",
+          "platforms": "linux-x64,linux-arm64,win32-x64"
+        },
+        "14": {
+          "specifier": "14.3.0-1.1",
+          "platforms": "linux-x64,linux-arm64,win32-x64"
+        },
+        "15": {
+          "specifier": "15.2.0-1.1",
           "platforms": "linux-x64,linux-arm64,win32-x64"
         }
       },
@@ -133,45 +134,45 @@
       ],
       "$native-clang-url": "https://www.npmjs.com/package/@xpack-dev-tools/clang",
       "native-clang-releases": {
-        "21": "21.1.8-1.1",
-        "20": "20.1.8-1.1",
-        "19": "19.1.7-1.1",
-        "18": "18.1.8-2.1",
+        "16": "16.0.6-1.1",
         "17": "17.0.6-3.1",
-        "16": "16.0.6-1.1"
+        "18": "18.1.8-2.1",
+        "19": "19.1.7-1.1",
+        "20": "20.1.8-1.1",
+        "21": "21.1.8-1.1"
       },
       "native-clang-versions": [
         "{{ properties.native-clang-releases | keys | reverse | join_lines }}"
       ],
       "$arm-none-eabi-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/arm-none-eabi-gcc",
       "arm-none-eabi-gcc-releases": {
-        "15": "15.2.1-1.1.1",
-        "14": "14.2.1-1.1.1",
-        "13": "13.3.1-1.1.1",
+        "11": "11.3.1-1.1.2",
         "12": "12.3.1-1.2.1",
-        "11": "11.3.1-1.1.2"
+        "13": "13.3.1-1.1.1",
+        "14": "14.2.1-1.1.1",
+        "15": "15.2.1-1.1.1"
       },
       "arm-none-eabi-gcc-versions": [
         "{{ properties.arm-none-eabi-gcc-releases | keys | reverse | join_lines }}"
       ],
       "$aarch64-none-elf-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/aarch64-none-elf-gcc",
       "aarch64-none-elf-gcc-releases": {
-        "15": "15.2.1-1.1.1",
-        "14": "14.2.1-1.1.1",
-        "13": "13.3.1-1.1.2",
+        "11": "11.3.1-1.2.1",
         "12": "12.3.1-2.1.1",
-        "11": "11.3.1-1.2.1"
+        "13": "13.3.1-1.1.2",
+        "14": "14.2.1-1.1.1",
+        "15": "15.2.1-1.1.1"
       },
       "aarch64-none-elf-gcc-versions": [
         "{{ properties.aarch64-none-elf-gcc-releases | keys | reverse | join_lines }}"
       ],
       "$riscv-none-elf-gcc-url": "https://www.npmjs.com/package/@xpack-dev-tools/riscv-none-elf-gcc",
       "riscv-none-elf-gcc-releases": {
-        "15": "15.2.0-1.1",
-        "14": "14.3.0-1.1",
-        "13": "13.4.0-1.1",
+        "11": "11.5.0-2.1",
         "12": "12.5.0-1.1",
-        "11": "11.5.0-2.1"
+        "13": "13.4.0-1.1",
+        "14": "14.3.0-1.1",
+        "15": "15.2.0-1.1"
       },
       "riscv-none-elf-gcc-versions": [
         "{{ properties.riscv-none-elf-gcc-releases | keys | reverse | join_lines }}"
