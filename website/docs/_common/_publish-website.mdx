@@ -6,26 +6,29 @@
 ### Publish the website
 
 The website deployment is performed automatically when pushing to the
-`website` branch, by a dedicated workflow in
+`website` branch, utilising a dedicated workflow in
 [GitHub Actions](https://github.com/micro-os-plus/utils-lists-xpack/actions/workflows/publish-github-pages.yml).
 
-- open https://micro-os-plus.github.io/utils-lists-xpack/docs/maintainer/#publish-the-website in a separate window
-- stop the local web server
-- switch to the `website` branch
-- **merge** the `xpack-development` branch into the `website` branch
-- **push** the `website` branch to GitHub
+- Open https://micro-os-plus.github.io/utils-lists-xpack/docs/maintainer/#publish-the-website in a separate window
+- **Stop** the local web server
+- Switch to the `website` branch
+- run the `npm install` command, to ensure `package-lock.json` is up to date
+- **Rebase** the `xpack-development` branch onto the `website` branch
+- **Push** the `website` branch to GitHub
   :::info
-  At this moment an automated GitHub Action will generate and publish the website.
+  At this point, an automated forwarding GitHub Action will trigger 
+  a GitHub Action in the separate project to generate and publish 
+  the [website]https://micro-os-plus.github.io/utils-lists-xpack/.
   :::
-- checkout the `xpack-development` branch
-- wait for the publish to complete
-- refresh the web page
-- the new release blog post is
-in https://micro-os-plus.github.io/utils-lists-xpack/blog/
-- remember the post URL, since it must be used to update the release page
+- Check out the `xpack-development` branch
+- **Wait** for the publication to complete
+- **Refresh** the web page
+- The new release blog post is available
+at https://micro-os-plus.github.io/utils-lists-xpack/blog/
+- Record the post URL, as it must be used to update the release page
 and the X/Twitter announcement
 
-The `website` branch may be subsequently updated, as long as the
-version in `package.json` is not changed.
+The `website` branch may be subsequently updated, provided the
+version in `package.json` remains unchanged.
 
-Check the result at https://micro-os-plus.github.io/utils-lists-xpack/.
+Verify the result at https://micro-os-plus.github.io/utils-lists-xpack/.

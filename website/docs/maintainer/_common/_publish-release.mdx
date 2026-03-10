@@ -5,18 +5,24 @@
 
 ### Publish the release to npmjs.com
 
-Run the following command in the project folder:
+Login to npmjs.com:
 
 ```sh
-npm publish --tag next
+npm login
+```
+
+Execute the following command within the project folder:
+
+```sh
+npm publish --tag test
 ```
 
 :::tip
 
-When publishing for the first time, use `--access public`.
+When publishing for the first time, utilise `--access public`.
 
 :::
 
-After a few moments the version will be visible at
+After a few moments, the version will be visible at
 <a href="https://www.npmjs.com/package/@micro-os-plus/utils-lists?activeTab=versions">npmjs.com</a>,
-the **Versions** tab.
+under the **Versions** tab.

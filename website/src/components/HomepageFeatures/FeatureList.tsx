@@ -27,11 +27,11 @@ export const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Easy to Use & Reproducible',
+    title: 'Easy to use & reproducible',
     Svg: require('@site/static/img/check-badge.svg').default,
     description: (
       <>
-        Projects can reference this library through an explicitly versioned <b>dependency</b>. This guarantees reproducibility, which is particularly advantageous in <b>CI/CD</b> environments.
+        Projects can reference this library through an explicitly versioned <b>dependency</b>. This ensures reproducibility, which is particularly advantageous in <b>CI/CD</b> environments.
       </>
     ),
   },
@@ -45,7 +45,7 @@ export const FeatureList: FeatureItem[] = [
         several additional features tailored for <b>C/C++ projects</b>.
         This enables the
         source package to integrate seamlessly into the Node.js ecosystem,
-        while still permitting manual installation of the library.
+        whilst still permitting manual installation of the library.
       </>
     ),
   },

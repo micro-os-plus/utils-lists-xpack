@@ -20,7 +20,7 @@ import ProjectTestDetails from '../_project/_test-details.mdx';
 {/* ------------------------------------------------------------------------ */}
 
 The project is written in modern C++ and, for reproducibility reasons,
-uses the xPack Framework tools during development.
+utilises the xPack Framework tools during development.
 
 <CommonPrerequisites nodeVersion="18.0.0" nodeVersionMajor="18"/>
 
@@ -30,13 +30,13 @@ uses the xPack Framework tools during development.
 
 ## Satisfy dependencies
 
-Go to the project folder:
+Navigate to the project folder:
 
 ```sh
 cd ~/Work/xpack/micro-os-plus/utils-lists-xpack.git
 ```
 
-and run the following commands:
+and execute the following commands:
 
 ```sh
 npm install
@@ -58,14 +58,14 @@ range of platforms.
 
 ### Host Platforms
 
-The tests can be executed on any of the supported host
+The tests may be executed on any of the supported host
 platforms:
 
-- GNU/Linux (x64 and arm64, **GLIBC>=2.28**); to run the native
+- GNU/Linux (x64 and arm64, **GLIBC>=2.28**); to execute the native
 tests, a C++ development environment is required
 (on Ubuntu install `build-essential`)
 - macOS (>= **11.0**);
-as C++ development environment use **Command Line Tools**
+as C++ development environment utilise **Command Line Tools**
 - Windows 7 with the Universal C Runtime (UCRT), Windows 8, Windows 10,
 Windows 11
 
@@ -73,30 +73,30 @@ Windows 11
 
 The supported target test platforms are:
 
-- `platforms/native` - run the test applications as **native processes**
+- `platforms/native` - execute the test applications as **native processes**
   on the development machine
-- `platforms/qemu-cortex-m0` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m0` - execute the tests as fully semihosted
   **Cortex-M0** applications on a QEMU **mps2-an385** emulated board
   (an Arm Cortex-M3 development board)
-- `platforms/qemu-cortex-m3` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m3` - execute the tests as fully semihosted
   **Cortex-M3** applications on a QEMU **mps2-an385** emulated board
   (an Arm Cortex-M3 development board)
-- `platforms/qemu-cortex-m4f` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m4f` - execute the tests as fully semihosted
   **Cortex-M4** applications on a QEMU **mps2-an386** emulated board
   (an Arm Cortex-M4 development board)
-- `platforms/qemu-cortex-m7f` - run the tests as fully semihosted
+- `platforms/qemu-cortex-m7f` - execute the tests as fully semihosted
   **Cortex-M7** applications on a QEMU **mps2-an500** emulated board
   (an Arm Cortex-M7 development board)
-- `platforms/qemu-cortex-a15` - run the tests as fully semihosted
+- `platforms/qemu-cortex-a15` - execute the tests as fully semihosted
   **Cortex-A15** applications on a QEMU **virt** emulated board
-- `platforms/qemu-cortex-a72` - run the tests as fully semihosted
+- `platforms/qemu-cortex-a72` - execute the tests as fully semihosted
   **Cortex-A72** (64-bit) applications on a QEMU **virt** emulated board
-- `platforms/qemu-riscv-rv32imac` - run the tests as fully semihosted
+- `platforms/qemu-riscv-rv32imac` - execute the tests as fully semihosted
   **RISC-V RV32IMAC** applications on a QEMU **virt** emulated board
-- `platforms/qemu-riscv-rv64imafdc` - run the tests as fully semihosted
+- `platforms/qemu-riscv-rv64imafdc` - execute the tests as fully semihosted
   **RISC-V RV64IMAFDC** applications on a QEMU **virt** emulated board
 
-The build configurations use exactly the same source files on all platforms,
+The build configurations utilise exactly the same source files on all platforms,
 without changes.
 
 ### Semihosting
@@ -108,9 +108,9 @@ host via the
 ### Toolchains
 
 To enhance source code portability, the builds are repeatedly conducted
-using various toolchains, including multiple versions of the same toolchain.
+utilising various toolchains, including multiple versions of the same toolchain.
 
-The following toolchains are used:
+The following toolchains are utilised:
 
 - gcc (native)
 - clang (native)

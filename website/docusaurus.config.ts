@@ -1,13 +1,14 @@
 // DO NOT EDIT!
 // Automatically generated from docusaurus-template-liquid/templates/docusaurus.
 
+/* eslint-disable */
 import { themes as prismThemes } from 'prism-react-renderer';
 import type { Config } from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
-import doxygenApiMenu from './docusaurus-config-doxygen-menu-dropdown.json'
+import doxygenApiMenu from './docusaurus-config-menu-doxygen.json'
 import { redirects } from './docusaurus-config-redirects';
 import { getCustomFields } from './customFields';
 
@@ -47,7 +48,6 @@ const config: Config = {
 
   onBrokenAnchors: 'throw',
   onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'throw',
 
   onDuplicateRoutes: 'throw',
 
@@ -63,82 +63,18 @@ const config: Config = {
     locales: ['en'],
   },
 
-  plugins: [
-    [
-      // '@docusaurus/plugin-content-docs',
-      './src/plugins/DocusaurusContentDocsWithDoxygenWrapper.js',
-      {
-        sidebarPath: './sidebars.ts',
-        // Please change this to your repo.
-        // Remove this to remove the "edit this page" links.
-        editUrl: 'https://github.com/micro-os-plus/utils-lists-xpack/edit/website/website/',
-        // showLastUpdateAuthor: true,
-        showLastUpdateTime: true,
+  markdown: {
+    format: 'detect',
+    hooks: {
+        onBrokenMarkdownLinks: 'throw'
+    }
+  },
 
-        doxygenPluginOptions: {
-          outputFolderPath: 'docs/api', // doxygen/mdx
-          outputBaseUrl: 'api',
-          redirectsOutputFolderPath: 'reference',
-          verbose: false,
-          runOnStart: true
-        }
-      },
-    ],
-    [
-      // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog
-      '@docusaurus/plugin-content-blog',
-      {
-        showReadingTime: true,
-        blogSidebarCount: 8,
-        feedOptions: {
-          type: ['rss', 'atom'],
-          xslt: true,
-        },
-        // Please change this to your repo.
-        // Remove this to remove the "edit this page" links.
-        editUrl: 'https://github.com/micro-os-plus/utils-lists-xpack/edit/website/website/',
-        // Useful options to enforce blogging best practices
-        onInlineTags: 'warn',
-        onInlineAuthors: 'warn',
-        onUntruncatedBlogPosts: 'warn',
-      },
-    ],
-    [
-      '@docusaurus/plugin-content-pages',
-      {}
-    ],
+  plugins: [
     [
       // https://docusaurus.io/docs/next/api/plugins/@docusaurus/plugin-client-redirects#redirects
       '@docusaurus/plugin-client-redirects',
       redirects,
-    ],
-    [
-      '@docusaurus/plugin-debug',
-      {}
-    ],
-    [
-      // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag
-      // https://tagassistant.google.com
-      '@docusaurus/plugin-google-gtag',
-      {
-        trackingID: 'G-E9T84WD3CK',
-        anonymizeIP: false,
-      }
-    ],
-    [
-      // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap
-      '@docusaurus/plugin-sitemap',
-      {
-        lastmod: 'date',
-        changefreq: 'weekly',
-        priority: 0.5,
-        ignorePatterns: [
-          actualBaseUrl + 'blog/archive/**',
-          actualBaseUrl + 'blog/authors/**',
-          actualBaseUrl + 'blog/tags/**'
-        ],
-        filename: 'sitemap.xml',
-      }
     ],
     [
       '@docusaurus/plugin-ideal-image',
@@ -155,12 +91,64 @@ const config: Config = {
     './src/plugins/SelectReleasesPlugin',
   ],
 
-  themes: [
+  presets: [
     [
-      '@docusaurus/theme-classic',
+      'classic',
       {
-        customCss: './src/css/custom.css',
-      }
+        docs: {
+          sidebarPath: './sidebars.ts',
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: 'https://github.com/micro-os-plus/utils-lists-xpack/edit/website/website/',
+          // showLastUpdateAuthor: true,
+          showLastUpdateTime: true,
+        },
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-blog
+        blog: {
+          showReadingTime: true,
+          blogSidebarCount: 8,
+          feedOptions: {
+            type: ['rss', 'atom'],
+            xslt: true,
+          },
+          // Please change this to your repo.
+          // Remove this to remove the "edit this page" links.
+          editUrl: 'https://github.com/micro-os-plus/utils-lists-xpack/edit/website/website/',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
+        },
+        pages: {},
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag
+        // https://tagassistant.google.com
+        gtag: {
+          trackingID: 'G-E9T84WD3CK',
+          anonymizeIP: false,
+        },
+        // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-sitemap
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.5,
+          ignorePatterns: [
+            actualBaseUrl + 'blog/archive/**',
+            actualBaseUrl + 'blog/authors/**',
+            actualBaseUrl + 'blog/tags/**'
+          ],
+          filename: 'sitemap.xml',
+        },
+
+        debug: true,
+
+        theme: {
+          customCss: [
+            './src/css/custom.css',
+            './src/css/custom-doxygen2docusaurus.css'
+          ],
+        },
+
+      } satisfies Preset.Options,
     ],
   ],
 
@@ -414,6 +402,12 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
+
+  // TODO: find out how to disable cascade CSSs.
+  // future: {
+  //   v4: true,
+  //   experimental_faster: true,
+  // },
 
   customFields: customFields,
 };

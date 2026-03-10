@@ -9,7 +9,7 @@
  * for any purpose is hereby granted, under the terms of the MIT license.
  *
  * If a copy of the license was not distributed with this file, it can
- * be obtained from https://opensource.org/licenses/MIT.
+ * be obtained from https://opensource.org/licenses/mit.
  */
 
 /**
@@ -51,7 +51,6 @@ The `include` folder contains all public header files for the µOS++ libraries.
 
 To provide isolation with other projects, the header files for the µOS++ libraries are located in the `micro-os-plus` folder.
 
-
 @dir include/micro-os-plus
 @brief Folder with C/C++ header files for the µOS++ libraries.
 
@@ -60,7 +59,6 @@ The `include/micro-os-plus` folder contains the public C++ header files for the 
 
 These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries.
 All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality.
-
 
 @defgroup micro-os-plus µOS++ Topics
 @brief Topics related to the µOS++ framework.
@@ -88,7 +86,6 @@ software development.
 
 By adopting µOS++, developers benefit from a robust, scalable, and
 well-documented foundation for building high-quality embedded applications.
-
 
 @namespace micro_os_plus
 @brief The primary namespace for the µOS++ framework.

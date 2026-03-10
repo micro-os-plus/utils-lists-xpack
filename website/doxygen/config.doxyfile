@@ -1,7 +1,7 @@
 # DO NOT EDIT!
 # Automatically generated from docusaurus-template-liquid/templates/docusaurus.
 
-# Doxyfile 1.9.7 - project specific
+# Doxyfile 1.14.0 - project specific
 
 # This file describes the settings to be used by the documentation system
 # doxygen (www.doxygen.org) for a project.
@@ -53,7 +53,7 @@ PROJECT_NUMBER = 4.0.2
 # for a project that appears at the top of each page and should give viewer a
 # quick idea about the purpose of the project. Keep the description short.
 
-PROJECT_BRIEF = "The µOS++ Intrusive Lists"
+PROJECT_BRIEF = "µOS++ Intrusive Lists"
 
 # With the PROJECT_LOGO tag one can specify a logo or an icon that is included
 # in the documentation. The maximum height of the logo should not exceed 55
