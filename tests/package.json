@@ -1495,7 +1495,6 @@
       }
     }
   },
-  "testsConfig": {},
   "engines": {
     "node": ">=20.0"
   }
