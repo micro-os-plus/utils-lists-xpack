@@ -476,6 +476,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>Referenced by <a href="#a6958ea54182c599d01d444e4e9f30df1">static_double_list_links</a>, <a href="#a2be6370be0af2f424e41e6a9814bcb2d">static_double_list_links</a>, <a href="#a4890324f5e2fb22f554e0d29803172f1">operator=</a> and <a href="#ab42a891ed3eca56520eb5e47f6a18916">operator=</a>.</p>
+
 </div>
 </div>
 
@@ -510,6 +513,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00422">422</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
+
+<p>Reference <a href="#a9748ad03de14f62527a68161210c3946">static_double_list_links</a>.</p>
+
 </div>
 </div>
 
@@ -543,6 +549,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00432">432</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+
+
+<p>Reference <a href="#a9748ad03de14f62527a68161210c3946">static_double_list_links</a>.</p>
 
 </div>
 </div>
@@ -647,6 +656,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00443">443</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
+
+<p>Reference <a href="#a9748ad03de14f62527a68161210c3946">static_double_list_links</a>.</p>
+
 </div>
 </div>
 
@@ -680,6 +692,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00454">454</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+
+
+<p>Reference <a href="#a9748ad03de14f62527a68161210c3946">static_double_list_links</a>.</p>
 
 </div>
 </div>
@@ -753,6 +768,12 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
+
+
+<p>Referenced by <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links/#aac63387a5b83fd66b646799691220460">micro_os_plus::utils::double_list_links::double_list_links</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a19d5ef00655b74ec23dee3a4acb08513">micro_os_plus::utils::double_list_links_base::initialize_once</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af71b18b73b6079575d3532cd80e75aed">micro_os_plus::utils::double_list_links_base::unlink</a>.</p>
+
 </div>
 </div>
 
@@ -815,6 +836,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">89</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af00094c1fb22120e6c8361bcbd94412d">micro_os_plus::utils::double_list_links_base::initialize</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ab1f8f02b4ce24ae9eeae5383f8b0498b">micro_os_plus::utils::double_list_links_base::uninitialized</a>.</p>
 
 </div>
 </div>
@@ -884,6 +908,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a414a3b580f22c9e5b528748321f444bf">micro_os_plus::utils::double_list_links_base::double_list_links_base</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
+
 </div>
 </div>
 
@@ -952,6 +979,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a414a3b580f22c9e5b528748321f444bf">micro_os_plus::utils::double_list_links_base::double_list_links_base</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
+
 </div>
 </div>
 
@@ -1018,6 +1048,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">185</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
 
 </div>
 </div>
@@ -1087,6 +1120,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>Reference <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a>.</p>
+
 </div>
 </div>
 
@@ -1144,6 +1180,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">207</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
 
 </div>
 </div>
@@ -1213,6 +1252,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>Reference <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
+
 </div>
 </div>
 
@@ -1280,6 +1322,12 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
+
+
+<p>Referenced by <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a19d5ef00655b74ec23dee3a4acb08513">micro_os_plus::utils::double_list_links_base::initialize_once</a>.</p>
+
 </div>
 </div>
 
@@ -1343,6 +1391,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>References <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af00094c1fb22120e6c8361bcbd94412d">micro_os_plus::utils::double_list_links_base::initialize</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ac66d4990300bc2a5471bcb446a3f6f4f">micro_os_plus::utils::double_list_links_base::next_</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">micro_os_plus::utils::double_list_links_base::previous_</a>.</p>
+
 </div>
 </div>
 
@@ -1386,6 +1437,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 
 </div>
 
+
+<p>Referenced by <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af00094c1fb22120e6c8361bcbd94412d">micro_os_plus::utils::double_list_links_base::initialize</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a5f8747ea15632be0b184be317bc1f98c">micro_os_plus::utils::double_list_links_base::link_next</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a9b3158786426a54c1d833723eae895b4">micro_os_plus::utils::double_list_links_base::link_previous</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a8f12afc06993300454b0ad618a4204c3">micro_os_plus::utils::double_list_links_base::linked</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a52cfec44e36307862ce8bf8522059c78">micro_os_plus::utils::double_list_links_base::next</a>, <a href="#ac7c7be24256a093ae9b047efd45cbfc3">nullify</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ab1f8f02b4ce24ae9eeae5383f8b0498b">micro_os_plus::utils::double_list_links_base::uninitialized</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af71b18b73b6079575d3532cd80e75aed">micro_os_plus::utils::double_list_links_base::unlink</a>.</p>
+
 </div>
 </div>
 
@@ -1422,6 +1476,9 @@ class micro_os_plus::utils::static_double_list_links { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">273</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a414a3b580f22c9e5b528748321f444bf">double_list_links_base</a>* <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a15d3c57a6bbdaac2de839ac47010b86d">previous_</a>;</span></span></div>
 
 </div>
+
+
+<p>Referenced by <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af00094c1fb22120e6c8361bcbd94412d">micro_os_plus::utils::double_list_links_base::initialize</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a5f8747ea15632be0b184be317bc1f98c">micro_os_plus::utils::double_list_links_base::link_next</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a9b3158786426a54c1d833723eae895b4">micro_os_plus::utils::double_list_links_base::link_previous</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a8f12afc06993300454b0ad618a4204c3">micro_os_plus::utils::double_list_links_base::linked</a>, <a href="#ac7c7be24256a093ae9b047efd45cbfc3">nullify</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#a8c0fd02eb96b1799a45285620fc8718a">micro_os_plus::utils::double_list_links_base::previous</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#ab1f8f02b4ce24ae9eeae5383f8b0498b">micro_os_plus::utils::double_list_links_base::uninitialized</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base/#af71b18b73b6079575d3532cd80e75aed">micro_os_plus::utils::double_list_links_base::unlink</a>.</p>
 
 </div>
 </div>

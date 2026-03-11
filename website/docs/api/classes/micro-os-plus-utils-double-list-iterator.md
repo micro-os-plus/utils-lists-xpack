@@ -687,6 +687,12 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
+
+
+<p>Referenced by <a href="#a5cce9653aa78c5989ef863a6a7831d59">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator!=</a> and <a href="#a4046bc946ebb2d019dac5fd3ffd4d118">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator==</a>.</p>
+
 </div>
 </div>
 
@@ -745,6 +751,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">302</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -849,6 +858,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -902,6 +914,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -952,6 +967,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">328</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a4dda1a12bf05e974cc3e6394f28302a0">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::get_pointer</a>.</p>
 
 </div>
 </div>
@@ -1017,6 +1035,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>References <a href="#ac26720e2d8837ad6e26e2f103bf3e8e3">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator</a> and <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -1071,6 +1092,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#a4dda1a12bf05e974cc3e6394f28302a0">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::get_pointer</a>.</p>
+
 </div>
 </div>
 
@@ -1122,6 +1146,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">362</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -1175,6 +1202,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">379</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -1240,6 +1270,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>References <a href="#ac26720e2d8837ad6e26e2f103bf3e8e3">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator</a> and <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -1303,6 +1336,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -1347,6 +1383,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00629">629</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
+
+<p>Referenced by <a href="#a81984e048a2b2778bfd6fd5098a4e7d4">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator*</a> and <a href="#a4c59c7d0ddbf8a7e2008d6288a042c08">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator-&gt;</a>.</p>
+
 </div>
 </div>
 
@@ -1390,6 +1429,9 @@ class micro_os_plus::utils::double_list_iterator&lt;T, N, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac185c8ffa5f9d12454f264fa9b0a1733">645</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#afb43bcf73a842c31d48e128c4c289d26">iterator_pointer</a> <a href="#ac185c8ffa5f9d12454f264fa9b0a1733">node_</a>;</span></span></div>
 
 </div>
+
+
+<p>Referenced by <a href="#ac26720e2d8837ad6e26e2f103bf3e8e3">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator</a>, <a href="#a9dcb547fe44a5956040c3c873fa2ae7d">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::double_list_iterator</a>, <a href="#a473a42671746c760cd95646f0810b469">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::get_iterator_pointer</a>, <a href="#a5cce9653aa78c5989ef863a6a7831d59">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator!=</a>, <a href="#a79955aa86c312930d561bfdaa7f8e740">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator++</a>, <a href="#a60ce68c08d226be1b5ff5bc92e21a4fc">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator++</a>, <a href="#a511da5b3fb41b18a16d1d04c4f7b1095">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator--</a>, <a href="#a1bc00178e8a6da8c816716236fd60be1">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator--</a> and <a href="#a4046bc946ebb2d019dac5fd3ffd4d118">micro_os_plus::utils::double_list_iterator&lt; T, N, U &gt;::operator==</a>.</p>
 
 </div>
 </div>

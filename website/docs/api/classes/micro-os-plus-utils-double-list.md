@@ -828,6 +828,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#ab19a62873a09745075bdceb60096c03c">micro_os_plus::utils::double_list&lt; T, L &gt;::clear</a>.</p>
+
+
+<p>Referenced by <a href="#ac38c0cef28c56bcac8ea5aa213977c08">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>, <a href="#a5dff0938d332c49766d4403272aad331">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>, <a href="#ac0309ae016123e7712853465554877ba">micro_os_plus::utils::double_list&lt; T, L &gt;::operator=</a> and <a href="#ad076495ae17252f925a7b0bcbe713339">micro_os_plus::utils::double_list&lt; T, L &gt;::operator=</a>.</p>
+
 </div>
 </div>
 
@@ -863,6 +869,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00737">737</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
+
+<p>Reference <a href="#aae4f864990bb22d349fc6f4fe06978fa">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>.</p>
+
 </div>
 </div>
 
@@ -897,6 +906,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00747">747</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+
+
+<p>Reference <a href="#aae4f864990bb22d349fc6f4fe06978fa">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>.</p>
 
 </div>
 </div>
@@ -966,6 +978,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#ae5fcdb79a6a10fa523cd39a5363ff76a">micro_os_plus::utils::double_list&lt; T, L &gt;::empty</a>.</p>
+
 </div>
 </div>
 
@@ -1007,6 +1022,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00758">758</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
+
+<p>Reference <a href="#aae4f864990bb22d349fc6f4fe06978fa">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>.</p>
+
 </div>
 </div>
 
@@ -1041,6 +1059,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 
 <p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00769">769</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+
+
+<p>Reference <a href="#aae4f864990bb22d349fc6f4fe06978fa">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>.</p>
 
 </div>
 </div>
@@ -1099,6 +1120,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
 </div>
 </div>
 
@@ -1153,6 +1177,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">607</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
+
+<p>Referenced by <a href="#aae4f864990bb22d349fc6f4fe06978fa">micro_os_plus::utils::double_list&lt; T, L &gt;::double_list</a>.</p>
 
 </div>
 </div>
@@ -1217,6 +1247,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
+
+<p>Referenced by <a href="#a9eba8d60614723f1c041359fe8d9f4bd">micro_os_plus::utils::double_list&lt; T, L &gt;::~double_list</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a0fa893095f3705c8dc2c59033258faac">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::empty</a>.</p>
+
 </div>
 </div>
 
@@ -1266,6 +1302,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">718</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
 
 </div>
 </div>
@@ -1323,6 +1362,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">622</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
+
+<p>Referenced by <a href="#a0be123af44b95f76b0347e38a1e93d00">micro_os_plus::utils::double_list&lt; T, L &gt;::link_head</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a69ff5a010ced371d2bff3e4ebe1fb13d">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::link_head</a>.</p>
 
 </div>
 </div>
@@ -1384,6 +1429,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">574</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
+
+<p>Referenced by <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a6ea6345b2ce0664b1fc1bbd484d7a653">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::initialize_once</a>.</p>
 
 </div>
 </div>
@@ -1449,6 +1500,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>References <a href="#aba89961ff686c458b91bbe59f2480519">micro_os_plus::utils::double_list&lt; T, L &gt;::head</a> and <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
 </div>
 </div>
 
@@ -1513,6 +1567,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>References <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a> and <a href="#a4ff535226e16d0d2e5aeb8c6a5590021">micro_os_plus::utils::double_list&lt; T, L &gt;::tail</a>.</p>
+
 </div>
 </div>
 
@@ -1567,6 +1624,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">894</span><span class="doxyLineContent"><span class="doxyHighlight">    }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
+
+<p>Referenced by <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a7b1a1165f207467209a06cf7cb97e6be">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::end</a>.</p>
 
 </div>
 </div>
@@ -1624,6 +1687,12 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">637</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
+
+<p>Referenced by <a href="#aeb06a4ae2e5497418a29e488d989f6da">micro_os_plus::utils::double_list&lt; T, L &gt;::link_tail</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a39f23959a6cd2774eb5ed1f1caeda242">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::link_tail</a>.</p>
 
 </div>
 </div>
@@ -1694,6 +1763,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#a22d5f70c0589acc1c18d10e740c7a599">micro_os_plus::utils::double_list&lt; T, L &gt;::links_</a>.</p>
+
 </div>
 </div>
 
@@ -1741,6 +1813,9 @@ class micro_os_plus::utils::double_list&lt;T, L&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a22d5f70c0589acc1c18d10e740c7a599">909</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a2478a7ae1ba2337b5c7be58face3a459">links_type</a> <a href="#a22d5f70c0589acc1c18d10e740c7a599">links_</a>;</span></span></div>
 
 </div>
+
+
+<p>Referenced by <a href="#acf7950853947782be95524ffe30febef">micro_os_plus::utils::double_list&lt; T, L &gt;::begin</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a4b9e40a7f40719a137a45a18b914bfe5">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::begin</a>, <a href="#ab19a62873a09745075bdceb60096c03c">micro_os_plus::utils::double_list&lt; T, L &gt;::clear</a>, <a href="#ae5fcdb79a6a10fa523cd39a5363ff76a">micro_os_plus::utils::double_list&lt; T, L &gt;::empty</a>, <a href="#abb4f476badf26d59503fe5a3a2ad0400">micro_os_plus::utils::double_list&lt; T, L &gt;::end</a>, <a href="#aba89961ff686c458b91bbe59f2480519">micro_os_plus::utils::double_list&lt; T, L &gt;::head</a>, <a href="#a6c5ca2deb541088fac9aae237e0c3699">micro_os_plus::utils::double_list&lt; T, L &gt;::initialize_once</a>, <a href="#a0be123af44b95f76b0347e38a1e93d00">micro_os_plus::utils::double_list&lt; T, L &gt;::link_head</a>, <a href="#aeb06a4ae2e5497418a29e488d989f6da">micro_os_plus::utils::double_list&lt; T, L &gt;::link_tail</a>, <a href="#a052a2e54bdf39df3c7d57e51a555ecab">micro_os_plus::utils::double_list&lt; T, L &gt;::links_pointer</a>, <a href="#a4ff535226e16d0d2e5aeb8c6a5590021">micro_os_plus::utils::double_list&lt; T, L &gt;::tail</a>, <a href="#aee22388cb4629e7a170c216cb95d0236">micro_os_plus::utils::double_list&lt; T, L &gt;::uninitialized</a>, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a5705b4896215d3fc3d8941c26e814bac">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</a> and <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#ad499ca0d5953647f3a23876e28f73295">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</a>.</p>
 
 </div>
 </div>

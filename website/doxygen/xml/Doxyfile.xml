@@ -12,7 +12,7 @@
   <option  id='ALLOW_UNICODE_NAMES' default='yes' type='bool'><value>NO</value></option>
   <option  id='OUTPUT_LANGUAGE' default='yes' type='string'><value>English</value></option>
   <option  id='BRIEF_MEMBER_DESC' default='yes' type='bool'><value>YES</value></option>
-  <option  id='REPEAT_BRIEF' default='yes' type='bool'><value>YES</value></option>
+  <option  id='REPEAT_BRIEF' default='no' type='bool'><value>NO</value></option>
   <option  id='ABBREVIATE_BRIEF' default='yes' type='stringlist'>
     <value><![CDATA["The $name class"]]></value>
     <value><![CDATA["The $name widget"]]></value>
@@ -53,7 +53,7 @@
     <value><![CDATA[no_extension=C++]]></value>
   </option>
   <option  id='MARKDOWN_SUPPORT' default='yes' type='bool'><value>YES</value></option>
-  <option  id='TOC_INCLUDE_HEADINGS' default='no' type='int'><value>5</value></option>
+  <option  id='TOC_INCLUDE_HEADINGS' default='yes' type='int'><value>6</value></option>
   <option  id='MARKDOWN_ID_STYLE' default='yes' type='string'><value>DOXYGEN</value></option>
   <option  id='AUTOLINK_SUPPORT' default='yes' type='bool'><value>YES</value></option>
   <option  id='AUTOLINK_IGNORE_WORDS' default='yes' type='stringlist'>
@@ -82,7 +82,7 @@
   <option  id='RESOLVE_UNNAMED_PARAMS' default='yes' type='bool'><value>YES</value></option>
   <option  id='HIDE_UNDOC_MEMBERS' default='yes' type='bool'><value>NO</value></option>
   <option  id='HIDE_UNDOC_CLASSES' default='yes' type='bool'><value>NO</value></option>
-  <option  id='HIDE_UNDOC_NAMESPACES' default='yes' type='bool'><value>YES</value></option>
+  <option  id='HIDE_UNDOC_NAMESPACES' default='no' type='bool'><value>NO</value></option>
   <option  id='HIDE_FRIEND_COMPOUNDS' default='yes' type='bool'><value>NO</value></option>
   <option  id='HIDE_IN_BODY_DOCS' default='yes' type='bool'><value>NO</value></option>
   <option  id='INTERNAL_DOCS' default='yes' type='bool'><value>NO</value></option>
@@ -137,12 +137,16 @@
   <option  id='INPUT_ENCODING' default='yes' type='string'><value><![CDATA[UTF-8]]></value></option>
   <option  id='INPUT_FILE_ENCODING' default='yes' type='stringlist'>
   </option>
-  <option  id='FILE_PATTERNS' default='no' type='stringlist'>
+  <option  id='FILE_PATTERNS' default='yes' type='stringlist'>
     <value><![CDATA[*.c]]></value>
     <value><![CDATA[*.cc]]></value>
     <value><![CDATA[*.cxx]]></value>
+    <value><![CDATA[*.cxxm]]></value>
     <value><![CDATA[*.cpp]]></value>
+    <value><![CDATA[*.cppm]]></value>
+    <value><![CDATA[*.ccm]]></value>
     <value><![CDATA[*.c++]]></value>
+    <value><![CDATA[*.c++m]]></value>
     <value><![CDATA[*.java]]></value>
     <value><![CDATA[*.ii]]></value>
     <value><![CDATA[*.ixx]]></value>
@@ -211,10 +215,10 @@
   <option  id='IMPLICIT_DIR_DOCS' default='yes' type='bool'><value>YES</value></option>
   <option  id='FORTRAN_COMMENT_AFTER' default='yes' type='int'><value>72</value></option>
   <option  id='SOURCE_BROWSER' default='no' type='bool'><value>YES</value></option>
-  <option  id='INLINE_SOURCES' default='yes' type='bool'><value>NO</value></option>
+  <option  id='INLINE_SOURCES' default='no' type='bool'><value>YES</value></option>
   <option  id='STRIP_CODE_COMMENTS' default='yes' type='bool'><value>YES</value></option>
-  <option  id='REFERENCED_BY_RELATION' default='yes' type='bool'><value>NO</value></option>
-  <option  id='REFERENCES_RELATION' default='yes' type='bool'><value>NO</value></option>
+  <option  id='REFERENCED_BY_RELATION' default='no' type='bool'><value>YES</value></option>
+  <option  id='REFERENCES_RELATION' default='no' type='bool'><value>YES</value></option>
   <option  id='REFERENCES_LINK_SOURCE' default='yes' type='bool'><value>YES</value></option>
   <option  id='SOURCE_TOOLTIPS' default='yes' type='bool'><value>YES</value></option>
   <option  id='USE_HTAGS' default='yes' type='bool'><value>NO</value></option>
@@ -317,7 +321,7 @@
   <option  id='USE_PDFLATEX' default='yes' type='bool'><value>YES</value></option>
   <option  id='LATEX_BATCHMODE' default='yes' type='string'><value>NO</value></option>
   <option  id='LATEX_HIDE_INDICES' default='yes' type='bool'><value>NO</value></option>
-  <option  id='LATEX_BIB_STYLE' default='no' type='string'><value><![CDATA[plain]]></value></option>
+  <option  id='LATEX_BIB_STYLE' default='yes' type='string'><value><![CDATA[plainnat]]></value></option>
   <option  id='LATEX_EMOJI_DIRECTORY' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='GENERATE_RTF' default='yes' type='bool'><value>NO</value></option>
   <option  id='RTF_OUTPUT' default='yes' type='string'><value><![CDATA[rtf]]></value></option>

@@ -128,6 +128,16 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1086" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="1086" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a93cc9e0b0cc3629edb655faec0feb4b3" compoundref="lists-inlines_8h" startline="735" endline="738">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ac7aecafdf290c92a25481b63b5159e69" compoundref="lists-inlines_8h" startline="749" endline="753">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1acb115adc091ab89e63afaceeb05cdc07" compoundref="lists-inlines_8h" startline="764" endline="770">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a338f29c9eb0a818bda40a54c86c23458" compoundref="lists-inlines_8h" startline="938" endline="941">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_iterator_pointer</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a11f2bc99a1f478650b82546e2e5470d1" compoundref="lists-inlines_8h" startline="914" endline="928">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aa5703a48802f7fa6c20df08a5d90a3fa" compoundref="lists-inlines_8h" startline="897" endline="901">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a22f5ebc83ff86c67f62bf16bc2db6e39" compoundref="lists-inlines_8h" startline="815" endline="819">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ad74d2e875227841cfc46f17394402b43" compoundref="lists-inlines_8h" startline="848" endline="852">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ab0996080fb49e46789339ce10a9b5adf" compoundref="lists-inlines_8h" startline="864" endline="869">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a7322f7566ab683966604148c49260562" compoundref="lists-inlines_8h" startline="881" endline="885">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -149,6 +159,9 @@
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="972" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="735" bodyend="738"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aa5703a48802f7fa6c20df08a5d90a3fa" compoundref="lists-inlines_8h" startline="897" endline="901">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a7322f7566ab683966604148c49260562" compoundref="lists-inlines_8h" startline="881" endline="885">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ac7aecafdf290c92a25481b63b5159e69" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -178,6 +191,7 @@ This constructor creates an <computeroutput><ref refid="classmicro__os__plus_1_1
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="979" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="749" bodyend="753"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1acb115adc091ab89e63afaceeb05cdc07" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" virt="non-virtual">
         <type>constexpr</type>
@@ -207,6 +221,7 @@ This constructor creates an <computeroutput><ref refid="classmicro__os__plus_1_1
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="987" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="764" bodyend="770"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a338f29c9eb0a818bda40a54c86c23458" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a520f5e4b1067d0febf857e04f6f37b83" kindref="member">iterator_pointer</ref></type>
@@ -230,6 +245,7 @@ Returns a pointer to the internal iterator node associated with the current obje
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1077" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="938" bodyend="941"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a11f2bc99a1f478650b82546e2e5470d1" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a08ac64c64dce736d83a93dfc838083af" kindref="member">pointer</ref></type>
@@ -253,6 +269,9 @@ Computes and returns a pointer to the parent object that contains the intrusive 
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1067" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="914" bodyend="928"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a5db55a56e22dbdea96e6d7e05c52f4c8" compoundref="lists-inlines_8h" startline="800" endline="803">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator*</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ab739aa0c113044d7288ea2f2b501336f" compoundref="lists-inlines_8h" startline="782" endline="785">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-&gt;</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aa5703a48802f7fa6c20df08a5d90a3fa" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -284,6 +303,8 @@ The inequality comparison operator (<computeroutput>operator!=</computeroutput>)
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1057" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="897" bodyend="901"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a93cc9e0b0cc3629edb655faec0feb4b3" compoundref="lists-inlines_8h" startline="735" endline="738">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a5db55a56e22dbdea96e6d7e05c52f4c8" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a90c6d3cd7bf8dab6039cb02af0ab5e4e" kindref="member">reference</ref></type>
@@ -303,6 +324,7 @@ The dereference operator (<computeroutput>operator*</computeroutput>) provides a
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1006" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="800" bodyend="803"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a11f2bc99a1f478650b82546e2e5470d1" compoundref="lists-inlines_8h" startline="914" endline="928">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a22f5ebc83ff86c67f62bf16bc2db6e39" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator" kindref="compound">intrusive_list_iterator</ref> &amp;</type>
@@ -321,6 +343,7 @@ The pre-increment operator (<computeroutput>operator++</computeroutput>) advance
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1014" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="815" bodyend="819"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1afd38a451e17ae6bf25966460f7815f12" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator" kindref="compound">intrusive_list_iterator</ref></type>
@@ -360,6 +383,7 @@ The pre-decrement operator (<computeroutput>operator--</computeroutput>) moves t
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1030" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="848" bodyend="852"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ab0996080fb49e46789339ce10a9b5adf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator" kindref="compound">intrusive_list_iterator</ref></type>
@@ -381,6 +405,7 @@ The post-decrement operator (<computeroutput><ref refid="classmicro__os__plus_1_
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1038" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="864" bodyend="869"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1ab739aa0c113044d7288ea2f2b501336f" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a08ac64c64dce736d83a93dfc838083af" kindref="member">pointer</ref></type>
@@ -399,6 +424,7 @@ The pointer access operator (<computeroutput>operator-&gt;</computeroutput>) all
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="998" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="782" bodyend="785"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a11f2bc99a1f478650b82546e2e5470d1" compoundref="lists-inlines_8h" startline="914" endline="928">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a7322f7566ab683966604148c49260562" prot="public" static="no" const="yes" explicit="no" inline="yes" virt="non-virtual">
         <type>bool</type>
@@ -430,6 +456,8 @@ The equality comparison operator (<computeroutput>operator==</computeroutput>) c
         <inbodydescription>
         </inbodydescription>
         <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="1048" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" bodystart="881" bodyend="885"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1a93cc9e0b0cc3629edb655faec0feb4b3" compoundref="lists-inlines_8h" startline="735" endline="738">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator_1aee433922fe4b649d6c1b529e620e9345" compoundref="lists_8h" startline="1086">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>

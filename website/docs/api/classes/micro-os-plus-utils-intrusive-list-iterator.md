@@ -692,6 +692,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
+
+<p>Referenced by <a href="#aa5703a48802f7fa6c20df08a5d90a3fa">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!=</a> and <a href="#a7322f7566ab683966604148c49260562">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</a>.</p>
+
 </div>
 </div>
 
@@ -750,6 +756,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">753</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -812,6 +821,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -870,6 +882,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -917,6 +932,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">869</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -968,6 +986,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">785</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#a11f2bc99a1f478650b82546e2e5470d1">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>.</p>
 
 </div>
 </div>
@@ -1033,6 +1054,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>References <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -1087,6 +1111,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#a11f2bc99a1f478650b82546e2e5470d1">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>.</p>
+
 </div>
 </div>
 
@@ -1138,6 +1165,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">819</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -1256,6 +1286,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>References <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
@@ -1318,6 +1351,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber">941</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
+
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -1387,6 +1423,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 </div>
 
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
+
+<p>Referenced by <a href="#a5db55a56e22dbdea96e6d7e05c52f4c8">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator*</a> and <a href="#ab739aa0c113044d7288ea2f2b501336f">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-&gt;</a>.</p>
+
 </div>
 </div>
 
@@ -1434,6 +1476,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aee433922fe4b649d6c1b529e620e9345">1086</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
 
 </div>
+
+
+<p>Referenced by <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#ac7aecafdf290c92a25481b63b5159e69">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#acb115adc091ab89e63afaceeb05cdc07">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#a338f29c9eb0a818bda40a54c86c23458">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_iterator_pointer</a>, <a href="#a11f2bc99a1f478650b82546e2e5470d1">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>, <a href="#aa5703a48802f7fa6c20df08a5d90a3fa">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!=</a>, <a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++</a>, <a href="#ad74d2e875227841cfc46f17394402b43">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</a>, <a href="#ab0996080fb49e46789339ce10a9b5adf">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</a> and <a href="#a7322f7566ab683966604148c49260562">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</a>.</p>
 
 </div>
 </div>
