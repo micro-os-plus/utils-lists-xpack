@@ -8,7 +8,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 // import logger from '@docusaurus/logger';
 import util from 'node:util';
 
-import doxygenApiMenu from './docusaurus-config-menu-doxygen.json'
+import doxygenApiMenu from './docusaurus-config-navbar-doxygen.json'
 import { redirects } from './docusaurus-config-redirects';
 import { getCustomFields } from './customFields';
 

@@ -1,0 +1,24 @@
+{
+  "type": "dropdown",
+  "label": "API Reference",
+  "to": "/docs/api/",
+  "position": "left",
+  "items": [
+    {
+      "label": "µOS++ Topics",
+      "to": "/docs/api/groups/micro-os-plus/"
+    },
+    {
+      "label": "Namespaces",
+      "to": "/docs/api/namespaces/"
+    },
+    {
+      "label": "Classes",
+      "to": "/docs/api/classes/"
+    },
+    {
+      "label": "Files",
+      "to": "/docs/api/files/"
+    }
+  ]
+}

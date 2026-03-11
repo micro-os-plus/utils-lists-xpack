@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="namespacemicro__os__plus_1_1utils" kind="namespace" language="C++">
+    <compoundname>micro_os_plus::utils</compoundname>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1double__list" prot="public">micro_os_plus::utils::double_list</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1double__list__iterator" prot="public">micro_os_plus::utils::double_list_iterator</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1double__list__links" prot="public">micro_os_plus::utils::double_list_links</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1double__list__links__base" prot="public">micro_os_plus::utils::double_list_links_base</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1intrusive__list" prot="public">micro_os_plus::utils::intrusive_list</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator" prot="public">micro_os_plus::utils::intrusive_list_iterator</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1static__double__list__links" prot="public">micro_os_plus::utils::static_double_list_links</innerclass>
+    <briefdescription>
+<para>The µOS++ utilities definitions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1utils" kindref="compound">micro_os_plus::utils</ref></computeroutput> namespace serves as a dedicated space for <bold>utility list classes</bold>, essential to the <bold>µOS++</bold> project. By encapsulating commonly used list implementations, it enhances code organisation, minimises redundancy, and improves overall maintainability within the framework.</para>
+<para>This structured approach fosters modular development and ensures seamless integration within <bold>µOS++</bold>, contributing to a more efficient and scalable system. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists-inlines.h" line="44" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="topics_8h" kind="file" language="C++">
+    <compoundname>topics.h</compoundname>
+    <briefdescription>
+<para>Project specific Doxygen topics definitions. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This file serves as the main entry point for the Doxygen documentation of the µOS++ Intrusive Lists utilities. It organizes and includes the documentation topics, file and folder references, and API groups that make up the structure of the generated documentation. The order of the <computeroutput>@include</computeroutput> directives determines the order of sections in the sidebar and navigation. This file ensures that users can easily explore the available modules, APIs, and supporting information for the utilities package.  </para>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.com/).</highlight></codeline>
+<codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2021-2026<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>be<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"></highlight></codeline>
+<codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Note:<sp/>the<sp/>order<sp/>is<sp/>important,<sp/>it<sp/>also<sp/>gives<sp/>the<sp/>order<sp/>in<sp/>the<sp/>sidebar.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"></highlight></codeline>
+    </programlisting>
+    <location file="topics.h"/>
+  </compounddef>
+</doxygen>

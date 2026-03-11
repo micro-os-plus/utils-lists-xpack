@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="dir_ed165110c3623bfc4ee73136e0ee950e" kind="dir">
+    <compoundname>utils</compoundname>
+    <innerfile refid="lists-inlines_8h">lists-inlines.h</innerfile>
+    <innerfile refid="lists_8h">lists.h</innerfile>
+    <briefdescription>
+<para>Folder with C++ header files for the µOS++ utilities. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This folder contains the public C++ header files for the µOS++ utilities library. The files in this folder define the main APIs, classes, templates, and inline implementations for intrusive lists and related utilities. These headers are intended to be included by user code and provide the primary interface for interacting with the utilities provided by this package.  </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/"/>
+  </compounddef>
+</doxygen>

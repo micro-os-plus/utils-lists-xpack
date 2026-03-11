@@ -60,25 +60,43 @@
       "label": "Namespaces",
       "link": {
         "type": "doc",
-        "id": "api/namespaces/index"
+        "id": "api/indices/namespaces/index"
       },
       "collapsed": true,
       "items": [
         {
           "type": "category",
-          "label": "micro_os_plus",
-          "link": {
-            "type": "doc",
-            "id": "api/namespaces/micro-os-plus"
-          },
+          "label": "Hierarchy",
           "collapsed": true,
           "items": [
             {
-              "type": "doc",
-              "label": "utils",
-              "id": "api/namespaces/micro-os-plus-utils"
+              "type": "category",
+              "label": "micro_os_plus",
+              "link": {
+                "type": "doc",
+                "id": "api/namespaces/micro-os-plus"
+              },
+              "className": "doxyEllipsis",
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "utils",
+                  "id": "api/namespaces/micro-os-plus-utils"
+                }
+              ]
             }
           ]
+        },
+        {
+          "type": "doc",
+          "label": "All",
+          "id": "api/indices/namespaces/all"
+        },
+        {
+          "type": "doc",
+          "label": "Classes",
+          "id": "api/indices/namespaces/classes"
         }
       ]
     },
@@ -87,92 +105,95 @@
       "label": "Classes",
       "link": {
         "type": "doc",
-        "id": "api/classes/index"
+        "id": "api/indices/classes/index"
       },
       "collapsed": true,
       "items": [
         {
           "type": "category",
-          "label": "#Index",
-          "link": {
-            "type": "doc",
-            "id": "api/index/classes/all"
-          },
+          "label": "Hierarchy",
           "collapsed": true,
           "items": [
             {
-              "type": "doc",
-              "label": "All",
-              "id": "api/index/classes/all"
+              "type": "category",
+              "label": "double_list<T, L>",
+              "link": {
+                "type": "doc",
+                "id": "api/classes/micro-os-plus-utils-double-list"
+              },
+              "className": "doxyEllipsis",
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "intrusive_list<T, N, MP, L, U>",
+                  "className": "doxyEllipsis",
+                  "id": "api/classes/micro-os-plus-utils-intrusive-list"
+                }
+              ]
             },
             {
               "type": "doc",
-              "label": "Classes",
-              "id": "api/index/classes/classes"
+              "label": "double_list_iterator<T, N, U>",
+              "className": "doxyEllipsis",
+              "id": "api/classes/micro-os-plus-utils-double-list-iterator"
+            },
+            {
+              "type": "category",
+              "label": "double_list_links_base",
+              "link": {
+                "type": "doc",
+                "id": "api/classes/micro-os-plus-utils-double-list-links-base"
+              },
+              "className": "doxyEllipsis",
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "double_list_links",
+                  "className": "doxyEllipsis",
+                  "id": "api/classes/micro-os-plus-utils-double-list-links"
+                },
+                {
+                  "type": "doc",
+                  "label": "static_double_list_links",
+                  "className": "doxyEllipsis",
+                  "id": "api/classes/micro-os-plus-utils-static-double-list-links"
+                }
+              ]
             },
             {
               "type": "doc",
-              "label": "Functions",
-              "id": "api/index/classes/functions"
-            },
-            {
-              "type": "doc",
-              "label": "Variables",
-              "id": "api/index/classes/variables"
-            },
-            {
-              "type": "doc",
-              "label": "Typedefs",
-              "id": "api/index/classes/typedefs"
-            }
-          ]
-        },
-        {
-          "type": "category",
-          "label": "double_list",
-          "link": {
-            "type": "doc",
-            "id": "api/classes/micro-os-plus-utils-double-list"
-          },
-          "collapsed": true,
-          "items": [
-            {
-              "type": "doc",
-              "label": "intrusive_list",
-              "id": "api/classes/micro-os-plus-utils-intrusive-list"
-            }
-          ]
-        },
-        {
-          "type": "doc",
-          "label": "double_list_iterator",
-          "id": "api/classes/micro-os-plus-utils-double-list-iterator"
-        },
-        {
-          "type": "category",
-          "label": "double_list_links_base",
-          "link": {
-            "type": "doc",
-            "id": "api/classes/micro-os-plus-utils-double-list-links-base"
-          },
-          "collapsed": true,
-          "items": [
-            {
-              "type": "doc",
-              "label": "double_list_links",
-              "id": "api/classes/micro-os-plus-utils-double-list-links"
-            },
-            {
-              "type": "doc",
-              "label": "static_double_list_links",
-              "id": "api/classes/micro-os-plus-utils-static-double-list-links"
+              "label": "intrusive_list_iterator<T, N, MP, U>",
+              "className": "doxyEllipsis",
+              "id": "api/classes/micro-os-plus-utils-intrusive-list-iterator"
             }
           ]
         },
         {
           "type": "doc",
-          "label": "intrusive_list_iterator",
-          "id": "api/classes/micro-os-plus-utils-intrusive-list-iterator"
+          "label": "All",
+          "id": "api/indices/classes/all"
+        },
+        {
+          "type": "doc",
+          "label": "Classes",
+          "id": "api/indices/classes/classes"
+        },
+        {
+          "type": "doc",
+          "label": "Functions",
+          "id": "api/indices/classes/functions"
+        },
+        {
+          "type": "doc",
+          "label": "Variables",
+          "id": "api/indices/classes/variables"
+        },
+        {
+          "type": "doc",
+          "label": "Typedefs",
+          "id": "api/indices/classes/typedefs"
         }
       ]
     },
@@ -181,78 +202,109 @@
       "label": "Files",
       "link": {
         "type": "doc",
-        "id": "api/files/index"
+        "id": "api/indices/files/index"
       },
       "collapsed": true,
       "items": [
         {
           "type": "category",
-          "label": "include",
-          "link": {
-            "type": "doc",
-            "id": "api/folders/include"
-          },
+          "label": "Hierarchy",
           "collapsed": true,
           "items": [
             {
               "type": "category",
-              "label": "micro-os-plus",
+              "label": "include",
               "link": {
                 "type": "doc",
-                "id": "api/folders/include-micro-os-plus"
+                "id": "api/folders/include"
               },
+              "className": "doxyEllipsis",
               "collapsed": true,
               "items": [
                 {
                   "type": "category",
-                  "label": "utils",
+                  "label": "micro-os-plus",
                   "link": {
                     "type": "doc",
-                    "id": "api/folders/include-micro-os-plus-utils"
+                    "id": "api/folders/include-micro-os-plus"
                   },
+                  "className": "doxyEllipsis",
                   "collapsed": true,
                   "items": [
                     {
-                      "type": "doc",
-                      "label": "lists-inlines.h",
-                      "id": "api/files/include-micro-os-plus-utils-lists-inlines-h"
-                    },
-                    {
-                      "type": "doc",
-                      "label": "lists.h",
-                      "id": "api/files/include-micro-os-plus-utils-lists-h"
+                      "type": "category",
+                      "label": "utils",
+                      "link": {
+                        "type": "doc",
+                        "id": "api/folders/include-micro-os-plus-utils"
+                      },
+                      "className": "doxyEllipsis",
+                      "collapsed": true,
+                      "items": [
+                        {
+                          "type": "doc",
+                          "label": "lists-inlines.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-utils-lists-inlines-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "lists.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-utils-lists-h"
+                        }
+                      ]
                     }
                   ]
                 }
               ]
-            }
-          ]
-        },
-        {
-          "type": "category",
-          "label": "src",
-          "link": {
-            "type": "doc",
-            "id": "api/folders/src"
-          },
-          "collapsed": true,
-          "items": [
+            },
+            {
+              "type": "category",
+              "label": "src",
+              "link": {
+                "type": "doc",
+                "id": "api/folders/src"
+              },
+              "className": "doxyEllipsis",
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "doc",
+                  "label": "lists.cpp",
+                  "className": "doxyEllipsis",
+                  "id": "api/files/src-lists-cpp"
+                }
+              ]
+            },
             {
               "type": "doc",
-              "label": "lists.cpp",
-              "id": "api/files/src-lists-cpp"
+              "label": "top-common.h",
+              "className": "doxyEllipsis",
+              "id": "api/files/top-common-h"
+            },
+            {
+              "type": "doc",
+              "label": "topics.h",
+              "className": "doxyEllipsis",
+              "id": "api/files/topics-h"
             }
           ]
         },
         {
           "type": "doc",
-          "label": "top-common.h",
-          "id": "api/files/top-common-h"
+          "label": "All",
+          "id": "api/indices/files/all"
         },
         {
           "type": "doc",
-          "label": "topics.h",
-          "id": "api/files/topics-h"
+          "label": "Classes",
+          "id": "api/indices/files/classes"
+        },
+        {
+          "type": "doc",
+          "label": "Namespaces",
+          "id": "api/indices/files/namespaces"
         }
       ]
     }

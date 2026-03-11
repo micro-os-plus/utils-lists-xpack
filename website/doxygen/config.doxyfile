@@ -47,7 +47,7 @@ PROJECT_NAME = utils-lists
 # could be handy for archiving the generated documentation or if some version
 # control system is used.
 
-PROJECT_NUMBER = 4.0.2
+PROJECT_NUMBER = 4.0.3
 
 # Using the PROJECT_BRIEF tag one can provide an optional one line description
 # for a project that appears at the top of each page and should give viewer a
@@ -219,8 +219,8 @@ HTML_OUTPUT            = ../static/doxygen
 # of the possible markers and block names see the documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_HEADER = \
-../node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
+# HTML_HEADER = \
+# ../node_modules/@micro-os-plus/build-helper/doxygen/common-header-micro-os-plus.html
 
 # The HTML_EXTRA_STYLESHEET tag can be used to specify additional user-defined
 # cascading style sheets that are included after the standard style sheets
@@ -238,9 +238,9 @@ HTML_HEADER = \
 # documentation.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_STYLESHEET = \
-../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
-../node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css \
+# HTML_EXTRA_STYLESHEET = \
+# ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome.css \
+# ../node_modules/@micro-os-plus/build-helper/doxygen/common-custom.css \
 
 # The HTML_EXTRA_FILES tag can be used to specify one or more extra images or
 # other source files which should be copied to the HTML output directory. Note
@@ -250,12 +250,12 @@ HTML_EXTRA_STYLESHEET = \
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES = \
-../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
-../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
-../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
-../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
-../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
+# HTML_EXTRA_FILES = \
+# ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-darkmode-toggle.js \
+# ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-fragment-copy-button.js \
+# ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-paragraph-link.js \
+# ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-interactive-toc.js \
+# ../node_modules/@jothepro/doxygen-awesome-css/doxygen-awesome-tabs.js \
 
 #---------------------------------------------------------------------------
 # Configuration options related to the preprocessor
@@ -289,7 +289,7 @@ __cpp_exceptions \
 # DoxygenLayout.xml, doxygen will parse it automatically even if the LAYOUT_FILE
 # tag is left empty.
 
-LAYOUT_FILE = DoxygenLayout.xml
+# LAYOUT_FILE = DoxygenLayout.xml
 
 #---------------------------------------------------------------------------
 # Configuration options related to the XML output

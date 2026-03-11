@@ -45,6 +45,11 @@
  * undefined, the only reliable way to ensure the registrar is ready before
  * clients attempt to register is to initialise it during **startup** (via BSS
  * initialisation) prior to the execution of static constructors.
+ * 
+ * Note: For comparison, the original Doxygen html pages, continue to be available 
+ * via the 
+ * <a href="https://micro-os-plus.github.io/utils-lists-xpack/doxygen/index.html">doxygen/\*</a> 
+ * URLs.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_LISTS_H_

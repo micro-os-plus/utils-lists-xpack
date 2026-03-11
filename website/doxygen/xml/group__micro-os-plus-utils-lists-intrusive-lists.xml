@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-utils-lists-intrusive-lists" kind="group">
+    <compoundname>micro-os-plus-utils-lists-intrusive-lists</compoundname>
+    <title>Intrusive Doubly Linked Lists</title>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1intrusive__list" prot="public">micro_os_plus::utils::intrusive_list</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator" prot="public">micro_os_plus::utils::intrusive_list_iterator</innerclass>
+    <briefdescription>
+<para>Intrusive doubly linked lists classes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Intrusive lists are doubly linked lists that store the two pointers required for linking directly within each object that is part of the list. This approach eliminates the need for separate node wrappers, resulting in improved performance and reduced memory usage.</para>
+<para>The intrusive lists can be defined by instantiating the <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list" kindref="compound">micro_os_plus::utils::intrusive_list</ref></computeroutput> class template, which provides a flexible and efficient way to manage collections of objects.</para>
+<para><bold>Example</bold></para>
+<para>The following example demonstrates how to define and use an intrusive list:</para>
+<para><programlisting filename=".cpp"><codeline><highlight class="preprocessor">#include<sp/>&lt;<ref refid="lists_8h" kindref="compound">micro-os-plus/utils/lists.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">namespace<sp/></highlight><highlight class="normal">os<sp/>=<sp/><ref refid="namespacemicro__os__plus" kindref="compound">micro_os_plus</ref>;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal">child</highlight></codeline>
+<codeline><highlight class="normal">{</highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>child<sp/>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name);</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>...</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">protected</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal">*<sp/>name_;</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal">:</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Intrusive<sp/>node<sp/>used<sp/>to<sp/>link<sp/>this<sp/>child<sp/>to<sp/>the<sp/>registry<sp/>list.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>Must<sp/>be<sp/>public.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/>os::utils::double_list_links<sp/>registry_links_;</highlight></codeline>
+<codeline><highlight class="normal">};</highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal">static_children_list<sp/>=<sp/>os::utils::intrusive_list&lt;</highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>child,<sp/></highlight><highlight class="comment">//<sp/>type<sp/>of<sp/>nodes<sp/>in<sp/>the<sp/>list</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">decltype</highlight><highlight class="normal"><sp/>(child::registry_links_),<sp/></highlight><highlight class="comment">//<sp/>type<sp/>of<sp/>the<sp/>`registry_links_`<sp/>member</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>&amp;child::registry_links_,<sp/></highlight><highlight class="comment">//<sp/>name<sp/>of<sp/>member</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>static_double_list_links&gt;;<sp/></highlight><highlight class="comment">//<sp/>type<sp/>of<sp/>the<sp/>head<sp/>links<sp/>node</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal"></highlight><highlight class="comment">//<sp/>The<sp/>list<sp/>head<sp/>is<sp/>statically<sp/>allocated.</highlight><highlight class="normal"></highlight></codeline>
+<codeline><highlight class="normal">static_children_list<sp/>kids_registry;</highlight></codeline>
+</programlisting>  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

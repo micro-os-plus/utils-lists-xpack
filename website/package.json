@@ -3,6 +3,47 @@
   "name": "website",
   "version": "0.0.0",
   "private": true,
+  "author": {
+    "name": "Liviu Ionescu",
+    "email": "ilg@livius.net",
+    "url": "https://github.com/ilg-ul"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@docusaurus/core": "3.9.2",
+    "@docusaurus/faster": "3.9.2",
+    "@docusaurus/plugin-client-redirects": "3.9.2",
+    "@docusaurus/plugin-ideal-image": "3.9.2",
+    "@docusaurus/preset-classic": "3.9.2",
+    "@docusaurus/theme-search-algolia": "3.9.2",
+    "@mdx-js/react": "^3.1.1",
+    "clean-css": "~5.3.3",
+    "clsx": "^2.0.0",
+    "prism-react-renderer": "^2.3.0",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3"
+  },
+  "$dependenciesUrls": {
+    "del-cli": "https://www.npmjs.com/package/del-cli",
+    "json": "https://www.npmjs.com/package/json",
+    "liquidjs": "https://www.npmjs.com/package/liquidjs",
+    "typescript": "https://www.npmjs.com/package/typescript"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "3.9.2",
+    "@docusaurus/tsconfig": "3.9.2",
+    "@docusaurus/types": "3.9.2",
+    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-development",
+    "@xpack/docusaurus-template-liquid": "github:xpack/docusaurus-template-liquid",
+    "@xpack/doxygen2docusaurus": "^2.0.0",
+    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
+    "broken-link-checker": "^0.7.8",
+    "del-cli": "^7.0.0",
+    "json": "^11.0.0",
+    "liquidjs": "^10.25.0",
+    "open-cli": "^8.0.0",
+    "typescript": "~5.9.3"
+  },
   "scripts": {
     "generate-website-commons": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-website-commons.sh --micro-os-plus",
     "npm-outdated": "npm outdated",
@@ -11,8 +52,10 @@
     "npm-ci": "npm ci",
     "deep-clean": "del-cli .docusaurus build node_modules package-lock.json",
     "doxygen": "del-cli static/doxygen doxygen/xml; (cd doxygen; doxygen config.doxyfile)",
-    "browser": "open-cli static/doxygen/index.html",
+    "browse-doxygen": "open-cli static/doxygen/index.html",
+    "convert-doxygen": "doxygen2docusaurus",
     "generate-doxygen": "docusaurus generate-doxygen",
+    "generate-website-doxygen": "npm run doxygen && npm run convert-doxygen",
     "check-urls": "blc https://micro-os-plus.github.io/utils-lists-xpack/ --recursive --ordered --filter-level 2 --exclude 'https://twitter.com*'",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
@@ -30,49 +73,6 @@
     "generate-website-blog-post": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-blog-post.sh --micro-os-plus",
     "generate-dependencies-details": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-dependencies-details.sh --micro-os-plus",
     "clean": "del-cli .docusaurus build"
-  },
-  "author": {
-    "name": "Liviu Ionescu",
-    "email": "ilg@livius.net",
-    "url": "https://github.com/ilg-ul"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "@docusaurus/core": "3.9.2",
-    "@docusaurus/plugin-client-redirects": "3.9.2",
-    "@docusaurus/plugin-ideal-image": "3.9.2",
-    "@docusaurus/preset-classic": "3.9.2",
-    "@docusaurus/theme-search-algolia": "3.9.2",
-    "@mdx-js/react": "^3.1.1",
-    "clean-css": "~5.3.3",
-    "clsx": "^2.0.0",
-    "prism-react-renderer": "^2.3.0",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3",
-    "@docusaurus/faster": "3.9.2"
-  },
-  "$devDependenciesUrls": [
-    "https://www.npmjs.com/package/del-cli",
-    "https://www.npmjs.com/package/json",
-    "https://www.npmjs.com/package/liquidjs",
-    "https://www.npmjs.com/package/typescript"
-  ],
-  "devDependencies": {
-    "del-cli": "^7.0.0",
-    "open-cli": "^8.0.0",
-    "broken-link-checker": "^0.7.8",
-    "@jothepro/doxygen-awesome-css": "github:jothepro/doxygen-awesome-css#v2.3.4",
-    "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-development",
-    "@docusaurus/module-type-aliases": "3.9.2",
-    "@docusaurus/tsconfig": "3.9.2",
-    "@docusaurus/types": "3.9.2",
-    "@xpack/docusaurus-plugin-doxygen": "^0.3.0",
-    "json": "^11.0.0",
-    "liquidjs": "^10.24.0",
-    "typescript": "~5.9.3",
-    "react-markdown": "^10.1.0",
-    "@xpack/docusaurus-template-liquid": "github:xpack/docusaurus-template-liquid",
-    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper"
   },
   "browserslist": {
     "production": [
