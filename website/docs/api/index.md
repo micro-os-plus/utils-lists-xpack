@@ -97,7 +97,7 @@ Topics related to the µOS++ Intrusive Lists C API
 <p>This approach enables <b>static objects</b> to <b>auto-register</b> with static registrar instances. As the execution order of static constructors is undefined, the only reliable way to ensure the registrar is ready before clients attempt to register is to initialise it during <b>startup</b> (via BSS initialisation) prior to the execution of static constructors.</p>
 
 
-<p>Note: For comparison, the original Doxygen html pages, continue to be available via the <a href="https://micro-os-plus.github.io/utils-lists-xpack/doxygen/index.html">doxygen/*</a> URLs.</p>
+<p>[Note: For comparison, the original Doxygen html pages, continue to be available via the <a href="https://micro-os-plus.github.io/utils-lists-xpack/doxygen/index.html">doxygen/*</a> URLs.]</p>
 
 
 <hr/>
