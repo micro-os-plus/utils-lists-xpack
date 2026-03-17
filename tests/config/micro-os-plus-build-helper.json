@@ -9,5 +9,9 @@
     "qemu-cortex-a72",
     "qemu-riscv-rv32imac",
     "qemu-riscv-rv64imafdc"
+  ],
+  "tests": [
+    "sample",
+    "unit"
   ]
 }
