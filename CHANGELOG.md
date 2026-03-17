@@ -6,10 +6,140 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
+## 2026-03-17
+
+* v4.0.3 prepared
+* 0eca65a re-generate tests commons
+* 113e39e re-generate tests commons
+
+## 2026-03-11
+
+* 39211e9 re-generate website commons with local configs
+* b4a9d96 website api cosmetics
+* 8a2f779 re-generate website
+* 736cbca re-generate tests commons
+* 7d1ca48 re-generate top commons
+
+## 2026-03-10
+
+* 179f28e re-generate website commons
+* 3e4a5db tests/package.json cosmetics
+* 934559c re-generate tests commons
+* a97b611 add micro-os-plus-build-helper.json with platforms
+* 4d5f5f2 re-generate tests commons
+* 84f7331 tests/package*.json update
+* ab37c3a tests/package.json: group xpm link
+* 956866f tests/package*.json update to matrix
+* a01ce01 re-generate top commons
+* d7c77cf xcdl-build.json
+* 5b97b42 copyright 2026 update
+
+## 2025-11-27
+
+* a0a677f tests/package.json bump deps
+
+## 2025-11-25
+
+* a57e22e package.json: actions-*-for-configs
+* ac93279 list.h: doxygen **Example**
+* df9bfca package*.json: bump deps
+
+## 2025-11-20
+
+* c0a9cae package.json bump deps
+* 44d4205 workflows update
+* 941b412 npm --prefix
+* f5a852c sample-test.cpp silence warnings
+
+## 2025-10-07
+
+* 6a61a0a update copyright notices
+
+## 2025-05-24
+
+* 194487e website re-generate docs api
+* d0c3042 doxygen topics.h fix H1
+* 3f12bfd website re-generate docs api
+* 314aeb8 website re-generate commons
+
+## 2025-05-21
+
+* 69c5f50 tests package-lock.json update
+* 388c0c4 re-generate commons
+
+## 2025-05-20
+
+* 03f30e0 website re-generate doxygen docs
+* 061772a rename lists-inlines.h
+* c6e906f website re-generate commons
+* c9e1f2d website re-generate doxygen docs
+* bc7f766 doxygen updates
+* 2178c7e website re-generate doxygen docs
+* cd9c056 website doxygen updates
+* b8bfd31 sources doxygen updates
+* 116cfec website update doxygen docs
+* 01f184e sources update doxygen comments
+* 5c38fe0 website doxygen split into separate .dox files
+* 2349a21 website fix project name in blog post
+
+## 2025-05-19
+
+* be6f4c6 website re-generate commons
+* 43a4409 website re-generate doxygen
+* f44791f inlines.h update warning
+* 50e74f6 tests re-generate commons
+* b8029a6 re-generate commons
+
+## 2025-04-23
+
+* 71e8aec package.json bump deps
+* 23604fb package.json bump deps
+* ab70990 package.json bump deps
+* 83af6e6 website update api
+* bfc32e9 website bump deps
+* f911cdc website bump deps
+* b4c6ced website bump deps
+* b4efd58 website/package-lock.json update
+* 8c46be2 website: use published plugin
+* 3f8bfd8 website/package-lock.json
+* f7a670f add docs/api
+* ad55d76 website updates
+* 4040088 update doxygen metadata
+
+## 2025-04-03
+
+* 207f016 website: re-generate commons
+
+## 2025-03-21
+
+* cae62f8 website update user's guide
+* 22167b6 website update user's guide
+* a3995ab include/lists.h: doubly
+* c957e58 tests/sample-test.cpp rework with two lists
+* 25e183e website: topics rephrase
+* 54c98d2 tests: rename Mary
+
+## 2025-03-19
+
+* 0259ac0 cosmetise copyright notices
+* 2890993 tests: extract global-definitions
+* 9ae0452 lists.h: cleanups in doxygen
+
+## 2025-03-16
+
+* cdcc0d7 website: re-generate commons
+
 ## 2025-03-15
 
-* v4.0.2 published on npmjs.com
-* v4.0.2 prepared
+* 3bd5561 re-generate with doxygen
+* f9624a5 re-generate workflows
+* affd9d7 4.0.2
+* 98ec2df CHANGELOG: publish npm v4.0.2
+* 81489bc website: blog post release 4.0.2 published
+* a0bae23 website: blog post release 4.0.2 published
+* 93aaeb6 website: blog post release 4.0.2 published
+* f91c80f tests: bump micro-test
+* b4a2545 prepare v4.0.2
 * 4de138c website: blog post release 4.0.1 published
 * be75b74 4.0.1
 * c730338 tests/package.json: bump micro-test

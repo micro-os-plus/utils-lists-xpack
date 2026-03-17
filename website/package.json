@@ -48,7 +48,7 @@
     "generate-website-commons": "bash node_modules/@xpack/docusaurus-template-liquid/maintenance-scripts/generate-website-commons.sh --micro-os-plus",
     "npm-outdated": "npm outdated",
     "npm-install": "npm install",
-    "npm-link-helpers": "npm link @xpack/docusaurus-template-liquid @xpack/npm-packages-helper @micro-os-plus/build-helper @xpack/docusaurus-plugin-doxygen",
+    "npm-link-helpers": "npm link @xpack/docusaurus-template-liquid @xpack/npm-packages-helper",
     "npm-ci": "npm ci",
     "deep-clean": "del-cli .docusaurus build node_modules package-lock.json",
     "doxygen": "del-cli static/doxygen doxygen/xml; (cd doxygen; doxygen config.doxyfile)",
