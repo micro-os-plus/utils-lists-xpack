@@ -8,6 +8,7 @@ and close existing issues and pull requests.
 
 ## 2026-03-17
 
+* v4.0.3 published on npmjs.com
 * v4.0.3 prepared
 * 0eca65a re-generate tests commons
 * 113e39e re-generate tests commons
