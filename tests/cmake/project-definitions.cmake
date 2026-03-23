@@ -22,13 +22,13 @@ set (xpack_dependencies_project_folders)
 # Each test has its own library. Add only those enabled.
 if (XPACK_ENABLE_SAMPLE_TEST)
   list (APPEND xpack_dependencies_project_folders
-        "${CMAKE_SOURCE_DIR}/sample-test"
+        "${CMAKE_SOURCE_DIR}/sources/sample-test"
   )
 endif ()
 
 if (XPACK_ENABLE_UNIT_TEST)
   list (APPEND xpack_dependencies_project_folders
-        "${CMAKE_SOURCE_DIR}/unit-test"
+        "${CMAKE_SOURCE_DIR}/sources/unit-test"
   )
 endif ()
 
