@@ -8,14 +8,14 @@
       "name": "(lldb) native-cmake-sys-debug sample-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/sample-test",
+      "program": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/sample-test",
       "args": [
         "one",
         "two",
         "--verbose"
       ],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
@@ -24,12 +24,10 @@
       "name": "(lldb) native-cmake-sys-debug unit-test",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/unit-test",
-      "args": [
-        "--verbose"
-      ],
+      "program": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/unit-test",
+      "args": [],
       "stopAtEntry": true,
-      "cwd": "${workspaceFolder}/build/native-cmake-sys-debug/platform-bin/",
+      "cwd": "${workspaceFolder}/tests/build/native-cmake-sys-debug/platform-bin/",
       "environment": [],
       "externalConsole": false,
       "MIMode": "lldb"
