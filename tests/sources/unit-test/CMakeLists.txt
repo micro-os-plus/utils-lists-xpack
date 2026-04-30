@@ -21,38 +21,42 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/unit-test'...")
+message (VERBOSE "Processing 'tests/unit-test'...")
 
 # -----------------------------------------------------------------------------
 # The test library definitions.
-add_library(test-unit-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories(test-unit-interface INTERFACE # None.
+target_include_directories (test-unit-interface INTERFACE "include")
+
+target_sources (
+  test-unit-interface INTERFACE "src/main.cpp"
+                                "src/double-list-links.cpp"
+                                "src/double-list.cpp"
+                                "src/intrusive-list.cpp"
 )
 
-target_sources(test-unit-interface INTERFACE src/main.cpp)
-
-target_compile_definitions(test-unit-interface INTERFACE # None.
+target_compile_definitions (test-unit-interface INTERFACE # None.
 )
 
-target_compile_options(test-unit-interface INTERFACE # None.
+target_compile_options (test-unit-interface INTERFACE # None.
 )
 
-target_link_options(test-unit-interface INTERFACE # None.
+target_link_options (test-unit-interface INTERFACE # None.
 )
 
-target_link_libraries(test-unit-interface INTERFACE # None.
+target_link_libraries (test-unit-interface INTERFACE # None.
 )
 
-if(COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(test-unit-interface)
-endif()
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (test-unit-interface)
+endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(test::unit ALIAS test-unit-interface)
-message(VERBOSE "> test::unit -> test-unit-interface")
+add_library (test::unit ALIAS test-unit-interface)
+message (VERBOSE "> test::unit -> test-unit-interface")
 
 # -----------------------------------------------------------------------------

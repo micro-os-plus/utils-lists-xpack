@@ -39,11 +39,14 @@ _local_link_args = []
 _local_link_with = []
 
 _local_include_directories += [
-  # None.
+  'include'
 ]
 
 _local_sources += [
-  'src/main.cpp'
+  'src/main.cpp', 
+  'src/double-list-links.cpp',
+  'src/double-list.cpp',
+  'src/intrusive-list.cpp'
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
