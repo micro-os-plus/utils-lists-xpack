@@ -40,59 +40,69 @@ jobs:
     strategy:
       matrix:
         # https://github.com/actions/runner-images
-        os: [ 'ubuntu-24.04', 'ubuntu-22.04', 'ubuntu-24.04-arm', 'ubuntu-22.04-arm', 'macos-15-intel', 'macos-15', 'windows-2025', 'windows-2022' ]
+        os: 
+          [ 
+            'ubuntu-24.04', 
+            'ubuntu-22.04', 
+            'ubuntu-24.04-arm', 
+            'ubuntu-22.04-arm', 
+            'macos-15-intel', 
+            'macos-15', 
+            'windows-2025', 
+            'windows-2022' 
+          ]
         # https://nodejs.org/en - use LTS
         node-version: [ '24' ]
         # https://www.npmjs.com/package/xpm
         xpm-version: [ '0.23.2' ]
 
     steps:
-    - name: Checkout
-      # https://github.com/actions/checkout/
-      uses: actions/checkout@v6.0.2
-      with:
-        fetch-depth: 3
+      - name: Checkout
+        # https://github.com/actions/checkout/
+        uses: actions/checkout@v6.0.2
+        with:
+          fetch-depth: 3
 
-    - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
-      # https://github.com/actions/setup-node
-      uses: actions/setup-node@v6.3.0
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Setup Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
+        # https://github.com/actions/setup-node
+        uses: actions/setup-node@v6.3.0
+        with:
+          node-version: ${{ matrix.node-version }}
 
-    - name: Install xpm@${{ matrix.xpm-version }} on ${{ matrix.os }}
-      run: npm install -g xpm@${{ matrix.xpm-version }}
+      - name: Install xpm@${{ matrix.xpm-version }} on ${{ matrix.os }}
+        run: npm install -g xpm@${{ matrix.xpm-version }}
 
-    - name: Show environment
-      run: |
-        id
-        uname -a
-        node --version
-        npm --version
-        xpm --version
-        env | sort
+      - name: Show environment
+        run: |
+          id
+          uname -a
+          node --version
+          npm --version
+          xpm --version
+          env | sort
 
-    - name: Satisfy project dependencies on ${{ matrix.os }}
-      run: |
-        npm --prefix tests ci
-        xpm run install-all -C tests
+      - name: Satisfy project dependencies on ${{ matrix.os }}
+        run: |
+          npm --prefix tests ci
+          xpm run install-all -C tests
 
-    - name: Clean xPack cache Linux
-      if: runner.os == 'Linux'
-      run: |
-        rm -rf "${HOME}/.cache/xPacks"
+      - name: Clean xPack cache Linux
+        if: runner.os == 'Linux'
+        run: |
+          rm -rf "${HOME}/.cache/xPacks"
 
-    - name: Clean xPack cache macOS
-      if: runner.os == 'macOS'
-      run: |
-        rm -rf "${HOME}/Library/Caches/xPacks"
+      - name: Clean xPack cache macOS
+        if: runner.os == 'macOS'
+        run: |
+          rm -rf "${HOME}/Library/Caches/xPacks"
 
-    - name: Clean xPack cache Windows
-      if: runner.os == 'Windows'
-      shell: pwsh
-      run: |
-        Remove-Item -LiteralPath "$env:LOCALAPPDATA\Caches\xPacks" -Force -Recurse
+      - name: Clean xPack cache Windows
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          Remove-Item -LiteralPath "$env:LOCALAPPDATA\Caches\xPacks" -Force -Recurse
 
-    - name: Run tests on ${{ matrix.os }}
-      run: xpm run test-all -C tests
-      env:
-          CI: true
+      - name: Run tests on ${{ matrix.os }}
+        run: xpm run test-all -C tests
+        env:
+            CI: true

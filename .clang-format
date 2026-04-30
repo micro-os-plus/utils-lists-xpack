@@ -14,5 +14,6 @@ NamespaceIndentation: All
 PointerAlignment: Left
 SortIncludes: false
 Standard: c++20
+LambdaBodyIndentation: OuterScope
 
 # https://clang.llvm.org/docs/ClangFormatStyleOptions.html

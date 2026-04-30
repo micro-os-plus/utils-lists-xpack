@@ -1,7 +1,6 @@
 {
   // DO NOT EDIT!
   // Automatically generated from npm-packages-helper/templates/*.
-
   "editor.rulers": [
     80
   ],
@@ -9,11 +8,26 @@
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "files.associations": { "*.json": "jsonc" },
+  "files.associations": {
+    "*.json": "jsonc",
+    "*.mdx": "mdx"
+  },
   "cSpell.language": "en-GB",
   "cSpell.ignoreWords": [],
   "cmake.ignoreCMakeListsMissing": true,
   "cmake.configureOnOpen": false,
+  "[cmake]": {
+    "editor.defaultFormatter": "cheshirekow.cmake-format"
+  },
+  "cmakeFormat.args": [
+    "--dangle-parens",
+    "--separate-ctrl-name-with-space",
+    "--separate-fn-name-with-space"
+  ],
+  "[mdx]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": null
+  },
   "makefile.configureOnOpen": false,
   "editor.wordWrap": "on",
   "mesonbuild.configureOnOpen": false

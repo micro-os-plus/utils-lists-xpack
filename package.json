@@ -40,6 +40,7 @@
     "npm-install": "npm install",
     "npm-link-helpers": "npm link @xpack/npm-packages-helper",
     "npm-outdated": "npm outdated",
+    "npm-ci": "npm ci",
     "npm-pack": "npm pack",
     "npm-link": "npm link",
     "git-log": "git log --pretty='%cd * %h %s' --date=short",
