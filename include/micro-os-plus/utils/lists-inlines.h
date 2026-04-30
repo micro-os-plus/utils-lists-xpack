@@ -11,7 +11,8 @@
 
 /**
  * @file
- * @brief C++ header file with the inline implementations for the µOS++ lists methods.
+ * @brief C++ header file with the inline implementations for the µOS++ lists
+ * methods.
  *
  * @details
  * The `inlines.h` header provides the C++ inline implementations for the
@@ -485,9 +486,9 @@ namespace micro_os_plus::utils
   template <class T, class L>
   double_list<T, L>::double_list ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
     trace::printf ("%s() @%p \n", __func__, this);
-#endif
+#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR
 
     if constexpr (is_statically_allocated::value)
       {
@@ -515,9 +516,9 @@ namespace micro_os_plus::utils
   template <class T, class L>
   constexpr double_list<T, L>::~double_list ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT)
+#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
     trace::printf ("%s() @%p \n", __func__, this);
-#endif
+#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR
 
     // Perhaps enable it for non statically allocated lists.
     // assert (empty ());
