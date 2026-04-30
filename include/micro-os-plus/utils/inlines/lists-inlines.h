@@ -9,6 +9,12 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
+// ----------------------------------------------------------------------------
+
+#if !defined(MICRO_OS_PLUS_UTILS_LISTS_H_)
+#error "Do not include this file directly; use <micro-os-plus/utils/lists.h>."
+#endif // MICRO_OS_PLUS_UTILS_LISTS_H_
+
 /**
  * @file
  * @brief C++ header file with the inline implementations for the µOS++ lists

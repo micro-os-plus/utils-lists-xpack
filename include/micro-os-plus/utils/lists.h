@@ -9,6 +9,8 @@
  * be obtained from https://opensource.org/licenses/mit.
  */
 
+ // ----------------------------------------------------------------------------
+
 /**
  * @file
  * @brief Main C++ header file with the declarations for the µOS++ lists classes.
@@ -74,7 +76,6 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
-
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -1346,10 +1347,11 @@ namespace micro_os_plus::utils
 
 #endif // __cplusplus
 
-// ===== Inline & template implementations ====================================
+// ============================================================================
+// Templates & constexpr implementations.
 
 // All other inlines.
-#include "lists-inlines.h"
+#include "inlines/lists-inlines.h"
 
 // ----------------------------------------------------------------------------
 
