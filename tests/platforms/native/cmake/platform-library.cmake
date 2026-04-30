@@ -143,12 +143,6 @@ target_compile_options (
   platform-native-interface INTERFACE ${xpack_platform_common_args}
 )
 
-# https://libcxx.llvm.org/UsingLibcxx.html
-target_compile_options (
-  platform-native-interface INTERFACE
-  $<$<COMPILE_LANGUAGE:CXX>:-stdlib=libc++>
-)
-
 # On macOS, GCC 11 gets confused. dyld[72401]: Symbol not found:
 # (__ZNKSt3_V214error_category10_M_messageB5cxx11Ei)
 target_link_options (
