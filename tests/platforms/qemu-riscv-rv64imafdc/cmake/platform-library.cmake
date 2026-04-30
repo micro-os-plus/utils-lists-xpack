@@ -66,7 +66,7 @@ set (
   # -mno-save-restore
   #
   # -fno-move-loop-invariants
-  -fno-exceptions
+  -fno-exceptions # it fails at run-time.
   #
   # Embedded builds must be warning free.
   -Werror

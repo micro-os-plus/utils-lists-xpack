@@ -62,7 +62,7 @@ set (
   -mcmodel=medany
   -msmall-data-limit=8
   # -mno-save-restore
-  -fno-exceptions
+  -fno-exceptions # it fails at run-time.
   #
   # -fno-move-loop-invariants
   #
