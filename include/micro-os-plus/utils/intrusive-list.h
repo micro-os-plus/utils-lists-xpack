@@ -1,0 +1,492 @@
+/*
+ * This file is part of the µOS++ project (https://micro-os-plus.github.com/).
+ * Copyright (c) 2016-2026 Liviu Ionescu. All rights reserved.
+ *
+ * Permission to use, copy, modify, and/or distribute this software
+ * for any purpose is hereby granted, under the terms of the MIT license.
+ *
+ * If a copy of the license was not distributed with this file, it can
+ * be obtained from https://opensource.org/licenses/mit.
+ */
+
+// ----------------------------------------------------------------------------
+/**
+ * @file
+ * @brief C++ header file with the declarations for the µOS++ intrusive
+ * list iterator and list class templates.
+ *
+ * @details
+ * The `intrusive-list.h` header file contains the C++ declarations of the
+ * `intrusive_list_iterator` and `intrusive_list` class templates.
+ *
+ * The class implementations are in @ref lists.cpp and @ref lists-inlines.h.
+ */
+
+#ifndef MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
+#define MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
+
+// ----------------------------------------------------------------------------
+
+#include "double-list.h"
+
+// ----------------------------------------------------------------------------
+
+#ifdef __cplusplus
+
+// ----------------------------------------------------------------------------
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic push
+#pragma GCC diagnostic ignored "-Waggregate-return"
+#if defined(__clang__)
+#pragma clang diagnostic ignored "-Wc++98-compat"
+#endif
+#endif
+
+namespace micro_os_plus::utils
+{
+  // ==========================================================================
+
+  /**
+   * @ingroup micro-os-plus-utils-lists-intrusive-lists
+   * @brief A class template for the intrusive list iterator.
+   *
+   * @tparam T Type of object that includes the intrusive node.
+   * @tparam N Type of intrusive node. Must have the public members
+   * **previous** & **next**.
+   * @tparam MP Name of the intrusive node member in object T.
+   * @tparam U Type stored in the list, derived from T.
+   *
+   * @details
+   * This class provides an interface similar to `std::list::iterator`, except
+   * that it keeps track of the offset where the intrusive list element is
+   * located in the parent object. It supports bidirectional iteration and
+   * access to the underlying object and node.
+   *
+   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   */
+  template <class T, class N, N T::* MP, class U = T>
+  class intrusive_list_iterator
+  {
+  public:
+    /**
+     * @brief Type of value _pointed to_ by the iterator.
+     */
+    using value_type = U;
+
+    /**
+     * @brief Type of pointer to object _pointed to_ by the iterator.
+     */
+    using pointer = value_type*;
+
+    /**
+     * @brief Type of reference to object _pointed to_ by the iterator.
+     */
+    using reference = value_type&;
+
+    /**
+     * @brief Type of reference to the iterator internal pointer.
+     */
+    using iterator_pointer = N*;
+
+    /**
+     * @brief Type of pointer difference.
+     */
+    using difference_type = ptrdiff_t;
+
+    /**
+     * @brief Category of iterator.
+     */
+    using iterator_category = std::forward_iterator_tag;
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Default constructor. Constructs an iterator pointing to
+     * `nullptr`.
+     */
+    constexpr intrusive_list_iterator ();
+
+    /**
+     * @brief Construct an iterator from a node pointer.
+     *
+     * @param node Pointer to the node to which the iterator should point.
+     */
+    constexpr explicit intrusive_list_iterator (iterator_pointer const node);
+
+    /**
+     * @brief Construct an iterator from a reference to an element.
+     *
+     * @param element Reference to the element to which the iterator should
+     * point.
+     */
+    constexpr explicit intrusive_list_iterator (reference element);
+
+    // DO NOT delete the copy constructors, since this implies that
+    // the default ones will be used.
+
+    /**
+     * @brief Pointer access operator.
+     *
+     * @return Pointer to the value pointed to by the iterator.
+     */
+    pointer
+    operator->() const;
+
+    /**
+     * @brief Dereference operator.
+     *
+     * @return Reference to the value pointed to by the iterator.
+     */
+    reference
+    operator* () const;
+
+    /**
+     * @brief Pre-increment operator.
+     *
+     * @return Reference to the incremented iterator.
+     */
+    intrusive_list_iterator&
+    operator++ ();
+
+    /**
+     * @brief Post-increment operator.
+     *
+     * @return Iterator before increment.
+     */
+    intrusive_list_iterator
+    operator++ (int);
+
+    /**
+     * @brief Pre-decrement operator.
+     *
+     * @return Reference to the decremented iterator.
+     */
+    intrusive_list_iterator&
+    operator-- ();
+
+    /**
+     * @brief Post-decrement operator.
+     *
+     * @return Iterator before decrement.
+     */
+    intrusive_list_iterator
+    operator-- (int);
+
+    /**
+     * @brief Equality comparison operator.
+     *
+     * @param other Iterator to compare with.
+     * @return `true` if both iterators point to the same node, `false`
+     * otherwise.
+     */
+    bool
+    operator== (const intrusive_list_iterator& other) const;
+
+    /**
+     * @brief Inequality comparison operator.
+     * @param other Iterator to compare with.
+     * @return `true` if the iterators point to different nodes, `false`
+     * otherwise.
+     */
+    bool
+    operator!= (const intrusive_list_iterator& other) const;
+
+    /**
+     * @brief Get the object node from the intrusive node.
+     *
+     * @par Parameters
+     *  None.
+     * @return Pointer to object node.
+     */
+    pointer
+    get_pointer (void) const;
+
+    /**
+     * @brief Retrieve the iterator pointer for the current node.
+     *
+     * @par Parameters
+     *  None.
+     * @return The iterator pointer corresponding to the current node.
+     */
+    iterator_pointer
+    get_iterator_pointer (void) const;
+
+  protected:
+    /**
+     * @brief Pointer to intrusive node.
+     *
+     * @details
+     * Stores the address of the current intrusive node in the list.
+     */
+    iterator_pointer node_;
+  };
+
+  // ==========================================================================
+
+#if defined(__clang__)
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdocumentation"
+#endif
+/**
+ * @ingroup micro-os-plus-utils-lists-intrusive-lists
+ * @brief A class template for a list of nodes which store the links inside
+ * themselves as intrusive nodes.
+ *
+ * @tparam T Type of object that includes the intrusive node.
+ * @tparam N Type of intrusive node with the next & previous links.
+ * @tparam MP Name of the intrusive node member in object T.
+ * @tparam L Type of the links node (one of `double_list_links` or
+ * `static_double_list_links`).
+ * @tparam U Type stored in the list, derived from T.
+ *
+ * @details
+ * This class implements an intrusive doubly linked list, where each object
+ * stores its own link node as a member. The list maintains a pair of head and
+ * tail pointers, allowing efficient insertion, removal, and iteration. The
+ * intrusive approach eliminates the need for separate node allocations, as the
+ * links are embedded within the objects themselves.
+ *
+ * The template parameter `MP` specifies the member pointer to the intrusive
+ * node within the object, enabling the list to compute the address of the
+ * parent object from the node pointer. This design supports both regular and
+ * statically allocated lists, depending on the type used for `L`.
+ *
+ * Iterators provide access to the objects in the list, supporting
+ * bidirectional traversal.
+ *
+ * **Example**
+ *
+ * @code{.cpp}
+ * namespace os = micro_os_plus;
+ * using threads_list = os::utils::intrusive_list<
+ *   thread, os::utils::double_list_links, &thread::child_links_>;
+ * @endcode
+ *
+ * For statically allocated lists, set L=static_double_list_links.
+ *
+ * @headerfile lists.h <micro-os-plus/utils/lists.h>
+ */
+#if defined(__clang__)
+#pragma clang diagnostic pop
+#endif
+
+  template <class T, class N, N T::* MP, class L = double_list_links,
+            class U = T>
+  class intrusive_list : public double_list<N, L>
+  {
+  public:
+    static_assert (std::is_base_of<double_list_links_base, L>::value == true,
+                   "L must be derived from double_list_links_base!");
+    static_assert (std::is_base_of<double_list_links_base, N>::value == true,
+                   "N must be derived from double_list_links_base!");
+
+    /**
+     * @brief Type of the list links node object where the pointers to the
+     * list head and tail are stored.
+     */
+    using links_type = L;
+
+    /**
+     * @brief Type of value _pointed to_ by the iterator.
+     */
+    using value_type = U;
+
+    /**
+     * @brief Type of pointer to object _pointed to_ by the iterator.
+     */
+    using pointer = value_type*;
+
+    /**
+     * @brief Type of reference to object _pointed to_ by the iterator.
+     */
+    using reference = value_type&;
+
+    /**
+     * @brief Type of iterator over the values.
+     */
+    using iterator = intrusive_list_iterator<T, N, MP, U>;
+
+    /**
+     * @brief Type indicating if the links node is statically allocated
+     */
+    using is_statically_allocated =
+        typename links_type::is_statically_allocated;
+
+    /**
+     * @brief Type of reference to the iterator internal pointer.
+     */
+    using iterator_pointer = N*;
+
+    /**
+     * @brief Type of pointer difference.
+     */
+    using difference_type = ptrdiff_t;
+
+    /**
+     * @brief Construct an intrusive doubly linked list.
+     */
+    constexpr intrusive_list ();
+
+    // This class follows the rule of five.
+
+    /**
+     * @brief Deleted copy constructor.
+     *
+     * @details
+     * Copying of `intrusive_list` instances is explicitly disallowed to
+     * prevent accidental duplication, which could compromise the integrity of
+     * the list structure.
+     */
+    intrusive_list (const intrusive_list&) = delete;
+
+    /**
+     * @brief Deleted move constructor.
+     *
+     * @details
+     * Moving of `intrusive_list` instances is explicitly disallowed to avoid
+     * invalid or inconsistent links within the list that could result from
+     * moving lists.
+     */
+    intrusive_list (intrusive_list&&) = delete;
+
+    /**
+     * @brief Deleted copy assignment operator.
+     *
+     * @details
+     * Copy assignment is explicitly disallowed to prevent accidental
+     * overwriting of list objects, which could lead to corruption of the list
+     * structure.
+     */
+    intrusive_list&
+    operator= (const intrusive_list&) = delete;
+
+    /**
+     * @brief Deleted move assignment operator.
+     *
+     * @details
+     * Move assignment is explicitly disallowed to avoid invalid or
+     * inconsistent links within the list that could result from moving lists.
+     */
+    intrusive_list&
+    operator= (intrusive_list&&) = delete;
+
+    /**
+     * @brief Destruct the list.
+     */
+    constexpr ~intrusive_list ();
+
+  public:
+    /**
+     * @brief Initialize the list only at first run.
+     *
+     * @par Parameters
+     *  None.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    initialize_once (void);
+
+    /**
+     * @brief Check if the list is empty.
+     *
+     * @par Parameters
+     *  None.
+     * @retval true The list has **no** nodes.
+     * @retval false The list has **at least one** node.
+     */
+    constexpr bool
+    empty (void) const;
+
+    /**
+     * @brief Add a node to the tail of the list.
+     *
+     * @param [in] node Reference to a list node.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    link_tail (reference node);
+
+    /**
+     * @brief Add a node to the head of the list.
+     *
+     * @param [in] node Reference to a list node.
+     * @par Returns
+     *  Nothing.
+     */
+    void
+    link_head (reference node);
+
+    /**
+     * @brief Unlink the last element from the list.
+     *
+     * @par Parameters
+     *  None.
+     * @return Pointer to the last element in the list.
+     */
+    pointer
+    unlink_tail (void);
+
+    /**
+     * @brief Unlink the first element from the list.
+     *
+     * @par Parameters
+     *  None.
+     * @return Pointer to the first element in the list.
+     */
+    pointer
+    unlink_head (void);
+
+    // ------------------------------------------------------------------------
+
+    /**
+     * @brief Iterator begin.
+     *
+     * @return An iterator positioned at the first element.
+     */
+    iterator
+    begin () const;
+
+    /**
+     * @brief Iterator begin.
+     *
+     * @return An iterator positioned after the last element.
+     */
+    iterator
+    end () const;
+
+    // ------------------------------------------------------------------------
+  protected:
+    /**
+     * @brief Get the address of the object from the intrusive node pointer.
+     *
+     * @param node Pointer to the intrusive node.
+     * @return A pointer to the parent object containing the node.
+     */
+    pointer
+    get_pointer (iterator_pointer node) const;
+  };
+
+  // --------------------------------------------------------------------------
+} // namespace micro_os_plus::utils
+
+#if defined(__GNUC__)
+#pragma GCC diagnostic pop
+#endif
+
+// ----------------------------------------------------------------------------
+
+#endif // __cplusplus
+
+// ============================================================================
+// Templates & constexpr implementations.
+
+#include "inlines/intrusive-list-inlines.h"
+
+// ----------------------------------------------------------------------------
+
+#endif // MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
+
+// ----------------------------------------------------------------------------

@@ -45,7 +45,7 @@ target_include_directories(micro-os-plus-utils-lists-interface INTERFACE
 )
 
 target_sources(micro-os-plus-utils-lists-interface INTERFACE
-  "src/lists.cpp"
+  "src/double-list-links.cpp"
 )
 
 target_compile_definitions(micro-os-plus-utils-lists-interface INTERFACE
