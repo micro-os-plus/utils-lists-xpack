@@ -104,14 +104,15 @@ namespace micro_os_plus::utils
      * @brief Default constructor. Constructs an iterator pointing to
      * `nullptr`.
      */
-    constexpr double_list_iterator ();
+    constexpr double_list_iterator () noexcept;
 
     /**
      * @brief Construct an iterator from a node pointer.
      *
      * @param node Pointer to the node to which the iterator should point.
      */
-    constexpr explicit double_list_iterator (iterator_pointer const node);
+    constexpr explicit double_list_iterator (
+        iterator_pointer const node) noexcept;
 
     /**
      * @brief Construct an iterator from a reference to an element.
@@ -119,7 +120,7 @@ namespace micro_os_plus::utils
      * @param element Reference to the element to which the iterator should
      * point.
      */
-    constexpr explicit double_list_iterator (reference element);
+    constexpr explicit double_list_iterator (reference element) noexcept;
 
     // DO NOT delete the copy constructors, since the default ones are
     // used.
@@ -130,7 +131,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the value pointed to by the iterator.
      */
     constexpr pointer
-    operator->() const;
+    operator->() const noexcept;
 
     /**
      * @brief Dereference operator.
@@ -138,7 +139,7 @@ namespace micro_os_plus::utils
      * @return Reference to the value pointed to by the iterator.
      */
     constexpr reference
-    operator* () const;
+    operator* () const noexcept;
 
     /**
      * @brief Pre-increment operator.
@@ -146,7 +147,7 @@ namespace micro_os_plus::utils
      * @return Reference to the incremented iterator.
      */
     constexpr double_list_iterator&
-    operator++ ();
+    operator++ () noexcept;
 
     /**
      * @brief Post-increment operator.
@@ -154,7 +155,7 @@ namespace micro_os_plus::utils
      * @return Iterator before increment.
      */
     constexpr double_list_iterator
-    operator++ (int);
+    operator++ (int) noexcept;
 
     /**
      * @brief Pre-decrement operator.
@@ -162,7 +163,7 @@ namespace micro_os_plus::utils
      * @return Reference to the decremented iterator.
      */
     constexpr double_list_iterator&
-    operator-- ();
+    operator-- () noexcept;
 
     /**
      * @brief Post-decrement operator.
@@ -170,7 +171,7 @@ namespace micro_os_plus::utils
      * @return Iterator before decrement.
      */
     constexpr double_list_iterator
-    operator-- (int);
+    operator-- (int) noexcept;
 
     /**
      * @brief Equality comparison operator.
@@ -180,7 +181,7 @@ namespace micro_os_plus::utils
      * otherwise.
      */
     constexpr bool
-    operator== (const double_list_iterator& other) const;
+    operator== (const double_list_iterator& other) const noexcept;
 
     /**
      * @brief Inequality comparison operator.
@@ -190,7 +191,7 @@ namespace micro_os_plus::utils
      * otherwise.
      */
     constexpr bool
-    operator!= (const double_list_iterator& other) const;
+    operator!= (const double_list_iterator& other) const noexcept;
 
     /**
      * @brief Get a pointer to the value pointed to by the iterator.
@@ -200,7 +201,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the value.
      */
     constexpr pointer
-    get_pointer (void) const;
+    get_pointer (void) const noexcept;
 
     /**
      * @brief Get the internal iterator pointer (node pointer).
@@ -210,7 +211,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the node.
      */
     constexpr iterator_pointer
-    get_iterator_pointer (void) const;
+    get_iterator_pointer (void) const noexcept;
 
   protected:
     /**
@@ -298,7 +299,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Construct a doubly linked list.
      */
-    double_list ();
+    double_list () noexcept;
 
     /**
      * @brief Deleted copy constructor.
@@ -357,7 +358,7 @@ namespace micro_os_plus::utils
      * @retval false The list was initialised.
      */
     bool
-    uninitialized (void) const;
+    uninitialized (void) const noexcept;
 
     /**
      * @brief Initialize the list only at first run.
@@ -368,7 +369,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    initialize_once (void);
+    initialize_once (void) noexcept;
 
     /**
      * @brief Check if the list is empty.
@@ -379,7 +380,7 @@ namespace micro_os_plus::utils
      * @retval false The list has **at least one** node.
      */
     bool
-    empty (void) const;
+    empty (void) const noexcept;
 
     /**
      * @brief Clear the list.
@@ -390,7 +391,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    clear (void);
+    clear (void) noexcept;
 
     /**
      * @brief Get the list **head**.
@@ -400,7 +401,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the head node.
      */
     constexpr pointer
-    head (void) const;
+    head (void) const noexcept;
 
     /**
      * @brief Get the list **tail**.
@@ -410,7 +411,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the tail node.
      */
     constexpr pointer
-    tail (void) const;
+    tail (void) const noexcept;
 
     /**
      * @brief Add a node to the tail of the list.
@@ -420,7 +421,7 @@ namespace micro_os_plus::utils
      *   Nothing.
      */
     void
-    link_tail (reference node);
+    link_tail (reference node) noexcept;
 
     /**
      * @brief Add a node to the head of the list.
@@ -430,7 +431,7 @@ namespace micro_os_plus::utils
      *   Nothing.
      */
     void
-    link_head (reference node);
+    link_head (reference node) noexcept;
 
     // ------------------------------------------------------------------------
 
@@ -440,7 +441,7 @@ namespace micro_os_plus::utils
      * @return An iterator to the first element.
      */
     iterator
-    begin () const;
+    begin () const noexcept;
 
     /**
      * @brief Iterator end.
@@ -448,7 +449,7 @@ namespace micro_os_plus::utils
      * @return An iterator positioned after the last element.
      */
     iterator
-    end () const;
+    end () const noexcept;
 
     // Required in derived class iterator end(), where direct
     // access to member fails.
@@ -460,7 +461,7 @@ namespace micro_os_plus::utils
      * @return A pointer to the list head object.
      */
     constexpr const links_type*
-    links_pointer (void) const
+    links_pointer (void) const noexcept
     {
       return &links_;
     }

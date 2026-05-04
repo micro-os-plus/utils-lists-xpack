@@ -79,7 +79,7 @@ namespace micro_os_plus::utils
    * list structure, as duplicating or moving lists could result in invalid or
    * inconsistent links within the list.
    */
-  constexpr double_list_links_base::double_list_links_base ()
+  constexpr double_list_links_base::double_list_links_base () noexcept
   {
     // Must be empty! No members must be changed by this constructor!
   }
@@ -117,7 +117,7 @@ namespace micro_os_plus::utils
    * prevent accidental access through stale links.
    */
   constexpr void
-  double_list_links_base::initialize (void)
+  double_list_links_base::initialize (void) noexcept
   {
     previous_ = this;
     next_ = this;
@@ -141,7 +141,7 @@ namespace micro_os_plus::utils
    * be cast to the appropriate derived type by the caller.
    */
   constexpr double_list_links_base*
-  double_list_links_base::next (void) const
+  double_list_links_base::next (void) const noexcept
   {
     return next_;
   }
@@ -158,7 +158,7 @@ namespace micro_os_plus::utils
    * be cast to the appropriate derived type by the caller.
    */
   constexpr double_list_links_base*
-  double_list_links_base::previous (void) const
+  double_list_links_base::previous (void) const noexcept
   {
     return previous_;
   }
@@ -193,7 +193,7 @@ namespace micro_os_plus::utils
    * list structure, as duplicating or moving lists could result in invalid or
    * inconsistent links within the list.
    */
-  constexpr static_double_list_links::static_double_list_links ()
+  constexpr static_double_list_links::static_double_list_links () noexcept
   {
     // Must be empty! No members must be changed by this constructor!
   }
@@ -258,7 +258,7 @@ namespace micro_os_plus::utils
    * list structure, as duplicating or moving lists could result in invalid or
    * inconsistent links within the list.
    */
-  constexpr double_list_links::double_list_links ()
+  constexpr double_list_links::double_list_links () noexcept
   {
     // For regular (non static) classes the members
     // must be explicitly initialised.

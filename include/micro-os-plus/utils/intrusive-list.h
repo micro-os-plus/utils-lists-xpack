@@ -105,14 +105,15 @@ namespace micro_os_plus::utils
      * @brief Default constructor. Constructs an iterator pointing to
      * `nullptr`.
      */
-    constexpr intrusive_list_iterator ();
+    constexpr intrusive_list_iterator () noexcept;
 
     /**
      * @brief Construct an iterator from a node pointer.
      *
      * @param node Pointer to the node to which the iterator should point.
      */
-    constexpr explicit intrusive_list_iterator (iterator_pointer const node);
+    constexpr explicit intrusive_list_iterator (
+        iterator_pointer const node) noexcept;
 
     /**
      * @brief Construct an iterator from a reference to an element.
@@ -120,7 +121,7 @@ namespace micro_os_plus::utils
      * @param element Reference to the element to which the iterator should
      * point.
      */
-    constexpr explicit intrusive_list_iterator (reference element);
+    constexpr explicit intrusive_list_iterator (reference element) noexcept;
 
     // DO NOT delete the copy constructors, since this implies that
     // the default ones will be used.
@@ -131,7 +132,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the value pointed to by the iterator.
      */
     pointer
-    operator->() const;
+    operator->() const noexcept;
 
     /**
      * @brief Dereference operator.
@@ -139,7 +140,7 @@ namespace micro_os_plus::utils
      * @return Reference to the value pointed to by the iterator.
      */
     reference
-    operator* () const;
+    operator* () const noexcept;
 
     /**
      * @brief Pre-increment operator.
@@ -147,7 +148,7 @@ namespace micro_os_plus::utils
      * @return Reference to the incremented iterator.
      */
     intrusive_list_iterator&
-    operator++ ();
+    operator++ () noexcept;
 
     /**
      * @brief Post-increment operator.
@@ -155,7 +156,7 @@ namespace micro_os_plus::utils
      * @return Iterator before increment.
      */
     intrusive_list_iterator
-    operator++ (int);
+    operator++ (int) noexcept;
 
     /**
      * @brief Pre-decrement operator.
@@ -163,7 +164,7 @@ namespace micro_os_plus::utils
      * @return Reference to the decremented iterator.
      */
     intrusive_list_iterator&
-    operator-- ();
+    operator-- () noexcept;
 
     /**
      * @brief Post-decrement operator.
@@ -171,7 +172,7 @@ namespace micro_os_plus::utils
      * @return Iterator before decrement.
      */
     intrusive_list_iterator
-    operator-- (int);
+    operator-- (int) noexcept;
 
     /**
      * @brief Equality comparison operator.
@@ -181,7 +182,7 @@ namespace micro_os_plus::utils
      * otherwise.
      */
     bool
-    operator== (const intrusive_list_iterator& other) const;
+    operator== (const intrusive_list_iterator& other) const noexcept;
 
     /**
      * @brief Inequality comparison operator.
@@ -190,7 +191,7 @@ namespace micro_os_plus::utils
      * otherwise.
      */
     bool
-    operator!= (const intrusive_list_iterator& other) const;
+    operator!= (const intrusive_list_iterator& other) const noexcept;
 
     /**
      * @brief Get the object node from the intrusive node.
@@ -200,7 +201,7 @@ namespace micro_os_plus::utils
      * @return Pointer to object node.
      */
     pointer
-    get_pointer (void) const;
+    get_pointer (void) const noexcept;
 
     /**
      * @brief Retrieve the iterator pointer for the current node.
@@ -210,7 +211,7 @@ namespace micro_os_plus::utils
      * @return The iterator pointer corresponding to the current node.
      */
     iterator_pointer
-    get_iterator_pointer (void) const;
+    get_iterator_pointer (void) const noexcept;
 
   protected:
     /**
@@ -326,7 +327,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Construct an intrusive doubly linked list.
      */
-    constexpr intrusive_list ();
+    constexpr intrusive_list () noexcept;
 
     // This class follows the rule of five.
 
@@ -386,7 +387,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    initialize_once (void);
+    initialize_once (void) noexcept;
 
     /**
      * @brief Check if the list is empty.
@@ -397,7 +398,7 @@ namespace micro_os_plus::utils
      * @retval false The list has **at least one** node.
      */
     constexpr bool
-    empty (void) const;
+    empty (void) const noexcept;
 
     /**
      * @brief Add a node to the tail of the list.
@@ -407,7 +408,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    link_tail (reference node);
+    link_tail (reference node) noexcept;
 
     /**
      * @brief Add a node to the head of the list.
@@ -417,7 +418,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    link_head (reference node);
+    link_head (reference node) noexcept;
 
     /**
      * @brief Unlink the last element from the list.
@@ -427,7 +428,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the last element in the list.
      */
     pointer
-    unlink_tail (void);
+    unlink_tail (void) noexcept;
 
     /**
      * @brief Unlink the first element from the list.
@@ -437,7 +438,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the first element in the list.
      */
     pointer
-    unlink_head (void);
+    unlink_head (void) noexcept;
 
     // ------------------------------------------------------------------------
 
@@ -447,7 +448,7 @@ namespace micro_os_plus::utils
      * @return An iterator positioned at the first element.
      */
     iterator
-    begin () const;
+    begin () const noexcept;
 
     /**
      * @brief Iterator begin.
@@ -455,7 +456,7 @@ namespace micro_os_plus::utils
      * @return An iterator positioned after the last element.
      */
     iterator
-    end () const;
+    end () const noexcept;
 
     // ------------------------------------------------------------------------
   protected:
@@ -466,7 +467,7 @@ namespace micro_os_plus::utils
      * @return A pointer to the parent object containing the node.
      */
     pointer
-    get_pointer (iterator_pointer node) const;
+    get_pointer (iterator_pointer node) const noexcept;
   };
 
   // --------------------------------------------------------------------------

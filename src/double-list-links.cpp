@@ -55,7 +55,7 @@ namespace micro_os_plus::utils
    * `true` for statically allocated nodes that have not yet been initialized.
    */
   bool
-  double_list_links_base::uninitialized (void) const
+  double_list_links_base::uninitialized (void) const noexcept
   {
     if (previous_ == nullptr || next_ == nullptr)
       {
@@ -80,7 +80,7 @@ namespace micro_os_plus::utils
    * inserting elements or performing any other operations.
    */
   void
-  double_list_links_base::initialize_once (void)
+  double_list_links_base::initialize_once (void) noexcept
   {
     if (uninitialized ())
       {
@@ -98,7 +98,7 @@ namespace micro_os_plus::utils
    * the double-linked list.
    */
   void
-  double_list_links_base::link_next (double_list_links_base* node)
+  double_list_links_base::link_next (double_list_links_base* node) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p after %p\n", __func__, node, this);
@@ -124,7 +124,7 @@ namespace micro_os_plus::utils
    * list.
    */
   void
-  double_list_links_base::link_previous (double_list_links_base* node)
+  double_list_links_base::link_previous (double_list_links_base* node) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p before %p\n", __func__, node, this);
@@ -148,7 +148,7 @@ namespace micro_os_plus::utils
    * call even if the node is already unlinked.
    */
   void
-  double_list_links_base::unlink (void)
+  double_list_links_base::unlink (void) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() %p \n", __func__, this);
@@ -173,7 +173,7 @@ namespace micro_os_plus::utils
    * the node's linkage status for safe list operations.
    */
   bool
-  double_list_links_base::linked (void) const
+  double_list_links_base::linked (void) const noexcept
   {
     if (next_ == this || previous_ == this)
       {
@@ -200,7 +200,7 @@ namespace micro_os_plus::utils
   __attribute__ ((noinline, noipa))
 #endif
   void
-  static_double_list_links::nullify ()
+  static_double_list_links::nullify () noexcept
   {
     next_ = nullptr;
     previous_ = nullptr;

@@ -64,7 +64,8 @@ namespace micro_os_plus::utils
    * dereference an invalid address.
    */
   template <class T, class N, N T::* MP, class U>
-  constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator ()
+  constexpr intrusive_list_iterator<T, N, MP,
+                                    U>::intrusive_list_iterator () noexcept
       : node_{}
   {
   }
@@ -79,7 +80,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator (
-      N* const node)
+      N* const node) noexcept
       : node_{ node }
   {
   }
@@ -94,7 +95,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   constexpr intrusive_list_iterator<T, N, MP, U>::intrusive_list_iterator (
-      reference element)
+      reference element) noexcept
       : node_{ &(element.*MP) }
   {
     static_assert (std::is_convertible<U, T>::value == true,
@@ -111,7 +112,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline typename intrusive_list_iterator<T, N, MP, U>::pointer
-  intrusive_list_iterator<T, N, MP, U>::operator->() const
+  intrusive_list_iterator<T, N, MP, U>::operator->() const noexcept
   {
     return get_pointer ();
   }
@@ -129,7 +130,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline typename intrusive_list_iterator<T, N, MP, U>::reference
-  intrusive_list_iterator<T, N, MP, U>::operator* () const
+  intrusive_list_iterator<T, N, MP, U>::operator* () const noexcept
   {
     return *get_pointer ();
   }
@@ -144,7 +145,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline intrusive_list_iterator<T, N, MP, U>&
-  intrusive_list_iterator<T, N, MP, U>::operator++ ()
+  intrusive_list_iterator<T, N, MP, U>::operator++ () noexcept
   {
     node_ = static_cast<iterator_pointer> (node_->next ());
     return *this;
@@ -160,7 +161,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline intrusive_list_iterator<T, N, MP, U>
-  intrusive_list_iterator<T, N, MP, U>::operator++ (int)
+  intrusive_list_iterator<T, N, MP, U>::operator++ (int) noexcept
   {
     const auto tmp = *this;
     node_ = static_cast<iterator_pointer> (node_->next ());
@@ -177,7 +178,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline intrusive_list_iterator<T, N, MP, U>&
-  intrusive_list_iterator<T, N, MP, U>::operator-- ()
+  intrusive_list_iterator<T, N, MP, U>::operator-- () noexcept
   {
     node_ = static_cast<iterator_pointer> (node_->previous ());
     return *this;
@@ -193,7 +194,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   intrusive_list_iterator<T, N, MP, U>
-  intrusive_list_iterator<T, N, MP, U>::operator-- (int)
+  intrusive_list_iterator<T, N, MP, U>::operator-- (int) noexcept
   {
     const auto tmp = *this;
     node_ = static_cast<iterator_pointer> (node_->previous ());
@@ -211,7 +212,7 @@ namespace micro_os_plus::utils
   template <class T, class N, N T::* MP, class U>
   inline bool
   intrusive_list_iterator<T, N, MP, U>::operator== (
-      const intrusive_list_iterator& other) const
+      const intrusive_list_iterator& other) const noexcept
   {
     return node_ == other.node_;
   }
@@ -227,7 +228,7 @@ namespace micro_os_plus::utils
   template <class T, class N, N T::* MP, class U>
   inline bool
   intrusive_list_iterator<T, N, MP, U>::operator!= (
-      const intrusive_list_iterator& other) const
+      const intrusive_list_iterator& other) const noexcept
   {
     return node_ != other.node_;
   }
@@ -243,7 +244,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline typename intrusive_list_iterator<T, N, MP, U>::pointer
-  intrusive_list_iterator<T, N, MP, U>::get_pointer (void) const
+  intrusive_list_iterator<T, N, MP, U>::get_pointer (void) const noexcept
   {
     // static_assert(std::is_convertible<U, T>::value == true, "U must be
     // implicitly convertible to T!");
@@ -267,7 +268,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class U>
   inline typename intrusive_list_iterator<T, N, MP, U>::iterator_pointer
-  intrusive_list_iterator<T, N, MP, U>::get_iterator_pointer () const
+  intrusive_list_iterator<T, N, MP, U>::get_iterator_pointer () const noexcept
   {
     return node_;
   }
@@ -290,7 +291,7 @@ namespace micro_os_plus::utils
    * inconsistent links within the list.
    */
   template <class T, class N, N T::* MP, class L, class U>
-  constexpr intrusive_list<T, N, MP, L, U>::intrusive_list ()
+  constexpr intrusive_list<T, N, MP, L, U>::intrusive_list () noexcept
   {
   }
 
@@ -319,7 +320,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   void
-  intrusive_list<T, N, MP, L, U>::initialize_once (void)
+  intrusive_list<T, N, MP, L, U>::initialize_once (void) noexcept
   {
     return double_list<N, L>::initialize_once ();
   }
@@ -333,7 +334,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   constexpr bool
-  intrusive_list<T, N, MP, L, U>::empty (void) const
+  intrusive_list<T, N, MP, L, U>::empty (void) const noexcept
   {
     return double_list<N, L>::empty ();
   }
@@ -349,7 +350,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   void
-  intrusive_list<T, N, MP, L, U>::link_tail (U& node)
+  intrusive_list<T, N, MP, L, U>::link_tail (U& node) noexcept
   {
     // The assert(links_.initialised()) is checked by the L class.
 
@@ -375,7 +376,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   void
-  intrusive_list<T, N, MP, L, U>::link_head (U& node)
+  intrusive_list<T, N, MP, L, U>::link_head (U& node) noexcept
   {
     // The assert(links_.initialised()) is checked by the L class.
 
@@ -405,7 +406,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::iterator
-  intrusive_list<T, N, MP, L, U>::begin () const
+  intrusive_list<T, N, MP, L, U>::begin () const noexcept
   {
     // The assert(links_.initialised()) is checked by the L class.
 
@@ -423,7 +424,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::iterator
-  intrusive_list<T, N, MP, L, U>::end () const
+  intrusive_list<T, N, MP, L, U>::end () const noexcept
   {
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
@@ -448,7 +449,8 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::pointer
-  intrusive_list<T, N, MP, L, U>::get_pointer (iterator_pointer node) const
+  intrusive_list<T, N, MP, L, U>::get_pointer (
+      iterator_pointer node) const noexcept
   {
     // static_assert(std::is_convertible<U, T>::value == true, "U must be
     // implicitly convertible to T!");
@@ -474,7 +476,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   typename intrusive_list<T, N, MP, L, U>::pointer
-  intrusive_list<T, N, MP, L, U>::unlink_head (void)
+  intrusive_list<T, N, MP, L, U>::unlink_head (void) noexcept
   {
     // No assert here, treat empty link unlinks as nop.
 
@@ -496,7 +498,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   typename intrusive_list<T, N, MP, L, U>::pointer
-  intrusive_list<T, N, MP, L, U>::unlink_tail (void)
+  intrusive_list<T, N, MP, L, U>::unlink_tail (void) noexcept
   {
     // No assert here, treat empty link unlinks as nop.
 

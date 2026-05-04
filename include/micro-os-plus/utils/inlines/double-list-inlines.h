@@ -64,7 +64,8 @@ namespace micro_os_plus::utils
    * dereference an invalid address.
    */
   template <class T, class N, class U>
-  constexpr double_list_iterator<T, N, U>::double_list_iterator () : node_{}
+  constexpr double_list_iterator<T, N, U>::double_list_iterator () noexcept
+      : node_{}
   {
   }
 
@@ -78,7 +79,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr double_list_iterator<T, N, U>::double_list_iterator (
-      iterator_pointer const node)
+      iterator_pointer const node) noexcept
       : node_{ node }
   {
   }
@@ -104,7 +105,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr typename double_list_iterator<T, N, U>::pointer
-  double_list_iterator<T, N, U>::operator->() const
+  double_list_iterator<T, N, U>::operator->() const noexcept
   {
     return get_pointer ();
   }
@@ -122,7 +123,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr typename double_list_iterator<T, N, U>::reference
-  double_list_iterator<T, N, U>::operator* () const
+  double_list_iterator<T, N, U>::operator* () const noexcept
   {
     return *get_pointer ();
   }
@@ -137,7 +138,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr double_list_iterator<T, N, U>&
-  double_list_iterator<T, N, U>::operator++ ()
+  double_list_iterator<T, N, U>::operator++ () noexcept
   {
     node_ = static_cast<N*> (node_->next ());
     return *this;
@@ -153,10 +154,10 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr double_list_iterator<T, N, U>
-  double_list_iterator<T, N, U>::operator++ (int)
+  double_list_iterator<T, N, U>::operator++ (int) noexcept
   {
     const auto tmp = *this;
-    node_ = static_cast<iterator_pointer> (node_->next);
+    node_ = static_cast<iterator_pointer> (node_->next ());
     return tmp;
   }
 
@@ -170,9 +171,9 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr double_list_iterator<T, N, U>&
-  double_list_iterator<T, N, U>::operator-- ()
+  double_list_iterator<T, N, U>::operator-- () noexcept
   {
-    node_ = static_cast<iterator_pointer> (node_->previous);
+    node_ = static_cast<iterator_pointer> (node_->previous ());
     return *this;
   }
 
@@ -186,10 +187,10 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr double_list_iterator<T, N, U>
-  double_list_iterator<T, N, U>::operator-- (int)
+  double_list_iterator<T, N, U>::operator-- (int) noexcept
   {
     const auto tmp = *this;
-    node_ = static_cast<iterator_pointer> (node_->previous);
+    node_ = static_cast<iterator_pointer> (node_->previous ());
     return tmp;
   }
 
@@ -204,7 +205,7 @@ namespace micro_os_plus::utils
   template <class T, class N, class U>
   constexpr bool
   double_list_iterator<T, N, U>::operator== (
-      const double_list_iterator& other) const
+      const double_list_iterator& other) const noexcept
   {
     return node_ == other.node_;
   }
@@ -220,7 +221,7 @@ namespace micro_os_plus::utils
   template <class T, class N, class U>
   constexpr bool
   double_list_iterator<T, N, U>::operator!= (
-      const double_list_iterator& other) const
+      const double_list_iterator& other) const noexcept
   {
     return node_ != other.node_;
   }
@@ -234,9 +235,22 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, class U>
   constexpr typename double_list_iterator<T, N, U>::iterator_pointer
-  double_list_iterator<T, N, U>::get_iterator_pointer () const
+  double_list_iterator<T, N, U>::get_iterator_pointer () const noexcept
   {
     return node_;
+  }
+
+  /**
+   * @details
+   * Returns the node pointer cast to the value pointer type. In the
+   * typical usage where all three template parameters are the same type
+   * (`T`, `N`, `U` all equal), this is a trivial static cast.
+   */
+  template <class T, class N, class U>
+  constexpr typename double_list_iterator<T, N, U>::pointer
+  double_list_iterator<T, N, U>::get_pointer (void) const noexcept
+  {
+    return static_cast<pointer> (node_);
   }
 
   // ==========================================================================
@@ -265,7 +279,7 @@ namespace micro_os_plus::utils
    * inconsistent links within the list.
    */
   template <class T, class L>
-  double_list<T, L>::double_list ()
+  double_list<T, L>::double_list () noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
     trace::printf ("%s() @%p \n", __func__, this);
@@ -321,7 +335,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   bool
-  double_list<T, L>::uninitialized (void) const
+  double_list<T, L>::uninitialized (void) const noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -347,7 +361,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   void
-  double_list<T, L>::initialize_once (void)
+  double_list<T, L>::initialize_once (void) noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -364,7 +378,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   bool
-  double_list<T, L>::empty (void) const
+  double_list<T, L>::empty (void) const noexcept
   {
     // If the links node is not linked, the list is empty.
     return !links_.linked ();
@@ -380,7 +394,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   void
-  double_list<T, L>::clear (void)
+  double_list<T, L>::clear (void) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
@@ -398,7 +412,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   constexpr typename double_list<T, L>::pointer
-  double_list<T, L>::head (void) const
+  double_list<T, L>::head (void) const noexcept
   {
     return reinterpret_cast<pointer> (links_.next ());
   }
@@ -413,7 +427,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   constexpr typename double_list<T, L>::pointer
-  double_list<T, L>::tail (void) const
+  double_list<T, L>::tail (void) const noexcept
   {
     return reinterpret_cast<pointer> (links_.previous ());
   }
@@ -428,7 +442,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   void
-  double_list<T, L>::link_tail (reference node)
+  double_list<T, L>::link_tail (reference node) noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -449,7 +463,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   void
-  double_list<T, L>::link_head (reference node)
+  double_list<T, L>::link_head (reference node) noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -470,7 +484,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   typename double_list<T, L>::iterator
-  double_list<T, L>::begin () const
+  double_list<T, L>::begin () const noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
@@ -490,7 +504,7 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   typename double_list<T, L>::iterator
-  double_list<T, L>::end () const
+  double_list<T, L>::end () const noexcept
   {
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.

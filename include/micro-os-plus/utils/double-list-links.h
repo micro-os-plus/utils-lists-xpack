@@ -90,7 +90,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Construct an uninitialised list node.
      */
-    constexpr double_list_links_base ();
+    constexpr double_list_links_base () noexcept;
 
     // This class follows the rule of five.
 
@@ -148,7 +148,7 @@ namespace micro_os_plus::utils
      * @retval false The links are initialised.
      */
     bool
-    uninitialized (void) const;
+    uninitialized (void) const noexcept;
 
     /**
      * @brief Initialise the node links.
@@ -159,7 +159,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     constexpr void
-    initialize (void);
+    initialize (void) noexcept;
 
     /**
      * @brief Initialise the node links only if not already initialised.
@@ -170,7 +170,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    initialize_once (void);
+    initialize_once (void) noexcept;
 
     /**
      * @brief Link the new node as **next**.
@@ -180,7 +180,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    link_next (double_list_links_base* node);
+    link_next (double_list_links_base* node) noexcept;
 
     /**
      * @brief Link the new node as **previous**.
@@ -190,7 +190,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    link_previous (double_list_links_base* node);
+    link_previous (double_list_links_base* node) noexcept;
 
     /**
      * @brief Remove this node from the list.
@@ -201,7 +201,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    unlink (void);
+    unlink (void) noexcept;
 
     /**
      * @brief Check if the node is linked to a doubly linked list.
@@ -212,7 +212,7 @@ namespace micro_os_plus::utils
      * @retval false The node is not linked.
      */
     bool
-    linked (void) const;
+    linked (void) const noexcept;
 
     /**
      * @brief Get the link to the **next** node.
@@ -222,7 +222,7 @@ namespace micro_os_plus::utils
      * @retval Pointer to the next node.
      */
     constexpr double_list_links_base*
-    next (void) const;
+    next (void) const noexcept;
 
     /**
      * @brief Get the link to the **previous** node.
@@ -232,7 +232,7 @@ namespace micro_os_plus::utils
      * @retval Pointer to the previous node.
      */
     constexpr double_list_links_base*
-    previous (void) const;
+    previous (void) const noexcept;
 
   protected:
     /**
@@ -277,7 +277,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Construct a list node (initialise the pointers).
      */
-    constexpr double_list_links ();
+    constexpr double_list_links () noexcept;
 
     // This class follows the rule of five.
 
@@ -375,7 +375,7 @@ namespace micro_os_plus::utils
      * @brief Construct a statically allocated list node
      * (**BSS** initialised).
      */
-    constexpr static_double_list_links ();
+    constexpr static_double_list_links () noexcept;
 
     /**
      * @brief Deleted copy constructor.
@@ -432,7 +432,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    nullify (void);
+    nullify (void) noexcept;
   };
 
   // --------------------------------------------------------------------------
