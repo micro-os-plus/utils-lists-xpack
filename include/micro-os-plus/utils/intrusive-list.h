@@ -131,7 +131,7 @@ namespace micro_os_plus::utils
      *
      * @return Pointer to the value pointed to by the iterator.
      */
-    pointer
+    [[nodiscard]] pointer
     operator->() const noexcept;
 
     /**
@@ -139,7 +139,7 @@ namespace micro_os_plus::utils
      *
      * @return Reference to the value pointed to by the iterator.
      */
-    reference
+    [[nodiscard]] reference
     operator* () const noexcept;
 
     /**
@@ -181,7 +181,7 @@ namespace micro_os_plus::utils
      * @return `true` if both iterators point to the same node, `false`
      * otherwise.
      */
-    bool
+    [[nodiscard]] bool
     operator== (const intrusive_list_iterator& other) const noexcept;
 
     /**
@@ -190,7 +190,7 @@ namespace micro_os_plus::utils
      * @return `true` if the iterators point to different nodes, `false`
      * otherwise.
      */
-    bool
+    [[nodiscard]] bool
     operator!= (const intrusive_list_iterator& other) const noexcept;
 
     /**
@@ -200,7 +200,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return Pointer to object node.
      */
-    pointer
+    [[nodiscard]] pointer
     get_pointer (void) const noexcept;
 
     /**
@@ -210,7 +210,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return The iterator pointer corresponding to the current node.
      */
-    iterator_pointer
+    [[nodiscard]] iterator_pointer
     get_iterator_pointer (void) const noexcept;
 
   protected:
@@ -447,7 +447,7 @@ namespace micro_os_plus::utils
      *
      * @return An iterator positioned at the first element.
      */
-    iterator
+    [[nodiscard]] iterator
     begin () const noexcept;
 
     /**
@@ -455,7 +455,7 @@ namespace micro_os_plus::utils
      *
      * @return An iterator positioned after the last element.
      */
-    iterator
+    [[nodiscard]] iterator
     end () const noexcept;
 
     // ------------------------------------------------------------------------
@@ -466,7 +466,7 @@ namespace micro_os_plus::utils
      * @param node Pointer to the intrusive node.
      * @return A pointer to the parent object containing the node.
      */
-    pointer
+    [[nodiscard]] pointer
     get_pointer (iterator_pointer node) const noexcept;
   };
 

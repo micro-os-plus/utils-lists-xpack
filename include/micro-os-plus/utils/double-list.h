@@ -130,7 +130,7 @@ namespace micro_os_plus::utils
      *
      * @return Pointer to the value pointed to by the iterator.
      */
-    constexpr pointer
+    [[nodiscard]] constexpr pointer
     operator->() const noexcept;
 
     /**
@@ -138,7 +138,7 @@ namespace micro_os_plus::utils
      *
      * @return Reference to the value pointed to by the iterator.
      */
-    constexpr reference
+    [[nodiscard]] constexpr reference
     operator* () const noexcept;
 
     /**
@@ -180,7 +180,7 @@ namespace micro_os_plus::utils
      * @return `true` if both iterators point to the same node, `false`
      * otherwise.
      */
-    constexpr bool
+    [[nodiscard]] constexpr bool
     operator== (const double_list_iterator& other) const noexcept;
 
     /**
@@ -190,7 +190,7 @@ namespace micro_os_plus::utils
      * @return `true` if the iterators point to different nodes, `false`
      * otherwise.
      */
-    constexpr bool
+    [[nodiscard]] constexpr bool
     operator!= (const double_list_iterator& other) const noexcept;
 
     /**
@@ -200,7 +200,7 @@ namespace micro_os_plus::utils
      *	 None.
      * @return Pointer to the value.
      */
-    constexpr pointer
+    [[nodiscard]] constexpr pointer
     get_pointer (void) const noexcept;
 
     /**
@@ -210,7 +210,7 @@ namespace micro_os_plus::utils
      *	 None.
      * @return Pointer to the node.
      */
-    constexpr iterator_pointer
+    [[nodiscard]] constexpr iterator_pointer
     get_iterator_pointer (void) const noexcept;
 
   protected:
@@ -357,7 +357,7 @@ namespace micro_os_plus::utils
      * @retval true The list was **not** initialised.
      * @retval false The list was initialised.
      */
-    bool
+    [[nodiscard]] bool
     uninitialized (void) const noexcept;
 
     /**
@@ -400,7 +400,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return Pointer to the head node.
      */
-    constexpr pointer
+    [[nodiscard]] constexpr pointer
     head (void) const noexcept;
 
     /**
@@ -410,7 +410,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return Pointer to the tail node.
      */
-    constexpr pointer
+    [[nodiscard]] constexpr pointer
     tail (void) const noexcept;
 
     /**
@@ -440,7 +440,7 @@ namespace micro_os_plus::utils
      *
      * @return An iterator to the first element.
      */
-    iterator
+    [[nodiscard]] iterator
     begin () const noexcept;
 
     /**
@@ -448,7 +448,7 @@ namespace micro_os_plus::utils
      *
      * @return An iterator positioned after the last element.
      */
-    iterator
+    [[nodiscard]] iterator
     end () const noexcept;
 
     // Required in derived class iterator end(), where direct
@@ -460,7 +460,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return A pointer to the list head object.
      */
-    constexpr const links_type*
+    [[nodiscard]] constexpr const links_type*
     links_pointer (void) const noexcept
     {
       return &links_;

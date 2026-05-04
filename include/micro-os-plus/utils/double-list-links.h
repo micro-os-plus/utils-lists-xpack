@@ -147,7 +147,7 @@ namespace micro_os_plus::utils
      * @retval true The links are **not** initialised.
      * @retval false The links are initialised.
      */
-    bool
+    [[nodiscard]] bool
     uninitialized (void) const noexcept;
 
     /**
@@ -221,7 +221,7 @@ namespace micro_os_plus::utils
      *  None.
      * @retval Pointer to the next node.
      */
-    constexpr double_list_links_base*
+    [[nodiscard]] constexpr double_list_links_base*
     next (void) const noexcept;
 
     /**
@@ -231,7 +231,7 @@ namespace micro_os_plus::utils
      *  None.
      * @retval Pointer to the previous node.
      */
-    constexpr double_list_links_base*
+    [[nodiscard]] constexpr double_list_links_base*
     previous (void) const noexcept;
 
   protected:
