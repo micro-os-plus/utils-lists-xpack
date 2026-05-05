@@ -473,10 +473,7 @@ namespace micro_os_plus::utils
      * @return A pointer to the list head object.
      */
     [[nodiscard]] constexpr const links_type*
-    links_pointer (void) const noexcept
-    {
-      return &links_;
-    }
+    links_pointer (void) const noexcept;
 
     // ------------------------------------------------------------------------
 

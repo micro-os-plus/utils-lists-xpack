@@ -211,7 +211,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return The iterator pointer corresponding to the current node.
      */
-    [[nodiscard]] iterator_pointer
+    [[nodiscard]] constexpr iterator_pointer
     get_iterator_pointer (void) const noexcept;
 
   protected:

@@ -529,6 +529,20 @@ namespace micro_os_plus::utils
     return reverse_iterator{ begin () };
   }
 
+  /**
+   * @details
+   * Returns the address of the `links_` member directly. This method is
+   * required by derived classes (such as `intrusive_list`) when
+   * constructing their `end()` iterator, where a direct reference to
+   * the protected member is not accessible from the derived scope.
+   */
+  template <doubly_list_links_node T, doubly_list_links_node L>
+  constexpr const typename doubly_list<T, L>::links_type*
+  doubly_list<T, L>::links_pointer (void) const noexcept
+  {
+    return &links_;
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::utils
 
