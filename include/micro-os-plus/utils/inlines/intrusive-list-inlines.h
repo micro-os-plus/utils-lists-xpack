@@ -440,6 +440,32 @@ namespace micro_os_plus::utils
         const_cast<links_type_*> (double_list<N, L>::links_pointer ())) };
   }
 
+  /**
+   * @details
+   * Returns a reverse iterator to the last element in the intrusive list.
+   * Equivalent to `reverse_iterator{ end() }`. Traversal proceeds
+   * from the tail towards the head.
+   */
+  template <class T, class N, N T::* MP, class L, class U>
+  inline typename intrusive_list<T, N, MP, L, U>::reverse_iterator
+  intrusive_list<T, N, MP, L, U>::rbegin () const noexcept
+  {
+    return reverse_iterator{ end () };
+  }
+
+  /**
+   * @details
+   * Returns a reverse iterator to the position before the first element
+   * in the intrusive list. Equivalent to `reverse_iterator{ begin() }`.
+   * Used as the past-the-end marker for reverse-direction iteration.
+   */
+  template <class T, class N, N T::* MP, class L, class U>
+  inline typename intrusive_list<T, N, MP, L, U>::reverse_iterator
+  intrusive_list<T, N, MP, L, U>::rend () const noexcept
+  {
+    return reverse_iterator{ begin () };
+  }
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif

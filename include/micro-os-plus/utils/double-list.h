@@ -246,8 +246,8 @@ namespace micro_os_plus::utils
    * containers.
    *
    * @note
-   * `std::reverse_iterator` adaptors (`rbegin()`/`rend()`) are not currently
-   * provided but can be added if required.
+   * `std::reverse_iterator` adaptors (`rbegin()`/`rend()`) are provided
+   * as thin wrappers around the bidirectional `iterator`.
    *
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    */
@@ -285,6 +285,11 @@ namespace micro_os_plus::utils
      * @brief Type of iterator over the values.
      */
     using iterator = double_list_iterator<value_type>;
+
+    /**
+     * @brief Type of reverse iterator over the values.
+     */
+    using reverse_iterator = std::reverse_iterator<iterator>;
 
     /**
      * @brief Type of reference to the iterator internal pointer.
@@ -451,6 +456,22 @@ namespace micro_os_plus::utils
      */
     [[nodiscard]] iterator
     end () const noexcept;
+
+    /**
+     * @brief Reverse iterator begin.
+     *
+     * @return A reverse iterator positioned at the last element.
+     */
+    [[nodiscard]] reverse_iterator
+    rbegin () const noexcept;
+
+    /**
+     * @brief Reverse iterator end.
+     *
+     * @return A reverse iterator positioned before the first element.
+     */
+    [[nodiscard]] reverse_iterator
+    rend () const noexcept;
 
     // Required in derived class iterator end(), where direct
     // access to member fails.

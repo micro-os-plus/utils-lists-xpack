@@ -140,6 +140,23 @@ check_intrusive_list (mt::static_suite& ts)
       t.expect (it == kids.begin ()) << "reverse iterator at begin";
     });
 
+  ts.test ("Reverse iterator rbegin/rend", [&] (auto& t)
+    {
+      // list still contains: Mary, Bob, Sally
+      auto it = kids.rbegin ();
+      t.expect (it != kids.rend ()) << "rbegin not at rend";
+      t.expect (mt::eq (std::string_view{ it->name () }, "Sally"sv))
+          << "rbegin is Sally";
+      ++it;
+      t.expect (mt::eq (std::string_view{ it->name () }, "Bob"sv))
+          << "second reverse is Bob";
+      ++it;
+      t.expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+          << "third reverse is Mary";
+      ++it;
+      t.expect (it == kids.rend ()) << "reverse iterator at rend";
+    });
+
   ts.test ("Unlink Bob", [&] (auto& t)
     {
       bob.unlink ();

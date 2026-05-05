@@ -137,6 +137,19 @@ check_double_list (mt::static_suite& ts)
       t.expect (mt::eq (&(*it), &one)) << "iterator points to one";
     });
 
+  ts.test ("Reverse iterator rbegin/rend", [&] (auto& t)
+    {
+      // list still contains: one, two
+      auto it = list.rbegin ();
+      t.expect (it != list.rend ()) << "rbegin not at rend";
+      t.expect (mt::eq (&(*it), &two)) << "rbegin is two";
+      ++it;
+      t.expect (it != list.rend ()) << "second reverse element";
+      t.expect (mt::eq (&(*it), &one)) << "second reverse is one";
+      ++it;
+      t.expect (it == list.rend ()) << "reverse iterator at rend";
+    });
+
   ts.test ("Unlink One", [&] (auto& t)
     {
       one.unlink ();

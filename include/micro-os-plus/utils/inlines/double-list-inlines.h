@@ -521,6 +521,32 @@ namespace micro_os_plus::utils
         const_cast<links_type*> (&links_)) };
   }
 
+  /**
+   * @details
+   * Returns a reverse iterator to the last element in the list.
+   * Equivalent to `reverse_iterator{ end() }`. Traversal proceeds
+   * from the tail towards the head.
+   */
+  template <class T, class L>
+  typename double_list<T, L>::reverse_iterator
+  double_list<T, L>::rbegin () const noexcept
+  {
+    return reverse_iterator{ end () };
+  }
+
+  /**
+   * @details
+   * Returns a reverse iterator to the position before the first element
+   * in the list. Equivalent to `reverse_iterator{ begin() }`. Used as
+   * the past-the-end marker for reverse-direction iteration.
+   */
+  template <class T, class L>
+  typename double_list<T, L>::reverse_iterator
+  double_list<T, L>::rend () const noexcept
+  {
+    return reverse_iterator{ begin () };
+  }
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::utils
 

@@ -310,6 +310,11 @@ namespace micro_os_plus::utils
     using iterator = intrusive_list_iterator<T, N, MP, U>;
 
     /**
+     * @brief Type of reverse iterator over the values.
+     */
+    using reverse_iterator = std::reverse_iterator<iterator>;
+
+    /**
      * @brief Type indicating if the links node is statically allocated
      */
     using is_statically_allocated =
@@ -460,6 +465,22 @@ namespace micro_os_plus::utils
      */
     [[nodiscard]] iterator
     end () const noexcept;
+
+    /**
+     * @brief Reverse iterator begin.
+     *
+     * @return A reverse iterator positioned at the last element.
+     */
+    [[nodiscard]] reverse_iterator
+    rbegin () const noexcept;
+
+    /**
+     * @brief Reverse iterator end.
+     *
+     * @return A reverse iterator positioned before the first element.
+     */
+    [[nodiscard]] reverse_iterator
+    rend () const noexcept;
 
     // ------------------------------------------------------------------------
   protected:
