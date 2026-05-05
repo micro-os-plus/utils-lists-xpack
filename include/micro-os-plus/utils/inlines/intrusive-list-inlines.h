@@ -193,7 +193,7 @@ namespace micro_os_plus::utils
    * the standard C++ iterator semantics for post-decrement.
    */
   template <class T, class N, N T::* MP, class U>
-  intrusive_list_iterator<T, N, MP, U>
+  inline intrusive_list_iterator<T, N, MP, U>
   intrusive_list_iterator<T, N, MP, U>::operator-- (int) noexcept
   {
     const auto tmp = *this;
