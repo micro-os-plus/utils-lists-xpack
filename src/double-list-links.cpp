@@ -129,8 +129,8 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p before %p\n", __func__, node, this);
 #endif
-    assert (next_ != nullptr);
-    assert (next_->previous_ != nullptr);
+    assert (previous_ != nullptr);
+    assert (previous_->next_ != nullptr);
 
     // Make the new node point to its new neighbours.
     node->next_ = this;
