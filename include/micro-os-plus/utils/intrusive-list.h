@@ -97,7 +97,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Category of iterator.
      */
-    using iterator_category = std::forward_iterator_tag;
+    using iterator_category = std::bidirectional_iterator_tag;
 
     // ------------------------------------------------------------------------
 
