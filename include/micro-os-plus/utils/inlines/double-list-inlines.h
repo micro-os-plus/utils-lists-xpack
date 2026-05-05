@@ -84,17 +84,6 @@ namespace micro_os_plus::utils
   {
   }
 
-#if 0
-    template <class T, class N, class U>
-    constexpr double_list_iterator<T, N, U>::double_list_iterator (
-        reference element)
-        : node_{ &(element.*MP) }
-    {
-      static_assert (std::is_convertible<U, T>::value == true,
-                     "U must be implicitly convertible to T!");
-    }
-#endif
-
   /**
    * @details
    * The pointer access operator (`operator->`) allows the iterator to provide
