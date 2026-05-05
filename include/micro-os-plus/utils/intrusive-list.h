@@ -398,7 +398,7 @@ namespace micro_os_plus::utils
      * @retval true The list has **no** nodes.
      * @retval false The list has **at least one** node.
      */
-    constexpr bool
+    [[nodiscard]] constexpr bool
     empty (void) const noexcept;
 
     /**
@@ -429,7 +429,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the last element in the list, or `nullptr` if the
      * list is empty.
      */
-    pointer
+    [[nodiscard]] pointer
     unlink_tail (void) noexcept;
 
     /**
@@ -440,7 +440,7 @@ namespace micro_os_plus::utils
      * @return Pointer to the first element in the list, or `nullptr` if the
      * list is empty.
      */
-    pointer
+    [[nodiscard]] pointer
     unlink_head (void) noexcept;
 
     // ------------------------------------------------------------------------

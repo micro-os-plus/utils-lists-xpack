@@ -337,7 +337,7 @@ namespace micro_os_plus::utils
    * no elements linked.
    */
   template <class T, class N, N T::* MP, class L, class U>
-  constexpr bool
+  [[nodiscard]] constexpr bool
   intrusive_list<T, N, MP, L, U>::empty (void) const noexcept
   {
     return double_list<N, L>::empty ();
@@ -481,7 +481,7 @@ namespace micro_os_plus::utils
    * returns a pointer to the parent object containing the unlinked node.
    */
   template <class T, class N, N T::* MP, class L, class U>
-  typename intrusive_list<T, N, MP, L, U>::pointer
+  [[nodiscard]] typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_head (void) noexcept
   {
     if (empty ())
@@ -505,7 +505,7 @@ namespace micro_os_plus::utils
    * returns a pointer to the parent object containing the unlinked node.
    */
   template <class T, class N, N T::* MP, class L, class U>
-  typename intrusive_list<T, N, MP, L, U>::pointer
+  [[nodiscard]] typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_tail (void) noexcept
   {
     if (empty ())

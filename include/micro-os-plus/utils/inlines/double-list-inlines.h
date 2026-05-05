@@ -381,7 +381,7 @@ namespace micro_os_plus::utils
    * has elements or is currently empty.
    */
   template <class T, class L>
-  constexpr bool
+  [[nodiscard]] constexpr bool
   double_list<T, L>::empty (void) const noexcept
   {
     // If the links node is not linked, the list is empty.
