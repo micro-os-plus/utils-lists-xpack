@@ -16,19 +16,19 @@
  * list iterator and list class templates.
  *
  * @details
- * The `double-list.h` header file contains the C++ declarations of the
- * `double_list_iterator` and `double_list` class templates.
+ * The `doubly-list.h` header file contains the C++ declarations of the
+ * `doubly_list_iterator` and `doubly_list` class templates.
  *
- * The class implementations are in @ref double-list-links.cpp
- * and @ref double-list-inlines.h.
+ * The class implementations are in @ref doubly-list-links.cpp
+ * and @ref doubly-list-inlines.h.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_DOUBLE_LIST_H_
-#define MICRO_OS_PLUS_UTILS_DOUBLE_LIST_H_
+#ifndef MICRO_OS_PLUS_UTILS_DOUBLY_LIST_H_
+#define MICRO_OS_PLUS_UTILS_DOUBLY_LIST_H_
 
 // ----------------------------------------------------------------------------
 
-#include "double-list-links.h"
+#include "doubly-list-links.h"
 
 // ----------------------------------------------------------------------------
 
@@ -49,7 +49,7 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-utils-lists-double-lists
+   * @ingroup micro-os-plus-utils-lists-doubly-lists
    * @brief A class template for a doubly linked list iterator.
    *
    * @tparam T Type of object returned by the iterator.
@@ -61,12 +61,12 @@ namespace micro_os_plus::utils
    * This iterator provides an interface similar to `std::list::iterator` for
    * traversing a doubly linked list. It supports bidirectional iteration and
    * access to the underlying node and value. In a typical doubly linked list,
-   * all types are `double_list_links`.
+   * all types are `doubly_list_links`.
    *
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    */
   template <class T, class N = T, class U = T>
-  class double_list_iterator
+  class doubly_list_iterator
   {
   public:
     /**
@@ -105,14 +105,14 @@ namespace micro_os_plus::utils
      * @brief Default constructor. Constructs an iterator pointing to
      * `nullptr`.
      */
-    constexpr double_list_iterator () noexcept;
+    constexpr doubly_list_iterator () noexcept;
 
     /**
      * @brief Construct an iterator from a node pointer.
      *
      * @param node Pointer to the node to which the iterator should point.
      */
-    constexpr explicit double_list_iterator (
+    constexpr explicit doubly_list_iterator (
         iterator_pointer const node) noexcept;
 
     /**
@@ -121,7 +121,7 @@ namespace micro_os_plus::utils
      * @param element Reference to the element to which the iterator should
      * point.
      */
-    constexpr explicit double_list_iterator (reference element) noexcept;
+    constexpr explicit doubly_list_iterator (reference element) noexcept;
 
     // DO NOT delete the copy constructors, since the default ones are
     // used.
@@ -147,7 +147,7 @@ namespace micro_os_plus::utils
      *
      * @return Reference to the incremented iterator.
      */
-    constexpr double_list_iterator&
+    constexpr doubly_list_iterator&
     operator++ () noexcept;
 
     /**
@@ -155,7 +155,7 @@ namespace micro_os_plus::utils
      *
      * @return Iterator before increment.
      */
-    constexpr double_list_iterator
+    constexpr doubly_list_iterator
     operator++ (int) noexcept;
 
     /**
@@ -163,7 +163,7 @@ namespace micro_os_plus::utils
      *
      * @return Reference to the decremented iterator.
      */
-    constexpr double_list_iterator&
+    constexpr doubly_list_iterator&
     operator-- () noexcept;
 
     /**
@@ -171,7 +171,7 @@ namespace micro_os_plus::utils
      *
      * @return Iterator before decrement.
      */
-    constexpr double_list_iterator
+    constexpr doubly_list_iterator
     operator-- (int) noexcept;
 
     /**
@@ -186,7 +186,7 @@ namespace micro_os_plus::utils
      * the compiler from this operator (C++20).
      */
     [[nodiscard]] constexpr bool
-    operator== (const double_list_iterator& other) const noexcept;
+    operator== (const doubly_list_iterator& other) const noexcept;
 
     /**
      * @brief Get a pointer to the value pointed to by the iterator.
@@ -218,19 +218,19 @@ namespace micro_os_plus::utils
   // ==========================================================================
 
   /**
-   * @ingroup micro-os-plus-utils-lists-double-lists
+   * @ingroup micro-os-plus-utils-lists-doubly-lists
    * @brief A class template for a doubly linked list of nodes.
    *
    * @tparam T Type of the elements linked into the list, derived from class
-   * `double_list_links_base`.
-   * @tparam L Type of the links node (either `double_list_links` or
-   * `static_double_list_links`).
+   * `doubly_list_links_base`.
+   * @tparam L Type of the links node (either `doubly_list_links` or
+   * `static_doubly_list_links`).
    *
    * @details
    * This class implements a generic doubly linked list, maintaining a pair of
    * head and tail pointers to allow efficient iteration and manipulation of
    * nodes. The list elements (of type T) must be derived from
-   * `double_list_links_base` (typically from `double_list_links`) and extended
+   * `doubly_list_links_base` (typically from `doubly_list_links`) and extended
    * with the required payload, which may be the actual content or a pointer to
    * it.
    *
@@ -245,9 +245,9 @@ namespace micro_os_plus::utils
    *
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    */
-  template <double_list_links_node T,
-            double_list_links_node L = double_list_links>
-  class double_list
+  template <doubly_list_links_node T,
+            doubly_list_links_node L = doubly_list_links>
+  class doubly_list
   {
   public:
     /**
@@ -274,7 +274,7 @@ namespace micro_os_plus::utils
     /**
      * @brief Type of iterator over the values.
      */
-    using iterator = double_list_iterator<value_type>;
+    using iterator = doubly_list_iterator<value_type>;
 
     /**
      * @brief Type of reverse iterator over the values.
@@ -295,27 +295,27 @@ namespace micro_os_plus::utils
     /**
      * @brief Construct a doubly linked list.
      */
-    double_list () noexcept;
+    doubly_list () noexcept;
 
     /**
      * @brief Deleted copy constructor.
      *
      * @details
-     * Copying of `double_list` instances is explicitly disallowed to prevent
+     * Copying of `doubly_list` instances is explicitly disallowed to prevent
      * accidental duplication, which could compromise the integrity of the list
      * structure.
      */
-    double_list (const double_list&) = delete;
+    doubly_list (const doubly_list&) = delete;
 
     /**
      * @brief Deleted move constructor.
      *
      * @details
-     * Moving of `double_list` instances is explicitly disallowed to avoid
+     * Moving of `doubly_list` instances is explicitly disallowed to avoid
      * invalid or inconsistent links within the list that could result from
      * moving lists.
      */
-    double_list (double_list&&) = delete;
+    doubly_list (doubly_list&&) = delete;
 
     /**
      * @brief Deleted copy assignment operator.
@@ -325,8 +325,8 @@ namespace micro_os_plus::utils
      * overwriting of list objects, which could lead to corruption of the list
      * structure.
      */
-    double_list&
-    operator= (const double_list&) = delete;
+    doubly_list&
+    operator= (const doubly_list&) = delete;
 
     /**
      * @brief Deleted move assignment operator.
@@ -335,13 +335,13 @@ namespace micro_os_plus::utils
      * Move assignment is explicitly disallowed to avoid invalid or
      * inconsistent links within the list that could result from moving lists.
      */
-    double_list&
-    operator= (double_list&&) = delete;
+    doubly_list&
+    operator= (doubly_list&&) = delete;
 
     /**
      * @brief Destruct the list.
      */
-    constexpr ~double_list ();
+    constexpr ~doubly_list ();
 
   public:
     /**
@@ -508,10 +508,10 @@ namespace micro_os_plus::utils
 // ============================================================================
 // Templates & constexpr implementations.
 
-#include "inlines/double-list-inlines.h"
+#include "inlines/doubly-list-inlines.h"
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_DOUBLE_LIST_H_
+#endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_H_
 
 // ----------------------------------------------------------------------------

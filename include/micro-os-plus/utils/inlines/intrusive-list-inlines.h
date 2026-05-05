@@ -277,8 +277,8 @@ namespace micro_os_plus::utils
    * list structure, as duplicating or moving lists could result in invalid or
    * inconsistent links within the list.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   constexpr intrusive_list<T, N, MP, L, U>::intrusive_list () noexcept
   {
   }
@@ -290,8 +290,8 @@ namespace micro_os_plus::utils
    * elsewhere, so the destructor is intentionally left empty to avoid
    * unnecessary writes or side effects during object destruction.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   constexpr intrusive_list<T, N, MP, L, U>::~intrusive_list ()
   {
   }
@@ -307,12 +307,12 @@ namespace micro_os_plus::utils
    * Must be manually called for statically allocated lists before inserting
    * elements or performing any other operations.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   void
   intrusive_list<T, N, MP, L, U>::initialise_once (void) noexcept
   {
-    double_list<N, L>::initialise_once ();
+    doubly_list<N, L>::initialise_once ();
   }
 
   /**
@@ -322,12 +322,12 @@ namespace micro_os_plus::utils
    * determine if the list is empty. The list is considered empty if there are
    * no elements linked.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   [[nodiscard]] constexpr bool
   intrusive_list<T, N, MP, L, U>::empty (void) const noexcept
   {
-    return double_list<N, L>::empty ();
+    return doubly_list<N, L>::empty ();
   }
 
   /**
@@ -339,8 +339,8 @@ namespace micro_os_plus::utils
    * already linked elsewhere. For statically allocated lists, the
    * initialisation check is handled by the links class.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   void
   intrusive_list<T, N, MP, L, U>::link_tail (U& node) noexcept
   {
@@ -353,7 +353,7 @@ namespace micro_os_plus::utils
         &(static_cast<T*> (nullptr)->*MP));
 
     // Add thread intrusive node at the end of the list.
-    (const_cast<N*> (double_list<N, L>::tail ()))
+    (const_cast<N*> (doubly_list<N, L>::tail ()))
         ->link_next (reinterpret_cast<N*> (
             reinterpret_cast<difference_type> (&node) + offset));
   }
@@ -367,8 +367,8 @@ namespace micro_os_plus::utils
    * already linked elsewhere. For statically allocated lists, the
    * initialisation check is handled by the links class.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   void
   intrusive_list<T, N, MP, L, U>::link_head (U& node) noexcept
   {
@@ -381,7 +381,7 @@ namespace micro_os_plus::utils
         &(static_cast<T*> (nullptr)->*MP));
 
     // Add thread intrusive node at the beginning of the list.
-    (const_cast<N*> (double_list<N, L>::head ()))
+    (const_cast<N*> (doubly_list<N, L>::head ()))
         ->link_previous (reinterpret_cast<N*> (
             reinterpret_cast<difference_type> (&node) + offset));
   }
@@ -399,15 +399,15 @@ namespace micro_os_plus::utils
    * links class. If the list is empty, the iterator will compare equal to
    * `end()`.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::iterator
   intrusive_list<T, N, MP, L, U>::begin () const noexcept
   {
     // The assert(links_.initialised()) is checked by the L class.
 
     return iterator{ static_cast<iterator_pointer> (
-        double_list<N, L>::links_.next ()) };
+        doubly_list<N, L>::links_.next ()) };
   }
 
   /**
@@ -418,17 +418,17 @@ namespace micro_os_plus::utils
    * marker in iteration and comparison operations. The end iterator does not
    * reference any valid list element.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::iterator
   intrusive_list<T, N, MP, L, U>::end () const noexcept
   {
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
 
-    using links_type_ = typename double_list<N, L>::links_type;
+    using links_type_ = typename doubly_list<N, L>::links_type;
     return iterator{ reinterpret_cast<iterator_pointer> (
-        const_cast<links_type_*> (double_list<N, L>::links_pointer ())) };
+        const_cast<links_type_*> (doubly_list<N, L>::links_pointer ())) };
   }
 
   /**
@@ -437,8 +437,8 @@ namespace micro_os_plus::utils
    * Equivalent to `reverse_iterator{ end() }`. Traversal proceeds
    * from the tail towards the head.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::reverse_iterator
   intrusive_list<T, N, MP, L, U>::rbegin () const noexcept
   {
@@ -451,8 +451,8 @@ namespace micro_os_plus::utils
    * in the intrusive list. Equivalent to `reverse_iterator{ begin() }`.
    * Used as the past-the-end marker for reverse-direction iteration.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::reverse_iterator
   intrusive_list<T, N, MP, L, U>::rend () const noexcept
   {
@@ -472,8 +472,8 @@ namespace micro_os_plus::utils
    * retrieval of the full object from just the node pointer, enabling
    * intrusive list traversal and manipulation.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   inline typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::get_pointer (
       iterator_pointer node) const noexcept
@@ -500,8 +500,8 @@ namespace micro_os_plus::utils
    * the list. The method unlinks the node at the head of the list and
    * returns a pointer to the parent object containing the unlinked node.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   [[nodiscard]] typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_head (void) noexcept
   {
@@ -512,7 +512,7 @@ namespace micro_os_plus::utils
 
     // The first element in the list.
     iterator_pointer it
-        = static_cast<iterator_pointer> (double_list<N, L>::links_.next ());
+        = static_cast<iterator_pointer> (doubly_list<N, L>::links_.next ());
     it->unlink ();
 
     return get_pointer (it);
@@ -525,8 +525,8 @@ namespace micro_os_plus::utils
    * the list. The method unlinks the node at the tail of the list and
    * returns a pointer to the parent object containing the unlinked node.
    */
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L, class U>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L, class U>
   [[nodiscard]] typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_tail (void) noexcept
   {
@@ -537,7 +537,7 @@ namespace micro_os_plus::utils
 
     // The last element in the list.
     iterator_pointer it = static_cast<iterator_pointer> (
-        double_list<N, L>::links_.previous ());
+        doubly_list<N, L>::links_.previous ());
     it->unlink ();
 
     return get_pointer (it);

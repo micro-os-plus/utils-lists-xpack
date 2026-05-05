@@ -53,8 +53,8 @@ protected:
 public:
   // Intrusive nodes used to link this object to the lists.
   // Must be public.
-  os::utils::double_list_links all_kids_links;
-  os::utils::double_list_links school_kids_links;
+  os::utils::doubly_list_links all_kids_links;
+  os::utils::doubly_list_links school_kids_links;
 };
 
 // Type of a list of all kids.

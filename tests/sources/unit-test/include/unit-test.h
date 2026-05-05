@@ -42,8 +42,8 @@ extern micro_os_plus::micro_test_plus::static_runner sr;
 #endif
 #endif
 
-// T must be one of static_double_list_links or double_list_links.
-template <class T = micro_os_plus::utils::double_list_links>
+// T must be one of static_doubly_list_links or doubly_list_links.
+template <class T = micro_os_plus::utils::doubly_list_links>
 class child
 {
 public:

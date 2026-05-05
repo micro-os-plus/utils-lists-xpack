@@ -30,10 +30,8 @@ add_library (test-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 target_include_directories (test-unit-interface INTERFACE "include")
 
 target_sources (
-  test-unit-interface INTERFACE "src/main.cpp"
-                                "src/double-list-links.cpp"
-                                "src/double-list.cpp"
-                                "src/intrusive-list.cpp"
+  test-unit-interface INTERFACE "src/main.cpp" "src/doubly-list-links.cpp"
+                                "src/doubly-list.cpp" "src/intrusive-list.cpp"
 )
 
 target_compile_definitions (test-unit-interface INTERFACE # None.

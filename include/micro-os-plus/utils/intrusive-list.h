@@ -19,7 +19,7 @@
  * The `intrusive-list.h` header file contains the C++ declarations of the
  * `intrusive_list_iterator` and `intrusive_list` class templates.
  *
- * The class implementations are in @ref double-list-links.cpp
+ * The class implementations are in @ref doubly-list-links.cpp
  * and @ref intrusive-list-inlines.h.
  */
 
@@ -28,7 +28,7 @@
 
 // ----------------------------------------------------------------------------
 
-#include "double-list.h"
+#include "doubly-list.h"
 
 // ----------------------------------------------------------------------------
 
@@ -238,8 +238,8 @@ namespace micro_os_plus::utils
  * @tparam T Type of object that includes the intrusive node.
  * @tparam N Type of intrusive node with the next & previous links.
  * @tparam MP Name of the intrusive node member in object T.
- * @tparam L Type of the links node (one of `double_list_links` or
- * `static_double_list_links`).
+ * @tparam L Type of the links node (one of `doubly_list_links` or
+ * `static_doubly_list_links`).
  * @tparam U Type stored in the list, derived from T.
  *
  * @details
@@ -262,10 +262,10 @@ namespace micro_os_plus::utils
  * @code{.cpp}
  * namespace os = micro_os_plus;
  * using threads_list = os::utils::intrusive_list<
- *   thread, os::utils::double_list_links, &thread::child_links_>;
+ *   thread, os::utils::doubly_list_links, &thread::child_links_>;
  * @endcode
  *
- * For statically allocated lists, set L=static_double_list_links.
+ * For statically allocated lists, set L=static_doubly_list_links.
  *
  * @headerfile lists.h <micro-os-plus/utils/lists.h>
  */
@@ -273,9 +273,9 @@ namespace micro_os_plus::utils
 #pragma clang diagnostic pop
 #endif
 
-  template <class T, double_list_links_node N, N T::* MP,
-            double_list_links_node L = double_list_links, class U = T>
-  class intrusive_list : public double_list<N, L>
+  template <class T, doubly_list_links_node N, N T::* MP,
+            doubly_list_links_node L = doubly_list_links, class U = T>
+  class intrusive_list : public doubly_list<N, L>
   {
   public:
     /**

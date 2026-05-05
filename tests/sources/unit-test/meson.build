@@ -44,8 +44,8 @@ _local_include_directories += [
 
 _local_sources += [
   'src/main.cpp', 
-  'src/double-list-links.cpp',
-  'src/double-list.cpp',
+  'src/doubly-list-links.cpp',
+  'src/doubly-list.cpp',
   'src/intrusive-list.cpp'
 ]
 

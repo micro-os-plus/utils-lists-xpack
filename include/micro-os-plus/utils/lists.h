@@ -19,13 +19,13 @@
  * The `lists.h` header file is the single entry-point for the
  * **µOS++ Intrusive Lists** library. It includes, in order:
  *
- * - `double-list-links.h` — `double_list_links_base`,
- *   `double_list_links`, and `static_double_list_links`.
- * - `double-list.h` — `double_list_iterator` and `double_list`.
+ * - `doubly-list-links.h` — `doubly_list_links_base`,
+ *   `doubly_list_links`, and `static_doubly_list_links`.
+ * - `doubly-list.h` — `doubly_list_iterator` and `doubly_list`.
  * - `intrusive-list.h` — `intrusive_list_iterator` and `intrusive_list`.
  *
- * The class implementations are in @ref double-list-links.cpp,
- * @ref double-list-links-inlines.h, @ref double-list-inlines.h,
+ * The class implementations are in @ref doubly-list-links.cpp,
+ * @ref doubly-list-links-inlines.h, @ref doubly-list-inlines.h,
  * and @ref intrusive-list-inlines.h.
  */
 
@@ -63,8 +63,8 @@
 
 // ----------------------------------------------------------------------------
 
-#include "double-list-links.h"
-#include "double-list.h"
+#include "doubly-list-links.h"
+#include "doubly-list.h"
 #include "intrusive-list.h"
 
 // ----------------------------------------------------------------------------

@@ -19,7 +19,7 @@
  * an efficient and lightweight linked list management system tailored
  * for embedded applications.
  *
- * The class definitions are in the @ref double-list-links.h file.
+ * The class definitions are in the @ref doubly-list-links.h file.
  */
 
 // ----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ namespace micro_os_plus::utils
    * `false` for statically allocated nodes that have not yet been initialised.
    */
   bool
-  double_list_links_base::initialised (void) const noexcept
+  doubly_list_links_base::initialised (void) const noexcept
   {
     if (previous_ == nullptr || next_ == nullptr)
       {
@@ -80,7 +80,7 @@ namespace micro_os_plus::utils
    * inserting elements or performing any other operations.
    */
   void
-  double_list_links_base::initialise_once (void) noexcept
+  doubly_list_links_base::initialise_once (void) noexcept
   {
     if (!initialised ())
       {
@@ -95,10 +95,10 @@ namespace micro_os_plus::utils
    * The new node's `previous_` pointer is set to the current node, and its
    * `next_` pointer is set to the current node's `next_`. The neighbouring
    * nodes are updated to point to the new node, maintaining the integrity of
-   * the double-linked list.
+   * the doubly-linked list.
    */
   void
-  double_list_links_base::link_next (double_list_links_base* node) noexcept
+  doubly_list_links_base::link_next (doubly_list_links_base* node) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p after %p\n", __func__, node, this);
@@ -120,11 +120,11 @@ namespace micro_os_plus::utils
    * by it. Used by lists to link new nodes to the list tail. The new node's
    * `next_` pointer is set to the current node, and its `previous_` pointer is
    * set to the current node's `previous_`. The neighbouring nodes are updated
-   * to point to the new node, maintaining the integrity of the double-linked
+   * to point to the new node, maintaining the integrity of the doubly-linked
    * list.
    */
   void
-  double_list_links_base::link_previous (double_list_links_base* node) noexcept
+  doubly_list_links_base::link_previous (doubly_list_links_base* node) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() link %p before %p\n", __func__, node, this);
@@ -148,7 +148,7 @@ namespace micro_os_plus::utils
    * call even if the node is already unlinked.
    */
   void
-  double_list_links_base::unlink (void) noexcept
+  doubly_list_links_base::unlink (void) noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() %p \n", __func__, this);
@@ -181,7 +181,7 @@ namespace micro_os_plus::utils
   __attribute__ ((noinline, noipa))
 #endif
   void
-  static_double_list_links::reset () noexcept
+  static_doubly_list_links::reset () noexcept
   {
     next_ = nullptr;
     previous_ = nullptr;

@@ -29,15 +29,15 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-static os::utils::static_double_list_links static_links;
+static os::utils::static_doubly_list_links static_links;
 
 static void
-check_static_double_list_links (mt::static_suite& ts)
+check_static_doubly_list_links (mt::static_suite& ts)
 {
   ts.test ("Static", [] (auto& t)
     {
-      os::utils::static_double_list_links* p
-          = new (&static_links) os::utils::static_double_list_links;
+      os::utils::static_doubly_list_links* p
+          = new (&static_links) os::utils::static_doubly_list_links;
       t.expect (!p->initialised ()) << "uninitialised";
 
       static_links.initialise ();
@@ -50,20 +50,20 @@ check_static_double_list_links (mt::static_suite& ts)
       // std::cout << p->next();
       // std::cout << p->previous();
 
-      p->~static_double_list_links ();
+      p->~static_doubly_list_links ();
       t.expect (!p->initialised ()) << "uninitialised";
     });
 }
 
-static mt::static_suite ts_check_static_double_list_links
+static mt::static_suite ts_check_static_doubly_list_links
     = { "Static double list links destructor", sr,
-        check_static_double_list_links };
+        check_static_doubly_list_links };
 
 // ----------------------------------------------------------------------------
 
 template <class T>
 void
-check_double_list_links (mt::static_suite& ts)
+check_doubly_list_links (mt::static_suite& ts)
 {
   static T left_links;
   static T links;
@@ -125,12 +125,12 @@ check_double_list_links (mt::static_suite& ts)
     }
 }
 
-static mt::static_suite ts_static_double_list_links
+static mt::static_suite ts_static_doubly_list_links
     = { "Static double list links", sr,
-        check_double_list_links<os::utils::static_double_list_links> };
+        check_doubly_list_links<os::utils::static_doubly_list_links> };
 
-static mt::static_suite ts_double_list_links
+static mt::static_suite ts_doubly_list_links
     = { "Double list links", sr,
-        check_double_list_links<os::utils::double_list_links> };
+        check_doubly_list_links<os::utils::doubly_list_links> };
 
 // ----------------------------------------------------------------------------

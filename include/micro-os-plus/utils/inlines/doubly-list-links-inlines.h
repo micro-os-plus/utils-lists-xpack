@@ -11,25 +11,25 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(MICRO_OS_PLUS_UTILS_DOUBLE_LIST_LINKS_H_)
+#if !defined(MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_)
 #error \
-    "Do not include this file directly; use <micro-os-plus/utils/double-list-links.h>."
-#endif // MICRO_OS_PLUS_UTILS_DOUBLE_LIST_LINKS_H_
+    "Do not include this file directly; use <micro-os-plus/utils/doubly-list-links.h>."
+#endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_
 
 /**
  * @file
  * @brief C++ header file with the inline implementations for the
- * `double_list_links_base`, `double_list_links`, and
- * `static_double_list_links` classes.
+ * `doubly_list_links_base`, `doubly_list_links`, and
+ * `static_doubly_list_links` classes.
  *
  * @details
- * Class definitions are located in @ref double-list-links.h.
+ * Class definitions are located in @ref doubly-list-links.h.
  * Inline methods are separated into this file to improve project
  * structure and maintainability.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_DOUBLE_LIST_LINKS_INLINES_H_
-#define MICRO_OS_PLUS_UTILS_DOUBLE_LIST_LINKS_INLINES_H_
+#ifndef MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_INLINES_H_
+#define MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -75,11 +75,11 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of `double_list_links_base` objects. This ensures the integrity
+   * or moving of `doubly_list_links_base` objects. This ensures the integrity
    * of the list structure, as duplicating or moving nodes could result in
    * invalid or inconsistent links within the list.
    */
-  constexpr double_list_links_base::double_list_links_base () noexcept
+  constexpr doubly_list_links_base::doubly_list_links_base () noexcept
   {
     // Must be empty! No members must be changed by this constructor!
   }
@@ -97,7 +97,7 @@ namespace micro_os_plus::utils
    * objects or when list nodes may be reused or re-initialised after
    * destruction.
    */
-  constexpr double_list_links_base::~double_list_links_base ()
+  constexpr doubly_list_links_base::~doubly_list_links_base ()
   {
     // Must be empty! No members must be changed by this destructor!
   }
@@ -117,7 +117,7 @@ namespace micro_os_plus::utils
    * prevent accidental access through stale links.
    */
   constexpr void
-  double_list_links_base::initialise (void) noexcept
+  doubly_list_links_base::initialise (void) noexcept
   {
     previous_ = this;
     next_ = this;
@@ -137,11 +137,11 @@ namespace micro_os_plus::utils
    * container) or to itself if the list is empty.
    *
    * @note
-   * The returned pointer is of type `double_list_links_base*` and may need to
+   * The returned pointer is of type `doubly_list_links_base*` and may need to
    * be cast to the appropriate derived type by the caller.
    */
-  constexpr double_list_links_base*
-  double_list_links_base::next (void) const noexcept
+  constexpr doubly_list_links_base*
+  doubly_list_links_base::next (void) const noexcept
   {
     return next_;
   }
@@ -154,11 +154,11 @@ namespace micro_os_plus::utils
    * or to itself if the list is empty.
    *
    * @note
-   * The returned pointer is of type `double_list_links_base*` and may need to
+   * The returned pointer is of type `doubly_list_links_base*` and may need to
    * be cast to the appropriate derived type by the caller.
    */
-  constexpr double_list_links_base*
-  double_list_links_base::previous (void) const noexcept
+  constexpr doubly_list_links_base*
+  doubly_list_links_base::previous (void) const noexcept
   {
     return previous_;
   }
@@ -171,7 +171,7 @@ namespace micro_os_plus::utils
    * the node's linkage status for safe list operations.
    */
   constexpr bool
-  double_list_links_base::linked (void) const noexcept
+  doubly_list_links_base::linked (void) const noexcept
   {
     if (next_ == this || previous_ == this)
       {
@@ -208,11 +208,11 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of `static_double_list_links` objects. This ensures the
+   * or moving of `static_doubly_list_links` objects. This ensures the
    * integrity of the list structure, as duplicating or moving nodes could
    * result in invalid or inconsistent links within the list.
    */
-  constexpr static_double_list_links::static_double_list_links () noexcept
+  constexpr static_doubly_list_links::static_doubly_list_links () noexcept
   {
     // Must be empty! No members must be changed by this constructor!
   }
@@ -224,7 +224,7 @@ namespace micro_os_plus::utils
 #endif
 /**
  * @details
- * The destructor for `static_double_list_links` is intentionally left empty to
+ * The destructor for `static_doubly_list_links` is intentionally left empty to
  * avoid modifying the member pointers. The goal is to revert the content to a
  * state similar to the statically initialised state (BSS zero), but recent
  * versions of GCC may optimize out any code that attempts to clear the
@@ -243,7 +243,7 @@ namespace micro_os_plus::utils
  * clear the memory before invoking the placement `new` constructor again.
  */
 #pragma GCC diagnostic pop
-  constexpr static_double_list_links::~static_double_list_links ()
+  constexpr static_doubly_list_links::~static_doubly_list_links ()
   {
     // The goal is to revert the content to a state similar to the
     // statically initialised state (BSS zero).
@@ -256,7 +256,7 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * The constructor for `double_list_links` is used for regular (non-static)
+   * The constructor for `doubly_list_links` is used for regular (non-static)
    * list link nodes. It explicitly initialises the node by calling
    * `initialise()`, which sets both the `previous_` and `next_` pointers to
    * point to this node itself, marking it as unlinked and ready for use in a
@@ -273,11 +273,11 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of `double_list_links` objects. This ensures the integrity of
+   * or moving of `doubly_list_links` objects. This ensures the integrity of
    * the list structure, as duplicating or moving nodes could result in
    * invalid or inconsistent links within the list.
    */
-  constexpr double_list_links::double_list_links () noexcept
+  constexpr doubly_list_links::doubly_list_links () noexcept
   {
     // For regular (non static) classes the members
     // must be explicitly initialised.
@@ -289,7 +289,7 @@ namespace micro_os_plus::utils
    * Destroys the node. No special cleanup is required as the class does not
    * manage resources.
    */
-  constexpr double_list_links::~double_list_links ()
+  constexpr doubly_list_links::~doubly_list_links ()
   {
   }
 
@@ -306,6 +306,6 @@ namespace micro_os_plus::utils
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_DOUBLE_LIST_LINKS_INLINES_H_
+#endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_INLINES_H_
 
 // ----------------------------------------------------------------------------

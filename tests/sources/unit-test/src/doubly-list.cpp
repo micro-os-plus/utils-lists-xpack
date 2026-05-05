@@ -31,12 +31,12 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 template <class T>
 void
-check_double_list (mt::static_suite& ts)
+check_doubly_list (mt::static_suite& ts)
 {
   using element = typename T::value_type;
 
-  // The static_double_list objects are t.expected to be uninitialised.
-  // The double_list objects are cleared by the constructor.
+  // The static_doubly_list objects are t.expected to be uninitialised.
+  // The doubly_list objects are cleared by the constructor.
   static T list;
   static element one;
   static element two;
@@ -202,28 +202,28 @@ check_double_list (mt::static_suite& ts)
     }
 }
 
-static mt::static_suite ts_static_double_list = {
+static mt::static_suite ts_static_doubly_list = {
   "Static double list", sr,
-  check_double_list<os::utils::double_list<
-      os::utils::double_list_links, os::utils::static_double_list_links>>
+  check_doubly_list<os::utils::doubly_list<
+      os::utils::doubly_list_links, os::utils::static_doubly_list_links>>
 };
 
-static mt::static_suite ts_static_double_list2
+static mt::static_suite ts_static_doubly_list2
     = { "Static double list with static elements", sr,
-        check_double_list<
-            os::utils::double_list<os::utils::static_double_list_links,
-                                   os::utils::static_double_list_links>> };
+        check_doubly_list<
+            os::utils::doubly_list<os::utils::static_doubly_list_links,
+                                   os::utils::static_doubly_list_links>> };
 
-static mt::static_suite ts_double_list = {
+static mt::static_suite ts_doubly_list = {
   "Double list", sr,
-  check_double_list<os::utils::double_list<os::utils::double_list_links,
-                                           os::utils::double_list_links>>
+  check_doubly_list<os::utils::doubly_list<os::utils::doubly_list_links,
+                                           os::utils::doubly_list_links>>
 };
 
-static mt::static_suite ts_double_list2 = {
+static mt::static_suite ts_doubly_list2 = {
   "Double list with static elements", sr,
-  check_double_list<os::utils::double_list<os::utils::static_double_list_links,
-                                           os::utils::double_list_links>>
+  check_doubly_list<os::utils::doubly_list<os::utils::static_doubly_list_links,
+                                           os::utils::doubly_list_links>>
 };
 
 // ----------------------------------------------------------------------------

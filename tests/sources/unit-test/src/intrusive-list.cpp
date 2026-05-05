@@ -29,8 +29,8 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-// T=utils::static_intrusive_list (utils::static_double_list_links)
-// T=utils::intrusive_list (utils::double_list_links)
+// T=utils::static_intrusive_list (utils::static_doubly_list_links)
+// T=utils::intrusive_list (utils::doubly_list_links)
 template <class T>
 void
 check_intrusive_list (mt::static_suite& ts)
@@ -39,12 +39,12 @@ check_intrusive_list (mt::static_suite& ts)
 
   using kid = typename T::value_type;
 
-  // The static_double_list objects are t.expected to be uninitialised.
-  // The double_list objects are cleared by the constructor.
+  // The static_doubly_list objects are t.expected to be uninitialised.
+  // The doubly_list objects are cleared by the constructor.
   static T kids;
 
-  // The static_double_list_links objects are t.expected to be uninitialised.
-  // The double_list_links objects are cleared by the constructor.
+  // The static_doubly_list_links objects are t.expected to be uninitialised.
+  // The doubly_list_links objects are cleared by the constructor.
   static kid mary{ "Mary" };
   static kid bob{ "Bob" };
   static kid sally{ "Sally" };
@@ -263,22 +263,22 @@ check_intrusive_list (mt::static_suite& ts)
     }
 }
 
-using static_kid = child<os::utils::static_double_list_links>;
-using kid = child<os::utils::double_list_links>;
+using static_kid = child<os::utils::static_doubly_list_links>;
+using kid = child<os::utils::doubly_list_links>;
 
 // ---
 
 using static_kids_list
     = os::utils::intrusive_list<kid, decltype (kid::registry_links_),
                                 &kid::registry_links_,
-                                os::utils::static_double_list_links>;
+                                os::utils::static_doubly_list_links>;
 
 static mt::static_suite ts_static_intrusive_list
     = { "Static intrusive list2", sr, check_intrusive_list<static_kids_list> };
 
 using static_kids_list2 = os::utils::intrusive_list<
     static_kid, decltype (static_kid::registry_links_),
-    &static_kid::registry_links_, os::utils::static_double_list_links>;
+    &static_kid::registry_links_, os::utils::static_doubly_list_links>;
 
 static mt::static_suite ts_static_intrusive_list2
     = { "Static intrusive list static nodes", sr,

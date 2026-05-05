@@ -43,7 +43,7 @@ _local_include_directories += [
 ]
 
 _local_sources += [
-  'src/double-list-links.cpp',
+  'src/doubly-list-links.cpp',
 ]
 
 # https://mesonbuild.com/Reference-manual.html#declare_dependency
