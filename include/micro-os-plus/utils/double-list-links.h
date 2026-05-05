@@ -212,7 +212,7 @@ namespace micro_os_plus::utils
      * @retval true The node is linked with both pointers.
      * @retval false The node is not linked.
      */
-    bool
+    [[nodiscard]] constexpr bool
     linked (void) const noexcept;
 
     /**

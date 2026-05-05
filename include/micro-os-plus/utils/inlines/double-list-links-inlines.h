@@ -163,6 +163,25 @@ namespace micro_os_plus::utils
     return previous_;
   }
 
+  /**
+   * @details
+   * To be _linked_, both pointers must point to different nodes than itself
+   * (double list requirement). If either `next_` or `previous_` points to
+   * `this`, the node is considered unlinked (empty state). This method checks
+   * the node's linkage status for safe list operations.
+   */
+  constexpr bool
+  double_list_links_base::linked (void) const noexcept
+  {
+    if (next_ == this || previous_ == this)
+      {
+        assert (next_ == this);
+        assert (previous_ == this);
+        return false;
+      }
+    return true;
+  }
+
 #pragma GCC diagnostic pop
 
   // ==========================================================================

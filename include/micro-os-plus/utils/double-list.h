@@ -380,7 +380,7 @@ namespace micro_os_plus::utils
      * @retval true The list has **no** nodes.
      * @retval false The list has **at least one** node.
      */
-    bool
+    [[nodiscard]] constexpr bool
     empty (void) const noexcept;
 
     /**
