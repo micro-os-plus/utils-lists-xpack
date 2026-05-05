@@ -43,7 +43,7 @@ After making changes, run the `xpm run test -C tests` command in a terminal.
 
 ## Code Review
 
-When asked for a code review, provide constructive feedback on the code's readability, maintainability, and adherence to the project's coding standards. Focus on areas such as code structure, naming conventions, documentation quality, and potential bugs or performance issues. Always aim to improve the overall quality of the codebase while maintaining a respectful and collaborative tone.
+When asked for a code review, to the best of your ability, provide constructive feedback on the code's readability, maintainability, and adherence to the project's coding standards. Focus on areas such as code structure, naming conventions, documentation quality, and potential bugs or performance issues. Always aim to improve the overall quality of the codebase while maintaining a respectful and collaborative tone.
 
 Leave the code review result in a separate file named `code-review.md` in the root of the project, and include a summary of the review findings, along with specific recommendations for improvements.
 
