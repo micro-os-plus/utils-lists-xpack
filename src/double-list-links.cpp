@@ -19,7 +19,7 @@
  * an efficient and lightweight linked list management system tailored
  * for embedded applications.
  *
- * The class definitions are in the @ref lists.h file.
+ * The class definitions are in the @ref double-list-links.h file.
  */
 
 // ----------------------------------------------------------------------------

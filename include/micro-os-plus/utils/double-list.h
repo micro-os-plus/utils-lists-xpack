@@ -19,7 +19,8 @@
  * The `double-list.h` header file contains the C++ declarations of the
  * `double_list_iterator` and `double_list` class templates.
  *
- * The class implementations are in @ref lists.cpp and @ref lists-inlines.h.
+ * The class implementations are in @ref double-list-links.cpp
+ * and @ref double-list-inlines.h.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_DOUBLE_LIST_H_
@@ -245,8 +246,8 @@ namespace micro_os_plus::utils
    * containers.
    *
    * @note
-   * Only forward iterators are provided by default, but reverse iterators can
-   * be added if required.
+   * `std::reverse_iterator` adaptors (`rbegin()`/`rend()`) are not currently
+   * provided but can be added if required.
    *
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    */

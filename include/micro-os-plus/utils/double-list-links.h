@@ -20,7 +20,8 @@
  * the `double_list_links_base`, `double_list_links`, and
  * `static_double_list_links` classes.
  *
- * The class implementations are in @ref lists.cpp and @ref lists-inlines.h.
+ * The class implementations are in @ref double-list-links.cpp
+ * and @ref double-list-links-inlines.h.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_DOUBLE_LIST_LINKS_H_
@@ -219,7 +220,7 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @retval Pointer to the next node.
+     * @return Pointer to the next node.
      */
     [[nodiscard]] constexpr double_list_links_base*
     next (void) const noexcept;
@@ -229,7 +230,7 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @retval Pointer to the previous node.
+     * @return Pointer to the previous node.
      */
     [[nodiscard]] constexpr double_list_links_base*
     previous (void) const noexcept;

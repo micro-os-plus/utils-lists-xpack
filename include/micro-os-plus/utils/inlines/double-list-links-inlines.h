@@ -99,7 +99,7 @@ namespace micro_os_plus::utils
    */
   constexpr double_list_links_base::~double_list_links_base ()
   {
-    // Must be empty! No members must be changed by this constructor!
+    // Must be empty! No members must be changed by this destructor!
   }
 
   /**

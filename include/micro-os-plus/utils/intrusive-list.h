@@ -19,7 +19,8 @@
  * The `intrusive-list.h` header file contains the C++ declarations of the
  * `intrusive_list_iterator` and `intrusive_list` class templates.
  *
- * The class implementations are in @ref lists.cpp and @ref lists-inlines.h.
+ * The class implementations are in @ref double-list-links.cpp
+ * and @ref intrusive-list-inlines.h.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
