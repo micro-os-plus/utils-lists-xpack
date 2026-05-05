@@ -181,18 +181,13 @@ namespace micro_os_plus::utils
      * @param other Iterator to compare with.
      * @return `true` if both iterators point to the same node, `false`
      * otherwise.
+     *
+     * @note
+     * The inequality operator (`!=`) is synthesised automatically by
+     * the compiler from this operator (C++20).
      */
     [[nodiscard]] constexpr bool
     operator== (const intrusive_list_iterator& other) const noexcept;
-
-    /**
-     * @brief Inequality comparison operator.
-     * @param other Iterator to compare with.
-     * @return `true` if the iterators point to different nodes, `false`
-     * otherwise.
-     */
-    [[nodiscard]] constexpr bool
-    operator!= (const intrusive_list_iterator& other) const noexcept;
 
     /**
      * @brief Get the object node from the intrusive node.
@@ -278,9 +273,9 @@ namespace micro_os_plus::utils
   class intrusive_list : public double_list<N, L>
   {
   public:
-    static_assert (std::is_base_of<double_list_links_base, L>::value == true,
+    static_assert (std::derived_from<L, double_list_links_base>,
                    "L must be derived from double_list_links_base!");
-    static_assert (std::is_base_of<double_list_links_base, N>::value == true,
+    static_assert (std::derived_from<N, double_list_links_base>,
                    "N must be derived from double_list_links_base!");
 
     /**

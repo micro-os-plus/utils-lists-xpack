@@ -40,6 +40,7 @@
 #include <cstdint>
 #include <cstddef>
 #include <cassert>
+#include <concepts>
 #include <iterator>
 
 // ----------------------------------------------------------------------------

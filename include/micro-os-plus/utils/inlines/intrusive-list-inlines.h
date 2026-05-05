@@ -98,7 +98,7 @@ namespace micro_os_plus::utils
       reference element) noexcept
       : node_{ &(element.*MP) }
   {
-    static_assert (std::is_convertible<U, T>::value == true,
+    static_assert (std::convertible_to<U, T>,
                    "U must be implicitly convertible to T!");
   }
 
@@ -215,22 +215,6 @@ namespace micro_os_plus::utils
       const intrusive_list_iterator& other) const noexcept
   {
     return node_ == other.node_;
-  }
-
-  /**
-   * @details
-   * The inequality comparison operator (`operator!=`) checks whether two
-   * intrusive list iterators point to different nodes in the list by comparing
-   * their internal node pointers. This is useful for standard iterator
-   * operations, such as determining whether an iterator has reached the end of
-   * a range or for loop termination conditions.
-   */
-  template <class T, class N, N T::* MP, class U>
-  constexpr bool
-  intrusive_list_iterator<T, N, MP, U>::operator!= (
-      const intrusive_list_iterator& other) const noexcept
-  {
-    return node_ != other.node_;
   }
 
   /**

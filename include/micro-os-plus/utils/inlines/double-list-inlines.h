@@ -216,22 +216,6 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * The inequality comparison operator (`operator!=`) checks whether two
-   * iterators point to different nodes in the list by comparing their internal
-   * node pointers. This is useful for standard iterator operations, such as
-   * determining whether an iterator has reached the end of a range or for loop
-   * termination conditions.
-   */
-  template <class T, class N, class U>
-  constexpr bool
-  double_list_iterator<T, N, U>::operator!= (
-      const double_list_iterator& other) const noexcept
-  {
-    return node_ != other.node_;
-  }
-
-  /**
-   * @details
    * Returns the internal node pointer that the iterator currently references.
    * This is useful for advanced list operations or when direct access to the
    * underlying node structure is required, such as for interoperability with
