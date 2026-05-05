@@ -86,6 +86,21 @@ namespace micro_os_plus::utils
 
   /**
    * @details
+   * This constructor creates a `double_list_iterator` that points to the
+   * specified element. Since `double_list` elements are the nodes themselves
+   * (T derives from `double_list_links_base`), the internal node pointer is
+   * set to the address of the element directly. This is typically used to
+   * initialise an iterator to a specific object in the list.
+   */
+  template <class T, class N, class U>
+  constexpr double_list_iterator<T, N, U>::double_list_iterator (
+      reference element) noexcept
+      : node_{ &element }
+  {
+  }
+
+  /**
+   * @details
    * The pointer access operator (`operator->`) allows the iterator to provide
    * direct access to the value pointed to by the iterator, mimicking the
    * behavior of a raw pointer. Internally, it calls `get_pointer()`, which

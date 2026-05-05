@@ -131,6 +131,12 @@ check_double_list (mt::static_suite& ts)
       t.expect (it == list.begin ()) << "reverse iterator at begin";
     });
 
+  ts.test ("Iterator from element", [&] (auto& t)
+    {
+      typename T::iterator it{ one };
+      t.expect (mt::eq (&(*it), &one)) << "iterator points to one";
+    });
+
   ts.test ("Unlink One", [&] (auto& t)
     {
       one.unlink ();
