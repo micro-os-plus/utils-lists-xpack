@@ -400,7 +400,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return Pointer to the head node.
      */
-    [[nodiscard]] constexpr pointer
+    [[nodiscard]] pointer
     head (void) const noexcept;
 
     /**
@@ -410,7 +410,7 @@ namespace micro_os_plus::utils
      *  None.
      * @return Pointer to the tail node.
      */
-    [[nodiscard]] constexpr pointer
+    [[nodiscard]] pointer
     tail (void) const noexcept;
 
     /**
