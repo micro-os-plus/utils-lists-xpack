@@ -19,8 +19,7 @@
  * The `doubly-list.h` header file contains the C++ declarations of the
  * `doubly_list_iterator` and `doubly_list` class templates.
  *
- * The class implementations are in @ref doubly-list-links.cpp
- * and @ref doubly-list-inlines.h.
+ * The class implementations are in @ref doubly-list-inlines.h.
  */
 
 #ifndef MICRO_OS_PLUS_UTILS_DOUBLY_LIST_H_
@@ -470,7 +469,13 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @return A pointer to the list head object.
+     * @return A pointer to the internal links node.
+     *
+     * @details
+     * Returns the address of the `links_` member. This method is
+     * required by derived classes (such as `intrusive_list`) when
+     * constructing their `end()` iterator, where a direct reference
+     * to the protected member is not accessible.
      */
     [[nodiscard]] constexpr const links_type*
     links_pointer (void) const noexcept;

@@ -11,13 +11,14 @@
 
 /**
  * @file
- * @brief C++ source file with the implementations for the µOS++ lists methods.
+ * @brief C++ source file with the implementations for the µOS++ doubly
+ * linked list link node classes.
  *
  * @details
- * The `list.cpp` source file contains the C++ implementations of
- * the methods for the **µOS++ Intrusive Lists** classes, delivering
- * an efficient and lightweight linked list management system tailored
- * for embedded applications.
+ * The `doubly-list-links.cpp` source file contains the C++ implementations
+ * of the non-inline methods for the `doubly_list_links_base` and
+ * `static_doubly_list_links` classes, providing an efficient and lightweight
+ * linked list management system tailored for embedded applications.
  *
  * The class definitions are in the @ref doubly-list-links.h file.
  */
