@@ -200,7 +200,7 @@ namespace micro_os_plus::utils
   __attribute__ ((noinline, noipa))
 #endif
   void
-  static_double_list_links::nullify () noexcept
+  static_double_list_links::reset () noexcept
   {
     next_ = nullptr;
     previous_ = nullptr;

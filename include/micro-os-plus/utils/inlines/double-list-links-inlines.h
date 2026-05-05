@@ -212,7 +212,7 @@ namespace micro_os_plus::utils
  * pointers (dead store elimination).
  *
  * As a result, explicit pointer clearing in the destructor is not reliable. If
- * pointer reset is required, use the `nullify()` method explicitly, or clear
+ * pointer reset is required, use the `reset()` method explicitly, or clear
  * the memory before invoking the placement `new` constructor again.
  *
  * @warning
@@ -220,7 +220,7 @@ namespace micro_os_plus::utils
  * optimizes it out (dead store elimination). Depending on the version, there
  * might be some attributes to allow this, but they are not safe, for example
  * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
- * help. The workaround is to use `nullify()` explicitly, or, even better, to
+ * help. The workaround is to use `reset()` explicitly, or, even better, to
  * clear the memory before invoking the placement `new` constructor again.
  */
 #pragma GCC diagnostic pop

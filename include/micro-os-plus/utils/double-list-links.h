@@ -432,7 +432,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    nullify (void) noexcept;
+    reset (void) noexcept;
   };
 
   // --------------------------------------------------------------------------

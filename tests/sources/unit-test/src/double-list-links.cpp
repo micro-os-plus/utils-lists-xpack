@@ -46,7 +46,7 @@ check_static_double_list_links (mt::static_suite& ts)
 
       // GCC optimizes out the destructor code (dead store
       // elimination); The workaround is to do it manually.
-      p->nullify ();
+      p->reset ();
       // std::cout << p->next();
       // std::cout << p->previous();
 
