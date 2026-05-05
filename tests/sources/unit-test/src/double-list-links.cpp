@@ -38,10 +38,10 @@ check_static_double_list_links (mt::static_suite& ts)
     {
       os::utils::static_double_list_links* p
           = new (&static_links) os::utils::static_double_list_links;
-      t.expect (p->uninitialized ()) << "uninitialized";
+      t.expect (!p->initialised ()) << "uninitialised";
 
       static_links.initialise ();
-      t.expect (!p->uninitialized ()) << "initialised";
+      t.expect (p->initialised ()) << "initialised";
       t.expect (!p->linked ()) << "unlinked";
 
       // GCC optimizes out the destructor code (dead store
@@ -51,7 +51,7 @@ check_static_double_list_links (mt::static_suite& ts)
       // std::cout << p->previous();
 
       p->~static_double_list_links ();
-      t.expect (p->uninitialized ()) << "uninitialized";
+      t.expect (!p->initialised ()) << "uninitialised";
     });
 }
 
@@ -76,7 +76,7 @@ check_double_list_links (mt::static_suite& ts)
           // Check if the node is cleared.
           t.expect (mt::eq (links.previous (), nullptr)) << "prev is null";
           t.expect (mt::eq (links.next (), nullptr)) << "next is null";
-          t.expect (links.uninitialized ()) << "uninitialized";
+          t.expect (!links.initialised ()) << "uninitialised";
 
           left_links.initialise ();
           links.initialise ();

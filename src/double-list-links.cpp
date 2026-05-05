@@ -48,22 +48,22 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * An _uninitialized_ node is a node with its pointers set to `nullptr`.
+   * An _uninitialised_ node is a node with its pointers set to `nullptr`.
    * Only statically allocated nodes in their initial state are considered
-   * uninitialized. Regular (dynamically or automatically allocated) nodes are
-   * always initialized during construction, so this method will only return
-   * `true` for statically allocated nodes that have not yet been initialized.
+   * uninitialised. Regular (dynamically or automatically allocated) nodes are
+   * always initialised during construction, so this method will only return
+   * `false` for statically allocated nodes that have not yet been initialised.
    */
   bool
-  double_list_links_base::uninitialized (void) const noexcept
+  double_list_links_base::initialised (void) const noexcept
   {
     if (previous_ == nullptr || next_ == nullptr)
       {
         assert (previous_ == nullptr);
         assert (next_ == nullptr);
-        return true;
+        return false;
       }
-    return false;
+    return true;
   }
 
   /**
@@ -82,7 +82,7 @@ namespace micro_os_plus::utils
   void
   double_list_links_base::initialise_once (void) noexcept
   {
-    if (uninitialized ())
+    if (!initialised ())
       {
         initialise ();
       }
@@ -189,8 +189,8 @@ namespace micro_os_plus::utils
   /**
    * @details
    * Sets both the `next_` and `previous_` pointers to `nullptr`, marking the
-   * node as uninitialized. This is typically used for statically allocated
-   * nodes to explicitly place them in an uninitialized state.
+   * node as uninitialised. This is typically used for statically allocated
+   * nodes to explicitly place them in an uninitialised state.
    *
    * @warning Not very safe, since the compiler may optimise out the code.
    */

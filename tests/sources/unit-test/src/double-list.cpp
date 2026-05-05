@@ -41,36 +41,36 @@ check_double_list (mt::static_suite& ts)
   static element one;
   static element two;
 
-  ts.test ("Uninitialized", [&] (auto& t)
+  ts.test ("Initialised", [&] (auto& t)
     {
       if constexpr (T::is_statically_allocated::value)
         {
-          t.expect (list.uninitialized ()) << "uninitialized";
+          t.expect (!list.initialised ()) << "uninitialised";
           list.initialise_once ();
         }
       else
         {
-          t.expect (!list.uninitialized ()) << "initialised";
+          t.expect (list.initialised ()) << "initialised";
         }
 
       if constexpr (element::is_statically_allocated::value)
         {
-          t.expect (one.uninitialized ()) << "one uninitialized";
+          t.expect (!one.initialised ()) << "one uninitialised";
           one.initialise_once ();
         }
       else
         {
-          t.expect (!one.uninitialized ()) << "one initialised";
+          t.expect (one.initialised ()) << "one initialised";
         }
 
       if constexpr (element::is_statically_allocated::value)
         {
-          t.expect (two.uninitialized ()) << "two uninitialized";
+          t.expect (!two.initialised ()) << "two uninitialised";
           two.initialise_once ();
         }
       else
         {
-          t.expect (!two.uninitialized ()) << "two initialised";
+          t.expect (two.initialised ()) << "two initialised";
         }
     });
 
@@ -164,7 +164,7 @@ check_double_list (mt::static_suite& ts)
       ts.test ("Allocated on stack", [] (auto& t)
         {
           T stack_list;
-          t.expect (!stack_list.uninitialized ()) << "initialized";
+          t.expect (stack_list.initialised ()) << "initialised";
           t.expect (stack_list.empty ()) << "list is empty";
         });
     }

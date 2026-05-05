@@ -349,16 +349,16 @@ namespace micro_os_plus::utils
 
   public:
     /**
-     * @brief Check if the list is uninitialised
+     * @brief Check if the list is initialised
      * (only statically allocated lists can be uninitialised).
      *
      * @par Parameters
      *  None.
-     * @retval true The list was **not** initialised.
-     * @retval false The list was initialised.
+     * @retval true The list was initialised.
+     * @retval false The list was **not** initialised.
      */
     [[nodiscard]] bool
-    uninitialized (void) const noexcept;
+    initialised (void) const noexcept;
 
     /**
      * @brief Initialise the list only at first run.

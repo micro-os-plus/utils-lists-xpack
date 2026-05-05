@@ -327,23 +327,23 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * An uninitialized node is a node with any of the pointers set to `nullptr`.
+   * An uninitialised node is a node with any of the pointers set to `nullptr`.
    * Only statically allocated nodes in the initial state are considered
-   * _uninitialized_. For dynamically allocated lists, this method always
-   * returns `false` since their nodes are explicitly initialized during
+   * _uninitialised_. For dynamically allocated lists, this method always
+   * returns `true` since their nodes are explicitly initialised during
    * construction.
    */
   template <class T, class L>
   bool
-  double_list<T, L>::uninitialized (void) const noexcept
+  double_list<T, L>::initialised (void) const noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
-        return links_.uninitialized ();
+        return links_.initialised ();
       }
     else
       {
-        return false;
+        return true;
       }
   }
 
@@ -446,7 +446,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        assert (!links_.uninitialized ());
+        assert (links_.initialised ());
       }
 
     // Add new node at the end of the list.
@@ -467,7 +467,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        assert (!links_.uninitialized ());
+        assert (links_.initialised ());
       }
 
     // Add the new node at the head of the list.
@@ -488,7 +488,7 @@ namespace micro_os_plus::utils
   {
     if constexpr (is_statically_allocated::value)
       {
-        assert (!links_.uninitialized ());
+        assert (links_.initialised ());
       }
 
     return iterator{ static_cast<iterator_pointer> (links_.next ()) };

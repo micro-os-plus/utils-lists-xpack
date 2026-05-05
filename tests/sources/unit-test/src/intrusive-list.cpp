@@ -53,12 +53,12 @@ check_intrusive_list (mt::static_suite& ts)
     {
       if constexpr (T::is_statically_allocated::value)
         {
-          t.expect (kids.uninitialized ()) << "uninitialized";
+          t.expect (!kids.initialised ()) << "uninitialised";
           kids.initialise_once ();
         }
       else
         {
-          t.expect (!kids.uninitialized ()) << "initialised";
+          t.expect (kids.initialised ()) << "initialised";
         }
       t.expect (kids.empty ()) << "list is empty";
 
@@ -212,7 +212,7 @@ check_intrusive_list (mt::static_suite& ts)
       ts.test ("Allocated on stack", [] (auto& t)
         {
           T stack_list;
-          t.expect (!stack_list.uninitialized ()) << "initialized";
+          t.expect (stack_list.initialised ()) << "initialised";
           t.expect (stack_list.empty ()) << "list is empty";
         });
     }

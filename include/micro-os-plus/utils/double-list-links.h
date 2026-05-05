@@ -140,15 +140,15 @@ namespace micro_os_plus::utils
     constexpr ~double_list_links_base ();
 
     /**
-     * @brief Check if the node is uninitialised.
+     * @brief Check if the node is initialised.
      *
      * @par Parameters
      *  None.
-     * @retval true The links are **not** initialised.
-     * @retval false The links are initialised.
+     * @retval true The links are initialised.
+     * @retval false The links are **not** initialised.
      */
     [[nodiscard]] bool
-    uninitialized (void) const noexcept;
+    initialised (void) const noexcept;
 
     /**
      * @brief Initialise the node links.
