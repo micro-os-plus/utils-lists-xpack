@@ -254,7 +254,7 @@ namespace micro_os_plus::utils
    * when direct access to the underlying node is required.
    */
   template <class T, class N, N T::* MP, class U>
-  inline typename intrusive_list_iterator<T, N, MP, U>::iterator_pointer
+  constexpr typename intrusive_list_iterator<T, N, MP, U>::iterator_pointer
   intrusive_list_iterator<T, N, MP, U>::get_iterator_pointer () const noexcept
   {
     return node_;
