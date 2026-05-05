@@ -326,7 +326,7 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, L, U>::initialise_once (void) noexcept
   {
-    return double_list<N, L>::initialise_once ();
+    double_list<N, L>::initialise_once ();
   }
 
   /**
