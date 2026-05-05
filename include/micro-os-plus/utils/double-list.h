@@ -50,7 +50,7 @@ namespace micro_os_plus::utils
 
   /**
    * @ingroup micro-os-plus-utils-lists-double-lists
-   * @brief A class template for a doubly linked list forward iterator.
+   * @brief A class template for a doubly linked list iterator.
    *
    * @tparam T Type of object returned by the iterator.
    * @tparam N Type of intrusive node. Must have the public members

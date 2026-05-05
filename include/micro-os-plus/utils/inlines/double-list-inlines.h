@@ -278,7 +278,7 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of intrusive_list objects. This ensures the integrity of the
+   * or moving of `double_list` objects. This ensures the integrity of the
    * list structure, as duplicating or moving lists could result in invalid or
    * inconsistent links within the list.
    */

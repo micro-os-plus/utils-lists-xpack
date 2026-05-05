@@ -24,7 +24,9 @@
  * - `double-list.h` — `double_list_iterator` and `double_list`.
  * - `intrusive-list.h` — `intrusive_list_iterator` and `intrusive_list`.
  *
- * The class implementations are in @ref lists.cpp and @ref lists-inlines.h.
+ * The class implementations are in @ref double-list-links.cpp,
+ * @ref double-list-links-inlines.h, @ref double-list-inlines.h,
+ * and @ref intrusive-list-inlines.h.
  */
 
 /**

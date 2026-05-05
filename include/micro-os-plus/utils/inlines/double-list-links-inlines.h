@@ -75,9 +75,9 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of intrusive_list objects. This ensures the integrity of the
-   * list structure, as duplicating or moving lists could result in invalid or
-   * inconsistent links within the list.
+   * or moving of `double_list_links_base` objects. This ensures the integrity
+   * of the list structure, as duplicating or moving nodes could result in
+   * invalid or inconsistent links within the list.
    */
   constexpr double_list_links_base::double_list_links_base () noexcept
   {
@@ -208,9 +208,9 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of intrusive_list objects. This ensures the integrity of the
-   * list structure, as duplicating or moving lists could result in invalid or
-   * inconsistent links within the list.
+   * or moving of `static_double_list_links` objects. This ensures the
+   * integrity of the list structure, as duplicating or moving nodes could
+   * result in invalid or inconsistent links within the list.
    */
   constexpr static_double_list_links::static_double_list_links () noexcept
   {
@@ -273,9 +273,9 @@ namespace micro_os_plus::utils
    * @par The rule of five
    * The copy constructor, move constructor, copy assignment operator, and move
    * assignment operator are explicitly deleted to prevent accidental copying
-   * or moving of intrusive_list objects. This ensures the integrity of the
-   * list structure, as duplicating or moving lists could result in invalid or
-   * inconsistent links within the list.
+   * or moving of `double_list_links` objects. This ensures the integrity of
+   * the list structure, as duplicating or moving nodes could result in
+   * invalid or inconsistent links within the list.
    */
   constexpr double_list_links::double_list_links () noexcept
   {

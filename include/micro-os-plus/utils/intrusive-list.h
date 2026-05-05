@@ -454,7 +454,7 @@ namespace micro_os_plus::utils
     begin () const noexcept;
 
     /**
-     * @brief Iterator begin.
+     * @brief Iterator end.
      *
      * @return An iterator positioned after the last element.
      */
