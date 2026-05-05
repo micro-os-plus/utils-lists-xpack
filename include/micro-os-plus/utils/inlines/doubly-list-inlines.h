@@ -399,12 +399,10 @@ namespace micro_os_plus::utils
    * node to determine if the list contains any elements.
    */
   template <doubly_list_links_node T, doubly_list_links_node L>
-  typename doubly_list<T, L>::pointer
+  constexpr typename doubly_list<T, L>::pointer
   doubly_list<T, L>::head (void) const noexcept
   {
-    // reinterpret_cast is not a constant expression, so this function
-    // cannot be constexpr despite the simple implementation.
-    return reinterpret_cast<pointer> (links_.next ());
+    return static_cast<pointer> (links_.next ());
   }
 
   /**
@@ -416,12 +414,10 @@ namespace micro_os_plus::utils
    * determine if the list contains any elements.
    */
   template <doubly_list_links_node T, doubly_list_links_node L>
-  typename doubly_list<T, L>::pointer
+  constexpr typename doubly_list<T, L>::pointer
   doubly_list<T, L>::tail (void) const noexcept
   {
-    // reinterpret_cast is not a constant expression, so this function
-    // cannot be constexpr despite the simple implementation.
-    return reinterpret_cast<pointer> (links_.previous ());
+    return static_cast<pointer> (links_.previous ());
   }
 
   /**
