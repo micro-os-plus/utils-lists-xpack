@@ -148,7 +148,7 @@ namespace micro_os_plus::utils
      *
      * @return Reference to the incremented iterator.
      */
-    intrusive_list_iterator&
+    constexpr intrusive_list_iterator&
     operator++ () noexcept;
 
     /**
@@ -156,7 +156,7 @@ namespace micro_os_plus::utils
      *
      * @return Iterator before increment.
      */
-    intrusive_list_iterator
+    constexpr intrusive_list_iterator
     operator++ (int) noexcept;
 
     /**
@@ -164,7 +164,7 @@ namespace micro_os_plus::utils
      *
      * @return Reference to the decremented iterator.
      */
-    intrusive_list_iterator&
+    constexpr intrusive_list_iterator&
     operator-- () noexcept;
 
     /**
@@ -172,7 +172,7 @@ namespace micro_os_plus::utils
      *
      * @return Iterator before decrement.
      */
-    intrusive_list_iterator
+    constexpr intrusive_list_iterator
     operator-- (int) noexcept;
 
     /**
@@ -182,7 +182,7 @@ namespace micro_os_plus::utils
      * @return `true` if both iterators point to the same node, `false`
      * otherwise.
      */
-    [[nodiscard]] bool
+    [[nodiscard]] constexpr bool
     operator== (const intrusive_list_iterator& other) const noexcept;
 
     /**
@@ -191,7 +191,7 @@ namespace micro_os_plus::utils
      * @return `true` if the iterators point to different nodes, `false`
      * otherwise.
      */
-    [[nodiscard]] bool
+    [[nodiscard]] constexpr bool
     operator!= (const intrusive_list_iterator& other) const noexcept;
 
     /**

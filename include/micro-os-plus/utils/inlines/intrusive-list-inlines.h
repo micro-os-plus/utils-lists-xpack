@@ -144,7 +144,7 @@ namespace micro_os_plus::utils
    * structure.
    */
   template <class T, class N, N T::* MP, class U>
-  inline intrusive_list_iterator<T, N, MP, U>&
+  constexpr intrusive_list_iterator<T, N, MP, U>&
   intrusive_list_iterator<T, N, MP, U>::operator++ () noexcept
   {
     node_ = static_cast<iterator_pointer> (node_->next ());
@@ -160,7 +160,7 @@ namespace micro_os_plus::utils
    * following the standard C++ iterator semantics for post-increment.
    */
   template <class T, class N, N T::* MP, class U>
-  inline intrusive_list_iterator<T, N, MP, U>
+  constexpr intrusive_list_iterator<T, N, MP, U>
   intrusive_list_iterator<T, N, MP, U>::operator++ (int) noexcept
   {
     const auto tmp = *this;
@@ -177,7 +177,7 @@ namespace micro_os_plus::utils
    * structure in reverse.
    */
   template <class T, class N, N T::* MP, class U>
-  inline intrusive_list_iterator<T, N, MP, U>&
+  constexpr intrusive_list_iterator<T, N, MP, U>&
   intrusive_list_iterator<T, N, MP, U>::operator-- () noexcept
   {
     node_ = static_cast<iterator_pointer> (node_->previous ());
@@ -193,7 +193,7 @@ namespace micro_os_plus::utils
    * the standard C++ iterator semantics for post-decrement.
    */
   template <class T, class N, N T::* MP, class U>
-  inline intrusive_list_iterator<T, N, MP, U>
+  constexpr intrusive_list_iterator<T, N, MP, U>
   intrusive_list_iterator<T, N, MP, U>::operator-- (int) noexcept
   {
     const auto tmp = *this;
@@ -210,7 +210,7 @@ namespace micro_os_plus::utils
    * to the same position within the list.
    */
   template <class T, class N, N T::* MP, class U>
-  inline bool
+  constexpr bool
   intrusive_list_iterator<T, N, MP, U>::operator== (
       const intrusive_list_iterator& other) const noexcept
   {
@@ -226,7 +226,7 @@ namespace micro_os_plus::utils
    * a range or for loop termination conditions.
    */
   template <class T, class N, N T::* MP, class U>
-  inline bool
+  constexpr bool
   intrusive_list_iterator<T, N, MP, U>::operator!= (
       const intrusive_list_iterator& other) const noexcept
   {
