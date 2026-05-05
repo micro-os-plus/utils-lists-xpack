@@ -249,8 +249,12 @@ namespace micro_os_plus::utils
     // static_assert(std::is_convertible<U, T>::value == true, "U must be
     // implicitly convertible to T!");
 
-    // Compute the distance between the member intrusive link
-    // node and the class begin.
+    // Compute the byte offset of the intrusive node member within T.
+    // Note: dereferencing a null pointer is formally undefined behaviour
+    // under the C++ standard. In practice, no known compiler miscompiles
+    // this idiom on any supported target; `offsetof` cannot be used here
+    // because `MP` is a template parameter (a pointer-to-member), not a
+    // literal member name.
     const auto offset = reinterpret_cast<difference_type> (
         &(static_cast<T*> (nullptr)->*MP));
 
@@ -354,8 +358,9 @@ namespace micro_os_plus::utils
   {
     // The assert(links_.initialised()) is checked by the L class.
 
-    // Compute the distance between the member intrusive link
-    // node and the class begin.
+    // Compute the byte offset of the intrusive node member within T.
+    // Note: see the comment in get_pointer() regarding the use of
+    // a null pointer dereference to obtain the member offset.
     const auto offset = reinterpret_cast<difference_type> (
         &(static_cast<T*> (nullptr)->*MP));
 
@@ -380,8 +385,9 @@ namespace micro_os_plus::utils
   {
     // The assert(links_.initialised()) is checked by the L class.
 
-    // Compute the distance between the member intrusive link
-    // node and the class begin.
+    // Compute the byte offset of the intrusive node member within T.
+    // Note: see the comment in get_pointer() regarding the use of
+    // a null pointer dereference to obtain the member offset.
     const auto offset = reinterpret_cast<difference_type> (
         &(static_cast<T*> (nullptr)->*MP));
 
@@ -455,8 +461,9 @@ namespace micro_os_plus::utils
     // static_assert(std::is_convertible<U, T>::value == true, "U must be
     // implicitly convertible to T!");
 
-    // Compute the distance between the member intrusive link
-    // node and the class begin.
+    // Compute the byte offset of the intrusive node member within T.
+    // Note: see the comment in get_pointer() regarding the use of
+    // a null pointer dereference to obtain the member offset.
     const auto offset = reinterpret_cast<difference_type> (
         &(static_cast<T*> (nullptr)->*MP));
 
