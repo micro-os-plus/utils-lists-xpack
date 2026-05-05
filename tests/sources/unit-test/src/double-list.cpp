@@ -118,6 +118,19 @@ check_double_list (mt::static_suite& ts)
       t.expect (it == list.end ()) << "iterator at end";
     });
 
+  ts.test ("Reverse iteration", [&] (auto& t)
+    {
+      // Decrement from end() to traverse backwards.
+      auto it = list.end ();
+      --it;
+      t.expect (it != list.end ()) << "reverse first iteration";
+      t.expect (mt::eq (&(*it), &two)) << "reverse first is two";
+      --it;
+      t.expect (it != list.end ()) << "reverse second iteration";
+      t.expect (mt::eq (&(*it), &one)) << "reverse second is one";
+      t.expect (it == list.begin ()) << "reverse iterator at begin";
+    });
+
   ts.test ("Unlink One", [&] (auto& t)
     {
       one.unlink ();

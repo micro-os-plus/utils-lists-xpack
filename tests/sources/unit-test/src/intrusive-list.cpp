@@ -121,6 +121,25 @@ check_intrusive_list (mt::static_suite& ts)
       t.expect (it == kids.end ()) << "iterator at end";
     });
 
+  ts.test ("Reverse iteration", [&] (auto& t)
+    {
+      // Decrement from end() to traverse backwards.
+      auto it = kids.end ();
+      --it;
+      t.expect (it != kids.end ()) << "reverse first iteration";
+      t.expect (mt::eq (std::string_view{ it->name () }, "Sally"sv))
+          << "reverse first is Sally";
+      --it;
+      t.expect (it != kids.end ()) << "reverse second iteration";
+      t.expect (mt::eq (std::string_view{ it->name () }, "Bob"sv))
+          << "reverse second is Bob";
+      --it;
+      t.expect (it != kids.end ()) << "reverse third iteration";
+      t.expect (mt::eq (std::string_view{ it->name () }, "Mary"sv))
+          << "reverse third is Mary";
+      t.expect (it == kids.begin ()) << "reverse iterator at begin";
+    });
+
   ts.test ("Unlink Bob", [&] (auto& t)
     {
       bob.unlink ();
