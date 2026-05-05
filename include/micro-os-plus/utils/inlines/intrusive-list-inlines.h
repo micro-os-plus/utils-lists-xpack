@@ -391,7 +391,7 @@ namespace micro_os_plus::utils
     const auto offset = reinterpret_cast<difference_type> (
         &(static_cast<T*> (nullptr)->*MP));
 
-    // Add thread intrusive node at the end of the list.
+    // Add thread intrusive node at the beginning of the list.
     (const_cast<N*> (double_list<N, L>::head ()))
         ->link_previous (reinterpret_cast<N*> (
             reinterpret_cast<difference_type> (&node) + offset));
