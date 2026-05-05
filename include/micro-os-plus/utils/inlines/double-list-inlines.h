@@ -263,7 +263,7 @@ namespace micro_os_plus::utils
    *
    * For statically allocated lists, the list remains _uninitialised_ after
    * construction, with its internal pointers set to `nullptr`. Such lists
-   * require explicit initialisation (typically via `initialize_once()`) before
+   * require explicit initialisation (typically via `initialise_once()`) before
    * use.
    *
    * This constructor does not clear or modify the internal pointers for
@@ -361,11 +361,11 @@ namespace micro_os_plus::utils
    */
   template <class T, class L>
   void
-  double_list<T, L>::initialize_once (void) noexcept
+  double_list<T, L>::initialise_once (void) noexcept
   {
     if constexpr (is_statically_allocated::value)
       {
-        links_.initialize_once ();
+        links_.initialise_once ();
       }
   }
 
@@ -399,7 +399,7 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
-    links_.initialize ();
+    links_.initialise ();
   }
 
   /**

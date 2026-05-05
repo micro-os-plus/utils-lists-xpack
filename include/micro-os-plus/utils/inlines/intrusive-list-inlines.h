@@ -320,9 +320,9 @@ namespace micro_os_plus::utils
    */
   template <class T, class N, N T::* MP, class L, class U>
   void
-  intrusive_list<T, N, MP, L, U>::initialize_once (void) noexcept
+  intrusive_list<T, N, MP, L, U>::initialise_once (void) noexcept
   {
-    return double_list<N, L>::initialize_once ();
+    return double_list<N, L>::initialise_once ();
   }
 
   /**

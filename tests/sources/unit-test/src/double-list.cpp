@@ -46,31 +46,31 @@ check_double_list (mt::static_suite& ts)
       if constexpr (T::is_statically_allocated::value)
         {
           t.expect (list.uninitialized ()) << "uninitialized";
-          list.initialize_once ();
+          list.initialise_once ();
         }
       else
         {
-          t.expect (!list.uninitialized ()) << "initialized";
+          t.expect (!list.uninitialized ()) << "initialised";
         }
 
       if constexpr (element::is_statically_allocated::value)
         {
           t.expect (one.uninitialized ()) << "one uninitialized";
-          one.initialize_once ();
+          one.initialise_once ();
         }
       else
         {
-          t.expect (!one.uninitialized ()) << "one initialized";
+          t.expect (!one.uninitialized ()) << "one initialised";
         }
 
       if constexpr (element::is_statically_allocated::value)
         {
           t.expect (two.uninitialized ()) << "two uninitialized";
-          two.initialize_once ();
+          two.initialise_once ();
         }
       else
         {
-          t.expect (!two.uninitialized ()) << "two initialized";
+          t.expect (!two.uninitialized ()) << "two initialised";
         }
     });
 

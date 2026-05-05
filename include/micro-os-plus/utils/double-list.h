@@ -361,7 +361,7 @@ namespace micro_os_plus::utils
     uninitialized (void) const noexcept;
 
     /**
-     * @brief Initialize the list only at first run.
+     * @brief Initialise the list only at first run.
      *
      * @par Parameters
      *  None.
@@ -369,7 +369,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    initialize_once (void) noexcept;
+    initialise_once (void) noexcept;
 
     /**
      * @brief Check if the list is empty.

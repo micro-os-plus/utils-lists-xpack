@@ -117,7 +117,7 @@ namespace micro_os_plus::utils
    * prevent accidental access through stale links.
    */
   constexpr void
-  double_list_links_base::initialize (void) noexcept
+  double_list_links_base::initialise (void) noexcept
   {
     previous_ = this;
     next_ = this;
@@ -239,7 +239,7 @@ namespace micro_os_plus::utils
    * @details
    * The constructor for `double_list_links` is used for regular (non-static)
    * list link nodes. It explicitly initialises the node by calling
-   * `initialize()`, which sets both the `previous_` and `next_` pointers to
+   * `initialise()`, which sets both the `previous_` and `next_` pointers to
    * point to this node itself, marking it as unlinked and ready for use in a
    * list. This ensures that dynamically allocated or automatic list nodes
    * always start in a known, safe state, regardless of their memory contents
@@ -262,7 +262,7 @@ namespace micro_os_plus::utils
   {
     // For regular (non static) classes the members
     // must be explicitly initialised.
-    initialize ();
+    initialise ();
   }
 
   /**

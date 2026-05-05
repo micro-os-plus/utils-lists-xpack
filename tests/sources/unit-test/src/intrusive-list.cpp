@@ -54,11 +54,11 @@ check_intrusive_list (mt::static_suite& ts)
       if constexpr (T::is_statically_allocated::value)
         {
           t.expect (kids.uninitialized ()) << "uninitialized";
-          kids.initialize_once ();
+          kids.initialise_once ();
         }
       else
         {
-          t.expect (!kids.uninitialized ()) << "initialized";
+          t.expect (!kids.uninitialized ()) << "initialised";
         }
       t.expect (kids.empty ()) << "list is empty";
 

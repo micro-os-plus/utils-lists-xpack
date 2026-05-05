@@ -159,7 +159,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     constexpr void
-    initialize (void) noexcept;
+    initialise (void) noexcept;
 
     /**
      * @brief Initialise the node links only if not already initialised.
@@ -170,7 +170,7 @@ namespace micro_os_plus::utils
      *  Nothing.
      */
     void
-    initialize_once (void) noexcept;
+    initialise_once (void) noexcept;
 
     /**
      * @brief Link the new node as **next**.

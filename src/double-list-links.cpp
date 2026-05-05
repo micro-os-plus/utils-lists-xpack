@@ -80,11 +80,11 @@ namespace micro_os_plus::utils
    * inserting elements or performing any other operations.
    */
   void
-  double_list_links_base::initialize_once (void) noexcept
+  double_list_links_base::initialise_once (void) noexcept
   {
     if (uninitialized ())
       {
-        initialize ();
+        initialise ();
       }
   }
 
@@ -162,7 +162,7 @@ namespace micro_os_plus::utils
 
     // Reset the unlinked node to the initial state,
     // with both pointers pointing to itself.
-    initialize ();
+    initialise ();
   }
 
   /**

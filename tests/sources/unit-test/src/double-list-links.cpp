@@ -40,8 +40,8 @@ check_static_double_list_links (mt::static_suite& ts)
           = new (&static_links) os::utils::static_double_list_links;
       t.expect (p->uninitialized ()) << "uninitialized";
 
-      static_links.initialize ();
-      t.expect (!p->uninitialized ()) << "initialized";
+      static_links.initialise ();
+      t.expect (!p->uninitialized ()) << "initialised";
       t.expect (!p->linked ()) << "unlinked";
 
       // GCC optimizes out the destructor code (dead store
@@ -78,9 +78,9 @@ check_double_list_links (mt::static_suite& ts)
           t.expect (mt::eq (links.next (), nullptr)) << "next is null";
           t.expect (links.uninitialized ()) << "uninitialized";
 
-          left_links.initialize ();
-          links.initialize ();
-          right_links.initialize ();
+          left_links.initialise ();
+          links.initialise ();
+          right_links.initialise ();
         }
 
       t.expect (!left_links.linked ()) << "left unlinked";
