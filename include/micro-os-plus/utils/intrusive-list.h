@@ -121,8 +121,13 @@ namespace micro_os_plus::utils
      *
      * @param element Reference to the element to which the iterator should
      * point.
+     *
+     * @note
+     * This constructor is only available when `U` is derived from (or is
+     * the same type as) `T`, as required by `std::derived_from<U, T>`.
      */
-    constexpr explicit intrusive_list_iterator (reference element) noexcept;
+    constexpr explicit intrusive_list_iterator (reference element) noexcept
+      requires std::derived_from<U, T>;
 
     // DO NOT delete the copy constructors, since this implies that
     // the default ones will be used.
@@ -268,16 +273,11 @@ namespace micro_os_plus::utils
 #pragma clang diagnostic pop
 #endif
 
-  template <class T, class N, N T::* MP, class L = double_list_links,
-            class U = T>
+  template <class T, double_list_links_node N, N T::* MP,
+            double_list_links_node L = double_list_links, class U = T>
   class intrusive_list : public double_list<N, L>
   {
   public:
-    static_assert (std::derived_from<L, double_list_links_base>,
-                   "L must be derived from double_list_links_base!");
-    static_assert (std::derived_from<N, double_list_links_base>,
-                   "N must be derived from double_list_links_base!");
-
     /**
      * @brief Type of the list links node object where the pointers to the
      * list head and tail are stored.

@@ -266,7 +266,7 @@ namespace micro_os_plus::utils
    * list structure, as duplicating or moving lists could result in invalid or
    * inconsistent links within the list.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   double_list<T, L>::double_list () noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
@@ -296,7 +296,7 @@ namespace micro_os_plus::utils
    * when destroyed, helping to catch potential resource leaks or logic errors
    * in list management.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   constexpr double_list<T, L>::~double_list ()
   {
 #if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
@@ -321,7 +321,7 @@ namespace micro_os_plus::utils
    * returns `true` since their nodes are explicitly initialised during
    * construction.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   bool
   double_list<T, L>::initialised (void) const noexcept
   {
@@ -347,7 +347,7 @@ namespace micro_os_plus::utils
    * Must be manually called for statically allocated lists before
    * inserting elements or performing any other operations.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   void
   double_list<T, L>::initialise_once (void) noexcept
   {
@@ -364,7 +364,7 @@ namespace micro_os_plus::utils
    * any other nodes. This method provides a fast way to determine if the list
    * has elements or is currently empty.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   [[nodiscard]] constexpr bool
   double_list<T, L>::empty (void) const noexcept
   {
@@ -380,7 +380,7 @@ namespace micro_os_plus::utils
    * insertions. This operation is typically used to reset the list, removing
    * all elements and breaking any existing links.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   void
   double_list<T, L>::clear (void) noexcept
   {
@@ -398,7 +398,7 @@ namespace micro_os_plus::utils
    * The returned pointer should be checked against `end()` or the sentinel
    * node to determine if the list contains any elements.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   typename double_list<T, L>::pointer
   double_list<T, L>::head (void) const noexcept
   {
@@ -415,7 +415,7 @@ namespace micro_os_plus::utils
    * The returned pointer should be checked against the sentinel node to
    * determine if the list contains any elements.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   typename double_list<T, L>::pointer
   double_list<T, L>::tail (void) const noexcept
   {
@@ -432,7 +432,7 @@ namespace micro_os_plus::utils
    * the list structure accordingly. This operation does not check for
    * duplicate nodes or whether the node is already linked elsewhere.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   void
   double_list<T, L>::link_tail (reference node) noexcept
   {
@@ -453,7 +453,7 @@ namespace micro_os_plus::utils
    * the list structure accordingly. This operation does not check for
    * duplicate nodes or whether the node is already linked elsewhere.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   void
   double_list<T, L>::link_head (reference node) noexcept
   {
@@ -474,7 +474,7 @@ namespace micro_os_plus::utils
    * node (the head). If the list is empty, the iterator will compare equal to
    * `end()`.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   typename double_list<T, L>::iterator
   double_list<T, L>::begin () const noexcept
   {
@@ -494,7 +494,7 @@ namespace micro_os_plus::utils
    * comparison operations. The end iterator does not reference any valid list
    * element.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   typename double_list<T, L>::iterator
   double_list<T, L>::end () const noexcept
   {
@@ -511,7 +511,7 @@ namespace micro_os_plus::utils
    * Equivalent to `reverse_iterator{ end() }`. Traversal proceeds
    * from the tail towards the head.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   typename double_list<T, L>::reverse_iterator
   double_list<T, L>::rbegin () const noexcept
   {
@@ -524,7 +524,7 @@ namespace micro_os_plus::utils
    * in the list. Equivalent to `reverse_iterator{ begin() }`. Used as
    * the past-the-end marker for reverse-direction iteration.
    */
-  template <class T, class L>
+  template <double_list_links_node T, double_list_links_node L>
   typename double_list<T, L>::reverse_iterator
   double_list<T, L>::rend () const noexcept
   {

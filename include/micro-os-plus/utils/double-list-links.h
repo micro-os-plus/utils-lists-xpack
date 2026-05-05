@@ -437,6 +437,22 @@ namespace micro_os_plus::utils
     reset (void) noexcept;
   };
 
+  // ==========================================================================
+
+  /**
+   * @ingroup micro-os-plus-utils-lists-double-lists
+   * @brief Concept satisfied by any type publicly derived from
+   * `double_list_links_base`.
+   *
+   * @details
+   * Used to constrain the template parameters of `double_list` and
+   * `intrusive_list` to types that are properly derived from the
+   * list node base class, ensuring a valid doubly linked list structure.
+   */
+  template <class T>
+  concept double_list_links_node
+      = std::derived_from<T, double_list_links_base>;
+
   // --------------------------------------------------------------------------
 } // namespace micro_os_plus::utils
 

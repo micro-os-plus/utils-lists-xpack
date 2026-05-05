@@ -245,15 +245,11 @@ namespace micro_os_plus::utils
    *
    * @headerfile lists.h <micro-os-plus/utils/lists.h>
    */
-  template <class T, class L = double_list_links>
+  template <double_list_links_node T,
+            double_list_links_node L = double_list_links>
   class double_list
   {
   public:
-    static_assert (std::derived_from<L, double_list_links_base>,
-                   "L must be derived from double_list_links_base!");
-    static_assert (std::derived_from<T, double_list_links_base>,
-                   "T must be derived from double_list_links_base!");
-
     /**
      * @brief Type of the links node object where the pointers to the
      * list head and tail are stored.
