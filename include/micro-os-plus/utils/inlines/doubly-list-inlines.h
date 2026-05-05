@@ -269,9 +269,10 @@ namespace micro_os_plus::utils
   template <doubly_list_links_node T, doubly_list_links_node L>
   doubly_list<T, L>::doubly_list () noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS)
     trace::printf ("%s() @%p \n", __func__, this);
-#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR
+#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS
 
     if constexpr (is_statically_allocated::value)
       {
@@ -299,13 +300,14 @@ namespace micro_os_plus::utils
   template <doubly_list_links_node T, doubly_list_links_node L>
   constexpr doubly_list<T, L>::~doubly_list ()
   {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS)
     trace::printf ("%s() @%p \n", __func__, this);
-#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR
+#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS
 
     // Perhaps enable it for non statically allocated lists.
     // assert (empty ());
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     if (!empty ())
       {
         trace::printf ("%s() @%p list not empty\n", __func__, this);
@@ -384,7 +386,7 @@ namespace micro_os_plus::utils
   void
   doubly_list<T, L>::clear (void) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
     links_.initialise ();

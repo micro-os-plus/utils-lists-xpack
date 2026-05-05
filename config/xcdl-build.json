@@ -29,8 +29,8 @@
         "description": "Log trace diagnostics in lists constructors when TRACE is enabled",
         "valueType": "bool",
         "requires": "isEnabled('trace')",
-        "generatedDefinition": "MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORORS"
+        "generatedDefinition": "MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS"
       }
     }
-  }
+  
 }
