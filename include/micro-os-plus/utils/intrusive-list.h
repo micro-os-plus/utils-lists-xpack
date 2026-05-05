@@ -426,7 +426,8 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @return Pointer to the last element in the list.
+     * @return Pointer to the last element in the list, or `nullptr` if the
+     * list is empty.
      */
     pointer
     unlink_tail (void) noexcept;
@@ -436,7 +437,8 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @return Pointer to the first element in the list.
+     * @return Pointer to the first element in the list, or `nullptr` if the
+     * list is empty.
      */
     pointer
     unlink_head (void) noexcept;

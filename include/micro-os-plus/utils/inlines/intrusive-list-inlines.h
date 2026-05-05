@@ -476,16 +476,18 @@ namespace micro_os_plus::utils
   /**
    * @details
    * Removes and unlinks the first element from the intrusive list.
-   * If the list is empty, this operation is a no-op and returns a pointer to
-   * the internal links node. The method unlinks the node at the head of the
-   * list and returns a pointer to the parent object containing the unlinked
-   * node.
+   * If the list is empty, returns `nullptr` immediately without modifying
+   * the list. The method unlinks the node at the head of the list and
+   * returns a pointer to the parent object containing the unlinked node.
    */
   template <class T, class N, N T::* MP, class L, class U>
   typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_head (void) noexcept
   {
-    // No assert here, treat empty link unlinks as nop.
+    if (empty ())
+      {
+        return nullptr;
+      }
 
     // The first element in the list.
     iterator_pointer it
@@ -498,16 +500,18 @@ namespace micro_os_plus::utils
   /**
    * @details
    * Removes and unlinks the last element from the intrusive list.
-   * If the list is empty, this operation is a no-op and returns a pointer to
-   * the internal links node. The method unlinks the node at the tail of the
-   * list and returns a pointer to the parent object containing the unlinked
-   * node.
+   * If the list is empty, returns `nullptr` immediately without modifying
+   * the list. The method unlinks the node at the tail of the list and
+   * returns a pointer to the parent object containing the unlinked node.
    */
   template <class T, class N, N T::* MP, class L, class U>
   typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_tail (void) noexcept
   {
-    // No assert here, treat empty link unlinks as nop.
+    if (empty ())
+      {
+        return nullptr;
+      }
 
     // The last element in the list.
     iterator_pointer it = static_cast<iterator_pointer> (

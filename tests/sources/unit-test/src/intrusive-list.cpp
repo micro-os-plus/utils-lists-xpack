@@ -226,6 +226,15 @@ check_intrusive_list (mt::static_suite& ts)
       t.expect (it == kids.end ()) << "iterator at end";
     });
 
+  ts.test ("Unlink head/tail on empty list", [&] (auto& t)
+    {
+      t.expect (kids.empty ()) << "list is empty";
+      t.expect (mt::eq (kids.unlink_head (), nullptr))
+          << "unlink_head returns nullptr";
+      t.expect (mt::eq (kids.unlink_tail (), nullptr))
+          << "unlink_tail returns nullptr";
+    });
+
   if constexpr (!T::is_statically_allocated::value)
     {
       ts.test ("Allocated on stack", [] (auto& t)
