@@ -435,9 +435,9 @@ namespace micro_os_plus::utils
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
 
-    using head_type_ = typename double_list<N, L>::links_type;
+    using links_type_ = typename double_list<N, L>::links_type;
     return iterator{ reinterpret_cast<iterator_pointer> (
-        const_cast<head_type_*> (double_list<N, L>::links_pointer ())) };
+        const_cast<links_type_*> (double_list<N, L>::links_pointer ())) };
   }
 
 #if defined(__GNUC__)
