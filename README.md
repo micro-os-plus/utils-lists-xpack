@@ -15,7 +15,8 @@ For information on how to install and use this project, please refer to the
 ## Project source
 
 The source code of the current release is available on
-[GitHub tag v4.0.3 tree](https://github.com/micro-os-plus/utils-lists-xpack/tree/v4.0.3).
+GitHub as [micro-os-plus/utils-lists-xpack](https://github.com/micro-os-plus/utils-lists-xpack),
+the [v5.0.0](https://github.com/micro-os-plus/utils-lists-xpack/tree/v5.0.0) tree.
 
 ## License
 

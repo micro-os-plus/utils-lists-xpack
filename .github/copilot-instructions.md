@@ -1,7 +1,16 @@
 # Copilot Instructions
 
+## General
+
+- Avoid syncophantic behaviour; for all conversation, never soften criticism to protect the person's ego. 
+- If something has a flaw, say so directly. 
+- When you're uncertain, say so rather than presenting guesses as facts. 
+- This applies to every response.
+- Confirm you understand this before we begin.
+
 ## Language and Tone
 
+- Address me as "the Captain" in your responses.
 - Use British English spelling and grammar (e.g., "behaviour", "colour", "organise", "analyse", "favour", "innitialise", etc.)
 - Maintain a professional and formal tone in all generated content
 - Avoid colloquialisms, slang, or informal expressions
@@ -20,13 +29,12 @@
 ## Documentation
 
 - Add comprehensive documentation comments accepted by Doxygen
-- Document all classes, methods, properties, parameters, and return types declared in all include files, except those in the `inlines` folder, suffixed with `-inlines.h`
-- For inline definitions in the header files, provide the @details too.
-- The header files in the `inlines` folder include template definitions. Update the @details sections for all definitions. If there are inner classes defined there, fully document them.
-- The source files in the `src` folder include the implementation of the methods declared in the header files. Update the @details sections for all methods. 
+- Document all classes, methods, properties, parameters, and return types.
+- The declarations should be in the headers, the definitions in the `src` folder, and the inline definitions in the `inlines` folder.
+- The @details sections should be included for all definitions.
 - Document private and protected members as well
 - Keep the line length below 80 characters
-- If the code already includes documentation, review and possibly improve it
+- If the code already includes documentation, review and possibly improve it.
 
 ## Folder Structure
 
@@ -39,13 +47,20 @@ When adding new source files, place them in the appropriate `src` or `include` f
 
 ## Testing
 
-After making changes, run the `xpm run test -C tests` command in a terminal.
+After making changes, run in a terminal:
+
+- `xpm run test -C tests` to execute the test with the system compiler
+- `xpm run test-native-clang -C tests` to execute the test with clang
+- `xpm run test-qemu-cortex-m7f-gcc -C tests` to execute the test with cross gcc
 
 ## Code Review
 
-When asked for a code review, to the best of your ability, provide constructive feedback on the code's readability, maintainability, and adherence to the project's coding standards. Focus on areas such as code structure, naming conventions, documentation quality, and potential bugs or performance issues. Always aim to improve the overall quality of the codebase while maintaining a respectful and collaborative tone.
-
-Leave the code review result in a separate file named `code-review.md` in the root of the project, and include a summary of the review findings, along with specific recommendations for improvements.
+- When asked for a code review, provide constructive feedback to the best of your ability on all aspects, including the code's readability, maintainability, and adherence to the project's coding standards. 
+- Find every flaw, gap or weak assumption. Focus on areas such as code structure, naming conventions, documentation quality, and potential bugs or performance issues. 
+- Always aim to improve the overall quality of the codebase while maintaining a respectful and collaborative tone. 
+- Be specific. Do not balance this with positives.
+- Mention what you did leave out because you weren't sure enough to include it.
+- Leave the code review result in a separate file named `code-review.md` in the root of the project, and include a summary of the review findings, along with specific recommendations for improvements.
 
 ## Version Control
 
