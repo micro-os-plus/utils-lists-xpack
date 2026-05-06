@@ -28,7 +28,6 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-extern mt::static_runner sr;
 mt::static_runner sr{ "utils-lists" };
 
 int

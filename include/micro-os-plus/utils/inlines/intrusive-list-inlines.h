@@ -281,6 +281,10 @@ namespace micro_os_plus::utils
             doubly_list_links_node L, class U>
   constexpr intrusive_list<T, N, MP, L, U>::intrusive_list () noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS)
+    trace::printf ("%s() @%p \n", __func__, this);
+#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS
   }
 
   /**
@@ -294,6 +298,10 @@ namespace micro_os_plus::utils
             doubly_list_links_node L, class U>
   constexpr intrusive_list<T, N, MP, L, U>::~intrusive_list ()
   {
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS)
+    trace::printf ("%s() @%p \n", __func__, this);
+#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS
   }
 
   /**
@@ -309,10 +317,10 @@ namespace micro_os_plus::utils
    */
   template <class T, doubly_list_links_node N, N T::* MP,
             doubly_list_links_node L, class U>
-  void
+  bool
   intrusive_list<T, N, MP, L, U>::initialise_once (void) noexcept
   {
-    doubly_list<N, L>::initialise_once ();
+    return doubly_list<N, L>::initialise_once ();
   }
 
   /**
@@ -344,6 +352,10 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, L, U>::link_tail (U& node) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p %p\n", __func__, this, &node);
+#endif
+
     // The assert(links_.initialised()) is checked by the L class.
 
     // Compute the byte offset of the intrusive node member within T.
@@ -372,6 +384,10 @@ namespace micro_os_plus::utils
   void
   intrusive_list<T, N, MP, L, U>::link_head (U& node) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p %p\n", __func__, this, &node);
+#endif
+
     // The assert(links_.initialised()) is checked by the L class.
 
     // Compute the byte offset of the intrusive node member within T.
@@ -404,6 +420,10 @@ namespace micro_os_plus::utils
   inline typename intrusive_list<T, N, MP, L, U>::iterator
   intrusive_list<T, N, MP, L, U>::begin () const noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     // The assert(links_.initialised()) is checked by the L class.
 
     return iterator{ static_cast<iterator_pointer> (
@@ -423,6 +443,10 @@ namespace micro_os_plus::utils
   inline typename intrusive_list<T, N, MP, L, U>::iterator
   intrusive_list<T, N, MP, L, U>::end () const noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
 
@@ -505,6 +529,10 @@ namespace micro_os_plus::utils
   [[nodiscard]] typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_head (void) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     if (empty ())
       {
         return nullptr;
@@ -530,6 +558,10 @@ namespace micro_os_plus::utils
   [[nodiscard]] typename intrusive_list<T, N, MP, L, U>::pointer
   intrusive_list<T, N, MP, L, U>::unlink_tail (void) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     if (empty ())
       {
         return nullptr;

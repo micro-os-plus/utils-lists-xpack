@@ -383,10 +383,10 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @par Returns
-     *  Nothing.
+     * @returns
+     *  true if the list was initialised, false otherwise.
      */
-    void
+    bool
     initialise_once (void) noexcept;
 
     /**

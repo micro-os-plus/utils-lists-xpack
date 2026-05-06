@@ -31,10 +31,6 @@
 
 #include <micro-os-plus/utils/lists.h>
 
-#if defined(MICRO_OS_PLUS_TRACE)
-#include <micro-os-plus/diag/trace.h>
-#endif // MICRO_OS_PLUS_TRACE
-
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
@@ -83,13 +79,15 @@ namespace micro_os_plus::utils
    * This method must be manually called for a statically allocated list before
    * inserting elements or performing any other operations.
    */
-  void
+  bool
   doubly_list_links_base::initialise_once (void) noexcept
   {
     if (!initialised ())
       {
         initialise ();
+        return true;
       }
+    return false;
   }
 
   /**
@@ -180,9 +178,9 @@ namespace micro_os_plus::utils
    * @warning Not very safe, since the compiler may optimise out the code.
    */
 #if defined(__GNUC__) && !defined(__clang__)
+  // no Inter-Procedural Analysis
   // Prevent LTO to optimize out the code.
-  // https://gcc.gnu.org/onlinedocs/gcc/Common-Function-Attributes.html
-  __attribute__ ((noinline, noipa))
+  __attribute__ ((noipa))
 #endif
   void
   static_doubly_list_links::reset () noexcept

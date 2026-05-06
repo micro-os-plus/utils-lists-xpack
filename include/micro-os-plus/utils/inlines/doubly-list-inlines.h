@@ -350,12 +350,20 @@ namespace micro_os_plus::utils
    * inserting elements or performing any other operations.
    */
   template <doubly_list_links_node T, doubly_list_links_node L>
-  void
+  bool
   doubly_list<T, L>::initialise_once (void) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     if constexpr (is_statically_allocated::value)
       {
-        links_.initialise_once ();
+        return links_.initialise_once ();
+      }
+    else
+      {
+        return false;
       }
   }
 
@@ -389,6 +397,7 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
+
     links_.initialise ();
   }
 
@@ -434,6 +443,10 @@ namespace micro_os_plus::utils
   void
   doubly_list<T, L>::link_tail (reference node) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p %p\n", __func__, this, &node);
+#endif
+
     if constexpr (is_statically_allocated::value)
       {
         assert (links_.initialised ());
@@ -455,6 +468,10 @@ namespace micro_os_plus::utils
   void
   doubly_list<T, L>::link_head (reference node) noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p %p\n", __func__, this, &node);
+#endif
+
     if constexpr (is_statically_allocated::value)
       {
         assert (links_.initialised ());
@@ -476,6 +493,10 @@ namespace micro_os_plus::utils
   typename doubly_list<T, L>::iterator
   doubly_list<T, L>::begin () const noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     if constexpr (is_statically_allocated::value)
       {
         assert (links_.initialised ());
@@ -496,6 +517,10 @@ namespace micro_os_plus::utils
   typename doubly_list<T, L>::iterator
   doubly_list<T, L>::end () const noexcept
   {
+#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+    trace::printf ("%s() @%p\n", __func__, this);
+#endif
+
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
 

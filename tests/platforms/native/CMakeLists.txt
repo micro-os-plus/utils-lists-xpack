@@ -68,7 +68,8 @@ if (XPACK_ENABLE_UNIT_TEST)
     add_test (
       NAME "unit-test-coverage"
       COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh"
-              unit-test unit-test
+              unit-test unit-test 
+              # "../../../../include/micro-os-plus/utils/inlines/intrusive-list-inlines.h"
     )
     set_tests_properties ("unit-test-coverage" PROPERTIES DEPENDS "unit-test")
   endif ()

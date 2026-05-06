@@ -37,6 +37,10 @@
 #include <micro-os-plus/config.h>
 #endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
 
+#if defined(MICRO_OS_PLUS_TRACE)
+#include <micro-os-plus/diag/trace.h>
+#endif // MICRO_OS_PLUS_TRACE
+
 #include <cstdint>
 #include <cstddef>
 #include <cassert>
@@ -168,10 +172,10 @@ namespace micro_os_plus::utils
      *
      * @par Parameters
      *  None.
-     * @par Returns
-     *  Nothing.
+     * @returns
+     *  true if the node was initialised, false otherwise.
      */
-    void
+    bool
     initialise_once (void) noexcept;
 
     /**

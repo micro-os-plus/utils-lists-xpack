@@ -46,7 +46,8 @@ check_doubly_list (mt::static_suite& ts)
       if constexpr (T::is_statically_allocated::value)
         {
           t.expect (!list.initialised ()) << "uninitialised";
-          list.initialise_once ();
+          t.expect (list.initialise_once ()) << "initialise_once";
+          t.expect (!list.initialise_once ()) << "initialise_once again";
         }
       else
         {
@@ -56,7 +57,7 @@ check_doubly_list (mt::static_suite& ts)
       if constexpr (element::is_statically_allocated::value)
         {
           t.expect (!one.initialised ()) << "one uninitialised";
-          one.initialise_once ();
+          t.expect (one.initialise_once ()) << "one initialise_once";
         }
       else
         {
@@ -66,7 +67,7 @@ check_doubly_list (mt::static_suite& ts)
       if constexpr (element::is_statically_allocated::value)
         {
           t.expect (!two.initialised ()) << "two uninitialised";
-          two.initialise_once ();
+          t.expect (two.initialise_once ()) << "two initialise_once";
         }
       else
         {
@@ -137,6 +138,47 @@ check_doubly_list (mt::static_suite& ts)
       t.expect (mt::eq (&(*it), &one)) << "iterator points to one";
     });
 
+  ts.test ("Default iterator constructor", [&] (auto& t)
+    {
+      // Exercises doubly_list_iterator::doubly_list_iterator(): the
+      // default-constructed iterator must have a null internal pointer.
+      typename T::iterator it{};
+      t.expect (mt::eq (it.get_iterator_pointer (),
+                        static_cast<typename T::iterator_pointer> (nullptr)))
+          << "default iterator has null pointer";
+    });
+
+  ts.test ("Iterator arrow operator", [&] (auto& t)
+    {
+      // Exercises doubly_list_iterator::operator->(), which returns
+      // get_pointer() (the pointer form of dereference).
+      auto it = list.begin ();
+      t.expect (it->linked ()) << "arrow: begin element is linked";
+    });
+
+  ts.test ("Post-increment operator", [&] (auto& t)
+    {
+      // Exercises doubly_list_iterator::operator++(int): the returned
+      // iterator must still point to the original element, while the
+      // original iterator advances to the next one.
+      auto it = list.begin ();
+      auto prev = it++;
+      t.expect (mt::eq (&(*prev), &one)) << "post-increment: old value is one";
+      t.expect (mt::eq (&(*it), &two)) << "post-increment: new value is two";
+    });
+
+  ts.test ("Post-decrement operator", [&] (auto& t)
+    {
+      // Exercises doubly_list_iterator::operator--(int): the returned
+      // iterator must still point to the original element, while the
+      // original iterator moves back to the previous one.
+      auto it = list.end ();
+      --it; // point at two
+      auto prev = it--;
+      t.expect (mt::eq (&(*prev), &two)) << "post-decrement: old value is two";
+      t.expect (mt::eq (&(*it), &one)) << "post-decrement: new value is one";
+    });
+
   ts.test ("Reverse iterator rbegin/rend", [&] (auto& t)
     {
       // list still contains: one, two
@@ -180,6 +222,24 @@ check_doubly_list (mt::static_suite& ts)
       t.expect (!one.linked ()) << "one unlinked";
       list.link_tail (one);
       t.expect (!list.empty ()) << "list not empty";
+    });
+
+  ts.test ("Link head", [&] (auto& t)
+    {
+      // Exercises doubly_list::link_head(): the new node must become
+      // the head of the list, with the previous head becoming the tail.
+      // State entering: list = [one]
+      t.expect (!two.linked ()) << "two unlinked";
+      list.link_head (two);
+      t.expect (two.linked ()) << "two linked";
+      t.expect (!list.empty ()) << "list not empty";
+
+      t.expect (mt::eq (list.head (), &two)) << "head is two";
+      t.expect (mt::eq (list.tail (), &one)) << "tail is one";
+
+      two.unlink ();
+      t.expect (!two.linked ()) << "two unlinked after cleanup";
+      // State leaving: list = [one]
     });
 
   ts.test ("Clear", [&] (auto& t)

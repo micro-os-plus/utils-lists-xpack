@@ -54,7 +54,8 @@ check_intrusive_list (mt::static_suite& ts)
       if constexpr (T::is_statically_allocated::value)
         {
           t.expect (!kids.initialised ()) << "uninitialised";
-          kids.initialise_once ();
+          t.expect (kids.initialise_once ()) << "initialise_once";
+          t.expect (!kids.initialise_once ()) << "initialise_once again";
         }
       else
         {
@@ -119,6 +120,74 @@ check_intrusive_list (mt::static_suite& ts)
           << "second iteration is Sally";
       ++it;
       t.expect (it == kids.end ()) << "iterator at end";
+    });
+
+  ts.test ("Default iterator constructor", [&] (auto& t)
+    {
+      // Exercises intrusive_list_iterator::intrusive_list_iterator():
+      // the default-constructed iterator must have a null internal
+      // pointer.
+      typename T::iterator it{};
+      t.expect (mt::eq (it.get_iterator_pointer (),
+                        static_cast<typename T::iterator_pointer> (nullptr)))
+          << "default iterator has null pointer";
+    });
+
+  ts.test ("Iterator from element", [&] (auto& t)
+    {
+      // Exercises intrusive_list_iterator::intrusive_list_iterator(
+      // reference element): the iterator must point to the given
+      // element.
+      typename T::iterator it{ mary };
+      t.expect (mt::eq (&(*it), &mary)) << "iterator points to mary";
+    });
+
+  ts.test ("Iterator get_iterator_pointer", [&] (auto& t)
+    {
+      // Exercises intrusive_list_iterator::get_iterator_pointer() on
+      // a non-null iterator: the returned node pointer must be
+      // non-null and must correspond to the element at begin().
+      auto it = kids.begin ();
+      t.expect (it.get_iterator_pointer () != nullptr)
+          << "get_iterator_pointer: non-null for begin";
+    });
+
+  ts.test ("Iterator dereference operator", [&] (auto& t)
+    {
+      // Exercises intrusive_list_iterator::operator*(): the dereference
+      // operator must return a reference to the value, accessed here
+      // via (*it).name() to unambiguously call operator*() rather than
+      // operator->().
+      auto it = kids.begin ();
+      t.expect (mt::eq (std::string_view{ (*it).name () }, "Mary"sv))
+          << "dereference: begin is Mary";
+    });
+
+  ts.test ("Post-increment operator", [&] (auto& t)
+    {
+      // Exercises intrusive_list_iterator::operator++(int): the
+      // returned iterator must still point to the original element,
+      // while the original iterator advances to the next one.
+      auto it = kids.begin ();
+      auto prev = it++;
+      t.expect (mt::eq (std::string_view{ prev->name () }, "Mary"sv))
+          << "post-increment: old value is Mary";
+      t.expect (mt::eq (std::string_view{ it->name () }, "Bob"sv))
+          << "post-increment: new value is Bob";
+    });
+
+  ts.test ("Post-decrement operator", [&] (auto& t)
+    {
+      // Exercises intrusive_list_iterator::operator--(int): the
+      // returned iterator must still point to the original element,
+      // while the original iterator moves back to the previous one.
+      auto it = kids.end ();
+      --it; // point at Sally
+      auto prev = it--;
+      t.expect (mt::eq (std::string_view{ prev->name () }, "Sally"sv))
+          << "post-decrement: old value is Sally";
+      t.expect (mt::eq (std::string_view{ it->name () }, "Bob"sv))
+          << "post-decrement: new value is Bob";
     });
 
   ts.test ("Reverse iteration", [&] (auto& t)
@@ -250,6 +319,21 @@ check_intrusive_list (mt::static_suite& ts)
           << "unlink_head returns nullptr";
       t.expect (mt::eq (kids.unlink_tail (), nullptr))
           << "unlink_tail returns nullptr";
+    });
+
+  ts.test ("Unlink head/tail on non-empty list", [&] (auto& t)
+    {
+      // Exercises intrusive_list::get_pointer() via unlink_head() and
+      // unlink_tail() on a non-empty list.
+      kids.link_tail (mary);
+      kids.link_tail (bob);
+      // list = [mary, bob]
+
+      t.expect (mt::eq (kids.unlink_head (), &mary))
+          << "unlink_head returns mary";
+      t.expect (mt::eq (kids.unlink_tail (), &bob))
+          << "unlink_tail returns bob";
+      t.expect (kids.empty ()) << "list is empty after both unlinks";
     });
 
   if constexpr (!T::is_statically_allocated::value)

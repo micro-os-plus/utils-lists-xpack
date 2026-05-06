@@ -72,7 +72,7 @@ sources=${3:-""}
 
 run_verbose xcrun llvm-cov show "$1" -instr-profile="$2".profdata \
   --ignore-filename-regex=xpacks --ignore-filename-regex=tests \
-  --show-line-counts-or-regions --show-region-summary \
+  --show-line-counts-or-regions  \
   --show-branches=count --show-branch-summary \
   --show-instantiations --show-instantiation-summary \
   --show-mcdc --show-mcdc-summary --sources ${sources} | grep -v -E \
@@ -86,7 +86,7 @@ run_verbose xcrun llvm-cov show "$1" -instr-profile="$2".profdata \
 run_verbose xcrun llvm-cov report "$1" --instr-profile="$2".profdata \
   --ignore-filename-regex=xpacks --ignore-filename-regex=tests \
   --show-branch-summary --show-instantiation-summary \
-  --show-mcdc-summary --show-region-summary \
+  --show-mcdc-summary  \
   --sources ${sources} 
   
 
