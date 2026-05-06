@@ -19,15 +19,15 @@ message (VERBOSE "Including tests/cmake/project-functions.cmake...")
 
 # -----------------------------------------------------------------------------
 
-function (target_link_native_test_libraries name library_name)
+function (target_link_native_test_libraries name test_library_name)
   target_link_libraries (
     ${name}
     PRIVATE # The compile & link options common to all platforms.
             micro-os-plus::common-options
             # Library with the current test.
-            ${library_name}
+            ${test_library_name}
             # Tested library.
-            micro-os-plus::utils-lists
+            micro-os-plus::utils-lists-objects
             # Portable dependencies.
             micro-os-plus::diag-trace
             micro-os-plus::micro-test-plus
@@ -38,15 +38,15 @@ endfunction ()
 
 # -----------------------------------------------------------------------------
 
-function (target_link_cross_test_libraries name library_name)
+function (target_link_cross_test_libraries name test_library_name)
   target_link_libraries (
     ${name}
     PRIVATE # The compile & link options common to all platforms.
             micro-os-plus::common-options
             # Library with the current test.
-            ${library_name}
+            ${test_library_name}
             # Tested library.
-            micro-os-plus::utils-lists
+            micro-os-plus::utils-lists-objects
             # Portable dependencies.
             micro-os-plus::diag-trace
             micro-os-plus::micro-test-plus

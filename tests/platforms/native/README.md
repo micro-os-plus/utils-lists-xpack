@@ -58,3 +58,10 @@ can not, and requires an external script, available as
 `scripts/get-libraries-paths.sh`.
 
 It requires the name of the compiler (clang++ or g++).
+
+### Coverage
+
+Currently coverage is implemented only on macOS and uses the system 
+`llvm-cov`.
+
+To enable it, set `XPACK_ENABLE_COVERAGE` to `true` in `CMakeLists.txt`.

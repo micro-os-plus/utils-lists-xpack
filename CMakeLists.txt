@@ -65,6 +65,43 @@ if (COMMAND xpack_display_target_lists)
 endif ()
 
 # -----------------------------------------------------------------------------
+
+# Optional OBJECT library: sources are compiled once rather than per consumer.
+# Inherits include directories, compile definitions, and compiler options from
+# the interface library via PRIVATE linkage, which avoids propagating the
+# interface library's INTERFACE sources to consumers of the object library. The
+# include directories are re-exported explicitly so that consumers can find the
+# headers.
+add_library (micro-os-plus-utils-lists-objects OBJECT)
+
+get_target_property (
+  micro-os-plus-utils-lists-includes
+  micro-os-plus-utils-lists-interface INTERFACE_INCLUDE_DIRECTORIES
+)
+target_include_directories (
+  micro-os-plus-utils-lists-objects
+  INTERFACE ${micro-os-plus-utils-lists-includes}
+)
+
+get_target_property (
+  micro-os-plus-utils-lists-sources micro-os-plus-utils-lists-interface
+  INTERFACE_SOURCES
+)
+target_sources (
+  micro-os-plus-utils-lists-objects
+  PRIVATE ${micro-os-plus-utils-lists-sources}
+)
+
+target_link_libraries (
+  micro-os-plus-utils-lists-objects
+  PRIVATE micro-os-plus-utils-lists-interface
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (micro-os-plus-utils-lists-objects)
+endif ()
+
+# -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
@@ -73,6 +110,15 @@ add_library (
 )
 message (VERBOSE
          "> micro-os-plus::utils-lists -> micro-os-plus-utils-lists-interface"
+)
+
+add_library (
+  micro-os-plus::utils-lists-objects ALIAS
+  micro-os-plus-utils-lists-objects
+)
+message (
+  VERBOSE
+  "> micro-os-plus::utils-lists-objects -> micro-os-plus-utils-lists-objects"
 )
 
 # -----------------------------------------------------------------------------
