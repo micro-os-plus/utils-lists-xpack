@@ -299,8 +299,7 @@ macro (xpack_set_all_compiler_warnings variable_name)
         $<$<COMPILE_LANGUAGE:C>:-Wold-style-definition>
         $<$<COMPILE_LANGUAGE:C>:-Wstrict-prototypes>
         # ---------------------------------------------------------------------
-        # GNU C++ only.
-        # inherits the "cxx11" ABI tag that 'std::string'
+        # GNU C++ only. It inherits the "cxx11" ABI tag for 'std::string'.
         # $<$<COMPILE_LANGUAGE:CXX>:-Wabi-tag>
         $<$<COMPILE_LANGUAGE:CXX>:-Wctor-dtor-privacy>
         $<$<COMPILE_LANGUAGE:CXX>:-Wnoexcept>
@@ -434,10 +433,18 @@ endfunction ()
 function (xpack_display_target_lists target)
 
   set (relative_to_path "${CMAKE_CURRENT_SOURCE_DIR}")
-  get_target_property (name ${target} NAME)
+  get_property (
+    name
+    TARGET ${target}
+    PROPERTY NAME
+  )
   message (VERBOSE "> ${name}")
 
-  get_target_property (include_paths ${target} INTERFACE_INCLUDE_DIRECTORIES)
+  get_property (
+    include_paths
+    TARGET ${target}
+    PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+  )
 
   if (include_paths)
     foreach (file_path IN LISTS include_paths)
@@ -448,7 +455,26 @@ function (xpack_display_target_lists target)
     endforeach ()
   endif ()
 
-  get_target_property (sources_paths ${target} INTERFACE_SOURCES)
+  get_property (
+    include_paths
+    TARGET ${target}
+    PROPERTY INCLUDE_DIRECTORIES
+  )
+
+  if (include_paths)
+    foreach (file_path IN LISTS include_paths)
+      file (RELATIVE_PATH file_relative_path "${relative_to_path}"
+            "${file_path}"
+      )
+      message (VERBOSE "+ -I ${file_relative_path}")
+    endforeach ()
+  endif ()
+
+  get_property (
+    sources_paths
+    TARGET ${target}
+    PROPERTY INTERFACE_SOURCES
+  )
 
   if (sources_paths)
     foreach (file_path IN LISTS sources_paths)
@@ -459,8 +485,25 @@ function (xpack_display_target_lists target)
     endforeach ()
   endif ()
 
-  get_target_property (
-    compile_definitions ${target} INTERFACE_COMPILE_DEFINITIONS
+  get_property (
+    sources_paths
+    TARGET ${target}
+    PROPERTY SOURCES
+  )
+
+  if (sources_paths)
+    foreach (file_path IN LISTS sources_paths)
+      file (RELATIVE_PATH file_relative_path "${relative_to_path}"
+            "${file_path}"
+      )
+      message (VERBOSE "+ ${file_relative_path}")
+    endforeach ()
+  endif ()
+
+  get_property (
+    compile_definitions
+    TARGET ${target}
+    PROPERTY INTERFACE_COMPILE_DEFINITIONS
   )
 
   if (compile_definitions)
@@ -469,7 +512,23 @@ function (xpack_display_target_lists target)
     endforeach ()
   endif ()
 
-  get_target_property (compile_options ${target} INTERFACE_COMPILE_OPTIONS)
+  get_property (
+    compile_definitions
+    TARGET ${target}
+    PROPERTY COMPILE_DEFINITIONS
+  )
+
+  if (compile_definitions)
+    foreach (def IN LISTS compile_definitions)
+      message (VERBOSE "+ -D ${def}")
+    endforeach ()
+  endif ()
+
+  get_property (
+    compile_options
+    TARGET ${target}
+    PROPERTY INTERFACE_COMPILE_OPTIONS
+  )
 
   if (compile_options)
     foreach (opt IN LISTS compile_options)
@@ -477,19 +536,63 @@ function (xpack_display_target_lists target)
     endforeach ()
   endif ()
 
-  get_target_property (link_libraries ${target} INTERFACE_LINK_LIBRARIES)
+  get_property (
+    compile_options
+    TARGET ${target}
+    PROPERTY COMPILE_OPTIONS
+  )
 
-  if (link_libraries)
-    foreach (lib IN LISTS link_libraries)
-      message (VERBOSE "+ ${lib}")
+  if (compile_options)
+    foreach (opt IN LISTS compile_options)
+      message (VERBOSE "+ ${opt}")
     endforeach ()
   endif ()
 
-  get_target_property (link_options ${target} INTERFACE_LINK_OPTIONS)
+  get_property (
+    link_libraries
+    TARGET ${target}
+    PROPERTY INTERFACE_LINK_LIBRARIES
+  )
+
+  if (link_libraries)
+    foreach (lib IN LISTS link_libraries)
+      message (VERBOSE "+L ${lib}")
+    endforeach ()
+  endif ()
+
+  get_property (
+    link_libraries
+    TARGET ${target}
+    PROPERTY LINK_LIBRARIES
+  )
+
+  if (link_libraries)
+    foreach (lib IN LISTS link_libraries)
+      message (VERBOSE "+L ${lib}")
+    endforeach ()
+  endif ()
+
+  get_property (
+    link_options
+    TARGET ${target}
+    PROPERTY INTERFACE_LINK_OPTIONS
+  )
 
   if (link_options)
     foreach (opt IN LISTS link_options)
-      message (VERBOSE "+ ${opt}")
+      message (VERBOSE "+l ${opt}")
+    endforeach ()
+  endif ()
+
+  get_property (
+    link_options
+    TARGET ${target}
+    PROPERTY LINK_OPTIONS
+  )
+
+  if (link_options)
+    foreach (opt IN LISTS link_options)
+      message (VERBOSE "+l ${opt}")
     endforeach ()
   endif ()
 
