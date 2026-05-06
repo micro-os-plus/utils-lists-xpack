@@ -1,8 +1,11 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.14.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
   <compounddef id="dir_ed165110c3623bfc4ee73136e0ee950e" kind="dir">
     <compoundname>utils</compoundname>
-    <innerfile refid="lists-inlines_8h">lists-inlines.h</innerfile>
+    <innerdir refid="dir_aa3b9032a9f77a0950abf45d05c50299">inlines</innerdir>
+    <innerfile refid="doubly-list-links_8h">doubly-list-links.h</innerfile>
+    <innerfile refid="doubly-list_8h">doubly-list.h</innerfile>
+    <innerfile refid="intrusive-list_8h">intrusive-list.h</innerfile>
     <innerfile refid="lists_8h">lists.h</innerfile>
     <briefdescription>
 <para>Folder with C++ header files for the µOS++ utilities. </para>

@@ -1,4 +1,3 @@
-
 {/* ------------------------------------------------------------------------ */}
 
 ## Rationale
@@ -23,7 +22,7 @@ from the list, it must be returned to the free storage.
 
 ## Intrusive lists
 
-One potential method to circumvent dynamically allocated list nodes is to
+One approach to avoid dynamically allocated list nodes is to
 embed the list links within the payload objects. This approach is utilised
 by **intrusive** lists, which are doubly linked lists that maintain two
 pointers **within** each linked object. Objects that belong to multiple
@@ -35,7 +34,7 @@ members of the payload objects.
 
 :::info
 
-The iterators must maintain a record of the offset from the object's
+The iterators must track the offset from the object's
 beginning to the location of the pairs of links.
 
 :::
@@ -63,7 +62,7 @@ global scope — it is essential to ensure that the registrar is initialised
 before the clients need to register. Given that, according to the C++
 standard, the order in which static constructors are invoked is indeterminate,
 the only solution is to initialise the registrar **before** the static
-constructors.
+constructors are invoked.
 
 :::info
 
@@ -101,7 +100,7 @@ The intrusive lists can be defined by instantiating a class template:
   * @tparam L Type of the links node.
   * @tparam U Type stored in the list, derived from T.
   */
-template <class T, class N, N T::*MP, class L = double_list_links,
+template <class T, class N, N T::*MP, class L = doubly_list_links,
           class U = T>
 class intrusive_list;
 ```
@@ -116,15 +115,15 @@ there is a simpler template:
 ```cpp
  /*
   * @tparam T Type of the elements linked into the list,
-  * derived from class `double_list_links_base`.
+  * derived from class `doubly_list_links_base`.
   * @tparam L Type of the links node (one of
-  * `double_list_links` or `static_double_list_links`).
+  * `doubly_list_links` or `static_doubly_list_links`).
   */
-template <class T, class L = double_list_links>
-class double_list;
+template <class T, class L = doubly_list_links>
+class doubly_list;
 ```
 
-See the reference [Doubly linked lists](pathname:///reference/group__micro-os-plus-utils-lists-double-lists.html) page.
+See the reference [Doubly linked lists](pathname:///reference/group__micro-os-plus-utils-lists-doubly-lists.html) page.
 
 ### Methods
 
@@ -152,12 +151,12 @@ iterator begin ();
 iterator end ();
 ```
 
-Individual nodes (derived from `double_list_links_base`) offer the
+Individual nodes (derived from `doubly_list_links_base`) offer the
 following methods:
 
 ```cpp
-void link_next (double_list_links_base* node);
-void link_previous (double_list_links_base* node);
+void link_next (doubly_list_links_base* node);
+void link_previous (doubly_list_links_base* node);
 
 void unlink (void);
 void clear (void);
@@ -165,8 +164,8 @@ void clear (void);
 bool linked (void);
 
 // Accessors.
-double_list_links_base* next (void);
-double_list_links_base* previous (void);
+doubly_list_links_base* next (void);
+doubly_list_links_base* previous (void);
 ```
 
 ## C API
@@ -202,14 +201,14 @@ protected:
 public:
   // Intrusive node used to link this child to the registry list.
   // Must be public.
-  os::utils::double_list_links registry_links_;
+  os::utils::doubly_list_links registry_links_;
 };
 
 using static_children_list = os::utils::intrusive_list<
         child, // type of nodes in the list
         decltype (child::registry_links_), // type of the `registry_links_` member
         &child::registry_links_, // name of member
-        static_double_list_links>; // type of the head links node
+        static_doubly_list_links>; // type of the head links node
 
 // The list head is statically allocated.
 static_children_list kids_registry;
@@ -218,6 +217,6 @@ static_children_list kids_registry;
 ## Known problems
 
 - For statically allocated lists, the destructor cannot revert the
-object to the initial zero state. In case the objects are reused,
-it is essential to clear the memory (e.g., via `memset()`) before
-invoking the constructor via placement `new`.
+  object to the initial zero state. If the objects are reused,
+  it is essential to clear the memory (e.g., via `memset()`) before
+  invoking the constructor via placement `new`.

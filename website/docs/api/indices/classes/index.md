@@ -5,6 +5,7 @@
 
 title: Classes
 slug: /api/classes
+description: The C++ classes, structs, unions, and interfaces defined in the project
 custom_edit_url: null
 keywords:
   - doxygen
@@ -24,7 +25,7 @@ The classes, structs, union and interfaces used by this project are:
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list">double_list&lt;T, L&gt;</a>
+<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">doubly_list&lt;T, L&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A class template for a doubly linked list of nodes
@@ -46,10 +47,10 @@ A class template for a list of nodes which store the links inside themselves as 
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-iterator">double_list_iterator&lt;T, N, U&gt;</a>
+<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-iterator">doubly_list_iterator&lt;T, N, U&gt;</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-A class template for a doubly linked list forward iterator
+A class template for a doubly linked list iterator
 </td>
 </tr>
 
@@ -57,7 +58,7 @@ A class template for a doubly linked list forward iterator
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 12px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links-base">double_list_links_base</a>
+<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links-base">doubly_list_links_base</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A base class for a doubly linked list node
@@ -68,7 +69,7 @@ A base class for a doubly linked list node
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list-links">double_list_links</a>
+<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links">doubly_list_links</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A class for the core of a doubly linked list (pointers to neighbours)
@@ -79,7 +80,7 @@ A class for the core of a doubly linked list (pointers to neighbours)
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 24px; display: inline-block;"></span>
 <span class="doxyTreeIconBox"><span class="doxyTreeIcon">C</span></span>
-<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-double-list-links">static_double_list_links</a>
+<a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links">static_doubly_list_links</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 A class for the core of a statically allocated doubly linked list (pointers to neighbours)
@@ -101,6 +102,6 @@ A class template for the intrusive list iterator
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

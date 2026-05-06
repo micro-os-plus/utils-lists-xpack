@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="conceptmicro__os__plus_1_1utils_1_1doubly__list__links__node" kind="concept">
+    <compoundname>micro_os_plus::utils::doubly_list_links_node</compoundname>
+    <includes refid="doubly-list-links_8h" local="no">doubly-list-links.h</includes>
+    <templateparamlist>
+      <param>
+        <type>class T</type>
+      </param>
+    </templateparamlist>
+    <initializer>template&lt;class T&gt;
+concept <ref refid="conceptmicro__os__plus_1_1utils_1_1doubly__list__links__node" kindref="compound">micro_os_plus::utils::doubly_list_links_node</ref> =  std::derived_from&lt;T, <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base" kindref="compound">doubly_list_links_base</ref>&gt;    </initializer>
+    <briefdescription>
+<para>Concept satisfied by any type publicly derived from <computeroutput>doubly_list_links_base</computeroutput>. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Used to constrain the template parameters of <computeroutput>doubly_list</computeroutput> and <computeroutput>intrusive_list</computeroutput> to types that are properly derived from the list node base class, ensuring a valid doubly linked list structure. </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="457" column="3"/>
+  </compounddef>
+</doxygen>

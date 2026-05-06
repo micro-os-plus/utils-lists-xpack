@@ -20,19 +20,19 @@ keywords:
 ## - M -
 
 <ul>
-<li><b>micro_os_plus</b>: as namespace in file <a href="/utils-lists-xpack/docs/api/namespaces/micro-os-plus">top-common.h</a></li>
+<li><a href="/utils-lists-xpack/docs/api/namespaces/micro-os-plus"><b>micro_os_plus</b></a>: as namespace in file <a href="/utils-lists-xpack/docs/api/files/top-common-h">top-common.h</a></li>
 </ul>
 
 ## - U -
 
 <ul>
-<li><b>utils</b>: as namespace in file <a href="/utils-lists-xpack/docs/api/namespaces/micro-os-plus/utils">src/lists.cpp</a></li>
+<li><a href="/utils-lists-xpack/docs/api/namespaces/micro-os-plus/utils"><b>utils</b></a>: as namespace in file <a href="/utils-lists-xpack/docs/api/files/src/doubly-list-links-cpp">src/doubly-list-links.cpp</a></li>
 </ul>
 <br/>
 <p>Total: 2 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

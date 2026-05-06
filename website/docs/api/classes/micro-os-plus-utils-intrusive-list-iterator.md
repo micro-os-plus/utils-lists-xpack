@@ -22,7 +22,7 @@ keywords:
 ## Declaration
 
 <div class="doxyDeclaration">
-template &lt;class T, class N, N T::* MP, class U = T&gt;
+template &lt;class T, class N, N T::* MP, class U = T&gt;<br/>
 class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 
@@ -57,12 +57,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">using</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a11541e8681f9015d6b8e8cc93c15eb4a">iterator_category</a> = std::forward_iterator_tag</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">iterator_category</a> = std::bidirectional_iterator_tag</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Category of iterator. <a href="#a11541e8681f9015d6b8e8cc93c15eb4a">More...</a></p>
+<p>Category of iterator. <a href="#a879cf5b1d6d65ce492aec7f307fa474e">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -148,12 +148,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive_list_iterator</a> ()</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a> () noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Default constructor. Constructs an iterator pointing to <span class="doxyComputerOutput">nullptr</span>. <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">More...</a></p>
+<p>Default constructor. Constructs an iterator pointing to <span class="doxyComputerOutput">nullptr</span>. <a href="#a7f50db671a84210327743eb29cae2170">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -165,12 +165,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ac7aecafdf290c92a25481b63b5159e69">intrusive_list_iterator</a> (iterator_pointer const node)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#af3bf247661cb8d3cc9876cc1451fe64d">intrusive_list_iterator</a> (iterator_pointer const node) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Construct an iterator from a node pointer. <a href="#ac7aecafdf290c92a25481b63b5159e69">More...</a></p>
+<p>Construct an iterator from a node pointer. <a href="#af3bf247661cb8d3cc9876cc1451fe64d">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -182,12 +182,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#acb115adc091ab89e63afaceeb05cdc07">intrusive_list_iterator</a> (reference element)</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a064fb9a6cf27543e453874d2c4650d5a">intrusive_list_iterator</a> (reference element) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Construct an iterator from a reference to an element. <a href="#acb115adc091ab89e63afaceeb05cdc07">More...</a></p>
+<p>Construct an iterator from a reference to an element. <a href="#a064fb9a6cf27543e453874d2c4650d5a">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -204,30 +204,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aa5703a48802f7fa6c20df08a5d90a3fa">operator!=</a> (const intrusive_list_iterator &amp;other) const</td>
-</tr>
-<tr class="doxyMemberIndexDescription">
-<td class="doxyMemberIndexDescriptionLeft"></td>
-<td class="doxyMemberIndexDescriptionRight">
-<p>Inequality comparison operator. <a href="#aa5703a48802f7fa6c20df08a5d90a3fa">More...</a></p>
-</td>
-</tr>
-<tr class="doxyMemberIndexSeparator">
-<td class="doxyMemberIndexSeparator" colspan="2"></td>
-</tr>
-
-<tr class="doxyMemberIndexTemplate">
-<td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
-</tr>
-<tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a></td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a5db55a56e22dbdea96e6d7e05c52f4c8">operator*</a> () const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a02d97e48aa2727ed8445c023942f30e6">operator*</a> () const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Dereference operator. <a href="#a5db55a56e22dbdea96e6d7e05c52f4c8">More...</a></p>
+<p>Dereference operator. <a href="#a02d97e48aa2727ed8445c023942f30e6">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -238,13 +221,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a> &amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">operator++</a> ()</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a> &amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a50d428211ad0b30b6140c85cb898ff50">operator++</a> () noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Pre-increment operator. <a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">More...</a></p>
+<p>Pre-increment operator. <a href="#a50d428211ad0b30b6140c85cb898ff50">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -255,13 +238,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a></td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#afd38a451e17ae6bf25966460f7815f12">operator++</a> (int)</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a></td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aa8fa99a95e7d9a21ba91206cec42b5e6">operator++</a> (int) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Post-increment operator. <a href="#afd38a451e17ae6bf25966460f7815f12">More...</a></p>
+<p>Post-increment operator. <a href="#aa8fa99a95e7d9a21ba91206cec42b5e6">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -272,13 +255,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a> &amp;</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ad74d2e875227841cfc46f17394402b43">operator--</a> ()</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a> &amp;</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#aee99a90c7b61cba2c453301e9a410946">operator--</a> () noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Pre-decrement operator. <a href="#ad74d2e875227841cfc46f17394402b43">More...</a></p>
+<p>Pre-decrement operator. <a href="#aee99a90c7b61cba2c453301e9a410946">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -289,13 +272,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a></td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ab0996080fb49e46789339ce10a9b5adf">operator--</a> (int)</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a></td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a3120afffac4d89be37b06190ac32c3b2">operator--</a> (int) noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Post-decrement operator. <a href="#ab0996080fb49e46789339ce10a9b5adf">More...</a></p>
+<p>Post-decrement operator. <a href="#a3120afffac4d89be37b06190ac32c3b2">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -307,12 +290,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a></td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ab739aa0c113044d7288ea2f2b501336f">operator-&gt;</a> () const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#ad5c0f3d97e59d361f3f69f91f98001a3">operator-&gt;</a> () const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Pointer access operator. <a href="#ab739aa0c113044d7288ea2f2b501336f">More...</a></p>
+<p>Pointer access operator. <a href="#ad5c0f3d97e59d361f3f69f91f98001a3">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -323,13 +306,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">bool</td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a7322f7566ab683966604148c49260562">operator==</a> (const intrusive_list_iterator &amp;other) const</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr bool</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#af21195356b367c6a5d061aa893e2f7c0">operator==</a> (const intrusive_list_iterator &amp;other) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Equality comparison operator. <a href="#a7322f7566ab683966604148c49260562">More...</a></p>
+<p>Equality comparison operator. <a href="#af21195356b367c6a5d061aa893e2f7c0">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -346,13 +329,13 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberIndexTemplate" colspan="2"><div>template &lt;class T, class N, N T::* MP, class U = T&gt;</div></td>
 </tr>
 <tr class="doxyMemberIndexItem">
-<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a338f29c9eb0a818bda40a54c86c23458">get_iterator_pointer</a> (void) const</td>
+<td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top">constexpr <a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a72e4be9dcf753c754d8f6ddb3e32dc39">get_iterator_pointer</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Retrieve the iterator pointer for the current node. <a href="#a338f29c9eb0a818bda40a54c86c23458">More...</a></p>
+<p>Retrieve the iterator pointer for the current node. <a href="#a72e4be9dcf753c754d8f6ddb3e32dc39">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -364,12 +347,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </tr>
 <tr class="doxyMemberIndexItem">
 <td class="doxyMemberIndexItemTypeTemplate" align="left" valign="top"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a></td>
-<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a11f2bc99a1f478650b82546e2e5470d1">get_pointer</a> (void) const</td>
+<td class="doxyMemberIndexItemNameTemplate" align="left" valign="top"><a href="#a93c954e164fc4cd26e29f64a54a2cfb5">get_pointer</a> (void) const noexcept</td>
 </tr>
 <tr class="doxyMemberIndexDescription">
 <td class="doxyMemberIndexDescriptionLeft"></td>
 <td class="doxyMemberIndexDescriptionRight">
-<p>Get the object node from the intrusive node. <a href="#a11f2bc99a1f478650b82546e2e5470d1">More...</a></p>
+<p>Get the object pointer from the intrusive node. <a href="#a93c954e164fc4cd26e29f64a54a2cfb5">More...</a></p>
 </td>
 </tr>
 <tr class="doxyMemberIndexSeparator">
@@ -433,7 +416,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>This class provides an interface similar to <span class="doxyComputerOutput">std::list::iterator</span>, except that it keeps track of the offset where the intrusive list element is located in the parent object. It supports bidirectional iteration and access to the underlying object and node.</p>
 
 
-<p>Definition at line 933 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line 69 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -461,19 +444,19 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of pointer difference.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00959">959</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00095">95</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adf2b6ab52c63f0747113565c183df0f3">959</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a> = ptrdiff_t;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adf2b6ab52c63f0747113565c183df0f3">95</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a> = ptrdiff_t;</span></span></div>
 
 </div>
 
 </div>
 </div>
 
-### iterator\_category {#a11541e8681f9015d6b8e8cc93c15eb4a}
+### iterator\_category {#a879cf5b1d6d65ce492aec7f307fa474e}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -483,7 +466,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_category =  std::forward_iterator_tag</td>
+<td class="doxyMemberName">using micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::iterator_category =  std::bidirectional_iterator_tag</td>
 </tr>
 </table>
 </td>
@@ -494,12 +477,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Category of iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00964">964</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00100">100</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a11541e8681f9015d6b8e8cc93c15eb4a">964</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a11541e8681f9015d6b8e8cc93c15eb4a">iterator_category</a> = std::forward_iterator_tag;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">100</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">iterator_category</a> = std::bidirectional_iterator_tag;</span></span></div>
 
 </div>
 
@@ -527,12 +510,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of reference to the iterator internal pointer.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00954">954</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00090">90</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a520f5e4b1067d0febf857e04f6f37b83">954</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> = N*;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a520f5e4b1067d0febf857e04f6f37b83">90</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> = N*;</span></span></div>
 
 </div>
 
@@ -560,12 +543,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of pointer to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00944">944</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00080">80</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a08ac64c64dce736d83a93dfc838083af">944</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>*;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a08ac64c64dce736d83a93dfc838083af">80</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>*;</span></span></div>
 
 </div>
 
@@ -593,12 +576,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of reference to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00949">949</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00085">85</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">949</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>&amp;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">85</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>&amp;;</span></span></div>
 
 </div>
 
@@ -626,12 +609,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of value <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00939">939</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00075">75</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">939</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a> = U;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">75</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a> = U;</span></span></div>
 
 </div>
 
@@ -644,7 +627,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 ## Public Constructors
 
-### intrusive\_list\_iterator() {#a93cc9e0b0cc3629edb655faec0feb4b3}
+### intrusive\_list\_iterator() {#a7f50db671a84210327743eb29cae2170}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -661,6 +644,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -680,28 +664,28 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 :::
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00972">972</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00735">735</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00108">108</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00068">68</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a93cc9e0b0cc3629edb655faec0feb4b3">735</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive_list_iterator&lt;T, N, MP, U&gt;::intrusive_list_iterator</a> ()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">736</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>{}</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">737</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">738</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7f50db671a84210327743eb29cae2170">68</a></span><span class="doxyLineContent"><span class="doxyHighlight">                                    U&gt;<a href="#a7f50db671a84210327743eb29cae2170">::intrusive_list_iterator</a> () noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">69</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>{}</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">70</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">71</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+<p>References <a href="#a7f50db671a84210327743eb29cae2170">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 
-<p>Referenced by <a href="#aa5703a48802f7fa6c20df08a5d90a3fa">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!=</a> and <a href="#a7322f7566ab683966604148c49260562">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</a>.</p>
+<p>Referenced by <a href="#a7f50db671a84210327743eb29cae2170">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#af21195356b367c6a5d061aa893e2f7c0">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</a>.</p>
 
 </div>
 </div>
 
-### intrusive\_list\_iterator() {#ac7aecafdf290c92a25481b63b5159e69}
+### intrusive\_list\_iterator() {#af3bf247661cb8d3cc9876cc1451fe64d}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -719,6 +703,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel explicit">explicit</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -744,16 +729,16 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>This constructor creates an <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a></span> that points to the specified node. The internal node pointer is set to the provided node address, allowing the iterator to traverse the list starting from that node. This is typically used to initialise an iterator to a specific position within the list, such as the beginning or end.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00979">979</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00749">749</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00115">115</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00082">82</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac7aecafdf290c92a25481b63b5159e69">749</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive_list_iterator&lt;T, N, MP, U&gt;::intrusive_list_iterator</a> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">750</span><span class="doxyLineContent"><span class="doxyHighlight">      N* </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> node)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">751</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>{ node }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">752</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">753</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af3bf247661cb8d3cc9876cc1451fe64d">82</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator&lt;T, N, MP, U&gt;::intrusive_list_iterator</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">83</span><span class="doxyLineContent"><span class="doxyHighlight">      N* </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> node) noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">84</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>{ node }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">85</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">86</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -763,7 +748,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 </div>
 
-### intrusive\_list\_iterator() {#acb115adc091ab89e63afaceeb05cdc07}
+### intrusive\_list\_iterator() {#a064fb9a6cf27543e453874d2c4650d5a}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -781,6 +766,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel explicit">explicit</span>
 <span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -803,21 +789,26 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </dd>
 </dl>
 
+
+:::info
+<p>This constructor is only available when <span class="doxyComputerOutput">U</span> is derived from (or is the same type as) <span class="doxyComputerOutput">T</span>, as required by <span class="doxyComputerOutput">std::derived_from&lt;U, T&gt;</span>.</p>
+:::
+
+
 <p>This constructor creates an <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a></span> that points to the specified element. The internal node pointer is set to the address of the intrusive node member within the given element, allowing the iterator to traverse the list starting from that element. This is typically used to initialise an iterator to a specific object in the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00987">987</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00764">764</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00128">128</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00097">97</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#acb115adc091ab89e63afaceeb05cdc07">764</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive_list_iterator&lt;T, N, MP, U&gt;::intrusive_list_iterator</a> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">765</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a> element)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">766</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>{ &amp;(element.*MP) }</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">767</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">768</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">static_assert</span><span class="doxyHighlight"> (std::is_convertible&lt;U, T&gt;::value == </span><span class="doxyHighlightKeyword">true</span><span class="doxyHighlight">,</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">769</span><span class="doxyLineContent"><span class="doxyHighlight">                   </span><span class="doxyHighlightStringLiteral">"U must be implicitly convertible to T!"</span><span class="doxyHighlight">);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">770</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a064fb9a6cf27543e453874d2c4650d5a">97</a></span><span class="doxyLineContent"><span class="doxyHighlight">  </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator&lt;T, N, MP, U&gt;::intrusive_list_iterator</a> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">98</span><span class="doxyLineContent"><span class="doxyHighlight">      <a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a> element) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">99</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">requires</span><span class="doxyHighlight"> std::derived_from&lt;U, T&gt;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">100</span><span class="doxyLineContent"><span class="doxyHighlight">      : <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>{ &amp;(element.*MP) }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">101</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">102</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -833,7 +824,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 ## Public Operators
 
-### operator--() {#ad74d2e875227841cfc46f17394402b43}
+### operator--() {#aee99a90c7b61cba2c453301e9a410946}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -849,7 +840,8 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -869,16 +861,16 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The pre-decrement operator (<span class="doxyComputerOutput">operator--</span>) moves the intrusive list iterator to the previous node in the list. It updates the internal node pointer to point to the node returned by the current node's <span class="doxyComputerOutput">previous()</span> method. This enables backward traversal of the list, following the linked structure in reverse.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01030">1030</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00848">848</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00172">172</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00180">180</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad74d2e875227841cfc46f17394402b43">848</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad74d2e875227841cfc46f17394402b43">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator--</a>()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">849</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">850</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;previous ());</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list/#aeb06a4ae2e5497418a29e488d989f6da">851</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">852</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aee99a90c7b61cba2c453301e9a410946">180</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aee99a90c7b61cba2c453301e9a410946">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator--</a>() noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">181</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">182</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;previous ());</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">183</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">184</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -888,7 +880,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 </div>
 
-### operator--() {#ab0996080fb49e46789339ce10a9b5adf}
+### operator--() {#a3120afffac4d89be37b06190ac32c3b2}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -901,6 +893,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberName">intrusive_list_iterator&lt; T, N, MP, U &gt; micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-- (int)</td>
 </tr>
 </table>
+</td>
+<td class="doxyMemberLabelsRight">
+<span class="doxyMemberLabels">
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
+</span>
 </td>
 </tr>
 </table>
@@ -916,20 +914,20 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </dl>
 
 
-<p>The post-decrement operator (<span class="doxyComputerOutput"><a href="#ab0996080fb49e46789339ce10a9b5adf">operator--(int)</a></span>) moves the intrusive list iterator to the previous node in the list, but returns a copy of the iterator as it was before the decrement. This enables iteration logic that requires access to the current element before moving backward, following the standard C++ iterator semantics for post-decrement.</p>
+<p>The post-decrement operator (<span class="doxyComputerOutput"><a href="#a3120afffac4d89be37b06190ac32c3b2">operator--(int)</a></span>) moves the intrusive list iterator to the previous node in the list, but returns a copy of the iterator as it was before the decrement. This enables iteration logic that requires access to the current element before moving backward, following the standard C++ iterator semantics for post-decrement.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01038">1038</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00864">864</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00180">180</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00196">196</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab0996080fb49e46789339ce10a9b5adf">864</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad74d2e875227841cfc46f17394402b43">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator--</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">865</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">866</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> tmp = *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">867</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;previous ());</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">868</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tmp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">869</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a3120afffac4d89be37b06190ac32c3b2">196</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aee99a90c7b61cba2c453301e9a410946">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator--</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">197</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">198</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> tmp = *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">199</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;previous ());</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">200</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tmp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">201</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -939,7 +937,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 </div>
 
-### operator-&gt;() {#ab739aa0c113044d7288ea2f2b501336f}
+### operator-&gt;() {#ad5c0f3d97e59d361f3f69f91f98001a3}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -956,6 +954,8 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -972,95 +972,28 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </dl>
 
 
-<p>The pointer access operator (<span class="doxyComputerOutput">operator-&gt;</span>) allows the intrusive list iterator to provide direct access to the value pointed to by the iterator, mimicking the behavior of a raw pointer. Internally, it calls <span class="doxyComputerOutput"><a href="#a11f2bc99a1f478650b82546e2e5470d1">get_pointer()</a></span>, which computes and returns a pointer to the underlying value or object associated with the current node in the list.</p>
+<p>The pointer access operator (<span class="doxyComputerOutput">operator-&gt;</span>) allows the intrusive list iterator to provide direct access to the value pointed to by the iterator, mimicking the behavior of a raw pointer. Internally, it calls <span class="doxyComputerOutput"><a href="#a93c954e164fc4cd26e29f64a54a2cfb5">get_pointer()</a></span>, which computes and returns a pointer to the underlying value or object associated with the current node in the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00998">998</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00782">782</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
-
-
-<div class="doxyProgramListing">
-
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ab739aa0c113044d7288ea2f2b501336f">782</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ab739aa0c113044d7288ea2f2b501336f">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator-&gt;</a>()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">783</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">  </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">784</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a11f2bc99a1f478650b82546e2e5470d1">get_pointer</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">785</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
-
-</div>
-
-
-<p>Reference <a href="#a11f2bc99a1f478650b82546e2e5470d1">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>.</p>
-
-</div>
-</div>
-
-### operator!=() {#aa5703a48802f7fa6c20df08a5d90a3fa}
-
-<div class="doxyMemberItem">
-<div class="doxyMemberProto">
-<div class="doxyMemberTemplate">template &lt;class T, class N, N T::* MP, class U = T&gt;</div>
-<table class="doxyMemberLabels">
-<tr class="doxyMemberLabels">
-<td class="doxyMemberLabelsLeft">
-<table class="doxyMemberName">
-<tr>
-<td class="doxyMemberName">bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!= (const <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a> &amp; other)</td>
-</tr>
-</table>
-</td>
-<td class="doxyMemberLabelsRight">
-<span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
-</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="doxyMemberDoc">
-
-<p>Inequality comparison operator.</p>
-
-
-<dl class="doxyParamsList">
-<dt class="doxyParamsTableTitle">Parameters</dt>
-<dd>
-<table class="doxyParamsTable">
-<tr class="doxyParamItem">
-<td class="doxyParamItemName">other</td>
-<td class="doxyParamItemDescription"><p>Iterator to compare with.</p></td>
-</tr>
-</table>
-</dd>
-</dl>
-
-<dl class="doxySectionUser">
-<dt>Returns</dt>
-<dd><p><span class="doxyComputerOutput">true</span> if the iterators point to different nodes, <span class="doxyComputerOutput">false</span> otherwise.</p></dd>
-</dl>
-
-
-<p>The inequality comparison operator (<span class="doxyComputerOutput">operator!=</span>) checks whether two intrusive list iterators point to different nodes in the list by comparing their internal node pointers. This is useful for standard iterator operations, such as determining whether an iterator has reached the end of a range or for loop termination conditions.</p>
-
-
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01057">1057</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00897">897</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00140">140</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00114">114</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa5703a48802f7fa6c20df08a5d90a3fa">897</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#aa5703a48802f7fa6c20df08a5d90a3fa">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator!=</a>(</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">898</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive_list_iterator</a>&amp; other)</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">899</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">  </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">900</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> != other.<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">901</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad5c0f3d97e59d361f3f69f91f98001a3">114</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#ad5c0f3d97e59d361f3f69f91f98001a3">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator-&gt;</a>() const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">115</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">116</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a93c954e164fc4cd26e29f64a54a2cfb5">get_pointer</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">117</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+<p>Reference <a href="#a93c954e164fc4cd26e29f64a54a2cfb5">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>.</p>
 
 </div>
 </div>
 
-### operator\*() {#a5db55a56e22dbdea96e6d7e05c52f4c8}
+### operator\*() {#a02d97e48aa2727ed8445c023942f30e6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1077,6 +1010,8 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -1093,31 +1028,31 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </dl>
 
 
-<p>The dereference operator (<span class="doxyComputerOutput">operator*</span>) provides access to the value or object pointed to by the iterator. Internally, it calls <span class="doxyComputerOutput"><a href="#a11f2bc99a1f478650b82546e2e5470d1">get_pointer()</a></span> to obtain a pointer to the underlying value or object associated with the current node in the list, and then dereferences it to return a reference.</p>
+<p>The dereference operator (<span class="doxyComputerOutput">operator*</span>) provides access to the value or object pointed to by the iterator. Internally, it calls <span class="doxyComputerOutput"><a href="#a93c954e164fc4cd26e29f64a54a2cfb5">get_pointer()</a></span> to obtain a pointer to the underlying value or object associated with the current node in the list, and then dereferences it to return a reference.</p>
 
 
 <p>This allows the iterator to be used in a manner similar to standard C++ iterators, enabling direct access to the list element for reading or modification.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01006">1006</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00800">800</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00148">148</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00132">132</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5db55a56e22dbdea96e6d7e05c52f4c8">800</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a5db55a56e22dbdea96e6d7e05c52f4c8">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator*</a>()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">801</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">  </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">802</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *<a href="#a11f2bc99a1f478650b82546e2e5470d1">get_pointer</a> ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">803</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a02d97e48aa2727ed8445c023942f30e6">132</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a02d97e48aa2727ed8445c023942f30e6">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator*</a>() const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">133</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">134</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *<a href="#a93c954e164fc4cd26e29f64a54a2cfb5">get_pointer</a> ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">135</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>Reference <a href="#a11f2bc99a1f478650b82546e2e5470d1">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>.</p>
+<p>Reference <a href="#a93c954e164fc4cd26e29f64a54a2cfb5">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>.</p>
 
 </div>
 </div>
 
-### operator++() {#a22f5ebc83ff86c67f62bf16bc2db6e39}
+### operator++() {#a50d428211ad0b30b6140c85cb898ff50}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1133,7 +1068,8 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -1153,16 +1089,16 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The pre-increment operator (<span class="doxyComputerOutput">operator++</span>) advances the intrusive list iterator to the next node in the list. It updates the internal node pointer to point to the node returned by the current node's <span class="doxyComputerOutput">next()</span> method. This enables forward traversal of the list, following the linked structure.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01014">1014</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00815">815</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00156">156</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00147">147</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">815</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator++</a>()</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">816</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">817</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;next ());</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">818</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">819</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a50d428211ad0b30b6140c85cb898ff50">147</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a50d428211ad0b30b6140c85cb898ff50">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator++</a>() noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">148</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">149</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;next ());</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">150</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">151</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1172,7 +1108,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 </div>
 
-### operator++() {#afd38a451e17ae6bf25966460f7815f12}
+### operator++() {#aa8fa99a95e7d9a21ba91206cec42b5e6}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1188,7 +1124,8 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -1205,27 +1142,30 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </dl>
 
 
-<p>The post-increment operator (<span class="doxyComputerOutput"><a href="#afd38a451e17ae6bf25966460f7815f12">operator++(int)</a></span>) advances the intrusive list iterator to the next node in the list, but returns a copy of the iterator as it was before the increment. This allows iteration logic that requires access to the current element before moving to the next one, following the standard C++ iterator semantics for post-increment.</p>
+<p>The post-increment operator (<span class="doxyComputerOutput"><a href="#aa8fa99a95e7d9a21ba91206cec42b5e6">operator++(int)</a></span>) advances the intrusive list iterator to the next node in the list, but returns a copy of the iterator as it was before the increment. This allows iteration logic that requires access to the current element before moving to the next one, following the standard C++ iterator semantics for post-increment.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01022">1022</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00831">831</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00164">164</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00163">163</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list/#aba89961ff686c458b91bbe59f2480519">831</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator++</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">832</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">833</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> tmp = *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">834</span><span class="doxyLineContent"><span class="doxyHighlight">    node_ = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/double-list/#a3edeece487e107c419c78a061315dc45">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (node_-&gt;next ());</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">835</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tmp;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">836</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa8fa99a95e7d9a21ba91206cec42b5e6">163</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a50d428211ad0b30b6140c85cb898ff50">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator++</a>(</span><span class="doxyHighlightKeywordType">int</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">164</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">165</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> tmp = *</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">166</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> = </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>-&gt;next ());</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">167</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> tmp;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">168</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
+
+<p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+
 </div>
 </div>
 
-### operator==() {#a7322f7566ab683966604148c49260562}
+### operator==() {#af21195356b367c6a5d061aa893e2f7c0}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1235,13 +1175,15 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator== (const <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a> &amp; other)</td>
+<td class="doxyMemberName">bool micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator== (const <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a> &amp; other)</td>
 </tr>
 </table>
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -1270,24 +1212,30 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </dl>
 
 
+
+:::info
+<p>The inequality operator (<span class="doxyComputerOutput">!=</span>) is synthesised automatically by the compiler from this operator (C++20).</p>
+:::
+
+
 <p>The equality comparison operator (<span class="doxyComputerOutput">operator==</span>) checks whether two intrusive list iterators point to the same node in the list by comparing their internal node pointers. This enables standard iterator comparisons, such as detecting the end of a range or verifying if two iterators refer to the same position within the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01048">1048</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00881">881</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00194">194</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00213">213</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a7322f7566ab683966604148c49260562">881</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a7322f7566ab683966604148c49260562">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator==</a>(</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">882</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">intrusive_list_iterator</a>&amp; other)</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">883</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">  </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">884</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> == other.<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">885</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af21195356b367c6a5d061aa893e2f7c0">213</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#af21195356b367c6a5d061aa893e2f7c0">intrusive_list_iterator&lt;T, N, MP, U&gt;::operator==</a>(</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">214</span><span class="doxyLineContent"><span class="doxyHighlight">      </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> <a href="#a7f50db671a84210327743eb29cae2170">intrusive_list_iterator</a>&amp; other) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">215</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">216</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a> == other.node_;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">217</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
 
-<p>References <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
+<p>References <a href="#a7f50db671a84210327743eb29cae2170">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a> and <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 </div>
 </div>
@@ -1298,7 +1246,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 ## Public Member Functions
 
-### get\_iterator\_pointer() {#a338f29c9eb0a818bda40a54c86c23458}
+### get\_iterator\_pointer() {#a72e4be9dcf753c754d8f6ddb3e32dc39}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1314,7 +1262,9 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </td>
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
-<span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel constexpr">constexpr</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -1340,15 +1290,15 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>Returns a pointer to the internal iterator node associated with the current object. This is typically used for advanced list operations or when direct access to the underlying node is required.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01077">1077</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00938">938</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00214">214</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00258">258</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a338f29c9eb0a818bda40a54c86c23458">938</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a338f29c9eb0a818bda40a54c86c23458">intrusive_list_iterator&lt;T, N, MP, U&gt;::get_iterator_pointer</a> ()</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">939</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">  </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">940</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">941</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a72e4be9dcf753c754d8f6ddb3e32dc39">258</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a72e4be9dcf753c754d8f6ddb3e32dc39">intrusive_list_iterator&lt;T, N, MP, U&gt;::get_iterator_pointer</a> () const noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">259</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">260</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">261</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1358,7 +1308,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 </div>
 
-### get\_pointer() {#a11f2bc99a1f478650b82546e2e5470d1}
+### get\_pointer() {#a93c954e164fc4cd26e29f64a54a2cfb5}
 
 <div class="doxyMemberItem">
 <div class="doxyMemberProto">
@@ -1375,6 +1325,8 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <td class="doxyMemberLabelsRight">
 <span class="doxyMemberLabels">
 <span class="doxyMemberLabel inline">inline</span>
+<span class="doxyMemberLabel nodiscard">nodiscard</span>
+<span class="doxyMemberLabel noexcept">noexcept</span>
 </span>
 </td>
 </tr>
@@ -1382,7 +1334,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 </div>
 <div class="doxyMemberDoc">
 
-<p>Get the object node from the intrusive node.</p>
+<p>Get the object pointer from the intrusive node.</p>
 
 
 <dl class="doxySectionUser">
@@ -1393,33 +1345,37 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <dl class="doxySectionUser">
 <dt>Returns</dt>
-<dd><p>Pointer to object node.</p></dd>
+<dd><p>Pointer to the parent object.</p></dd>
 </dl>
 
 
 <p>Computes and returns a pointer to the parent object that contains the intrusive node currently referenced by the iterator. This is achieved by calculating the offset of the intrusive node member within the parent object type and subtracting it from the node's address. This technique allows the iterator to provide access to the full object from just the node pointer, enabling intrusive list traversal and manipulation.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01067">1067</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h/#l00914">914</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00204">204</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h/#l00230">230</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a11f2bc99a1f478650b82546e2e5470d1">914</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a11f2bc99a1f478650b82546e2e5470d1">intrusive_list_iterator&lt;T, N, MP, U&gt;::get_pointer</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">)</span><span class="doxyHighlightKeyword"> const</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">915</span><span class="doxyLineContent"><span class="doxyHighlightKeyword">  </span><span class="doxyHighlight">{</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">916</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// static_assert(std::is_convertible&lt;U, T&gt;::value == true, "U must be</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">917</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// implicitly convertible to T!");</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">918</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">919</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Compute the distance between the member intrusive link</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">920</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// node and the class begin.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">921</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> offset = </span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">922</span><span class="doxyLineContent"><span class="doxyHighlight">        &amp;(</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">)-&gt;*MP));</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">923</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">924</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Compute the address of the object which includes the</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">925</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// intrusive node, by adjusting down the node address.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">926</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlight"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">927</span><span class="doxyLineContent"><span class="doxyHighlight">                                      - offset);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">928</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a93c954e164fc4cd26e29f64a54a2cfb5">230</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a93c954e164fc4cd26e29f64a54a2cfb5">intrusive_list_iterator&lt;T, N, MP, U&gt;::get_pointer</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">231</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">232</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// static_assert(std::is_convertible&lt;U, T&gt;::value == true, "U must be</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">233</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// implicitly convertible to T!");</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">234</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">235</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Compute the byte offset of the intrusive node member within T.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">236</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Note: dereferencing a null pointer is formally undefined behaviour</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">237</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// under the C++ standard. In practice, no known compiler miscompiles</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">238</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// this idiom on any supported target; `offsetof` cannot be used here</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">239</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// because `MP` is a template parameter (a pointer-to-member), not a</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">240</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// literal member name.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">241</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">auto</span><span class="doxyHighlight"> offset = </span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">242</span><span class="doxyLineContent"><span class="doxyHighlight">        &amp;(</span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight">T*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">nullptr</span><span class="doxyHighlight">)-&gt;*MP));</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">243</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">244</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Compute the address of the object which includes the</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">245</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// intrusive node, by adjusting down the node address.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">246</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlight"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">reinterpret_cast&lt;</span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">247</span><span class="doxyLineContent"><span class="doxyHighlight">                                      - offset);</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">248</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1427,7 +1383,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>Reference <a href="#aee433922fe4b649d6c1b529e620e9345">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::node_</a>.</p>
 
 
-<p>Referenced by <a href="#a5db55a56e22dbdea96e6d7e05c52f4c8">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator*</a> and <a href="#ab739aa0c113044d7288ea2f2b501336f">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-&gt;</a>.</p>
+<p>Referenced by <a href="#a02d97e48aa2727ed8445c023942f30e6">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator*</a> and <a href="#ad5c0f3d97e59d361f3f69f91f98001a3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator-&gt;</a>.</p>
 
 </div>
 </div>
@@ -1468,17 +1424,17 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>Stores the address of the current intrusive node in the list.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l01086">1086</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h/#l00223">223</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aee433922fe4b649d6c1b529e620e9345">1086</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aee433922fe4b649d6c1b529e620e9345">223</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
 
 </div>
 
 
-<p>Referenced by <a href="#a93cc9e0b0cc3629edb655faec0feb4b3">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#ac7aecafdf290c92a25481b63b5159e69">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#acb115adc091ab89e63afaceeb05cdc07">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#a338f29c9eb0a818bda40a54c86c23458">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_iterator_pointer</a>, <a href="#a11f2bc99a1f478650b82546e2e5470d1">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>, <a href="#aa5703a48802f7fa6c20df08a5d90a3fa">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator!=</a>, <a href="#a22f5ebc83ff86c67f62bf16bc2db6e39">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++</a>, <a href="#ad74d2e875227841cfc46f17394402b43">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</a>, <a href="#ab0996080fb49e46789339ce10a9b5adf">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</a> and <a href="#a7322f7566ab683966604148c49260562">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</a>.</p>
+<p>Referenced by <a href="#a7f50db671a84210327743eb29cae2170">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#af3bf247661cb8d3cc9876cc1451fe64d">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#a064fb9a6cf27543e453874d2c4650d5a">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::intrusive_list_iterator</a>, <a href="#a72e4be9dcf753c754d8f6ddb3e32dc39">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_iterator_pointer</a>, <a href="#a93c954e164fc4cd26e29f64a54a2cfb5">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::get_pointer</a>, <a href="#a50d428211ad0b30b6140c85cb898ff50">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++</a>, <a href="#aa8fa99a95e7d9a21ba91206cec42b5e6">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator++</a>, <a href="#aee99a90c7b61cba2c453301e9a410946">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</a>, <a href="#a3120afffac4d89be37b06190ac32c3b2">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator--</a> and <a href="#af21195356b367c6a5d061aa893e2f7c0">micro_os_plus::utils::intrusive_list_iterator&lt; T, N, MP, U &gt;::operator==</a>.</p>
 
 </div>
 </div>
@@ -1490,12 +1446,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 The documentation for this class was generated from the following files:
 
 <ul>
-<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-inlines-h">lists-inlines.h</a></li>
-<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a></li>
+<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a></li>
+<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h">intrusive-list.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

@@ -13,6 +13,10 @@
       "to": "/docs/api/namespaces/"
     },
     {
+      "label": "Concepts",
+      "to": "/docs/api/concepts/"
+    },
+    {
       "label": "Classes",
       "to": "/docs/api/classes/"
     },

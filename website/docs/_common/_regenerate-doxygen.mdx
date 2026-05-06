@@ -5,14 +5,15 @@
 
 ### Regenerate the Doxygen pages
 
-Execute the **doxygen** npm script:
+Execute the **generate-website-doxygen** npm script:
 
 ```sh
-npm --prefix ~/Work/micro-os-plus/utils-lists-xpack.git/website run doxygen
+npm --prefix ~/Work/micro-os-plus/utils-lists-xpack.git/website run generate-website-doxygen
 ```
 
 At present, the doxygen programme must be installed on the host,
 as it is not available as an xpm dependency.
 
 With the current configuration, the static HTML pages are generated
-within the `website/static/doxygen` folder.
+within the `website/static/doxygen` folder and converted to docusaurus
+markdown in `docs/api`.

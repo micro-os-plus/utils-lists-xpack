@@ -5,6 +5,7 @@
 
 title: µOS++ Intrusive Lists API Reference
 slug: /api/
+description: The main page of the API documentation
 custom_edit_url: null
 keywords:
   - doxygen
@@ -62,7 +63,7 @@ Intrusive doubly linked lists classes
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-double-lists">Doubly Linked Lists</a>
+<a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-doubly-lists">Doubly Linked Lists</a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 Doubly linked lists classes
@@ -102,6 +103,6 @@ Topics related to the µOS++ Intrusive Lists C API
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.0.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.14.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
 
 </div>

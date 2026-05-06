@@ -1,0 +1,753 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="classmicro__os__plus_1_1utils_1_1doubly__list" kind="class" language="C++" prot="public">
+    <compoundname>micro_os_plus::utils::doubly_list</compoundname>
+    <includes refid="lists_8h" local="no">micro-os-plus/utils/lists.h</includes>
+    <templateparamlist>
+      <param>
+        <type>doubly_list_links_node</type>
+        <declname>T</declname>
+        <defname>T</defname>
+      </param>
+      <param>
+        <type>doubly_list_links_node</type>
+        <declname>L</declname>
+        <defname>L</defname>
+        <defval><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links" kindref="compound">doubly_list_links</ref></defval>
+      </param>
+    </templateparamlist>
+    <sectiondef kind="public-type">
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a735ee001c008f04eb19cd31e5ea43668" prot="public" static="no">
+        <type>typename links_type::is_statically_allocated</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::is_statically_allocated = 
+        typename links_type::is_statically_allocated</definition>
+        <argsstring></argsstring>
+        <name>is_statically_allocated</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::is_statically_allocated</qualifiedname>
+        <briefdescription>
+<para>Type indicating if the links node is statically allocated. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="291" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="291" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" prot="public" static="no">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator" kindref="compound">doubly_list_iterator</ref>&lt; <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aabd15bd5b78a500a9e350ff21c6bcf28" kindref="member">value_type</ref> &gt;</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::iterator =  doubly_list_iterator&lt;value_type&gt;</definition>
+        <argsstring></argsstring>
+        <name>iterator</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::iterator</qualifiedname>
+        <briefdescription>
+<para>Type of iterator over the values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="276" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="276" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1ac466265f112e5f41b06b64e794f3db63" prot="public" static="no">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aabd15bd5b78a500a9e350ff21c6bcf28" kindref="member">value_type</ref> *</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::iterator_pointer =  value_type*</definition>
+        <argsstring></argsstring>
+        <name>iterator_pointer</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::iterator_pointer</qualifiedname>
+        <briefdescription>
+<para>Type of reference to the iterator internal pointer. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="286" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="286" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1aed5fc0c1164c30d890986b08d8f3a4da" prot="public" static="no">
+        <type>L</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_type =  L</definition>
+        <argsstring></argsstring>
+        <name>links_type</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::links_type</qualifiedname>
+        <briefdescription>
+<para>Type of the links node object where the pointers to the list head and tail are stored. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="256" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="256" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a06b1703840274b544b5886a9190bef4b" prot="public" static="no">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aabd15bd5b78a500a9e350ff21c6bcf28" kindref="member">value_type</ref> *</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::pointer =  value_type*</definition>
+        <argsstring></argsstring>
+        <name>pointer</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::pointer</qualifiedname>
+        <briefdescription>
+<para>Type of pointer to object <emphasis>pointed to</emphasis> by the iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="266" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="266" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a5c8bc0b786d3e38ac36d4c6e12bb8ade" prot="public" static="no">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aabd15bd5b78a500a9e350ff21c6bcf28" kindref="member">value_type</ref> &amp;</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::reference =  value_type&amp;</definition>
+        <argsstring></argsstring>
+        <name>reference</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::reference</qualifiedname>
+        <briefdescription>
+<para>Type of reference to object <emphasis>pointed to</emphasis> by the iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="271" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="271" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a51bfca23b338fb2ba434e49b0a296ee9" prot="public" static="no">
+        <type>std::reverse_iterator&lt; <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" kindref="member">iterator</ref> &gt;</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::reverse_iterator =  std::reverse_iterator&lt;iterator&gt;</definition>
+        <argsstring></argsstring>
+        <name>reverse_iterator</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::reverse_iterator</qualifiedname>
+        <briefdescription>
+<para>Type of reverse iterator over the values. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="281" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="281" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list_1aabd15bd5b78a500a9e350ff21c6bcf28" prot="public" static="no">
+        <type>T</type>
+        <definition>using micro_os_plus::utils::doubly_list&lt; T, L &gt;::value_type =  T</definition>
+        <argsstring></argsstring>
+        <name>value_type</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::value_type</qualifiedname>
+        <briefdescription>
+<para>Type of value <emphasis>pointed to</emphasis> by the iterator. </para>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="261" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="261" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" prot="protected" static="no" mutable="no">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aed5fc0c1164c30d890986b08d8f3a4da" kindref="member">links_type</ref></type>
+        <definition>links_type micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</definition>
+        <argsstring></argsstring>
+        <name>links_</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::links_</qualifiedname>
+        <briefdescription>
+<para>The list top node used to point to <bold>head</bold> and <bold>tail</bold> nodes. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>This member stores the internal links node for the list. The <bold>next</bold> pointer of this node points to the head of the list, and the <bold>previous</bold> pointer points to the tail. For an empty list, both pointers refer to the node itself, simplifying list management and boundary checks. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="496" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="496" bodyend="-1"/>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a901d37d96ab59b0863e78774a0b72079" compoundref="doubly-list-inlines_8h" startline="494" endline="506">micro_os_plus::utils::doubly_list&lt; T, L &gt;::begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" compoundref="intrusive-list-inlines_8h" startline="421" endline="431">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::begin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" compoundref="doubly-list-inlines_8h" startline="379" endline="383">micro_os_plus::utils::doubly_list&lt; T, L &gt;::empty</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" compoundref="doubly-list-inlines_8h" startline="518" endline="529">micro_os_plus::utils::doubly_list&lt; T, L &gt;::end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a34e804930d1b4ab2ea7a538ab4b17d97" compoundref="doubly-list-inlines_8h" startline="414" endline="417">micro_os_plus::utils::doubly_list&lt; T, L &gt;::head</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a2b0c8c399237932f92c93a60d26f2bea" compoundref="doubly-list-inlines_8h" startline="328" endline="338">micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialised</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1af31780e2a87d34eca81ad2a8f47afe2c" compoundref="doubly-list-inlines_8h" startline="469" endline="482">micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_head</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ad30c1c31d1fe0d806ec271aa58e8eb4d" compoundref="doubly-list-inlines_8h" startline="566" endline="569">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_pointer</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="530" endline="547">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="559" endline="576">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</referencedby>
+      </memberdef>
+    </sectiondef>
+    <sectiondef kind="public-func">
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</definition>
+        <argsstring>() noexcept</argsstring>
+        <name>doubly_list</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::doubly_list</qualifiedname>
+        <briefdescription>
+<para>Construct a doubly linked list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>For non-statically allocated lists, the initial list status is <emphasis>empty</emphasis> after construction, meaning the list is ready for use and contains no nodes.</para>
+<para>For statically allocated lists, the list remains <emphasis>uninitialised</emphasis> after construction, with its internal pointers set to <computeroutput>nullptr</computeroutput>. Such lists require explicit initialisation (typically via <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ab42aae2bfccbee1628b1b470911f6def" kindref="member">initialise_once()</ref></computeroutput>) before use.</para>
+<para>This constructor does not clear or modify the internal pointers for statically allocated lists, relying on zero-initialisation by the runtime. For dynamically allocated lists, it calls <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" kindref="member">clear()</ref></computeroutput> to ensure the list is in a valid empty state.</para>
+<para><simplesect kind="par"><title>The rule of five</title><para>The copy constructor, move constructor, copy assignment operator, and move assignment operator are explicitly deleted to prevent accidental copying or moving of <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list" kindref="compound">doubly_list</ref></computeroutput> objects. This ensures the integrity of the list structure, as duplicating or moving lists could result in invalid or inconsistent links within the list. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="297" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="270" bodyend="286"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" compoundref="doubly-list-inlines_8h" startline="395" endline="402">micro_os_plus::utils::doubly_list&lt; T, L &gt;::clear</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a651a33d33feaeb0fdfc0bf905e098218">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a63ee95c08711fb063e880b1122ffe38f">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a94ebc26808071cb791c1917c83fc94f7">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a651a33d33feaeb0fdfc0bf905e098218" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</definition>
+        <argsstring>(const doubly_list &amp;)=delete</argsstring>
+        <name>doubly_list</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::doubly_list</qualifiedname>
+        <param>
+          <type>const doubly_list &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Copying of <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list" kindref="compound">doubly_list</ref></computeroutput> instances is explicitly disallowed to prevent accidental duplication, which could compromise the integrity of the list structure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="307" column="5"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" compoundref="doubly-list-inlines_8h" startline="270" endline="286">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a63ee95c08711fb063e880b1122ffe38f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type></type>
+        <definition>micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</definition>
+        <argsstring>(doubly_list &amp;&amp;)=delete</argsstring>
+        <name>doubly_list</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::doubly_list</qualifiedname>
+        <param>
+          <type>doubly_list &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move constructor. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Moving of <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list" kindref="compound">doubly_list</ref></computeroutput> instances is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving lists. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="317" column="5"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" compoundref="doubly-list-inlines_8h" startline="270" endline="286">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1aae54cb514e9356a017b79c862abaa378" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>constexpr</type>
+        <definition>micro_os_plus::utils::doubly_list&lt; T, L &gt;::~doubly_list</definition>
+        <argsstring>()</argsstring>
+        <name>~doubly_list</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::~doubly_list</qualifiedname>
+        <briefdescription>
+<para>Destruct the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Normally at this point there must be no nodes in the list. However, for statically allocated lists, this might not be always true due to their lifetime and initialization patterns.</para>
+<para><simplesect kind="note"><para>In debug mode, the destructor emits a warning if the list is not empty when destroyed, helping to catch potential resource leaks or logic errors in list management. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="343" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="301" bodyend="316"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" compoundref="doubly-list-inlines_8h" startline="379" endline="383">micro_os_plus::utils::doubly_list&lt; T, L &gt;::empty</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a901d37d96ab59b0863e78774a0b72079" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" kindref="member">iterator</ref></type>
+        <definition>doubly_list&lt; T, L &gt;::iterator micro_os_plus::utils::doubly_list&lt; T, L &gt;::begin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>begin</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::begin</qualifiedname>
+        <briefdescription>
+<para>Iterator begin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An iterator to the first element.</para>
+</simplesect>
+Returns an iterator to the first element in the list. For statically allocated lists, asserts that the list is already initialised. The iterator will point to the node after the internal links node (the head). If the list is empty, the iterator will compare equal to <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" kindref="member">end()</ref></computeroutput>. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="439" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="494" bodyend="506"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0314a3e78b3cd027ffed6975a3da4ffa" compoundref="doubly-list-inlines_8h" startline="552" endline="555">micro_os_plus::utils::doubly_list&lt; T, L &gt;::rend</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::utils::doubly_list&lt; T, L &gt;::clear</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>clear</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::clear</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Clear the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+The <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" kindref="member">clear()</ref></computeroutput> method initialises the mandatory internal links node so that both its <computeroutput>previous_</computeroutput> and <computeroutput>next_</computeroutput> pointers refer to itself. This marks the list as empty and ensures it is in a safe, known state, ready for new insertions. This operation is typically used to reset the list, removing all elements and breaking any existing links. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="389" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="395" bodyend="402"/>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" compoundref="doubly-list-inlines_8h" startline="270" endline="286">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::utils::doubly_list&lt; T, L &gt;::empty</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>empty</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::empty</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if the list is empty. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list has <bold>no</bold> nodes. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list has <bold>at least one</bold> node.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+Checks whether the list contains any nodes. The list is considered empty if the internal links node is not linked to any other nodes. This method provides a fast way to determine if the list has elements or is currently empty. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="378" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="379" bodyend="383"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aae54cb514e9356a017b79c862abaa378" compoundref="doubly-list-inlines_8h" startline="301" endline="316">micro_os_plus::utils::doubly_list&lt; T, L &gt;::~doubly_list</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" compoundref="intrusive-list-inlines_8h" startline="336" endline="339">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::empty</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" kindref="member">iterator</ref></type>
+        <definition>doubly_list&lt; T, L &gt;::iterator micro_os_plus::utils::doubly_list&lt; T, L &gt;::end</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>end</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::end</qualifiedname>
+        <briefdescription>
+<para>Iterator end. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>An iterator positioned after the last element.</para>
+</simplesect>
+Returns an iterator to the position after the last element in the list (the end iterator). This iterator points to the internal links node, which acts as a sentinel. It is used as the past-the-end marker in iteration and comparison operations. The end iterator does not reference any valid list element. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="447" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="518" bodyend="529"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aa59f07f0ab869376dfb09dbbe11a92d4" compoundref="doubly-list-inlines_8h" startline="539" endline="542">micro_os_plus::utils::doubly_list&lt; T, L &gt;::rbegin</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a34e804930d1b4ab2ea7a538ab4b17d97" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a06b1703840274b544b5886a9190bef4b" kindref="member">pointer</ref></type>
+        <definition>doubly_list&lt; T, L &gt;::pointer micro_os_plus::utils::doubly_list&lt; T, L &gt;::head</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>head</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::head</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the list <bold>head</bold>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>Pointer to the head node.</para>
+</simplesect>
+Returns a pointer to the first node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during iteration. The returned pointer should be checked against <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" kindref="member">end()</ref></computeroutput> or the sentinel node to determine if the list contains any elements. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="399" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="414" bodyend="417"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1af56d27306de13d542af3fc75c8b33a98" compoundref="intrusive-list-inlines_8h" startline="385" endline="403">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::link_head</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1ab42aae2bfccbee1628b1b470911f6def" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialise_once</definition>
+        <argsstring>(void) noexcept</argsstring>
+        <name>initialise_once</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::initialise_once</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Initialise the list only at first run. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>true if the list was initialised, false otherwise.</para>
+</simplesect>
+If the statically allocated list is still in the initial <emphasis>uninitialised</emphasis> state (with both pointers null), this method initialises the list to the empty state, with both pointers pointing to itself. For non-statically initialised lists, this method has no effect.</para>
+<para><simplesect kind="note"><para>Must be manually called for statically allocated lists before inserting elements or performing any other operations. </para>
+</simplesect>
+</para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="367" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="354" bodyend="368"/>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a354dd2dfa628779115681a8699098f50" compoundref="intrusive-list-inlines_8h" startline="321" endline="324">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::initialise_once</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a2b0c8c399237932f92c93a60d26f2bea" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialised</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>initialised</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::initialised</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Check if the list is initialised (only statically allocated lists can be uninitialised). </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<parameterlist kind="retval"><parameteritem>
+<parameternamelist>
+<parametername>true</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list was initialised. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>false</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The list was <bold>not</bold> initialised.</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+An uninitialised node is a node with any of the pointers set to <computeroutput>nullptr</computeroutput>. Only statically allocated nodes in the initial state are considered <emphasis>uninitialised</emphasis>. For dynamically allocated lists, this method always returns <computeroutput>true</computeroutput> since their nodes are explicitly initialised during construction. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="356" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="328" bodyend="338"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1af31780e2a87d34eca81ad2a8f47afe2c" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_head</definition>
+        <argsstring>(reference node) noexcept</argsstring>
+        <name>link_head</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::link_head</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a5c8bc0b786d3e38ac36d4c6e12bb8ade" kindref="member">reference</ref></type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Add a node to the head of the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the node to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Adds a new node to the beginning (head) of the list. For statically allocated lists, asserts that the list is already initialised. The new node is linked before the current head node, updating the list structure accordingly. This operation does not check for duplicate nodes or whether the node is already linked elsewhere. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="429" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="469" bodyend="482"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1ab700f9e890a253eeefb42c8a15b9e403" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_tail</definition>
+        <argsstring>(reference node) noexcept</argsstring>
+        <name>link_tail</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::link_tail</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a5c8bc0b786d3e38ac36d4c6e12bb8ade" kindref="member">reference</ref></type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Add a node to the tail of the list. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="in">node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Reference to the node to add. </para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="par"><title>Returns</title><para>Nothing.</para>
+</simplesect>
+Adds a new node to the end (tail) of the list. For statically allocated lists, asserts that the list is already initialised. The new node is linked after the current tail node, updating the list structure accordingly. This operation does not check for duplicate nodes or whether the node is already linked elsewhere. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="419" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="444" bodyend="457"/>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1ad30c1c31d1fe0d806ec271aa58e8eb4d" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type>const <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aed5fc0c1164c30d890986b08d8f3a4da" kindref="member">links_type</ref> *</type>
+        <definition>const doubly_list&lt; T, L &gt;::links_type * micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_pointer</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>links_pointer</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::links_pointer</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the address of the node storing the list links. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>A pointer to the internal links node.</para>
+</simplesect>
+Returns the address of the <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" kindref="member">links_</ref></computeroutput> member. This method is required by derived classes (such as <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list" kindref="compound">intrusive_list</ref></computeroutput>) when constructing their <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" kindref="member">end()</ref></computeroutput> iterator, where a direct reference to the protected member is not accessible.</para>
+<para>Returns the address of the <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" kindref="member">links_</ref></computeroutput> member directly. This method is required by derived classes (such as <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list" kindref="compound">intrusive_list</ref></computeroutput>) when constructing their <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" kindref="member">end()</ref></computeroutput> iterator, where a direct reference to the protected member is not accessible from the derived scope. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="481" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="566" bodyend="569"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="496">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" compoundref="intrusive-list-inlines_8h" startline="444" endline="456">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::end</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a94ebc26808071cb791c1917c83fc94f7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" kindref="member">doubly_list</ref> &amp;</type>
+        <definition>doubly_list &amp; micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</definition>
+        <argsstring>(const doubly_list &amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::operator=</qualifiedname>
+        <param>
+          <type>const <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" kindref="member">doubly_list</ref> &amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted copy assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Copy assignment is explicitly disallowed to prevent accidental overwriting of list objects, which could lead to corruption of the list structure. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="328" column="5"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" compoundref="doubly-list-inlines_8h" startline="270" endline="286">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" kindref="member">doubly_list</ref> &amp;</type>
+        <definition>doubly_list &amp; micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</definition>
+        <argsstring>(doubly_list &amp;&amp;)=delete</argsstring>
+        <name>operator=</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::operator=</qualifiedname>
+        <param>
+          <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" kindref="member">doubly_list</ref> &amp;&amp;</type>
+        </param>
+        <briefdescription>
+<para>Deleted move assignment operator. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>Move assignment is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving lists. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="338" column="5"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" compoundref="doubly-list-inlines_8h" startline="270" endline="286">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a901d37d96ab59b0863e78774a0b72079" compoundref="doubly-list-inlines_8h" startline="494" endline="506">micro_os_plus::utils::doubly_list&lt; T, L &gt;::begin</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" compoundref="doubly-list-inlines_8h" startline="395" endline="402">micro_os_plus::utils::doubly_list&lt; T, L &gt;::clear</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" compoundref="doubly-list-inlines_8h" startline="379" endline="383">micro_os_plus::utils::doubly_list&lt; T, L &gt;::empty</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" compoundref="doubly-list-inlines_8h" startline="518" endline="529">micro_os_plus::utils::doubly_list&lt; T, L &gt;::end</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a34e804930d1b4ab2ea7a538ab4b17d97" compoundref="doubly-list-inlines_8h" startline="414" endline="417">micro_os_plus::utils::doubly_list&lt; T, L &gt;::head</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ab42aae2bfccbee1628b1b470911f6def" compoundref="doubly-list-inlines_8h" startline="354" endline="368">micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialise_once</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a2b0c8c399237932f92c93a60d26f2bea" compoundref="doubly-list-inlines_8h" startline="328" endline="338">micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialised</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1af31780e2a87d34eca81ad2a8f47afe2c" compoundref="doubly-list-inlines_8h" startline="469" endline="482">micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_head</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ab700f9e890a253eeefb42c8a15b9e403" compoundref="doubly-list-inlines_8h" startline="444" endline="457">micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_tail</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ad30c1c31d1fe0d806ec271aa58e8eb4d" compoundref="doubly-list-inlines_8h" startline="566" endline="569">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_pointer</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aa59f07f0ab869376dfb09dbbe11a92d4" compoundref="doubly-list-inlines_8h" startline="539" endline="542">micro_os_plus::utils::doubly_list&lt; T, L &gt;::rbegin</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0314a3e78b3cd027ffed6975a3da4ffa" compoundref="doubly-list-inlines_8h" startline="552" endline="555">micro_os_plus::utils::doubly_list&lt; T, L &gt;::rend</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a6e9d3f30c694a21d98098cac97802ecb" compoundref="doubly-list-inlines_8h" startline="429" endline="432">micro_os_plus::utils::doubly_list&lt; T, L &gt;::tail</references>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1aa59f07f0ab869376dfb09dbbe11a92d4" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a51bfca23b338fb2ba434e49b0a296ee9" kindref="member">reverse_iterator</ref></type>
+        <definition>doubly_list&lt; T, L &gt;::reverse_iterator micro_os_plus::utils::doubly_list&lt; T, L &gt;::rbegin</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>rbegin</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::rbegin</qualifiedname>
+        <briefdescription>
+<para>Reverse iterator begin. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reverse iterator positioned at the last element.</para>
+</simplesect>
+Returns a reverse iterator to the last element in the list. Equivalent to <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a51bfca23b338fb2ba434e49b0a296ee9" kindref="member">reverse_iterator</ref>{ <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" kindref="member">end()</ref> }</computeroutput>. Traversal proceeds from the tail towards the head. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="455" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="539" bodyend="542"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" compoundref="doubly-list-inlines_8h" startline="518" endline="529">micro_os_plus::utils::doubly_list&lt; T, L &gt;::end</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a0314a3e78b3cd027ffed6975a3da4ffa" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a51bfca23b338fb2ba434e49b0a296ee9" kindref="member">reverse_iterator</ref></type>
+        <definition>doubly_list&lt; T, L &gt;::reverse_iterator micro_os_plus::utils::doubly_list&lt; T, L &gt;::rend</definition>
+        <argsstring>() const noexcept</argsstring>
+        <name>rend</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::rend</qualifiedname>
+        <briefdescription>
+<para>Reverse iterator end. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A reverse iterator positioned before the first element.</para>
+</simplesect>
+Returns a reverse iterator to the position before the first element in the list. Equivalent to <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a51bfca23b338fb2ba434e49b0a296ee9" kindref="member">reverse_iterator</ref>{ <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a901d37d96ab59b0863e78774a0b72079" kindref="member">begin()</ref> }</computeroutput>. Used as the past-the-end marker for reverse-direction iteration. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="463" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="552" bodyend="555"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a901d37d96ab59b0863e78774a0b72079" compoundref="doubly-list-inlines_8h" startline="494" endline="506">micro_os_plus::utils::doubly_list&lt; T, L &gt;::begin</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+      <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a6e9d3f30c694a21d98098cac97802ecb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
+        <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a06b1703840274b544b5886a9190bef4b" kindref="member">pointer</ref></type>
+        <definition>doubly_list&lt; T, L &gt;::pointer micro_os_plus::utils::doubly_list&lt; T, L &gt;::tail</definition>
+        <argsstring>(void) const noexcept</argsstring>
+        <name>tail</name>
+        <qualifiedname>micro_os_plus::utils::doubly_list::tail</qualifiedname>
+        <param>
+          <type>void</type>
+        </param>
+        <briefdescription>
+<para>Get the list <bold>tail</bold>. </para>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="par"><title>Parameters</title><para>None. </para>
+</simplesect>
+<simplesect kind="return"><para>Pointer to the tail node.</para>
+</simplesect>
+Returns a pointer to the last node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during reverse iteration. The returned pointer should be checked against the sentinel node to determine if the list contains any elements. </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="409" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-inlines.h" bodystart="429" bodyend="432"/>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac0693cd4f727c8e7895cdaa88beed572" compoundref="intrusive-list-inlines_8h" startline="353" endline="371">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::link_tail</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::operator=</referencedby>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>A class template for a doubly linked list of nodes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the elements linked into the list, derived from class <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base" kindref="compound">doubly_list_links_base</ref></computeroutput>. </para>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>L</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Type of the links node (either <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links" kindref="compound">doubly_list_links</ref></computeroutput> or <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links" kindref="compound">static_doubly_list_links</ref></computeroutput>).</para>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+This class implements a generic doubly linked list, maintaining a pair of head and tail pointers to allow efficient iteration and manipulation of nodes. The list elements (of type T) must be derived from <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base" kindref="compound">doubly_list_links_base</ref></computeroutput> (typically from <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links" kindref="compound">doubly_list_links</ref></computeroutput>) and extended with the required payload, which may be the actual content or a pointer to it.</para>
+<para>The class uses composition for the links node, rather than inheritance, to avoid inheriting unwanted methods. Iterators return pointers to the list elements, enabling traversal of the list in a manner similar to standard containers.</para>
+<para><simplesect kind="note"><para><computeroutput>std::reverse_iterator</computeroutput> adaptors (<computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aa59f07f0ab869376dfb09dbbe11a92d4" kindref="member">rbegin()</ref></computeroutput>/<computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0314a3e78b3cd027ffed6975a3da4ffa" kindref="member">rend()</ref></computeroutput>) are provided as thin wrappers around the bidirectional <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" kindref="member">iterator</ref></computeroutput>. </para>
+</simplesect>
+</para>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="1">
+        <label>micro_os_plus::utils::doubly_list&lt; T, L &gt;</label>
+        <link refid="classmicro__os__plus_1_1utils_1_1doubly__list"/>
+        <childnode refid="2" relation="usage">
+          <edgelabel>links_</edgelabel>
+        </childnode>
+      </node>
+      <node id="2">
+        <label>micro_os_plus::utils::doubly_list_links</label>
+        <link refid="classmicro__os__plus_1_1utils_1_1doubly__list__links"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="3">
+        <label>micro_os_plus::utils::doubly_list_links_base</label>
+        <link refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base"/>
+        <childnode refid="3" relation="usage">
+          <edgelabel>next_</edgelabel>
+          <edgelabel>previous_</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" line="249" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list.h" bodystart="250" bodyend="497"/>
+    <listofallmembers>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a901d37d96ab59b0863e78774a0b72079" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>begin</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>clear</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a7105e8211e6c99d4b589759db0b60172" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>doubly_list</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a651a33d33feaeb0fdfc0bf905e098218" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>doubly_list</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a63ee95c08711fb063e880b1122ffe38f" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>doubly_list</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>empty</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>end</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a34e804930d1b4ab2ea7a538ab4b17d97" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>head</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ab42aae2bfccbee1628b1b470911f6def" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>initialise_once</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a2b0c8c399237932f92c93a60d26f2bea" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>initialised</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a735ee001c008f04eb19cd31e5ea43668" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>is_statically_allocated</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>iterator</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ac466265f112e5f41b06b64e794f3db63" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>iterator_pointer</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1af31780e2a87d34eca81ad2a8f47afe2c" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>link_head</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ab700f9e890a253eeefb42c8a15b9e403" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>link_tail</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" prot="protected" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>links_</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ad30c1c31d1fe0d806ec271aa58e8eb4d" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>links_pointer</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aed5fc0c1164c30d890986b08d8f3a4da" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>links_type</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a94ebc26808071cb791c1917c83fc94f7" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a8b1c494a5d53f363c7905cabb23da66c" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>operator=</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a06b1703840274b544b5886a9190bef4b" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>pointer</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aa59f07f0ab869376dfb09dbbe11a92d4" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>rbegin</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a5c8bc0b786d3e38ac36d4c6e12bb8ade" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>reference</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0314a3e78b3cd027ffed6975a3da4ffa" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>rend</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a51bfca23b338fb2ba434e49b0a296ee9" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>reverse_iterator</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a6e9d3f30c694a21d98098cac97802ecb" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>tail</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aabd15bd5b78a500a9e350ff21c6bcf28" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>value_type</name></member>
+      <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aae54cb514e9356a017b79c862abaa378" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list</scope><name>~doubly_list</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

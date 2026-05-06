@@ -7,16 +7,16 @@
 
 ### Copy files
 
-The traditional method of utilising source libraries is to simply copy them
-into the user project.
+The traditional method of utilising source libraries is to copy them
+into the user's project.
 
 The obvious advantage is simplicity, but the disadvantage is that the
 library becomes part of the project, and any improvements or bug fixes
-must be manually copied to the project.
+must be manually copied into the project.
 
 ### Add as a Git submodule
 
-Another common solution is to link the entire project as a **Git submodule**,
+Another common solution is to add the entire project as a **Git submodule**,
 for example beneath an `xpacks` folder:
 
 ```sh
@@ -27,3 +27,11 @@ mkdir -p xpacks
 git submodule add https://github.com/micro-os-plus/utils-lists-xpack.git \
   xpacks/@micro-os-plus/utils-lists
 ```
+
+:::info
+Note that linking the project as a submodule brings the entire
+project, with tests and documentation, not only the source files.
+
+Installing via xpm filters the content, and only the relevant files are
+brought into the project.
+:::

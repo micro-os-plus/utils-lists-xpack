@@ -27,7 +27,7 @@
 @addtogroup micro-os-plus-utils-lists-cpp-api
 @{
   @include{doc} topics/cpp-api/intrusive-lists.dox
-  @include{doc} topics/cpp-api/double-lists.dox
+  @include{doc} topics/cpp-api/doubly-lists.dox
 @}
 
 */

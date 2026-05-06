@@ -1,10 +1,14 @@
-
 {/* ------------------------------------------------------------------------ */}
 
-## Features
+## Features and benefits
 
 The key characteristics of **µOS++ Intrusive Lists** are as follows:
 
-- The links for the list are directly embedded within the payload objects themselves.
-- Objects have the capability to belong to multiple lists simultaneously by managing distinct pairs of pointers for each list.
-- They support and utilise standard C++ iterators, ensuring seamless integration with common C++ operations.
+- List links are directly embedded within the payload objects, eliminating
+  the need for separate link-node objects and dynamic memory allocations.
+- Objects can belong to multiple lists simultaneously by maintaining a
+  distinct pair of pointers for each list.
+- Standard C++ iterators are provided, ensuring seamless integration with
+  standard C++ algorithms.
+- Performance is enhanced by eliminating the overhead of memory allocation
+  and deallocation operations.

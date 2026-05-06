@@ -1,6 +1,5 @@
-
-import CommonCmakeIntegration from '../_common/_cmake-integration.mdx';
-import CommonMesonIntegration from '../_common/_meson-integration.mdx';
+import CommonCmakeIntegration from "../_common/_cmake-integration.mdx";
+import CommonMesonIntegration from "../_common/_meson-integration.mdx";
 
 {/* ------------------------------------------------------------------------ */}
 
@@ -8,7 +7,7 @@ import CommonMesonIntegration from '../_common/_meson-integration.mdx';
 
 The project is written in C++, and it is expected to be used in C++ projects.
 
-The source code has been compiled natively with **GCC** and **LLVM/clang**,
+The source code has been compiled natively with **GCC** and **LLVM/Clang**,
 and cross-compiled on embedded **Arm** and **RISC-V** targets,
 ensuring it is free from warnings.
 
@@ -44,7 +43,7 @@ There are several preprocessor definitions used to configure the build:
 - `MICRO_OS_PLUS_TRACE` - to include the trace calls
 - `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
   `insert()`, `link()`, `unlink()`
-- `MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCT` - to trace constructors and
+- `MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR` - to trace constructors and
   destructors
 
 ### Compiler options

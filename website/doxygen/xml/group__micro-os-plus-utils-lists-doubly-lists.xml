@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-utils-lists-doubly-lists" kind="group">
+    <compoundname>micro-os-plus-utils-lists-doubly-lists</compoundname>
+    <title>Doubly Linked Lists</title>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1doubly__list" prot="public">micro_os_plus::utils::doubly_list</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator" prot="public">micro_os_plus::utils::doubly_list_iterator</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1doubly__list__links" prot="public">micro_os_plus::utils::doubly_list_links</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base" prot="public">micro_os_plus::utils::doubly_list_links_base</innerclass>
+    <innerclass refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links" prot="public">micro_os_plus::utils::static_doubly_list_links</innerclass>
+    <innerconcept refid="conceptmicro__os__plus_1_1utils_1_1doubly__list__links__node">micro_os_plus::utils::doubly_list_links_node</innerconcept>
+    <briefdescription>
+<para>Doubly linked lists classes. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>Traditional doubly linked or low-intrusive doubly linked lists are provided for use cases where a fully intrusive approach is not required. These classes and templates offer a straightforward way to manage collections of objects using the classic doubly linked list structure.</para>
+<para>For simpler use cases, such as traditional lists or low-intrusive lists, there are several simpler classes and templates available.   </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

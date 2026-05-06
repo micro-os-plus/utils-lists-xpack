@@ -42,7 +42,7 @@
                 {
                   "type": "doc",
                   "label": "Doubly Linked Lists",
-                  "id": "api/groups/micro-os-plus-utils-lists-double-lists"
+                  "id": "api/groups/micro-os-plus-utils-lists-doubly-lists"
                 }
               ]
             },
@@ -67,6 +67,10 @@
         {
           "type": "category",
           "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/namespaces/index"
+          },
           "collapsed": true,
           "items": [
             {
@@ -95,8 +99,74 @@
         },
         {
           "type": "doc",
+          "label": "Concepts",
+          "id": "api/indices/namespaces/concepts"
+        },
+        {
+          "type": "doc",
           "label": "Classes",
           "id": "api/indices/namespaces/classes"
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Concepts",
+      "link": {
+        "type": "doc",
+        "id": "api/indices/concepts/index"
+      },
+      "collapsed": true,
+      "items": [
+        {
+          "type": "category",
+          "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/concepts/index"
+          },
+          "collapsed": true,
+          "items": [
+            {
+              "type": "category",
+              "label": "micro_os_plus",
+              "link": {
+                "type": "doc",
+                "id": "api/namespaces/micro-os-plus"
+              },
+              "className": "doxyEllipsis",
+              "collapsed": true,
+              "items": [
+                {
+                  "type": "category",
+                  "label": "utils",
+                  "link": {
+                    "type": "doc",
+                    "id": "api/namespaces/micro-os-plus-utils"
+                  },
+                  "className": "doxyEllipsis",
+                  "collapsed": true,
+                  "items": [
+                    {
+                      "type": "category",
+                      "label": "doubly_list_links_node",
+                      "link": {
+                        "type": "doc",
+                        "id": "api/concepts/micro-os-plus-utils-doubly-list-links-node"
+                      },
+                      "collapsed": true,
+                      "items": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "doc",
+          "label": "All",
+          "id": "api/indices/concepts/all"
         }
       ]
     },
@@ -112,14 +182,18 @@
         {
           "type": "category",
           "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/classes/index"
+          },
           "collapsed": true,
           "items": [
             {
               "type": "category",
-              "label": "double_list<T, L>",
+              "label": "doubly_list<T, L>",
               "link": {
                 "type": "doc",
-                "id": "api/classes/micro-os-plus-utils-double-list"
+                "id": "api/classes/micro-os-plus-utils-doubly-list"
               },
               "className": "doxyEllipsis",
               "collapsed": true,
@@ -134,31 +208,31 @@
             },
             {
               "type": "doc",
-              "label": "double_list_iterator<T, N, U>",
+              "label": "doubly_list_iterator<T, N, U>",
               "className": "doxyEllipsis",
-              "id": "api/classes/micro-os-plus-utils-double-list-iterator"
+              "id": "api/classes/micro-os-plus-utils-doubly-list-iterator"
             },
             {
               "type": "category",
-              "label": "double_list_links_base",
+              "label": "doubly_list_links_base",
               "link": {
                 "type": "doc",
-                "id": "api/classes/micro-os-plus-utils-double-list-links-base"
+                "id": "api/classes/micro-os-plus-utils-doubly-list-links-base"
               },
               "className": "doxyEllipsis",
               "collapsed": true,
               "items": [
                 {
                   "type": "doc",
-                  "label": "double_list_links",
+                  "label": "doubly_list_links",
                   "className": "doxyEllipsis",
-                  "id": "api/classes/micro-os-plus-utils-double-list-links"
+                  "id": "api/classes/micro-os-plus-utils-doubly-list-links"
                 },
                 {
                   "type": "doc",
-                  "label": "static_double_list_links",
+                  "label": "static_doubly_list_links",
                   "className": "doxyEllipsis",
-                  "id": "api/classes/micro-os-plus-utils-static-double-list-links"
+                  "id": "api/classes/micro-os-plus-utils-static-doubly-list-links"
                 }
               ]
             },
@@ -209,6 +283,10 @@
         {
           "type": "category",
           "label": "Hierarchy",
+          "link": {
+            "type": "doc",
+            "id": "api/indices/files/index"
+          },
           "collapsed": true,
           "items": [
             {
@@ -242,10 +320,52 @@
                       "collapsed": true,
                       "items": [
                         {
-                          "type": "doc",
-                          "label": "lists-inlines.h",
+                          "type": "category",
+                          "label": "inlines",
+                          "link": {
+                            "type": "doc",
+                            "id": "api/folders/include-micro-os-plus-utils-inlines"
+                          },
                           "className": "doxyEllipsis",
-                          "id": "api/files/include-micro-os-plus-utils-lists-inlines-h"
+                          "collapsed": true,
+                          "items": [
+                            {
+                              "type": "doc",
+                              "label": "doubly-list-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-utils-inlines-doubly-list-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "doubly-list-links-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-utils-inlines-doubly-list-links-inlines-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "intrusive-list-inlines.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-utils-inlines-intrusive-list-inlines-h"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "doc",
+                          "label": "doubly-list-links.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-utils-doubly-list-links-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "doubly-list.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-utils-doubly-list-h"
+                        },
+                        {
+                          "type": "doc",
+                          "label": "intrusive-list.h",
+                          "className": "doxyEllipsis",
+                          "id": "api/files/include-micro-os-plus-utils-intrusive-list-h"
                         },
                         {
                           "type": "doc",
@@ -271,9 +391,9 @@
               "items": [
                 {
                   "type": "doc",
-                  "label": "lists.cpp",
+                  "label": "doubly-list-links.cpp",
                   "className": "doxyEllipsis",
-                  "id": "api/files/src-lists-cpp"
+                  "id": "api/files/src-doubly-list-links-cpp"
                 }
               ]
             },
@@ -295,6 +415,11 @@
           "type": "doc",
           "label": "All",
           "id": "api/indices/files/all"
+        },
+        {
+          "type": "doc",
+          "label": "Concepts",
+          "id": "api/indices/files/concepts"
         },
         {
           "type": "doc",
