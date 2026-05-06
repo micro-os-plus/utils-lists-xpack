@@ -194,11 +194,11 @@ namespace micro_os_plus::utils
     operator== (const intrusive_list_iterator& other) const noexcept;
 
     /**
-     * @brief Get the object node from the intrusive node.
+     * @brief Get the object pointer from the intrusive node.
      *
      * @par Parameters
      *  None.
-     * @return Pointer to object node.
+     * @return Pointer to the parent object.
      */
     [[nodiscard]] pointer
     get_pointer (void) const noexcept;
