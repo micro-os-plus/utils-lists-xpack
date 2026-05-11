@@ -21,5 +21,5 @@
   "listPagesAtTop": true,
   "renderProgramListings": true,
   "renderProgramListingInline": true,
-  "originalPagesNote": ""
+  "originalPagesNote": "For comparison, the original Doxygen html pages continue to be available via the <a href=\"pathname:///doxygen/topics.html\">.../doxygen/*.html</b></a> URLs."
 }
