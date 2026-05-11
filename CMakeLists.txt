@@ -31,6 +31,10 @@ project (
   LANGUAGES CXX
 )
 
+# To access the optional functions, include the
+# `cmake/micro-os-plus-build-helper.cmake` file from the
+# `@micro-os-plus/build-helper` package.
+
 if (COMMAND xpack_get_package_name_and_version)
   xpack_get_package_name_and_version (
     "${CMAKE_CURRENT_SOURCE_DIR}/package.json"
@@ -41,11 +45,17 @@ if (COMMAND xpack_get_package_name_and_version)
 endif ()
 
 # -----------------------------------------------------------------------------
-# # The project library definitions ##
+
+# The interface library is the main target of this package, which consumers
+# (like embedded applications) link against. It defines the public API and
+# properties of the library, and compiles the sources that are part of the
+# public API.
+
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
+# Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
+# properties up to targets that link against it; PUBLIC does both.
 add_library (micro-os-plus-utils-lists-interface INTERFACE EXCLUDE_FROM_ALL)
 
-# -----------------------------------------------------------------------------
-# Target settings.
 target_include_directories (
   micro-os-plus-utils-lists-interface INTERFACE "include"
 )
@@ -69,12 +79,17 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-# Optional OBJECT library: sources are compiled once rather than per consumer.
-# Inherits include directories, compile definitions, and compiler options from
-# the interface library via PRIVATE linkage, which avoids propagating the
-# interface library's INTERFACE sources to consumers of the object library. The
-# include directories are re-exported explicitly so that consumers can find the
-# headers.
+# Optional OBJECT library: compiles the library sources once and shares the
+# resulting object files across all test executables, rather than recompiling
+# them per consumer.
+#
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause diag-trace's
+# INTERFACE_SOURCES (trace.cpp) to be compiled into this OBJECT library via
+# transitive propagation, which conflicts with the separate diag-trace
+# compilation in each test executable. Consumers of this OBJECT library are
+# expected to link separately to micro-os-plus::diag-trace and to the
+# platform-specific trace backend.
 add_library (micro-os-plus-utils-lists-objects OBJECT EXCLUDE_FROM_ALL)
 
 get_property (
@@ -82,10 +97,11 @@ get_property (
   TARGET micro-os-plus-utils-lists-interface
   PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
+
+# Use PUBLIC so that the include directories are available both for the OBJECT
+# library's own sources and for consumers of the library.
 target_include_directories (
   micro-os-plus-utils-lists-objects
-  # Re-export the interface include directories so that consumers can find the
-  # headers.
   PUBLIC ${micro-os-plus-utils-lists-includes}
 )
 
@@ -94,20 +110,20 @@ get_property (
   TARGET micro-os-plus-utils-lists-interface
   PROPERTY INTERFACE_SOURCES
 )
+# Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
+# library, which would cause duplicate symbol errors at link time.
 target_sources (
   micro-os-plus-utils-lists-objects
   PRIVATE ${micro-os-plus-utils-lists-sources}
 )
 
-# The compile options and definitions are propagated from the interface library
-# via get_property, to avoid the OBJECT library inheriting diag-trace's
-# INTERFACE_SOURCES (which would cause duplicate symbol errors at link time when
-# consumers also compile diag-trace).
 get_property (
   micro-os-plus-utils-lists-compile-definitions
   TARGET micro-os-plus-utils-lists-interface
   PROPERTY INTERFACE_COMPILE_DEFINITIONS
 )
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# OBJECT library.
 target_compile_definitions (
   micro-os-plus-utils-lists-objects
   PRIVATE ${micro-os-plus-utils-lists-compile-definitions}
@@ -118,6 +134,9 @@ get_property (
   TARGET micro-os-plus-utils-lists-interface
   PROPERTY INTERFACE_COMPILE_OPTIONS
 )
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# OBJECT library, which may cause conflicts with consumer-specific compile
+# options.
 target_compile_options (
   micro-os-plus-utils-lists-objects
   PRIVATE ${micro-os-plus-utils-lists-compile-options}
