@@ -28,7 +28,7 @@ namespace mt = micro_os_plus::micro_test_plus;
 
 // ----------------------------------------------------------------------------
 
-mt::static_runner sr{ "utils-lists" };
+mt::static_runner sr;
 
 int
 main (int argc, char* argv[])
