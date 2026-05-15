@@ -35,7 +35,7 @@
     "@docusaurus/types": "3.10.1",
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack#xpack-development",
     "@xpack/docusaurus-template-liquid": "github:xpack/docusaurus-template-liquid",
-    "@xpack/doxygen2docusaurus": "^2.1.0",
+    "@xpack/doxygen2docusaurus": "^2.2.0",
     "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "broken-link-checker": "^0.7.8",
     "del-cli": "^7.0.0",
