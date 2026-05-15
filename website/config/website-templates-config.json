@@ -1,0 +1,10 @@
+{
+  "tagline": "A C++ source code library with the µOS++ intrusive lists",
+  "hasDoxygenReference": "true",
+  "skipAlgolia": "true",
+  "isXpmDependency": "true",
+  "customInstallLabel": "Integration Guide",
+  "hasCustomUser": "true",
+  "customUserTitle": "How to use the µOS++ Intrusive Lists",
+  "hasDoxygenDocusaurusApi": "true"
+}
