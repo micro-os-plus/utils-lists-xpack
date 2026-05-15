@@ -22,8 +22,10 @@ include ("cmake/platform-library.cmake")
 if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_HOST_SYSTEM_NAME STREQUAL
                                           "Darwin"
 )
-  set (XPACK_ENABLE_COVERAGE true)
+  # Enable it temporarily to check the coverage on macOS.
+  # set (XPACK_ENABLE_COVERAGE true)
 endif ()
+
 
 # The OBJECTS are compiled before the platform library, so they need to get the
 # same compile options.
