@@ -360,7 +360,8 @@ namespace micro_os_plus::utils
      * structure.
      */
     intrusive_list&
-    operator= (const intrusive_list&) = delete;
+    operator= (const intrusive_list&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator.
@@ -370,7 +371,8 @@ namespace micro_os_plus::utils
      * inconsistent links within the list that could result from moving lists.
      */
     intrusive_list&
-    operator= (intrusive_list&&) = delete;
+    operator= (intrusive_list&&)
+        = delete;
 
     /**
      * @brief Destruct the list.

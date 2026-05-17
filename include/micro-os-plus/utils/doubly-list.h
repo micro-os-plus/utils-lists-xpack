@@ -325,7 +325,8 @@ namespace micro_os_plus::utils
      * structure.
      */
     doubly_list&
-    operator= (const doubly_list&) = delete;
+    operator= (const doubly_list&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator.
@@ -335,7 +336,8 @@ namespace micro_os_plus::utils
      * inconsistent links within the list that could result from moving lists.
      */
     doubly_list&
-    operator= (doubly_list&&) = delete;
+    operator= (doubly_list&&)
+        = delete;
 
     /**
      * @brief Destruct the list.

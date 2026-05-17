@@ -128,7 +128,8 @@ namespace micro_os_plus::utils
      * list structure.
      */
     doubly_list_links_base&
-    operator= (const doubly_list_links_base&) = delete;
+    operator= (const doubly_list_links_base&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator.
@@ -138,7 +139,8 @@ namespace micro_os_plus::utils
      * inconsistent links within the list that could result from moving nodes.
      */
     doubly_list_links_base&
-    operator= (doubly_list_links_base&&) = delete;
+    operator= (doubly_list_links_base&&)
+        = delete;
 
     /**
      * @brief Destruct the node.
@@ -315,7 +317,8 @@ namespace micro_os_plus::utils
      * list structure.
      */
     doubly_list_links&
-    operator= (const doubly_list_links&) = delete;
+    operator= (const doubly_list_links&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator.
@@ -325,7 +328,8 @@ namespace micro_os_plus::utils
      * inconsistent links within the list that could result from moving nodes.
      */
     doubly_list_links&
-    operator= (doubly_list_links&&) = delete;
+    operator= (doubly_list_links&&)
+        = delete;
 
     /**
      * @brief Destruct the node.
@@ -412,7 +416,8 @@ namespace micro_os_plus::utils
      * list structure.
      */
     static_doubly_list_links&
-    operator= (const static_doubly_list_links&) = delete;
+    operator= (const static_doubly_list_links&)
+        = delete;
 
     /**
      * @brief Deleted move assignment operator.
@@ -422,7 +427,8 @@ namespace micro_os_plus::utils
      * inconsistent links within the list that could result from moving nodes.
      */
     static_doubly_list_links&
-    operator= (static_doubly_list_links&&) = delete;
+    operator= (static_doubly_list_links&&)
+        = delete;
 
     /**
      * @brief Destruct the node.
