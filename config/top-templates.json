@@ -1,5 +1,6 @@
 {
   "descriptiveName": "µOS++ Intrusive Lists",
   "permalinkName": "utils-lists",
-  "useDoxygen": "true"
+  "preferredName": "µOS++ Intrusive Lists",
+  "useDoxygen": true
 }

@@ -51,7 +51,7 @@
   "xpack": {
     "minimumXpmRequired": "0.20.8"
   },
-  "topConfig": {
+  "_topConfig": {
     "descriptiveName": "µOS++ Intrusive Lists",
     "permalinkName": "utils-lists",
     "useDoxygen": "true"

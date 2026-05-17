@@ -85,7 +85,7 @@
       "last 5 safari version"
     ]
   },
-  "websiteConfig": {
+  "_websiteConfig": {
     "tagline": "A C++ source code library with the µOS++ intrusive lists",
     "hasDoxygenReference": "true",
     "skipAlgolia": "true",
@@ -93,7 +93,8 @@
     "customInstallLabel": "Integration Guide",
     "hasCustomUser": "true",
     "customUserTitle": "How to use the µOS++ Intrusive Lists",
-    "hasDoxygenDocusaurusApi": "true"
+    "hasDoxygenDocusaurusApi": "true",
+    "metadataKeywords": "xpack, utils-lists"
   },
   "engines": {
     "node": ">=20.0"
