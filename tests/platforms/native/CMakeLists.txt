@@ -23,9 +23,8 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_HOST_SYSTEM_NAME STREQUAL
                                           "Darwin"
 )
   # Enable it temporarily to check the coverage on macOS.
-  # set (XPACK_ENABLE_COVERAGE true)
+  set (XPACK_ENABLE_COVERAGE false)
 endif ()
-
 
 # The OBJECTS are compiled before the platform library, so they need to get the
 # same compile options.
@@ -69,9 +68,10 @@ if (XPACK_ENABLE_UNIT_TEST)
 
     add_test (
       NAME "unit-test-coverage"
-      COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh"
-              unit-test unit-test 
-              # "../../../../include/micro-os-plus/utils/inlines/intrusive-list-inlines.h"
+      COMMAND
+        bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh"
+        unit-test unit-test
+        # "../../../../include/micro-os-plus/utils/inlines/intrusive-list-inlines.h"
     )
     set_tests_properties ("unit-test-coverage" PROPERTIES DEPENDS "unit-test")
   endif ()

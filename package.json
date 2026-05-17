@@ -49,7 +49,14 @@
     "postversion": "git push origin --all && git push origin --tags"
   },
   "xpack": {
-    "minimumXpmRequired": "0.20.8"
+    "minimumXpmRequired": "0.20.8",
+    "devDependencies": {
+      "@xpack-dev-tools/clang": "21.1.8-1.1"
+    },
+    "actions": {
+      "clang-format": "bash scripts/clang-format.sh",
+      "cmake-format": "bash scripts/cmake-format.sh"
+    }
   },
   "_topConfig": {
     "descriptiveName": "µOS++ Intrusive Lists",

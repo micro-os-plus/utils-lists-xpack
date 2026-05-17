@@ -21,38 +21,38 @@
 
 # -----------------------------------------------------------------------------
 
-message(VERBOSE "Processing 'tests/sample-test'...")
+message (VERBOSE "Processing 'tests/sample-test'...")
 
 # -----------------------------------------------------------------------------
 # The test library definitions.
-add_library(test-sample-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library (test-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories(test-sample-interface INTERFACE # None.
+target_include_directories (test-sample-interface INTERFACE # None.
 )
 
-target_sources(test-sample-interface INTERFACE src/main.cpp)
+target_sources (test-sample-interface INTERFACE src/main.cpp)
 
-target_compile_definitions(test-sample-interface INTERFACE # None.
+target_compile_definitions (test-sample-interface INTERFACE # None.
 )
 
-target_compile_options(test-sample-interface INTERFACE # None.
+target_compile_options (test-sample-interface INTERFACE # None.
 )
 
-target_link_options(test-sample-interface INTERFACE # None.
+target_link_options (test-sample-interface INTERFACE # None.
 )
 
-target_link_libraries(test-sample-interface INTERFACE # None.
+target_link_libraries (test-sample-interface INTERFACE # None.
 )
 
-if(COMMAND xpack_display_target_lists)
-  xpack_display_target_lists(test-sample-interface)
-endif()
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists (test-sample-interface)
+endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library(test::sample ALIAS test-sample-interface)
-message(VERBOSE "> test::sample -> test-sample-interface")
+add_library (test::sample ALIAS test-sample-interface)
+message (VERBOSE "> test::sample -> test-sample-interface")
 
 # -----------------------------------------------------------------------------

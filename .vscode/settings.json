@@ -20,9 +20,7 @@
     "editor.defaultFormatter": "cheshirekow.cmake-format"
   },
   "cmakeFormat.args": [
-    "--dangle-parens",
-    "--separate-ctrl-name-with-space",
-    "--separate-fn-name-with-space"
+    "--config-file=${workspaceFolder}/config/.cmake-format.yaml"
   ],
   "[mdx]": {
     "editor.formatOnSave": false,
@@ -30,5 +28,8 @@
   },
   "makefile.configureOnOpen": false,
   "editor.wordWrap": "on",
-  "mesonbuild.configureOnOpen": false
+  "mesonbuild.configureOnOpen": false,
+  "C_Cpp.clang_format_style": "file:${workspaceFolder}/config/.clang-format",
+  "C_Cpp.formatting": "clangFormat",
+  "C_Cpp.clang_format_path": "${workspaceFolder}/xpacks/.bin/clang-format"
 }
