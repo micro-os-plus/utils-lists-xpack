@@ -59,11 +59,6 @@
       "cmake-format": "bash scripts/cmake-format.sh"
     }
   },
-  "_topConfig": {
-    "descriptiveName": "µOS++ Intrusive Lists",
-    "permalinkName": "utils-lists",
-    "useDoxygen": "true"
-  },
   "engines": {
     "node": ">=20.0"
   }
