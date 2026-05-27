@@ -1,5 +1,10 @@
 # Copilot Instructions
 
+## Project Overview
+
+This is the **µOS++ Intrusive Lists** project, part of
+µOS++.
+
 ## General
 
 - Avoid sycophantic behaviour; for all conversation, never soften criticism
@@ -74,7 +79,7 @@ After making changes, run in a terminal:
 - Be specific and direct. Do not soften criticism or balance it with positives.
 - Mention what you did leave out because you were not certain enough to
   include it.
-- Leave the code review result in a separate file named `code-review.md` in
+- Leave the code review result in a separate file named `CODE-REVIEW.md` in
   the root of the project, including a summary of the review findings and
   specific recommendations for improvements.
 
@@ -83,3 +88,5 @@ After making changes, run in a terminal:
 When making changes to the codebase, follow these guidelines for version control:
 
 - Use descriptive commit messages that clearly explain the purpose of the changes
+
+

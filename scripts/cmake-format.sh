@@ -64,6 +64,6 @@ function run_verbose()
   "${_app_path}" "$@" 2>&1
 }
 
-run_verbose "${PYPATH}/bin/cmake-format" --config-file "config/.cmake-format.yaml" --in-place \
+run_verbose "${PYPATH}/bin/cmake-format" --config-file "config/.cmake-format.py" --in-place \
   $(find . \( \( -type d -name "build" \) -o \( -type d -name "xpacks" \) -o \( -type d -name "node_modules" \) \) -prune -o \
   -type f \( -name "CMakeLists.txt" -o -name "*.cmake" \) -print)

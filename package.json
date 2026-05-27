@@ -45,6 +45,7 @@
     "npm-link": "npm link",
     "git-log": "git log --pretty='%cd * %h %s' --date=short",
     "git-pull-helper": "git -C ${HOME}/Work/micro-os-plus/build-helper-xpack.git pull",
+    "xcdl-export": "bash scripts/xcdl-export.sh xcdl-library.json",
     "deep-clean": "del-cli node_modules package-lock.json *.tgz",
     "postversion": "git push origin --all && git push origin --tags"
   },

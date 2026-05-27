@@ -1,0 +1,274 @@
+# -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from {{libraryFilePath}}.
+#
+# This file is part of the µOS++ project (https://{{parent}}.github.io/).
+# Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
+#
+# Permission to use, copy, modify, and/or distribute this software for any
+# purpose is hereby granted, under the terms of the MIT license.
+#
+# If a copy of the license was not distributed with this file, it can be
+# obtained from https://opensource.org/licenses/mit.
+#
+# -----------------------------------------------------------------------------
+
+# This file is intended to be consumed by applications with:
+#
+# `add_subdirectory("xpacks/@{{parent}}/{{name}}")`
+#
+# The result is an interface library that can be added to the linker with:
+#
+# `target_link_libraries(your-target PUBLIC {{parent}}::{{name}})`
+
+# -----------------------------------------------------------------------------
+
+# https://cmake.org/cmake/help/v3.20/
+cmake_minimum_required (VERSION 3.20)
+
+# {{description}}.
+project (
+  {{parent}}-{{name}}
+  DESCRIPTION "{{descriptiveName}}"
+  LANGUAGES CXX
+)
+
+# To access the optional functions, include the
+# `cmake/micro-os-plus-build-helper.cmake` file from the
+# `@micro-os-plus/build-helper` package.
+
+if (COMMAND xpack_get_package_name_and_version)
+  xpack_get_package_name_and_version (
+    "${CMAKE_CURRENT_SOURCE_DIR}/package.json"
+  )
+  message (VERBOSE
+           "Processing xPack ${PACKAGE_JSON_NAME}@${PACKAGE_JSON_VERSION}..."
+  )
+endif ()
+
+# -----------------------------------------------------------------------------
+
+# The interface library is the main target of this package, which consumers
+# (like embedded applications) link against. It defines the public API and
+# properties of the library; sources are propagated to and compiled by each
+# consumer.
+
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
+# properties up to targets that link against it; PUBLIC does both.
+add_library ({{parent}}-{{name}}-interface INTERFACE)
+
+target_include_directories (
+  {{parent}}-{{name}}-interface 
+  INTERFACE{% for folder in compilerIncludeFolders %}{% if forloop.first %} {% else %}
+            {% endif %}"{{folder}}"{% endfor %}
+)
+
+target_sources (
+  {{parent}}-{{name}}-interface
+  INTERFACE{% for file in compilerSourceFiles %}{% if forloop.first %} {% else %}
+            {% endif %}"{{file}}"{% endfor %}
+)
+
+target_compile_definitions (
+  {{parent}}-{{name}}-interface 
+  INTERFACE{% for definition in compilerDefinitions %}{% if forloop.first %} {% else %}
+            {% endif %}"{{definition}}"{% endfor %}
+)
+
+target_compile_options (
+  {{parent}}-{{name}}-interface 
+  INTERFACE{% for option in compilerOptions %}{% if forloop.first %} {% else %}
+            {% endif %}"{{option}}"{% endfor %}
+)
+
+target_link_libraries (
+  {{parent}}-{{name}}-interface 
+  INTERFACE{% for dependency in dependencies %}{% if forloop.first %} {% else %}
+            {% endif %}"{{parent}}::{{dependency}}"{% endfor %}
+)
+
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists ({{parent}}-{{name}}-interface)
+endif ()
+
+# Alias.
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
+add_library (
+  {{parent}}::{{name}} ALIAS {{parent}}-{{name}}-interface
+)
+message (
+  VERBOSE
+  "> {{parent}}::{{name}} -> {{parent}}-{{name}}-interface"
+)
+
+# -----------------------------------------------------------------------------
+
+# Extract the properties of the interface library to reuse them in the OBJECT
+# and STATIC libraries, which are compiled before the platform library and need
+# to get the same compile options.
+get_property (
+  {{parent}}-{{name}}-includes
+  TARGET {{parent}}-{{name}}-interface
+  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+)
+
+get_property (
+  {{parent}}-{{name}}-sources
+  TARGET {{parent}}-{{name}}-interface
+  PROPERTY INTERFACE_SOURCES
+)
+
+get_property (
+  {{parent}}-{{name}}-compile-definitions
+  TARGET {{parent}}-{{name}}-interface
+  PROPERTY INTERFACE_COMPILE_DEFINITIONS
+)
+
+get_property (
+  {{parent}}-{{name}}-compile-options
+  TARGET {{parent}}-{{name}}-interface
+  PROPERTY INTERFACE_COMPILE_OPTIONS
+)
+{% for dependency in dependencies %}
+get_property (
+  {{parent}}-{{dependency}}-includes
+  TARGET {{parent}}::{{dependency}}
+  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
+)
+{% endfor %}
+# -----------------------------------------------------------------------------
+
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#object-libraries
+# Optional OBJECT library: compiles the library sources once and shares the
+# resulting object files across all test executables, rather than recompiling
+# them per consumer.
+#
+# Include directories are managed explicitly instead of using PRIVATE linkage
+# to the interface library. PRIVATE linkage would cause dependency sources to
+# be compiled into this OBJECT library via transitive propagation, which
+# conflicts with the separate dependency compilation in each executable.
+# Consumers of this OBJECT library are expected to link separately to all
+# dependencies and to the platform-specific library.
+add_library ({{parent}}-{{name}}-objects OBJECT)
+
+# Use PUBLIC so that the include directories are available both for the OBJECT
+# library's own sources and for consumers of the library.
+target_include_directories (
+  {{parent}}-{{name}}-objects
+  PUBLIC {% raw %}${{% endraw %}{{parent}}-{{name}}-includes}
+)
+
+# Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
+# library, which would cause duplicate symbol errors at link time.
+target_sources (
+  {{parent}}-{{name}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{name}}-sources}
+)
+
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# OBJECT library.
+target_compile_definitions (
+  {{parent}}-{{name}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{name}}-compile-definitions}
+)
+
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# OBJECT library, which may cause conflicts with consumer-specific compile
+# options.
+target_compile_options (
+  {{parent}}-{{name}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{name}}-compile-options}
+)
+
+# Add the dependency include paths without linking the code; linking it would
+# add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
+# library, causing duplicate symbols at link time.
+{% for dependency in dependencies %}
+target_include_directories (
+  {{parent}}-{{name}}-objects
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{dependency}}-includes}
+)
+{% endfor %}
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists ({{parent}}-{{name}}-objects)
+endif ()
+
+# Alias.
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
+add_library (
+  {{parent}}::{{name}}-objects ALIAS
+  {{parent}}-{{name}}-objects
+)
+message (
+  VERBOSE
+  "> {{parent}}::{{name}}-objects -> {{parent}}-{{name}}-objects"
+)
+
+# -----------------------------------------------------------------------------
+
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
+# Optional STATIC library: compiles the library sources into an archive that
+# is linked into each consumer executable, rather than sharing object files.
+#
+# Include directories are managed explicitly instead of using PRIVATE linkage
+# to the interface library. PRIVATE linkage would cause dependency sources to
+# be compiled into this STATIC library via transitive propagation, which
+# conflicts with the separate dependency compilation in each executable.
+# Consumers of this STATIC library are expected to link separately to all
+# dependencies and to the platform-specific library.
+add_library ({{parent}}-{{name}}-static STATIC)
+
+# Use PUBLIC so that the include directories are available both for the STATIC
+# library's own sources and for consumers of the library.
+target_include_directories (
+  {{parent}}-{{name}}-static
+  PUBLIC {% raw %}${{% endraw %}{{parent}}-{{name}}-includes}
+)
+
+# Use PRIVATE to avoid propagating the sources to consumers of the STATIC
+# library, which would cause duplicate symbol errors at link time.
+target_sources (
+  {{parent}}-{{name}}-static
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{name}}-sources}
+)
+
+# Use PRIVATE to avoid propagating compile definitions to consumers of the
+# STATIC library.
+target_compile_definitions (
+  {{parent}}-{{name}}-static
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{name}}-compile-definitions}
+)
+
+# Use PRIVATE to avoid propagating the compile options to consumers of the
+# STATIC library, which may cause conflicts with consumer-specific compile
+# options.
+target_compile_options (
+  {{parent}}-{{name}}-static
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{name}}-compile-options}
+)
+
+# Add the dependency include paths without linking the dependency target:
+# linking it would add dependency sources as INTERFACE_SOURCES and compile
+# them into the STATIC library, causing duplicate symbols at link time.
+{% for dependency in dependencies %}
+target_include_directories (
+  {{parent}}-{{name}}-static
+  PRIVATE {% raw %}${{% endraw %}{{parent}}-{{dependency}}-includes}
+)
+{% endfor %}
+if (COMMAND xpack_display_target_lists)
+  xpack_display_target_lists ({{parent}}-{{name}}-static)
+endif ()
+
+# Alias.
+# https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
+add_library (
+  {{parent}}::{{name}}-static ALIAS
+  {{parent}}-{{name}}-static
+)
+message (
+  VERBOSE
+  "> {{parent}}::{{name}}-static -> {{parent}}-{{name}}-static"
+)
+
+# -----------------------------------------------------------------------------
