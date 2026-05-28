@@ -18,10 +18,9 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
 
-project (
-  micro-os-plus-utils-lists-tests
-  DESCRIPTION "µOS++ Intrusive Lists tests"
-  LANGUAGES CXX
+project (micro-os-plus-utils-lists-tests
+         DESCRIPTION "µOS++ Intrusive Lists tests"
+         LANGUAGES CXX
 )
 
 # -----------------------------------------------------------------------------
