@@ -33,6 +33,10 @@
 
 // ----------------------------------------------------------------------------
 
+#if __has_include(<micro-os-plus/utils/lists-defines.h>)
+#include <micro-os-plus/utils/lists-defines.h>
+#endif // __has_include(<micro-os-plus/utils/lists-defines.h>)
+
 #if __has_include(<micro-os-plus/config.h>)
 #include <micro-os-plus/config.h>
 #endif // __has_include(<micro-os-plus/config.h>)
