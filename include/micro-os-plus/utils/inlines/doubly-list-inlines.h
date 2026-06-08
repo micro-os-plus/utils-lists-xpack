@@ -270,9 +270,9 @@ namespace micro_os_plus::utils
   doubly_list<T, L>::doubly_list () noexcept
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s() @%p \n", __func__, this);
-#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
 
     if constexpr (is_statically_allocated::value)
       {
@@ -301,13 +301,14 @@ namespace micro_os_plus::utils
   constexpr doubly_list<T, L>::~doubly_list ()
   {
 #if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS)
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
     trace::printf ("%s() @%p \n", __func__, this);
-#endif // MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTORS
+#endif // MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
 
     // Perhaps enable it for non statically allocated lists.
     // assert (empty ());
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     if (!empty ())
       {
         trace::printf ("%s() @%p list not empty\n", __func__, this);
@@ -353,7 +354,8 @@ namespace micro_os_plus::utils
   bool
   doubly_list<T, L>::initialise_once (void) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
 
@@ -394,7 +396,8 @@ namespace micro_os_plus::utils
   void
   doubly_list<T, L>::clear (void) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
 
@@ -443,7 +446,8 @@ namespace micro_os_plus::utils
   void
   doubly_list<T, L>::link_tail (reference node) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p %p\n", __func__, this, &node);
 #endif
 
@@ -468,7 +472,8 @@ namespace micro_os_plus::utils
   void
   doubly_list<T, L>::link_head (reference node) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p %p\n", __func__, this, &node);
 #endif
 
@@ -493,7 +498,8 @@ namespace micro_os_plus::utils
   typename doubly_list<T, L>::iterator
   doubly_list<T, L>::begin () const noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
 
@@ -517,7 +523,8 @@ namespace micro_os_plus::utils
   typename doubly_list<T, L>::iterator
   doubly_list<T, L>::end () const noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) && defined(MICRO_OS_PLUS_TRACE_UTILS_LISTS)
+#if defined(MICRO_OS_PLUS_TRACE) \
+    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, this);
 #endif
 
