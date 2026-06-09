@@ -69,10 +69,10 @@
       "commandMesonBuildVerbose": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandMesonClean": "meson compile -C {{ properties.buildFolderRelativePathPosix }} --clean",
       "commandMesonPerformTests": "meson test -C {{ properties.buildFolderRelativePathPosix }} --verbose",
-      "commandXcdlSetupNative": "xcdl setup --build-type {{ properties.buildType }} --build-folder {{ properties.buildFolderRelativePathPosix }} --builder ninja",
-      "commandXcdlSetupNativeWithToolchain": "xcdl setup --build-type {{ properties.buildType }} --toolchain-file xcdl/toolchains/{{ properties.toolchainFileName }} --build-folder {{ properties.buildFolderRelativePathPosix }} --builder ninja",
-      "commandXcdlSetupCross": "xcdl setup --build-type {{ properties.buildType }} --property platformName={{ properties.platformName }} --toolchain-file xcdl/toolchains/{{ properties.toolchainFileName }} --build-folder {{ properties.buildFolderRelativePathPosix }} --builder ninja",
-      "commandXcdlRefresh": "xcdl setup --reconfigure --build-folder {{ properties.buildFolderRelativePathPosix }}",
+      "commandXcdlSetupNative": "xcdl setup --configuration-file xcdl-project.jsonc --build-folder {{ properties.buildFolderRelativePathPosix }} --builder ninja",
+      "commandXcdlSetupNativeWithToolchain": "xcdl setup --configuration-file xcdl-project.jsonc --toolchain-file xcdl/toolchains/{{ properties.toolchainFileName }} --build-folder {{ properties.buildFolderRelativePathPosix }} --builder ninja",
+      "commandXcdlSetupCross": "xcdl setup --configuration-file xcdl-project.jsonc --property platformName={{ properties.platformName }} --toolchain-file xcdl/toolchains/{{ properties.toolchainFileName }} --build-folder {{ properties.buildFolderRelativePathPosix }} --builder ninja",
+      "commandXcdlRefresh": "xcdl setup --refresh --build-folder {{ properties.buildFolderRelativePathPosix }}",
       "commandXcdlBuild": "xcdl build -C {{ properties.buildFolderRelativePathPosix }}",
       "commandXcdlBuildVerbose": "xcdl build -C {{ properties.buildFolderRelativePathPosix }} --verbose",
       "commandXcdlClean": "xcdl build -C {{ properties.buildFolderRelativePathPosix }} --target clean",
@@ -627,7 +627,7 @@
       "xcdl-native-actions": {
         "hidden": true,
         "actions": {
-          "setup": "{{ properties.commandXcdlSetupNativeWithToolchain }} --cdl-configuration native",
+          "setup": "{{ properties.commandXcdlSetupNativeWithToolchain }} --cdl-configuration native-{{ buildType }}",
           "reconfigure": "{{ properties.commandXcdlRefresh }}",
           "build": [
             "{{ properties.commandXcdlRefresh }}",

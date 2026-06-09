@@ -1,0 +1,40 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlPackage": {
+    "display": "µOS++ Utils Lists",
+    "description": "A source code library with the µOS++ intrusive lists",
+    "headerFile": "generated/include/micro-os-plus/utils/lists-defines.h",
+    "cdlComponents": [
+      {
+        "name": "micro-os-plus.utils.lists",
+        "display": "Intrusive Lists",
+        "description": "µOS++ C++ Intrusive Lists",
+        "publicIncludeFolders": ["include"],
+        "sourceFiles": ["src/doubly-list-links.cpp"],
+        "dependencies": ["micro-os-plus.diag.trace"],
+        "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_ENABLED",
+        "cdlOptions": [
+          {
+            "name": "trace",
+            "display": "Enable trace in lists",
+            "description": "Display trace messages in lists when TRACE is enabled",
+            "requires": "isEnabled('micro-os-plus.diag.trace')",
+            "defaultValue": false,
+            "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED"
+          },
+          {
+            "name": "trace-constructors",
+            "display": "Enable trace in lists constructors",
+            "description": "Display trace messages in lists constructors when TRACE is enabled",
+            "requires": "isEnabled('trace')",
+            "defaultValue": false,
+            "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED"
+          }
+        ]
+      }
+    ]
+  }
+}

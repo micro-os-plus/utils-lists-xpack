@@ -1,0 +1,241 @@
+{
+  "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
+  "minimumXcdlRequired": "2.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "cdlProject": {
+    "name": "/tests",
+    "display": "Tests",
+    "description": "Intrusive Lists Tests",
+    //
+    // The project wide CDL files, included in all configurations.
+    // In addition, each configurations includes platform specific CDL files.
+    "includeCDLs": [
+      // The top of the µOS++ hierarchy.
+      "xcdl/xcdl-micro-os-plus.jsonc",
+      // Common options for all builds.
+      "xcdl/xcdl-common-options.jsonc",
+      "xcdl/xcdl-binary-options.jsonc",
+      // The top package CDL file, with utils-lists.
+      "../xcdl-package.jsonc",
+      // The test sources.
+      "sources/sample-test/xcdl-package.jsonc", //
+      "sources/unit-test/xcdl-package.jsonc",
+      // Project wide dependencies.
+      "xpacks/@micro-os-plus/diag-trace/xcdl-package.jsonc",
+      "xpacks/@micro-os-plus/micro-test-plus/xcdl-package.jsonc"
+    ],
+    "packagesHeaderFile": "generated/include/xcdl-packages.md",
+    "headerFile": "generated/include/xcdl-defines.h",
+    //
+    // Each cdl configuration may be built with different toolchains, so
+    // multiple xpm build configurations may refer to the same cdl configuration.
+    "cdlConfigurations": {
+      //
+      "native-debug": {
+        "includeCDLs": [
+          "platforms/native/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-synthetic-posix/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.diag.trace.posix.stdout": true,
+          "micro-os-plus.diag.trace.printf-buffer-array-size": 500,
+          "micro-os-plus.utils.lists.trace": true,
+          "micro-os-plus.utils.lists.trace.constructors": true
+        }
+      },
+      "native-release": {
+        "inherits": "native-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-cortex-m0-debug": {
+        "includeCDLs": [
+          "platforms/qemu-cortex-m0/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@xpack-3rd-party/arm-cmsis-core/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-cortex-m0-release": {
+        "inherits": "qemu-cortex-m0-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-cortex-m3-debug": {
+        "includeCDLs": [
+          "platforms/qemu-cortex-m3/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@xpack-3rd-party/arm-cmsis-core/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-cortex-m3-release": {
+        "inherits": "qemu-cortex-m3-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-cortex-m4f-debug": {
+        "includeCDLs": [
+          "platforms/qemu-cortex-m4f/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@xpack-3rd-party/arm-cmsis-core/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-cortex-m4f-release": {
+        "inherits": "qemu-cortex-m4f-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-cortex-m7f-debug": {
+        "includeCDLs": [
+          "platforms/qemu-cortex-m7f/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@xpack-3rd-party/arm-cmsis-core/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-cortex-m7f-release": {
+        "inherits": "qemu-cortex-m7f-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-aarch32-a15-debug": {
+        "includeCDLs": [
+          "platforms/qemu-aarch32-a15/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-aarch32/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-aarch32/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-aarch32-a15-release": {
+        "inherits": "qemu-aarch32-a15-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-aarch64-a72-debug": {
+        "includeCDLs": [
+          "platforms/qemu-aarch64-a72/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-aarch64/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-aarch64/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-aarch64-a72-release": {
+        "inherits": "qemu-aarch64-a72-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-riscv-rv32imac-debug": {
+        "includeCDLs": [
+          "platforms/qemu-riscv-rv32imac/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-riscv/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-riscv/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-riscv-rv32imac-release": {
+        "inherits": "qemu-riscv-rv32imac-debug",
+        "buildType": "release"
+      },
+      //
+      "qemu-riscv-rv64imafdc-debug": {
+        "includeCDLs": [
+          "platforms/qemu-riscv-rv64imafdc/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-riscv/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-riscv/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
+          "{{ buildFolderPath }}/xpacks/@micro-os-plus/startup/xcdl-package.jsonc"
+        ],
+        "buildType": "debug",
+        "cdlSettings": {
+          "micro-os-plus.semihosting.syscalls": true,
+          "micro-os-plus.semihosting.startup": true,
+          "micro-os-plus.startup": true,
+          "micro-os-plus.startup.sbrk": true,
+          "micro-os-plus.startup.exit": true,
+          "micro-os-plus.semihosting.trace.stdout": true
+        }
+      },
+      "qemu-riscv-rv64imafdc-release": {
+        "inherits": "qemu-riscv-rv64imafdc-debug",
+        "buildType": "release"
+      }
+    }
+  }
