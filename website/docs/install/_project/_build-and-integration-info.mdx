@@ -41,9 +41,9 @@ There are several preprocessor definitions used to configure the build:
 
 - `MICRO_OS_PLUS_INCLUDE_CONFIG_H` - to include `<micro-os-plus/config.h>`
 - `MICRO_OS_PLUS_TRACE` - to include the trace calls
-- `MICRO_OS_PLUS_TRACE_UTILS_LISTS` - to trace some calls, like `clear()`,
+- `MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED` - to trace some calls, like `clear()`,
   `insert()`, `link()`, `unlink()`
-- `MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR` - to trace constructors and
+- `MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTOR_ENABLED` - to trace constructors and
   destructors
 
 ### Compiler options
@@ -57,7 +57,7 @@ The following options must be passed to the compiler and linker:
 The library has the following dependencies:
 
 - `@micro-os-plus/diag-trace` - the **µOS++** `trace::printf()` tracing
-  infrastructure (optional, used only if `MICRO_OS_PLUS_TRACE_UTILS_LISTS*`
+  infrastructure (optional, used only if `MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED*`
   are defined)
 
 <CommonCmakeIntegration />
