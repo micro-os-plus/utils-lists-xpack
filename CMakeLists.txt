@@ -58,28 +58,19 @@ endif ()
 add_library (micro-os-plus-utils-lists-interface INTERFACE)
 
 target_include_directories (
-  micro-os-plus-utils-lists-interface 
-  INTERFACE "include"
+  micro-os-plus-utils-lists-interface INTERFACE "include"
 )
 
 target_sources (
-  micro-os-plus-utils-lists-interface
-  INTERFACE "src/doubly-list-links.cpp"
+  micro-os-plus-utils-lists-interface INTERFACE "src/doubly-list-links.cpp"
 )
 
-target_compile_definitions (
-  micro-os-plus-utils-lists-interface 
-  INTERFACE
-)
+target_compile_definitions (micro-os-plus-utils-lists-interface INTERFACE)
 
-target_compile_options (
-  micro-os-plus-utils-lists-interface 
-  INTERFACE
-)
+target_compile_options (micro-os-plus-utils-lists-interface INTERFACE)
 
 target_link_libraries (
-  micro-os-plus-utils-lists-interface 
-  INTERFACE "micro-os-plus::diag-trace"
+  micro-os-plus-utils-lists-interface INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -91,9 +82,8 @@ endif ()
 add_library (
   micro-os-plus::utils-lists ALIAS micro-os-plus-utils-lists-interface
 )
-message (
-  VERBOSE
-  "> micro-os-plus::utils-lists -> micro-os-plus-utils-lists-interface"
+message (VERBOSE
+         "> micro-os-plus::utils-lists -> micro-os-plus-utils-lists-interface"
 )
 
 # -----------------------------------------------------------------------------
@@ -138,12 +128,12 @@ get_property (
 # resulting object files across all test executables, rather than recompiling
 # them per consumer.
 #
-# Include directories are managed explicitly instead of using PRIVATE linkage
-# to the interface library. PRIVATE linkage would cause dependency sources to
-# be compiled into this OBJECT library via transitive propagation, which
-# conflicts with the separate dependency compilation in each executable.
-# Consumers of this OBJECT library are expected to link separately to all
-# dependencies and to the platform-specific library.
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause dependency sources to be
+# compiled into this OBJECT library via transitive propagation, which conflicts
+# with the separate dependency compilation in each executable. Consumers of this
+# OBJECT library are expected to link separately to all dependencies and to the
+# platform-specific library.
 add_library (micro-os-plus-utils-lists-objects OBJECT)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
@@ -191,8 +181,7 @@ endif ()
 # Alias.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  micro-os-plus::utils-lists-objects ALIAS
-  micro-os-plus-utils-lists-objects
+  micro-os-plus::utils-lists-objects ALIAS micro-os-plus-utils-lists-objects
 )
 message (
   VERBOSE
@@ -202,29 +191,27 @@ message (
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#normal-libraries
-# Optional STATIC library: compiles the library sources into an archive that
-# is linked into each consumer executable, rather than sharing object files.
+# Optional STATIC library: compiles the library sources into an archive that is
+# linked into each consumer executable, rather than sharing object files.
 #
-# Include directories are managed explicitly instead of using PRIVATE linkage
-# to the interface library. PRIVATE linkage would cause dependency sources to
-# be compiled into this STATIC library via transitive propagation, which
-# conflicts with the separate dependency compilation in each executable.
-# Consumers of this STATIC library are expected to link separately to all
-# dependencies and to the platform-specific library.
+# Include directories are managed explicitly instead of using PRIVATE linkage to
+# the interface library. PRIVATE linkage would cause dependency sources to be
+# compiled into this STATIC library via transitive propagation, which conflicts
+# with the separate dependency compilation in each executable. Consumers of this
+# STATIC library are expected to link separately to all dependencies and to the
+# platform-specific library.
 add_library (micro-os-plus-utils-lists-static STATIC)
 
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
 target_include_directories (
-  micro-os-plus-utils-lists-static
-  PUBLIC ${micro-os-plus-utils-lists-includes}
+  micro-os-plus-utils-lists-static PUBLIC ${micro-os-plus-utils-lists-includes}
 )
 
 # Use PRIVATE to avoid propagating the sources to consumers of the STATIC
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-utils-lists-static
-  PRIVATE ${micro-os-plus-utils-lists-sources}
+  micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-utils-lists-sources}
 )
 
 # Use PRIVATE to avoid propagating compile definitions to consumers of the
@@ -243,12 +230,11 @@ target_compile_options (
 )
 
 # Add the dependency include paths without linking the dependency target:
-# linking it would add dependency sources as INTERFACE_SOURCES and compile
-# them into the STATIC library, causing duplicate symbols at link time.
+# linking it would add dependency sources as INTERFACE_SOURCES and compile them
+# into the STATIC library, causing duplicate symbols at link time.
 
 target_include_directories (
-  micro-os-plus-utils-lists-static
-  PRIVATE ${micro-os-plus-diag-trace-includes}
+  micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -258,8 +244,7 @@ endif ()
 # Alias.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  micro-os-plus::utils-lists-static ALIAS
-  micro-os-plus-utils-lists-static
+  micro-os-plus::utils-lists-static ALIAS micro-os-plus-utils-lists-static
 )
 message (
   VERBOSE
