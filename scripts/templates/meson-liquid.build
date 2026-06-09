@@ -17,7 +17,7 @@
 #
 # `subdir('xpacks/@{{parent}}/{{name}}')`
 #
-# The result is a library and a dependency that can be referred as:
+# The result is a dependency that can be referred as:
 #
 {% assign parentUnderscore = parent | replace: '-', '_' -%}
 {% assign nameUnderscore = name | replace: '-', '_' -%}

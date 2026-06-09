@@ -55,7 +55,7 @@ endif ()
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
 # properties up to targets that link against it; PUBLIC does both.
-add_library ({{parent}}-{{name}}-interface INTERFACE)
+add_library ({{parent}}-{{name}}-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
   {{parent}}-{{name}}-interface 
