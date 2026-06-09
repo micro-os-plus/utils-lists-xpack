@@ -18,9 +18,9 @@
 
 // ----------------------------------------------------------------------------
 
-#if defined(MICRO_OS_PLUS_INCLUDE_CONFIG_H)
+#if __has_include(<micro-os-plus/config.h>)
 #include <micro-os-plus/config.h>
-#endif // MICRO_OS_PLUS_INCLUDE_CONFIG_H
+#endif // __has_include(<micro-os-plus/config.h>)
 
 #include <micro-os-plus/platform.h>
 #include <micro-os-plus/micro-test-plus.h>
