@@ -26,7 +26,7 @@ message (VERBOSE
 if (NOT DEFINED xpack_platform_compile_definition)
   message (
     FATAL_ERROR
-      "Define xpack_platform_compile_definition in platforms/${PLATFORM_NAME}/cmake/dependencies.cmake"
+      "Define xpack_platform_compile_definition in platforms/${PLATFORM_NAME}/cmake/definitions.cmake"
   )
 endif ()
 
@@ -84,7 +84,6 @@ set (
   xpack_platform_common_args
   -Werror
   # Apple clang 13 does not support -Wunused-but-set-variable
-  # $<$<PLATFORM_ID:Darwin>:-Wno-unknown-warning-option>
   $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-unknown-warning-option>
   $<$<C_COMPILER_ID:Clang,AppleClang>:-Wno-documentation>
   $<$<PLATFORM_ID:Darwin>:-Wno-missing-include-dirs>
