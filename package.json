@@ -32,7 +32,9 @@
   "devDependencies": {
     "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
+    "glob": "^13.0.6",
     "json": "^11.0.0",
+    "jsonc-parser": "^3.3.1",
     "liquidjs": "^10.25.0"
   },
   "scripts": {
@@ -56,7 +58,8 @@
     },
     "actions": {
       "clang-format": "bash scripts/clang-format.sh",
-      "cmake-format": "bash scripts/cmake-format.sh"
+      "cmake-format": "bash scripts/cmake-format.sh",
+      "jsonc-format": "bash scripts/jsonc-format.sh"
     }
   },
   "engines": {
