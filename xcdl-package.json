@@ -6,7 +6,7 @@
   "cdlPackage": {
     "display": "µOS++ Utils Lists",
     "description": "A source code library with the µOS++ intrusive lists",
-    "headerFile": "generated/include/micro-os-plus/utils/lists-defines.h",
+    "headerFile": "{{buildFolderPath}}/generated/include/micro-os-plus/utils/lists-defines.h",
     "cdlComponents": [
       {
         "name": "micro-os-plus.utils.lists",

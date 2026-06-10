@@ -54,11 +54,11 @@
             "-nostartfiles",
             "-Wl,--gc-sections",
             // TODO: compare as version, not strings.
-            "{% if compiler.version >= '12.0.0' %}-Wl,--no-warn-rwx-segment{% endif %}",
-            // Including files from other packages is not very nice, but functional. Use
-            // absolute paths, otherwise set -L.
-            "-T{{buildFolderPath}}/xpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld",
-            "-T{{buildFolderPath}}/xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-flash.ld"
+            "{% if compiler.version | semver_ge: '12.0.0' %}-Wl,--no-warn-rwx-segment{% endif %}",
+            // Including files from other packages is not very nice, but functional. 
+            // Use absolute paths, otherwise set -L.
+            "-T{{buildFolderAbsolutePath}}/xpacks/@micro-os-plus/devices-qemu-cortexm/linker-scripts/mem-mps2-an385.ld",
+            "-T{{buildFolderAbsolutePath}}/xpacks/@micro-os-plus/architecture-cortexm/linker-scripts/sections-flash.ld"
           ]
         },
         "implements": [
