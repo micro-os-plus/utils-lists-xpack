@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from xcdl-library.json.
+# Automatically generated from xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -17,7 +17,7 @@
 #
 # `subdir('xpacks/@micro-os-plus/utils-lists')`
 #
-# The result is a library and a dependency that can be referred as:
+# The result is a dependency that can be referred as:
 #
 # `dependencies: [micro_os_plus_utils_lists_dependency],`
 

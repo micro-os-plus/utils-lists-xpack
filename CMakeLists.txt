@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from xcdl-library.json.
+# DO NOT EDIT! Automatically generated from xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -55,7 +55,7 @@ endif ()
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
 # properties up to targets that link against it; PUBLIC does both.
-add_library (micro-os-plus-utils-lists-interface INTERFACE)
+add_library (micro-os-plus-utils-lists-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
   micro-os-plus-utils-lists-interface INTERFACE "include"
@@ -70,7 +70,8 @@ target_compile_definitions (micro-os-plus-utils-lists-interface INTERFACE)
 target_compile_options (micro-os-plus-utils-lists-interface INTERFACE)
 
 target_link_libraries (
-  micro-os-plus-utils-lists-interface INTERFACE "micro-os-plus::diag-trace"
+  micro-os-plus-utils-lists-interface
+  INTERFACE "micro-os-plus-diag-trace-interface"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -117,7 +118,7 @@ get_property (
 
 get_property (
   micro-os-plus-diag-trace-includes
-  TARGET micro-os-plus::diag-trace
+  TARGET micro-os-plus-diag-trace-interface
   PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
 
