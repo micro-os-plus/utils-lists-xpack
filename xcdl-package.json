@@ -12,9 +12,15 @@
         "name": "micro-os-plus.utils.lists",
         "display": "Intrusive Lists",
         "description": "µOS++ C++ Intrusive Lists",
-        "publicIncludeFolders": ["include"],
-        "sourceFiles": ["src/doubly-list-links.cpp"],
-        "dependencies": ["micro-os-plus.diag.trace"],
+        "publicIncludeFolders": [
+          "include"
+        ],
+        "sourceFiles": [
+          "src/doubly-list-links.cpp"
+        ],
+        "dependencies": [
+          "micro-os-plus.diag.trace"
+        ],
         "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_ENABLED",
         "cdlOptions": [
           {
