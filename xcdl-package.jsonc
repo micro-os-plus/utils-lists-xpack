@@ -6,7 +6,7 @@
   "cdlPackage": {
     "display": "µOS++ Utils Lists",
     "description": "A source code library with the µOS++ intrusive lists",
-    "headerFile": "{{buildFolderPath}}/generated/include/micro-os-plus/utils/lists-defines.h",
+ 
     "cdlComponents": [
       {
         "name": "micro-os-plus.utils.lists",
@@ -21,7 +21,11 @@
         "dependencies": [
           "micro-os-plus.diag.trace"
         ],
-        "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_ENABLED",
+        "generatedFile": {
+          "type": "header",
+          "filePath": "{{buildFolderPath}}/generated/include/micro-os-plus/utils/lists-defines.h"
+        },
+        // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_ENABLED",
         "cdlOptions": [
           {
             "name": "trace",
@@ -29,7 +33,7 @@
             "description": "Display trace messages in lists when TRACE is enabled",
             "requires": "isEnabled('micro-os-plus.diag.trace')",
             "defaultValue": false,
-            "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED"
+            // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED"
           },
           {
             "name": "trace-constructors",
@@ -37,7 +41,7 @@
             "description": "Display trace messages in lists constructors when TRACE is enabled",
             "requires": "isEnabled('trace')",
             "defaultValue": false,
-            "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED"
+            // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED"
           }
         ]
       }
