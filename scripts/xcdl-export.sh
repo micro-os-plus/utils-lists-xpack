@@ -83,10 +83,10 @@ then
   exit 1
 fi
 
-xcdl_library_json_path="$1"
+xcdl_package_jsonc_path="$1"
 
 echo
-echo "Processing ${xcdl_library_json_path}..."
+echo "Processing ${xcdl_package_jsonc_path}..."
 
 # -----------------------------------------------------------------------------
 
@@ -104,9 +104,9 @@ then
   exit 1
 fi
 
-if [ ! -f "${xcdl_library_json_path}" ]
+if [ ! -f "${xcdl_package_jsonc_path}" ]
 then
-  echo "missing mandatory ${xcdl_library_json_path}..."
+  echo "missing mandatory ${xcdl_package_jsonc_path}..."
   exit 1
 fi
 
@@ -114,7 +114,7 @@ fi
 xcdl_context="{}"
 
 serialise_string_property_to "xcdl_context" "libraryFilePath" \
-      "${xcdl_library_json_path}" "xcdl_"
+      "${xcdl_package_jsonc_path}" "xcdl_"
 
 # Read in top package.json.
 xpack_package_json="$(json -f "${project_folder_path}/package.json" -o json-0)"
@@ -146,32 +146,47 @@ xpack_top_config="$(json -f "${project_folder_path}/config/top-templates.json" -
 serialise_string_property_to "xcdl_context" "descriptiveName" \
   "$(echo "${xpack_top_config}" | json descriptiveName)" "xpack_"
 
-# Read in xcdl-library.json.
-xcdl_library_json="$(json -f "${xcdl_library_json_path}" -o json-0)"
+# Read in xcdl-package.jsonc and convert to plain JSON.
+xcdl_package_json="$(json5 "${xcdl_package_jsonc_path}" | json -o json-0)"
+
+component=$(echo "${xcdl_package_json}" | json cdlPackage.cdlComponents | json 0)
 
 serialise_string_property_to "xcdl_context" "name" \
-  "$(echo "${xcdl_library_json}" | json cdlPackage.name)" "xcdl_"
+  "$(echo "${component}" | json name)" "xcdl_"
 
 serialise_string_property_to "xcdl_context" "description" \
-  "$(echo "${xcdl_library_json}" | json cdlPackage.description)" "xcdl_"
+  "$(echo "${component}" | json description)" "xcdl_"
 
-serialise_string_property_to "xcdl_context" "parent" \
-  "$(echo "${xcdl_library_json}" | json cdlPackage.parent)" "xcdl_"
+serialise_array_property_to "xcdl_context" "publicIncludeFolders" \
+  "$(folders=$(echo "${component}" | json "publicIncludeFolders" -o json-0); echo "${folders:-[]}")" "xcdl_"
 
-serialise_array_property_to "xcdl_context" "compilerIncludeFolders" \
-  "$(folders=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerIncludeFolders" -o json-0); echo "${folders:-[]}")" "xcdl_"
+serialise_array_property_to "xcdl_context" "sourceFiles" \
+  "$(files=$(echo "${component}" | json "sourceFiles" -o json-0); echo "${files:-[]}")" "xcdl_"
 
-serialise_array_property_to "xcdl_context" "compilerSourceFiles" \
-  "$(files=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerSourceFiles" -o json-0); echo "${files:-[]}")" "xcdl_"
+serialise_array_property_to "xcdl_context" "publicDefines" \
+  "$(defs=$(echo "${component}" | json "publicDefines" -o json-0); echo "${defs:-[]}")" "xcdl_"
 
-serialise_array_property_to "xcdl_context" "compilerDefinitions" \
-  "$(defs=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerDefinitions" -o json-0); echo "${defs:-[]}")" "xcdl_"
+options=$(echo "${component}" | json publicCompilerOptions)
 
-serialise_array_property_to "xcdl_context" "compilerOptions" \
-  "$(opts=$(echo "${xcdl_library_json}" | json "cdlPackage.compilerOptions" -o json-0); echo "${opts:-[]}")" "xcdl_"
+if [ -n "${options}" ]
+then
+  echo "compiler options:"
+  echo "${options}" 
+  exit 1
+
+  opts_target=$(echo "${component}" | json "publicCompilerOptions.target" -o json-0); echo "${opts_target:-[]}"
+  opts_optimisations=$(echo "${component}" | json "publicCompilerOptions.optimisations" -o json-0); echo "${opts_optimisations:-[]}"
+  opts_warnings=$(echo "${component}" | json "publicCompilerOptions.warnings" -o json-0); echo "${opts_warnings:-[]}"
+  opts_debugging=$(echo "${component}" | json "publicCompilerOptions.debugging" -o json-0); echo "${opts_debugging:-[]}"
+  opts_miscellaneous=$(echo "${component}" | json "publicCompilerOptions.miscellaneous" -o json-0); echo "${opts_miscellaneous:-[]}"
+fi
+
+opts=""
+serialise_array_property_to "xcdl_context" "publicCompilerOptions" \
+  "$(echo "${opts:-[]}")" "xcdl_"
 
 serialise_array_property_to "xcdl_context" "dependencies" \
-  "$(deps=$(echo "${xcdl_library_json}" | json "cdlPackage.dependencies" -o json-0); echo "${deps:-[]}")" "xcdl_"
+  "$(deps=$(echo "${component}" | json "dependencies" -o json-0); echo "${deps:-[]}")" "xcdl_"
 
 echo
 echo -n '"xcdl_context": '
