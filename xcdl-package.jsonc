@@ -17,6 +17,7 @@
         "sourceFiles": [
           "src/doubly-list-links.cpp"
         ],
+        // Note: artefact "compilerOptions" must include `-std=c++20` or higher.
         "dependencies": [
           "micro-os-plus.diag.trace"
         ],
@@ -37,7 +38,7 @@
           {
             "name": "trace-constructors",
             "display": "Enable trace in lists constructors",
-            "description": "Display trace messages in lists constructors when TRACE is enabled",
+            "description": "Display trace messages in lists constructors and descriptors when TRACE is enabled",
             "requires": "isEnabled('trace')",
             "defaultValue": false,
             // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED"
