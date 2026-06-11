@@ -13,6 +13,7 @@
   //
   "files.associations": {
     "*.json": "jsonc",
+    "*.jsonc": "jsonc",
     "*-liquid.*": "liquid",
     "*.liquid": "liquid",
     "*.rb": "ruby",
