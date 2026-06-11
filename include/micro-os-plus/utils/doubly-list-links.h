@@ -33,6 +33,10 @@
 
 // ----------------------------------------------------------------------------
 
+#if !(__cplusplus >= 202002L || (defined(_MSVC_LANG) && _MSVC_LANG >= 202002L))
+#error "C++20 or higher is required"
+#endif
+
 #if __has_include(<micro-os-plus/utils/lists-defines.h>)
 #include <micro-os-plus/utils/lists-defines.h>
 #endif // __has_include(<micro-os-plus/utils/lists-defines.h>)
