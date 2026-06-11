@@ -6,7 +6,6 @@
   "cdlPackage": {
     "display": "µOS++ Utils Lists",
     "description": "A source code library with the µOS++ intrusive lists",
- 
     "cdlComponents": [
       {
         "name": "micro-os-plus.utils.lists",
@@ -42,6 +41,27 @@
             "requires": "isEnabled('trace')",
             "defaultValue": false,
             // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED"
+          }
+        ],
+        "cdlArtefacts": [
+          {
+            "name": "static",
+            "display": "Static Library",
+            "description": "Static library with the µOS++ intrusive lists",
+            "type": "staticLibrary",
+            "fileName": "utils-lists.a",
+            "dependencies": [
+              "micro-os-plus.utils.lists"
+            ]
+          },
+          {
+            "name": "objects",
+            "display": "Object Files",
+            "description": "Object files with the µOS++ intrusive lists",
+            "type": "objectFiles",
+            "dependencies": [
+              "micro-os-plus.utils.lists"
+            ]
           }
         ]
       }
