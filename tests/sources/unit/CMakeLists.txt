@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/unit-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/unit/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -14,7 +14,7 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("sources/unit-test")`
+# `add_subdirectory("sources/unit")`
 #
 # The result is an interface library that can be added to the linker with:
 #
@@ -22,42 +22,27 @@
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'sources/unit-test'...")
+message (VERBOSE "Processing 'sources/unit'...")
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
-# Visibility keywords: INTERFACE passes properties up to targets that link 
+# Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
 add_library (tests-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-unit-interface 
-  INTERFACE "include"
-)
+target_include_directories (tests-unit-interface INTERFACE "include")
 
 target_sources (
-  tests-unit-interface
-  INTERFACE "src/main.cpp"
-            "src/doubly-list-links.cpp"
-            "src/doubly-list.cpp"
-            "src/intrusive-list.cpp"
+  tests-unit-interface INTERFACE "src/main.cpp" "src/doubly-list-links.cpp"
+                                 "src/doubly-list.cpp" "src/intrusive-list.cpp"
 )
 
-target_compile_definitions (
-  tests-unit-interface 
-  INTERFACE
-)
+target_compile_definitions (tests-unit-interface INTERFACE)
 
-target_compile_options (
-  tests-unit-interface 
-  INTERFACE
-)
+target_compile_options (tests-unit-interface INTERFACE)
 
-target_link_libraries (
-  tests-unit-interface 
-  INTERFACE
-)
+target_link_libraries (tests-unit-interface INTERFACE)
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (tests-unit-interface)

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/sample-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/sample/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -14,7 +14,7 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("sources/sample-test")`
+# `add_subdirectory("sources/sample")`
 #
 # The result is an interface library that can be added to the linker with:
 #
@@ -22,39 +22,24 @@
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'sources/sample-test'...")
+message (VERBOSE "Processing 'sources/sample'...")
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
-# Visibility keywords: INTERFACE passes properties up to targets that link 
+# Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
 add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-sample-interface 
-  INTERFACE
-)
+target_include_directories (tests-sample-interface INTERFACE)
 
-target_sources (
-  tests-sample-interface
-  INTERFACE "src/main.cpp"
-)
+target_sources (tests-sample-interface INTERFACE "src/main.cpp")
 
-target_compile_definitions (
-  tests-sample-interface 
-  INTERFACE
-)
+target_compile_definitions (tests-sample-interface INTERFACE)
 
-target_compile_options (
-  tests-sample-interface 
-  INTERFACE
-)
+target_compile_options (tests-sample-interface INTERFACE)
 
-target_link_libraries (
-  tests-sample-interface 
-  INTERFACE
-)
+target_link_libraries (tests-sample-interface INTERFACE)
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (tests-sample-interface)

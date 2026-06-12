@@ -21,11 +21,11 @@ xpack_dependencies_project_folders = []
  
 # Each test has its own library. Add only those enabled.
 if xpack_enable_sample_test
-  xpack_dependencies_project_folders += [ 'sources/sample-test' ]
+  xpack_dependencies_project_folders += [ 'sources/sample' ]
 endif
 
 if xpack_enable_unit_test
-  xpack_dependencies_project_folders += [ 'sources/unit-test' ]
+  xpack_dependencies_project_folders += [ 'sources/unit' ]
 endif
 
 # -----------------------------------------------------------------------------

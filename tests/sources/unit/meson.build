@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from sources/sample-test/xcdl-package.jsonc.
+# Automatically generated from sources/unit/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -15,18 +15,18 @@
 
 # This file is intended to be consumed with:
 #
-# `subdir('sources/sample-test')`
+# `subdir('sources/unit')`
 #
 # The result is a dependency that can be referred as:
 #
-# `dependencies: [tests_sample_dependency],`
+# `dependencies: [tests_unit_dependency],`
 
 # Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-message('Processing sources/sample-test...')
+message('Processing sources/unit...')
 
 # -----------------------------------------------------------------------------
 
@@ -46,14 +46,18 @@ _local_link_args = []
 _local_link_with = []
 
 _local_include_directories += [
+  'include',
 ]
 
 _local_sources += [
   'src/main.cpp',
+  'src/doubly-list-links.cpp',
+  'src/doubly-list.cpp',
+  'src/intrusive-list.cpp',
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-tests_sample_dependency = declare_dependency(
+tests_unit_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),
   compile_args: _local_compile_args,
   sources: files(_local_sources),
@@ -64,8 +68,8 @@ tests_sample_dependency = declare_dependency(
 
 # Meson dependencies cannot differentiate between C and C++ compile args;
 # they are therefore exposed as separate variables alongside the dependency.
-tests_sample_dependency_compile_c_args = _local_compile_c_args
-tests_sample_dependency_compile_cpp_args = _local_compile_cpp_args
+tests_unit_dependency_compile_c_args = _local_compile_c_args
+tests_unit_dependency_compile_cpp_args = _local_compile_cpp_args
 
 foreach name : _local_include_directories
   message('+ -I ' + name)
@@ -73,6 +77,6 @@ endforeach
 foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
   message('+ ' + name)
 endforeach
-message('> tests_sample_dependency')
+message('> tests_unit_dependency')
 
 # -----------------------------------------------------------------------------
