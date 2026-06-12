@@ -34,17 +34,22 @@ IFS=$'\n\t'
 # -----------------------------------------------------------------------------
 # Identify the script location, to reach, for example, the helper scripts.
 
-build_script_path="$0"
-if [[ "${build_script_path}" != /* ]]
+script_path="$0"
+if [[ "${script_path}" != /* ]]
 then
   # Make relative path absolute.
-  build_script_path="$(pwd)/$0"
+  script_path="$(pwd)/$0"
 fi
 
-script_folder_path="$(dirname "${build_script_path}")"
-script_folder_name="$(basename "${script_folder_path}")"
+export script_path
+export script_name="$(basename "${script_path}")"
+
+export script_folder_path="$(dirname "${script_path}")"
+export script_folder_name="$(basename "${script_folder_path}")"
 
 # =============================================================================
+
+argv="$@"
 
 # pip3 install --user cmakelang pyyaml
 
@@ -67,3 +72,11 @@ function run_verbose()
 run_verbose "${PYPATH}/bin/cmake-format" --config-file "config/.cmake-format.py" --in-place \
   $(find . \( \( -type d -name "build" \) -o \( -type d -name "xpacks" \) -o \( -type d -name "node_modules" \) \) -prune -o \
   -type f \( -name "CMakeLists.txt" -o -name "*.cmake" \) -print)
+
+echo
+echo "'${script_name} ${argv}' done"
+
+# Completed successfully.
+exit 0
+
+# -----------------------------------------------------------------------------
