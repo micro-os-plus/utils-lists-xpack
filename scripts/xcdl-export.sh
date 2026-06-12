@@ -79,14 +79,14 @@ function substitute()
 
 if [[ $# -ne 1 ]]
 then
-  echo "Usage: $(basename "$0") <xcdl-library.json>"
+  echo "Usage: $(basename "$0") <xcdl-package.jsonc>"
   exit 1
 fi
 
-xcdl_package_jsonc_path="$1"
+xcdl_jsonc_path="$1"
 
 echo
-echo "Processing ${xcdl_package_jsonc_path}..."
+echo "Processing ${xcdl_jsonc_path}..."
 
 # -----------------------------------------------------------------------------
 
@@ -104,9 +104,9 @@ then
   exit 1
 fi
 
-if [ ! -f "${xcdl_package_jsonc_path}" ]
+if [ ! -f "${xcdl_jsonc_path}" ]
 then
-  echo "missing mandatory ${xcdl_package_jsonc_path}..."
+  echo "missing mandatory ${xcdl_jsonc_path}..."
   exit 1
 fi
 
@@ -114,7 +114,7 @@ fi
 xcdl_context="{}"
 
 serialise_string_property_to "xcdl_context" "libraryFilePath" \
-      "${xcdl_package_jsonc_path}" "xcdl_"
+      "${xcdl_jsonc_path}" "xcdl_"
 
 # Read in top package.json.
 xpack_package_json="$(json -f "${project_folder_path}/package.json" -o json-0)"
@@ -147,7 +147,7 @@ serialise_string_property_to "xcdl_context" "descriptiveName" \
   "$(echo "${xpack_top_config}" | json descriptiveName)" "xpack_"
 
 # Read in xcdl-package.jsonc and convert to plain JSON.
-xcdl_package_json="$(json5 "${xcdl_package_jsonc_path}" | json -o json-0)"
+xcdl_package_json="$(json5 "${xcdl_jsonc_path}" | json -o json-0)"
 
 component=$(echo "${xcdl_package_json}" | json cdlPackage.cdlComponents | json 0)
 
