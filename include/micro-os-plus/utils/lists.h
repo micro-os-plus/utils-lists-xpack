@@ -63,6 +63,22 @@
 
 // ----------------------------------------------------------------------------
 
+#if !(__cplusplus >= 202002L || (defined(_MSVC_LANG) && _MSVC_LANG >= 202002L))
+#error "C++20 or higher is required"
+#endif
+
+#if __has_include(<micro-os-plus/project-config.h>)
+#include <micro-os-plus/project-config.h>
+#elif __has_include(<micro-os-plus/config.h>)
+#pragma message \
+    "micro-os-plus/config.h is deprecated, rename to micro-os-plus/project-config.h and include it instead of micro-os-plus/config.h"
+#include <micro-os-plus/config.h>
+#endif // __has_include(<micro-os-plus/project-config.h>)
+
+#if __has_include(<micro-os-plus/utils/lists-defines.h>)
+#include <micro-os-plus/utils/lists-defines.h>
+#endif // __has_include(<micro-os-plus/utils/lists-defines.h>)
+
 #include "doubly-list-links.h"
 #include "doubly-list.h"
 #include "intrusive-list.h"
