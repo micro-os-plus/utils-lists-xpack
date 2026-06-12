@@ -20,7 +20,7 @@
           "src/intrusive-list.cpp"
         ],
         "dependencies": [
-          // "micro-test-plus"
+          "micro-os-plus.micro-test-plus"
         ]
       }
     ]

@@ -16,7 +16,7 @@
           "src/main.cpp"
         ],
         "dependencies": [
-          // "micro-os-plus.micro-test-plus.objects"
+          // "micro-os-plus.micro-test-plus"
         ]
       }
     ]

@@ -59,8 +59,8 @@ target_compile_options (
 
 target_link_libraries (
   {{nameDash}}-interface 
-  INTERFACE{% for dependency in dependencies %}{% assign dependencyDash = dependency | replace: '.', '-' %}{% if forloop.first %} {% else %}
-            {% endif %}"{{dependencyDash}}"{% endfor %}
+  INTERFACE{% for dependency in dependencies %}{% assign dependencyDoubleColon = dependency | replace: '.', '::' %}{% if forloop.first %} {% else %}
+            {% endif %}"{{dependencyDoubleColon}}"{% endfor %}
 )
 
 if (COMMAND xpack_display_target_lists)

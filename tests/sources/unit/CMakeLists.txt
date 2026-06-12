@@ -27,22 +27,37 @@ message (VERBOSE "Processing 'sources/unit'...")
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
-# Visibility keywords: INTERFACE passes properties up to targets that link
+# Visibility keywords: INTERFACE passes properties up to targets that link 
 # against it.
 add_library (tests-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (tests-unit-interface INTERFACE "include")
-
-target_sources (
-  tests-unit-interface INTERFACE "src/main.cpp" "src/doubly-list-links.cpp"
-                                 "src/doubly-list.cpp" "src/intrusive-list.cpp"
+target_include_directories (
+  tests-unit-interface 
+  INTERFACE "include"
 )
 
-target_compile_definitions (tests-unit-interface INTERFACE)
+target_sources (
+  tests-unit-interface
+  INTERFACE "src/main.cpp"
+            "src/doubly-list-links.cpp"
+            "src/doubly-list.cpp"
+            "src/intrusive-list.cpp"
+)
 
-target_compile_options (tests-unit-interface INTERFACE)
+target_compile_definitions (
+  tests-unit-interface 
+  INTERFACE
+)
 
-target_link_libraries (tests-unit-interface INTERFACE)
+target_compile_options (
+  tests-unit-interface 
+  INTERFACE
+)
+
+target_link_libraries (
+  tests-unit-interface 
+  INTERFACE "micro-os-plus::micro-test-plus"
+)
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (tests-unit-interface)

@@ -30,7 +30,7 @@ function (target_link_native_test_libraries name test_library_name)
             micro-os-plus::utils-lists-objects
             # Portable dependencies.
             micro-os-plus::diag-trace
-            micro-os-plus::micro-test-plus
+            # micro-os-plus::micro-test-plus
             # Platform specific dependencies and common compile/link options.
             micro-os-plus::platform # bring device & architecture too
   )

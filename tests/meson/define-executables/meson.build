@@ -103,7 +103,7 @@ foreach test : tests
   
   # Portable dependencies.
   if xpack_project_name != 'micro-test-plus'
-    _local_dependencies += [  micro_os_plus_micro_test_plus_dependency ]
+    # _local_dependencies += [  micro_os_plus_micro_test_plus_dependency ]
   endif
 
   _local_dependencies += [ micro_os_plus_diag_trace_dependency ]
