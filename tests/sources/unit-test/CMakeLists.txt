@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from sources/unit-test/xcdl-package.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -13,48 +14,60 @@
 
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("tests/unit-test")`
+# `add_subdirectory("sources/unit-test")`
 #
 # The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC test::unit)`
+# `target_link_libraries(your-target PUBLIC tests-unit)`
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'tests/unit-test'...")
+message (VERBOSE "Processing 'sources/unit-test'...")
 
 # -----------------------------------------------------------------------------
-# The test library definitions.
-add_library (test-unit-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (test-unit-interface INTERFACE "include")
+# https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
+# Visibility keywords: INTERFACE passes properties up to targets that link 
+# against it.
+add_library (tests-unit-interface INTERFACE EXCLUDE_FROM_ALL)
+
+target_include_directories (
+  tests-unit-interface 
+  INTERFACE "include"
+)
 
 target_sources (
-  test-unit-interface INTERFACE "src/main.cpp" "src/doubly-list-links.cpp"
-                                "src/doubly-list.cpp" "src/intrusive-list.cpp"
+  tests-unit-interface
+  INTERFACE "src/main.cpp"
+            "src/doubly-list-links.cpp"
+            "src/doubly-list.cpp"
+            "src/intrusive-list.cpp"
 )
 
-target_compile_definitions (test-unit-interface INTERFACE # None.
+target_compile_definitions (
+  tests-unit-interface 
+  INTERFACE
 )
 
-target_compile_options (test-unit-interface INTERFACE # None.
+target_compile_options (
+  tests-unit-interface 
+  INTERFACE
 )
 
-target_link_options (test-unit-interface INTERFACE # None.
-)
-
-target_link_libraries (test-unit-interface INTERFACE # None.
+target_link_libraries (
+  tests-unit-interface 
+  INTERFACE
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (test-unit-interface)
+  xpack_display_target_lists (tests-unit-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (test::unit ALIAS test-unit-interface)
-message (VERBOSE "> test::unit -> test-unit-interface")
+add_library (tests::unit ALIAS tests-unit-interface)
+message (VERBOSE "> tests::unit -> tests-unit-interface")
 
 # -----------------------------------------------------------------------------

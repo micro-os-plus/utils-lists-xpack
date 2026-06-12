@@ -27,7 +27,7 @@ add_compile_common_private_options (micro-os-plus-utils-lists-objects)
 
 if (XPACK_ENABLE_SAMPLE_TEST)
   add_cross_test_executable (sample-test)
-  target_link_cross_test_libraries (sample-test test::sample)
+  target_link_cross_test_libraries (sample-test tests::sample)
 
   message (VERBOSE "A> sample-test")
 
@@ -45,7 +45,7 @@ endif ()
 
 if (XPACK_ENABLE_UNIT_TEST)
   add_cross_test_executable (unit-test)
-  target_link_cross_test_libraries (unit-test test::unit)
+  target_link_cross_test_libraries (unit-test tests::unit)
 
   message (VERBOSE "A> unit-test")
 

@@ -27,18 +27,18 @@ tests = []
 if xpack_enable_sample_test
   tests += {
     'name': 'sample-test',
-    'dependency': test_sample_dependency,
-    'compile_c_args': test_sample_dependency_compile_c_args,
-    'compile_cpp_args': test_sample_dependency_compile_cpp_args,
+    'dependency': tests_sample_dependency,
+    'compile_c_args': tests_sample_dependency_compile_c_args,
+    'compile_cpp_args': tests_sample_dependency_compile_cpp_args,
   }
 endif
 
 if xpack_enable_unit_test
   tests += {
     'name': 'unit-test',
-    'dependency': test_unit_dependency,
-    'compile_c_args': test_unit_dependency_compile_c_args,
-    'compile_cpp_args': test_unit_dependency_compile_cpp_args,
+    'dependency': tests_unit_dependency,
+    'compile_c_args': tests_unit_dependency_compile_c_args,
+    'compile_cpp_args': tests_unit_dependency_compile_cpp_args,
   }
 endif
 

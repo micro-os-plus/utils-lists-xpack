@@ -15,10 +15,12 @@
     "json": "https://www.npmjs.com/package/json",
     "liquidjs": "https://www.npmjs.com/package/liquidjs"
   },
-  "dependencies": {},
+  "dependencies": {
+    "json5": "^2.2.3"
+  },
   "devDependencies": {
-    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "@micro-os-plus/build-helper": "github:micro-os-plus/build-helper-xpack",
+    "@xpack/npm-packages-helper": "github:xpack/npm-packages-helper",
     "del-cli": "^7.0.0",
     "json": "^11.0.0",
     "liquidjs": "^10.25.0"
@@ -272,6 +274,9 @@
       "actions-clean-for-configs": "{% for config in configs %}{% for build-type in properties.build-types %}xpm run clean --config {{ config }}-{{ build-type }}{{ os.EOL }}{% endfor %}{% endfor %}"
     },
     "actions": {
+      "xcdl-export": [
+        "bash scripts/xcdl-export.sh sources/sample-test/xcdl-package.jsonc sources/unit-test/xcdl-package.jsonc"
+      ],
       "install": [
         "xpm install",
         "xpm install --config {% if os.platform == 'win32' %}native-cmake-gcc-debug{% else %}native-cmake-sys-debug{% endif %}",

@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/sample-test/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from {{jsonFilePath}}.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -12,59 +12,66 @@
 #
 # -----------------------------------------------------------------------------
 
+{% assign nameDash = name | replace: '.', '-' -%}
+{% assign nameDoubleColon = name | replace: '.', '::' -%}
 # This file is intended to be consumed with:
 #
-# `add_subdirectory("sources/sample-test")`
+# `add_subdirectory("{{outputFolderPath}}")`
 #
 # The result is an interface library that can be added to the linker with:
 #
-# `target_link_libraries(your-target PUBLIC tests-sample)`
+# `target_link_libraries(your-target PUBLIC {{nameDash}})`
 
 # -----------------------------------------------------------------------------
 
-message (VERBOSE "Processing 'sources/sample-test'...")
+message (VERBOSE "Processing '{{outputFolderPath}}'...")
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: INTERFACE passes properties up to targets that link 
 # against it.
-add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
+add_library ({{nameDash}}-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_include_directories (
-  tests-sample-interface 
-  INTERFACE
+  {{nameDash}}-interface 
+  INTERFACE{% for folder in publicIncludeFolders %}{% if forloop.first %} {% else %}
+            {% endif %}"{{folder}}"{% endfor %}
 )
 
 target_sources (
-  tests-sample-interface
-  INTERFACE "src/main.cpp"
+  {{nameDash}}-interface
+  INTERFACE{% for file in sourceFiles %}{% if forloop.first %} {% else %}
+            {% endif %}"{{file}}"{% endfor %}
 )
 
 target_compile_definitions (
-  tests-sample-interface 
-  INTERFACE
+  {{nameDash}}-interface 
+  INTERFACE{% for define in publicDefines %}{% if forloop.first %} {% else %}
+            {% endif %}"{{define}}"{% endfor %}
 )
 
 target_compile_options (
-  tests-sample-interface 
-  INTERFACE
+  {{nameDash}}-interface 
+  INTERFACE{% for option in publicCompilerOptions %}{% if forloop.first %} {% else %}
+            {% endif %}"{{option}}"{% endfor %}
 )
 
 target_link_libraries (
-  tests-sample-interface 
-  INTERFACE
+  {{nameDash}}-interface 
+  INTERFACE{% for dependency in dependencies %}{% assign dependencyDash = dependency | replace: '.', '-' %}{% if forloop.first %} {% else %}
+            {% endif %}"{{dependencyDash}}"{% endfor %}
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (tests-sample-interface)
+  xpack_display_target_lists ({{nameDash}}-interface)
 endif ()
 
 # -----------------------------------------------------------------------------
 # Aliases.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
-add_library (tests::sample ALIAS tests-sample-interface)
-message (VERBOSE "> tests::sample -> tests-sample-interface")
+add_library ({{nameDoubleColon}} ALIAS {{nameDash}}-interface)
+message (VERBOSE "> {{nameDoubleColon}} -> {{nameDash}}-interface")
 
 # -----------------------------------------------------------------------------
