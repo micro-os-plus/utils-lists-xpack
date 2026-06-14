@@ -98,108 +98,35 @@ then
   exit 1
 fi
 
-if [ ! -f "${project_folder_path}/config/top-templates.json" ]
-then
-  echo "missing mandatory ${project_folder_path}/config/top-templates.json..."
-  exit 1
-fi
-
 if [ ! -f "${xcdl_jsonc_path}" ]
 then
   echo "missing mandatory ${xcdl_jsonc_path}..."
   exit 1
 fi
 
-
 xcdl_context="{}"
 
 serialise_string_property_to "xcdl_context" "libraryFilePath" \
-      "${xcdl_jsonc_path}" "xcdl_"
+      "${xcdl_jsonc_path}"
 
 # Read in top package.json.
 xpack_package_json="$(json -f "${project_folder_path}/package.json" -o json-0)"
 
-serialise_string_property_to "xcdl_context" "packageScopedName" \
-  "$(echo "${xpack_package_json}" | json name)" "xpack_"
-
-if echo "${xpack_package_scoped_name}" | egrep -e '^@' >/dev/null
-then
-  serialise_string_property_to "xcdl_context" "packageScope" \
-    "$(echo "${xpack_package_scoped_name}" | sed -e 's|^@||' -e 's|/.*||' )" "xpack_"
-else
-  serialise_string_property_to "xcdl_context" "packageScope" \
-    "" "xpack_"
-fi
-
-serialise_string_property_to "xcdl_context" "packageName" \
-    "$(echo "${xpack_package_scoped_name}" | sed -e 's|^@[a-zA-Z0-9-]*/||')" "xpack_"
-
-serialise_string_property_to "xcdl_context" "packageVersion" \
-  "$(echo "${xpack_package_json}" | json version)" "xpack_"
-
-serialise_string_property_to "xcdl_context" "packageDescription" \
-  "$(echo "${xpack_package_json}" | json description)" "xpack_"
-
-# Read in top-templates.json.
-xpack_top_config="$(json -f "${project_folder_path}/config/top-templates.json" -o json-0)"
-
-serialise_string_property_to "xcdl_context" "descriptiveName" \
-  "$(echo "${xpack_top_config}" | json descriptiveName)" "xpack_"
+serialise_object_property_to "xcdl_context" "package" \
+  "$(echo ${xpack_package_json})" 
 
 # Read in xcdl-package.jsonc and convert to plain JSON.
 xcdl_package_json="$(json5 "${xcdl_jsonc_path}" | json -o json-0)"
 
-component=$(echo "${xcdl_package_json}" | json cdlPackage.cdlComponents | json 0)
-
-serialise_string_property_to "xcdl_context" "name" \
-  "$(echo "${component}" | json name)" "xcdl_"
-
-serialise_string_property_to "xcdl_context" "description" \
-  "$(echo "${component}" | json description)" "xcdl_"
-
-serialise_array_property_to "xcdl_context" "publicIncludeFolders" \
-  "$(folders=$(echo "${component}" | json "publicIncludeFolders" -o json-0); echo "${folders:-[]}")" "xcdl_"
-
-serialise_array_property_to "xcdl_context" "sourceFiles" \
-  "$(files=$(echo "${component}" | json "sourceFiles" -o json-0); echo "${files:-[]}")" "xcdl_"
-
-serialise_array_property_to "xcdl_context" "publicDefines" \
-  "$(defs=$(echo "${component}" | json "publicDefines" -o json-0); echo "${defs:-[]}")" "xcdl_"
-
-options=$(echo "${component}" | json publicCompilerOptions)
-
-if [ -n "${options}" ]
-then
-  echo "compiler options:"
-  echo "${options}" 
-  exit 1
-
-  opts_target=$(echo "${component}" | json "publicCompilerOptions.target" -o json-0); echo "${opts_target:-[]}"
-  opts_optimisations=$(echo "${component}" | json "publicCompilerOptions.optimisations" -o json-0); echo "${opts_optimisations:-[]}"
-  opts_warnings=$(echo "${component}" | json "publicCompilerOptions.warnings" -o json-0); echo "${opts_warnings:-[]}"
-  opts_debugging=$(echo "${component}" | json "publicCompilerOptions.debugging" -o json-0); echo "${opts_debugging:-[]}"
-  opts_miscellaneous=$(echo "${component}" | json "publicCompilerOptions.miscellaneous" -o json-0); echo "${opts_miscellaneous:-[]}"
-fi
-
-opts=""
-serialise_array_property_to "xcdl_context" "publicCompilerOptions" \
-  "$(echo "${opts:-[]}")" "xcdl_"
-
-serialise_array_property_to "xcdl_context" "dependencies" \
-  "$(deps=$(echo "${component}" | json "dependencies" -o json-0); echo "${deps:-[]}")" "xcdl_"
+serialise_object_property_to "xcdl_context" "xcdl" \
+  "$(echo "${xcdl_package_json}")" 
 
 echo
 echo -n '"xcdl_context": '
 echo "${xcdl_context}" | json
 
 echo
-echo "environment variables: "
-echo
-env | egrep '^xcdl_' | sort
-env | egrep '^xpack_' | sort
-
-echo
-echo "generating build files..."
+echo "generating files..."
 echo
 
 substitute "${script_folder_path}/templates/CMakeLists-liquid.txt" "CMakeLists.txt"

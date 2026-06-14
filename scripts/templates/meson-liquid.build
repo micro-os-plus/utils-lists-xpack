@@ -1,3 +1,7 @@
+{%- assign packageScope = package.name | remove_first: '@' | split: '/' | first %}
+{%- assign packageName = package.name | remove_first: '@' | split: '/' | last %}
+{%- assign component = xcdl.cdlPackage.cdlComponents[0] %}
+{%- assign nameUnderscore = component.name | replace: '-', '_' | replace: '.', '_' -%}
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
 # Automatically generated from {{libraryFilePath}}.
@@ -13,7 +17,6 @@
 #
 # -----------------------------------------------------------------------------
 
-{% assign nameUnderscore = name | replace: '-', '_' | replace: '.', '_' -%}
 # This file is intended to be consumed by applications with:
 #
 # `subdir('xpacks/@{{packageScope}}/{{packageName}}')`
@@ -27,6 +30,7 @@
 
 # -----------------------------------------------------------------------------
 
+# {{xcdl.cdlPackage.description}}.
 message('Processing xPack @{{packageScope}}/{{packageName}}...')
 
 # -----------------------------------------------------------------------------
@@ -45,18 +49,30 @@ _local_compile_definitions = []
 _local_dependencies = []
 _local_link_args = []
 _local_link_with = []
+{%- if component.publicIncludeFolders %}
 
 _local_include_directories += [
-{%- for path in publicIncludeFolders %}
+{%- for path in component.publicIncludeFolders %}
   '{{path}}',
 {%- endfor %}
 ]
+{%- endif %}
+{%- if component.sourceFiles %}
 
 _local_sources += [
-{%- for path in sourceFiles %}
+{%- for path in component.sourceFiles %}
   '{{path}}',
 {%- endfor %}
 ]
+{%- endif %}
+{%- if component.publicCompilerOptions %}
+
+compile_args += [
+{%- for option in component.publicCompilerOptions %}
+  '{{option}}',
+{%- endfor %}
+]
+{%- endif %}
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 {{nameUnderscore}}_dependency = declare_dependency(
