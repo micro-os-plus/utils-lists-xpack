@@ -66,8 +66,7 @@ target_sources (
 )
 
 target_link_libraries (
-  micro-os-plus-utils-lists-interface
-  INTERFACE "micro-os-plus-diag-trace-interface"
+  micro-os-plus-utils-lists-interface INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -85,24 +84,9 @@ message (VERBOSE
 
 # -----------------------------------------------------------------------------
 
-# Extract the properties of the interface library to reuse them in the OBJECT
-# and STATIC libraries, which are compiled before the platform library and need
-# to get the same compile options.
-
-get_property (
-  micro-os-plus-utils-lists-includes
-  TARGET micro-os-plus-utils-lists-interface
-  PROPERTY INTERFACE_INCLUDE_DIRECTORIES
-)
-
-get_property (
-  micro-os-plus-utils-lists-sources
-  TARGET micro-os-plus-utils-lists-interface
-  PROPERTY INTERFACE_SOURCES
-)
 get_property (
   micro-os-plus-diag-trace-includes
-  TARGET micro-os-plus-diag-trace-interface
+  TARGET micro-os-plus::diag-trace
   PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
 
@@ -123,16 +107,12 @@ add_library (micro-os-plus-utils-lists-objects OBJECT)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
-target_include_directories (
-  micro-os-plus-utils-lists-objects
-  PUBLIC ${micro-os-plus-utils-lists-includes}
-)
+target_include_directories (micro-os-plus-utils-lists-objects PUBLIC "include")
 
 # Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-utils-lists-objects
-  PRIVATE ${micro-os-plus-utils-lists-sources}
+  micro-os-plus-utils-lists-objects PRIVATE "src/doubly-list-links.cpp"
 )
 
 # Add the dependency include paths without linking the code; linking it would
@@ -141,6 +121,10 @@ target_sources (
 target_include_directories (
   micro-os-plus-utils-lists-objects
   PRIVATE ${micro-os-plus-diag-trace-includes}
+)
+
+target_link_libraries (
+  micro-os-plus-utils-lists-objects PUBLIC "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -177,14 +161,12 @@ set_target_properties (
 
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
-target_include_directories (
-  micro-os-plus-utils-lists-static PUBLIC ${micro-os-plus-utils-lists-includes}
-)
+target_include_directories (micro-os-plus-utils-lists-static PUBLIC "include")
 
 # Use PRIVATE to avoid propagating the sources to consumers of the STATIC
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-utils-lists-sources}
+  micro-os-plus-utils-lists-static PRIVATE "src/doubly-list-links.cpp"
 )
 
 # Add the dependency include paths without linking the dependency target:
@@ -192,6 +174,10 @@ target_sources (
 # into the STATIC library, causing duplicate symbols at link time.
 target_include_directories (
   micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-diag-trace-includes}
+)
+
+target_link_libraries (
+  micro-os-plus-utils-lists-static PUBLIC "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
