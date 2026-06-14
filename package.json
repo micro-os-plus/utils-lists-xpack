@@ -26,7 +26,10 @@
   "$dependenciesUrls": {
     "del-cli": "https://www.npmjs.com/package/del-cli",
     "json": "https://www.npmjs.com/package/json",
-    "liquidjs": "https://www.npmjs.com/package/liquidjs"
+    "liquidjs": "https://www.npmjs.com/package/liquidjs",
+    "glob": "https://www.npmjs.com/package/glob",
+    "json5": "https://www.npmjs.com/package/json5",
+    "jsonc-parser": "https://www.npmjs.com/package/jsonc-parser"
   },
   "dependencies": {},
   "devDependencies": {
