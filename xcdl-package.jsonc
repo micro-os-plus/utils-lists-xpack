@@ -4,7 +4,7 @@
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
   "cdlPackage": {
-    "display": "µOS++ Utils Lists",
+    "display": "µOS++ Intrusive Lists",
     "description": "A source code library with the µOS++ intrusive lists",
     "cdlComponents": [
       {
@@ -39,7 +39,7 @@
             "name": "trace-constructors",
             "display": "Enable trace in lists constructors",
             "description": "Display trace messages in lists constructors and descriptors when TRACE is enabled",
-            "requires": "isEnabled('trace')",
+            "requires": "isEnabled('micro-os-plus.diag.trace')",
             "defaultValue": false,
             // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED"
           }
@@ -50,7 +50,9 @@
             "display": "Static Library",
             "description": "Static library with the µOS++ intrusive lists",
             "type": "staticLibrary",
-            "fileName": "utils-lists.a",
+            // This generates libutils-lists.a on Linux/macOS and 
+            // utils-lists.lib on Windows.
+            "fileName": "utils-lists",
             "dependencies": [
               "micro-os-plus.utils.lists"
             ]

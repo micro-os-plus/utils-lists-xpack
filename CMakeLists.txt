@@ -25,7 +25,7 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
 
-# µOS++ C++ Intrusive Lists.
+# A source code library with the µOS++ intrusive lists.
 project (
   micro-os-plus-utils-lists
   DESCRIPTION "µOS++ Intrusive Lists"
@@ -65,10 +65,6 @@ target_sources (
   micro-os-plus-utils-lists-interface INTERFACE "src/doubly-list-links.cpp"
 )
 
-target_compile_definitions (micro-os-plus-utils-lists-interface INTERFACE)
-
-target_compile_options (micro-os-plus-utils-lists-interface INTERFACE)
-
 target_link_libraries (
   micro-os-plus-utils-lists-interface
   INTERFACE "micro-os-plus-diag-trace-interface"
@@ -92,6 +88,7 @@ message (VERBOSE
 # Extract the properties of the interface library to reuse them in the OBJECT
 # and STATIC libraries, which are compiled before the platform library and need
 # to get the same compile options.
+
 get_property (
   micro-os-plus-utils-lists-includes
   TARGET micro-os-plus-utils-lists-interface
@@ -103,19 +100,6 @@ get_property (
   TARGET micro-os-plus-utils-lists-interface
   PROPERTY INTERFACE_SOURCES
 )
-
-get_property (
-  micro-os-plus-utils-lists-compile-definitions
-  TARGET micro-os-plus-utils-lists-interface
-  PROPERTY INTERFACE_COMPILE_DEFINITIONS
-)
-
-get_property (
-  micro-os-plus-utils-lists-compile-options
-  TARGET micro-os-plus-utils-lists-interface
-  PROPERTY INTERFACE_COMPILE_OPTIONS
-)
-
 get_property (
   micro-os-plus-diag-trace-includes
   TARGET micro-os-plus-diag-trace-interface
@@ -151,25 +135,9 @@ target_sources (
   PRIVATE ${micro-os-plus-utils-lists-sources}
 )
 
-# Use PRIVATE to avoid propagating compile definitions to consumers of the
-# OBJECT library.
-target_compile_definitions (
-  micro-os-plus-utils-lists-objects
-  PRIVATE ${micro-os-plus-utils-lists-compile-definitions}
-)
-
-# Use PRIVATE to avoid propagating the compile options to consumers of the
-# OBJECT library, which may cause conflicts with consumer-specific compile
-# options.
-target_compile_options (
-  micro-os-plus-utils-lists-objects
-  PRIVATE ${micro-os-plus-utils-lists-compile-options}
-)
-
 # Add the dependency include paths without linking the code; linking it would
 # add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
 # library, causing duplicate symbols at link time.
-
 target_include_directories (
   micro-os-plus-utils-lists-objects
   PRIVATE ${micro-os-plus-diag-trace-includes}
@@ -203,6 +171,10 @@ message (
 # platform-specific library.
 add_library (micro-os-plus-utils-lists-static STATIC)
 
+set_target_properties (
+  micro-os-plus-utils-lists-static PROPERTIES OUTPUT_NAME utils-lists
+)
+
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
 target_include_directories (
@@ -215,25 +187,9 @@ target_sources (
   micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-utils-lists-sources}
 )
 
-# Use PRIVATE to avoid propagating compile definitions to consumers of the
-# STATIC library.
-target_compile_definitions (
-  micro-os-plus-utils-lists-static
-  PRIVATE ${micro-os-plus-utils-lists-compile-definitions}
-)
-
-# Use PRIVATE to avoid propagating the compile options to consumers of the
-# STATIC library, which may cause conflicts with consumer-specific compile
-# options.
-target_compile_options (
-  micro-os-plus-utils-lists-static
-  PRIVATE ${micro-os-plus-utils-lists-compile-options}
-)
-
 # Add the dependency include paths without linking the dependency target:
 # linking it would add dependency sources as INTERFACE_SOURCES and compile them
 # into the STATIC library, causing duplicate symbols at link time.
-
 target_include_directories (
   micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-diag-trace-includes}
 )

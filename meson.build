@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# A source code library with the µOS++ intrusive lists.
 message('Processing xPack @micro-os-plus/utils-lists...')
 
 # -----------------------------------------------------------------------------
