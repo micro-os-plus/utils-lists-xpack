@@ -27,34 +27,11 @@ message (VERBOSE "Processing 'sources/sample'...")
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
-# Visibility keywords: INTERFACE passes properties up to targets that link 
+# Visibility keywords: INTERFACE passes properties up to targets that link
 # against it.
 add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
-target_include_directories (
-  tests-sample-interface 
-  INTERFACE
-)
-
-target_sources (
-  tests-sample-interface
-  INTERFACE "src/main.cpp"
-)
-
-target_compile_definitions (
-  tests-sample-interface 
-  INTERFACE
-)
-
-target_compile_options (
-  tests-sample-interface 
-  INTERFACE
-)
-
-target_link_libraries (
-  tests-sample-interface 
-  INTERFACE
-)
+target_sources (tests-sample-interface INTERFACE "src/main.cpp")
 
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (tests-sample-interface)

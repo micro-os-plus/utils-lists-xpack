@@ -45,14 +45,8 @@ _local_dependencies = []
 _local_link_args = []
 _local_link_with = []
 
-_local_include_directories += [
-]
-
 _local_sources += [
   'src/main.cpp',
-]
-
-_local_dependencies += [
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency

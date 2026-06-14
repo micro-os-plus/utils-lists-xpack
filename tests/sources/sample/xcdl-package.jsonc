@@ -16,6 +16,7 @@
           "src/main.cpp"
         ],
         "dependencies": [
+          // The sample test does not use µTest++.
           // "micro-os-plus.micro-test-plus"
         ]
       }
