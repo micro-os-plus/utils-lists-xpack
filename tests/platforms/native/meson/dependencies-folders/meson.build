@@ -32,7 +32,7 @@ xpack_dependencies_folders = [
 
   # (platform) architecture-synthetic-posix
   'platforms/native/meson/platform-library',
-] 
+]
 
 # The project folders are added at the end, to be able to refer to the 
 # dependencies.
