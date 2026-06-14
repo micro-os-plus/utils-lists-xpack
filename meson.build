@@ -54,6 +54,10 @@ _local_sources += [
   'src/doubly-list-links.cpp',
 ]
 
+_local_dependencies += [
+  micro_os_plus_diag_trace_dependency,
+]
+
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 micro_os_plus_utils_lists_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),

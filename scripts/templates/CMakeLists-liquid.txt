@@ -64,7 +64,7 @@ endif ()
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
 # properties up to targets that link against it; PUBLIC does both.
 add_library ({{nameDash}}-interface INTERFACE EXCLUDE_FROM_ALL)
-{%- if component.publicIncludeFolders %}
+{%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
 
 target_include_directories (
   {{nameDash}}-interface 
@@ -72,7 +72,7 @@ target_include_directories (
             {% endif %}"{{folder}}"{% endfor %}
 )
 {%- endif %}
-{%- if component.sourceFiles %}
+{%- if component.sourceFiles and component.sourceFiles.size > 0 %}
 
 target_sources (
   {{nameDash}}-interface
@@ -80,7 +80,7 @@ target_sources (
             {% endif %}"{{file}}"{% endfor %}
 )
 {%- endif %}
-{%- if component.publicDefines %}
+{%- if component.publicDefines and component.publicDefines.size > 0 %}
 
 target_compile_definitions (
   {{nameDash}}-interface 
@@ -88,7 +88,7 @@ target_compile_definitions (
             {% endif %}"{{define}}"{% endfor %}
 )
 {%- endif %}
-{%- if component.publicCompilerOptions %}
+{%- if component.publicCompilerOptions and component.publicCompilerOptions.size > 0 %}
 
 target_compile_options (
   {{nameDash}}-interface 
@@ -96,7 +96,7 @@ target_compile_options (
             {% endif %}"{{option}}"{% endfor %}
 )
 {%- endif %}
-{%- if component.dependencies %}
+{%- if component.dependencies and component.dependencies.size > 0 %}
 
 target_link_libraries (
   {{nameDash}}-interface 
@@ -120,11 +120,11 @@ message (
 )
 
 # -----------------------------------------------------------------------------
-{% if component.cdlArtefacts %}
+{% if component.cdlArtefacts and component.cdlArtefacts.size > 0 %}
 # Extract the properties of the interface library to reuse them in the OBJECT
 # and STATIC libraries, which are compiled before the platform library and need
 # to get the same compile options.
-{%- if component.publicIncludeFolders %}
+{%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
 
 get_property (
   {{nameDash}}-includes
@@ -132,7 +132,7 @@ get_property (
   PROPERTY INTERFACE_INCLUDE_DIRECTORIES
 )
 {%- endif %}
-{%- if component.sourceFiles %}
+{%- if component.sourceFiles and component.sourceFiles.size > 0 %}
 
 get_property (
   {{nameDash}}-sources
@@ -140,7 +140,7 @@ get_property (
   PROPERTY INTERFACE_SOURCES
 )
 {%- endif %}
-{%- if component.publicDefines %}
+{%- if component.publicDefines and component.publicDefines.size > 0 %}
 
 get_property (
   {{nameDash}}-compile-definitions
@@ -148,7 +148,7 @@ get_property (
   PROPERTY INTERFACE_COMPILE_DEFINITIONS
 )
 {%- endif %}
-{%- if component.publicCompilerOptions %}
+{%- if component.publicCompilerOptions and component.publicCompilerOptions.size > 0 %}
 
 get_property (
   {{nameDash}}-compile-options
@@ -156,7 +156,7 @@ get_property (
   PROPERTY INTERFACE_COMPILE_OPTIONS
 )
 {%- endif %}
-{%- if component.dependencies %}
+{%- if component.dependencies and component.dependencies.size > 0 %}
 
 {%- for dependency in component.dependencies %}
 {%- assign dependencyDash = dependency | replace: '.', '-' %}
@@ -183,7 +183,7 @@ get_property (
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
 add_library ({{nameDash}}-objects OBJECT)
-{%- if component.publicIncludeFolders %}
+{%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
@@ -192,7 +192,7 @@ target_include_directories (
   PUBLIC {% raw %}${{% endraw %}{{nameDash}}-includes}
 )
 {%- endif %}
-{%- if component.sourceFiles %}
+{%- if component.sourceFiles and component.sourceFiles.size > 0 %}
 
 # Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
 # library, which would cause duplicate symbol errors at link time.
@@ -201,7 +201,7 @@ target_sources (
   PRIVATE {% raw %}${{% endraw %}{{nameDash}}-sources}
 )
 {%- endif %}
-{%- if component.publicDefines %}
+{%- if component.publicDefines and component.publicDefines.size > 0 %}
 
 # Use PRIVATE to avoid propagating compile definitions to consumers of the
 # OBJECT library.
@@ -210,7 +210,7 @@ target_compile_definitions (
   PRIVATE {% raw %}${{% endraw %}{{nameDash}}-compile-definitions}
 )
 {%- endif %}
-{%- if component.publicCompilerOptions %}
+{%- if component.publicCompilerOptions and component.publicCompilerOptions.size > 0 %}
 
 # Use PRIVATE to avoid propagating the compile options to consumers of the
 # OBJECT library, which may cause conflicts with consumer-specific compile
@@ -220,7 +220,7 @@ target_compile_options (
   PRIVATE {% raw %}${{% endraw %}{{nameDash}}-compile-options}
 )
 {%- endif %}
-{%- if component.dependencies %}
+{%- if component.dependencies and component.dependencies.size > 0 %}
 
 # Add the dependency include paths without linking the code; linking it would
 # add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
@@ -269,7 +269,7 @@ set_target_properties (
   {{nameDash}}-static
   PROPERTIES OUTPUT_NAME {{staticArtefact.fileName}}
 )
-{%- if component.publicIncludeFolders %}
+{%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
 
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
@@ -278,7 +278,7 @@ target_include_directories (
   PUBLIC {% raw %}${{% endraw %}{{nameDash}}-includes}
 )
 {%- endif %}
-{%- if component.sourceFiles %}
+{%- if component.sourceFiles and component.sourceFiles.size > 0 %}
 
 # Use PRIVATE to avoid propagating the sources to consumers of the STATIC
 # library, which would cause duplicate symbol errors at link time.
@@ -287,7 +287,7 @@ target_sources (
   PRIVATE {% raw %}${{% endraw %}{{nameDash}}-sources}
 )
 {%- endif %}
-{%- if component.publicDefines %}
+{%- if component.publicDefines and component.publicDefines.size > 0 %}
 
 # Use PRIVATE to avoid propagating compile definitions to consumers of the
 # STATIC library.
@@ -296,7 +296,7 @@ target_compile_definitions (
   PRIVATE {% raw %}${{% endraw %}{{nameDash}}-compile-definitions}
 )
 {%- endif %}
-{%- if component.publicCompilerOptions %}
+{%- if component.publicCompilerOptions and component.publicCompilerOptions.size > 0 %}
 
 # Use PRIVATE to avoid propagating the compile options to consumers of the
 # STATIC library, which may cause conflicts with consumer-specific compile
@@ -306,7 +306,7 @@ target_compile_options (
   PRIVATE {% raw %}${{% endraw %}{{nameDash}}-compile-options}
 )
 {%- endif %}
-{%- if component.dependencies %}
+{%- if component.dependencies and component.dependencies.size > 0 %}
 
 # Add the dependency include paths without linking the dependency target:
 # linking it would add dependency sources as INTERFACE_SOURCES and compile them
