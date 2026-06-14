@@ -49,6 +49,10 @@ _local_sources += [
   'src/main.cpp',
 ]
 
+_local_dependencies += [
+  micro_os_plus_utils_lists_dependency,
+]
+
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
 tests_sample_dependency = declare_dependency(
   include_directories: include_directories(_local_include_directories),

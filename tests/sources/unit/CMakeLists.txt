@@ -39,7 +39,8 @@ target_sources (
 )
 
 target_link_libraries (
-  tests-unit-interface INTERFACE "micro-os-plus::micro-test-plus"
+  tests-unit-interface INTERFACE "micro-os-plus::utils-lists-static"
+                                 "micro-os-plus::micro-test-plus"
 )
 
 if (COMMAND xpack_display_target_lists)

@@ -33,6 +33,10 @@ add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 
 target_sources (tests-sample-interface INTERFACE "src/main.cpp")
 
+target_link_libraries (
+  tests-sample-interface INTERFACE "micro-os-plus::utils-lists-static"
+)
+
 if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists (tests-sample-interface)
 endif ()

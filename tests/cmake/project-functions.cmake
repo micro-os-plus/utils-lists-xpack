@@ -26,12 +26,9 @@ function (target_link_native_test_libraries name test_library_name)
             micro-os-plus::common-options
             # Library with the current test.
             ${test_library_name}
-            # Tested library.
-            micro-os-plus::utils-lists-objects
-            # Portable dependencies.
+            # TODO: remove it after updating architecture dependencies.
             micro-os-plus::diag-trace
-            # µTest++ included in artefacts. micro-os-plus::micro-test-plus
-            # Platform specific dependencies and common compile/link options.
+            # Platform dependency..
             micro-os-plus::platform # bring device & architecture too
   )
 endfunction ()
@@ -45,11 +42,8 @@ function (target_link_cross_test_libraries name test_library_name)
             micro-os-plus::common-options
             # Library with the current test.
             ${test_library_name}
-            # Tested library.
-            micro-os-plus::utils-lists-objects
-            # Portable dependencies.
+            # TODO: remove it after updating architecture dependencies.
             micro-os-plus::diag-trace
-            micro-os-plus::micro-test-plus
             # Platform specific dependencies.
             micro-os-plus::platform # bring device & architecture too
             micro-os-plus::semihosting

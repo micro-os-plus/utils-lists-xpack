@@ -57,6 +57,7 @@ _local_sources += [
 ]
 
 _local_dependencies += [
+  micro_os_plus_utils_lists_dependency,
   micro_os_plus_micro_test_plus_dependency,
 ]
 
