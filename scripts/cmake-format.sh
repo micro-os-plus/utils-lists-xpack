@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
 # Automatically generated from npm-packages-helper/templates/*.
