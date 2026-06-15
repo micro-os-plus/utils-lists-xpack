@@ -115,6 +115,16 @@ target_sources (
   micro-os-plus-utils-lists-objects PRIVATE "src/doubly-list-links.cpp"
 )
 
+# Propagate the compiled object files to consumers via INTERFACE_SOURCES so that
+# CMake includes them in the final link even when this OBJECT library is
+# referenced only transitively through an INTERFACE library chain. Without this,
+# CMake does not automatically inject $<TARGET_OBJECTS:...> for indirect OBJECT
+# library dependencies reached via INTERFACE libraries.
+target_sources (
+  micro-os-plus-utils-lists-objects
+  INTERFACE "$<TARGET_OBJECTS:micro-os-plus-utils-lists-objects>"
+)
+
 # Add the dependency include paths without linking the code; linking it would
 # add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
 # library, causing duplicate symbols at link time.
@@ -123,8 +133,12 @@ target_include_directories (
   PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
+# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
+# pulling its INTERFACE_SOURCES into the OBJECT library compilation; the include
+# paths above already provide the headers needed to compile this library's own
+# sources.
 target_link_libraries (
-  micro-os-plus-utils-lists-objects PUBLIC "micro-os-plus::diag-trace"
+  micro-os-plus-utils-lists-objects INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
@@ -176,8 +190,12 @@ target_include_directories (
   micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
+# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
+# pulling its INTERFACE_SOURCES into the STATIC library compilation; the include
+# paths above already provide the headers needed to compile this library's own
+# sources.
 target_link_libraries (
-  micro-os-plus-utils-lists-static PUBLIC "micro-os-plus::diag-trace"
+  micro-os-plus-utils-lists-static INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)

@@ -166,8 +166,18 @@ target_include_directories (
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
   {{nameDash}}-objects
-  PUBLIC{% for file in component.sourceFiles %}{% if forloop.first %} {% else %}
+  PRIVATE{% for file in component.sourceFiles %}{% if forloop.first %} {% else %}
           {% endif %}"{{file}}"{% endfor %}
+)
+
+# Propagate the compiled object files to consumers via INTERFACE_SOURCES so that
+# CMake includes them in the final link even when this OBJECT library is
+# referenced only transitively through an INTERFACE library chain. Without this,
+# CMake does not automatically inject $<TARGET_OBJECTS:...> for indirect OBJECT
+# library dependencies reached via INTERFACE libraries.
+target_sources (
+  {{nameDash}}-objects
+  INTERFACE "$<TARGET_OBJECTS:{{nameDash}}-objects>"
 )
 {%- endif %}
 {%- if component.publicDefines and component.publicDefines.size > 0 %}
@@ -204,9 +214,13 @@ target_include_directories (
 )
 {%- endfor %}
 
+# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
+# pulling its INTERFACE_SOURCES into the OBJECT library compilation; the include
+# paths above already provide the headers needed to compile this library's own
+# sources.
 target_link_libraries (
   {{nameDash}}-objects 
-  PUBLIC{% for dependency in component.dependencies %}{% assign dependencyDoubleColon = dependency | replace_first: '.', '::' | replace: '.', '-' %}{% if forloop.first %} {% else %}
+  INTERFACE{% for dependency in component.dependencies %}{% assign dependencyDoubleColon = dependency | replace_first: '.', '::' | replace: '.', '-' %}{% if forloop.first %} {% else %}
             {% endif %}"{{dependencyDoubleColon}}"{% endfor %}
 )
 {%- endif %}
@@ -300,9 +314,13 @@ target_include_directories (
 )
 {%- endfor %}
 
+# Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
+# pulling its INTERFACE_SOURCES into the STATIC library compilation; the include
+# paths above already provide the headers needed to compile this library's own
+# sources.
 target_link_libraries (
   {{nameDash}}-static 
-  PUBLIC{% for dependency in component.dependencies %}{% assign dependencyDoubleColon = dependency | replace_first: '.', '::' | replace: '.', '-' %}{% if forloop.first %} {% else %}
+  INTERFACE{% for dependency in component.dependencies %}{% assign dependencyDoubleColon = dependency | replace_first: '.', '::' | replace: '.', '-' %}{% if forloop.first %} {% else %}
             {% endif %}"{{dependencyDoubleColon}}"{% endfor %}
 )
 {%- endif %}
