@@ -10,14 +10,13 @@
         "name": "tests.sample",
         "display": "Sample Test",
         "description": "The source code for a simple test to exercise an object linked into multiple lists",
-        "publicIncludeFolders": [
-        ],
+        "publicIncludeFolders": [],
         "sourceFiles": [
           "src/main.cpp"
         ],
         "dependencies": [
           "micro-os-plus.utils.lists.objects"
-         ]
+        ]
       }
     ]
   }

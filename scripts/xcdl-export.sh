@@ -1,4 +1,3 @@
-
 #!/usr/bin/env bash
 
 # -----------------------------------------------------------------------------
@@ -6,7 +5,7 @@
 # Automatically generated from npm-packages-helper/templates/*.
 #
 # This file is part of the µOS++ project (http://micro-os-plus.github.io).
-# Copyright (c) 2024-2026 Liviu Ionescu.  All rights reserved.
+# Copyright (c) 2026 Liviu Ionescu.  All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software
 # for any purpose is hereby granted, under the terms of the MIT license.

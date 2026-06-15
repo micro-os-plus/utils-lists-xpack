@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
+
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
 # Automatically generated from npm-packages-helper/templates/*.
 #
 # This file is part of the xPack project (http://xpack.github.io).
-# Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
+# Copyright (c) 2026 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software for any
 # purpose is hereby granted, under the terms of the MIT license.
@@ -57,4 +58,4 @@ function run_verbose()
   "${_app_path}" "$@" 2>&1
 }
 
-node "${script_folder_path}/jsonc-format.mjs"
+run_verbose node "${script_folder_path}/jsonc-format.mjs"
