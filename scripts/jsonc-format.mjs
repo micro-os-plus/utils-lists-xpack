@@ -1,7 +1,7 @@
 /*
  * DO NOT EDIT!
  * Automatically generated from npm-packages-helper/templates/*.
- * 
+ *
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2026 Liviu Ionescu. All rights reserved.
  *
@@ -15,7 +15,7 @@
 // ----------------------------------------------------------------------------
 
 import { format, applyEdits } from 'jsonc-parser'
-import { readFileSync, writeFileSync } from 'fs'
+import { readFileSync, writeFileSync, statSync, chmodSync, constants } from 'fs'
 import { globSync } from 'glob'
 
 // The `xcdl*.json` is included temporarily, until it'll be renamed as jsonc.
@@ -29,10 +29,13 @@ const files = globSync(['**/*.jsonc', '**/xcdl*.json'], {
 })
 
 for (const file of files) {
+  const mode = statSync(file).mode
+  chmodSync(file, mode | constants.S_IWUSR)
   const text = readFileSync(file, 'utf8')
   const edits = format(text, undefined, { tabSize: 2, insertSpaces: true })
   const formatted = applyEdits(text, edits)
   writeFileSync(file, formatted)
+  chmodSync(file, mode)
 
   console.log(file)
 }
