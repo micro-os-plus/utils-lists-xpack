@@ -39,7 +39,7 @@ target_sources (
 )
 
 target_link_libraries (
-  tests-unit-interface INTERFACE "micro-os-plus::utils-lists-static"
+  tests-unit-interface INTERFACE "micro-os-plus::utils-lists-objects"
                                  "micro-os-plus::micro-test-plus"
 )
 
