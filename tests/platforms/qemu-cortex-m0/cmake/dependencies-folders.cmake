@@ -22,19 +22,21 @@ message (
 )
 
 # -----------------------------------------------------------------------------
+
+# The SOURCE_DIR is the `tests` folder; the BINARY_DIR is the `build/<config>`
+# folder.
+
 set (
   xpack_dependencies_folders
-  # Project dependencies.
-  ${xpack_dependencies_project_folders}
-  # The BINARY_DIR is the `build/<config>` folder.
+  # Portable dependencies.
+  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
+  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/micro-test-plus"
+  # Platform specific dependencies.
   "${CMAKE_BINARY_DIR}/xpacks/@xpack-3rd-party/arm-cmsis-core"
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-cortexm"
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/devices-qemu-cortexm"
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/semihosting"
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/startup"
-  # The SOURCE_DIR is the `tests` folder.
-  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
-  "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/micro-test-plus"
 )
 
 # -----------------------------------------------------------------------------

@@ -17,8 +17,6 @@
 
 message (VERBOSE "Processing 'tests/platforms/native'...")
 
-include ("cmake/platform-library.cmake")
-
 if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_HOST_SYSTEM_NAME STREQUAL
                                           "Darwin"
 )
