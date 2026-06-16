@@ -3,27 +3,24 @@
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
-  "cdlPackage": {
-    "display": "Unit Test",
-    "cdlComponents": [
-      {
-        "name": "tests.unit",
-        "display": "Unit Test",
-        "description": "The source code for the comprehensive unit test for all lists",
-        "publicIncludeFolders": [
-          "include"
-        ],
-        "sourceFiles": [
-          "src/main.cpp",
-          "src/doubly-list-links.cpp",
-          "src/doubly-list.cpp",
-          "src/intrusive-list.cpp"
-        ],
-        "dependencies": [
-          "micro-os-plus.utils.lists.objects",
-          "micro-os-plus.micro-test-plus"
-        ]
-      }
-    ]
-  }
+  "cdlComponents": [
+    {
+      "name": "tests.unit",
+      "display": "Unit Test",
+      "description": "A comprehensive unit test for all lists",
+      "publicIncludeFolders": [
+        "include"
+      ],
+      "sourceFiles": [
+        "src/main.cpp",
+        "src/doubly-list-links.cpp",
+        "src/doubly-list.cpp",
+        "src/intrusive-list.cpp"
+      ],
+      "dependencies": [
+        "micro-os-plus.utils.lists.objects",
+        "micro-os-plus.micro-test-plus"
+      ]
+    }
+  ]
 }

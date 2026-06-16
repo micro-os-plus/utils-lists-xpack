@@ -26,6 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
+# A simple test to exercise an object linked into multiple lists.
 message('Processing sources/sample...')
 
 # -----------------------------------------------------------------------------

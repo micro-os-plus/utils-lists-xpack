@@ -3,21 +3,18 @@
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
-  "cdlPackage": {
-    "display": "Sample Test",
-    "cdlComponents": [
-      {
-        "name": "tests.sample",
-        "display": "Sample Test",
-        "description": "The source code for a simple test to exercise an object linked into multiple lists",
-        "publicIncludeFolders": [],
-        "sourceFiles": [
-          "src/main.cpp"
-        ],
-        "dependencies": [
-          "micro-os-plus.utils.lists.objects"
-        ]
-      }
-    ]
-  }
+  "cdlComponents": [
+    {
+      "name": "tests.sample",
+      "display": "Sample Test",
+      "description": "A simple test to exercise an object linked into multiple lists",
+      "publicIncludeFolders": [],
+      "sourceFiles": [
+        "src/main.cpp"
+      ],
+      "dependencies": [
+        "micro-os-plus.utils.lists.objects"
+      ]
+    }
+  ]
 }

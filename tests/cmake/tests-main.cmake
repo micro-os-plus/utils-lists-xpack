@@ -67,10 +67,10 @@ xpack_add_dependencies_subdirectories (
 )
 
 # -----------------------------------------------------------------------------
-# Platform specifics.
+# Artefact specifics.
 
-# Add the platform specific targets and tests. For consistency, the binaries are
-# created in the `platform-bin` folder.
+# Include the platform specific artefacts and tests. The binaries are created in
+# the `platform-bin` folder.
 add_subdirectory ("platforms/${PLATFORM_NAME}" "platform-bin")
 
 # -----------------------------------------------------------------------------

@@ -1,6 +1,6 @@
 {%- assign packageScope = package.name | remove_first: '@' | split: '/' | first %}
 {%- assign packageName = package.name | remove_first: '@' | split: '/' | last %}
-{%- assign component = xcdl.cdlPackage.cdlComponents[0] %}
+{%- assign component = xcdl.cdlComponents[0] %}
 {%- assign nameUnderscore = component.name | replace: '-', '_' | replace: '.', '_' -%}
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
@@ -29,9 +29,8 @@
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
-{%- if xcdl.cdlPackage.description %}
-
-# {{xcdl.cdlPackage.description}}.
+{% if component.description %}
+# {{component.description}}.
 {%- endif %}
 message('Processing xPack @{{packageScope}}/{{packageName}}...')
 

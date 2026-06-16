@@ -1,6 +1,6 @@
 {%- assign packageScope = package.name | remove_first: '@' | split: '/' | first %}
 {%- assign packageName = package.name | remove_first: '@' | split: '/' | last %}
-{%- assign component = xcdl.cdlPackage.cdlComponents[0] %}
+{%- assign component = xcdl.cdlComponents[0] %}
 {%- assign nameDash = component.name | replace: '.', '-' %}
 {%- assign nameDoubleColon = component.name | replace_first: '.', '::' | replace: '.', '-' %}
 {%- assign staticArtefacts = component.cdlArtefacts | where: 'type', 'staticLibrary' %}
@@ -33,11 +33,12 @@
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
-
-# {{xcdl.cdlPackage.description}}.
+{% if component.description %}
+# {{component.description}}.
+{%- endif %}
 project (
   {{nameDash}}
-  DESCRIPTION "{{xcdl.cdlPackage.display}}"
+  DESCRIPTION "{{component.display}}"
   LANGUAGES CXX
 )
 

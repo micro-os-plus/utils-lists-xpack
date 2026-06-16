@@ -25,10 +25,10 @@
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
 
-# A source code library with the µOS++ intrusive lists.
+# µOS++ C++ Intrusive Lists.
 project (
   micro-os-plus-utils-lists
-  DESCRIPTION "µOS++ Intrusive Lists"
+  DESCRIPTION "Intrusive Lists"
   LANGUAGES CXX
 )
 

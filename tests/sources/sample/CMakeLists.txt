@@ -22,6 +22,7 @@
 
 # -----------------------------------------------------------------------------
 
+# A simple test to exercise an object linked into multiple lists.
 message (VERBOSE "Processing 'sources/sample'...")
 
 # -----------------------------------------------------------------------------

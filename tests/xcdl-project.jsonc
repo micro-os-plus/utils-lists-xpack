@@ -12,10 +12,10 @@
     // In addition, each configurations includes platform specific CDL files.
     "includeCDLs": [
       // The top of the µOS++ hierarchy.
-      "xcdl/xcdl-micro-os-plus.jsonc",
+      "xcdl/micro-os-plus.jsonc",
       // Common options for all builds.
-      "xcdl/xcdl-common-options.jsonc",
-      "xcdl/xcdl-binary-options.jsonc",
+      "xcdl/common-options.jsonc",
+      "xcdl/binary-options.jsonc",
       // The top package CDL file, with utils-lists.
       "../xcdl-package.jsonc",
       // The test sources.
@@ -25,7 +25,7 @@
       "xpacks/@micro-os-plus/diag-trace/xcdl-package.jsonc",
       "xpacks/@micro-os-plus/micro-test-plus/xcdl-package.jsonc"
     ],
-    "packagesHeaderFile": "generated/include/xcdl-packages.md",
+    "packagesHeaderFile": "generated/include/xcdl-packages.h",
     "headerFile": "generated/include/xcdl-defines.h",
     //
     // Each cdl configuration may be built with different toolchains, so
@@ -34,7 +34,7 @@
       //
       "native-debug": {
         "includeCDLs": [
-          "platforms/native/xcdl-package.jsonc",
+          "platforms/native/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-synthetic-posix/xcdl-package.jsonc"
         ],
         "buildType": "debug",
@@ -52,7 +52,7 @@
       //
       "qemu-cortex-m0-debug": {
         "includeCDLs": [
-          "platforms/qemu-cortex-m0/xcdl-package.jsonc",
+          "platforms/qemu-cortex-m0/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -76,7 +76,7 @@
       //
       "qemu-cortex-m3-debug": {
         "includeCDLs": [
-          "platforms/qemu-cortex-m3/xcdl-package.jsonc",
+          "platforms/qemu-cortex-m3/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -100,7 +100,7 @@
       //
       "qemu-cortex-m4f-debug": {
         "includeCDLs": [
-          "platforms/qemu-cortex-m4f/xcdl-package.jsonc",
+          "platforms/qemu-cortex-m4f/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -124,7 +124,7 @@
       //
       "qemu-cortex-m7f-debug": {
         "includeCDLs": [
-          "platforms/qemu-cortex-m7f/xcdl-package.jsonc",
+          "platforms/qemu-cortex-m7f/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-cortexm/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -148,7 +148,7 @@
       //
       "qemu-aarch32-a15-debug": {
         "includeCDLs": [
-          "platforms/qemu-aarch32-a15/xcdl-package.jsonc",
+          "platforms/qemu-aarch32-a15/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-aarch32/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-aarch32/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -171,7 +171,7 @@
       //
       "qemu-aarch64-a72-debug": {
         "includeCDLs": [
-          "platforms/qemu-aarch64-a72/xcdl-package.jsonc",
+          "platforms/qemu-aarch64-a72/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-aarch64/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-aarch64/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -194,7 +194,7 @@
       //
       "qemu-riscv-rv32imac-debug": {
         "includeCDLs": [
-          "platforms/qemu-riscv-rv32imac/xcdl-package.jsonc",
+          "platforms/qemu-riscv-rv32imac/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-riscv/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-riscv/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",
@@ -217,7 +217,7 @@
       //
       "qemu-riscv-rv64imafdc-debug": {
         "includeCDLs": [
-          "platforms/qemu-riscv-rv64imafdc/xcdl-package.jsonc",
+          "platforms/qemu-riscv-rv64imafdc/xcdl-artefacts.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/architecture-riscv/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/device-qemu-riscv/xcdl-package.jsonc",
           "{{ buildFolderPath }}/xpacks/@micro-os-plus/semihosting/xcdl-package.jsonc",

@@ -3,6 +3,9 @@
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
+  "includeCDLs": [
+    "xcdl/platform-library.jsonc"
+  ],
   "cdlArtefacts": [
     {
       "name": "sample.binary",
@@ -31,7 +34,7 @@
           "display": "Sample Test Listing",
           "description": "Show the disassembly listing of the sample test executable",
           "type": "command",
-          "command": "arm-none-eabi-objdump --source --all-headers --demangle --line-numbers --wide sample-test.elf > sample-test-list.txt",
+          "command": "objdump --source --all-headers --demangle --line-numbers --wide sample-test{{ executableSuffix }} > sample-test-list.txt",
           "dependencies": [
             "tests.sample.binary"
           ],
