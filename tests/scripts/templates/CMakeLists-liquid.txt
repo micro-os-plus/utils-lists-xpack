@@ -1,8 +1,8 @@
 {%- assign packageScope = package.name | remove_first: '@' | split: '/' | first %}
 {%- assign packageName = package.name | remove_first: '@' | split: '/' | last %}
 {%- assign component = xcdl.cdlComponents[0] %}
-{%- assign nameDash = component.name | replace: '.', '-' %}
-{%- assign nameDoubleColon = component.name | replace_first: '.', '::' | replace: '.', '-' %}
+{%- assign nameDash = component.id | replace: '.', '-' %}
+{%- assign nameDoubleColon = component.id | replace_first: '.', '::' | replace: '.', '-' %}
 {%- assign staticArtefacts = component.cdlArtefacts | where: 'type', 'staticLibrary' %}
 {%- assign staticArtefact = staticArtefacts | first %}
 {%- assign objectsArtefacts = component.cdlArtefacts | where: 'type', 'objectFiles' %}

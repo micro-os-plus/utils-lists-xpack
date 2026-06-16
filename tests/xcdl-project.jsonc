@@ -4,7 +4,8 @@
   "license": "MIT",
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
   "cdlProject": {
-    "name": "/tests",
+    "id": "tests",
+    "root": true,
     "display": "Tests",
     "description": "Intrusive Lists Tests",
     //

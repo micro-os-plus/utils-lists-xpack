@@ -5,7 +5,7 @@
   "copyright": "Copyright (c) 2026 Liviu Ionescu. All rights reserved.",
   "cdlComponents": [
     {
-      "name": "micro-os-plus.utils.lists",
+      "id": "micro-os-plus.utils.lists",
       "display": "Intrusive Lists",
       "description": "µOS++ C++ Intrusive Lists",
       "publicIncludeFolders": [
@@ -25,7 +25,7 @@
       // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_ENABLED",
       "cdlOptions": [
         {
-          "name": "trace",
+          "id": "trace",
           "display": "Enable trace in lists",
           "description": "Display trace messages in lists when TRACE is enabled",
           "requires": "isEnabled('micro-os-plus.diag.trace')",
@@ -33,7 +33,7 @@
           // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED"
         },
         {
-          "name": "trace-constructors",
+          "id": "trace-constructors",
           "display": "Enable trace in lists constructors",
           "description": "Display trace messages in lists constructors and descriptors when TRACE is enabled",
           "requires": "isEnabled('micro-os-plus.diag.trace')",
@@ -43,7 +43,7 @@
       ],
       "cdlArtefacts": [
         {
-          "name": "static-library",
+          "id": "static-library",
           "display": "Static Library",
           "description": "Static library with the µOS++ intrusive lists",
           "type": "staticLibrary",
@@ -55,7 +55,7 @@
           ]
         },
         {
-          "name": "objects-library",
+          "id": "objects-library",
           "display": "Object Files",
           "description": "Object files with the µOS++ intrusive lists",
           "type": "objectFiles",

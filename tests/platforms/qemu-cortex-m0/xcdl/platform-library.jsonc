@@ -15,7 +15,7 @@
   },
   "cdlComponents": [
     {
-      "name": "qemu-cortex-m0",
+      "id": "qemu-cortex-m0",
       "display": "QEMU Cortex-M0 Platform",
       "description": "Runs an µOS++ application in QEMU Cortex-M0 emulation",
       "publicIncludeFolders": [
