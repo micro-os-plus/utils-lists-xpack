@@ -103,16 +103,18 @@ get_property (
 # with the separate dependency compilation in each executable. Consumers of this
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-utils-lists-objects OBJECT)
+add_library (micro-os-plus-utils-lists-objects-library OBJECT)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
-target_include_directories (micro-os-plus-utils-lists-objects PUBLIC "include")
+target_include_directories (
+  micro-os-plus-utils-lists-objects-library PUBLIC "include"
+)
 
 # Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-utils-lists-objects PRIVATE "src/doubly-list-links.cpp"
+  micro-os-plus-utils-lists-objects-library PRIVATE "src/doubly-list-links.cpp"
 )
 
 # Propagate the compiled object files to consumers via INTERFACE_SOURCES so that
@@ -121,15 +123,15 @@ target_sources (
 # CMake does not automatically inject $<TARGET_OBJECTS:...> for indirect OBJECT
 # library dependencies reached via INTERFACE libraries.
 target_sources (
-  micro-os-plus-utils-lists-objects
-  INTERFACE "$<TARGET_OBJECTS:micro-os-plus-utils-lists-objects>"
+  micro-os-plus-utils-lists-objects-library
+  INTERFACE "$<TARGET_OBJECTS:micro-os-plus-utils-lists-objects-library>"
 )
 
 # Add the dependency include paths without linking the code; linking it would
 # add dependency sources as INTERFACE_SOURCES and compile them into the OBJECT
 # library, causing duplicate symbols at link time.
 target_include_directories (
-  micro-os-plus-utils-lists-objects
+  micro-os-plus-utils-lists-objects-library
   PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
@@ -138,21 +140,23 @@ target_include_directories (
 # paths above already provide the headers needed to compile this library's own
 # sources.
 target_link_libraries (
-  micro-os-plus-utils-lists-objects INTERFACE "micro-os-plus::diag-trace"
+  micro-os-plus-utils-lists-objects-library
+  INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (micro-os-plus-utils-lists-objects)
+  xpack_display_target_lists (micro-os-plus-utils-lists-objects-library)
 endif ()
 
 # Alias.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  micro-os-plus::utils-lists-objects ALIAS micro-os-plus-utils-lists-objects
+  micro-os-plus::utils-lists-objects-library ALIAS
+  micro-os-plus-utils-lists-objects-library
 )
 message (
   VERBOSE
-  "> micro-os-plus::utils-lists-objects -> micro-os-plus-utils-lists-objects"
+  "> micro-os-plus::utils-lists-objects-library -> micro-os-plus-utils-lists-objects-library"
 )
 
 # -----------------------------------------------------------------------------
@@ -167,27 +171,30 @@ message (
 # with the separate dependency compilation in each executable. Consumers of this
 # STATIC library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-utils-lists-static STATIC)
+add_library (micro-os-plus-utils-lists-static-library STATIC)
 
 set_target_properties (
-  micro-os-plus-utils-lists-static PROPERTIES OUTPUT_NAME utils-lists
+  micro-os-plus-utils-lists-static-library PROPERTIES OUTPUT_NAME utils-lists
 )
 
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
-target_include_directories (micro-os-plus-utils-lists-static PUBLIC "include")
+target_include_directories (
+  micro-os-plus-utils-lists-static-library PUBLIC "include"
+)
 
 # Use PRIVATE to avoid propagating the sources to consumers of the STATIC
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  micro-os-plus-utils-lists-static PRIVATE "src/doubly-list-links.cpp"
+  micro-os-plus-utils-lists-static-library PRIVATE "src/doubly-list-links.cpp"
 )
 
 # Add the dependency include paths without linking the dependency target:
 # linking it would add dependency sources as INTERFACE_SOURCES and compile them
 # into the STATIC library, causing duplicate symbols at link time.
 target_include_directories (
-  micro-os-plus-utils-lists-static PRIVATE ${micro-os-plus-diag-trace-includes}
+  micro-os-plus-utils-lists-static-library
+  PRIVATE ${micro-os-plus-diag-trace-includes}
 )
 
 # Use INTERFACE (not PUBLIC) to propagate the dependency to consumers without
@@ -195,21 +202,23 @@ target_include_directories (
 # paths above already provide the headers needed to compile this library's own
 # sources.
 target_link_libraries (
-  micro-os-plus-utils-lists-static INTERFACE "micro-os-plus::diag-trace"
+  micro-os-plus-utils-lists-static-library
+  INTERFACE "micro-os-plus::diag-trace"
 )
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (micro-os-plus-utils-lists-static)
+  xpack_display_target_lists (micro-os-plus-utils-lists-static-library)
 endif ()
 
 # Alias.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  micro-os-plus::utils-lists-static ALIAS micro-os-plus-utils-lists-static
+  micro-os-plus::utils-lists-static-library ALIAS
+  micro-os-plus-utils-lists-static-library
 )
 message (
   VERBOSE
-  "> micro-os-plus::utils-lists-static -> micro-os-plus-utils-lists-static"
+  "> micro-os-plus::utils-lists-static-library -> micro-os-plus-utils-lists-static-library"
 )
 
 # -----------------------------------------------------------------------------

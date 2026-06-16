@@ -19,8 +19,8 @@
       // The top package CDL file, with utils-lists.
       "../xcdl-package.jsonc",
       // The test sources.
-      "sources/sample/xcdl-package.jsonc", //
-      "sources/unit/xcdl-package.jsonc",
+      "sources/sample/xcdl-test.jsonc", //
+      "sources/unit/xcdl-test.jsonc",
       // Project wide dependencies.
       "xpacks/@micro-os-plus/diag-trace/xcdl-package.jsonc",
       "xpacks/@micro-os-plus/micro-test-plus/xcdl-package.jsonc"

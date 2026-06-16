@@ -5,8 +5,10 @@
 {%- assign nameDoubleColon = component.name | replace_first: '.', '::' | replace: '.', '-' %}
 {%- assign staticArtefacts = component.cdlArtefacts | where: 'type', 'staticLibrary' %}
 {%- assign staticArtefact = staticArtefacts | first %}
+{%- assign staticSuffix = staticArtefact.name %}
 {%- assign objectsArtefacts = component.cdlArtefacts | where: 'type', 'objectFiles' %}
 {%- assign objectsArtefact = objectsArtefacts | first -%}
+{%- assign objectsSuffix = objectsArtefact.name %}
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from {{libraryFilePath}}.
 #
@@ -150,13 +152,13 @@ get_property (
 # with the separate dependency compilation in each executable. Consumers of this
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library ({{nameDash}}-objects OBJECT)
+add_library ({{nameDash}}-{{objectsSuffix}} OBJECT)
 {%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
 target_include_directories (
-  {{nameDash}}-objects
+  {{nameDash}}-{{objectsSuffix}}
   PUBLIC{% for folder in component.publicIncludeFolders %}{% if forloop.first %} {% else %}
          {% endif %}"{{folder}}"{% endfor %}
 )
@@ -166,7 +168,7 @@ target_include_directories (
 # Use PRIVATE to avoid propagating the sources to consumers of the OBJECT
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  {{nameDash}}-objects
+  {{nameDash}}-{{objectsSuffix}}
   PRIVATE{% for file in component.sourceFiles %}{% if forloop.first %} {% else %}
           {% endif %}"{{file}}"{% endfor %}
 )
@@ -177,8 +179,8 @@ target_sources (
 # CMake does not automatically inject $<TARGET_OBJECTS:...> for indirect OBJECT
 # library dependencies reached via INTERFACE libraries.
 target_sources (
-  {{nameDash}}-objects
-  INTERFACE "$<TARGET_OBJECTS:{{nameDash}}-objects>"
+  {{nameDash}}-{{objectsSuffix}}
+  INTERFACE "$<TARGET_OBJECTS:{{nameDash}}-{{objectsSuffix}}>"
 )
 {%- endif %}
 {%- if component.publicDefines and component.publicDefines.size > 0 %}
@@ -186,7 +188,7 @@ target_sources (
 # Use PRIVATE to avoid propagating compile definitions to consumers of the
 # OBJECT library.
 target_compile_definitions (
-  {{nameDash}}-objects
+  {{nameDash}}-{{objectsSuffix}}
   PRIVATE{% for define in publicDefines %}{% if forloop.first %} {% else %}
           {% endif %}"{{define}}"{% endfor %}
 )
@@ -197,7 +199,7 @@ target_compile_definitions (
 # OBJECT library, which may cause conflicts with consumer-specific compile
 # options.
 target_compile_options (
-  {{nameDash}}-objects
+  {{nameDash}}-{{objectsSuffix}}
   PRIVATE{% for option in component.publicCompilerOptions %}{% if forloop.first %} {% else %}
           {% endif %}"{{option}}"{% endfor %}
 )
@@ -210,7 +212,7 @@ target_compile_options (
 {%- for dependency in component.dependencies %}
 {%- assign dependencyDash = dependency | replace: '.', '-' %}
 target_include_directories (
-  {{nameDash}}-objects
+  {{nameDash}}-{{objectsSuffix}}
   PRIVATE {% raw %}${{% endraw %}{{dependencyDash}}-includes}
 )
 {%- endfor %}
@@ -220,25 +222,25 @@ target_include_directories (
 # paths above already provide the headers needed to compile this library's own
 # sources.
 target_link_libraries (
-  {{nameDash}}-objects 
+  {{nameDash}}-{{objectsSuffix}} 
   INTERFACE{% for dependency in component.dependencies %}{% assign dependencyDoubleColon = dependency | replace_first: '.', '::' | replace: '.', '-' %}{% if forloop.first %} {% else %}
             {% endif %}"{{dependencyDoubleColon}}"{% endfor %}
 )
 {%- endif %}
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists ({{nameDash}}-objects)
+  xpack_display_target_lists ({{nameDash}}-{{objectsSuffix}})
 endif ()
 
 # Alias.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  {{packageScope}}::{{packageName}}-objects ALIAS
-  {{nameDash}}-objects
+  {{packageScope}}::{{packageName}}-{{objectsSuffix}} ALIAS
+  {{nameDash}}-{{objectsSuffix}}
 )
 message (
   VERBOSE
-  "> {{packageScope}}::{{packageName}}-objects -> {{nameDash}}-objects"
+  "> {{packageScope}}::{{packageName}}-{{objectsSuffix}} -> {{nameDash}}-{{objectsSuffix}}"
 )
 
 # -----------------------------------------------------------------------------
@@ -255,10 +257,10 @@ message (
 # with the separate dependency compilation in each executable. Consumers of this
 # STATIC library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library ({{nameDash}}-static STATIC)
+add_library ({{nameDash}}-{{staticSuffix}} STATIC)
 
 set_target_properties (
-  {{nameDash}}-static
+  {{nameDash}}-{{staticSuffix}}
   PROPERTIES OUTPUT_NAME {{staticArtefact.fileName}}
 )
 {%- if component.publicIncludeFolders and component.publicIncludeFolders.size > 0 %}
@@ -266,7 +268,7 @@ set_target_properties (
 # Use PUBLIC so that the include directories are available both for the STATIC
 # library's own sources and for consumers of the library.
 target_include_directories (
-  {{nameDash}}-static
+  {{nameDash}}-{{staticSuffix}}
   PUBLIC{% for folder in component.publicIncludeFolders %}{% if forloop.first %} {% else %}
          {% endif %}"{{folder}}"{% endfor %}
 )
@@ -276,7 +278,7 @@ target_include_directories (
 # Use PRIVATE to avoid propagating the sources to consumers of the STATIC
 # library, which would cause duplicate symbol errors at link time.
 target_sources (
-  {{nameDash}}-static
+  {{nameDash}}-{{staticSuffix}}
   PRIVATE{% for file in component.sourceFiles %}{% if forloop.first %} {% else %}
            {% endif %}"{{file}}"{% endfor %}
 )
@@ -286,7 +288,7 @@ target_sources (
 # Use PRIVATE to avoid propagating compile definitions to consumers of the
 # STATIC library.
 target_compile_definitions (
-  {{nameDash}}-static
+  {{nameDash}}-{{staticSuffix}}
   PRIVATE{% for define in publicDefines %}{% if forloop.first %} {% else %}
           {% endif %}"{{define}}"{% endfor %}
 )
@@ -297,7 +299,7 @@ target_compile_definitions (
 # STATIC library, which may cause conflicts with consumer-specific compile
 # options.
 target_compile_options (
-  {{nameDash}}-static
+  {{nameDash}}-{{staticSuffix}}
   PRIVATE{% for option in component.publicCompilerOptions %}{% if forloop.first %} {% else %}
           {% endif %}"{{option}}"{% endfor %}
 )
@@ -310,7 +312,7 @@ target_compile_options (
 {%- for dependency in component.dependencies %}
 {%- assign dependencyDash = dependency | replace: '.', '-' %}
 target_include_directories (
-  {{nameDash}}-static
+  {{nameDash}}-{{staticSuffix}}
   PRIVATE {% raw %}${{% endraw %}{{dependencyDash}}-includes}
 )
 {%- endfor %}
@@ -320,25 +322,25 @@ target_include_directories (
 # paths above already provide the headers needed to compile this library's own
 # sources.
 target_link_libraries (
-  {{nameDash}}-static 
+  {{nameDash}}-{{staticSuffix}} 
   INTERFACE{% for dependency in component.dependencies %}{% assign dependencyDoubleColon = dependency | replace_first: '.', '::' | replace: '.', '-' %}{% if forloop.first %} {% else %}
             {% endif %}"{{dependencyDoubleColon}}"{% endfor %}
 )
 {%- endif %}
 
 if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists ({{nameDash}}-static)
+  xpack_display_target_lists ({{nameDash}}-{{staticSuffix}})
 endif ()
 
 # Alias.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  {{packageScope}}::{{packageName}}-static ALIAS
-  {{nameDash}}-static
+  {{packageScope}}::{{packageName}}-{{staticSuffix}} ALIAS
+  {{nameDash}}-{{staticSuffix}}
 )
 message (
   VERBOSE
-  "> {{packageScope}}::{{packageName}}-static -> {{nameDash}}-static"
+  "> {{packageScope}}::{{packageName}}-{{staticSuffix}} -> {{nameDash}}-{{staticSuffix}}"
 )
 
 # -----------------------------------------------------------------------------

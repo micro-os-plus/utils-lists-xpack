@@ -13,7 +13,7 @@
         "src/main.cpp"
       ],
       "dependencies": [
-        "micro-os-plus.utils.lists.objects"
+        "micro-os-plus.utils.lists.objects-library"
       ]
     }
   ]

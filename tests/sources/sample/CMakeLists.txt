@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/sample/xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from sources/sample/xcdl-test.jsonc.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -35,7 +35,7 @@ add_library (tests-sample-interface INTERFACE EXCLUDE_FROM_ALL)
 target_sources (tests-sample-interface INTERFACE "src/main.cpp")
 
 target_link_libraries (
-  tests-sample-interface INTERFACE "micro-os-plus::utils-lists-objects"
+  tests-sample-interface INTERFACE "micro-os-plus::utils-lists-objects-library"
 )
 
 if (COMMAND xpack_display_target_lists)

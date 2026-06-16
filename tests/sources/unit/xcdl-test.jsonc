@@ -18,7 +18,7 @@
         "src/intrusive-list.cpp"
       ],
       "dependencies": [
-        "micro-os-plus.utils.lists.objects",
+        "micro-os-plus.utils.lists.objects-library",
         "micro-os-plus.micro-test-plus"
       ]
     }

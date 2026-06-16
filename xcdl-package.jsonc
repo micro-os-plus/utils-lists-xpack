@@ -43,7 +43,7 @@
       ],
       "cdlArtefacts": [
         {
-          "name": "static",
+          "name": "static-library",
           "display": "Static Library",
           "description": "Static library with the µOS++ intrusive lists",
           "type": "staticLibrary",
@@ -55,10 +55,11 @@
           ]
         },
         {
-          "name": "objects",
+          "name": "objects-library",
           "display": "Object Files",
           "description": "Object files with the µOS++ intrusive lists",
           "type": "objectFiles",
+          "folderName": "utils-lists",
           "dependencies": [
             "micro-os-plus.utils.lists"
           ]
