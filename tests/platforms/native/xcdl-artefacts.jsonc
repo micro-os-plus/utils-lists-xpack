@@ -6,6 +6,18 @@
   "includeCDLs": [
     "xcdl/platform-library.jsonc"
   ],
+  "cdlOptions": [
+    {
+      "name": "tests.unit.coverage",
+      "display": "Enable Code Coverage",
+      "description": "Enable code coverage collection for this test",
+      "default": false,
+      "publicCompilerOptions": {
+        // <CXX_COMPILER_ID:Clang,AppleClang>
+        "optimisation": "-fprofile-instr-generate -fcoverage-mapping -fcoverage-mcdc"
+      }
+    }
+  ],
   "cdlArtefacts": [
     {
       "id": "sample.binary",
@@ -51,6 +63,30 @@
       "dependencies": [
         "tests.unit",
         "micro-os-plus.platforms.native"
+      ],
+      "cdlArtefacts": [
+        {
+          "id": "size",
+          "display": "Unit Test Size",
+          "description": "Show the size of the unit test executable",
+          "type": "command",
+          "command": "size unit-test.elf",
+          "dependencies": [
+            "tests.unit.binary"
+          ],
+          "defaultEnabled": "isEnabled('tests.common.report-size')"
+        },
+        {
+          "id": "listing",
+          "display": "Unit Test Listing",
+          "description": "Show the disassembly listing of the unit test executable",
+          "type": "command",
+          "command": "objdump --source --all-headers --demangle --line-numbers --wide unit-test{{ executableSuffix }} > unit-test-list.txt",
+          "dependencies": [
+            "tests.unit.binary"
+          ],
+          "defaultEnabled": "isEnabled('tests.common.create-listing')"
+        }
       ]
     }
   ],
@@ -59,6 +95,7 @@
       "id": "sample.runner",
       "display": "Sample Test Runner",
       "description": "A simple test to exercise an object linked into multiple lists",
+      "command": "sample-test{{ executableSuffix }} one two",
       "dependencies": [
         "tests.sample.binary"
       ]
@@ -67,6 +104,10 @@
       "id": "unit.runner",
       "display": "Unit Test Runner",
       "description": "A comprehensive test for all lists",
+      "environment": {
+        "LLVM_PROFILE_FILE": "unit-test.profraw"
+      },
+      "command": "unit-test{{ executableSuffix }}",
       "dependencies": [
         "tests.unit.binary"
       ]
@@ -75,6 +116,7 @@
       "id": "unit.runnerCoverage",
       "display": "Unit Test Runner with Coverage",
       "description": "A comprehensive test for all lists with coverage",
+      "command": "bash \"${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh\" unit-test unit-test",
       "dependencies": [
         "tests.unit.runner"
       ]

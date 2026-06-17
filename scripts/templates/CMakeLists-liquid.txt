@@ -7,12 +7,12 @@
 {%- assign staticArtefact = staticArtefacts | first %}
 {%- assign staticSuffix = staticArtefact.id %}
 {%- assign objectsArtefacts = component.cdlArtefacts | where: 'type', 'objectFiles' %}
-{%- assign objectsArtefact = objectsArtefacts | first -%}
-{%- assign objectsSuffix = objectsArtefact.id %}
+{%- assign objectsArtefact = objectsArtefacts | first %}
+{%- assign objectsSuffix = objectsArtefact.id -%}
 # -----------------------------------------------------------------------------
 # DO NOT EDIT! Automatically generated from {{libraryFilePath}}.
 #
-# This file is part of the µOS++ project (https://{{packageScope}}.github.io/).
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -23,13 +23,32 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed by applications with:
+# This file is intended to be used by applications via:
 #
 # `add_subdirectory("xpacks/@{{packageScope}}/{{packageName}}")`
 #
-# The result is an interface library that can be added to the linker with:
+{%- if staticArtefact or objectsArtefact %}
+# This creates {% if staticArtefact or objectsArtefact %}several libraries{% else %}an interface library{% endif %} that can be linked to a target with{% if staticArtefact or objectsArtefact %} one of{% endif %}:
 #
-# `target_link_libraries(your-target PUBLIC {{packageScope}}::{{packageName}})`
+# ~~~
+# target_link_libraries(your-target PUBLIC {{nameDoubleColon}})
+{%- if staticArtefact %}
+#
+# target_link_libraries(your-target PUBLIC {{nameDoubleColon}}-{{staticSuffix}})
+{%- endif %}
+{%- if objectsArtefact %}
+#
+# target_link_libraries(your-target PUBLIC {{nameDoubleColon}}-{{objectsSuffix}})
+{%- endif %}
+# ~~~
+# Weak symbols in static libraries are not always resolved reliably by the
+# linker. Object libraries are provided as a safer alternative, although they
+# have their own quirks.
+{%- else %}
+# This creates an interface library that can be linked to a target with:
+#
+# `target_link_libraries(your-target PUBLIC {{nameDoubleColon}})`
+{%- endif %}
 
 # -----------------------------------------------------------------------------
 
@@ -113,14 +132,24 @@ if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists ({{nameDash}}-interface)
 endif ()
 
+# -----------------------------------------------------------------------------
 # Alias.
+
+# Export an alias target using namespaced syntax (Project::Target). This is the
+# canonical pattern for consumption via target_link_libraries(), whether the
+# dependency is added via add_subdirectory(), FetchContent, or an installed
+# package via find_package(). Using "::" lets CMake detect an invalid or
+# misspelled target name at configure time, rather than silently passing it
+# through to the linker as a plain string or flag. Note: alias targets are
+# read-only; properties must be set on the underlying target, not on the alias
+# itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  {{packageScope}}::{{packageName}} ALIAS {{nameDash}}-interface
+  {{nameDoubleColon}} ALIAS {{nameDash}}-interface
 )
 message (
   VERBOSE
-  "> {{packageScope}}::{{packageName}} -> {{nameDash}}-interface"
+  "> {{nameDoubleColon}} -> {{nameDash}}-interface"
 )
 
 # -----------------------------------------------------------------------------
@@ -232,15 +261,20 @@ if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists ({{nameDash}}-{{objectsSuffix}})
 endif ()
 
+# -----------------------------------------------------------------------------
 # Alias.
+
+# Namespaced alias for downstream consumption (find_package- and
+# add_subdirectory-compatible). "::" ensures CMake validates the target name at
+# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  {{packageScope}}::{{packageName}}-{{objectsSuffix}} ALIAS
+  {{nameDoubleColon}}-{{objectsSuffix}} ALIAS
   {{nameDash}}-{{objectsSuffix}}
 )
 message (
   VERBOSE
-  "> {{packageScope}}::{{packageName}}-{{objectsSuffix}} -> {{nameDash}}-{{objectsSuffix}}"
+  "> {{nameDoubleColon}}-{{objectsSuffix}} -> {{nameDash}}-{{objectsSuffix}}"
 )
 
 # -----------------------------------------------------------------------------
@@ -332,15 +366,20 @@ if (COMMAND xpack_display_target_lists)
   xpack_display_target_lists ({{nameDash}}-{{staticSuffix}})
 endif ()
 
+# -----------------------------------------------------------------------------
 # Alias.
+
+# Namespaced alias for downstream consumption (find_package- and
+# add_subdirectory-compatible). "::" ensures CMake validates the target name at
+# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
-  {{packageScope}}::{{packageName}}-{{staticSuffix}} ALIAS
+  {{nameDoubleColon}}-{{staticSuffix}} ALIAS
   {{nameDash}}-{{staticSuffix}}
 )
 message (
   VERBOSE
-  "> {{packageScope}}::{{packageName}}-{{staticSuffix}} -> {{nameDash}}-{{staticSuffix}}"
+  "> {{nameDoubleColon}}-{{staticSuffix}} -> {{nameDash}}-{{staticSuffix}}"
 )
 
 # -----------------------------------------------------------------------------

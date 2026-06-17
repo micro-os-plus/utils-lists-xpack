@@ -28,9 +28,11 @@ message (
 
 set (
   xpack_dependencies_folders
+  #
   # Portable dependencies.
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/diag-trace"
   "${CMAKE_SOURCE_DIR}/xpacks/@micro-os-plus/micro-test-plus"
+  #
   # Platform specific dependencies.
   "${CMAKE_BINARY_DIR}/xpacks/@micro-os-plus/architecture-synthetic-posix"
 )

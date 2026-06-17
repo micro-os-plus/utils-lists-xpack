@@ -6,7 +6,7 @@
 # DO NOT EDIT!
 # Automatically generated from {{libraryFilePath}}.
 #
-# This file is part of the µOS++ project (https://{{packageScope}}.github.io/).
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -17,11 +17,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed by applications with:
+# This file is intended to be used by applications via:
 #
 # `subdir('xpacks/@{{packageScope}}/{{packageName}}')`
 #
-# The result is a dependency that can be referred as:
+# This creates a dependency that can be linked to a target with:
 #
 # `dependencies: [{{nameUnderscore}}_dependency],`
 

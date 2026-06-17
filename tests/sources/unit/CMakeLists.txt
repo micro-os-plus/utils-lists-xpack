@@ -12,11 +12,11 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed with:
+# This file is intended to be used by applications via:
 #
 # `add_subdirectory("sources/unit")`
 #
-# The result is an interface library that can be added to the linker with:
+# This creates an interface library that can be linked to a target with:
 #
 # `target_link_libraries(your-target PUBLIC tests-unit)`
 
@@ -49,8 +49,16 @@ if (COMMAND xpack_display_target_lists)
 endif ()
 
 # -----------------------------------------------------------------------------
-# Aliases.
+# Alias.
 
+# Export an alias target using namespaced syntax (Project::Target). This is the
+# canonical pattern for consumption via target_link_libraries(), whether the
+# dependency is added via add_subdirectory(), FetchContent, or an installed
+# package via find_package(). Using "::" lets CMake detect an invalid or
+# misspelled target name at configure time, rather than silently passing it
+# through to the linker as a plain string or flag. Note: alias targets are
+# read-only; properties must be set on the underlying target, not on the alias
+# itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (tests::unit ALIAS tests-unit-interface)
 message (VERBOSE "> tests::unit -> tests-unit-interface")
