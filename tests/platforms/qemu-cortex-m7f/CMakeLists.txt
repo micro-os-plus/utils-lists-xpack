@@ -17,8 +17,8 @@
 
 message (VERBOSE "Processing 'tests/platforms/qemu-cortex-m7f'...")
 
-# The OBJECTS are compiled before the platform library, so they need to get the
-# same compile options.
+# The libraries are compiled before the platform library, so they need to get
+# the same compile options.
 add_compile_common_private_options (micro-os-plus-utils-lists-objects-library)
 
 # -----------------------------------------------------------------------------

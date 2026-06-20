@@ -17,7 +17,7 @@
 
 message (VERBOSE "Processing 'tests/platforms/qemu-cortex-m0'...")
 
-# The OBJECTS are compiled before the platform library, so they need to get the
+# The libraries are compiled before the platform library, so they need to get the
 # same compile options.
 add_compile_common_private_options (micro-os-plus-utils-lists-objects-library)
 
@@ -26,6 +26,8 @@ add_compile_common_private_options (micro-os-plus-utils-lists-objects-library)
 if (XPACK_ENABLE_SAMPLE_TEST)
   add_cross_test_executable (sample-test)
   target_link_cross_test_libraries (sample-test tests::sample)
+
+   xpack_display_target_lists (sample-test)
 
   message (VERBOSE "A> sample-test")
 
@@ -43,6 +45,8 @@ endif ()
 if (XPACK_ENABLE_UNIT_TEST)
   add_cross_test_executable (unit-test)
   target_link_cross_test_libraries (unit-test tests::unit)
+
+    xpack_display_target_lists (unit-test)
 
   message (VERBOSE "A> unit-test")
 

@@ -24,8 +24,8 @@ if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_HOST_SYSTEM_NAME STREQUAL
   set (XPACK_ENABLE_COVERAGE false)
 endif ()
 
-# The OBJECTS are compiled before the platform library, so they need to get the
-# same compile options.
+# The libraries are compiled before the platform library, so they need to get
+# the same compile options.
 add_compile_common_private_options (micro-os-plus-utils-lists-objects-library)
 
 if (XPACK_ENABLE_COVERAGE)
