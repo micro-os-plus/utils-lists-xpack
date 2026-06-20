@@ -28,7 +28,7 @@ function (target_link_native_test_libraries name test_library_name)
             ${test_library_name}
             # TODO: remove it after updating architecture dependencies.
             micro-os-plus::diag-trace
-            # Platform dependency..
+            # Platform dependency.
             micro-os-plus::platform # bring device & architecture too
   )
 endfunction ()
