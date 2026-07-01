@@ -25,6 +25,7 @@
 #
 # target_link_libraries(your-target PUBLIC micro-os-plus::utils-lists-objects-library)
 # ~~~
+#
 # Weak symbols in static libraries are not always resolved reliably by the
 # linker. Object libraries are provided as a safer alternative, although they
 # have their own quirks.

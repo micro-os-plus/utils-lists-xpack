@@ -34,6 +34,7 @@ This is the **µOS++ Intrusive Lists** project, part of
 - Follow the existing C++ code style defined in the .clang-format file.
 - Use consistent formatting and naming conventions based on prettier and
   clang-format configurations.
+- For C/C++, the naming convention is snake_case.
 
 ## Documentation
 
