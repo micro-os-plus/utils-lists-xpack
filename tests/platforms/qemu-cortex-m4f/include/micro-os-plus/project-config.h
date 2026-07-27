@@ -9,29 +9,30 @@
  * obtained from https://opensource.org/licenses/mit.
  */
 
-#ifndef MICRO_OS_PLUS_CONFIG_H_
-#define MICRO_OS_PLUS_CONFIG_H_
+#ifndef MICRO_OS_PLUS_PROJECT_CONFIG_H_
+#define MICRO_OS_PLUS_PROJECT_CONFIG_H_
 
 // ----------------------------------------------------------------------------
 
 // On bare-metal platforms, tests are semihosted applications.
-#define MICRO_OS_PLUS_USE_SEMIHOSTING
+#define MICRO_OS_PLUS_SEMIHOSTING_ENABLED
 
-#define MICRO_OS_PLUS_INCLUDE_SEMIHOSTING_SYSCALLS
-#define MICRO_OS_PLUS_INCLUDE_SEMIHOSTING_STARTUP
+#define MICRO_OS_PLUS_SEMIHOSTING_SYSCALLS_ENABLED
+#define MICRO_OS_PLUS_SEMIHOSTING_STARTUP_ENABLED
 
-#define MICRO_OS_PLUS_INCLUDE_STARTUP
-#define MICRO_OS_PLUS_INCLUDE_SBRK
-#define MICRO_OS_PLUS_INCLUDE_EXIT
+#define MICRO_OS_PLUS_STARTUP_ENABLED
+#define MICRO_OS_PLUS_STARTUP_SBRK_ENABLED
+#define MICRO_OS_PLUS_STARTUP_EXIT_ENABLED
 
 #if defined(MICRO_OS_PLUS_TRACE)
-// #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_DEBUG
-#define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDOUT
-// #define MICRO_OS_PLUS_USE_TRACE_SEMIHOSTING_STDERR
+
+// #define MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_DEBUG_ENABLED
+#define MICRO_OS_PLUS_DIAG_TRACE_SEMIHOSTING_STDOUT_ENABLED
+
 #endif // MICRO_OS_PLUS_TRACE
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_CONFIG_H_ */
+#endif /* MICRO_OS_PLUS_PROJECT_CONFIG_H_ */
 
 // ----------------------------------------------------------------------------

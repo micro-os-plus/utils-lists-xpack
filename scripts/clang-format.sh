@@ -65,8 +65,10 @@ function run_verbose()
 
 run_verbose clang-format --style=file:config/.clang-format -i --verbose \
   $(find src \( -name '*.cpp' -o -name '*.c' -o -name '*.h' \)) \
+  $(find include -name '*.h') \
   $(find tests/sources \( -name '*.cpp' -o -name '*.c' -o -name '*.h' \)) \
-  $(find include -name '*.h')
+  $(find tests/includes \( -name '*.cpp' -o -name '*.c' -o -name '*.h' \)) \
+  $(find tests/platforms \( -name '*.cpp' -o -name '*.c' -o -name '*.h' \))
 
 echo
 echo "'${script_name} ${argv}' done"

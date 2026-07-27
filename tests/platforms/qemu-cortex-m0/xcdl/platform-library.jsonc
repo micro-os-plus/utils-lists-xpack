@@ -65,10 +65,10 @@
       ],
       "dependencies": [
         "micro-os-plus.device",
-        "micro-os-plus.core.startup",
+        "micro-os-plus.startup",
         "micro-os-plus.semihosting"
       ]
-      // "customDefine": "{{properties.platformDefine}}",
+      // "defaultDefine": "{{properties.platformDefine}}",
     }
   ]
 }

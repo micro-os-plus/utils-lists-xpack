@@ -35,13 +35,13 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   if get_option('buildtype').contains('debug')
     _local_compile_definitions += [ '-DDEBUG' ]
     _local_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
-    _local_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
+    # _local_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
     _local_link_args += [ '-v' ]
   endif
   if get_option('buildtype') == 'release'
     _local_compile_definitions += [ '-DNDEBUG' ]
   endif
-  _local_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
+  # _local_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
 
   # DO NOT define it globally, one test does not need it!
   # _local_compile_definitions += ['-DMICRO_OS_PLUS_TRACE']

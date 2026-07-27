@@ -26,8 +26,6 @@ This is the **µOS++ Intrusive Lists** project, part of
 - Use the Oxford comma in lists for clarity
 - Maintain consistency in terminology throughout the codebase
 - Prefer "folder" to "directory"
-- Use clear, precise, and professional language appropriate for technical
-  documentation.
 
 ## Code Style
 

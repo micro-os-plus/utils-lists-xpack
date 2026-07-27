@@ -46,7 +46,7 @@
       "dependencies": [
         "micro-os-plus.device"
       ],
-      // "customDefine": "{{properties.platformDefine}}",
+      // "defaultDefine": "{{properties.platformDefine}}",
       "cdlOptions": [
         {
           "id": "win32",

@@ -8,7 +8,7 @@
   ],
   "cdlOptions": [
     {
-      "name": "tests.unit.coverage",
+      "id": "tests.unit.coverage",
       "display": "Enable Code Coverage",
       "description": "Enable code coverage collection for this test",
       "default": false,
