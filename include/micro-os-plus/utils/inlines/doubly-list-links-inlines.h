@@ -28,8 +28,8 @@
  * structure and maintainability.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_INLINES_H_
-#define MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_INLINES_H_
+#ifndef MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
+#define MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -306,6 +306,6 @@ namespace micro_os_plus::utils
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_INLINES_H_
+#endif // MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
 
 // ----------------------------------------------------------------------------

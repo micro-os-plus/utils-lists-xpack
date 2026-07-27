@@ -81,6 +81,8 @@
 #include <micro-os-plus/utils/lists-defines.h>
 #endif // __has_include(<micro-os-plus/utils/lists-defines.h>)
 
+// ----------------------------------------------------------------------------
+
 #include "doubly-list-links.h"
 #include "doubly-list.h"
 #include "intrusive-list.h"

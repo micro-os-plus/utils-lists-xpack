@@ -110,8 +110,7 @@ namespace micro_os_plus::utils
   void
   doubly_list_links_base::link_next (doubly_list_links_base* node) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() link %p after %p\n", __func__, node, this);
 #endif
     assert (next_ != nullptr);
@@ -137,8 +136,7 @@ namespace micro_os_plus::utils
   void
   doubly_list_links_base::link_previous (doubly_list_links_base* node) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() link %p before %p\n", __func__, node, this);
 #endif
     assert (previous_ != nullptr);
@@ -162,8 +160,7 @@ namespace micro_os_plus::utils
   void
   doubly_list_links_base::unlink (void) noexcept
   {
-#if defined(MICRO_OS_PLUS_TRACE) \
-    && defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
+#if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() %p \n", __func__, this);
 #endif
 
