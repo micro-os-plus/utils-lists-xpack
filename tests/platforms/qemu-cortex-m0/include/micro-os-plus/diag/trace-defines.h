@@ -1,5 +1,5 @@
-// DO NOT EDIT!
-// Automatically generated from build-helper/templates/.
+// DO NOT EDIT!  Automatically generated from template file:
+// build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-m0/include/micro-os-plus/diag/trace-defines-liquid.h
 // TODO: generate it via xcdl, and remove this other one from the tests.
 
 // ----------------------------------------------------------------------------

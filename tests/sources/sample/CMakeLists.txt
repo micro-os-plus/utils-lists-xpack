@@ -1,5 +1,6 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from sources/sample/xcdl-test.jsonc.
+# DO NOT EDIT! Automatically generated from template file:
+# sources/sample/xcdl-test.jsonc
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -38,9 +39,7 @@ target_link_libraries (
   tests-sample-interface INTERFACE "micro-os-plus::utils-lists-objects-library"
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (tests-sample-interface)
-endif ()
+xpack_display_target_lists (tests-sample-interface)
 
 # -----------------------------------------------------------------------------
 # Alias.

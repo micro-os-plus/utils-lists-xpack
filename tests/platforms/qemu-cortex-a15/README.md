@@ -1,7 +1,7 @@
 # platforms/qemu-cortex-a15
 
-> DO NOT EDIT!
-> Automatically generated from build-helper/templates/.
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-a15/README-liquid.md
 
 Support files for building application to run on the QEMU "virt"
 emulated board with "cortex-a15" CPU.

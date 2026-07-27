@@ -1,7 +1,7 @@
 # platforms/qemu-cortex-m3
 
-> DO NOT EDIT!
-> Automatically generated from build-helper/templates/.
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-cortex-m3/README-liquid.md
 
 Support files for building Cortex-M3 application to run on the
 QEMU "mps2-an385" emulated board (which is a Cortex-M3 board).

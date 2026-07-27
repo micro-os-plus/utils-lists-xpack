@@ -1,6 +1,7 @@
 # CMake
 
-DO NOT EDIT! Automatically generated from build-helper/templates/.
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/cmake/README-liquid.md
 
 These files are intended as helpers during CMake builds.
 

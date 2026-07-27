@@ -1,6 +1,6 @@
 {
-  // DO NOT EDIT! 
-  // Automatically generated from build-helper/templates/.
+  // DO NOT EDIT!  Automatically generated from template file:
+  // build-helper/templates/common/_micro-os-plus/tests/xcdl/micro-os-plus-liquid.jsonc
   "$schema": "https://xpack.github.io/xcdl/schemas/xcdl-2.0.0.json",
   "minimumXcdlRequired": "2.0.0",
   "license": "MIT",

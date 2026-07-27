@@ -1,6 +1,7 @@
 # CMake Tips and tricks
 
-DO NOT EDIT! Automatically generated from build-helper/templates/.
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/cmake/TIPS-AND-TRICKS-liquid.md
 
 Extracts from Craig Scott's "Professional CMake - A Practical Guide".
 

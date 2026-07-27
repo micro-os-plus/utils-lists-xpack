@@ -1,7 +1,7 @@
 # platforms/native
 
-> DO NOT EDIT!
-> Automatically generated from build-helper/templates/.
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/native/README-liquid.md
 
 Support files for building applications to run as native processes.
 

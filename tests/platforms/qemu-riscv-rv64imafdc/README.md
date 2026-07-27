@@ -1,7 +1,7 @@
 # platforms/qemu-riscv-rv64imafdc
 
-> DO NOT EDIT!
-> Automatically generated from build-helper/templates/.
+> DO NOT EDIT! Automatically generated from template file:
+> build-helper/templates/common/_micro-os-plus/tests/platforms/qemu-riscv-rv64imafdc/README-liquid.md
 
 Support files for building application to run on the QEMU "virt"
 emulated board.
