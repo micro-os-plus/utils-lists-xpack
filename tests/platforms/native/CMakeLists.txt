@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -16,6 +17,8 @@
 # -----------------------------------------------------------------------------
 
 message (VERBOSE "Processing 'tests/platforms/native'...")
+
+# -----------------------------------------------------------------------------
 
 if (CMAKE_BUILD_TYPE STREQUAL "Debug" AND CMAKE_CXX_COMPILER_ID STREQUAL
                                           "AppleClang"
@@ -40,6 +43,7 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_native_test_executable (sample-test)
   target_link_native_test_libraries (sample-test tests::sample)
 
+  xpack_display_target_lists (sample-test)
   message (VERBOSE "A> sample-test")
 
   add_test (NAME "sample-test" COMMAND sample-test one two)
@@ -52,14 +56,14 @@ if (XPACK_ENABLE_UNIT_TEST)
   target_link_native_test_libraries (unit-test tests::unit)
 
   if (XPACK_ENABLE_COVERAGE)
-    # Otherwise only the library cpp and its inline are shown.
     add_compile_coverage_private_options (unit-test)
     add_link_coverage_private_options (unit-test)
   endif ()
 
+  xpack_display_target_lists (unit-test)
   message (VERBOSE "A> unit-test")
 
-  add_test (NAME "unit-test" COMMAND unit-test)
+  add_test (NAME "unit-test" COMMAND unit-test one two)
 
   if (XPACK_ENABLE_COVERAGE)
     set_tests_properties (
@@ -68,14 +72,11 @@ if (XPACK_ENABLE_UNIT_TEST)
 
     add_test (
       NAME "unit-test-coverage"
-      COMMAND
-        bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh"
-        unit-test unit-test
-        # "../../../../include/micro-os-plus/utils/inlines/intrusive-list-inlines.h"
+      COMMAND bash "${CMAKE_CURRENT_SOURCE_DIR}/../../scripts/show-coverage.sh"
+              unit-test unit-test
     )
     set_tests_properties ("unit-test-coverage" PROPERTIES DEPENDS "unit-test")
   endif ()
-
 endif ()
 
 # -----------------------------------------------------------------------------

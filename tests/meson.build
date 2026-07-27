@@ -1,8 +1,8 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from build-helper/templates.
+# Automatically generated from build-helper/templates/.
 #
-# This file is part of the µOS++ project (https://micro-os-plus.github.com/).
+# This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
 #
 # Permission to use, copy, modify, and/or distribute this software for any
@@ -84,8 +84,6 @@ message('Platform name: ' + xpack_platform_name)
 # https://mesonbuild.com/Reference-manual.html#subdir
 subdir('meson/common-options-library')
 subdir('meson/enable-all-warnings')
-
-subdir('platforms/'+ xpack_platform_name + '/meson/definitions')
 
 # -----------------------------------------------------------------------------
 # Dependencies.

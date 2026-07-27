@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from build-helper/templates.
+# Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -34,17 +34,13 @@ if c_compiler.get_id() == 'gcc' or c_compiler.get_id().contains('clang')
   # Native builds may not use them.
   if get_option('buildtype').contains('debug')
     _local_compile_definitions += [ '-DDEBUG' ]
-    _local_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG' ]
-    # _local_compile_definitions += [ '-DMICRO_OS_PLUS_TRACE' ]
+    _local_compile_definitions += [ '-DMICRO_OS_PLUS_DEBUG_ENABLED' ]
+    # _local_compile_definitions += [ '-DMICRO_OS_PLUS_DIAG_TRACE_ENABLED' ]
     _local_link_args += [ '-v' ]
   endif
   if get_option('buildtype') == 'release'
     _local_compile_definitions += [ '-DNDEBUG' ]
   endif
-  # _local_compile_definitions += [ '-DMICRO_OS_PLUS_INCLUDE_CONFIG_H' ]
-
-  # DO NOT define it globally, one test does not need it!
-  # _local_compile_definitions += ['-DMICRO_OS_PLUS_TRACE']
 
   # Options for both compilers and linkers. When using `-flto`, all options
   # must also be passed to the linker.

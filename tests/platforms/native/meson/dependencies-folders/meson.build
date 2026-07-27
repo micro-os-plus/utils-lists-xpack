@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from build-helper/templates.
+# Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -21,13 +21,18 @@ message('Including tests/platforms/' + xpack_platform_name + '/meson/dependencie
 
 # -----------------------------------------------------------------------------
 
-# The base folder is `tests`. The order is significant.
+# The base folder is `tests`.
 xpack_dependencies_folders = [
 
-  'xpacks/@micro-os-plus/diag-trace', # -
-  'xpacks/@micro-os-plus/micro-test-plus', # -
+  # Order matters: dependencies must precede their dependants.
 
-  # (architecture) -
+  # Dependencies: none.
+  'xpacks/@micro-os-plus/diag-trace',
+
+  # Dependencies: diag.trace.
+  'xpacks/@micro-os-plus/micro-test-plus',
+  
+  # Dependencies: none.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-synthetic-posix',
 ]
 

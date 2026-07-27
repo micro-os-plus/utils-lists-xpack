@@ -11,7 +11,7 @@
 // Display trace messages in lists when TRACE is enabled.
 #if !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED
-#endif // 
+#endif //
 
 // Display trace messages in lists constructors and descriptors when TRACE is
 // enabled.

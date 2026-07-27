@@ -1,4 +1,7 @@
 /*
+ * DO NOT EDIT!
+ * Automatically generated from build-helper/templates/.
+ * 
  * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
  *
@@ -8,6 +11,8 @@
  * If a copy of the license was not distributed with this file, it can be
  * obtained from https://opensource.org/licenses/mit.
  */
+
+// ----------------------------------------------------------------------------
 
 #ifndef MICRO_OS_PLUS_PROJECT_CONFIG_H_
 #define MICRO_OS_PLUS_PROJECT_CONFIG_H_
@@ -21,6 +26,6 @@
 
 // ----------------------------------------------------------------------------
 
-#endif /* MICRO_OS_PLUS_PROJECT_CONFIG_H_ */
+#endif // MICRO_OS_PLUS_PROJECT_CONFIG_H_
 
 // ----------------------------------------------------------------------------

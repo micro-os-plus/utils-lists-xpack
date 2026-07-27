@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from build-helper/templates.
+# DO NOT EDIT! Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -22,16 +22,6 @@ message (VERBOSE
 
 # -----------------------------------------------------------------------------
 
-# Validate.
-if (NOT DEFINED xpack_platform_compile_definition)
-  message (
-    FATAL_ERROR
-      "Define xpack_platform_compile_definition in platforms/${PLATFORM_NAME}/cmake/definitions.cmake"
-  )
-endif ()
-
-# -----------------------------------------------------------------------------
-
 # Define the platform library.
 add_library (platform-qemu-cortex-m7f-interface INTERFACE EXCLUDE_FROM_ALL)
 
@@ -46,7 +36,6 @@ target_sources (platform-qemu-cortex-m7f-interface INTERFACE)
 target_compile_definitions (
   platform-qemu-cortex-m7f-interface
   INTERFACE
-    "${xpack_platform_compile_definition}"
     # Full POSIX conformance:
     # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
     _POSIX_C_SOURCE=200809L
@@ -120,9 +109,7 @@ target_link_libraries (
   INTERFACE micro-os-plus::devices-qemu-cortexm micro-os-plus::startup
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (platform-qemu-cortex-m7f-interface)
-endif ()
+xpack_display_target_lists (platform-qemu-cortex-m7f-interface)
 
 # -----------------------------------------------------------------------------
 

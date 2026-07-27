@@ -1,4 +1,5 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -17,6 +18,25 @@
 
 message (VERBOSE "Processing 'tests/platforms/qemu-riscv-rv32imac'...")
 
+# -----------------------------------------------------------------------------
+
+# NOTE: Exceptions are disabled.
+
+# -----------------------------------------------------------------------------
+
+set (XPACK_QEMU_BINARY "qemu-system-riscv32")
+set (XPACK_QEMU_MACHINE_ARGS --machine virt --cpu rv32)
+set (
+  XPACK_QEMU_EXTRA_ARGS
+  -smp
+  1
+  -bios
+  none
+  --nographic
+  -d
+  unimp,guest_errors
+)
+
 # The libraries are compiled before the platform library, so they need to get
 # the same compile options.
 add_compile_common_private_options (micro-os-plus-utils-lists-objects-library)
@@ -27,16 +47,10 @@ if (XPACK_ENABLE_SAMPLE_TEST)
   add_cross_test_executable (sample-test)
   target_link_cross_test_libraries (sample-test tests::sample)
 
+  xpack_display_target_lists (sample-test)
   message (VERBOSE "A> sample-test")
 
-  add_test (
-    NAME "sample-test"
-    COMMAND
-      qemu-system-riscv32${extension} --machine virt --cpu rv32 --kernel
-      sample-test.elf -smp 1 -bios none --nographic -d unimp,guest_errors
-      --semihosting-config
-      enable=on,target=native,arg=sample-test,arg=one,arg=two
-  )
+  add_qemu_test (NAME "sample-test" COMMAND sample-test one two)
 endif ()
 
 # -----------------------------------------------------------------------------
@@ -45,15 +59,10 @@ if (XPACK_ENABLE_UNIT_TEST)
   add_cross_test_executable (unit-test)
   target_link_cross_test_libraries (unit-test tests::unit)
 
+  xpack_display_target_lists (unit-test)
   message (VERBOSE "A> unit-test")
 
-  add_test (
-    NAME "unit-test"
-    COMMAND
-      qemu-system-riscv32${extension} --machine virt --cpu rv32 --kernel
-      unit-test.elf --nographic -smp 1 -bios none -d unimp,guest_errors
-      --semihosting-config enable=on,target=native,arg=unit-test
-  )
+  add_qemu_test (NAME "unit-test" COMMAND unit-test one two)
 endif ()
 
 # -----------------------------------------------------------------------------

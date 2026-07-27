@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from build-helper/templates.
+# Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -19,10 +19,6 @@
 
 # Included from dependencies-folders.
 message('Including tests/platforms/' + xpack_platform_name + '/meson/platform-library/meson.build...')
-
-# -----------------------------------------------------------------------------
-
-assert(is_variable('xpack_platform_compile_definition'), 'Define xpack_platform_compile_definition in platforms/' + xpack_platform_name + '/meson.build')
 
 # -----------------------------------------------------------------------------
 
@@ -77,8 +73,6 @@ _local_sources += [
 ]
 
 _local_compile_definitions += [
-  '-D' + xpack_platform_compile_definition,
-
   # Full POSIX conformance:
   # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
   '-D_POSIX_C_SOURCE=200809L',
@@ -132,7 +126,7 @@ if get_option('buildtype') == 'release' or get_option('buildtype') == 'minsize' 
 endif
 
 if c_compiler.get_id().contains('clang')
-  _local_compile_args += [
+  _local_compile_cpp_args += [
     '-stdlib=libc++',
   ]
 endif
@@ -213,7 +207,7 @@ endif
 
 _local_dependencies += [
   common_options_dependency,
-  micro_os_plus_architecture_synthetic_posix_dependency
+  micro_os_plus_architecture_dependency
 ]
 
 # https://mesonbuild.com/Reference-manual_functions.html#declare_dependency

@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! 
+# Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -25,18 +27,18 @@ xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 
+# Define the tests commands.
+
 if xpack_enable_sample_test
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'sample-test',
     sample_test,
-    args: [
-      'one',
-      'two'
-    ],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
+
 endif
 
 # -----------------------------------------------------------------------------
@@ -47,9 +49,10 @@ if xpack_enable_unit_test
   test(
     'unit-test',
     unit_test,
-    args: [],
+    args: [ 'one', 'two' ],
     env: xpack_environment
   )
+
 endif
 
 # -----------------------------------------------------------------------------

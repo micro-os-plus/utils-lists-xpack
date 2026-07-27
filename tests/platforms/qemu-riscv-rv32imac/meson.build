@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! 
+# Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -19,7 +21,15 @@ message('Processing tests/platforms/qemu-riscv-rv32imac...')
 
 # -----------------------------------------------------------------------------
 
+# NOTE: Exceptions are disabled.
+
+# -----------------------------------------------------------------------------
+
 qemu = find_program('qemu-system-riscv32')
+qemu_machine_args = [ '--machine', 'virt', '--cpu', 'rv32' ]
+qemu_extra_args = [ '-smp', '1', '-bios', 'none', '--nographic', '-d', 'unimp,guest_errors' ]
+
+# -----------------------------------------------------------------------------
 
 # https://mesonbuild.com/Unit-tests.html#malloc_perturb_
 xpack_environment = environment()
@@ -27,23 +37,19 @@ xpack_environment.set('MALLOC_PERTURB_', '0')
 
 # -----------------------------------------------------------------------------
 
-# Define the tests executables.
-if xpack_enable_sample_test
+# Define the tests commands.
+
+if (xpack_enable_sample_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'sample-test',
     qemu,
-    args: [
-      '--machine', 'virt',
-      '--cpu', 'rv32',
-      '--kernel', sample_test,
-      '--nographic',
-      '-smp', '1',
-      '-bios', 'none',
-      '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native,arg=sample-test,arg=one,arg=two',
-    ],
+    args: qemu_machine_args + 
+      [ '--kernel', sample_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=sample-test,arg=one,arg=two' ],
     env: xpack_environment
   )
 
@@ -51,22 +57,17 @@ endif
 
 # -----------------------------------------------------------------------------
 
-if xpack_enable_unit_test
+if (xpack_enable_unit_test)
 
   # https://mesonbuild.com/Reference-manual_functions.html#test
   test(
     'unit-test',
     qemu,
-    args: [
-      '--machine', 'virt',
-      '--cpu', 'rv32',
-      '--kernel', unit_test,
-      '--nographic',
-      '-smp', '1',
-      '-bios', 'none',
-      '-d', 'unimp,guest_errors',
-      '--semihosting-config', 'enable=on,target=native,arg=unit-test',
-    ],
+    args: qemu_machine_args + 
+      [ '--kernel', unit_test ] + 
+      qemu_extra_args + 
+      [ '--semihosting-config', 
+      'enable=on,target=native,arg=unit-test,arg=one,arg=two' ],
     env: xpack_environment
   )
 

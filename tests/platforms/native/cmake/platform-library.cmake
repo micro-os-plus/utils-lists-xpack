@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from build-helper/templates.
+# DO NOT EDIT! Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -19,16 +19,6 @@
 message (VERBOSE
          "Including tests/platforms/${PLATFORM_NAME}/platform-library.cmake..."
 )
-
-# -----------------------------------------------------------------------------
-
-# Validate.
-if (NOT DEFINED xpack_platform_compile_definition)
-  message (
-    FATAL_ERROR
-      "Define xpack_platform_compile_definition in platforms/${PLATFORM_NAME}/cmake/definitions.cmake"
-  )
-endif ()
 
 # -----------------------------------------------------------------------------
 
@@ -74,7 +64,6 @@ target_sources (platform-native-interface INTERFACE)
 target_compile_definitions (
   platform-native-interface
   INTERFACE
-    "${xpack_platform_compile_definition}"
     # Full POSIX conformance:
     # https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap02.html#tag_02_01_03
     _POSIX_C_SOURCE=200809L
@@ -173,13 +162,10 @@ if ("${CMAKE_C_COMPILER_ID}" STREQUAL "Clang")
 endif ()
 
 target_link_libraries (
-  platform-native-interface
-  INTERFACE micro-os-plus::architecture-synthetic-posix
+  platform-native-interface INTERFACE micro-os-plus::architecture
 )
 
-if (COMMAND xpack_display_target_lists)
-  xpack_display_target_lists (platform-native-interface)
-endif ()
+xpack_display_target_lists (platform-native-interface)
 
 # -----------------------------------------------------------------------------
 

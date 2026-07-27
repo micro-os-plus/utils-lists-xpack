@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
 # DO NOT EDIT!
-# Automatically generated from build-helper/templates.
+# Automatically generated from build-helper/templates/.
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -17,26 +17,29 @@
 
 # -----------------------------------------------------------------------------
 
-# The base folder is `tests`. The order is significant.
+# The base folder is `tests`.
 xpack_dependencies_folders = [
 
-  'xpacks/@micro-os-plus/diag-trace', # -
-  'xpacks/@micro-os-plus/micro-test-plus', # -
+  # Order matters: dependencies must precede their dependants.
 
-  # -
-  # 'xpacks/@micro-os-plus/version',
+  # Dependencies: none.
+  'xpacks/@micro-os-plus/diag-trace',
 
-  # (architecture) -
+  # Dependencies: diag.trace.
+  'xpacks/@micro-os-plus/micro-test-plus',
+
+  # Dependencies: none.
+  # Hidden dependency: semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/architecture-riscv',
 
-  # +(diag_trace, architecture) >semihosting
+  # Dependencies: none.
+  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
+
+  # Dependencies: diag.trace, architecture.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/semihosting',
 
-  # -
+  # Dependencies: architecture, diag.trace, semihosting.
   xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/startup',
-
-  # -
-  xpack_build_folder_relative_path + '/xpacks/@micro-os-plus/devices-qemu-riscv',
 ]
 
 # -----------------------------------------------------------------------------

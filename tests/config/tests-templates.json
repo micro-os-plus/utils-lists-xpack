@@ -13,5 +13,6 @@
   "tests": [
     "sample",
     "unit"
-  ]
+  ],
+  "useObjectsLibrary": true
 }
