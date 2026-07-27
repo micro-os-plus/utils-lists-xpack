@@ -76,7 +76,7 @@ of their members within the constructors**, as this may occur **after**
 clients have already registered.
 
 Before inserting anything into these lists, the user must call
-`initialize_once()`, which will check the list and, if it is still
+`initialise_once()`, which will check the list and, if it is still
 in the initial zero state, will initialise it to the empty state
 (with both pointers pointing to itself).
 
@@ -141,7 +141,7 @@ pointer unlink_head (void);
 
 bool empty (void);
 
-void initialize_once (void);
+void initialise_once (void);
 ```
 
 Forward iterators are defined as usual:
