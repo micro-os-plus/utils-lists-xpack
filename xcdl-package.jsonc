@@ -19,7 +19,7 @@
         "micro-os-plus.diag.trace"
       ],
       "generatedFile": {
-        "type": "header",
+        "type": "c-header",
         "filePath": "{{buildFolderPath}}/generated/include/micro-os-plus/utils/lists-defines.h"
       },
       // "$commentDefine": "MICRO_OS_PLUS_UTILS_LISTS_ENABLED",
