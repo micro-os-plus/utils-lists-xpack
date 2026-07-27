@@ -13,7 +13,7 @@
 
 #if !defined(MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_)
 #error \
-    "Do not include this file directly; use <micro-os-plus/utils/doubly-list-links.h>."
+    "Do not include this file directly; use "micro-os-plus/utils/doubly-list-links.h"."
 #endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_
 
 /**

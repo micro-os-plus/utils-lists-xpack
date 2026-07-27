@@ -25,19 +25,15 @@
 
 // ----------------------------------------------------------------------------
 
-#if __has_include(<micro-os-plus/project-config.h>)
-#include <micro-os-plus/project-config.h>
-#elif __has_include(<micro-os-plus/config.h>)
-#pragma message \
-    "micro-os-plus/config.h is deprecated, rename to micro-os-plus/project-config.h and include it instead of micro-os-plus/config.h"
-#include <micro-os-plus/config.h>
-#endif // __has_include(<micro-os-plus/project-config.h>)
+#if __has_include("micro-os-plus/project-config.h")
+#include "micro-os-plus/project-config.h"
+#endif // __has_include("micro-os-plus/project-config.h")
 
-#if __has_include(<micro-os-plus/utils/lists-defines.h>)
-#include <micro-os-plus/utils/lists-defines.h>
-#endif // __has_include(<micro-os-plus/utils/lists-defines.h>)
+#if __has_include("micro-os-plus/utils/lists-defines.h")
+#include "micro-os-plus/utils/lists-defines.h"
+#endif // __has_include("micro-os-plus/utils/lists-defines.h")
 
-#include <micro-os-plus/utils/doubly-list-links.h>
+#include "micro-os-plus/utils/doubly-list-links.h"
 
 // ----------------------------------------------------------------------------
 
