@@ -1,6 +1,6 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT!
-# Automatically generated from xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from template file:
+# xcdl-package.jsonc
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -17,7 +17,7 @@
 #
 # `subdir('xpacks/@micro-os-plus/utils-lists')`
 #
-# This creates a dependency that can be linked to a target with:
+# This creates dependencies that can be linked to a target with:
 #
 # `dependencies: [micro_os_plus_utils_lists_dependency],`
 
@@ -26,7 +26,7 @@
 
 # -----------------------------------------------------------------------------
 
-# µOS++ C++ Intrusive Lists.
+# A source code library with the µOS++ intrusive lists.
 message('Processing xPack @micro-os-plus/utils-lists...')
 
 # -----------------------------------------------------------------------------

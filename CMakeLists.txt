@@ -1,5 +1,5 @@
 # -----------------------------------------------------------------------------
-# DO NOT EDIT! Automatically generated from xcdl-package.jsonc.
+# DO NOT EDIT! Automatically generated from template file: xcdl-package.jsonc
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
@@ -16,30 +16,22 @@
 #
 # `add_subdirectory("xpacks/@micro-os-plus/utils-lists")`
 #
-# This creates several libraries that can be linked to a target with one of:
+# This creates libraries that can be linked to a target with:
 #
 # ~~~
 # target_link_libraries(your-target PUBLIC micro-os-plus::utils-lists)
-#
 # target_link_libraries(your-target PUBLIC micro-os-plus::utils-lists-static-library)
-#
 # target_link_libraries(your-target PUBLIC micro-os-plus::utils-lists-objects-library)
 # ~~~
-#
-# Weak symbols in static libraries are not always resolved reliably by the
-# linker. Object libraries are provided as a safer alternative, although they
-# have their own quirks.
 
 # -----------------------------------------------------------------------------
 
 # https://cmake.org/cmake/help/v3.20/
 cmake_minimum_required (VERSION 3.20)
-
-# µOS++ C++ Intrusive Lists.
 project (
   micro-os-plus-utils-lists
-  DESCRIPTION "Intrusive Lists"
-  LANGUAGES CXX
+  DESCRIPTION "A source code library with the µOS++ intrusive lists"
+  LANGUAGES C CXX ASM
 )
 
 # To access the optional functions, include the
@@ -57,10 +49,18 @@ endif ()
 
 # -----------------------------------------------------------------------------
 
-# The interface library is the main target of this package, which consumers
-# (like embedded applications) link against. It defines the public API and
-# properties of the library; sources are propagated to and compiled by each
-# consumer.
+# Interface libraries are the main targets, which consumers (like embedded
+# applications) link against. It defines the public API and properties of the
+# library; sources are propagated to and compiled by each consumer.
+
+# They are aliased using namespaced syntax (Project::Target). This is the
+# canonical pattern for consumption via target_link_libraries(), whether the
+# dependency is added via add_subdirectory(), FetchContent, or an installed
+# package via find_package(). Using "::" lets CMake detect an invalid or
+# misspelled target name at configure time, rather than silently passing it
+# through to the linker as a plain string or flag. Note: alias targets are
+# read-only; properties must be set on the underlying target, not on the alias
+# itself.
 
 # https://cmake.org/cmake/help/v3.20/command/add_library.html?highlight=interface#interface-libraries
 # Visibility keywords: PRIVATE applies to the target itself; INTERFACE passes
@@ -86,14 +86,6 @@ endif ()
 # -----------------------------------------------------------------------------
 # Alias.
 
-# Export an alias target using namespaced syntax (Project::Target). This is the
-# canonical pattern for consumption via target_link_libraries(), whether the
-# dependency is added via add_subdirectory(), FetchContent, or an installed
-# package via find_package(). Using "::" lets CMake detect an invalid or
-# misspelled target name at configure time, rather than silently passing it
-# through to the linker as a plain string or flag. Note: alias targets are
-# read-only; properties must be set on the underlying target, not on the alias
-# itself.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::utils-lists ALIAS micro-os-plus-utils-lists-interface
@@ -123,7 +115,7 @@ get_property (
 # with the separate dependency compilation in each executable. Consumers of this
 # OBJECT library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-utils-lists-objects-library OBJECT)
+add_library (micro-os-plus-utils-lists-objects-library OBJECT EXCLUDE_FROM_ALL)
 
 # Use PUBLIC so that the include directories are available both for the OBJECT
 # library's own sources and for consumers of the library.
@@ -171,9 +163,6 @@ endif ()
 # -----------------------------------------------------------------------------
 # Alias.
 
-# Namespaced alias for downstream consumption (find_package- and
-# add_subdirectory-compatible). "::" ensures CMake validates the target name at
-# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::utils-lists-objects-library ALIAS
@@ -196,7 +185,7 @@ message (
 # with the separate dependency compilation in each executable. Consumers of this
 # STATIC library are expected to link separately to all dependencies and to the
 # platform-specific library.
-add_library (micro-os-plus-utils-lists-static-library STATIC)
+add_library (micro-os-plus-utils-lists-static-library STATIC EXCLUDE_FROM_ALL )
 
 set_target_properties (
   micro-os-plus-utils-lists-static-library PROPERTIES OUTPUT_NAME utils-lists
@@ -238,9 +227,6 @@ endif ()
 # -----------------------------------------------------------------------------
 # Alias.
 
-# Namespaced alias for downstream consumption (find_package- and
-# add_subdirectory-compatible). "::" ensures CMake validates the target name at
-# configure time. Aliases are read-only.
 # https://cmake.org/cmake/help/v3.20/command/add_library.html#alias-libraries
 add_library (
   micro-os-plus::utils-lists-static-library ALIAS

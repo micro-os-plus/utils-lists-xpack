@@ -1,8 +1,8 @@
 {%- assign packageScope = package.name | remove_first: '@' | split: '/' | first %}
 {%- assign packageName = package.name | remove_first: '@' | split: '/' | last -%}
 # -----------------------------------------------------------------------------
-# DO NOT EDIT!
-# Automatically generated from {{libraryFilePath}}.
+# DO NOT EDIT! Automatically generated from template file:
+# {{libraryFilePath}}
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
