@@ -2,7 +2,7 @@
  * DO NOT EDIT!
  * Automatically generated from docusaurus-template-liquid/templates/docusaurus.
  *
- * This file is part of the µOS++ project (https://micro-os-plus.github.com).
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io).
  * Copyright (c) 2021-2026 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -49,16 +49,21 @@ throughout the project's documentation.
 @details
 The `include` folder contains all public header files for the µOS++ libraries.
 
-To provide isolation with other projects, the header files for the µOS++ libraries are located in the `micro-os-plus` folder.
+To provide isolation with other projects, the header files for the µOS++ 
+libraries are located in the `micro-os-plus` sub-folder.
 
 @dir include/micro-os-plus
 @brief Folder with C/C++ header files for the µOS++ libraries.
 
 @details
-The `include/micro-os-plus` folder contains the public C++ header files for the µOS++ libraries.
+The `include/micro-os-plus` folder contains the public C++ header files for 
+the µOS++ libraries.
 
-These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries.
-All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality.
+These headers define the APIs, data structures, data types and inline 
+implementations that are available to users of the libraries.
+
+All files in this folder are intended for inclusion in user projects and 
+provide the main interface to the utilities functionality.
 
 @defgroup micro-os-plus µOS++ Topics
 @brief Topics related to the µOS++ framework.
@@ -67,11 +72,11 @@ All files in this directory are intended for inclusion in user projects and prov
 ## Description
 
 The [µOS++ Framework](https://micro-os-plus.github.io) is the principal project
-within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite of modern
-C++ libraries for embedded systems development.
+within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite 
+of modern C++ libraries for embedded systems development.
 
-µOS++ is organised as a **collection of modular source libraries**, each maintained
-in its own repository on GitHub and collectively managed under the
+µOS++ is organised as a **collection of modular source libraries**, each 
+maintained in its own repository on GitHub and collectively managed under the
 [micro-os-plus](https://github.com/micro-os-plus) GitHub organization.
 This modular structure
 enables developers to select and integrate only the components relevant to

@@ -9,7 +9,7 @@ A source code library with the µOS++ intrusive lists.
 
 ## Project documentation
 
-For information on how to install and use this project, please refer to the
+For information on how to use this project, please refer to the
 [project website](https://micro-os-plus.github.io/utils-lists-xpack/).
 
 ## Project source
