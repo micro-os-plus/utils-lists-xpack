@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.15.0" xml:lang="en-US">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.17.0" xml:lang="en-US">
   <compound refid="classmicro__os__plus_1_1utils_1_1doubly__list" kind="class"><name>micro_os_plus::utils::doubly_list</name>
-    <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a735ee001c008f04eb19cd31e5ea43668" kind="typedef"><name>is_statically_allocated</name></member>
+    <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1adbf5db61332c997df0576be993832ed2" kind="typedef"><name>is_statically_allocated</name></member>
     <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a806d82876c5eadc20150fccb4d380d64" kind="typedef"><name>iterator</name></member>
     <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ac466265f112e5f41b06b64e794f3db63" kind="typedef"><name>iterator_pointer</name></member>
     <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1aed5fc0c1164c30d890986b08d8f3a4da" kind="typedef"><name>links_type</name></member>
@@ -92,7 +92,7 @@
   </compound>
   <compound refid="classmicro__os__plus_1_1utils_1_1intrusive__list" kind="class"><name>micro_os_plus::utils::intrusive_list</name>
     <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac680e68f2e9956c87105cccdfbedeb6b" kind="typedef"><name>difference_type</name></member>
-    <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a54065d590254d59ade7c08ca0def9aff" kind="typedef"><name>is_statically_allocated</name></member>
+    <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a265d899bb1ab09596057665937377481" kind="typedef"><name>is_statically_allocated</name></member>
     <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kind="typedef"><name>iterator</name></member>
     <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3c9a90f0bde3f7d498d4419c41adf723" kind="typedef"><name>iterator_pointer</name></member>
     <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a0bb5c5cba26ff911bbae525200d9e3c1" kind="typedef"><name>links_type</name></member>

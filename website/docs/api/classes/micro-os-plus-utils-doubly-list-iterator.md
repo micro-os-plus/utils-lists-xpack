@@ -28,7 +28,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 ## Included Headers
 
-<div class="doxyIncludesList">#include &lt;<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">micro-os-plus/utils/lists.h</a>&gt;
+<div class="doxyIncludesList">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">micro-os-plus/utils/lists.h</a>"
 </div>
 
 ## Public Member Typedefs Index
@@ -429,7 +429,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::difference_type =  ptrdiff_t</td>
+<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::difference_type = ptrdiff_t</td>
 </tr>
 </table>
 </td>
@@ -462,7 +462,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_category =  std::bidirectional_iterator_tag</td>
+<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_category = std::bidirectional_iterator_tag</td>
 </tr>
 </table>
 </td>
@@ -495,7 +495,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_pointer =  N*</td>
+<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_pointer = N*</td>
 </tr>
 </table>
 </td>
@@ -528,7 +528,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::pointer =  value_type*</td>
+<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::pointer = value_type*</td>
 </tr>
 </table>
 </td>
@@ -561,7 +561,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::reference =  value_type&amp;</td>
+<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::reference = value_type&amp;</td>
 </tr>
 </table>
 </td>
@@ -594,7 +594,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <td class="doxyMemberLabelsLeft">
 <table class="doxyMemberName">
 <tr>
-<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::value_type =  U</td>
+<td class="doxyMemberName">using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::value_type = U</td>
 </tr>
 </table>
 </td>
@@ -1422,6 +1422,6 @@ The documentation for this class was generated from the following files:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

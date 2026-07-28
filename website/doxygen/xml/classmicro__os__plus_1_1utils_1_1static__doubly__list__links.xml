@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::utils::static_doubly_list_links</compoundname>
     <basecompoundref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base" prot="public" virt="non-virtual">micro_os_plus::utils::doubly_list_links_base</basecompoundref>
-    <includes refid="lists_8h" local="no">micro-os-plus/utils/lists.h</includes>
+    <includes refid="lists_8h" local="yes">micro-os-plus/utils/lists.h</includes>
     <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a2e3e1cea0aa11f4174a3d3e57685583e" prot="public" static="no">
         <type>std::true_type</type>
-        <definition>using micro_os_plus::utils::static_doubly_list_links::is_statically_allocated =  std::true_type</definition>
+        <definition>using micro_os_plus::utils::static_doubly_list_links::is_statically_allocated = std::true_type</definition>
         <argsstring></argsstring>
         <name>is_statically_allocated</name>
         <qualifiedname>micro_os_plus::utils::static_doubly_list_links::is_statically_allocated</qualifiedname>
@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="378" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="378" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="376" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="376" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -46,7 +46,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="384" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="215" bodyend="218"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="382" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="215" bodyend="218"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a4c9d7450cb72071ee02aca2eff769df9">static_doubly_list_links</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ae9494c4d04558ec268347dc65cb12f63">static_doubly_list_links</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1abc9d7309596e6bb1d512a4464bc6b0b6">operator=</referencedby>
@@ -69,7 +69,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="394" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="392" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ac7ec616db12f77994359e25848a63464" compoundref="doubly-list-links-inlines_8h" startline="215" endline="218">static_doubly_list_links</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ae9494c4d04558ec268347dc65cb12f63" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -89,7 +89,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="404" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="402" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ac7ec616db12f77994359e25848a63464" compoundref="doubly-list-links-inlines_8h" startline="215" endline="218">static_doubly_list_links</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a52afe628d2b9380b345eb4999e2633b3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -137,12 +137,12 @@ Sets both the <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubl
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="168" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="120" bodyend="124"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="164" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="120" bodyend="124"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1ae49a3ba1aad4be92cbd17b5d04266f2f" compoundref="doubly-list-links-inlines_8h" startline="280" endline="285">micro_os_plus::utils::doubly_list_links::doubly_list_links</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8f3b3c5686e857557c5bf69d0313292e" compoundref="doubly-list-links_8cpp" startline="83" endline="91">micro_os_plus::utils::doubly_list_links_base::initialise_once</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" compoundref="doubly-list-links_8cpp" startline="153" endline="168">micro_os_plus::utils::doubly_list_links_base::unlink</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8f3b3c5686e857557c5bf69d0313292e" compoundref="doubly-list-links_8cpp" startline="87" endline="95">micro_os_plus::utils::doubly_list_links_base::initialise_once</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" compoundref="doubly-list-links_8cpp" startline="157" endline="172">micro_os_plus::utils::doubly_list_links_base::unlink</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8f3b3c5686e857557c5bf69d0313292e" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -169,9 +169,9 @@ If the statically allocated list is still in the initial <emphasis>uninitialised
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="179" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="83" bodyend="91"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="175" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="87" bodyend="95"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aaf1348f9336c81a961354d6856474bbf" compoundref="doubly-list-links-inlines_8h" startline="120" endline="124">micro_os_plus::utils::doubly_list_links_base::initialise</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" compoundref="doubly-list-links_8cpp" startline="58" endline="67">micro_os_plus::utils::doubly_list_links_base::initialised</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" compoundref="doubly-list-links_8cpp" startline="62" endline="71">micro_os_plus::utils::doubly_list_links_base::initialised</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -209,10 +209,10 @@ An <emphasis>uninitialised</emphasis> node is a node with its pointers set to <c
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="157" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="58" bodyend="67"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8f3b3c5686e857557c5bf69d0313292e" compoundref="doubly-list-links_8cpp" startline="83" endline="91">micro_os_plus::utils::doubly_list_links_base::initialise_once</referencedby>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="153" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="62" bodyend="71"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8f3b3c5686e857557c5bf69d0313292e" compoundref="doubly-list-links_8cpp" startline="87" endline="95">micro_os_plus::utils::doubly_list_links_base::initialise_once</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ad9c5cdfe5cd9e7f0b1012236cbdaca55" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -243,9 +243,9 @@ Insert the new node between the <bold>next</bold> pointer and the node pointed b
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="189" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="103" bodyend="117"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="185" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="107" bodyend="121"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" compoundref="doubly-list-links-inlines_8h" startline="82" endline="85">micro_os_plus::utils::doubly_list_links_base::doubly_list_links_base</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a2e58bddc3885fa85d263e16e19601ec1" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -276,9 +276,9 @@ Insert the new node between the <bold>previous</bold> pointer and the node point
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="199" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="129" bodyend="143"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="195" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="133" bodyend="147"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" compoundref="doubly-list-links-inlines_8h" startline="82" endline="85">micro_os_plus::utils::doubly_list_links_base::doubly_list_links_base</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ae3945cbe4a2169d5ea238ca0d109cd96" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -316,9 +316,9 @@ To be <emphasis>linked</emphasis>, both pointers must point to different nodes t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="221" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="174" bodyend="183"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="217" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="174" bodyend="183"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a6190af1d7982bfd89f3ca08adafd8f84" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref> *</type>
@@ -344,8 +344,8 @@ Returns a pointer to the next node in the list. If this node is the last in the 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="231" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="144" bodyend="147"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="227" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="144" bodyend="147"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1abc9d7309596e6bb1d512a4464bc6b0b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ac7ec616db12f77994359e25848a63464" kindref="member">static_doubly_list_links</ref> &amp;</type>
@@ -364,7 +364,7 @@ Returns a pointer to the next node in the list. If this node is the last in the 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="415" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="413" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ac7ec616db12f77994359e25848a63464" compoundref="doubly-list-links-inlines_8h" startline="215" endline="218">static_doubly_list_links</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1adae3cfb509afbf57d1adf82b02410bb9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -384,9 +384,9 @@ Returns a pointer to the next node in the list. If this node is the last in the 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="425" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="424" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1ac7ec616db12f77994359e25848a63464" compoundref="doubly-list-links-inlines_8h" startline="215" endline="218">static_doubly_list_links</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" compoundref="doubly-list-links_8cpp" startline="186" endline="190">reset</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" compoundref="doubly-list-links_8cpp" startline="190" endline="194">reset</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8820447ea7887e48aa116b25d0672336" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref> *</type>
@@ -412,8 +412,8 @@ Returns a pointer to the previous node in the list. If this node is the first in
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="241" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="161" bodyend="164"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="237" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/inlines/doubly-list-links-inlines.h" bodystart="161" bodyend="164"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -439,9 +439,9 @@ Sets both the <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubl
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="441" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="186" bodyend="190"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="441" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="190" bodyend="194"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1adae3cfb509afbf57d1adf82b02410bb9">operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -465,10 +465,10 @@ Update both neighbours to point to each other, effectively removing the node fro
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="210" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="153" bodyend="168"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="206" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/doubly-list-links.cpp" bodystart="157" bodyend="172"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aaf1348f9336c81a961354d6856474bbf" compoundref="doubly-list-links-inlines_8h" startline="120" endline="124">micro_os_plus::utils::doubly_list_links_base::initialise</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="252">micro_os_plus::utils::doubly_list_links_base::next_</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="247">micro_os_plus::utils::doubly_list_links_base::previous_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" compoundref="doubly-list-links_8h" startline="248">micro_os_plus::utils::doubly_list_links_base::next_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" compoundref="doubly-list-links_8h" startline="243">micro_os_plus::utils::doubly_list_links_base::previous_</references>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-attrib">
@@ -485,14 +485,14 @@ Update both neighbours to point to each other, effectively removing the node fro
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="252" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="252" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="248" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="248" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aaf1348f9336c81a961354d6856474bbf" compoundref="doubly-list-links-inlines_8h" startline="120" endline="124">micro_os_plus::utils::doubly_list_links_base::initialise</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" compoundref="doubly-list-links_8cpp" startline="58" endline="67">micro_os_plus::utils::doubly_list_links_base::initialised</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ad9c5cdfe5cd9e7f0b1012236cbdaca55" compoundref="doubly-list-links_8cpp" startline="103" endline="117">micro_os_plus::utils::doubly_list_links_base::link_next</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" compoundref="doubly-list-links_8cpp" startline="62" endline="71">micro_os_plus::utils::doubly_list_links_base::initialised</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ad9c5cdfe5cd9e7f0b1012236cbdaca55" compoundref="doubly-list-links_8cpp" startline="107" endline="121">micro_os_plus::utils::doubly_list_links_base::link_next</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ae3945cbe4a2169d5ea238ca0d109cd96" compoundref="doubly-list-links-inlines_8h" startline="174" endline="183">micro_os_plus::utils::doubly_list_links_base::linked</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a6190af1d7982bfd89f3ca08adafd8f84" compoundref="doubly-list-links-inlines_8h" startline="144" endline="147">micro_os_plus::utils::doubly_list_links_base::next</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" compoundref="doubly-list-links_8cpp" startline="186" endline="190">reset</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" compoundref="doubly-list-links_8cpp" startline="153" endline="168">micro_os_plus::utils::doubly_list_links_base::unlink</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" compoundref="doubly-list-links_8cpp" startline="190" endline="194">reset</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" compoundref="doubly-list-links_8cpp" startline="157" endline="172">micro_os_plus::utils::doubly_list_links_base::unlink</referencedby>
       </memberdef>
       <memberdef kind="variable" id="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" prot="protected" static="no" mutable="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref> *</type>
@@ -507,14 +507,14 @@ Update both neighbours to point to each other, effectively removing the node fro
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="247" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="247" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="243" column="28" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="243" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aaf1348f9336c81a961354d6856474bbf" compoundref="doubly-list-links-inlines_8h" startline="120" endline="124">micro_os_plus::utils::doubly_list_links_base::initialise</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" compoundref="doubly-list-links_8cpp" startline="58" endline="67">micro_os_plus::utils::doubly_list_links_base::initialised</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a2e58bddc3885fa85d263e16e19601ec1" compoundref="doubly-list-links_8cpp" startline="129" endline="143">micro_os_plus::utils::doubly_list_links_base::link_previous</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0ac52ac284a45e3c5f293c34bef2bbe0" compoundref="doubly-list-links_8cpp" startline="62" endline="71">micro_os_plus::utils::doubly_list_links_base::initialised</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a2e58bddc3885fa85d263e16e19601ec1" compoundref="doubly-list-links_8cpp" startline="133" endline="147">micro_os_plus::utils::doubly_list_links_base::link_previous</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ae3945cbe4a2169d5ea238ca0d109cd96" compoundref="doubly-list-links-inlines_8h" startline="174" endline="183">micro_os_plus::utils::doubly_list_links_base::linked</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a8820447ea7887e48aa116b25d0672336" compoundref="doubly-list-links-inlines_8h" startline="161" endline="164">micro_os_plus::utils::doubly_list_links_base::previous</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" compoundref="doubly-list-links_8cpp" startline="186" endline="190">reset</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" compoundref="doubly-list-links_8cpp" startline="153" endline="168">micro_os_plus::utils::doubly_list_links_base::unlink</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a38c70e107d85e1fb859157235bf1eccc" compoundref="doubly-list-links_8cpp" startline="190" endline="194">reset</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1a0216c42bec0ad0eed843b3aa3b1c0463" compoundref="doubly-list-links_8cpp" startline="157" endline="172">micro_os_plus::utils::doubly_list_links_base::unlink</referencedby>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -554,7 +554,7 @@ Update both neighbours to point to each other, effectively removing the node fro
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="372" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="373" bodyend="442"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="370" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" bodystart="371" bodyend="442"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::static_doubly_list_links</scope><name>doubly_list_links_base</name></member>
       <member refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ae5d6fa336952664139f68b27e8c4aacb" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::static_doubly_list_links</scope><name>doubly_list_links_base</name></member>

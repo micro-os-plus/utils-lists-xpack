@@ -47,11 +47,14 @@ keywords:
 <p>The <span class="doxyComputerOutput">include/micro-os-plus</span> folder contains the public C++ header files for the µOS++ libraries.</p>
 
 
-<p>These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries. All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality.</p>
+<p>These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries.</p>
+
+
+<p>All files in this folder are intended for inclusion in user projects and provide the main interface to the utilities functionality.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

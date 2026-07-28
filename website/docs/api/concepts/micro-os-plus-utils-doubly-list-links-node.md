@@ -23,7 +23,7 @@ keywords:
 
 <div class="doxyDefinition">
 template &lt;class T&gt;<br/>
-concept <a href="/utils-lists-xpack/docs/api/concepts/micro-os-plus/utils/doubly-list-links-node">micro_os_plus::utils::doubly_list_links_node</a> =  std::derived_from&lt;T, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links-base">doubly_list_links_base</a>&gt;    
+concept <a href="/utils-lists-xpack/docs/api/concepts/micro-os-plus/utils/doubly-list-links-node">micro_os_plus::utils::doubly_list_links_node</a> =  std::derived_from&lt;T, <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links-base">doubly_list_links_base</a>&gt;
 </div>
 
 ## Description {#details}
@@ -36,6 +36,6 @@ concept <a href="/utils-lists-xpack/docs/api/concepts/micro-os-plus/utils/doubly
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="dir_816a891db8c947b8e5a0cc7ac535aed5" kind="dir">
     <compoundname>micro-os-plus</compoundname>
     <innerdir refid="dir_ed165110c3623bfc4ee73136e0ee950e">utils</innerdir>
@@ -8,7 +8,8 @@
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput>include/micro-os-plus</computeroutput> folder contains the public C++ header files for the µOS++ libraries.</para>
-<para>These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries. All files in this directory are intended for inclusion in user projects and provide the main interface to the utilities functionality. </para>
+<para>These headers define the APIs, data structures, data types and inline implementations that are available to users of the libraries.</para>
+<para>All files in this folder are intended for inclusion in user projects and provide the main interface to the utilities functionality. </para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/"/>
   </compounddef>

@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="intrusive-list_8h" kind="file" language="C++">
     <compoundname>intrusive-list.h</compoundname>
     <includes refid="doubly-list_8h" local="yes">doubly-list.h</includes>
@@ -21,24 +21,26 @@
         </childnode>
         <childnode refid="9" relation="include">
         </childnode>
+        <childnode refid="10" relation="include">
+        </childnode>
       </node>
       <node id="2">
         <label>doubly-list.h</label>
         <link refid="doubly-list_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
-        <childnode refid="10" relation="include">
+        <childnode refid="11" relation="include">
         </childnode>
       </node>
-      <node id="10">
+      <node id="11">
         <label>inlines/doubly-list-inlines.h</label>
         <link refid="doubly-list-inlines_8h"/>
       </node>
-      <node id="9">
+      <node id="10">
         <label>inlines/doubly-list-links-inlines.h</label>
         <link refid="doubly-list-links-inlines_8h"/>
       </node>
-      <node id="11">
+      <node id="12">
         <label>inlines/intrusive-list-inlines.h</label>
         <link refid="intrusive-list-inlines_8h"/>
       </node>
@@ -47,23 +49,26 @@
         <link refid="intrusive-list_8h"/>
         <childnode refid="2" relation="include">
         </childnode>
-        <childnode refid="11" relation="include">
+        <childnode refid="12" relation="include">
         </childnode>
       </node>
-      <node id="6">
+      <node id="7">
         <label>cassert</label>
       </node>
-      <node id="7">
+      <node id="8">
         <label>concepts</label>
       </node>
-      <node id="5">
+      <node id="6">
         <label>cstddef</label>
       </node>
-      <node id="4">
+      <node id="5">
         <label>cstdint</label>
       </node>
-      <node id="8">
+      <node id="9">
         <label>iterator</label>
+      </node>
+      <node id="4">
+        <label>micro-os-plus/diag/trace.h</label>
       </node>
     </incdepgraph>
     <invincdepgraph>
@@ -76,12 +81,6 @@
       <node id="2">
         <label>lists.h</label>
         <link refid="lists_8h"/>
-        <childnode refid="3" relation="include">
-        </childnode>
-      </node>
-      <node id="3">
-        <label>doubly-list-links.cpp</label>
-        <link refid="doubly-list-links_8cpp"/>
       </node>
     </invincdepgraph>
     <innerclass refid="classmicro__os__plus_1_1utils_1_1intrusive__list" prot="public">micro_os_plus::utils::intrusive_list</innerclass>
@@ -100,11 +99,11 @@
 <codeline lineno="2"><highlight class="comment"><sp/>*<sp/>This<sp/>file<sp/>is<sp/>part<sp/>of<sp/>the<sp/>µOS++<sp/>project<sp/>(https://micro-os-plus.github.com/).</highlight></codeline>
 <codeline lineno="3"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2016-2026<sp/>Liviu<sp/>Ionescu.<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
 <codeline lineno="4"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software</highlight></codeline>
-<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>for<sp/>any<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
+<codeline lineno="5"><highlight class="comment"><sp/>*<sp/>Permission<sp/>to<sp/>use,<sp/>copy,<sp/>modify,<sp/>and/or<sp/>distribute<sp/>this<sp/>software<sp/>for<sp/>any</highlight></codeline>
+<codeline lineno="6"><highlight class="comment"><sp/>*<sp/>purpose<sp/>is<sp/>hereby<sp/>granted,<sp/>under<sp/>the<sp/>terms<sp/>of<sp/>the<sp/>MIT<sp/>license.</highlight></codeline>
 <codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>be<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>If<sp/>a<sp/>copy<sp/>of<sp/>the<sp/>license<sp/>was<sp/>not<sp/>distributed<sp/>with<sp/>this<sp/>file,<sp/>it<sp/>can<sp/>be</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>obtained<sp/>from<sp/>https://opensource.org/licenses/mit.</highlight></codeline>
 <codeline lineno="10"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
@@ -118,7 +117,7 @@
 <codeline lineno="31"><highlight class="normal"></highlight></codeline>
 <codeline lineno="32"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
-<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="34"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
 <codeline lineno="36"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="37"><highlight class="normal"></highlight></codeline>
@@ -221,7 +220,7 @@
 <codeline lineno="305"><highlight class="normal"></highlight></codeline>
 <codeline lineno="309" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" kindref="member">reverse_iterator</ref><sp/>=<sp/>std::reverse_iterator&lt;iterator&gt;;</highlight></codeline>
 <codeline lineno="310"><highlight class="normal"></highlight></codeline>
-<codeline lineno="314" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a54065d590254d59ade7c08ca0def9aff" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a54065d590254d59ade7c08ca0def9aff" kindref="member">is_statically_allocated</ref><sp/>=</highlight></codeline>
+<codeline lineno="314" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a265d899bb1ab09596057665937377481" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a265d899bb1ab09596057665937377481" kindref="member">is_statically_allocated</ref><sp/>=</highlight></codeline>
 <codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">typename</highlight><highlight class="normal"><sp/>links_type::is_statically_allocated;</highlight></codeline>
 <codeline lineno="316"><highlight class="normal"></highlight></codeline>
 <codeline lineno="320" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3c9a90f0bde3f7d498d4419c41adf723" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">using<sp/></highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3c9a90f0bde3f7d498d4419c41adf723" kindref="member">iterator_pointer</ref><sp/>=<sp/>N*;</highlight></codeline>
@@ -237,73 +236,75 @@
 <codeline lineno="352" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ace009ba3457127e9311d9fc8ae80b181" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;&amp;)<sp/>=<sp/>delete;</highlight></codeline>
 <codeline lineno="353"><highlight class="normal"></highlight></codeline>
 <codeline lineno="362"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;</highlight></codeline>
-<codeline lineno="363" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a96c735ada72f8b5f08b07b40bd315bb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>operator=<sp/>(const<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;)<sp/>=<sp/>delete;</highlight></codeline>
-<codeline lineno="364"><highlight class="normal"></highlight></codeline>
-<codeline lineno="372"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;</highlight></codeline>
-<codeline lineno="373" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>operator=<sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;&amp;)<sp/>=<sp/>delete;</highlight></codeline>
-<codeline lineno="374"><highlight class="normal"></highlight></codeline>
-<codeline lineno="378"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>~<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref><sp/>();</highlight></codeline>
-<codeline lineno="379"><highlight class="normal"></highlight></codeline>
-<codeline lineno="380"><highlight class="normal"><sp/><sp/>public:</highlight></codeline>
-<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="390"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a354dd2dfa628779115681a8699098f50" kindref="member">initialise_once</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
-<codeline lineno="391"><highlight class="normal"></highlight></codeline>
-<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>constexpr<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" kindref="member">empty</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>const<sp/>noexcept;</highlight></codeline>
-<codeline lineno="402"><highlight class="normal"></highlight></codeline>
-<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac0693cd4f727c8e7895cdaa88beed572" kindref="member">link_tail</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aa9d68f393f6506fd6d84d7f9e7e520c3" kindref="member">reference</ref><sp/>node)<sp/>noexcept;</highlight></codeline>
-<codeline lineno="412"><highlight class="normal"></highlight></codeline>
-<codeline lineno="420"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="421"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1af56d27306de13d542af3fc75c8b33a98" kindref="member">link_head</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aa9d68f393f6506fd6d84d7f9e7e520c3" kindref="member">reference</ref><sp/>node)<sp/>noexcept;</highlight></codeline>
-<codeline lineno="422"><highlight class="normal"></highlight></codeline>
-<codeline lineno="431"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></highlight></codeline>
-<codeline lineno="432"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" kindref="member">unlink_tail</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
-<codeline lineno="433"><highlight class="normal"></highlight></codeline>
-<codeline lineno="442"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></highlight></codeline>
-<codeline lineno="443"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" kindref="member">unlink_head</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
-<codeline lineno="444"><highlight class="normal"></highlight></codeline>
-<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="363" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a96c735ada72f8b5f08b07b40bd315bb4" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>operator=<sp/>(const<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;)</highlight></codeline>
+<codeline lineno="364"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>delete;</highlight></codeline>
+<codeline lineno="365"><highlight class="normal"></highlight></codeline>
+<codeline lineno="373"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;</highlight></codeline>
+<codeline lineno="374" refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e" refkind="member"><highlight class="normal"><sp/><sp/><sp/><sp/>operator=<sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref>&amp;&amp;)</highlight></codeline>
+<codeline lineno="375"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>delete;</highlight></codeline>
+<codeline lineno="376"><highlight class="normal"></highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/>constexpr<sp/>~<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref><sp/>();</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/>public:</highlight></codeline>
+<codeline lineno="391"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="392"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a354dd2dfa628779115681a8699098f50" kindref="member">initialise_once</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="393"><highlight class="normal"></highlight></codeline>
+<codeline lineno="402"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/>constexpr<sp/></highlight><highlight class="keywordtype">bool</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="403"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" kindref="member">empty</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="404"><highlight class="normal"></highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac0693cd4f727c8e7895cdaa88beed572" kindref="member">link_tail</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aa9d68f393f6506fd6d84d7f9e7e520c3" kindref="member">reference</ref><sp/>node)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="422"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="423"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1af56d27306de13d542af3fc75c8b33a98" kindref="member">link_head</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aa9d68f393f6506fd6d84d7f9e7e520c3" kindref="member">reference</ref><sp/>node)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="424"><highlight class="normal"></highlight></codeline>
+<codeline lineno="433"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></highlight></codeline>
+<codeline lineno="434"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" kindref="member">unlink_tail</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
+<codeline lineno="435"><highlight class="normal"></highlight></codeline>
+<codeline lineno="444"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></highlight></codeline>
+<codeline lineno="445"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" kindref="member">unlink_head</ref><sp/>(</highlight><highlight class="keywordtype">void</highlight><highlight class="normal">)<sp/>noexcept;</highlight></codeline>
 <codeline lineno="446"><highlight class="normal"></highlight></codeline>
-<codeline lineno="452"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref></highlight></codeline>
-<codeline lineno="453"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" kindref="member">begin</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
-<codeline lineno="454"><highlight class="normal"></highlight></codeline>
-<codeline lineno="460"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref></highlight></codeline>
-<codeline lineno="461"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" kindref="member">end</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
-<codeline lineno="462"><highlight class="normal"></highlight></codeline>
-<codeline lineno="468"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" kindref="member">reverse_iterator</ref></highlight></codeline>
-<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" kindref="member">rbegin</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
-<codeline lineno="470"><highlight class="normal"></highlight></codeline>
-<codeline lineno="476"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" kindref="member">reverse_iterator</ref></highlight></codeline>
-<codeline lineno="477"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" kindref="member">rend</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
-<codeline lineno="478"><highlight class="normal"></highlight></codeline>
-<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="480"><highlight class="normal"><sp/><sp/>protected:</highlight></codeline>
-<codeline lineno="487"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></highlight></codeline>
-<codeline lineno="488"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" kindref="member">get_pointer</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3c9a90f0bde3f7d498d4419c41adf723" kindref="member">iterator_pointer</ref><sp/>node)<sp/>const<sp/>noexcept;</highlight></codeline>
-<codeline lineno="489"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
-<codeline lineno="490"><highlight class="normal"></highlight></codeline>
-<codeline lineno="491"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="492"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::utils</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="493"><highlight class="normal"></highlight></codeline>
-<codeline lineno="494"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="495"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="496"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="497"><highlight class="normal"></highlight></codeline>
-<codeline lineno="498"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="447"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="448"><highlight class="normal"></highlight></codeline>
+<codeline lineno="454"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref></highlight></codeline>
+<codeline lineno="455"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" kindref="member">begin</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="456"><highlight class="normal"></highlight></codeline>
+<codeline lineno="462"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref></highlight></codeline>
+<codeline lineno="463"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" kindref="member">end</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="464"><highlight class="normal"></highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" kindref="member">reverse_iterator</ref></highlight></codeline>
+<codeline lineno="471"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" kindref="member">rbegin</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="472"><highlight class="normal"></highlight></codeline>
+<codeline lineno="478"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" kindref="member">reverse_iterator</ref></highlight></codeline>
+<codeline lineno="479"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" kindref="member">rend</ref><sp/>()<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="480"><highlight class="normal"></highlight></codeline>
+<codeline lineno="481"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="482"><highlight class="normal"><sp/><sp/>protected:</highlight></codeline>
+<codeline lineno="489"><highlight class="normal"><sp/><sp/><sp/><sp/>[[nodiscard]]<sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></highlight></codeline>
+<codeline lineno="490"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" kindref="member">get_pointer</ref><sp/>(<ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3c9a90f0bde3f7d498d4419c41adf723" kindref="member">iterator_pointer</ref><sp/>node)<sp/>const<sp/>noexcept;</highlight></codeline>
+<codeline lineno="491"><highlight class="normal"><sp/><sp/>};</highlight></codeline>
+<codeline lineno="492"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="494"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::utils</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="495"><highlight class="normal"></highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="497"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="498"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="499"><highlight class="normal"></highlight></codeline>
-<codeline lineno="500"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="500"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="501"><highlight class="normal"></highlight></codeline>
-<codeline lineno="502"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="503"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Templates<sp/>&amp;<sp/>constexpr<sp/>implementations.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="504"><highlight class="normal"></highlight></codeline>
-<codeline lineno="505"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="intrusive-list-inlines_8h" kindref="compound">inlines/intrusive-list-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="502"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="503"><highlight class="normal"></highlight></codeline>
+<codeline lineno="504"><highlight class="normal"></highlight><highlight class="comment">//<sp/>============================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="505"><highlight class="normal"></highlight><highlight class="comment">//<sp/>Templates<sp/>&amp;<sp/>constexpr<sp/>implementations.</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="506"><highlight class="normal"></highlight></codeline>
-<codeline lineno="507"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="507"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="intrusive-list-inlines_8h" kindref="compound">inlines/intrusive-list-inlines.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="508"><highlight class="normal"></highlight></codeline>
-<codeline lineno="509"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="509"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="510"><highlight class="normal"></highlight></codeline>
-<codeline lineno="511"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="511"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="512"><highlight class="normal"></highlight></codeline>
+<codeline lineno="513"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/intrusive-list.h"/>
   </compounddef>

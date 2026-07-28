@@ -30,8 +30,8 @@ keywords:
 
 <ul>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links/#a60b3f3c0a2696f7284d268288047ad54"><b>is_statically_allocated</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links">micro_os_plus::utils::doubly_list_links</a></li>
-<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list/#a735ee001c008f04eb19cd31e5ea43668"><b>is_statically_allocated</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">micro_os_plus::utils::doubly_list&lt;T, L&gt;</a></li>
-<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a54065d590254d59ade7c08ca0def9aff"><b>is_statically_allocated</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
+<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list/#adbf5db61332c997df0576be993832ed2"><b>is_statically_allocated</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">micro_os_plus::utils::doubly_list&lt;T, L&gt;</a></li>
+<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a265d899bb1ab09596057665937377481"><b>is_statically_allocated</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links/#a2e3e1cea0aa11f4174a3d3e57685583e"><b>is_statically_allocated</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links">micro_os_plus::utils::static_doubly_list_links</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list/#a806d82876c5eadc20150fccb4d380d64"><b>iterator</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">micro_os_plus::utils::doubly_list&lt;T, L&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a6c44dc25422336e98d5c450874496041"><b>iterator</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
@@ -88,6 +88,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

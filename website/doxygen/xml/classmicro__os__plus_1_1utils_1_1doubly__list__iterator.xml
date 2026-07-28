@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.15.0" xml:lang="en-US">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
   <compounddef id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator" kind="class" language="C++" prot="public">
     <compoundname>micro_os_plus::utils::doubly_list_iterator</compoundname>
-    <includes refid="lists_8h" local="no">micro-os-plus/utils/lists.h</includes>
+    <includes refid="lists_8h" local="yes">micro-os-plus/utils/lists.h</includes>
     <templateparamlist>
       <param>
         <type>class T</type>
@@ -19,7 +19,7 @@
     <sectiondef kind="public-type">
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1ada31e9233c36174ea54d5278ec63251b" prot="public" static="no">
         <type>ptrdiff_t</type>
-        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::difference_type =  ptrdiff_t</definition>
+        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::difference_type = ptrdiff_t</definition>
         <argsstring></argsstring>
         <name>difference_type</name>
         <qualifiedname>micro_os_plus::utils::doubly_list_iterator::difference_type</qualifiedname>
@@ -34,7 +34,7 @@
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a13e836efd2f10d029fa0f2697591a30d" prot="public" static="no">
         <type>std::bidirectional_iterator_tag</type>
-        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_category =  std::bidirectional_iterator_tag</definition>
+        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_category = std::bidirectional_iterator_tag</definition>
         <argsstring></argsstring>
         <name>iterator_category</name>
         <qualifiedname>micro_os_plus::utils::doubly_list_iterator::iterator_category</qualifiedname>
@@ -49,7 +49,7 @@
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a402e63a0f1ac7e49890a36795af68833" prot="public" static="no">
         <type>N *</type>
-        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_pointer =  N*</definition>
+        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::iterator_pointer = N*</definition>
         <argsstring></argsstring>
         <name>iterator_pointer</name>
         <qualifiedname>micro_os_plus::utils::doubly_list_iterator::iterator_pointer</qualifiedname>
@@ -64,7 +64,7 @@
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a0eaa1bf17be01fcf623d00edea2a574f" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a28d100bd546f4d20dd029a88eaa5be45" kindref="member">value_type</ref> *</type>
-        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::pointer =  value_type*</definition>
+        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::pointer = value_type*</definition>
         <argsstring></argsstring>
         <name>pointer</name>
         <qualifiedname>micro_os_plus::utils::doubly_list_iterator::pointer</qualifiedname>
@@ -79,7 +79,7 @@
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1acc050f68a1e8a5f2dca40aa46837a171" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a28d100bd546f4d20dd029a88eaa5be45" kindref="member">value_type</ref> &amp;</type>
-        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::reference =  value_type&amp;</definition>
+        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::reference = value_type&amp;</definition>
         <argsstring></argsstring>
         <name>reference</name>
         <qualifiedname>micro_os_plus::utils::doubly_list_iterator::reference</qualifiedname>
@@ -94,7 +94,7 @@
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a28d100bd546f4d20dd029a88eaa5be45" prot="public" static="no">
         <type>U</type>
-        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::value_type =  U</definition>
+        <definition>using micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::value_type = U</definition>
         <argsstring></argsstring>
         <name>value_type</name>
         <qualifiedname>micro_os_plus::utils::doubly_list_iterator::value_type</qualifiedname>

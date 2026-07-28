@@ -47,11 +47,11 @@ keywords:
 <p>The <span class="doxyComputerOutput">include</span> folder contains all public header files for the µOS++ libraries.</p>
 
 
-<p>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <span class="doxyComputerOutput">micro-os-plus</span> folder.</p>
+<p>To provide isolation with other projects, the header files for the µOS++ libraries are located in the <span class="doxyComputerOutput">micro-os-plus</span> sub-folder.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

@@ -101,8 +101,12 @@ Topics related to the µOS++ Intrusive Lists C API
 <p>[Note: For comparison, the original Doxygen html pages, continue to be available via the <a href="https://micro-os-plus.github.io/utils-lists-xpack/doxygen/index.html">doxygen/*</a> URLs.]</p>
 
 
+:::note
+For comparison, the original Doxygen html pages continue to be available via the <a href="pathname:///doxygen/topics.html">.../doxygen/*.html</b></a> URLs.
+:::
+
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.15.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>
