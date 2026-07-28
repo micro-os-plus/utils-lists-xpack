@@ -62,7 +62,7 @@ namespace micro_os_plus::utils
    * access to the underlying node and value. In a typical doubly linked list,
    * all types are `doubly_list_links`.
    *
-   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @headerfile lists.h "micro-os-plus/utils/lists.h"
    */
   template <class T, class N = T, class U = T>
   class doubly_list_iterator
@@ -242,7 +242,7 @@ namespace micro_os_plus::utils
    * `std::reverse_iterator` adaptors (`rbegin()`/`rend()`) are provided
    * as thin wrappers around the bidirectional `iterator`.
    *
-   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @headerfile lists.h "micro-os-plus/utils/lists.h"
    */
   template <doubly_list_links_node T,
             doubly_list_links_node L = doubly_list_links>

@@ -63,7 +63,7 @@ namespace micro_os_plus::utils
    * located in the parent object. It supports bidirectional iteration and
    * access to the underlying object and node.
    *
-   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @headerfile lists.h "micro-os-plus/utils/lists.h"
    */
   template <class T, class N, N T::* MP, class U = T>
   class intrusive_list_iterator
@@ -266,7 +266,7 @@ namespace micro_os_plus::utils
  *
  * For statically allocated lists, set L=static_doubly_list_links.
  *
- * @headerfile lists.h <micro-os-plus/utils/lists.h>
+ * @headerfile lists.h "micro-os-plus/utils/lists.h"
  */
 #if defined(__clang__)
 #pragma clang diagnostic pop

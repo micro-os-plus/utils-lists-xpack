@@ -82,7 +82,7 @@ namespace micro_os_plus::utils
    * Both regular and statically allocated list elements are derived from this
    * class.
    *
-   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @headerfile lists.h "micro-os-plus/utils/lists.h"
    */
   class doubly_list_links_base
   {
@@ -265,7 +265,7 @@ namespace micro_os_plus::utils
    * This class is intended for use as the core linking mechanism within doubly
    * linked lists, supporting efficient insertion and removal operations.
    *
-   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @headerfile lists.h "micro-os-plus/utils/lists.h"
    */
   class doubly_list_links : public doubly_list_links_base
   {
@@ -365,7 +365,7 @@ namespace micro_os_plus::utils
    * behaviour in embedded and system-level applications where static object
    * registration is required.
    *
-   * @headerfile lists.h <micro-os-plus/utils/lists.h>
+   * @headerfile lists.h "micro-os-plus/utils/lists.h"
    */
   class static_doubly_list_links : public doubly_list_links_base
   {

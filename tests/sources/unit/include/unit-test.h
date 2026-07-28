@@ -24,7 +24,7 @@
 
 #include "micro-os-plus/platform.h"
 #include "micro-os-plus/micro-test-plus.h"
-#include <micro-os-plus/utils/lists.h>
+#include "micro-os-plus/utils/lists.h"
 
 #include <cassert>
 #include <cstring>

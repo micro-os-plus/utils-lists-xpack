@@ -12,7 +12,7 @@
 // ----------------------------------------------------------------------------
 
 #include "micro-os-plus/platform.h"
-#include <micro-os-plus/utils/lists.h>
+#include "micro-os-plus/utils/lists.h"
 
 #include <unistd.h>
 #include <stdio.h>
