@@ -110,7 +110,7 @@ namespace micro_os_plus::utils
     trace::printf ("%s() link %p after %p\n", __func__,
                    static_cast<const void*> (node),
                    static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     assert (next_ != nullptr);
     assert (next_->previous_ != nullptr);
 
@@ -138,7 +138,7 @@ namespace micro_os_plus::utils
     trace::printf ("%s() link %p before %p\n", __func__,
                    static_cast<const void*> (node),
                    static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     assert (previous_ != nullptr);
     assert (previous_->next_ != nullptr);
 
@@ -162,7 +162,7 @@ namespace micro_os_plus::utils
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() %p \n", __func__, static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     // Make neighbours point to each other.
     // This works even if the node is already unlinked,

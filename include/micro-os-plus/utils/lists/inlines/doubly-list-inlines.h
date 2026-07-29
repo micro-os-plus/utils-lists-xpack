@@ -311,7 +311,7 @@ namespace micro_os_plus::utils
         trace::printf ("%s() @%p list not empty\n", __func__,
                        static_cast<const void*> (this));
       }
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
   }
 
   /**
@@ -354,7 +354,7 @@ namespace micro_os_plus::utils
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     if constexpr (is_statically_allocated::value)
       {
@@ -395,7 +395,7 @@ namespace micro_os_plus::utils
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     links_.initialise ();
   }
@@ -445,7 +445,7 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p %p\n", __func__, static_cast<const void*> (this),
                    static_cast<const void*> (&node));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     if constexpr (is_statically_allocated::value)
       {
@@ -471,7 +471,7 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p %p\n", __func__, static_cast<const void*> (this),
                    static_cast<const void*> (&node));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     if constexpr (is_statically_allocated::value)
       {
@@ -496,7 +496,7 @@ namespace micro_os_plus::utils
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     if constexpr (is_statically_allocated::value)
       {
@@ -520,7 +520,7 @@ namespace micro_os_plus::utils
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
-#endif
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
     // The assert would probably be redundant, since it was
     // already tested in `begin()`.
