@@ -43,8 +43,8 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
@@ -123,11 +123,14 @@ namespace micro_os_plus::utils
     next_ = this;
   }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic push
 
-#if defined(__GNUC__) && !defined(__clang__)
+#if defined(__clang__)
+#else
 #pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
   /**
    * @details
@@ -182,7 +185,9 @@ namespace micro_os_plus::utils
     return true;
   }
 
+#if defined(__GNUC__)
 #pragma GCC diagnostic pop
+#endif // defined(__GNUC__)
 
   // ==========================================================================
 
@@ -217,32 +222,28 @@ namespace micro_os_plus::utils
     // Must be empty! No members must be changed by this constructor!
   }
 
-#pragma GCC diagnostic push
-
-#if defined(__clang__)
-#pragma GCC diagnostic ignored "-Wdocumentation-unknown-command"
-#endif
-/**
- * @details
- * The destructor for `static_doubly_list_links` is intentionally left empty to
- * avoid modifying the member pointers. The goal is to revert the content to a
- * state similar to the statically initialised state (BSS zero), but recent
- * versions of GCC may optimize out any code that attempts to clear the
- * pointers (dead store elimination).
- *
- * As a result, explicit pointer clearing in the destructor is not reliable. If
- * pointer reset is required, use the `reset()` method explicitly, or clear
- * the memory before invoking the placement `new` constructor again.
- *
- * @warning
- * The code to clear the pointers is now commented out, since recent GCC
- * optimizes it out (dead store elimination). Depending on the version, there
- * might be some attributes to allow this, but they are not safe, for example
- * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
- * help. The workaround is to use `reset()` explicitly, or, even better, to
- * clear the memory before invoking the placement `new` constructor again.
- */
-#pragma GCC diagnostic pop
+  /**
+   * @details
+   * The destructor for `static_doubly_list_links` is intentionally left
+   * empty, to avoid modifying the member pointers. The intent is to revert
+   * the content to a state similar to the statically initialised state
+   * (BSS zero), but recent versions of GCC may optimise out any code that
+   * attempts to clear the pointers (dead store elimination).
+   *
+   * As a result, explicit pointer clearing in the destructor is not
+   * reliable. If pointer reset is required, use the `reset()` method
+   * explicitly, or clear the memory before invoking the placement `new`
+   * constructor again.
+   *
+   * @warning
+   * The code to clear the pointers uses a hack with volatile pointer, 
+   * since recent GCC optimises it out (dead store elimination). 
+   * Depending on the version,
+   * there might be some attributes to allow this, but they are not
+   * reliable; for example,
+   * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
+   * help.
+   */
   constexpr static_doubly_list_links::~static_doubly_list_links ()
   {
     // The goal is to revert the content to a state similar to the
@@ -298,7 +299,7 @@ namespace micro_os_plus::utils
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

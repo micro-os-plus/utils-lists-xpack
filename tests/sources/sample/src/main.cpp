@@ -27,7 +27,7 @@ namespace os = micro_os_plus;
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
+#endif // defined(__clang__)
 
 // A simple example with an object that can be linked into two lists.
 class child
@@ -94,7 +94,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
       printf ("- %s\n", p.name ());
 #pragma GCC diagnostic pop
     }
@@ -110,7 +110,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
       printf ("- %s\n", p.name ());
 #pragma GCC diagnostic pop
     }
@@ -121,7 +121,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif
+#endif // defined(__clang__)
       printf ("- %s\n", p.name ());
 #pragma GCC diagnostic pop
     }

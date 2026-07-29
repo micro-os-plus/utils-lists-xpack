@@ -39,8 +39,8 @@ extern micro_os_plus::micro_test_plus::static_runner sr;
 #pragma GCC diagnostic push
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 // T must be one of static_doubly_list_links or doubly_list_links.
 template <class T = micro_os_plus::utils::doubly_list_links>
@@ -77,7 +77,7 @@ public:
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

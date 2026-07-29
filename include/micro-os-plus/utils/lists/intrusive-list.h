@@ -40,8 +40,8 @@
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
-#endif
-#endif
+#endif // defined(__clang__)
+#endif // defined(__GNUC__)
 
 namespace micro_os_plus::utils
 {
@@ -228,7 +228,7 @@ namespace micro_os_plus::utils
 #if defined(__clang__)
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
-#endif
+#endif // defined(__clang__)
 /**
  * @ingroup micro-os-plus-utils-lists-intrusive-lists
  * @brief A class template for a list of nodes which store the links inside
@@ -270,7 +270,7 @@ namespace micro_os_plus::utils
  */
 #if defined(__clang__)
 #pragma clang diagnostic pop
-#endif
+#endif // defined(__clang__)
 
   template <class T, doubly_list_links_node N, N T::* MP,
             doubly_list_links_node L = doubly_list_links, class U = T>
@@ -495,7 +495,7 @@ namespace micro_os_plus::utils
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
-#endif
+#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 
