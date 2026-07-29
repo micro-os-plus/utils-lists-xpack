@@ -33,6 +33,7 @@
 
 // ----------------------------------------------------------------------------
 
+// Repeated here, the file is included directly by `doubly-list-links.cpp`.
 #if __has_include("micro-os-plus/project-config.h")
 #include "micro-os-plus/project-config.h"
 #endif // __has_include("micro-os-plus/project-config.h")
