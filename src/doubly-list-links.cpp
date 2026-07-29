@@ -29,6 +29,10 @@
 
 // ----------------------------------------------------------------------------
 
+#if defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)
+
+// ----------------------------------------------------------------------------
+
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
 
@@ -175,5 +179,9 @@ namespace micro_os_plus::utils
 #if defined(__GNUC__)
 #pragma GCC diagnostic pop
 #endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------
+
+#endif // defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)
 
 // ----------------------------------------------------------------------------
