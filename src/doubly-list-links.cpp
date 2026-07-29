@@ -33,7 +33,7 @@
 #include "micro-os-plus/utils/lists-defines.h"
 #endif // __has_include("micro-os-plus/utils/lists-defines.h")
 
-#include "micro-os-plus/utils/doubly-list-links.h"
+#include "micro-os-plus/utils/lists/doubly-list-links.h"
 
 // ----------------------------------------------------------------------------
 

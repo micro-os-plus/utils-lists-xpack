@@ -79,9 +79,9 @@
 
 // ----------------------------------------------------------------------------
 
-#include "doubly-list-links.h"
-#include "doubly-list.h"
-#include "intrusive-list.h"
+#include "lists/doubly-list-links.h"
+#include "lists/doubly-list.h"
+#include "lists/intrusive-list.h"
 
 // ----------------------------------------------------------------------------
 
