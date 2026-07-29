@@ -282,7 +282,7 @@ namespace micro_os_plus::utils
   constexpr intrusive_list<T, N, MP, L, U>::intrusive_list () noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s() @%p \n", __func__, this);
+    trace::printf ("%s() @%p \n", __func__, static_cast<const void*> (this));
 #endif // MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -298,7 +298,7 @@ namespace micro_os_plus::utils
   constexpr intrusive_list<T, N, MP, L, U>::~intrusive_list ()
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
-    trace::printf ("%s() @%p \n", __func__, this);
+    trace::printf ("%s() @%p \n", __func__, static_cast<const void*> (this));
 #endif // MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
   }
 
@@ -351,7 +351,8 @@ namespace micro_os_plus::utils
   intrusive_list<T, N, MP, L, U>::link_tail (U& node) noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-    trace::printf ("%s() @%p %p\n", __func__, this, &node);
+    trace::printf ("%s() @%p %p\n", __func__, static_cast<const void*> (this),
+                   static_cast<const void*> (&node));
 #endif
 
     // The assert(links_.initialised()) is checked by the L class.
@@ -383,7 +384,8 @@ namespace micro_os_plus::utils
   intrusive_list<T, N, MP, L, U>::link_head (U& node) noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-    trace::printf ("%s() @%p %p\n", __func__, this, &node);
+    trace::printf ("%s() @%p %p\n", __func__, static_cast<const void*> (this),
+                   static_cast<const void*> (&node));
 #endif
 
     // The assert(links_.initialised()) is checked by the L class.
@@ -419,7 +421,7 @@ namespace micro_os_plus::utils
   intrusive_list<T, N, MP, L, U>::begin () const noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-    trace::printf ("%s() @%p\n", __func__, this);
+    trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
 #endif
 
     // The assert(links_.initialised()) is checked by the L class.
@@ -442,7 +444,7 @@ namespace micro_os_plus::utils
   intrusive_list<T, N, MP, L, U>::end () const noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-    trace::printf ("%s() @%p\n", __func__, this);
+    trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
 #endif
 
     // The assert would probably be redundant, since it was
@@ -528,7 +530,7 @@ namespace micro_os_plus::utils
   intrusive_list<T, N, MP, L, U>::unlink_head (void) noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-    trace::printf ("%s() @%p\n", __func__, this);
+    trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
 #endif
 
     if (empty ())
@@ -557,7 +559,7 @@ namespace micro_os_plus::utils
   intrusive_list<T, N, MP, L, U>::unlink_tail (void) noexcept
   {
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-    trace::printf ("%s() @%p\n", __func__, this);
+    trace::printf ("%s() @%p\n", __func__, static_cast<const void*> (this));
 #endif
 
     if (empty ())
