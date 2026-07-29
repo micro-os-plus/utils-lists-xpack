@@ -9,15 +9,15 @@
 // ----------------------------------------------------------------------------
 
 // Display trace messages in lists when TRACE is enabled.
-#if !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
+// #if !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 // #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED
-#endif //
+// #endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 
 // Display trace messages in lists constructors and descriptors when TRACE is
 // enabled.
-#if !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
+// #if !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
 // #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
-#endif // MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
+// #endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED)
 
 // ----------------------------------------------------------------------------
 
