@@ -163,7 +163,8 @@ namespace micro_os_plus::utils
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
     trace::printf ("%s() %p \n", __func__, static_cast<const void*> (this));
 #endif // defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
-#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
+    assert (previous_ != nullptr);
+    assert (next_ != nullptr);
 
     // Make neighbours point to each other.
     // This works even if the node is already unlinked,
