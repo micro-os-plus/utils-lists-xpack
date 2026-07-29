@@ -13,7 +13,7 @@
 
 #if !defined(MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_)
 #error \
-    "Do not include this file directly; use <micro-os-plus/utils/intrusive-list.h>."
+    "Do not include this file directly; use micro-os-plus/utils/intrusive-list.h."
 #endif // MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
 
 /**
