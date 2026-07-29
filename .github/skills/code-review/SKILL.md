@@ -31,7 +31,7 @@ specifically, with file and line references.
 - Formatting matches `.clang-format` (run `xpm run clang-format` mentally;
   flag anything that looks inconsistent with it).
 - No lines exceed 80 characters, including comments, except possibly the
-  file path in a `DO NOT EDIT` generated-file comment.
+  file path in a `DO NOT EDIT` generated-file comment, link URLs.
 
 ### Folder structure
 
