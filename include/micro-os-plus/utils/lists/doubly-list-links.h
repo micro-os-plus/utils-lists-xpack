@@ -446,7 +446,7 @@ namespace micro_os_plus::utils
      * @par Returns
      *  Nothing.
      */
-    void
+    constexpr void
     reset (void) noexcept;
   };
 

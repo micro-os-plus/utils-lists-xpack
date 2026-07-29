@@ -47,9 +47,9 @@ check_static_doubly_list_links (mt::static_suite& ts)
       // GCC optimizes out the destructor code (dead store
       // elimination); The workaround is to do it manually.
       p->reset ();
-      // std::cout << p->next();
-      // std::cout << p->previous();
+      t.expect (!p->initialised ()) << "uninitialised";
 
+      static_links.initialise ();
       p->~static_doubly_list_links ();
       t.expect (!p->initialised ()) << "uninitialised";
     });

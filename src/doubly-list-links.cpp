@@ -170,32 +170,6 @@ namespace micro_os_plus::utils
   }
 
   // ==========================================================================
-
-  /**
-   * @details
-   * Sets both the `next_` and `previous_` pointers to `nullptr`, marking the
-   * node as uninitialised. This is typically used for statically allocated
-   * nodes to explicitly place them in an uninitialised state.
-   *
-   * @note
-   * The assignments are performed through `volatile`-qualified pointers.
-   * The standard guarantees accesses to `volatile` objects to be observable
-   * side effects, so the compiler is not permitted to prove them dead and
-   * optimise them away, regardless of vendor (GCC, Clang, or otherwise).
-   * This is what makes the equivalent plain assignments in the destructor
-   * unreliable (see the destructor documentation for details), and why this
-   * method uses this technique instead.
-   */
-  void
-  static_doubly_list_links::reset () noexcept
-  {
-    // Force actual writes, even if the compiler could otherwise prove that
-    // the values are never read afterwards (dead store elimination).
-    *const_cast<doubly_list_links_base* volatile*> (&next_) = nullptr;
-    *const_cast<doubly_list_links_base* volatile*> (&previous_) = nullptr;
-  }
-
-  // ==========================================================================
 } // namespace micro_os_plus::utils
 
 #if defined(__GNUC__)

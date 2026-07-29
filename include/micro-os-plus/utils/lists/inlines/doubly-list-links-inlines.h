@@ -224,33 +224,36 @@ namespace micro_os_plus::utils
 
   /**
    * @details
-   * The destructor for `static_doubly_list_links` is intentionally left
-   * empty, to avoid modifying the member pointers. The intent is to revert
+   * The destructor for `static_doubly_list_links` is used to revert
    * the content to a state similar to the statically initialised state
-   * (BSS zero), but recent versions of GCC may optimise out any code that
-   * attempts to clear the pointers (dead store elimination).
-   *
-   * As a result, explicit pointer clearing in the destructor is not
-   * reliable. If pointer reset is required, use the `reset()` method
-   * explicitly, or clear the memory before invoking the placement `new`
-   * constructor again.
-   *
-   * @warning
-   * The code to clear the pointers uses a hack with volatile pointer, 
-   * since recent GCC optimises it out (dead store elimination). 
-   * Depending on the version,
-   * there might be some attributes to allow this, but they are not
-   * reliable; for example,
-   * `__attribute__((optimize("no-lifetime-dse,no-dse,no-inline")))` did not
-   * help.
+   * (BSS zero).
    */
   constexpr static_doubly_list_links::~static_doubly_list_links ()
   {
-    // The goal is to revert the content to a state similar to the
-    // statically initialised state (BSS zero).
-    // Unfortunately GCC does not honour this.
-    // next_ = nullptr;
-    // previous_ = nullptr;
+    reset();
+  }
+
+
+  /**
+   * @details
+   * Sets both the `next_` and `previous_` pointers to `nullptr`, marking the
+   * node as uninitialised. This is typically used for statically allocated
+   * nodes to explicitly place them in an uninitialised state.
+   *
+   * @note
+   * The assignments are performed through `volatile`-qualified pointers.
+   * The standard guarantees accesses to `volatile` objects to be observable
+   * side effects, so the compiler is not permitted to prove them dead and
+   * optimise them away, regardless of vendor (GCC, Clang, or otherwise).
+   * The same approach is used in the destructor.
+   */
+  constexpr void
+  static_doubly_list_links::reset () noexcept
+  {
+    // Force actual writes, even if the compiler could otherwise prove that
+    // the values are never read afterwards (dead store elimination).
+    *const_cast<doubly_list_links_base* volatile*> (&next_) = nullptr;
+    *const_cast<doubly_list_links_base* volatile*> (&previous_) = nullptr;
   }
 
   // ==========================================================================
