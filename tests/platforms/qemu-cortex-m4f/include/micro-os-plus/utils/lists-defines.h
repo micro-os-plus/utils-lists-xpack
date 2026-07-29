@@ -8,6 +8,11 @@
 
 // ----------------------------------------------------------------------------
 
+// µOS++ C++ Intrusive Lists.
+#if !defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)
+#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+#endif // !defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)
+
 // Display trace messages in lists when TRACE is enabled.
 // #if !defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)
 // #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED
