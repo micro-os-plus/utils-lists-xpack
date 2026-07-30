@@ -1,0 +1,6 @@
+@defgroup micro-os-plus-utils-lists-config Configuration
+@brief Configuration macros.
+
+@details
+The µOS++ C++ Intrusive Lists library uses several preprocessor macros 
+to enable it and to configure various options.

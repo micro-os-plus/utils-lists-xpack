@@ -1,5 +1,4 @@
 @defgroup micro-os-plus-utils-lists-doubly-lists Doubly Linked Lists
-@ingroup micro-os-plus-utils-lists-cpp-api
 @brief Doubly linked lists classes.
 
 @details

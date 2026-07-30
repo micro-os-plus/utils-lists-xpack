@@ -1,0 +1,13 @@
+@def MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
+@brief Enable the trace calls for the µOS++ C++ Intrusive Lists constructors.
+
+@details
+The macro is intended to be defined by the user, 
+typically in 
+the library's own
+`micro-os-plus/utils/lists-defines.h` configuration file or the 
+project `micro-os-plus/project-config.h` configuration file.
+
+When `MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED` is defined, 
+class constructors and destructors include a `trace::printf()` call with the 
+address of the current object.

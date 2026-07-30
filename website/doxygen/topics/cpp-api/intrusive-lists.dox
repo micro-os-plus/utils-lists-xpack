@@ -1,5 +1,4 @@
 @defgroup micro-os-plus-utils-lists-intrusive-lists Intrusive Doubly Linked Lists
-@ingroup micro-os-plus-utils-lists-cpp-api
 @brief Intrusive doubly linked lists classes.
 
 @details
@@ -16,7 +15,7 @@ efficient way to manage collections of objects.
 The following example demonstrates how to define and use an intrusive list:
 
 ```cpp
-#include <micro-os-plus/utils/lists.h>
+#include 'micro-os-plus/utils/lists.h"
 
 namespace os = micro_os_plus;
 

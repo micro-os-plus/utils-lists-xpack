@@ -1,0 +1,20 @@
+@dir include/micro-os-plus/utils/lists
+@brief Folder with C++ header files for the µOS++ Intrusive Lists.
+
+@details
+This folder provides the primary public header that defines the core
+functionality of the µOS++ Intrusive Lists library.
+
+It includes the main APIs, classes, templates, and inline implementations
+for intrusive lists and related utilities. These header is intended to be 
+included by user code
+and provide the primary interface for interacting with the utilities 
+provided by this package.
+
+By consolidating public API definitions in this folder, the project
+maintains a clear separation from implementation details (located in the
+`src` folder), thereby promoting modularity, maintainability, and
+straightforward integration.
+
+To access the full capabilities of the µTest++ Testing Framework, include 
+only the top `micro-os-plus/micro-test-plus.h` in user projects.

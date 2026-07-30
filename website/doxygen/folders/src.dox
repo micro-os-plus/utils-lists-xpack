@@ -1,0 +1,8 @@
+@dir src
+@brief Folder with C/C++ source files.
+
+@details
+The `src` folder contains the implementation files for the µOS++ Intrusive 
+Lists library.
+
+- `doubly-list-links.cpp` - a few functions to manage doubly linked lists.

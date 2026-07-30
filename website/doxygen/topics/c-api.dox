@@ -1,6 +1,6 @@
 @defgroup micro-os-plus-utils-lists-c-api C API
-@ingroup micro-os-plus-utils-lists
 @brief Topics related to the µOS++ Intrusive Lists C API.
 
 @details
-The µOS++ **utils-list** project is intended exclusively for C++ and does not provide corresponding definitions or support for the C programming language.
+The µOS++ **utils-list** project is intended exclusively for C++ and does 
+not provide corresponding definitions or support for the C programming language.

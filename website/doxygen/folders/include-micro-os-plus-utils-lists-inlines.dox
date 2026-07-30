@@ -1,0 +1,18 @@
+@dir include/micro-os-plus/utils/lists/inlines
+@brief Folder with C++ header files for the µOS++ Intrusive Lists implementations.
+
+@details
+This folder provides the primary public header that defines the core
+functionality of the µOS++ Intrusive Lists library.
+
+This folder gathers the inline implementation headers used by µOS++ Intrusive Lists.
+These headers define logic for doubly linked lists and intrusive lists.
+
+By separating inline implementations from their corresponding
+declarations, this structure promotes modularity, clarity, and
+maintainability within the codebase. All inline definitions are designed
+to be lightweight and efficient, supporting both embedded and general
+C++ development.
+
+The contents of this folder are intended solely for internal use within
+the library and should not be included directly by user code.

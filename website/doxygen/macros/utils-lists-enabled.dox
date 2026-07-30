@@ -1,0 +1,15 @@
+@def MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+@brief Enable the µOS++ C++ Intrusive Lists library.
+
+@details
+The macro is intended to be defined by the user, 
+typically in 
+the library's own
+`micro-os-plus/utils/lists-defines.h` configuration file or the 
+project `micro-os-plus/project-config.h` configuration file.
+
+When `MICRO_OS_PLUS_UTILS_LISTS_ENABLED` is defined, the C++ 
+classes are compiled to their full implementations, declared
+in @ref lists.h.
+
+When it is not defined, no classes or functions are defined.
