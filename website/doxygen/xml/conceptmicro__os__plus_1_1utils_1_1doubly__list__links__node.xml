@@ -11,7 +11,7 @@
     <initializer>template&lt;class T&gt;
 concept <ref refid="conceptmicro__os__plus_1_1utils_1_1doubly__list__links__node" kindref="compound">micro_os_plus::utils::doubly_list_links_node</ref> =  std::derived_from&lt;T, <ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base" kindref="compound">doubly_list_links_base</ref>&gt;</initializer>
     <conceptparts>
-      <codepart line="458">    <programlisting>
+      <codepart line="467">    <programlisting>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">template</highlight><highlight class="normal">&lt;</highlight><highlight class="keyword">class</highlight><highlight class="normal"><sp/>T&gt;</highlight></codeline>
 <codeline><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">concept<sp/></highlight><highlight class="normal">doubly_list_links_node<sp/>=<sp/>std::derived_from&lt;T,<sp/>doubly_list_links_base&gt;</highlight></codeline>
     </programlisting>
@@ -23,6 +23,6 @@ concept <ref refid="conceptmicro__os__plus_1_1utils_1_1doubly__list__links__node
     <detaileddescription>
 <para>Used to constrain the template parameters of <computeroutput>doubly_list</computeroutput> and <computeroutput>intrusive_list</computeroutput> to types that are properly derived from the list node base class, ensuring a valid doubly linked list structure. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/doubly-list-links.h" line="457" column="3"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list-links.h" line="466" column="3"/>
   </compounddef>
 </doxygen>

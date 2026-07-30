@@ -9,7 +9,7 @@
 <para>Topics related to the µOS++ Intrusive Lists C++ API. </para>
     </briefdescription>
     <detaileddescription>
-<para>The µOS++ <bold>utils-list</bold> library is implemented using C++ templates, providing a modern and type-safe interface. As a result, the primary API is designed for use with C++ projects.  </para>
+<para>The µOS++ Intrusive Lists library is implemented using C++ templates, providing a modern and type-safe interface. As a result, the primary API is designed for use with C++ projects.  </para>
     </detaileddescription>
   </compounddef>
 </doxygen>

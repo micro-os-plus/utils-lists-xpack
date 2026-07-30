@@ -48,24 +48,34 @@ Folder with C/C++ header files for the µOS++ libraries
 <a href="/utils-lists-xpack/docs/api/folders/include/micro-os-plus/utils"><span class="doxyIconFolder">utils</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-Folder with C++ header files for the µOS++ utilities
+Folder with C++ header files for the µOS++ Utilities
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 36px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/folders/include/micro-os-plus/utils/inlines"><span class="doxyIconFolder">inlines</span></a>
+<a href="/utils-lists-xpack/docs/api/folders/include/micro-os-plus/utils/lists"><span class="doxyIconFolder">lists</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
-
+Folder with C++ header files for the µOS++ Intrusive Lists
 </td>
 </tr>
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
 <span style="width: 48px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h"><span class="doxyIconFile">doubly-list-inlines.h</span></a>
+<a href="/utils-lists-xpack/docs/api/folders/include/micro-os-plus/utils/lists/inlines"><span class="doxyIconFolder">inlines</span></a>
+</td>
+<td class="doxyTreeItemRight" align="left" valign="top">
+Folder with C++ header files for the µOS++ Intrusive Lists implementations
+</td>
+</tr>
+
+<tr class="doxyTreeItem">
+<td class="doxyTreeItemLeft" align="left" valign="top">
+<span style="width: 60px; display: inline-block;"></span>
+<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h"><span class="doxyIconFile">doubly-list-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with the inline implementations for the <span class="doxyComputerOutput">doubly_list_iterator</span> and <span class="doxyComputerOutput">doubly_list</span> class templates
@@ -74,8 +84,8 @@ C++ header file with the inline implementations for the <span class="doxyCompute
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-links-inlines-h"><span class="doxyIconFile">doubly-list-links-inlines.h</span></a>
+<span style="width: 60px; display: inline-block;"></span>
+<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-links-inlines-h"><span class="doxyIconFile">doubly-list-links-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with the inline implementations for the <span class="doxyComputerOutput">doubly_list_links_base</span>, <span class="doxyComputerOutput">doubly_list_links</span>, and <span class="doxyComputerOutput">static_doubly_list_links</span> classes
@@ -84,8 +94,8 @@ C++ header file with the inline implementations for the <span class="doxyCompute
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 48px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/intrusive-list-inlines-h"><span class="doxyIconFile">intrusive-list-inlines.h</span></a>
+<span style="width: 60px; display: inline-block;"></span>
+<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h"><span class="doxyIconFile">intrusive-list-inlines.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with the inline implementations for the <span class="doxyComputerOutput">intrusive_list_iterator</span> and <span class="doxyComputerOutput">intrusive_list</span> class templates
@@ -94,8 +104,8 @@ C++ header file with the inline implementations for the <span class="doxyCompute
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-links-h"><span class="doxyIconFile">doubly-list-links.h</span></a>
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-links-h"><span class="doxyIconFile">doubly-list-links.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with the declarations for the µOS++ doubly linked list link node classes
@@ -104,8 +114,8 @@ C++ header file with the declarations for the µOS++ doubly linked list link nod
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h"><span class="doxyIconFile">doubly-list.h</span></a>
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h"><span class="doxyIconFile">doubly-list.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with the declarations for the µOS++ doubly linked list iterator and list class templates
@@ -114,8 +124,8 @@ C++ header file with the declarations for the µOS++ doubly linked list iterator
 
 <tr class="doxyTreeItem">
 <td class="doxyTreeItemLeft" align="left" valign="top">
-<span style="width: 36px; display: inline-block;"></span>
-<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/intrusive-list-h"><span class="doxyIconFile">intrusive-list.h</span></a>
+<span style="width: 48px; display: inline-block;"></span>
+<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h"><span class="doxyIconFile">intrusive-list.h</span></a>
 </td>
 <td class="doxyTreeItemRight" align="left" valign="top">
 C++ header file with the declarations for the µOS++ intrusive list iterator and list class templates
@@ -176,6 +186,6 @@ Project specific Doxygen topics definitions
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

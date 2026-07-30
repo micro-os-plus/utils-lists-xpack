@@ -412,7 +412,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>This iterator provides an interface similar to <span class="doxyComputerOutput">std::list::iterator</span> for traversing a doubly linked list. It supports bidirectional iteration and access to the underlying node and value. In a typical doubly linked list, all types are <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links">doubly_list_links</a></span>.</p>
 
 
-<p>Definition at line 68 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line 68 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -440,7 +440,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Type of pointer difference.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00094">94</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00094">94</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -473,7 +473,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Category of iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00099">99</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00099">99</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -506,7 +506,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Type of reference to the iterator internal pointer.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00089">89</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00089">89</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -539,7 +539,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Type of pointer to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00079">79</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00079">79</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -572,7 +572,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Type of reference to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00084">84</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00084">84</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -605,7 +605,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Type of value <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00074">74</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00074">74</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -660,7 +660,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 :::
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00107">107</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00067">67</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00107">107</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00067">67</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -725,7 +725,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>This constructor creates a <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-iterator">doubly_list_iterator</a></span> that points to the specified node. The internal node pointer is set to the provided node address, allowing the iterator to traverse the list starting from that node. This constructor is typically used to initialise an iterator to a specific position within the list, such as the beginning or end.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00114">114</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00081">81</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00114">114</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00081">81</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -788,7 +788,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>This constructor creates a <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-iterator">doubly_list_iterator</a></span> that points to the specified element. Since <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">doubly_list</a></span> elements are the nodes themselves (T derives from <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-links-base">doubly_list_links_base</a></span>), the internal node pointer is set to the address of the element directly. This is typically used to initialise an iterator to a specific object in the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00123">123</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00096">96</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00123">123</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00096">96</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -850,7 +850,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>The pre-decrement operator (<span class="doxyComputerOutput">operator--</span>) moves the iterator to the previous node in the list. It updates the internal node pointer to point to the node returned by the current node's <span class="doxyComputerOutput">previous</span> pointer. This enables backward traversal of the list, following the linked structure in reverse.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00166">166</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00178">178</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00166">166</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00178">178</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -906,7 +906,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>The post-decrement operator (<span class="doxyComputerOutput"><a href="#acf5491ed00b250a2d9f93cbccb66ac99">operator--(int)</a></span>) moves the iterator to the previous node in the list, but returns a copy of the iterator as it was before the decrement. This enables iteration logic that requires access to the current element before moving backward, following the standard C++ iterator semantics for post-decrement.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00174">174</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00194">194</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00174">174</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00194">194</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -964,7 +964,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>The pointer access operator (<span class="doxyComputerOutput">operator-&gt;</span>) allows the iterator to provide direct access to the value pointed to by the iterator, mimicking the behavior of a raw pointer. Internally, it calls <span class="doxyComputerOutput"><a href="#ac8e422c668e03f4032d06b1c88f7ee81">get_pointer()</a></span>, which computes and returns a pointer to the underlying value or object associated with the current node in the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00134">134</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00112">112</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00134">134</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00112">112</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1023,7 +1023,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>This allows the iterator to be used in a manner similar to standard C++ iterators, enabling direct access to the list element for reading or modification.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00142">142</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00130">130</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00142">142</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00130">130</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1078,7 +1078,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>The pre-increment operator (<span class="doxyComputerOutput">operator++</span>) advances the iterator to the next node in the list. It updates the internal node pointer to point to the node returned by the current node's <span class="doxyComputerOutput">next()</span> method. This allows the iterator to traverse the list in the forward direction, following the linked structure.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00150">150</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00145">145</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00150">150</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00145">145</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1134,7 +1134,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>The post-increment operator (<span class="doxyComputerOutput"><a href="#abf034fddf2e4ed8b5cdb75c287380453">operator++(int)</a></span>) advances the iterator to the next node in the list, but returns a copy of the iterator as it was before the increment. This allows iteration logic that requires access to the current element before moving to the next one, following the standard C++ iterator semantics for post-increment.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00158">158</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00161">161</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00158">158</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00161">161</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1210,7 +1210,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>The equality comparison operator (<span class="doxyComputerOutput">operator==</span>) checks whether two iterators point to the same node in the list by comparing their internal node pointers. This allows for standard iterator comparisons, such as detecting the end of a range or verifying if two iterators refer to the same position.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00188">188</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00211">211</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00188">188</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00211">211</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1279,7 +1279,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>Returns the internal node pointer that the iterator currently references. This is useful for advanced list operations or when direct access to the underlying node structure is required, such as for interoperability with other list utilities or for debugging purposes.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00208">208</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00226">226</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00208">208</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00226">226</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1341,7 +1341,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 <p>Returns the node pointer cast to the value pointer type. In the typical usage where all three template parameters are the same type (<span class="doxyComputerOutput">T</span>, <span class="doxyComputerOutput">N</span>, <span class="doxyComputerOutput">U</span> all equal), this is a trivial static cast.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00198">198</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h/#l00239">239</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00198">198</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00239">239</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1394,7 +1394,7 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 
 <p>Pointer to the node.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h/#l00214">214</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00214">214</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1416,12 +1416,12 @@ class micro_os_plus::utils::doubly_list_iterator&lt;T, N, U&gt; { ... }
 The documentation for this class was generated from the following files:
 
 <ul>
-<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-h">doubly-list.h</a></li>
-<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a></li>
+<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a></li>
+<li><a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a></li>
 </ul>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

@@ -20,13 +20,13 @@ keywords:
 ## - D -
 
 <ul>
-<li><a href="/utils-lists-xpack/docs/api/concepts/micro-os-plus/utils/doubly-list-links-node"><b>doubly_list_links_node</b></a>: as concept in file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/doubly-list-links-h">include/micro-os-plus/utils/doubly-list-links.h</a></li>
+<li><a href="/utils-lists-xpack/docs/api/concepts/micro-os-plus/utils/doubly-list-links-node"><b>doubly_list_links_node</b></a>: as concept in file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-links-h">include/micro-os-plus/utils/lists/doubly-list-links.h</a></li>
 </ul>
 <br/>
 <p>Total: 1 entries.</p>
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

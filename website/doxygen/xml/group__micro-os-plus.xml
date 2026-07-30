@@ -12,7 +12,7 @@
 <title>Description</title><para>The <ulink url="https://micro-os-plus.github.io">µOS++ Framework</ulink> is the principal project within the µOS++ (micro-os-plus) ecosystem, providing a comprehensive suite of modern C++ libraries for embedded systems development.</para>
 <para>µOS++ is organised as a <bold>collection of modular source libraries</bold>, each maintained in its own repository on GitHub and collectively managed under the <ulink url="https://github.com/micro-os-plus">micro-os-plus</ulink> GitHub organization. This modular structure enables developers to select and integrate only the components relevant to their projects, promoting flexibility and maintainability.</para>
 <para>The framework covers a wide range of topics, including <bold>core operating system</bold> functionality, <bold>POSIX I/O</bold>, <bold>testing</bold> frameworks, <bold>utilities</bold>, and supporting <bold>tools</bold>. Detailed documentation is provided for each library, ensuring that users have access to clear guidance, usage examples, and best practices for professional embedded software development.</para>
-<para>By adopting µOS++, developers benefit from a robust, scalable, and well-documented foundation for building high-quality embedded applications. </para>
+<para>By adopting µOS++, developers benefit from a robust, scalable, and well-documented foundation for building high-quality embedded applications.</para>
 </sect2></sect1>
     </detaileddescription>
   </compounddef>

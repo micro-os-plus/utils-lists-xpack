@@ -50,6 +50,11 @@
               "type": "doc",
               "label": "C API",
               "id": "api/groups/micro-os-plus-utils-lists-c-api"
+            },
+            {
+              "type": "doc",
+              "label": "Configuration",
+              "id": "api/groups/micro-os-plus-utils-lists-config"
             }
           ]
         }
@@ -321,51 +326,63 @@
                       "items": [
                         {
                           "type": "category",
-                          "label": "inlines",
+                          "label": "lists",
                           "link": {
                             "type": "doc",
-                            "id": "api/folders/include-micro-os-plus-utils-inlines"
+                            "id": "api/folders/include-micro-os-plus-utils-lists"
                           },
                           "className": "doxyEllipsis",
                           "collapsed": true,
                           "items": [
                             {
-                              "type": "doc",
-                              "label": "doubly-list-inlines.h",
+                              "type": "category",
+                              "label": "inlines",
+                              "link": {
+                                "type": "doc",
+                                "id": "api/folders/include-micro-os-plus-utils-lists-inlines"
+                              },
                               "className": "doxyEllipsis",
-                              "id": "api/files/include-micro-os-plus-utils-inlines-doubly-list-inlines-h"
+                              "collapsed": true,
+                              "items": [
+                                {
+                                  "type": "doc",
+                                  "label": "doubly-list-inlines.h",
+                                  "className": "doxyEllipsis",
+                                  "id": "api/files/include-micro-os-plus-utils-lists-inlines-doubly-list-inlines-h"
+                                },
+                                {
+                                  "type": "doc",
+                                  "label": "doubly-list-links-inlines.h",
+                                  "className": "doxyEllipsis",
+                                  "id": "api/files/include-micro-os-plus-utils-lists-inlines-doubly-list-links-inlines-h"
+                                },
+                                {
+                                  "type": "doc",
+                                  "label": "intrusive-list-inlines.h",
+                                  "className": "doxyEllipsis",
+                                  "id": "api/files/include-micro-os-plus-utils-lists-inlines-intrusive-list-inlines-h"
+                                }
+                              ]
                             },
                             {
                               "type": "doc",
-                              "label": "doubly-list-links-inlines.h",
+                              "label": "doubly-list-links.h",
                               "className": "doxyEllipsis",
-                              "id": "api/files/include-micro-os-plus-utils-inlines-doubly-list-links-inlines-h"
+                              "id": "api/files/include-micro-os-plus-utils-lists-doubly-list-links-h"
                             },
                             {
                               "type": "doc",
-                              "label": "intrusive-list-inlines.h",
+                              "label": "doubly-list.h",
                               "className": "doxyEllipsis",
-                              "id": "api/files/include-micro-os-plus-utils-inlines-intrusive-list-inlines-h"
+                              "id": "api/files/include-micro-os-plus-utils-lists-doubly-list-h"
+                            },
+                            {
+                              "type": "doc",
+                              "label": "intrusive-list.h",
+                              "className": "doxyEllipsis",
+                              "id": "api/files/include-micro-os-plus-utils-lists-intrusive-list-h"
                             }
                           ]
-                        },
-                        {
-                          "type": "doc",
-                          "label": "doubly-list-links.h",
-                          "className": "doxyEllipsis",
-                          "id": "api/files/include-micro-os-plus-utils-doubly-list-links-h"
-                        },
-                        {
-                          "type": "doc",
-                          "label": "doubly-list.h",
-                          "className": "doxyEllipsis",
-                          "id": "api/files/include-micro-os-plus-utils-doubly-list-h"
-                        },
-                        {
-                          "type": "doc",
-                          "label": "intrusive-list.h",
-                          "className": "doxyEllipsis",
-                          "id": "api/files/include-micro-os-plus-utils-intrusive-list-h"
                         },
                         {
                           "type": "doc",
@@ -430,6 +447,11 @@
           "type": "doc",
           "label": "Namespaces",
           "id": "api/indices/files/namespaces"
+        },
+        {
+          "type": "doc",
+          "label": "Macro Definitions",
+          "id": "api/indices/files/defines"
         }
       ]
     }

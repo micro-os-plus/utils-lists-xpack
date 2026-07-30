@@ -199,7 +199,7 @@ keywords:
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#aa9d68f393f6506fd6d84d7f9e7e520c3"><b>reference</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list/#a0314a3e78b3cd027ffed6975a3da4ffa"><b>rend()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">micro_os_plus::utils::doubly_list&lt;T, L&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#add97ee6a82f85e13879740459c67a06f"><b>rend()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
-<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links/#a38c70e107d85e1fb859157235bf1eccc"><b>reset()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links">micro_os_plus::utils::static_doubly_list_links</a></li>
+<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links/#a3b70705245f6c1ecd918316451bc86f9"><b>reset()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links">micro_os_plus::utils::static_doubly_list_links</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list/#a51bfca23b338fb2ba434e49b0a296ee9"><b>reverse_iterator</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">micro_os_plus::utils::doubly_list&lt;T, L&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a65a1af0be82741cf1759c7ef3d237baf"><b>reverse_iterator</b></a>: as typedef in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
 </ul>
@@ -245,6 +245,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

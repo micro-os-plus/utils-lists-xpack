@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_106f0cb542e7e455bd9e6e6e2d8785bf" kind="dir">
+    <compoundname>lists</compoundname>
+    <innerdir refid="dir_21d3ac98984ec1e9bfcade4f7ec105dc">inlines</innerdir>
+    <innerfile refid="doubly-list-links_8h">doubly-list-links.h</innerfile>
+    <innerfile refid="doubly-list_8h">doubly-list.h</innerfile>
+    <innerfile refid="intrusive-list_8h">intrusive-list.h</innerfile>
+    <briefdescription>
+<para>Folder with C++ header files for the µOS++ Intrusive Lists. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This folder provides the primary public header that defines the core functionality of the µOS++ Intrusive Lists library.</para>
+<para>It includes the main APIs, classes, templates, and inline implementations for intrusive lists and related utilities. These header is intended to be included by user code and provide the primary interface for interacting with the utilities provided by this package.</para>
+<para>By consolidating public API definitions in this folder, the project maintains a clear separation from implementation details (located in the <computeroutput>src</computeroutput> folder), thereby promoting modularity, maintainability, and straightforward integration.</para>
+<para>To access the full capabilities of the µTest++ Testing Framework, include only the top <computeroutput>micro-os-plus/micro-test-plus.h</computeroutput> in user projects.  </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/"/>
+  </compounddef>
+</doxygen>

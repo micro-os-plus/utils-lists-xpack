@@ -58,11 +58,11 @@ keywords:
 <p>Topics related to the µOS++ Intrusive Lists C++ API.</p>
 
 
-<p>The µOS++ <b>utils-list</b> library is implemented using C++ templates, providing a modern and type-safe interface. As a result, the primary API is designed for use with C++ projects.</p>
+<p>The µOS++ Intrusive Lists library is implemented using C++ templates, providing a modern and type-safe interface. As a result, the primary API is designed for use with C++ projects.</p>
 
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>

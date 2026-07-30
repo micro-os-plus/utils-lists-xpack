@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="dir_21d3ac98984ec1e9bfcade4f7ec105dc" kind="dir">
+    <compoundname>inlines</compoundname>
+    <innerfile refid="doubly-list-inlines_8h">doubly-list-inlines.h</innerfile>
+    <innerfile refid="doubly-list-links-inlines_8h">doubly-list-links-inlines.h</innerfile>
+    <innerfile refid="intrusive-list-inlines_8h">intrusive-list-inlines.h</innerfile>
+    <briefdescription>
+<para>Folder with C++ header files for the µOS++ Intrusive Lists implementations. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>This folder provides the primary public header that defines the core functionality of the µOS++ Intrusive Lists library.</para>
+<para>This folder gathers the inline implementation headers used by µOS++ Intrusive Lists. These headers define logic for doubly linked lists and intrusive lists.</para>
+<para>By separating inline implementations from their corresponding declarations, this structure promotes modularity, clarity, and maintainability within the codebase. All inline definitions are designed to be lightweight and efficient, supporting both embedded and general C++ development.</para>
+<para>The contents of this folder are intended solely for internal use within the library and should not be included directly by user code.  </para>
+    </detaileddescription>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/"/>
+  </compounddef>
+</doxygen>

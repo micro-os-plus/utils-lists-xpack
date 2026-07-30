@@ -198,7 +198,6 @@
   <option  id='EXCLUDE_SYMLINKS' default='yes' type='bool'><value>NO</value></option>
   <option  id='EXCLUDE_PATTERNS' default='no' type='stringlist'>
     <value><![CDATA[*/README*]]></value>
-    <value><![CDATA[*/README*]]></value>
   </option>
   <option  id='EXCLUDE_SYMBOLS' default='yes' type='stringlist'>
   </option>
@@ -210,7 +209,7 @@
   <option  id='EXAMPLE_RECURSIVE' default='yes' type='bool'><value>NO</value></option>
   <option  id='IMAGE_PATH' default='yes' type='stringlist'>
   </option>
-  <option  id='INPUT_FILTER' default='no' type='string'><value><![CDATA["sed -e 's|^__attribute__\s*[(]\s*[(].*[)]\s*[)]||g' -e 's|\(\s+\)__attribute__\s*[(]\s*[(].*[)]\s*[)]|\1|g'"]]></value></option>
+  <option  id='INPUT_FILTER' default='yes' type='string'><value><![CDATA[]]></value></option>
   <option  id='FILTER_PATTERNS' default='yes' type='stringlist'>
   </option>
   <option  id='FILTER_SOURCE_FILES' default='yes' type='bool'><value>NO</value></option>
@@ -364,9 +363,13 @@
   <option  id='INCLUDE_FILE_PATTERNS' default='yes' type='stringlist'>
   </option>
   <option  id='PREDEFINED' default='no' type='stringlist'>
+    <value><![CDATA[__attribute__(x)=]]></value>
     <value><![CDATA[__DOXYGEN__]]></value>
     <value><![CDATA[__cplusplus]]></value>
     <value><![CDATA[__cpp_exceptions]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_UTILS_LISTS_ENABLED]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED]]></value>
+    <value><![CDATA[MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED]]></value>
   </option>
   <option  id='EXPAND_AS_DEFINED' default='yes' type='stringlist'>
   </option>

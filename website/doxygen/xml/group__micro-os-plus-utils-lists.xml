@@ -5,11 +5,13 @@
     <title>µOS++ Intrusive Lists</title>
     <innergroup refid="group__micro-os-plus-utils-lists-cpp-api">C++ API</innergroup>
     <innergroup refid="group__micro-os-plus-utils-lists-c-api">C API</innergroup>
+    <innergroup refid="group__micro-os-plus-utils-lists-config">Configuration</innergroup>
     <briefdescription>
 <para>Topics related to the µOS++ Intrusive Lists. </para>
     </briefdescription>
     <detaileddescription>
-<para>µOS++ Intrusive Lists is a modern C++ source code library that provides efficient and flexible intrusive list implementations. These lists are designed for use in embedded and performance-critical applications, allowing objects to be linked directly without additional node wrappers. The library offers a range of templates and classes to support various use cases, with a focus on reliability, low overhead, and modern C++ best practices.</para>
+<para>µOS++ Intrusive Lists is a modern C++ source code library that provides efficient and flexible intrusive list implementations.</para>
+<para>These lists are designed for use in embedded and performance-critical applications, allowing objects to be linked directly without additional node wrappers. The library offers a range of templates and classes to support various use cases, with a focus on reliability, low overhead, and modern C++ best practices.</para>
     </detaileddescription>
   </compounddef>
 </doxygen>

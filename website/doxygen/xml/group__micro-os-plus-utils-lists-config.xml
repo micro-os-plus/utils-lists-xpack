@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.17.0" xml:lang="en-US">
+  <compounddef id="group__micro-os-plus-utils-lists-config" kind="group">
+    <compoundname>micro-os-plus-utils-lists-config</compoundname>
+    <title>Configuration</title>
+    <sectiondef kind="define">
+      <memberdef kind="define" id="group__micro-os-plus-utils-lists-config_1gabaf0f9ceb6be1008107882c4641e3d7b" prot="public" static="no">
+        <name>MICRO_OS_PLUS_UTILS_LISTS_ENABLED</name>
+        <briefdescription>
+<para>Enable the µOS++ C++ Intrusive Lists library. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The macro is intended to be defined by the user, typically in the library&apos;s own <computeroutput>micro-os-plus/utils/lists-defines.h</computeroutput> configuration file or the project <computeroutput>micro-os-plus/project-config.h</computeroutput> configuration file.</para>
+<para>When <computeroutput><ref refid="group__micro-os-plus-utils-lists-config_1gabaf0f9ceb6be1008107882c4641e3d7b" kindref="member">MICRO_OS_PLUS_UTILS_LISTS_ENABLED</ref></computeroutput> is defined, the C++ classes are compiled to their full implementations, declared in <ref refid="lists_8h" kindref="compound">lists.h</ref>.</para>
+<para>When it is not defined, no classes or functions are defined.  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="54" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__micro-os-plus-utils-lists-config_1gaceb30b6e2e4f6a91927986ff08257d0f" prot="public" static="no">
+        <name>MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED</name>
+        <briefdescription>
+<para>Enable the trace calls for the µOS++ C++ Intrusive Lists constructors. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The macro is intended to be defined by the user, typically in the library&apos;s own <computeroutput>micro-os-plus/utils/lists-defines.h</computeroutput> configuration file or the project <computeroutput>micro-os-plus/project-config.h</computeroutput> configuration file.</para>
+<para>When <computeroutput><ref refid="group__micro-os-plus-utils-lists-config_1gaceb30b6e2e4f6a91927986ff08257d0f" kindref="member">MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED</ref></computeroutput> is defined, class constructors and destructors include a <computeroutput>trace::printf()</computeroutput> call with the address of the current object.   </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="56" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__micro-os-plus-utils-lists-config_1ga2298ccb291997f5617a7d6d66a6d9f94" prot="public" static="no">
+        <name>MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</name>
+        <briefdescription>
+<para>Enable the trace calls for the µOS++ C++ Intrusive Lists methods. </para>
+        </briefdescription>
+        <detaileddescription>
+<para>The macro is intended to be defined by the user, typically in the library&apos;s own <computeroutput>micro-os-plus/utils/lists-defines.h</computeroutput> configuration file or the project <computeroutput>micro-os-plus/project-config.h</computeroutput> configuration file.</para>
+<para>When <computeroutput><ref refid="group__micro-os-plus-utils-lists-config_1ga2298ccb291997f5617a7d6d66a6d9f94" kindref="member">MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</ref></computeroutput> is defined, most class methods include a <computeroutput>trace::printf()</computeroutput> with various data.  </para>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="55" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="55" bodyend="-1"/>
+      </memberdef>
+    </sectiondef>
+    <briefdescription>
+<para>Configuration macros. </para>
+    </briefdescription>
+    <detaileddescription>
+<para>The µOS++ C++ Intrusive Lists library uses several preprocessor macros to enable it and to configure various options.  </para>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

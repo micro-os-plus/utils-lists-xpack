@@ -8,6 +8,10 @@
     </briefdescription>
     <detaileddescription>
 <para>The <computeroutput>src</computeroutput> folder contains the implementation files for the µOS++ Intrusive Lists library.</para>
+<para><itemizedlist>
+<listitem><para><computeroutput><ref refid="doubly-list-links_8cpp" kindref="compound">doubly-list-links.cpp</ref></computeroutput> - a few functions to manage doubly linked lists.   </para>
+</listitem></itemizedlist>
+</para>
     </detaileddescription>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/src/"/>
   </compounddef>

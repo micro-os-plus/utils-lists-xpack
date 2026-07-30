@@ -6,12 +6,11 @@
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>This library implements several <bold>doubly linked lists</bold>, utilised by various <bold>µOS++</bold> components to manage internal objects. Its design is sufficiently <bold>generic</bold> to be valuable in other applications, warranting its packaging as a standalone library.</para>
+<para>This library implements several <bold>doubly linked lists</bold>, utilised by various µOS++** components to manage internal objects. Its design is sufficiently generic** to be valuable in other applications, warranting its packaging as a standalone library.</para>
 <para>A key differentiator from <computeroutput>std::list</computeroutput> is that this implementation <bold>does not require dynamic memory allocation</bold> for list links, thereby eliminating the need for an allocator. Instead, it employs <bold>intrusive lists</bold>, where links are stored directly within the list elements.</para>
 <para>Another notable feature is the support for <bold>statically initialised lists</bold>, which can be created in the <bold>global scope</bold> without modifying their members in constructors. These lists are fully <bold>initialised</bold> by setting their entire content to zero during startup (via <bold>BSS initialisation</bold>).</para>
 <para>This approach enables <bold>static objects</bold> to <bold>auto-register</bold> with static registrar instances. As the execution order of static constructors is undefined, the only reliable way to ensure the registrar is ready before clients attempt to register is to initialise it during <bold>startup</bold> (via BSS initialisation) prior to the execution of static constructors.</para>
-<para>[Note: For comparison, the original Doxygen html pages, continue to be available via the <ulink url="https://micro-os-plus.github.io/utils-lists-xpack/doxygen/index.html">doxygen/*</ulink> URLs.] </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h"/>
+    <location file="topics.h"/>
   </compounddef>
 </doxygen>

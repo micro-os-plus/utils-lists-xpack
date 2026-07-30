@@ -161,7 +161,7 @@ keywords:
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#a3ddaec2647ff81b7af23a51129d46b25"><b>rbegin()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list/#a0314a3e78b3cd027ffed6975a3da4ffa"><b>rend()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">micro_os_plus::utils::doubly_list&lt;T, L&gt;</a></li>
 <li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list/#add97ee6a82f85e13879740459c67a06f"><b>rend()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">micro_os_plus::utils::intrusive_list&lt;T, N, MP, L, U&gt;</a></li>
-<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links/#a38c70e107d85e1fb859157235bf1eccc"><b>reset()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links">micro_os_plus::utils::static_doubly_list_links</a></li>
+<li><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links/#a3b70705245f6c1ecd918316451bc86f9"><b>reset()</b></a>: as function in class <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/static-doubly-list-links">micro_os_plus::utils::static_doubly_list_links</a></li>
 </ul>
 <p>5 entries</p>
 
@@ -194,6 +194,6 @@ keywords:
 
 <hr/>
 
-<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.1.0 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
+<p class="doxyGeneratedBy">Generated via <a href="https://xpack.github.io/doxygen2docusaurus">doxygen2docusaurus</a> 2.2.2 by <a href="https://www.doxygen.nl">Doxygen</a> 1.17.0.</p>
 
 </div>
