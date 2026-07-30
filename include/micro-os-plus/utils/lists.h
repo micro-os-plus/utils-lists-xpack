@@ -1,5 +1,5 @@
 /*
- * This file is part of the µOS++ project (https://micro-os-plus.github.com/).
+ * This file is part of the µOS++ project (https://micro-os-plus.github.io/).
  * Copyright (c) 2016-2026 Liviu Ionescu. All rights reserved.
  *
  * Permission to use, copy, modify, and/or distribute this software for any
@@ -76,6 +76,14 @@
 #if __has_include("micro-os-plus/utils/lists-defines.h")
 #include "micro-os-plus/utils/lists-defines.h"
 #endif // __has_include("micro-os-plus/utils/lists-defines.h")
+
+// ----------------------------------------------------------------------------
+
+#if defined(__DOXYGEN__)
+#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED
+#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED 
+#endif // defined(__DOXYGEN__)
 
 // ----------------------------------------------------------------------------
 
