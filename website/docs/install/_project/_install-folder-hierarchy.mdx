@@ -6,27 +6,29 @@
 After following the links, the result is a structure like this:
 
 ```console
-% tree -l
-.
+% tree -l xpacks/@micro-os-plus/utils-lists 
+xpacks/@micro-os-plus/utils-lists
+├── CHANGELOG.md
+├── CMakeLists.txt
+├── include
+│   └── micro-os-plus
+│       └── utils
+│           ├── lists
+│           │   ├── doubly-list-links.h
+│           │   ├── doubly-list.h
+│           │   ├── inlines
+│           │   │   ├── doubly-list-inlines.h
+│           │   │   ├── doubly-list-links-inlines.h
+│           │   │   └── intrusive-list-inlines.h
+│           │   └── intrusive-list.h
+│           └── lists.h
 ├── LICENSE
+├── meson.build
 ├── package.json
-└── xpacks
-    └── @micro-os-plus
-        └── utils-lists -> /Users/ilg/Library/xPacks/@micro-os-plus/utils-lists/4.0.0-pre
-            ├── CHANGELOG.md
-            ├── CMakeLists.txt
-            ├── LICENSE
-            ├── README.md
-            ├── include
-            │   └── micro-os-plus
-            │       └── utils
-            │           ├── inlines.h
-            │           └── lists.h
-            ├── meson.build
-            ├── package.json
-            ├── src
-            │   └── lists.cpp
-            └── xpack.json
+├── README.md
+├── src
+│   └── doubly-list-links.cpp
+└── xcdl-package.jsonc
 
-8 directories, 12 files
+7 directories, 15 files
 ```
