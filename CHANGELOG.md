@@ -6,10 +6,280 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
+## 2026-07-31
+
+* e4e32a8 cosmetics
+
+## 2026-07-30
+
+* 2817bb6 re-generate website
+* 51113f2 tests: update https://micro-os-plus.github.io
+* b657813 website update .dox
+* 8cb4a62 fix reference to https://micro-os-plus.github.io
+
+## 2026-07-29
+
+* 357063d update tests for MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+* 4dd63dd conditional MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+* 8c3489d make ~static_doubly_list_links() reliable
+* 1e12653 cosmetise #endif // ...
+* bd3c81f headers cleanups
+* d3bfce3 re-generate top commons
+* ea2d7b7 fix __attribute__ ((noipa))
+* 8fd4a47 doubly-list-links.cpp add asserts
+* 6508d3f fix #error messages
+* 8c871b7 fix #endif // defined
+* 17f255b re-generate tests commons for -fsanitize
+* 4c0db7b add code-review skill
+* 5ab12f4 cosmetise lists-defines.h
+* 0efa5c4 doubly-list-links.h: include config & defines
+* 01b8bc5 cosmetise #endif // ...
+* 1081168 fix printf %p type void*
+* fa4696f reorganise includes with lists subfolder
+
+## 2026-07-28
+
+* 7ab833d re-generate doxygen
+* 7a89d81 re-generate website commons for fromFilePath
+* b4a8099 cosmetise #include "..."
+* 5397dd6 cosmetise #if defined(__cplusplus)
+* 8125037 re-generate tests commons for {{fromFilePath}}
+* 19becb5 re-generate top commons for {{fromFilePath}}
+
+## 2026-07-27
+
+* f2ce126 include & src header updates
+* 8c4dfbf re-generate tests commons
+* e353d45 xcdl-package.jsonc updates
+* 326df67 update xcdl macros references
+* a840f18 re-generate tests commons
+* a6cd8ca re-generate top commons
+* 1cc1fc4 update copyright notices
+* b0ff767 website update
+
+## 2026-07-02
+
+* 90aef8a re-generate tests commons
+* adaa61a tests: add clear-build-folder
+* f318731 tests/package.json update
+
+## 2026-07-01
+
+* 59d22ec re-generate top commons
+
+## 2026-06-20
+
+* e75a994 cosmetics
+* 741c694 lists.h fix c++20 test
+* 248269e platforms cosmetics
+
+## 2026-06-17
+
+* 486157a re-generate cmake & meson
+
+## 2026-06-16
+
+* dc6fe37 rename "id"
+* 6bc4275 rename library artefacts
+* ff4240c re-export xcdl without cdlPackage
+
+## 2026-06-15
+
+* 40b40c2 re-generate top commons
+* f1e3cd9 re-work tests consitency
+* ba31da9 re-generate top commons
+* 2fb6b77 templates/CMakeLists: fix objects & static
+* d0550fd build-helper display TARGET_OBJECTS
+* 5ba4c36 platforms revert to objects
+* 071c722 re-export CMakeLists.txt
+* df6b13b scripts cosmetics
+* db35a28 tests updates for static lib
+* 09ddf46 CMakeLists-liquid update static & objects
+
+## 2026-06-14
+
+* 9eed1f1 re-generate tests commons
+* 8c1d5cf package.json update dependencies urls
+* fa6004d tests cmake cosmetics
+* f24e28c tests sources re-generate cmake & meson
+* 0cad02e tests scripts update xcdl-export
+* c0e3973 re-generate top commons
+* cb71076 re-export xcdl files
+* fc5a46f scripts xcdl-export.sh updates
+
+## 2026-06-12
+
+* 23aab52 tests xcdl enable portable dependencies
+* 0a29876 platforms meson reorder projects dependencies
+* ddfb7ca rename tests/sources/sample & unit
+* e615132 package.json cleanup
+* c16c19e tests xcdl-export
+* 064999f sample-test main cleanup project-config
+* 5891690 xcdl-export.sh updates
+* 3b76265 re-work headers
+* 5d2f45c re-generate top scripts
+
+## 2026-06-11
+
+* fe2ed29 prefer project-config.h
+* 7e9550d xcdl-package.json update
+* 71cd365 settings.json add jsonc
+* 6eeaaf7 website install update
+* 05d9561 doubly-list-links.h enforce c++20
+* dcafa85 xcdl-package.jsonc: add artefacts
+
+## 2026-06-10
+
+* 3789513 rename xcdl-package.jsonc
+* 8bbe9a1 package.json update scripts
+* 12790a5 re-generate cmake & meson
+* 0ed6193 xcdl-export.sh update for jsonc
+* 3665fc9 re-format jsonc
+* 99e93d5 add json-format
+* b0cd4b0 tests: rename project-config.h, #pragma message in config.h
+* 243b8cc tests: add lists-defines.h
+* 7ed2c46 cleanups
+
+## 2026-06-09
+
+* 3bf8750 add more xcdl files
+* b5dae6b native cmake cosmetics
+* ea7d043 templates updates
+* 3a9319d cmake reformat
+* c2e1bda platforms cmake cosmetics
+* 06af5fa websit update preprocessor macros
+* da2ba7e tests __has_include(<micro-os-plus/config.h>)
+* e4b05ee native cmake cosmetics
+
+## 2026-06-08
+
+* 8e5114e use */lists-defines.h
+* 2b88fc9 config.h from header
+* 932520a _TRACE*_ENABLED
+
+## 2026-06-06
+
+* b00d283 use __has_include(<micro-os-plus/config.h>)
+
+## 2026-05-28
+
+* 4241453 re-generate tests commons
+
+## 2026-05-27
+
+* be49835 package.json cleanup _topConfig
+* f6186b3 re-generate cmake & meson with xcdl-export
+* 8cd1643 re-generate top commons to get xcdl-export
+* b09c4a0 move xcdl-library.json to the top
+
+## 2026-05-17
+
+* 0439c30 re-format include with new clang-format
+* 0989b8c re-generate top commons
+* b15dd13 update config/*.json
+
+## 2026-05-16
+
+* a16db9a rename config/*.json
+
+## 2026-05-15
+
+* d6d9f0a website: add config/website-templates-config.json
+* c89cba1 tests/package*.json update
+* 335b6de tests disable coverge
+* cd52dc6 re-generate website commons
+* 011b8a6 add config/top-templates-config.json
+* 7bad52e re-generate tests commons
+* d522ecf re-generate website
+
+## 2026-05-12
+
+* 1b2be3b tests with 4.1.1
+* 06ee17e doxygen2docusaurus.json update packageNote
+* 69c321b CMakeLists.txt updates after µTest++
+
+## 2026-05-07
+
+* 8e57d15 website update
+* 0e3a33b doxygen update
+* b61cfd2 rework cmake for objects
+
+## 2026-05-06
+
+* 4454b43 copilot-instructions.md: remove captain
+* 8e7ee89 improve coverage
+* 954c02a re-generate commons
+* b22476c add objects library
+
+## 2026-05-05
+
+* 8fe6f95 package*.json prepare 5.0.0
+* d148ac4 moew doxygen fixes
+* a944c33 add links_pointer()
+* a994eca more constexpr
+* 1ffd5f3 #if defined(MICRO_OS_PLUS_TRACE)
+* cedb802 more constexpr
+* 0bdfe20 #15: Rename doubly_*
+* 3aacd0e #14: use concepts
+* 1fd3b45 #14: Use more C++20 features
+* 2322a0f #13: Add reverse iterators
+* 33fe508 fix more doxygen comments
+* ddcc49e add more constexpr
+* 46020d9 add missing nodiscard
+* c0d6ab3 fix comment
+* 97350ae make linked() constexpr
+* 03c5505 #12: Add missing constructor to double-list iterator
+* 8574efe cosmetics
+* bf194ca cosmetic links_type_
+* 66a57ba inline operator--
+* aefc013 remove redundant return
+* 51e9ecd #11: fix unlink from empty lists
+* 3f0fa2f add tests for reverse iteration
+* afe5575 fix comments and doxygen documentation
+* 50ed42d fix unnecessary constexpr
+* 0cea836 add explanation to offset computation using nullptr
+* 475f3e6 remove dead code
+* c262930 fix link_previous asserts
+* b90d3a1 #10: change to bidirectional_iterator_tag
+* fff5cca #10: rename reset()
+* a29303f #10: reverse polarity for initialised()
+* 360e513 #10: rename initialise() initialise_once()
+* 8ce2803 re-generate top commons
+
+## 2026-05-04
+
+* 323ab1b add nodiscard
+* 98f368a add noexcept
+* 1c59018 add copilot-instrutions.h
+* 24190de Co-authored-by: Copilot <copilot@github.com>
+
+## 2026-04-30
+
+* 34cab1b re-generate tests commons
+* 9723e61 move to inlines/list-inlines.h
+* fc9b375 platforms cleanups
+* 3c313d0 re-generate tests commons
+* e48adf8 update unit-test to use micro-test-plus 4.0.0
+* 7cb60de re-generate top commons
+* 9e7efb6 rename MICRO_OS_PLUS_TRACE_UTILS_LISTS_CONSTRUCTOR
+
+## 2026-03-24
+
+* ef36a41 package.json bump deps
+* 86c7bdb launch.json update
+
+## 2026-03-23
+
+* e073204 tests/package.json bump deps
+* 2f4b310 add empty .npmignore
+* 9486058 tests move to sources
+
 ## 2026-03-17
 
-* v4.0.3 published on npmjs.com
-* v4.0.3 prepared
+* 9514275 website: blog post release 4.0.3 published
+* ac82519 4.0.3
+* 17507d0 CHANGELOG: publish npm v4.0.3
+* 87bba0b prepare v4.0.3
 * 0eca65a re-generate tests commons
 * 113e39e re-generate tests commons
 
