@@ -34,8 +34,6 @@
 // ----------------------------------------------------------------------------
 
 #if defined(__GNUC__)
-#pragma GCC diagnostic push
-
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -175,10 +173,6 @@ namespace micro_os_plus::utils
 
   // ==========================================================================
 } // namespace micro_os_plus::utils
-
-#if defined(__GNUC__)
-#pragma GCC diagnostic pop
-#endif // defined(__GNUC__)
 
 // ----------------------------------------------------------------------------
 

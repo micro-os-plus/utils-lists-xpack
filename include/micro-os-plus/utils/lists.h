@@ -51,7 +51,7 @@
 // ----------------------------------------------------------------------------
 
 #if defined(__DOXYGEN__)
-#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+// Present here solely for Doxygen, to document the macros.#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED
 #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED
 #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED 
 #endif // defined(__DOXYGEN__)
@@ -60,9 +60,13 @@
 
 #if defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)
 
+// ----------------------------------------------------------------------------
+
 #include "lists/doubly-list-links.h"
 #include "lists/doubly-list.h"
 #include "lists/intrusive-list.h"
+
+// ----------------------------------------------------------------------------
 
 #endif // defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)
 
