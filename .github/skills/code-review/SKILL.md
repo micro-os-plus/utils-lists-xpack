@@ -77,6 +77,8 @@ specifically, with file and line references.
 - Every `#endif` is followed by a C++ comment (`// ...`) repeating the
   exact expression from its paired `#if`/`#if defined`/`#if !defined`,
   so nested and distant guards remain traceable.
+- The above applies to pragmas where `#if defined(__GNUC__)`, 
+  `#if defined(__clang__)` or similar are used.
 
 ### Modern C++
 
@@ -146,5 +148,6 @@ specifically, with file and line references.
    with:
    - a summary of findings, and
    - specific, actionable recommendations, grouped by checklist section.
-6. Do not fix the issues automatically unless the user asks for that
+6. Index open issues numerically, to be refered when asking to close them.
+7. Do not fix the issues automatically unless the user asks for that
    separately.
