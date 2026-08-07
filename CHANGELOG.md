@@ -6,8 +6,24 @@ Please check
 [GitHub](https://github.com/micro-os-plus/utils-lists-xpack/issues)
 and close existing issues and pull requests.
 
+## 2026-08-07
+
+* v5.0.0 published on npmjs.com
+* v5.0.0 prepared
+* c4350b0 re-generate website doxygen
+* 03b7f9e tests/package.json update
+* 17b7443 update header guards & cosmetics
+
+## 2026-08-04
+
+* 5aaf993 re-generate tests commons
+* ac0e025 re-generate website commons
+* 36bebaa re-generate top commons
+
 ## 2026-07-31
 
+2026-07-31 * e5dbcce website update
+2026-07-31 * fc47c8a CHANGELOG update
 * e4e32a8 cosmetics
 
 ## 2026-07-30
