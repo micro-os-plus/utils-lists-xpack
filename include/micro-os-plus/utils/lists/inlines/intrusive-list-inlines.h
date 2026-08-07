@@ -11,10 +11,10 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_)
+#if !defined(MICRO_OS_PLUS_UTILS_LISTS_INTRUSIVE_LIST_H_)
 #error \
     "Do not include this file directly; use micro-os-plus/utils/intrusive-list.h."
-#endif // MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_INTRUSIVE_LIST_H_
 
 /**
  * @file
@@ -27,8 +27,8 @@
  * structure and maintainability.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_INLINES_INTRUSIVE_LIST_INLINES_H_
-#define MICRO_OS_PLUS_UTILS_INLINES_INTRUSIVE_LIST_INLINES_H_
+#ifndef MICRO_OS_PLUS_UTILS_LISTS_INLINES_INTRUSIVE_LIST_INLINES_H_
+#define MICRO_OS_PLUS_UTILS_LISTS_INLINES_INTRUSIVE_LIST_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -404,6 +404,7 @@ namespace micro_os_plus::utils
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #endif // defined(__GNUC__)
 
@@ -588,6 +589,6 @@ namespace micro_os_plus::utils
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_INLINES_INTRUSIVE_LIST_INLINES_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_INLINES_INTRUSIVE_LIST_INLINES_H_
 
 // ----------------------------------------------------------------------------

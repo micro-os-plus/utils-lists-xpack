@@ -22,8 +22,8 @@
  * The class implementations are in @ref intrusive-list-inlines.h.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
-#define MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
+#ifndef MICRO_OS_PLUS_UTILS_LISTS_INTRUSIVE_LIST_H_
+#define MICRO_OS_PLUS_UTILS_LISTS_INTRUSIVE_LIST_H_
 
 // ----------------------------------------------------------------------------
 
@@ -37,6 +37,7 @@
 
 #if defined(__GNUC__)
 #pragma GCC diagnostic push
+
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wc++98-compat"
@@ -508,6 +509,6 @@ namespace micro_os_plus::utils
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_INTRUSIVE_LIST_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_INTRUSIVE_LIST_H_
 
 // ----------------------------------------------------------------------------

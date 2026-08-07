@@ -11,10 +11,10 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_)
+#if !defined(MICRO_OS_PLUS_UTILS_LISTS_DOUBLY_LIST_LINKS_H_)
 #error \
     "Do not include this file directly; use micro-os-plus/utils/doubly-list-links.h."
-#endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_DOUBLY_LIST_LINKS_H_
 
 /**
  * @file
@@ -28,8 +28,8 @@
  * structure and maintainability.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
-#define MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
+#ifndef MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
+#define MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -230,9 +230,8 @@ namespace micro_os_plus::utils
    */
   constexpr static_doubly_list_links::~static_doubly_list_links ()
   {
-    reset();
+    reset ();
   }
-
 
   /**
    * @details
@@ -310,6 +309,6 @@ namespace micro_os_plus::utils
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_
 
 // ----------------------------------------------------------------------------

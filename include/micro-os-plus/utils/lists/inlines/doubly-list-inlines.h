@@ -11,10 +11,10 @@
 
 // ----------------------------------------------------------------------------
 
-#if !defined(MICRO_OS_PLUS_UTILS_DOUBLY_LIST_H_)
+#if !defined(MICRO_OS_PLUS_UTILS_LISTS_DOUBLY_LIST_H_)
 #error \
     "Do not include this file directly; use micro-os-plus/utils/doubly-list.h."
-#endif // MICRO_OS_PLUS_UTILS_DOUBLY_LIST_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_DOUBLY_LIST_H_
 
 /**
  * @file
@@ -27,8 +27,8 @@
  * structure and maintainability.
  */
 
-#ifndef MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_INLINES_H_
-#define MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_INLINES_H_
+#ifndef MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_INLINES_H_
+#define MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_INLINES_H_
 
 // ----------------------------------------------------------------------------
 
@@ -582,6 +582,6 @@ namespace micro_os_plus::utils
 
 // ----------------------------------------------------------------------------
 
-#endif // MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_INLINES_H_
+#endif // MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_INLINES_H_
 
 // ----------------------------------------------------------------------------

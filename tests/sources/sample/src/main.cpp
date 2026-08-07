@@ -21,13 +21,16 @@ namespace os = micro_os_plus;
 
 // ----------------------------------------------------------------------------
 
-#pragma GCC diagnostic push
-
+#if defined(__GNUC__)
 #pragma GCC diagnostic ignored "-Waggregate-return"
 #if defined(__clang__)
 #pragma clang diagnostic ignored "-Wunknown-warning-option"
 #pragma clang diagnostic ignored "-Wc++98-compat"
+#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
 #endif // defined(__clang__)
+#endif // defined(__GNUC__)
+
+// ----------------------------------------------------------------------------
 
 // A simple example with an object that can be linked into two lists.
 class child
@@ -91,12 +94,7 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // List all kids.
   for (auto&& p : all_kids_registry)
     {
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
       printf ("- %s\n", p.name ());
-#pragma GCC diagnostic pop
     }
 
   printf ("\nBob is gone...\n");
@@ -107,29 +105,17 @@ main ([[maybe_unused]] int argc, [[maybe_unused]] char* argv[])
   // List the remaining ones in the list.
   for (auto&& p : all_kids_registry)
     {
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
       printf ("- %s\n", p.name ());
-#pragma GCC diagnostic pop
     }
 
   printf ("\nSchool kids:\n");
   for (auto&& p : school_kids_registry)
     {
-#pragma GCC diagnostic push
-#if defined(__clang__)
-#pragma clang diagnostic ignored "-Wunsafe-buffer-usage-in-libc-call"
-#endif // defined(__clang__)
       printf ("- %s\n", p.name ());
-#pragma GCC diagnostic pop
     }
 
   printf ("\nDone.\n");
   return 0;
 }
-
-#pragma GCC diagnostic pop
 
 // ----------------------------------------------------------------------------

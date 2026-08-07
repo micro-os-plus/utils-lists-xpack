@@ -51,9 +51,10 @@
 // ----------------------------------------------------------------------------
 
 #if defined(__DOXYGEN__)
-// Present here solely for Doxygen, to document the macros.#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED
+// Present here solely for Doxygen, to document the macros.
+#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED
 #define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED
-#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED 
+#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED
 #endif // defined(__DOXYGEN__)
 
 // ----------------------------------------------------------------------------
