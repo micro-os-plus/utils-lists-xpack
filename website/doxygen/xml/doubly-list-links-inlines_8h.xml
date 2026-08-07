@@ -65,14 +65,14 @@
 <codeline lineno="11"><highlight class="normal"></highlight></codeline>
 <codeline lineno="12"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="13"><highlight class="normal"></highlight></codeline>
-<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>!defined(MICRO_OS_PLUS_UTILS_LISTS_DOUBLY_LIST_LINKS_H_)</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="15"><highlight class="normal"></highlight><highlight class="preprocessor">#error<sp/>\</highlight></codeline>
 <codeline lineno="16"><highlight class="preprocessor"><sp/><sp/><sp/><sp/>&quot;Do<sp/>not<sp/>include<sp/>this<sp/>file<sp/>directly;<sp/>use<sp/>micro-os-plus/utils/doubly-list-links.h.&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_UTILS_DOUBLY_LIST_LINKS_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_UTILS_LISTS_DOUBLY_LIST_LINKS_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="18"><highlight class="normal"></highlight></codeline>
 <codeline lineno="30"><highlight class="normal"></highlight></codeline>
-<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="33"><highlight class="normal"></highlight></codeline>
 <codeline lineno="34"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="35"><highlight class="normal"></highlight></codeline>
@@ -158,48 +158,47 @@
 <codeline lineno="224"><highlight class="normal"></highlight></codeline>
 <codeline lineno="231" refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a52afe628d2b9380b345eb4999e2633b3" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a52afe628d2b9380b345eb4999e2633b3" kindref="member">static_doubly_list_links::~static_doubly_list_links</ref><sp/>()</highlight></codeline>
 <codeline lineno="232"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a3b70705245f6c1ecd918316451bc86f9" kindref="member">reset</ref>();</highlight></codeline>
+<codeline lineno="233"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a3b70705245f6c1ecd918316451bc86f9" kindref="member">reset</ref><sp/>();</highlight></codeline>
 <codeline lineno="234"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
 <codeline lineno="235"><highlight class="normal"></highlight></codeline>
-<codeline lineno="236"><highlight class="normal"></highlight></codeline>
-<codeline lineno="250"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="251" refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a3b70705245f6c1ecd918316451bc86f9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a3b70705245f6c1ecd918316451bc86f9" kindref="member">static_doubly_list_links::reset</ref><sp/>()<sp/>noexcept</highlight></codeline>
-<codeline lineno="252"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Force<sp/>actual<sp/>writes,<sp/>even<sp/>if<sp/>the<sp/>compiler<sp/>could<sp/>otherwise<sp/>prove<sp/>that</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>values<sp/>are<sp/>never<sp/>read<sp/>afterwards<sp/>(dead<sp/>store<sp/>elimination).</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref>*<sp/>volatile*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(&amp;<ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" kindref="member">next_</ref>)<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="256"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref>*<sp/>volatile*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(&amp;<ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" kindref="member">previous_</ref>)<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
-<codeline lineno="257"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="258"><highlight class="normal"></highlight></codeline>
-<codeline lineno="259"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="260"><highlight class="normal"></highlight></codeline>
-<codeline lineno="284" refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1ae49a3ba1aad4be92cbd17b5d04266f2f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1ae49a3ba1aad4be92cbd17b5d04266f2f" kindref="member">doubly_list_links::doubly_list_links</ref><sp/>()<sp/>noexcept</highlight></codeline>
-<codeline lineno="285"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>regular<sp/>(non<sp/>static)<sp/>classes<sp/>the<sp/>members</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>must<sp/>be<sp/>explicitly<sp/>initialised.</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="288"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aaf1348f9336c81a961354d6856474bbf" kindref="member">initialise</ref><sp/>();</highlight></codeline>
-<codeline lineno="289"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="290"><highlight class="normal"></highlight></codeline>
-<codeline lineno="296" refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1a88922c7df8cdc6ac63f597afe1f78966" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1a88922c7df8cdc6ac63f597afe1f78966" kindref="member">doubly_list_links::~doubly_list_links</ref><sp/>()</highlight></codeline>
-<codeline lineno="297"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
-<codeline lineno="298"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
-<codeline lineno="299"><highlight class="normal"></highlight></codeline>
-<codeline lineno="300"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="301"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::utils</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="302"><highlight class="normal"></highlight></codeline>
-<codeline lineno="303"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="305"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="306"><highlight class="normal"></highlight></codeline>
-<codeline lineno="307"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="308"><highlight class="normal"></highlight></codeline>
-<codeline lineno="309"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="310"><highlight class="normal"></highlight></codeline>
-<codeline lineno="311"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="312"><highlight class="normal"></highlight></codeline>
-<codeline lineno="313"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_UTILS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="314"><highlight class="normal"></highlight></codeline>
-<codeline lineno="315"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="250" refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a3b70705245f6c1ecd918316451bc86f9" refkind="member"><highlight class="normal"><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1static__doubly__list__links_1a3b70705245f6c1ecd918316451bc86f9" kindref="member">static_doubly_list_links::reset</ref><sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Force<sp/>actual<sp/>writes,<sp/>even<sp/>if<sp/>the<sp/>compiler<sp/>could<sp/>otherwise<sp/>prove<sp/>that</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>the<sp/>values<sp/>are<sp/>never<sp/>read<sp/>afterwards<sp/>(dead<sp/>store<sp/>elimination).</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="254"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref>*<sp/>volatile*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(&amp;<ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1ac26d24411c07c3684959520fb404f3c8" kindref="member">next_</ref>)<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="255"><highlight class="normal"><sp/><sp/><sp/><sp/>*</highlight><highlight class="keyword">const_cast&lt;</highlight><highlight class="normal"><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1abc42b0e738c95b03fcaf4c387f37ad79" kindref="member">doubly_list_links_base</ref>*<sp/>volatile*</highlight><highlight class="keyword">&gt;</highlight><highlight class="normal"><sp/>(&amp;<ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aa113cf8b5f13364650d353ae83dab0a3" kindref="member">previous_</ref>)<sp/>=<sp/></highlight><highlight class="keyword">nullptr</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="256"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="257"><highlight class="normal"></highlight></codeline>
+<codeline lineno="258"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>==========================================================================</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="259"><highlight class="normal"></highlight></codeline>
+<codeline lineno="283" refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1ae49a3ba1aad4be92cbd17b5d04266f2f" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1ae49a3ba1aad4be92cbd17b5d04266f2f" kindref="member">doubly_list_links::doubly_list_links</ref><sp/>()<sp/>noexcept</highlight></codeline>
+<codeline lineno="284"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="285"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>For<sp/>regular<sp/>(non<sp/>static)<sp/>classes<sp/>the<sp/>members</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="286"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>must<sp/>be<sp/>explicitly<sp/>initialised.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="287"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links__base_1aaf1348f9336c81a961354d6856474bbf" kindref="member">initialise</ref><sp/>();</highlight></codeline>
+<codeline lineno="288"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="289"><highlight class="normal"></highlight></codeline>
+<codeline lineno="295" refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1a88922c7df8cdc6ac63f597afe1f78966" refkind="member"><highlight class="normal"><sp/><sp/></highlight><highlight class="keyword">constexpr</highlight><highlight class="normal"><sp/><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links_1a88922c7df8cdc6ac63f597afe1f78966" kindref="member">doubly_list_links::~doubly_list_links</ref><sp/>()</highlight></codeline>
+<codeline lineno="296"><highlight class="normal"><sp/><sp/>{</highlight></codeline>
+<codeline lineno="297"><highlight class="normal"><sp/><sp/>}</highlight></codeline>
+<codeline lineno="298"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal"><sp/><sp/></highlight><highlight class="comment">//<sp/>--------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="300"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>namespace<sp/>micro_os_plus::utils</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="301"><highlight class="normal"></highlight></codeline>
+<codeline lineno="302"><highlight class="normal"></highlight><highlight class="preprocessor">#if<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="303"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>GCC<sp/>diagnostic<sp/>pop</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="304"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__GNUC__)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="306"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="307"><highlight class="normal"></highlight></codeline>
+<codeline lineno="308"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>defined(__cplusplus)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="309"><highlight class="normal"></highlight></codeline>
+<codeline lineno="310"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="311"><highlight class="normal"></highlight></codeline>
+<codeline lineno="312"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">//<sp/>MICRO_OS_PLUS_UTILS_LISTS_INLINES_DOUBLY_LIST_LINKS_INLINES_H_</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal"></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"></highlight><highlight class="comment">//<sp/>----------------------------------------------------------------------------</highlight><highlight class="normal"></highlight></codeline>
     </programlisting>
     <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-links-inlines.h"/>
   </compounddef>

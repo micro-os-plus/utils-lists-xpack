@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="54" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="54" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="55" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__micro-os-plus-utils-lists-config_1gaceb30b6e2e4f6a91927986ff08257d0f" prot="public" static="no">
         <name>MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED</name>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="56" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="56" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="57" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__micro-os-plus-utils-lists-config_1ga2298ccb291997f5617a7d6d66a6d9f94" prot="public" static="no">
         <name>MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</name>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="55" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="55" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" line="56" column="9" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists.h" bodystart="56" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <briefdescription>

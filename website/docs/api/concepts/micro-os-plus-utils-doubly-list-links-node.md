@@ -34,7 +34,7 @@ concept <a href="/utils-lists-xpack/docs/api/concepts/micro-os-plus/utils/doubly
 <p>Used to constrain the template parameters of <span class="doxyComputerOutput">doubly_list</span> and <span class="doxyComputerOutput">intrusive_list</span> to types that are properly derived from the list node base class, ensuring a valid doubly linked list structure.</p>
 
 
-<p>Definition at line 466 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-links-h">doubly-list-links.h</a>.</p>
+<p>Definition at line 467 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-links-h">doubly-list-links.h</a>.</p>
 
 
 <div class="doxyProgramListing">

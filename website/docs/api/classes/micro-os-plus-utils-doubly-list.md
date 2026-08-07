@@ -573,7 +573,7 @@ class micro_os_plus::utils::doubly_list&lt;T, L&gt; { ... }
 :::
 
 
-<p>Definition at line 249 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line 250 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -602,12 +602,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type indicating if the links node is statically allocated.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00291">291</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00292">292</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adbf5db61332c997df0576be993832ed2">291</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#adbf5db61332c997df0576be993832ed2">is_statically_allocated</a> =</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adbf5db61332c997df0576be993832ed2">292</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#adbf5db61332c997df0576be993832ed2">is_statically_allocated</a> =</span></span></div>
 
 </div>
 
@@ -635,12 +635,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of iterator over the values.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00276">276</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00277">277</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a806d82876c5eadc20150fccb4d380d64">276</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a806d82876c5eadc20150fccb4d380d64">iterator</a> = <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-iterator">doubly_list_iterator&lt;value_type&gt;</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a806d82876c5eadc20150fccb4d380d64">277</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a806d82876c5eadc20150fccb4d380d64">iterator</a> = <a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list-iterator">doubly_list_iterator&lt;value_type&gt;</a>;</span></span></div>
 
 </div>
 
@@ -668,12 +668,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of reference to the iterator internal pointer.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00286">286</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00287">287</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac466265f112e5f41b06b64e794f3db63">286</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ac466265f112e5f41b06b64e794f3db63">iterator_pointer</a> = <a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a>*;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ac466265f112e5f41b06b64e794f3db63">287</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#ac466265f112e5f41b06b64e794f3db63">iterator_pointer</a> = <a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a>*;</span></span></div>
 
 </div>
 
@@ -701,12 +701,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of the links node object where the pointers to the list head and tail are stored.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00256">256</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00257">257</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aed5fc0c1164c30d890986b08d8f3a4da">256</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aed5fc0c1164c30d890986b08d8f3a4da">links_type</a> = L;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aed5fc0c1164c30d890986b08d8f3a4da">257</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aed5fc0c1164c30d890986b08d8f3a4da">links_type</a> = L;</span></span></div>
 
 </div>
 
@@ -734,12 +734,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of pointer to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00266">266</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00267">267</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a06b1703840274b544b5886a9190bef4b">266</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a06b1703840274b544b5886a9190bef4b">pointer</a> = <a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a>*;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a06b1703840274b544b5886a9190bef4b">267</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a06b1703840274b544b5886a9190bef4b">pointer</a> = <a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a>*;</span></span></div>
 
 </div>
 
@@ -767,12 +767,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of reference to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00271">271</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00272">272</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5c8bc0b786d3e38ac36d4c6e12bb8ade">271</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a5c8bc0b786d3e38ac36d4c6e12bb8ade">reference</a> = <a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a>&amp;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a5c8bc0b786d3e38ac36d4c6e12bb8ade">272</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a5c8bc0b786d3e38ac36d4c6e12bb8ade">reference</a> = <a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a>&amp;;</span></span></div>
 
 </div>
 
@@ -800,12 +800,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of reverse iterator over the values.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00281">281</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00282">282</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a51bfca23b338fb2ba434e49b0a296ee9">281</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a51bfca23b338fb2ba434e49b0a296ee9">reverse_iterator</a> = std::reverse_iterator&lt;iterator&gt;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a51bfca23b338fb2ba434e49b0a296ee9">282</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a51bfca23b338fb2ba434e49b0a296ee9">reverse_iterator</a> = std::reverse_iterator&lt;iterator&gt;;</span></span></div>
 
 </div>
 
@@ -833,12 +833,12 @@ typename links_type::is_statically_allocated</td>
 
 <p>Type of value <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00261">261</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00262">262</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aabd15bd5b78a500a9e350ff21c6bcf28">261</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a> = T;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aabd15bd5b78a500a9e350ff21c6bcf28">262</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aabd15bd5b78a500a9e350ff21c6bcf28">value_type</a> = T;</span></span></div>
 
 </div>
 
@@ -893,7 +893,7 @@ typename links_type::is_statically_allocated</td>
 </dl>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00297">297</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00270">270</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00298">298</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00270">270</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -956,7 +956,7 @@ typename links_type::is_statically_allocated</td>
 <p>Copying of <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">doubly_list</a></span> instances is explicitly disallowed to prevent accidental duplication, which could compromise the integrity of the list structure.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00307">307</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00308">308</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <p>Reference <a href="#a7105e8211e6c99d4b589759db0b60172">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</a>.</p>
@@ -994,7 +994,7 @@ typename links_type::is_statically_allocated</td>
 <p>Moving of <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/doubly-list">doubly_list</a></span> instances is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving lists.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00317">317</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00318">318</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <p>Reference <a href="#a7105e8211e6c99d4b589759db0b60172">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</a>.</p>
@@ -1044,7 +1044,7 @@ typename links_type::is_statically_allocated</td>
 :::
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00345">345</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00300">300</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00346">346</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00300">300</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1110,7 +1110,7 @@ typename links_type::is_statically_allocated</td>
 <p>Copy assignment is explicitly disallowed to prevent accidental overwriting of list objects, which could lead to corruption of the list structure.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00328">328</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00329">329</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <p>Reference <a href="#a7105e8211e6c99d4b589759db0b60172">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</a>.</p>
@@ -1148,7 +1148,7 @@ typename links_type::is_statically_allocated</td>
 <p>Move assignment is explicitly disallowed to avoid invalid or inconsistent links within the list that could result from moving lists.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00339">339</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00340">340</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <p>References <a href="#a7105e8211e6c99d4b589759db0b60172">micro_os_plus::utils::doubly_list&lt; T, L &gt;::doubly_list</a>, <a href="#a901d37d96ab59b0863e78774a0b72079">micro_os_plus::utils::doubly_list&lt; T, L &gt;::begin</a>, <a href="#a0748cb8980a43053479be54b576910b0">micro_os_plus::utils::doubly_list&lt; T, L &gt;::clear</a>, <a href="#a1031c0cc9462644160ea66eaa4c3d700">micro_os_plus::utils::doubly_list&lt; T, L &gt;::empty</a>, <a href="#a9abe477245ac344d306a9ed55f6a4430">micro_os_plus::utils::doubly_list&lt; T, L &gt;::end</a>, <a href="#a34e804930d1b4ab2ea7a538ab4b17d97">micro_os_plus::utils::doubly_list&lt; T, L &gt;::head</a>, <a href="#ab42aae2bfccbee1628b1b470911f6def">micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialise_once</a>, <a href="#a2b0c8c399237932f92c93a60d26f2bea">micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialised</a>, <a href="#af31780e2a87d34eca81ad2a8f47afe2c">micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_head</a>, <a href="#ab700f9e890a253eeefb42c8a15b9e403">micro_os_plus::utils::doubly_list&lt; T, L &gt;::link_tail</a>, <a href="#ad30c1c31d1fe0d806ec271aa58e8eb4d">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_pointer</a>, <a href="#aa59f07f0ab869376dfb09dbbe11a92d4">micro_os_plus::utils::doubly_list&lt; T, L &gt;::rbegin</a>, <a href="#a0314a3e78b3cd027ffed6975a3da4ffa">micro_os_plus::utils::doubly_list&lt; T, L &gt;::rend</a> and <a href="#a6e9d3f30c694a21d98098cac97802ecb">micro_os_plus::utils::doubly_list&lt; T, L &gt;::tail</a>.</p>
@@ -1199,7 +1199,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns an iterator to the first element in the list. For statically allocated lists, asserts that the list is already initialised. The iterator will point to the node after the internal links node (the head). If the list is empty, the iterator will compare equal to <span class="doxyComputerOutput"><a href="#a9abe477245ac344d306a9ed55f6a4430">end()</a></span>.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00441">441</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00495">495</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00442">442</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00495">495</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1271,7 +1271,7 @@ typename links_type::is_statically_allocated</td>
 <p>The <span class="doxyComputerOutput"><a href="#a0748cb8980a43053479be54b576910b0">clear()</a></span> method initialises the mandatory internal links node so that both its <span class="doxyComputerOutput">previous_</span> and <span class="doxyComputerOutput">next_</span> pointers refer to itself. This marks the list as empty and ensures it is in a safe, known state, ready for new insertions. This operation is typically used to reset the list, removing all elements and breaking any existing links.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00391">391</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00394">394</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00392">392</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00394">394</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1283,7 +1283,7 @@ typename links_type::is_statically_allocated</td>
 <div class="doxyCodeLine"><span class="doxyLineNumber">398</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">399</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">400</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>.initialise ();</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a34e804930d1b4ab2ea7a538ab4b17d97">401</a></span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">401</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1350,15 +1350,15 @@ typename links_type::is_statically_allocated</td>
 <p>Checks whether the list contains any nodes. The list is considered empty if the internal links node is not linked to any other nodes. This method provides a fast way to determine if the list has elements or is currently empty.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00380">380</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00378">378</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00381">381</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00378">378</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1031c0cc9462644160ea66eaa4c3d700">378</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a1031c0cc9462644160ea66eaa4c3d700">doubly_list&lt;T, L&gt;::empty</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">379</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1031c0cc9462644160ea66eaa4c3d700">380</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// If the links node is not linked, the list is empty.</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">381</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> !<a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>.linked ();</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">380</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// If the links node is not linked, the list is empty.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a1031c0cc9462644160ea66eaa4c3d700">381</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> !<a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>.linked ();</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">382</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
@@ -1406,7 +1406,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns an iterator to the position after the last element in the list (the end iterator). This iterator points to the internal links node, which acts as a sentinel. It is used as the past-the-end marker in iteration and comparison operations. The end iterator does not reference any valid list element.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00449">449</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00519">519</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00450">450</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00519">519</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1479,7 +1479,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns a pointer to the first node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during iteration. The returned pointer should be checked against <span class="doxyComputerOutput"><a href="#a9abe477245ac344d306a9ed55f6a4430">end()</a></span> or the sentinel node to determine if the list contains any elements.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00401">401</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00413">413</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00402">402</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00413">413</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1548,7 +1548,7 @@ typename links_type::is_statically_allocated</td>
 :::
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00369">369</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00353">353</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00370">370</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00353">353</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1558,8 +1558,8 @@ typename links_type::is_statically_allocated</td>
 <div class="doxyCodeLine"><span class="doxyLineNumber">355</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">356</span><span class="doxyLineContent"><span class="doxyHighlight">    trace::printf (</span><span class="doxyHighlightStringLiteral">"%s() @%p\n"</span><span class="doxyHighlight">, __func__, </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">));</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">357</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2b0c8c399237932f92c93a60d26f2bea">358</a></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">359</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (is_statically_allocated::value)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">358</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a2b0c8c399237932f92c93a60d26f2bea">359</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (is_statically_allocated::value)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">360</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">361</span><span class="doxyLineContent"><span class="doxyHighlight">        </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> <a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>.initialise_once ();</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">362</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
@@ -1630,7 +1630,7 @@ typename links_type::is_statically_allocated</td>
 <p>An uninitialised node is a node with any of the pointers set to <span class="doxyComputerOutput">nullptr</span>. Only statically allocated nodes in the initial state are considered <em>uninitialised</em>. For dynamically allocated lists, this method always returns <span class="doxyComputerOutput">true</span> since their nodes are explicitly initialised during construction.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00358">358</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00327">327</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00359">359</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00327">327</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1706,7 +1706,7 @@ typename links_type::is_statically_allocated</td>
 <p>Adds a new node to the beginning (head) of the list. For statically allocated lists, asserts that the list is already initialised. The new node is linked before the current head node, updating the list structure accordingly. This operation does not check for duplicate nodes or whether the node is already linked elsewhere.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00431">431</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00469">469</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00432">432</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00469">469</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1725,7 +1725,7 @@ typename links_type::is_statically_allocated</td>
 <div class="doxyCodeLine"><span class="doxyLineNumber">480</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">481</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Add the new node at the head of the list.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">482</span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a34e804930d1b4ab2ea7a538ab4b17d97">head</a> ()-&gt;link_previous (&amp;node);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ad30c1c31d1fe0d806ec271aa58e8eb4d">483</a></span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">483</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1786,7 +1786,7 @@ typename links_type::is_statically_allocated</td>
 <p>Adds a new node to the end (tail) of the list. For statically allocated lists, asserts that the list is already initialised. The new node is linked after the current tail node, updating the list structure accordingly. This operation does not check for duplicate nodes or whether the node is already linked elsewhere.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00421">421</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00443">443</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00422">422</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00443">443</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1797,15 +1797,15 @@ typename links_type::is_statically_allocated</td>
 <div class="doxyCodeLine"><span class="doxyLineNumber">446</span><span class="doxyLineContent"><span class="doxyHighlight">    trace::printf (</span><span class="doxyHighlightStringLiteral">"%s() @%p %p\n"</span><span class="doxyHighlight">, __func__, </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (</span><span class="doxyHighlightKeyword">this</span><span class="doxyHighlight">),</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">447</span><span class="doxyLineContent"><span class="doxyHighlight">                   </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlightKeyword">const </span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">*</span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (&amp;node));</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">448</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9abe477245ac344d306a9ed55f6a4430">449</a></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber">450</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (is_statically_allocated::value)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">449</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a9abe477245ac344d306a9ed55f6a4430">450</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">if</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">constexpr</span><span class="doxyHighlight"> (is_statically_allocated::value)</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">451</span><span class="doxyLineContent"><span class="doxyHighlight">      {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">452</span><span class="doxyLineContent"><span class="doxyHighlight">        assert (<a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>.initialised ());</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">453</span><span class="doxyLineContent"><span class="doxyHighlight">      }</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">454</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">455</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightComment">// Add new node at the end of the list.</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">456</span><span class="doxyLineContent"><span class="doxyHighlight">    tail ()-&gt;link_next (&amp;node);</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa59f07f0ab869376dfb09dbbe11a92d4">457</a></span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">457</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -1862,7 +1862,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns the address of the <span class="doxyComputerOutput"><a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a></span> member directly. This method is required by derived classes (such as <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list">intrusive_list</a></span>) when constructing their <span class="doxyComputerOutput"><a href="#a9abe477245ac344d306a9ed55f6a4430">end()</a></span> iterator, where a direct reference to the protected member is not accessible from the derived scope.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00483">483</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00567">567</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00484">484</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00567">567</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1920,7 +1920,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns a reverse iterator to the last element in the list. Equivalent to <span class="doxyComputerOutput"><a href="#a51bfca23b338fb2ba434e49b0a296ee9">reverse_iterator</a>{ <a href="#a9abe477245ac344d306a9ed55f6a4430">end()</a> }</span>. Traversal proceeds from the tail towards the head.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00457">457</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00540">540</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00458">458</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00540">540</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1978,7 +1978,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns a reverse iterator to the position before the first element in the list. Equivalent to <span class="doxyComputerOutput"><a href="#a51bfca23b338fb2ba434e49b0a296ee9">reverse_iterator</a>{ <a href="#a901d37d96ab59b0863e78774a0b72079">begin()</a> }</span>. Used as the past-the-end marker for reverse-direction iteration.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00465">465</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00553">553</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00466">466</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00553">553</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2043,7 +2043,7 @@ typename links_type::is_statically_allocated</td>
 <p>Returns a pointer to the last node in the list. If the list is empty, this will point to the internal links node itself, which can be used to detect the end of the list during reverse iteration. The returned pointer should be checked against the sentinel node to determine if the list contains any elements.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00411">411</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00428">428</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00412">412</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h/#l00428">428</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines-h">doubly-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -2051,7 +2051,7 @@ typename links_type::is_statically_allocated</td>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a6e9d3f30c694a21d98098cac97802ecb">428</a></span><span class="doxyLineContent"><span class="doxyHighlight">  <a href="#a6e9d3f30c694a21d98098cac97802ecb">doubly_list&lt;T, L&gt;::tail</a> (</span><span class="doxyHighlightKeywordType">void</span><span class="doxyHighlight">) </span><span class="doxyHighlightKeyword">const</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">noexcept</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">429</span><span class="doxyLineContent"><span class="doxyHighlight">  {</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber">430</span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeywordFlow">return</span><span class="doxyHighlight"> </span><span class="doxyHighlightKeyword">static_cast&lt;</span><span class="doxyHighlight"><a href="#a06b1703840274b544b5886a9190bef4b">pointer</a></span><span class="doxyHighlightKeyword">&gt;</span><span class="doxyHighlight"> (<a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>.previous ());</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#af31780e2a87d34eca81ad2a8f47afe2c">431</a></span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber">431</span><span class="doxyLineContent"><span class="doxyHighlight">  }</span></span></div>
 
 </div>
 
@@ -2100,12 +2100,12 @@ typename links_type::is_statically_allocated</td>
 <p>This member stores the internal links node for the list. The <b>next</b> pointer of this node points to the head of the list, and the <b>previous</b> pointer points to the tail. For an empty list, both pointers refer to the node itself, simplifying list management and boundary checks.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00498">498</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h/#l00499">499</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">doubly-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a33f7b43e5620467ed3ea3a1b38b86e45">498</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aed5fc0c1164c30d890986b08d8f3a4da">links_type</a> <a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a33f7b43e5620467ed3ea3a1b38b86e45">499</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#aed5fc0c1164c30d890986b08d8f3a4da">links_type</a> <a href="#a33f7b43e5620467ed3ea3a1b38b86e45">links_</a>;</span></span></div>
 
 </div>
 

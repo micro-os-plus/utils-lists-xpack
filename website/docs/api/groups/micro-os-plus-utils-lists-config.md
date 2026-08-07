@@ -109,12 +109,12 @@ keywords:
 <p>When it is not defined, no classes or functions are defined.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00054">54</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00055">55</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabaf0f9ceb6be1008107882c4641e3d7b">54</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gabaf0f9ceb6be1008107882c4641e3d7b">55</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED</span></span></div>
 
 </div>
 
@@ -148,12 +148,12 @@ keywords:
 <p>When <span class="doxyComputerOutput"><a href="#gaceb30b6e2e4f6a91927986ff08257d0f">MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED</a></span> is defined, class constructors and destructors include a <span class="doxyComputerOutput">trace::printf()</span> call with the address of the current object.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00056">56</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00057">57</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaceb30b6e2e4f6a91927986ff08257d0f">56</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED </span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#gaceb30b6e2e4f6a91927986ff08257d0f">57</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED</span></span></div>
 
 </div>
 
@@ -187,12 +187,12 @@ keywords:
 <p>When <span class="doxyComputerOutput"><a href="#ga2298ccb291997f5617a7d6d66a6d9f94">MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</a></span> is defined, most class methods include a <span class="doxyComputerOutput">trace::printf()</span> with various data.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00055">55</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h/#l00056">56</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists-h">lists.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga2298ccb291997f5617a7d6d66a6d9f94">55</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#ga2298ccb291997f5617a7d6d66a6d9f94">56</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</span></span></div>
 
 </div>
 

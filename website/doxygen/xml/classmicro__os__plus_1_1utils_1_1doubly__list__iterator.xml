@@ -30,7 +30,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="94" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="94" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="95" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a13e836efd2f10d029fa0f2697591a30d" prot="public" static="no">
         <type>std::bidirectional_iterator_tag</type>
@@ -45,7 +45,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="99" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="99" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="100" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a402e63a0f1ac7e49890a36795af68833" prot="public" static="no">
         <type>N *</type>
@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="89" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="89" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="90" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a0eaa1bf17be01fcf623d00edea2a574f" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a28d100bd546f4d20dd029a88eaa5be45" kindref="member">value_type</ref> *</type>
@@ -75,7 +75,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="79" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="79" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="80" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1acc050f68a1e8a5f2dca40aa46837a171" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a28d100bd546f4d20dd029a88eaa5be45" kindref="member">value_type</ref> &amp;</type>
@@ -90,7 +90,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="84" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="84" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="85" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a28d100bd546f4d20dd029a88eaa5be45" prot="public" static="no">
         <type>U</type>
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="74" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="74" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="75" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="75" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-attrib">
@@ -122,7 +122,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="214" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="214" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="215" column="22" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="215" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abdecdb8d164aadec97b60853bf209b7f" compoundref="doubly-list-inlines_8h" startline="67" endline="70">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::doubly_list_iterator</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a68685b6723db57d6548fa463ac16b9ae" compoundref="doubly-list-inlines_8h" startline="81" endline="85">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::doubly_list_iterator</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a16e0a8a9e96cd4d150cdfc064edc5f06" compoundref="doubly-list-inlines_8h" startline="96" endline="100">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::doubly_list_iterator</referencedby>
@@ -153,8 +153,8 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="107" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="67" bodyend="70"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="108" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="67" bodyend="70"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a0e955577b82393f56888de3d8493dbfd" compoundref="doubly-list-inlines_8h" startline="211" endline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::operator==</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a68685b6723db57d6548fa463ac16b9ae" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
@@ -184,8 +184,8 @@ This constructor creates a <computeroutput><ref refid="classmicro__os__plus_1_1u
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="114" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="81" bodyend="85"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="115" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="81" bodyend="85"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a16e0a8a9e96cd4d150cdfc064edc5f06" prot="public" static="no" constexpr="yes" const="no" explicit="yes" inline="no" noexcept="yes" virt="non-virtual">
         <type>constexpr</type>
@@ -214,8 +214,8 @@ This constructor creates a <computeroutput><ref refid="classmicro__os__plus_1_1u
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="123" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="96" bodyend="100"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="124" column="24" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="96" bodyend="100"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a289d46e5287ce2f9751d7102ca48dc73" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a402e63a0f1ac7e49890a36795af68833" kindref="member">iterator_pointer</ref></type>
@@ -238,8 +238,8 @@ Returns the internal node pointer that the iterator currently references. This i
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="208" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="226" bodyend="229"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="209" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="226" bodyend="229"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1ac8e422c668e03f4032d06b1c88f7ee81" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a0eaa1bf17be01fcf623d00edea2a574f" kindref="member">pointer</ref></type>
@@ -262,8 +262,8 @@ Returns the node pointer cast to the value pointer type. In the typical usage wh
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="198" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="239" bodyend="242"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="199" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="239" bodyend="242"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a18549f728349cbe704d2ef44245afa68" compoundref="doubly-list-inlines_8h" startline="130" endline="133">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::operator*</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a9c9223877eafda48859ccd7d01ff0cc7" compoundref="doubly-list-inlines_8h" startline="112" endline="115">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::operator-&gt;</referencedby>
       </memberdef>
@@ -284,7 +284,7 @@ The dereference operator (<computeroutput>operator*</computeroutput>) provides a
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="142" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="130" bodyend="133"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="143" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="130" bodyend="133"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1ac8e422c668e03f4032d06b1c88f7ee81" compoundref="doubly-list-inlines_8h" startline="239" endline="242">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::get_pointer</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a38c8a345db4c1d1e86728836d73e2dc3" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -303,8 +303,8 @@ The pre-increment operator (<computeroutput>operator++</computeroutput>) advance
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="150" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="145" bodyend="149"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="151" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="145" bodyend="149"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abf034fddf2e4ed8b5cdb75c287380453" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abdecdb8d164aadec97b60853bf209b7f" kindref="member">doubly_list_iterator</ref></type>
@@ -325,8 +325,8 @@ The post-increment operator (<computeroutput><ref refid="classmicro__os__plus_1_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="158" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="161" bodyend="166"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="159" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="161" bodyend="166"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a22d3b74c3ed3419fa33100b3915a4707" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abdecdb8d164aadec97b60853bf209b7f" kindref="member">doubly_list_iterator</ref> &amp;</type>
@@ -344,8 +344,8 @@ The pre-decrement operator (<computeroutput>operator--</computeroutput>) moves t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="166" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="178" bodyend="182"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="167" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="178" bodyend="182"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1acf5491ed00b250a2d9f93cbccb66ac99" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abdecdb8d164aadec97b60853bf209b7f" kindref="member">doubly_list_iterator</ref></type>
@@ -366,8 +366,8 @@ The post-decrement operator (<computeroutput><ref refid="classmicro__os__plus_1_
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="174" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="194" bodyend="199"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="175" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="194" bodyend="199"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a9c9223877eafda48859ccd7d01ff0cc7" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a0eaa1bf17be01fcf623d00edea2a574f" kindref="member">pointer</ref></type>
@@ -385,7 +385,7 @@ The pointer access operator (<computeroutput>operator-&gt;</computeroutput>) all
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="134" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="112" bodyend="115"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="135" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="112" bodyend="115"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1ac8e422c668e03f4032d06b1c88f7ee81" compoundref="doubly-list-inlines_8h" startline="239" endline="242">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::get_pointer</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a0e955577b82393f56888de3d8493dbfd" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -419,9 +419,9 @@ The equality comparison operator (<computeroutput>operator==</computeroutput>) c
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="188" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="211" bodyend="215"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="189" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="211" bodyend="215"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abdecdb8d164aadec97b60853bf209b7f" compoundref="doubly-list-inlines_8h" startline="67" endline="70">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::doubly_list_iterator</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="214">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1a4bbd6e457a176c2d87c643ee436f9cde" compoundref="doubly-list_8h" startline="215">micro_os_plus::utils::doubly_list_iterator&lt; T, N, U &gt;::node_</references>
       </memberdef>
     </sectiondef>
     <briefdescription>
@@ -455,7 +455,7 @@ The equality comparison operator (<computeroutput>operator==</computeroutput>) c
 </parameterlist>
 This iterator provides an interface similar to <computeroutput>std::list::iterator</computeroutput> for traversing a doubly linked list. It supports bidirectional iteration and access to the underlying node and value. In a typical doubly linked list, all types are <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list__links" kindref="compound">doubly_list_links</ref></computeroutput>. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="68" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="69" bodyend="215"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="69" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="70" bodyend="216"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1ada31e9233c36174ea54d5278ec63251b" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list_iterator</scope><name>difference_type</name></member>
       <member refid="classmicro__os__plus_1_1utils_1_1doubly__list__iterator_1abdecdb8d164aadec97b60853bf209b7f" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::doubly_list_iterator</scope><name>doubly_list_iterator</name></member>

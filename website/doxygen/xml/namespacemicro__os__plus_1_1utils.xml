@@ -17,6 +17,6 @@
 <para>The <computeroutput><ref refid="namespacemicro__os__plus_1_1utils" kindref="compound">micro_os_plus::utils</ref></computeroutput> namespace serves as a dedicated space for <bold>utility list classes</bold>, essential to the <bold>µOS++</bold> project. By encapsulating commonly used list implementations, it enhances code organisation, minimises redundancy, and improves overall maintainability within the framework.</para>
 <para>This structured approach fosters modular development and ensures seamless integration within <bold>µOS++</bold>, contributing to a more efficient and scalable system. </para>
     </detaileddescription>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list-links.h" line="77" column="1"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list-links.h" line="78" column="1"/>
   </compounddef>
 </doxygen>

@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="325" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="325" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="326" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="326" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a265d899bb1ab09596057665937377481" prot="public" static="no">
         <type>typename links_type::is_statically_allocated</type>
@@ -59,7 +59,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="314" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="314" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="315" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="315" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list__iterator" kindref="compound">intrusive_list_iterator</ref>&lt; T, N, MP, U &gt;</type>
@@ -74,7 +74,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="304" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="304" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="305" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="305" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3c9a90f0bde3f7d498d4419c41adf723" prot="public" static="no">
         <type>N *</type>
@@ -89,7 +89,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="320" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="320" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="321" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="321" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a0bb5c5cba26ff911bbae525200d9e3c1" prot="public" static="no">
         <type>L</type>
@@ -104,7 +104,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="284" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="284" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="285" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="285" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a75fc498797691719252818fb40047e14" kindref="member">value_type</ref> *</type>
@@ -119,7 +119,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="294" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="294" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="295" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="295" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1aa9d68f393f6506fd6d84d7f9e7e520c3" prot="public" static="no">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a75fc498797691719252818fb40047e14" kindref="member">value_type</ref> &amp;</type>
@@ -134,7 +134,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="299" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="299" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="300" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="300" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" prot="public" static="no">
         <type>std::reverse_iterator&lt; <ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref> &gt;</type>
@@ -149,7 +149,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="309" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="309" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="310" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="310" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a75fc498797691719252818fb40047e14" prot="public" static="no">
         <type>U</type>
@@ -164,7 +164,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="289" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="289" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="290" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="290" bodyend="-1"/>
       </memberdef>
     </sectiondef>
     <sectiondef kind="public-func">
@@ -185,7 +185,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="330" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="282" bodyend="287"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="331" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="282" bodyend="287"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ae66333c76d059f070d959298e0fa396c">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::intrusive_list</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ace009ba3457127e9311d9fc8ae80b181">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::intrusive_list</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a96c735ada72f8b5f08b07b40bd315bb4">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
@@ -208,7 +208,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="342" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="343" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" compoundref="intrusive-list-inlines_8h" startline="282" endline="287">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::intrusive_list</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1ace009ba3457127e9311d9fc8ae80b181" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -228,7 +228,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="352" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="353" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" compoundref="intrusive-list-inlines_8h" startline="282" endline="287">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::intrusive_list</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6ba6bf42bf7abceddaaabb3ec8bb3e3d" prot="public" static="no" constexpr="yes" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -245,7 +245,7 @@ typename links_type::is_statically_allocated</definition>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="380" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="298" bodyend="303"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="381" column="15" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="298" bodyend="303"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref></type>
@@ -263,10 +263,10 @@ Returns an iterator to the first element in the intrusive list. The iterator poi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="455" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="421" bodyend="431"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="498">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="456" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="422" bodyend="432"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="499">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" compoundref="intrusive-list-inlines_8h" startline="481" endline="484">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rend</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" compoundref="intrusive-list-inlines_8h" startline="482" endline="485">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rend</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -289,7 +289,7 @@ The <computeroutput><ref refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="391" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="394" bodyend="401"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="392" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="394" bodyend="401"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -327,11 +327,11 @@ Checks whether the intrusive list contains any nodes. This method delegates to t
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="403" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="334" bodyend="337"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="404" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="334" bodyend="337"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" compoundref="doubly-list-inlines_8h" startline="378" endline="382">micro_os_plus::utils::doubly_list&lt; T, L &gt;::empty</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="530" endline="547">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="559" endline="576">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="531" endline="548">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="560" endline="577">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a6c44dc25422336e98d5c450874496041" kindref="member">iterator</ref></type>
@@ -349,10 +349,10 @@ Returns an iterator to the position after the last element in the intrusive list
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="463" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="444" bodyend="456"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="464" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="445" bodyend="457"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ad30c1c31d1fe0d806ec271aa58e8eb4d" compoundref="doubly-list-inlines_8h" startline="567" endline="570">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_pointer</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" compoundref="intrusive-list-inlines_8h" startline="467" endline="470">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rbegin</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" compoundref="intrusive-list-inlines_8h" startline="468" endline="471">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rbegin</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a34e804930d1b4ab2ea7a538ab4b17d97" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></type>
@@ -375,7 +375,7 @@ Returns a pointer to the first node in the list. If the list is empty, this will
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="401" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="413" bodyend="416"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="402" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="413" bodyend="416"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a354dd2dfa628779115681a8699098f50" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>bool</type>
@@ -401,7 +401,7 @@ If the statically allocated list is still in the initial uninitialised state (wi
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="392" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="319" bodyend="322"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="393" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="319" bodyend="322"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1ab42aae2bfccbee1628b1b470911f6def" compoundref="doubly-list-inlines_8h" startline="353" endline="367">micro_os_plus::utils::doubly_list&lt; T, L &gt;::initialise_once</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
@@ -441,8 +441,8 @@ An uninitialised node is a node with any of the pointers set to <computeroutput>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="358" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="327" bodyend="337"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="498">micro_os_plus::utils::doubly_list&lt; N, doubly_list_links &gt;::links_</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="359" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="327" bodyend="337"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="499">micro_os_plus::utils::doubly_list&lt; N, doubly_list_links &gt;::links_</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1af56d27306de13d542af3fc75c8b33a98" prot="public" static="no" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type>void</type>
@@ -473,7 +473,7 @@ Adds a new node to the beginning (head) of the intrusive list. The offset of the
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="423" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="384" bodyend="403"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="424" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="384" bodyend="403"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a34e804930d1b4ab2ea7a538ab4b17d97" compoundref="doubly-list-inlines_8h" startline="413" endline="416">micro_os_plus::utils::doubly_list&lt; T, L &gt;::head</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
@@ -506,7 +506,7 @@ Adds a new node to the end (tail) of the intrusive list. The offset of the intru
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="413" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="351" bodyend="370"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="414" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="351" bodyend="370"/>
         <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a6e9d3f30c694a21d98098cac97802ecb" compoundref="doubly-list-inlines_8h" startline="428" endline="431">micro_os_plus::utils::doubly_list&lt; T, L &gt;::tail</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
@@ -532,7 +532,7 @@ Returns the address of the <computeroutput><ref refid="classmicro__os__plus_1_1u
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="483" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="567" bodyend="570"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="484" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="567" bodyend="570"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a96c735ada72f8b5f08b07b40bd315bb4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" kindref="member">intrusive_list</ref> &amp;</type>
@@ -551,7 +551,7 @@ Returns the address of the <computeroutput><ref refid="classmicro__os__plus_1_1u
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="363" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="364" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" compoundref="intrusive-list-inlines_8h" startline="282" endline="287">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::intrusive_list</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -571,19 +571,19 @@ Returns the address of the <computeroutput><ref refid="classmicro__os__plus_1_1u
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="374" column="5"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="375" column="5"/>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac471c87c75b56ee264396e144367186" compoundref="intrusive-list-inlines_8h" startline="282" endline="287">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::intrusive_list</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" compoundref="intrusive-list-inlines_8h" startline="421" endline="431">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::begin</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" compoundref="intrusive-list-inlines_8h" startline="422" endline="432">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::begin</references>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" compoundref="intrusive-list-inlines_8h" startline="334" endline="337">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::empty</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" compoundref="intrusive-list-inlines_8h" startline="444" endline="456">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::end</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" compoundref="intrusive-list-inlines_8h" startline="502" endline="518">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::get_pointer</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" compoundref="intrusive-list-inlines_8h" startline="445" endline="457">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::end</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" compoundref="intrusive-list-inlines_8h" startline="503" endline="519">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::get_pointer</references>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a354dd2dfa628779115681a8699098f50" compoundref="intrusive-list-inlines_8h" startline="319" endline="322">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::initialise_once</references>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1af56d27306de13d542af3fc75c8b33a98" compoundref="intrusive-list-inlines_8h" startline="384" endline="403">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::link_head</references>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac0693cd4f727c8e7895cdaa88beed572" compoundref="intrusive-list-inlines_8h" startline="351" endline="370">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::link_tail</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" compoundref="intrusive-list-inlines_8h" startline="467" endline="470">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rbegin</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" compoundref="intrusive-list-inlines_8h" startline="481" endline="484">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rend</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="530" endline="547">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="559" endline="576">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" compoundref="intrusive-list-inlines_8h" startline="468" endline="471">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rbegin</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" compoundref="intrusive-list-inlines_8h" startline="482" endline="485">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::rend</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="531" endline="548">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="560" endline="577">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</references>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a3ddaec2647ff81b7af23a51129d46b25" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a65a1af0be82741cf1759c7ef3d237baf" kindref="member">reverse_iterator</ref></type>
@@ -601,8 +601,8 @@ Returns a reverse iterator to the last element in the intrusive list. Equivalent
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="471" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="467" bodyend="470"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" compoundref="intrusive-list-inlines_8h" startline="444" endline="456">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::end</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="472" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="468" bodyend="471"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a4c9475e107b02f9940623ec283b5e789" compoundref="intrusive-list-inlines_8h" startline="445" endline="457">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::end</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1add97ee6a82f85e13879740459c67a06f" prot="public" static="no" nodiscard="yes" const="yes" explicit="no" inline="yes" noexcept="yes" virt="non-virtual">
@@ -621,8 +621,8 @@ Returns a reverse iterator to the position before the first element in the intru
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="479" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="481" bodyend="484"/>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" compoundref="intrusive-list-inlines_8h" startline="421" endline="431">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::begin</references>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="480" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="482" bodyend="485"/>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" compoundref="intrusive-list-inlines_8h" startline="422" endline="432">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::begin</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1doubly__list_1a6e9d3f30c694a21d98098cac97802ecb" prot="public" static="no" nodiscard="yes" constexpr="yes" const="yes" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -646,7 +646,7 @@ Returns a pointer to the last node in the list. If the list is empty, this will 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="411" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="428" bodyend="431"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="412" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/doubly-list-inlines.h" bodystart="428" bodyend="431"/>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
         <type><ref refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1ac7006fb066460b5ff008f6f64d62e272" kindref="member">pointer</ref></type>
@@ -669,10 +669,10 @@ Removes and unlinks the first element from the intrusive list. If the list is em
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="445" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="530" bodyend="547"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="446" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="531" bodyend="548"/>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" compoundref="intrusive-list-inlines_8h" startline="334" endline="337">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::empty</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" compoundref="intrusive-list-inlines_8h" startline="502" endline="518">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::get_pointer</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="498">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" compoundref="intrusive-list-inlines_8h" startline="503" endline="519">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::get_pointer</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="499">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
       <memberdef kind="function" id="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" prot="public" static="no" nodiscard="yes" const="no" explicit="no" inline="no" noexcept="yes" virt="non-virtual">
@@ -696,10 +696,10 @@ Removes and unlinks the last element from the intrusive list. If the list is emp
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="434" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="559" bodyend="576"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="435" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="560" bodyend="577"/>
         <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aac60af945ef1a00463fc38dac3bdad84" compoundref="intrusive-list-inlines_8h" startline="334" endline="337">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::empty</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" compoundref="intrusive-list-inlines_8h" startline="502" endline="518">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::get_pointer</references>
-        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="498">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7544708bb62129c7ca80053bb2a09012" compoundref="intrusive-list-inlines_8h" startline="503" endline="519">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::get_pointer</references>
+        <references refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a33f7b43e5620467ed3ea3a1b38b86e45" compoundref="doubly-list_8h" startline="499">micro_os_plus::utils::doubly_list&lt; T, L &gt;::links_</references>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
       </memberdef>
     </sectiondef>
@@ -733,10 +733,10 @@ Computes and returns a pointer to the parent object that contains the intrusive 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="490" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="502" bodyend="518"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="491" column="5" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines.h" bodystart="503" bodyend="519"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aefd72bb2624733146adfd2f1de3f341e">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::operator=</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="530" endline="547">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</referencedby>
-        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="559" endline="576">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1aeefaa688359ada2d5891db7888a0c9ff" compoundref="intrusive-list-inlines_8h" startline="531" endline="548">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_head</referencedby>
+        <referencedby refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1a7878a8547530eabf72a45d32a6bb5b61" compoundref="intrusive-list-inlines_8h" startline="560" endline="577">micro_os_plus::utils::intrusive_list&lt; T, N, MP, L, U &gt;::unlink_tail</referencedby>
       </memberdef>
     </sectiondef>
     <sectiondef kind="protected-attrib">
@@ -754,7 +754,7 @@ Computes and returns a pointer to the parent object that contains the intrusive 
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="498" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="498" bodyend="-1"/>
+        <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" line="499" column="16" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/doubly-list.h" bodystart="499" bodyend="-1"/>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a1031c0cc9462644160ea66eaa4c3d700" compoundref="doubly-list-inlines_8h" startline="378" endline="382">micro_os_plus::utils::doubly_list&lt; N, doubly_list_links &gt;::empty</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a9abe477245ac344d306a9ed55f6a4430" compoundref="doubly-list-inlines_8h" startline="519" endline="530">micro_os_plus::utils::doubly_list&lt; N, doubly_list_links &gt;::end</referencedby>
         <referencedby refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a2b0c8c399237932f92c93a60d26f2bea" compoundref="doubly-list-inlines_8h" startline="327" endline="337">micro_os_plus::utils::doubly_list&lt; N, doubly_list_links &gt;::initialised</referencedby>
@@ -846,7 +846,7 @@ This class implements an intrusive doubly linked list, where each object stores 
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="277" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="278" bodyend="491"/>
+    <location file="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" line="278" column="3" bodyfile="/Users/ilg/MyProjects/micro-os-plus.github/xPacks/utils-lists-xpack.git/include/micro-os-plus/utils/lists/intrusive-list.h" bodystart="279" bodyend="492"/>
     <listofallmembers>
       <member refid="classmicro__os__plus_1_1utils_1_1intrusive__list_1adef2b182f0ffdecb849e7e134c519972" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::intrusive_list</scope><name>begin</name></member>
       <member refid="classmicro__os__plus_1_1utils_1_1doubly__list_1a0748cb8980a43053479be54b576910b0" prot="public" virt="non-virtual"><scope>micro_os_plus::utils::intrusive_list</scope><name>clear</name></member>

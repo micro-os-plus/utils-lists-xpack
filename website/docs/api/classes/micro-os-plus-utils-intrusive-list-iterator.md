@@ -416,7 +416,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>This class provides an interface similar to <span class="doxyComputerOutput">std::list::iterator</span>, except that it keeps track of the offset where the intrusive list element is located in the parent object. It supports bidirectional iteration and access to the underlying object and node.</p>
 
 
-<p>Definition at line 69 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line 70 of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxySectionDef">
@@ -444,12 +444,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of pointer difference.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00095">95</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00096">96</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adf2b6ab52c63f0747113565c183df0f3">95</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a> = ptrdiff_t;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#adf2b6ab52c63f0747113565c183df0f3">96</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#adf2b6ab52c63f0747113565c183df0f3">difference_type</a> = ptrdiff_t;</span></span></div>
 
 </div>
 
@@ -477,12 +477,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Category of iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00100">100</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00101">101</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">100</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">iterator_category</a> = std::bidirectional_iterator_tag;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">101</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a879cf5b1d6d65ce492aec7f307fa474e">iterator_category</a> = std::bidirectional_iterator_tag;</span></span></div>
 
 </div>
 
@@ -510,12 +510,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of reference to the iterator internal pointer.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00090">90</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00091">91</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a520f5e4b1067d0febf857e04f6f37b83">90</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> = N*;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a520f5e4b1067d0febf857e04f6f37b83">91</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> = N*;</span></span></div>
 
 </div>
 
@@ -543,12 +543,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of pointer to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00080">80</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00081">81</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a08ac64c64dce736d83a93dfc838083af">80</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>*;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a08ac64c64dce736d83a93dfc838083af">81</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a08ac64c64dce736d83a93dfc838083af">pointer</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>*;</span></span></div>
 
 </div>
 
@@ -576,12 +576,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of reference to object <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00085">85</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00086">86</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">85</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>&amp;;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">86</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#a90c6d3cd7bf8dab6039cb02af0ab5e4e">reference</a> = <a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a>&amp;;</span></span></div>
 
 </div>
 
@@ -609,12 +609,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 
 <p>Type of value <em>pointed to</em> by the iterator.</p>
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00075">75</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00076">76</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">75</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a> = U;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">76</a></span><span class="doxyLineContent"><span class="doxyHighlight">    </span><span class="doxyHighlightKeyword">using </span><span class="doxyHighlight"><a href="#aa7fd4b71eb2848e6016ea84fdedb06c7">value_type</a> = U;</span></span></div>
 
 </div>
 
@@ -664,7 +664,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 :::
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00108">108</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00068">68</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00109">109</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00068">68</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -729,7 +729,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>This constructor creates an <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a></span> that points to the specified node. The internal node pointer is set to the provided node address, allowing the iterator to traverse the list starting from that node. This is typically used to initialise an iterator to a specific position within the list, such as the beginning or end.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00115">115</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00082">82</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00116">116</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00082">82</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -798,7 +798,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>This constructor creates an <span class="doxyComputerOutput"><a href="/utils-lists-xpack/docs/api/classes/micro-os-plus/utils/intrusive-list-iterator">intrusive_list_iterator</a></span> that points to the specified element. The internal node pointer is set to the address of the intrusive node member within the given element, allowing the iterator to traverse the list starting from that element. This is typically used to initialise an iterator to a specific object in the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00128">128</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00097">97</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00129">129</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00097">97</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -861,7 +861,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The pre-decrement operator (<span class="doxyComputerOutput">operator--</span>) moves the intrusive list iterator to the previous node in the list. It updates the internal node pointer to point to the node returned by the current node's <span class="doxyComputerOutput">previous()</span> method. This enables backward traversal of the list, following the linked structure in reverse.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00172">172</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00180">180</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00173">173</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00180">180</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -917,7 +917,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The post-decrement operator (<span class="doxyComputerOutput"><a href="#a3120afffac4d89be37b06190ac32c3b2">operator--(int)</a></span>) moves the intrusive list iterator to the previous node in the list, but returns a copy of the iterator as it was before the decrement. This enables iteration logic that requires access to the current element before moving backward, following the standard C++ iterator semantics for post-decrement.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00180">180</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00196">196</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00181">181</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00196">196</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -975,7 +975,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The pointer access operator (<span class="doxyComputerOutput">operator-&gt;</span>) allows the intrusive list iterator to provide direct access to the value pointed to by the iterator, mimicking the behavior of a raw pointer. Internally, it calls <span class="doxyComputerOutput"><a href="#a93c954e164fc4cd26e29f64a54a2cfb5">get_pointer()</a></span>, which computes and returns a pointer to the underlying value or object associated with the current node in the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00140">140</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00114">114</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00141">141</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00114">114</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1034,7 +1034,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>This allows the iterator to be used in a manner similar to standard C++ iterators, enabling direct access to the list element for reading or modification.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00148">148</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00132">132</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00149">149</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00132">132</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1089,7 +1089,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The pre-increment operator (<span class="doxyComputerOutput">operator++</span>) advances the intrusive list iterator to the next node in the list. It updates the internal node pointer to point to the node returned by the current node's <span class="doxyComputerOutput">next()</span> method. This enables forward traversal of the list, following the linked structure.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00156">156</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00147">147</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00157">157</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00147">147</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1145,7 +1145,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The post-increment operator (<span class="doxyComputerOutput"><a href="#aa8fa99a95e7d9a21ba91206cec42b5e6">operator++(int)</a></span>) advances the intrusive list iterator to the next node in the list, but returns a copy of the iterator as it was before the increment. This allows iteration logic that requires access to the current element before moving to the next one, following the standard C++ iterator semantics for post-increment.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00164">164</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00163">163</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00165">165</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00163">163</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1221,7 +1221,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>The equality comparison operator (<span class="doxyComputerOutput">operator==</span>) checks whether two intrusive list iterators point to the same node in the list by comparing their internal node pointers. This enables standard iterator comparisons, such as detecting the end of a range or verifying if two iterators refer to the same position within the list.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00194">194</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00213">213</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00195">195</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00213">213</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1290,7 +1290,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>Returns a pointer to the internal iterator node associated with the current object. This is typically used for advanced list operations or when direct access to the underlying node is required.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00214">214</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00258">258</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00215">215</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00258">258</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1352,7 +1352,7 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>Computes and returns a pointer to the parent object that contains the intrusive node currently referenced by the iterator. This is achieved by calculating the offset of the intrusive node member within the parent object type and subtracting it from the node's address. This technique allows the iterator to provide access to the full object from just the node pointer, enabling intrusive list traversal and manipulation.</p>
 
 
-<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00204">204</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00230">230</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
+<p>Declaration at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00205">205</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>, definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h/#l00230">230</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/inlines/intrusive-list-inlines-h">intrusive-list-inlines.h</a>.</p>
 
 
 <div class="doxyProgramListing">
@@ -1424,12 +1424,12 @@ class micro_os_plus::utils::intrusive_list_iterator&lt;T, N, MP, U&gt; { ... }
 <p>Stores the address of the current intrusive node in the list.</p>
 
 
-<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00223">223</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
+<p>Definition at line <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h/#l00224">224</a> of file <a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">intrusive-list.h</a>.</p>
 
 
 <div class="doxyProgramListing">
 
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aee433922fe4b649d6c1b529e620e9345">223</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a href="#aee433922fe4b649d6c1b529e620e9345">224</a></span><span class="doxyLineContent"><span class="doxyHighlight">    <a href="#a520f5e4b1067d0febf857e04f6f37b83">iterator_pointer</a> <a href="#aee433922fe4b649d6c1b529e620e9345">node_</a>;</span></span></div>
 
 </div>
 

@@ -133,26 +133,31 @@ The file content with the documentation metadata removed is:
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00051"></a>51</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00052"></a>52</span></div>
 <div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00053"></a>53</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(__DOXYGEN__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00054"></a><a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-config/#gabaf0f9ceb6be1008107882c4641e3d7b">54</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00055"></a><a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-config/#ga2298ccb291997f5617a7d6d66a6d9f94">55</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00056"></a><a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-config/#gaceb30b6e2e4f6a91927986ff08257d0f">56</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED </span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00057"></a>57</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__DOXYGEN__)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00058"></a>58</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00059"></a>59</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00060"></a>60</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00061"></a>61</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00062"></a>62</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00063"></a>63</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-links-h">lists/doubly-list-links.h</a>"</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00064"></a>64</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">lists/doubly-list.h</a>"</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00065"></a>65</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">lists/intrusive-list.h</a>"</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00066"></a>66</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00067"></a>67</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00068"></a>68</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00069"></a>69</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00070"></a>70</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00071"></a>71</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_UTILS_LISTS_H_</span></span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00072"></a>72</span></div>
-<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00073"></a>73</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00054"></a>54</span><span class="doxyLineContent"><span class="doxyHighlightComment">// Present here solely for Doxygen, to document the macros.</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00055"></a><a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-config/#gabaf0f9ceb6be1008107882c4641e3d7b">55</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00056"></a><a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-config/#ga2298ccb291997f5617a7d6d66a6d9f94">56</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00057"></a><a href="/utils-lists-xpack/docs/api/groups/micro-os-plus-utils-lists-config/#gaceb30b6e2e4f6a91927986ff08257d0f">57</a></span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#define MICRO_OS_PLUS_UTILS_LISTS_TRACE_CONSTRUCTORS_ENABLED</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00058"></a>58</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(__DOXYGEN__)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00059"></a>59</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00060"></a>60</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00061"></a>61</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00062"></a>62</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#if defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00063"></a>63</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00064"></a>64</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00065"></a>65</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00066"></a>66</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-links-h">lists/doubly-list-links.h</a>"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00067"></a>67</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/doubly-list-h">lists/doubly-list.h</a>"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00068"></a>68</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#include "<a href="/utils-lists-xpack/docs/api/files/include/micro-os-plus/utils/lists/intrusive-list-h">lists/intrusive-list.h</a>"</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00069"></a>69</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00070"></a>70</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00071"></a>71</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00072"></a>72</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// defined(MICRO_OS_PLUS_UTILS_LISTS_ENABLED)</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00073"></a>73</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00074"></a>74</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00075"></a>75</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00076"></a>76</span><span class="doxyLineContent"><span class="doxyHighlightPreprocessor">#endif </span><span class="doxyHighlightComment">// MICRO_OS_PLUS_UTILS_LISTS_H_</span></span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00077"></a>77</span></div>
+<div class="doxyCodeLine"><span class="doxyLineNumber"><a id="l00078"></a>78</span><span class="doxyLineContent"><span class="doxyHighlightComment">// ----------------------------------------------------------------------------</span></span></div>
 
 </div>
 
