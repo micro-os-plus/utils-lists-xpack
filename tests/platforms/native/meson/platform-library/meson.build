@@ -25,7 +25,8 @@ message('Including tests/platforms/' + xpack_platform_name + '/meson/platform-li
 if build_machine.system() == 'linux' or build_machine.system() == 'darwin'
 
   _local_cxx_run_result = run_command(
-    xpack_tests_folder_path + '/scripts/get-libraries-paths.sh',
+    'node',
+    xpack_tests_folder_path + '/scripts/get-libraries-paths.mjs',
     cpp_compiler.cmd_array()[0],
     check: false,
     capture: true
@@ -142,7 +143,8 @@ endif
 
 if c_compiler.get_id().contains('clang')
   _local_link_args += [
-    '-rtlib=compiler-rt'
+    '-rtlib=compiler-rt',
+    '-stdlib=libc++',
   ]
   if build_machine.system() == 'linux'
     _local_link_args += [
