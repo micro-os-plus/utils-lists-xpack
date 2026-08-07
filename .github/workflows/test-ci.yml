@@ -58,6 +58,8 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     strategy:
+      # Do not cancel the other matrix jobs if one of them fails.
+      fail-fast: false
       matrix:
         # https://github.com/actions/runner-images
         os: [ 'ubuntu-24.04', 'ubuntu-24.04-arm', 'macos-15-intel', 'macos-15', 'windows-2025' ]
@@ -93,9 +95,11 @@ jobs:
 
       - name: Satisfy project dependencies on ${{ matrix.os }}
         run: |
+          npm ci
           npm --prefix tests ci
+          xpm install -C tests
           xpm run install-ci -C tests
-
+          
       - name: Run tests on ${{ matrix.os }}
         run: xpm run test-ci -C tests
         env:
